@@ -1,0 +1,95 @@
+/* Have fun adding your style here :) - PS: At all times this file should contain a comment or a rule, otherwise opera might act buggy :( */
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+/* General Custom CSS */
+/** header **/
+    .main_menu {
+        background: url(images/bg-left-nav.png) no-repeat bottom left;
+       
+   
+    }
+    .av-main-nav-wrap ul {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: inline-block;
+    margin: 0 0 0 55px;
+    padding: 0;
+    }
+    .html_header_top #top .av_header_stretch .container{width: 100%;}
+    #header_main .container, .main_menu ul:first-child > li a {
+        height: 70px;
+        line-height:70px;    
+    }   
+    strong.logo {
+        margin-left: 25px;
+        margin-top: 14px;
+    }
+    .av-main-nav > li > a {
+        font-family: 'Oswald' !important;
+        font-size: 16px;
+        font-weight: 300;
+        text-transform:uppercase;
+        
+    }
+    #header_main nav .social_bookmarks {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    clear: none;
+    float: left;
+    height: 70px;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: hidden;
+    padding: 20px 0 0 8px;
+    position: relative;
+    right: 0;
+    top: 0;
+    }
+    #top .social_bookmarks li {
+    border-right-style: solid;
+    border-right-width: 0px;
+    display: block;
+    float: left;
+    height: 20%;
+    padding: 0;
+    transition: all 0.2s ease-in-out 0s;
+    width: 30px;
+    }
+    #top .social_bookmarks li a {
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 30px;
+    margin: 0;
+    min-height: 28px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 28px;
+    z-index: 2;
+    }
+    #top #wrap_all .av-social-link-facebook:hover  a{color:#fff; background-color:#908098; }
+    #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
+    #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
+    
+/*
+Desktop Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the desktop view of your site */
+
+
+@media only screen and (min-width: 768px) {
+  /* Add your Desktop Styles here */
+
+}
+
+
+
+/*
+Mobile Styles
+================================================== */
+/* Note: Add new css to the media query below that you want to only effect the Mobile and Tablet Portrait view */
+
+@media only screen and (max-width: 767px) {
+  /* Add your Mobile Styles here */
+
+}
