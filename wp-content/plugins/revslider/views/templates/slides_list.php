@@ -1,14 +1,16 @@
-
 	<div class="postbox box-slideslist">
 		<h3>
 			<span class='slideslist-title'><?php _e("Slides List",REVSLIDER_TEXTDOMAIN)?></span>
-			<span id="saving_indicator" class='slideslist-loading'><?php _e("Saving Order")?>...</span>
+			<span id="saving_indicator" class='slideslist-loading'><?php _e("Saving Order",REVSLIDER_TEXTDOMAIN)?>...</span>
 		</h3>
 		<div class="inside">
 			<?php if(empty($arrSlides)):?>
 			<?php _e("No Slides Found",REVSLIDER_TEXTDOMAIN)?>
 			<?php endif?>
 			
+			<?php
+			$useStaticLayers = $slider->getParam("enable_static_layers","off");
+			?>
 			<ul id="list_slides" class="list_slides ui-sortable">
 			
 				<?php
@@ -18,7 +20,31 @@
 						$counter++;
 						
 						$bgType = $slide->getParam("background_type","image");
-											
+						
+						$bgFit = $slide->getParam("bg_fit","cover");
+						$bgFitX = intval($slide->getParam("bg_fit_x","100"));
+						$bgFitY = intval($slide->getParam("bg_fit_y","100"));
+						
+						$bgPosition = $slide->getParam("bg_position","center top");
+						$bgPositionX = intval($slide->getParam("bg_position_x","0"));
+						$bgPositionY = intval($slide->getParam("bg_position_y","0"));
+						
+						$bgRepeat = $slide->getParam("bg_repeat","no-repeat");
+						
+						$bgStyle = ' ';
+						if($bgFit == 'percentage'){
+							$bgStyle .= "background-size: ".$bgFitX.'% '.$bgFitY.'%;';
+						}else{
+							$bgStyle .= "background-size: ".$bgFit.";";
+						}
+						if($bgPosition == 'percentage'){
+							$bgStyle .= "background-position: ".$bgPositionX.'% '.$bgPositionY.'%;';
+						}else{
+							$bgStyle .= "background-position: ".$bgPosition.";";
+						}
+						$bgStyle .= "background-repeat: ".$bgRepeat.";";
+						
+						
 						//set language flag url
 						$isWpmlExists = UniteWpmlRev::isWpmlExists();
 						$useWpml = $slider->getParam("use_wpml","off");
@@ -45,7 +71,7 @@
 							$imageAlt = "slide";
 						
 						if($bgType == "image")
-							$title .= " ({$filename})";
+							$title .= " (".$filename.")";
 						
 						$slideid = $slide->getID();
 						
@@ -71,15 +97,15 @@
 						</span>
 						
 						<span class="slide-col col-name">
-							<?php echo $linkEdit?>
-							<a class='button_edit_slide greenbutton' href='<?php echo $urlEditSlide?>'><?php _e("Edit Slide",REVSLIDER_TEXTDOMAIN)?></a>
+							<div class="slide-title-in-list"><?php echo $linkEdit?></div>
+							<a class='button-primary revgreen' href='<?php echo $urlEditSlide?>' style="width:120px; "><i class="revicon-pencil-1"></i><?php _e("Edit Slide",REVSLIDER_TEXTDOMAIN)?></a>
 						</span>
 						<span class="slide-col col-image">
 							<?php switch($bgType):
 									default:
 									case "image":
 										?>
-										<div id="slide_image_<?php echo $slideid?>" style="background-image:url('<?php echo $urlImageForView?>')" class="slide_image" title="Slide Image - Click to change"></div>
+										<div id="slide_image_<?php echo $slideid?>" style="background-image:url('<?php echo $urlImageForView?>');<?php echo $bgStyle; ?>" class="slide_image" title="Slide Image - Click to change"></div>
 										<?php 
 									break;
 									case "solid":
@@ -97,11 +123,11 @@
 						</span>
 						
 						<span class="slide-col col-operations">
-							<a id="button_delete_slide_<?php echo $slideid?>" class='button-secondary button_delete_slide' href='javascript:void(0)'><?php _e("Delete",REVSLIDER_TEXTDOMAIN)?></a>
-							<span class="loader_round loader_delete" style="display:none;"><?php _e("Deleting Slide...")?></span>
-							<a id="button_duplicate_slide_<?php echo $slideid?>" class='button-secondary button_duplicate_slide' href='javascript:void(0)'><?php _e("Duplicate",REVSLIDER_TEXTDOMAIN)?></a>
+							<a id="" class='button-primary revred button_delete_slide ' style="width:120px; margin-top:8px !important" data-slideid="<?php echo $slideid?>" href='javascript:void(0)'><i class="revicon-trash"></i><?php _e("Delete",REVSLIDER_TEXTDOMAIN)?></a>
+							<span class="loader_round loader_delete" style="display:none;"><?php _e("Deleting Slide...",REVSLIDER_TEXTDOMAIN)?></span>
+							<a id="button_duplicate_slide_<?php echo $slideid?>" style="width:120px; " class='button-primary revyellow button_duplicate_slide' href='javascript:void(0)'><i class="revicon-picture"></i><?php _e("Duplicate",REVSLIDER_TEXTDOMAIN)?></a>
 							<?php
-								$copyButtonClass = "button-secondary button_copy_slide";
+								$copyButtonClass = "button-primary revblue  button_copy_slide";
 								$copyButtonTitle = __("Open copy / move dialog",REVSLIDER_TEXTDOMAIN);
 								
 								 if($numSliders == 0){
@@ -109,8 +135,8 @@
 								 	$copyButtonTitle = "Copy / move disabled, no more sliders found";
 							 	}
 							?>
-							<a id="button_copy_slide_<?php echo $slideid?>" class='<?php echo $copyButtonClass?>' title="<?php echo $copyButtonTitle?>" href='javascript:void(0)'><?php _e("Copy / Move",REVSLIDER_TEXTDOMAIN)?></a>							
-							<span class="loader_round loader_copy mtop_10 mleft_20 display_block" style="display:none;"><?php _e("Working...")?></span>
+							<a id="button_copy_slide_<?php echo $slideid?>" class='<?php echo $copyButtonClass?>' title="<?php echo $copyButtonTitle?>" style="width:120px; " href='javascript:void(0)'><i class="revicon-picture"></i><?php _e("Copy / Move",REVSLIDER_TEXTDOMAIN)?></a>							
+							<span class="loader_round loader_copy mtop_10 mleft_20 display_block" style="display:none;"><?php _e("Working...",REVSLIDER_TEXTDOMAIN)?></span>
 						</span>
 						
 						<span class="slide-col col-handle">

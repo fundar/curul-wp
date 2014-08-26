@@ -1,7 +1,5 @@
 <?php
-
 	class UniteWpmlRev{
-		
 		
 		/**
 		 * 
@@ -90,14 +88,14 @@
 			if(!empty($props))
 				$props = " ".$props;
 			
-			$html = "<ul{$props}>"."\n";
+			$html = "<ul".$props.">"."\n";
 			$html .= $htmlBefore;
-			
+		
 			foreach($arrLangs as $code=>$title){
 				$urlIcon = self::getFlagUrl($code);
 				
-				$html .= "<li data-lang='{$code}' class='item_lang'><a data-lang='{$code}' href='javascript:void(0)'>"."\n";
-				$html .= "<img src='{$urlIcon}'/> $title"."\n";				
+				$html .= "<li data-lang='".$code."' class='item_lang'><a data-lang='".$code."' href='javascript:void(0)'>"."\n";
+				$html .= "<img src='".$urlIcon."'/> $title"."\n";				
 				$html .= "</a></li>"."\n";
 			}
 
@@ -106,7 +104,7 @@
 			
 			return($html);
 		}
-		
+	
 		
 		/**
 		 * get flag url
@@ -135,7 +133,7 @@
 		private function getLangDetails($code){
 	        global $wpdb;
 			
-	        $details = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}icl_languages WHERE code='$code'");
+	        $details = $wpdb->get_row("SELECT * FROM ".$wpdb->prefix."icl_languages WHERE code='$code'");
 	        
 	        if(!empty($details))
 	        	$details = (array)$details;
@@ -153,7 +151,7 @@
 			$langs = self::getArrLanguages();
 			
 			if($code == "all")
-				return(__("All Languages"));
+				return(__("All Languages", REVSLIDER_TEXTDOMAIN));
 			
 			if(array_key_exists($code, $langs))
 				return($langs[$code]);
@@ -181,8 +179,4 @@
 			
 			return($lang);
 		}
-		
 	}
-	
-	
-	

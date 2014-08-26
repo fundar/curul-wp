@@ -1,4 +1,21 @@
-	//ver 3.1
+
+/*!
+ * VERSION: beta 0.2.3
+ * DATE: 2013-07-10
+ * UPDATES AND DOCS AT: http://www.greensock.com
+ *
+ * @license Copyright (c) 2008-2013, GreenSock. All rights reserved.
+ * SplitText is a Club GreenSock membership benefit; You must have a valid membership to use
+ * this code without violating the terms of use. Visit http://www.greensock.com/club/ to sign up or get more details.
+ * This work is subject to the software agreement that was issued with your membership.
+ *
+ * @author: Jack Doyle, jack@greensock.com
+ */
+(function(t){"use strict";var e=t.GreenSockGlobals||t,i=function(t){var i,s=t.split("."),r=e;for(i=0;s.length>i;i++)r[s[i]]=r=r[s[i]]||{};return r},s=i("com.greensock.utils"),r=function(t){var e=t.nodeType,i="";if(1===e||9===e||11===e){if("string"==typeof t.textContent)return t.textContent;for(t=t.firstChild;t;t=t.nextSibling)i+=r(t)}else if(3===e||4===e)return t.nodeValue;return i},n=document,a=n.defaultView?n.defaultView.getComputedStyle:function(){},o=/([A-Z])/g,h=function(t,e,i,s){var r;return(i=i||a(t,null))?(t=i.getPropertyValue(e.replace(o,"-$1").toLowerCase()),r=t||i.length?t:i[e]):t.currentStyle&&(i=t.currentStyle,r=i[e]),s?r:parseInt(r,10)||0},l=function(t){return t.length&&t[0]&&(t[0].nodeType&&t[0].style&&!t.nodeType||t[0].length&&t[0][0])?!0:!1},_=function(t){var e,i,s,r=[],n=t.length;for(e=0;n>e;e++)if(i=t[e],l(i))for(s=i.length,s=0;i.length>s;s++)r.push(i[s]);else r.push(i);return r},u=")eefec303079ad17405c",c=/(?:<br>|<br\/>|<br \/>)/gi,p=n.all&&!n.addEventListener,f="<div style='position:relative;display:inline-block;"+(p?"*display:inline;*zoom:1;'":"'"),m=function(t){t=t||"";var e=-1!==t.indexOf("++"),i=1;return e&&(t=t.split("++").join("")),function(){return f+(t?" class='"+t+(e?i++:"")+"'>":">")}},d=s.SplitText=e.SplitText=function(t,e){if("string"==typeof t&&(t=d.selector(t)),!t)throw"cannot split a null element.";this.elements=l(t)?_(t):[t],this.chars=[],this.words=[],this.lines=[],this._originals=[],this.vars=e||{},this.split(e)},g=function(t,e,i,s,o){c.test(t.innerHTML)&&(t.innerHTML=t.innerHTML.replace(c,u));var l,_,p,f,d,g,v,y,T,w,b,x,P,S=r(t),C=e.type||e.split||"chars,words,lines",k=-1!==C.indexOf("lines")?[]:null,R=-1!==C.indexOf("words"),A=-1!==C.indexOf("chars"),D="absolute"===e.position||e.absolute===!0,O=D?"&#173; ":" ",M=-999,L=a(t),I=h(t,"paddingLeft",L),E=h(t,"borderBottomWidth",L)+h(t,"borderTopWidth",L),N=h(t,"borderLeftWidth",L)+h(t,"borderRightWidth",L),F=h(t,"paddingTop",L)+h(t,"paddingBottom",L),U=h(t,"paddingLeft",L)+h(t,"paddingRight",L),X=h(t,"textAlign",L,!0),z=t.clientHeight,B=t.clientWidth,j=S.length,Y="</div>",q=m(e.wordsClass),V=m(e.charsClass),Q=-1!==(e.linesClass||"").indexOf("++"),G=e.linesClass;for(Q&&(G=G.split("++").join("")),p=q(),f=0;j>f;f++)g=S.charAt(f),")"===g&&S.substr(f,20)===u?(p+=Y+"<BR/>",f!==j-1&&(p+=" "+q()),f+=19):" "===g&&" "!==S.charAt(f-1)&&f!==j-1?(p+=Y,f!==j-1&&(p+=O+q())):p+=A&&" "!==g?V()+g+"</div>":g;for(t.innerHTML=p+Y,d=t.getElementsByTagName("*"),j=d.length,v=[],f=0;j>f;f++)v[f]=d[f];if(k||D)for(f=0;j>f;f++)y=v[f],_=y.parentNode===t,(_||D||A&&!R)&&(T=y.offsetTop,k&&_&&T!==M&&"BR"!==y.nodeName&&(l=[],k.push(l),M=T),D&&(y._x=y.offsetLeft,y._y=T,y._w=y.offsetWidth,y._h=y.offsetHeight),k&&(R!==_&&A||(l.push(y),y._x-=I),_&&f&&(v[f-1]._wordEnd=!0)));for(f=0;j>f;f++)y=v[f],_=y.parentNode===t,"BR"!==y.nodeName?(D&&(b=y.style,R||_||(y._x+=y.parentNode._x,y._y+=y.parentNode._y),b.left=y._x+"px",b.top=y._y+"px",b.position="absolute",b.display="block",b.width=y._w+1+"px",b.height=y._h+"px"),R?_?s.push(y):A&&i.push(y):_?(t.removeChild(y),v.splice(f--,1),j--):!_&&A&&(T=!k&&!D&&y.nextSibling,t.appendChild(y),T||t.appendChild(n.createTextNode(" ")),i.push(y))):k||D?(t.removeChild(y),v.splice(f--,1),j--):R||t.appendChild(y);if(k){for(D&&(w=n.createElement("div"),t.appendChild(w),x=w.offsetWidth+"px",T=w.offsetParent===t?0:t.offsetLeft,t.removeChild(w)),b=t.style.cssText,t.style.cssText="display:none;";t.firstChild;)t.removeChild(t.firstChild);for(P=!D||!R&&!A,f=0;k.length>f;f++){for(l=k[f],w=n.createElement("div"),w.style.cssText="display:block;text-align:"+X+";position:"+(D?"absolute;":"relative;"),G&&(w.className=G+(Q?f+1:"")),o.push(w),j=l.length,d=0;j>d;d++)"BR"!==l[d].nodeName&&(y=l[d],w.appendChild(y),P&&(y._wordEnd||R)&&w.appendChild(n.createTextNode(" ")),D&&(0===d&&(w.style.top=y._y+"px",w.style.left=I+T+"px"),y.style.top="0px",T&&(y.style.left=y._x-T+"px")));R||A||(w.innerHTML=r(w).split(String.fromCharCode(160)).join(" ")),D&&(w.style.width=x,w.style.height=y._h+"px"),t.appendChild(w)}t.style.cssText=b}D&&(z>t.clientHeight&&(t.style.height=z-F+"px",z>t.clientHeight&&(t.style.height=z+E+"px")),B>t.clientWidth&&(t.style.width=B-U+"px",B>t.clientWidth&&(t.style.width=B+N+"px")))},v=d.prototype;v.split=function(t){this.isSplit&&this.revert(),this.vars=t||this.vars,this._originals.length=this.chars.length=this.words.length=this.lines.length=0;for(var e=0;this.elements.length>e;e++)this._originals[e]=this.elements[e].innerHTML,g(this.elements[e],this.vars,this.chars,this.words,this.lines);return this.isSplit=!0,this},v.revert=function(){if(!this._originals)throw"revert() call wasn't scoped properly.";for(var t=this._originals.length;--t>-1;)this.elements[t].innerHTML=this._originals[t];return this.chars=[],this.words=[],this.lines=[],this.isSplit=!1,this},d.selector=t.$||t.jQuery||function(e){return t.$?(d.selector=t.$,t.$(e)):n?n.getElementById("#"===e.charAt(0)?e.substr(1):e):e}})(window||{});
+
+
+
+//ver 3.2
 
 var UniteLayersRev = new function(){
 	
@@ -9,30 +26,67 @@ var UniteLayersRev = new function(){
 	var initTopVideo = 20;
 	var initLeftVideo = 20;
 	var g_startTime = 500;
-	var g_stepTime = 300;
+	var g_stepTime = 0;
 	var g_slideTime;
 	
 	var initText = "Caption Text";
 	
+	//init system vars"
 	//init system vars
 	var t = this;
+	var initArrFontTypes = [];
 	var containerID = "#divLayers";
 	var container;	
 	var arrLayers = {};
 	var id_counter = 0;
 	var initLayers = null;
+	var initDemoLayers = null;
+	var initDemoSettings = null;
 	var selectedLayerSerial = -1;
-	var urlCssCaptions = null;
-	var initArrCaptionClasses = [];
+	
 	var sortMode = "time";				//can be "depth" or "time"
-	var g_codemirrorCss = null;
-
+	var layerGeneralParamsStatus = false;
+	
+	//Layer Animations
+	var initLayerAnims = [];
+	var currentAnimationType = 'customin';
+	
+	var curDemoSlideID = 0;
 	
 	/**
 	 * set init layers object (from db)
 	 */
 	t.setInitLayersJson = function(jsonLayers){
 		initLayers = jQuery.parseJSON(jsonLayers);
+	}
+	
+	/**
+	 * set init demo layers object (from db)
+	 */
+	t.setInitDemoLayersJson = function(jsonLayers){
+		initDemoLayers = jQuery.parseJSON(jsonLayers);
+	}
+	
+	/**
+	 * set init demo settings object (from db)
+	 */
+	t.setInitDemoSettingsJson = function(jsonLayers){
+		initDemoSettings = jQuery.parseJSON(jsonLayers);
+	}
+	
+	/**
+	 * set init layer animations (from db)
+	 */
+	t.setInitLayerAnim = function(jsonLayersAnims){
+		initLayerAnims = jQuery.parseJSON(jsonLayersAnims);
+	}
+	
+	/**
+	 * update init layer animations (from db)
+	 */
+	t.updateInitLayerAnim = function(layerAnims){
+		initLayerAnims = [];
+		initLayerAnims = layerAnims;
 	}
 	
 	/**
@@ -43,17 +97,10 @@ var UniteLayersRev = new function(){
 	}
 	
 	/**
-	 * set captions url for refreshing when needed
+	 * set init font family types array
 	 */
-	t.setCssCaptionsUrl = function(url){
-		urlCssCaptions = url;
-	}
-	
-	/**
-	 * close css dialog
-	 */
-	t.closeCssDialog = function(){
-		jQuery("#dialog_edit_css").dialog("close");
+	t.setInitFontTypes = function(jsonClasses){
+		initArrFontTypes = jQuery.parseJSON(jsonClasses);
 	}
 	
 	
@@ -64,33 +111,115 @@ var UniteLayersRev = new function(){
 		if(selectedLayerSerial == -1)
 			return(false);
 		
-		var html = "<a href='javascript:alert(\"click\");' class='tp-button "+buttonClass+" small'>"+buttonText+"</a>";
+		var html = "<a href='#' class='tp-button "+buttonClass+" small'>"+buttonText+"</a>";
 		
-		jQuery("#layer_caption").val("");
-		jQuery("#layer_text").val(html);
-		updateLayerFromFields();
+		//jQuery("#layer_caption").val("");
+		jQuery("#layer_text").val(jQuery("#layer_text").val()+html);
+		
+		t.updateLayerFromFields();
 		
 		jQuery("#dialog_insert_button").dialog("close");
 	}
 	
+	/**
+	 * insert template to editor
+	 */
+	t.insertTemplate = function(text){
+
+		if(selectedLayerSerial == -1)
+			return(false);
+		
+		jQuery("#layer_text").val(jQuery("#layer_text").val()+'%'+text+'%');
+		
+		t.updateLayerFromFields();
+		
+		jQuery("#dialog_template_insert").dialog("close");
+	}
 	
-//======================================================
-//	Init Functions
-//======================================================
+	t.refreshGridSize = function(){
+						
+		var grid_size = jQuery('#rs-grid-sizes option:selected').val();
+		var snapto = jQuery('#rs-grid-snapto option:selected').val();
+		var wrapper = jQuery('#divLayers');		
+		
+		
+		if (grid_size==1) {
+			wrapper.find('#helpergrid').remove();
+			grid_size = 1;
+		} else {		
+				wrapper.css({position:"relative"});
+				wrapper.find('#helpergrid').remove();
+				wrapper.append('<div id="helpergrid" style="position:absolute;top:0px;left:0px;position:absolute;z-index:0;width:100%;height:100%"></div>');
+				var hg = wrapper.find('#helpergrid');
+				if (grid_size>4) {
+					for (var i=1;i<(wrapper.height()/grid_size);i++) {
+						var jump = i*grid_size;
+						hg.append('<div class="helplines" style="background-color:#4affff;width:100%;height:1px;position:absolute;left:0px;top:'+jump+'px"></div>');
+					}
+			
+					for (var i=1;i<(wrapper.width()/grid_size);i++) {
+						var jump = i*grid_size;
+						hg.append('<div class="helplines" style="background-color:#4affff;height:100%;width:1px;position:absolute;top:0px;left:'+jump+'px"></div>');
+					}
+				}
+				
+
+		}
+		
+
+		
+		for(var key in arrLayers){
+			var layer = getHtmlLayerFromSerial(key);	
+			//update layer events.
+			layer.draggable({
+					drag: onLayerDrag,	//set ondrag event
+					//grid: [grid_size,grid_size],	//set the grid to 1 pixel
+					snap: snapto,
+					snapMode:"outer"
+					
+				});
+		}
+		
+		
+	}
+	//======================================================
+	//	Init Functions
+	//======================================================
 	
 	/**
 	 * init the layout
 	 */
 	t.init = function(slideTime){
-		
+	
 		if(jQuery().draggable == undefined || jQuery().autocomplete == undefined){
 			jQuery("#jqueryui_error_message").show();			
 		}
-			
+		
 		
 		g_slideTime = Number(slideTime);
 		
 		container = jQuery(containerID);
+		
+		//add all layers from init
+		if(initDemoLayers){
+			var len = initDemoLayers.length;
+			if(len){
+				for(var i=0;i<len;i++){
+					for(var key in initDemoLayers[i]){
+						curDemoSlideID = i;
+						addLayer(initDemoLayers[i][key],true,true);
+					}
+				}
+			}else{
+				for(var i in initDemoLayers){
+					for(var key in initDemoLayers[i]){
+						curDemoSlideID = i;
+						addLayer(initDemoLayers[i][key],true,true);
+					}
+				}
+			}
+		}
+		
 		
 		//add all layers from init
 		if(initLayers){
@@ -103,7 +232,7 @@ var UniteLayersRev = new function(){
 					addLayer(initLayers[key],true);
 			}
 		}
-				
+		
 		//disable the properties box
 		disableFormFields();
 		
@@ -111,11 +240,890 @@ var UniteLayersRev = new function(){
 		initMainEvents();
 		initSortbox();
 		initButtons();
-		initEditCSSDialog();
 		initHtmlFields();
 		initAlignTable();
+		scaleImage();
+		positionChanged();
+		
+		//initScaleImage();
+		preparePeviewAnimations();
+		initBackgroundFunctions();
+		initLoopFunctions();
+		prepareAnimateCreator();
+		jQuery('.bgsrcchanger').each(function(){
+			if(jQuery(this).is(':checked'))
+				initSliderMainOptions(jQuery(this));
+		});
+		
+		jQuery('.bgsrcchanger').click(function() {
+			initSliderMainOptions(jQuery(this));
+		});
+		
+		initDisallowCaptionsOnClick();
+		
+		showHideTimeines();
+		
+		
+		// OPEN LEFT PANEL TO FULL
+		jQuery('.open_right_panel').click(function() {
+			var orp = jQuery('.layer_props_wrapper')
+			if (orp.hasClass("openeed")) {
+				orp.removeClass("openeed");
+			} else {
+				orp.addClass("openeed");				
+			}
+		})
+		
+		jQuery('#rs-grid-sizes, #rs-grid-snapto').change(function() {
+			t.refreshGridSize();
+		});
+
+		
+		jQuery('select[name="rev_show_the_slides"]').change(function(){
+			jQuery('.demo_layer').hide();
+			jQuery("#divLayers-wrapper").addClass("trans_bg");
+			jQuery("#divLayers-wrapper").css("background-image","none");
+			jQuery("#divLayers-wrapper").css("background-color","transparent");
+			jQuery("#divLayers-wrapper").css("background-position","top center");
+			jQuery("#divLayers-wrapper").css("background-size","cover"); //100% 100%
+			jQuery("#divLayers-wrapper").css("background-repeat","no-repeat");
+			
+			
+			if(jQuery(this).val() !== 'none'){
+				var sv = jQuery(this).val();
+				jQuery('.demo_layer_'+sv).show();
+				
+				if(typeof initDemoSettings[sv] !== 'undefined'){
+					var bgfit = (initDemoSettings[sv]['bg_fit'] == 'percentage') ? initDemoSettings[sv]['bg_fit_x'] + '% ' + initDemoSettings[sv]['bg_fit_y'] + '% ' : initDemoSettings[sv]['bg_fit'];
+					var bgpos = (initDemoSettings[sv]['bg_position'] == 'percentage') ? initDemoSettings[sv]['bg_position_x'] + '% ' + initDemoSettings[sv]['bg_position_y'] + '% ' : initDemoSettings[sv]['bg_position'];
+					
+					switch(initDemoSettings[sv]['background_type']){
+						case "image":
+							var urlImage = initDemoSettings[sv]['image'];
+							jQuery("#divLayers-wrapper").css("background-image","url('"+urlImage+"')");
+							jQuery("#divLayers-wrapper").css("background-color","transparent");
+							jQuery("#divLayers-wrapper").css("background-size",bgfit);
+							jQuery("#divLayers-wrapper").css("background-position",bgpos);
+							jQuery("#divLayers-wrapper").css("background-repeat",initDemoSettings[sv]['bg_repeat']);
+							jQuery("#divLayers-wrapper").removeClass("trans_bg");
+						break;			
+						case "trans":
+							jQuery("#divLayers-wrapper").css("background-image","none");
+							jQuery("#divLayers-wrapper").css("background-color","transparent");
+							jQuery("#divLayers-wrapper").addClass("trans_bg");
+						break;
+						case "solid":
+							jQuery("#divLayers-wrapper").css("background-image","none");
+							jQuery("#divLayers-wrapper").removeClass("trans_bg");
+							var bgColor = initDemoSettings[sv]['slide_bg_color'];
+							jQuery("#divLayers-wrapper").css("background-color",bgColor);
+						break;
+						case "external":
+							var urlImage = initDemoSettings[sv]['slide_bg_external'];
+							jQuery("#divLayers-wrapper").css("background-image","url('"+urlImage+"')");
+							jQuery("#divLayers-wrapper").css("background-color","transparent");
+							jQuery("#divLayers-wrapper").css("background-size",bgfit);
+							jQuery("#divLayers-wrapper").css("background-position",bgpos);
+							jQuery("#divLayers-wrapper").css("background-repeat",initDemoSettings[sv]['bg_repeat']);
+							jQuery("#divLayers-wrapper").removeClass("trans_bg");
+						break;
+					}
+				}
+			}
+		});
+		
+		
+	} 
+	
+	var initDisallowCaptionsOnClick = function(){
+		
+		jQuery('.slide_layer.tp-caption a').on('click', function(){
+			return false;
+		});
+		
 	}
 	
+
+
+	function initSliderMainOptions(jQueryObj){
+		var t=jQueryObj;
+		jQuery('.bgsrcchanger-div').each(function() {
+			if (jQuery(this).attr('id') !="tp-bgimagesettings" || (jQuery(this).attr('id') =="tp-bgimagesettings" && t.data('imgsettings')!="on")) {
+				if (jQuery(this).attr('id') =="tp-bgimagesettings")
+					jQuery(this).slideUp(200)						
+				else	
+					jQuery(this).css({display:"none"});
+			}
+		});
+		jQuery('#'+t.data('callid')).css({display:"block"});
+		if (t.data('imgsettings')=="on")
+			jQuery('#tp-bgimagesettings').slideDown(200);
+	}
+	
+	/******************************
+		-	ANIMATION CREATOR	-
+	********************************/
+	
+	function prepareAnimateCreator() {
+		var cic = jQuery('#caption-inout-controll');
+		cic.data('direction',0);
+		
+		jQuery('#caption-inout-controll').click(function() {
+			if (cic.data('direction')==0) {
+				cic.data('direction',1);
+				jQuery('#revshowmetheinanim').removeClass("reviconinaction");
+				jQuery('#revshowmetheoutanim').addClass("reviconinaction");				
+			} else 
+			
+			if (cic.data('direction')==1) {
+				cic.data('direction',2);
+				jQuery('#revshowmetheinanim').addClass("reviconinaction");
+				jQuery('#revshowmetheoutanim').addClass("reviconinaction");				
+				
+			} else 
+			
+			if (cic.data('direction')==2) {
+				cic.data('direction',0);
+				jQuery('#revshowmetheinanim').addClass("reviconinaction");
+				jQuery('#revshowmetheoutanim').removeClass("reviconinaction");				
+				
+			}			
+		});
+		startAnimationInCreator();
+		
+	}
+	
+	function startAnimationInCreator() {
+		stopAnimationInPreview(); 
+		animateCreatorIn();
+	}
+	
+	function killAnimationInCreator() {
+		  var nextcaption = jQuery('#caption_custon_anim_preview');
+		 punchgs.TweenLite.killTweensOf(nextcaption,false);
+	}
+	
+	function animateCreatorIn() {
+	  				
+						
+					  var nextcaption = jQuery('#caption_custon_anim_preview');
+					  var cic = jQuery('#caption-inout-controll');
+					 
+					  
+					  var transx = jQuery('input[name="movex"]').val();
+					  var transy = jQuery('input[name="movey"]').val();
+					  var transz = jQuery('input[name="movez"]').val();					  					  
+
+					  var rotatex = jQuery('input[name="rotationx"]').val();
+					  var rotatey = jQuery('input[name="rotationy"]').val();
+					  var rotatez = jQuery('input[name="rotationz"]').val();					  					  
+
+					  var scalex = jQuery('input[name="scalex"]').val()/100;
+					  var scaley = jQuery('input[name="scaley"]').val()/100;
+
+					  var skewx = jQuery('input[name="skewx"]').val();
+					  var skewy = jQuery('input[name="skewy"]').val();
+					  var opac = jQuery('input[name="captionopacity"]').val()/100;  
+
+					  var tper = jQuery('input[name="captionperspective"]').val();  					  
+					  //var tper = 600;  					  
+					  
+					  var originx = jQuery('input[name="originx"]').val()+"%"; 
+					  var originy = jQuery('input[name="originy"]').val()+"%";
+					  var origin = originx+" "+originy; 				  					  
+					  
+					  var speed = parseInt(jQuery('input[name="captionspeed"]').val(),0);
+					  if (speed<100) speed=100;
+
+					  var easedata = jQuery('#caption-easing-demo').val();
+					  speed=speed/1000;
+					  
+
+					  var mdelay = (jQuery('input[name="captionsplitdelay"]').val()/100);
+					  var $split = jQuery('#caption-split-demo').val();
+					  					  
+					  var animobject = nextcaption;
+					  if (nextcaption.data('mySplitText') != undefined)
+						if ($split !="none") nextcaption.data('mySplitText').revert();
+	
+						if ($split == "chars" || $split == "words" || $split == "lines") {
+							if (nextcaption.find('a').length>0)
+								nextcaption.data('mySplitText',new SplitText(nextcaption.find('a'),{type:"lines,words,chars"}));
+							 else
+								nextcaption.data('mySplitText',new SplitText(nextcaption,{type:"lines,words,chars"}));
+						}
+	
+						if ($split == "chars") {
+							animobject = nextcaption.data('mySplitText').chars;
+							
+						}
+	
+						if ($split == "words") {
+							animobject = nextcaption.data('mySplitText').words;
+							
+						}
+	
+						if ($split == "lines") {
+							animobject = nextcaption.data('mySplitText').lines;
+							
+						}
+							
+							
+					  var timedelay=((animobject.length*mdelay) + speed)*1000;
+					  
+					  
+					  punchgs.TweenLite.killTweensOf(animobject,false);
+					 
+					  if (animobject != nextcaption)
+							 punchgs.TweenLite.set(nextcaption, { opacity:1,scaleX:1,scaleY:1,rotationX:0,rotationY:0,rotationZ:0,skewX:0,skewY:0,z:0,x:0,y:0,visibility:'visible',opacity:1,overwrite:"all"});
+										
+					  var tl=new punchgs.TimelineLite();
+					  
+					  tl.staggerFromTo(animobject,speed,
+										{ scaleX:scalex,
+										  scaleY:scaley,
+										  rotationX:rotatex,
+										  rotationY:rotatey,
+										  rotationZ:rotatez,
+										  x:transx,
+										  y:transy,
+										  z:transz+1,
+										  skewX:skewx,
+										  skewY:skewy,
+										  opacity:opac,
+										  transformPerspective:tper,
+										  transformOrigin:origin,
+										  visibility:'hidden'},
+
+										{
+										  x:0,
+										  y:0,
+										  scaleX:1,
+										  scaleY:1,
+										  rotationX:0,
+										  rotationY:0,
+										  rotationZ:0,
+										  skewX:0,
+										  skewY:0,
+										  z:1,
+										  visibility:'visible',
+										  opacity:1,
+										  ease:easedata,
+										  overwrite:"all",
+										  
+										},mdelay);
+							
+							
+
+					setTimeout(function() {
+						if (cic.data('direction')==0) 
+							animateCreatorIn();			
+						else 
+						
+						if (cic.data('direction')==1 || cic.data('direction')==2) 
+							animateCreatorOut()
+						
+					},(timedelay)+500)					
+				
+
+   }
+   
+   
+   function animateCreatorOut() {
+	  				
+						
+					  var nextcaption = jQuery('#caption_custon_anim_preview');
+					  var cic = jQuery('#caption-inout-controll');
+					  
+					  var transx = jQuery('input[name="movex"]').val();
+					  var transy = jQuery('input[name="movey"]').val();
+					  var transz = jQuery('input[name="movez"]').val();	
+					  
+					   var $split = jQuery('#caption-split-demo').val();		  					  
+
+					  var rotatex = jQuery('input[name="rotationx"]').val();
+					  var rotatey = jQuery('input[name="rotationy"]').val();
+					  var rotatez = jQuery('input[name="rotationz"]').val();					  					  
+
+					  var scalex = jQuery('input[name="scalex"]').val()/100;
+					  var scaley = jQuery('input[name="scaley"]').val()/100;
+
+					  var skewx = jQuery('input[name="skewx"]').val();
+					  var skewy = jQuery('input[name="skewy"]').val();
+					  var opac = jQuery('input[name="captionopacity"]').val()/100;  
+
+					  var tper = jQuery('input[name="captionperspective"]').val();  					  
+					  //var tper = 600;  					  
+					  
+					  var originx = jQuery('input[name="originx"]').val()+"%"; 
+					  var originy = jQuery('input[name="originy"]').val()+"%";
+					  var origin = originx+" "+originy; 				  					  
+					  
+					  var speed = parseInt(jQuery('input[name="captionspeed"]').val(),0);
+					  if (speed<100) speed=100;
+
+					  var easedata = jQuery('#caption-easing-demo').val();
+					  speed=speed/1000;
+					  
+					  var xx = 258, yy=58;
+					  
+					   var mdelay = (jQuery('input[name="captionsplitdelay"]').val()/100);
+					    
+					   var animobject = nextcaption;
+					  if (nextcaption.data('mySplitText') != undefined)
+						if ($split !="none") nextcaption.data('mySplitText').revert();
+	
+						if ($split == "chars" || $split == "words" || $split == "lines") {
+							if (nextcaption.find('a').length>0)
+								nextcaption.data('mySplitText',new SplitText(nextcaption.find('a'),{type:"lines,words,chars"}));
+							 else
+								nextcaption.data('mySplitText',new SplitText(nextcaption,{type:"lines,words,chars"}));
+						}
+	
+						if ($split == "chars")
+							animobject = nextcaption.data('mySplitText').chars;
+	
+	
+						if ($split == "words")
+							animobject = nextcaption.data('mySplitText').words;
+	
+	
+						if ($split == "lines")
+							animobject = nextcaption.data('mySplitText').lines;
+							
+					  var timedelay=((animobject.length*mdelay) + speed)*1000;
+					  
+					  punchgs.TweenLite.killTweensOf(animobject,false);
+					 
+					  if (animobject != nextcaption)
+							 punchgs.TweenLite.set(nextcaption, { opacity:1,scaleX:1,scaleY:1,rotationX:0,rotationY:0,rotationZ:0,skewX:0,skewY:0,z:0,x:0,y:0,visibility:'visible',opacity:1,overwrite:"all"});
+										
+					  var tl=new punchgs.TimelineLite();
+					  
+					 
+					  
+					  
+					  punchgs.TweenLite.killTweensOf(animobject,false);
+					  tl.staggerFromTo(animobject,speed,
+										{ 
+
+										  x:0,
+										  y:0,
+										  scaleX:1,
+										  scaleY:1,
+										  rotationX:0,
+										  rotationY:0,
+										  rotationZ:0,
+										  skewX:0,
+										  skewY:0,
+										  z:1,
+										  visibility:'visible',
+										  opacity:1
+										 },
+
+										{
+										  
+										  scaleX:scalex,
+										  scaleY:scaley,
+										  rotationX:rotatex,
+										  rotationY:rotatey,
+										  rotationZ:rotatez,
+										  x:transx,
+										  y:transy,
+										  z:transz+1,
+										  skewX:skewx,
+										  skewY:skewy,
+										  opacity:opac,
+										  transformPerspective:tper,
+										  transformOrigin:origin,
+										  ease:easedata,
+										  overwrite:"all",
+										  delay:0.3,
+										  
+										},mdelay);
+										
+					setTimeout(function() {
+						if (cic.data('direction')==0) 
+							animateCreatorIn();
+						else 
+						
+						if (cic.data('direction')==2) 
+							animateCreatorIn();
+							
+						else 						
+						
+						if (cic.data('direction')==1 ) 
+							animateCreatorOut();
+						
+					},(timedelay)+500)
+
+   }
+	
+									
+	/*********************************
+	-	PREPARE THE ANIMATIONS	-
+	********************************/
+	
+	function preparePeviewAnimations() {
+		
+		jQuery('#preview_looper').click(function() {
+			var pl = jQuery(this);
+			if (pl.hasClass("deactivated")) {
+			    pl.removeClass("deactivated");
+				pl.data('loop',0);			
+				pl.find('.replyinfo').html("ON");								    
+			    setInAnimOfPreview();
+			} else {
+				pl.addClass("deactivated");
+				setInAnimOfPreview();												
+				pl.data('loop',0);
+				pl.find('.replyinfo').html("OFF");												
+			}
+		})
+		
+		var nextcaption = jQuery('#preview_caption_animateme');
+		var startanim = jQuery('#layer_animation');
+		var startspeed = jQuery('#layer_speed');
+		var startease = jQuery('#layer_easing');
+		var endanim = jQuery('#layer_endanimation');
+		var endspeed = jQuery('#layer_endspeed');
+		var endease = jQuery('#layer_endeasing');
+		
+
+		
+		startanim.on('change',function() {
+			setInAnimOfPreview();
+		});
+		startspeed.on('change',function() {
+			setInAnimOfPreview();
+		});
+		startease.on('change',function() {
+			setInAnimOfPreview();
+		});
+		
+		endanim.on('change',function() {
+			setInAnimOfPreview();
+		});
+		endspeed.on('change',function() {
+			setInAnimOfPreview();
+		});
+		endease.on('change',function() {
+			setInAnimOfPreview();
+		});
+	}
+
+										
+	/******************************
+		-	PLAY IN ANIMATION	-
+	********************************/
+	
+	function stopAnimationInPreview() {
+		var nextcaption = jQuery('#preview_caption_animateme');
+		punchgs.TweenLite.killTweensOf(nextcaption,false);
+		if (nextcaption.data("timer")) clearTimeout(nextcaption.data('timer'));
+		if (nextcaption.data("timera")) clearTimeout(nextcaption.data('timera'));
+	}
+	
+	function setInAnimOfPreview() {
+		var nextcaption = jQuery('#preview_caption_animateme');
+		var startanim = jQuery('#layer_animation');
+		var startspeed = jQuery('#layer_speed');
+		var startease = jQuery('#layer_easing');
+		var endanim = jQuery('#layer_endanimation');
+		var endspeed = jQuery('#layer_endspeed');
+		var endease = jQuery('#layer_endeasing');
+			
+		var anim = startanim.val();
+		var speed = startspeed.val()/1000;
+		var easedata = startease.val();
+		
+
+		  var mdelay = (jQuery('input[name="layer_splitdelay"]').val()/100);
+		  var $split = jQuery('#layer_split').val();
+		  					  
+		  var animobject = nextcaption;
+		  if (nextcaption.data('mySplitText') != undefined)
+			if ($split !="none") nextcaption.data('mySplitText').revert();
+
+			if ($split == "chars" || $split == "words" || $split == "lines") {
+				if (nextcaption.find('a').length>0)
+					nextcaption.data('mySplitText',new SplitText(nextcaption.find('a'),{type:"lines,words,chars"}));
+				 else
+					nextcaption.data('mySplitText',new SplitText(nextcaption,{type:"lines,words,chars"}));
+			}
+
+			if ($split == "chars") {
+				animobject = nextcaption.data('mySplitText').chars;
+				
+			}
+
+			if ($split == "words") {
+				animobject = nextcaption.data('mySplitText').words;
+				
+			}
+
+			if ($split == "lines") {
+				animobject = nextcaption.data('mySplitText').lines;
+				
+			}
+				
+				
+		  var timedelay=((animobject.length*mdelay) + speed)*1000;
+		  
+		  punchgs.TweenLite.killTweensOf(nextcaption,false);		  
+		  punchgs.TweenLite.killTweensOf(animobject,false);
+		  punchgs.TweenLite.set(nextcaption,{clearProps:"transform"});		  
+		  punchgs.TweenLite.set(animobject,{clearProps:"transform"});
+		 
+		  if (animobject != nextcaption)
+				 punchgs.TweenLite.set(nextcaption, { opacity:1,scaleX:1,scaleY:1,rotationX:0,rotationY:0,rotationZ:0,skewX:0,skewY:0,z:0,x:0,y:0,visibility:'visible',opacity:1,overwrite:"all"});
+							
+		  var tl=new punchgs.TimelineLite();		  	
+		  
+		  
+		if (nextcaption.data("timer")) clearTimeout(nextcaption.data('timer'));
+		if (nextcaption.data("timera")) clearTimeout(nextcaption.data('timera'));
+		var tlop = 0,
+		 	tlxx = 198, tlyy = 82, tlzz = 2,
+		    tlsc = 1,tlro = 0,
+		    sc=1,scX=1,scY= 1,
+		    ro=0,roX=0,roY=0,roZ = 0,
+			skwX=0, skwY = 0,
+			opa = 0,
+			trorig = "center,center",
+			tper = 300,
+			repeatV = 0,
+			yoyoV = false,
+		    repeatdelayV = 0,
+		    calcx = 198,
+		    calcy = 82;
+
+		if (anim == null) anim = "fade";
+		
+		if (anim == "randomrotate") {
+
+							sc = Math.random()*3+1;
+							ro = Math.round(Math.random()*200-100);
+							transx = Math.round(Math.random()*200-100);
+							transy = Math.round(Math.random()*200-100);
+				}
+		if (anim == ('lfr') || anim==('skewfromright')) transx = 560;
+		if (anim==('lfl') || anim==('skewfromleft')) transx = -100;
+		if (anim==('sfl') | anim==('skewfromleftshort')) transx = -50;
+		if (anim==('sfr') | anim==('skewfromrightshort')) transx = 50;
+		if (anim==('lft')) transy = -50;
+		if (anim==('lfb')) transy = 250;
+		if (anim==('sft')) transy = -50;
+		if (anim==('sfb')) transy = 50;
+		if (anim==('skewfromright') || anim==('skewfromrightshort')) skwX = -85;
+		if (anim==('skewfromleft') || anim==('skewfromleftshort')) skwX =  85;
+		
+		if (anim.split('custom').length>1) {
+			var id = anim.split("-")[1];
+			var params = new Object;
+			params = getCutCustomParams(id);
+			
+			var transx = params.movex;
+			var transy = params.movey;
+			var transz = params.movez;
+			var rotatex = params.rotationx;
+			var rotatey = params.rotationy;
+			var rotatez = params.rotationz;
+			var scalex = params.scalex/100;
+			var scaley = params.scaley/100;
+			var skewx = params.skewx;
+			var skewy =params.skewy;
+			var opac = params.captionopacity/100;
+			var tper = params.captionperspective;
+			//var tper = 600;
+			var originx = params.originx+"%";
+			var originy = params.originy+"%";
+			var origin = originx+" "+originy; 		
+			
+			
+							  
+			  
+			 nextcaption.data('newanim',tl.staggerFromTo(animobject,speed,
+										{ scaleX:scalex,
+										  scaleY:scaley,
+										  rotationX:rotatex,
+										  rotationY:rotatey,
+										  rotationZ:rotatez,
+										  x:transx,
+										  y:transy,
+										  z:transz+1,
+										  skewX:skewx,
+										  skewY:skewy,
+										  opacity:opac,
+										  transformPerspective:tper,
+										  transformOrigin:origin,
+										  visibility:'hidden'},
+
+										{ x:0,
+										  y:0,
+										  scaleX:1,
+										  scaleY:1,
+										  rotationX:0,
+										  rotationY:0,
+										  rotationZ:0,
+										  skewX:0,
+										  skewY:0,
+										  z:1,
+										  visibility:'visible',
+										  opacity:1,
+										  ease:easedata,
+										  overwrite:"all",										  								  
+								  
+								},mdelay));
+					
+				nextcaption.data('timera',setTimeout(function() {
+			  		if (!jQuery('#preview_looper').hasClass("deactivated") && jQuery('#preview_looper').data('loop')!=2) setOutAnimOfPreview();
+			  	},(timedelay)+500));
+		} else {
+
+				nextcaption.data('newanim',tl.staggerFromTo(animobject,speed,
+								{ scale:sc,
+								  rotation:ro,
+								  rotationX:0,
+								  rotationY:0,
+								  rotationZ:0,
+								  x:transx,
+								  y:transy,
+								  opacity:0,
+								  z:1,
+								  skewX:skwX,
+								  skewY:0,
+								  transformPerspective:600,
+								  transformOrigin:"50% 50%",
+								  visibility:'visible'
+								 },
+
+								{ scale:1,
+								  skewX:0,
+								  rotation:0,
+								  z:1,
+								  x:0,
+								  y:0,
+								  visibility:'visible',
+								  opacity:1,
+								  ease:easedata,
+								  overwrite:"all",
+								 
+								},mdelay));
+				nextcaption.data('timera',setTimeout(function() {
+			  		if (!jQuery('#preview_looper').hasClass("deactivated") && jQuery('#preview_looper').data('loop')!=2) setOutAnimOfPreview();
+			  	},(timedelay)+500));
+		}
+
+	}
+	
+	function getCutCustomParams(id) {
+		var params = new Object;
+		jQuery.each(initLayerAnims,function(i,curobj) {
+			if (parseInt(curobj.id,0) == parseInt(id,0)) params = curobj.params;
+		})
+		return params;
+	}
+
+	/******************************
+		-	PLAY OUT ANIMATION	-
+	********************************/
+	
+	function setOutAnimOfPreview() {
+
+		var nextcaption = jQuery('#preview_caption_animateme');
+		var startanim = jQuery('#layer_animation');
+		var startspeed = jQuery('#layer_speed');
+		var startease = jQuery('#layer_easing');
+		var endanim = jQuery('#layer_endanimation');
+		var endspeed = jQuery('#layer_endspeed');
+		var endease = jQuery('#layer_endeasing');
+		
+		var anim = endanim.val();	
+		var speed = endspeed.val()/1000;
+		var easedata = endease.val();
+		var xx = 0;
+		var yy = 0;
+		skwX = 0;
+		
+		
+		var mdelay = (jQuery('input[name="layer_endsplitdelay"]').val()/100);
+		  var $split = jQuery('#layer_endsplit').val();
+		  					  
+		  var animobject = nextcaption;
+		  if (nextcaption.data('mySplitText') != undefined)
+			if ($split !="none") nextcaption.data('mySplitText').revert();
+
+			if ($split == "chars" || $split == "words" || $split == "lines") {
+				if (nextcaption.find('a').length>0)
+					nextcaption.data('mySplitText',new SplitText(nextcaption.find('a'),{type:"lines,words,chars"}));
+				 else
+					nextcaption.data('mySplitText',new SplitText(nextcaption,{type:"lines,words,chars"}));
+			}
+
+			if ($split == "chars") {
+				animobject = nextcaption.data('mySplitText').chars;
+				
+			}
+
+			if ($split == "words") {
+				animobject = nextcaption.data('mySplitText').words;
+				
+			}
+
+			if ($split == "lines") {
+				animobject = nextcaption.data('mySplitText').lines;
+				
+			}
+				
+				
+		  var timedelay=((animobject.length*mdelay) + speed)*1000;
+		  
+		  
+		  punchgs.TweenLite.killTweensOf(animobject,false);
+		 
+		  if (animobject != nextcaption)
+				 punchgs.TweenLite.set(nextcaption, { opacity:1,scaleX:1,scaleY:1,rotationX:0,rotationY:0,rotationZ:0,skewX:0,skewY:0,z:0,x:0,y:0,visibility:'visible',opacity:1,overwrite:"all"});
+							
+		  var tl=new punchgs.TimelineLite();
+		  
+		
+		if (anim == null) anim = "auto";
+		
+		if (			anim==('fadeout') ||
+						anim==('ltr') ||
+						anim==('ltl') ||
+						anim==('str') ||
+						anim==('stl') ||
+						anim==('ltt') ||
+						anim==('ltb') ||
+						anim==('stt') ||
+						anim==('stb') ||
+						anim==('skewtoright') ||
+						anim==('skewtorightshort') ||
+						anim==('skewtoleft') ||
+						anim==('skewtoleftshort'))
+					{
+
+				if (anim==('skewtoright') || anim==('skewtorightshort'))
+					skwX = 35
+
+				if (anim==('skewtoleft') || anim==('skewtoleftshort'))
+					skwX =  -35
+
+
+
+				if (anim==('ltr') || anim==('skewtoright'))
+					xx=560;
+				else if (anim==('ltl') || anim==('skewtoleft'))
+					xx=-100;
+				else if (anim==('ltt'))
+					yy=-50;
+				else if (anim==('ltb'))
+					yy=250;
+				else if (anim==('str') || anim==('skewtorightshort')) {
+					xx=50;oo=0;
+				} else if (anim==('stl') || anim==('skewtoleftshort')) {
+					xx=-50;oo=0;
+				} else if (anim==('stt')) {
+					yy=-50;oo=0;
+				} else if (anim==('stb')) {
+					yy=50;oo=0;
+				}
+
+				if (anim==('skewtorightshort'))
+					xx = 400;
+					
+				if (anim==('skewtoleftshort'))
+					xx =  0
+
+				nextcaption.data('newanim',tl.staggerTo(animobject,speed,
+							{ scale:1,
+							  rotation:0,
+							  skewX:skwX,
+							  opacity:0,
+							  x:xx,
+							  y:yy,
+							  z:2,
+							  overwrite:"auto",
+							  ease:easedata,							  
+							 },mdelay));
+				nextcaption.data('timera',setTimeout(function() {
+			  		if (jQuery('#preview_looper').hasClass("deactivated")) 				jQuery('#preview_looper').data('loop',2);
+			  		setInAnimOfPreview();
+			  	},(timedelay)+500));
+		} else 
+		
+		if (anim.split('custom').length>1) {
+			var id = anim.split("-")[1];
+			var params = new Object;
+			params = getCutCustomParams(id);
+			
+			var transx = params.movex;
+			var transy = params.movey;
+			var transz = params.movez;
+			var rotatex = params.rotationx;
+			var rotatey = params.rotationy;
+			var rotatez = params.rotationz;
+			var scalex = params.scalex/100;
+			var scaley = params.scaley/100;
+			var skewx = params.skewx;
+			var skewy =params.skewy;
+			var opac = params.captionopacity/100;
+			var tper = params.captionperspective;
+			//var tper = 600;
+			var originx = params.originx+"%";
+			var originy = params.originy+"%";
+			var origin = originx+" "+originy; 				  					  
+			  
+			 nextcaption.data('newanim',tl.staggerFromTo(animobject,speed,
+										{ x:0,
+										  y:0,
+										  scaleX:1,
+										  scaleY:1,
+										  rotationX:0,
+										  rotationY:0,
+										  rotationZ:0,
+										  skewX:0,
+										  skewY:0,
+										  transformPerspective:tper,
+										  transformOrigin:origin,
+										  z:1,
+										  visibility:'visible',
+										  opacity:1,
+										},
+
+										{
+										  scaleX:scalex,
+										  scaleY:scaley,
+										  rotationX:rotatex,
+										  rotationY:rotatey,
+										  rotationZ:rotatez,
+										  x:transx,
+										  y:transy,
+										  z:transz+1,
+										  skewX:skewx,
+										  skewY:skewy,
+										  opacity:opac,
+										  transformPerspective:tper,
+										  transformOrigin:origin,										  
+										  ease:easedata,
+										   
+							 },mdelay));
+			  nextcaption.data('timera',setTimeout(function() {
+											  		if (jQuery('#preview_looper').hasClass("deactivated")) 				jQuery('#preview_looper').data('loop',2);
+											  		setInAnimOfPreview();
+			  	},(timedelay)+500));
+					
+		} else {
+			nextcaption.data('newanim').reverse();
+			nextcaption.data('timer',setTimeout(function() {
+		  		  if (jQuery('#preview_looper').hasClass("deactivated")) jQuery('#preview_looper').data('loop',2);												
+				  setInAnimOfPreview();
+			},(speed*1000)+1000))
+		}
+	}
+
 	
 	/**
 	 * init the align table
@@ -169,8 +1177,8 @@ var UniteLayersRev = new function(){
 				break;
 			}
 			
-			updateLayerFromFields();
-			
+			t.updateLayerFromFields();
+			updateHtmlLayersFromObject(getSerialFromID(jQuery('.layer_selected').attr('id')),true);			
 		});
 		
 	}
@@ -180,7 +1188,6 @@ var UniteLayersRev = new function(){
 	 * init general events
 	 */
 	var initMainEvents = function(){
-		
 		//unselect layers on container click
 		container.click(unselectLayers);
 	}
@@ -197,46 +1204,112 @@ var UniteLayersRev = new function(){
 		});
 		
 		//set layers autocompolete
-		jQuery( "#layer_caption" ).autocomplete({
+		jQuery("#layer_caption").autocomplete({
 			source: initArrCaptionClasses,
 			minLength:0,
-			close:updateLayerFromFields
-		});	
+			close:t.updateLayerFromFields
+		}).data("ui-autocomplete")._renderItem = function(ul, item) {
+			var listItem = jQuery("<li></li>")
+				.data("item.autocomplete", item)
+				.append("<a>" + item.label + "</a>")
+				.appendTo(ul);
+				
+			listItem.attr('original-title', item.value);
+			return listItem;
+		};
 		
 		//open the list on right button
 		jQuery( "#layer_captions_down" ).click(function(event){
 			event.stopPropagation();
+			
+			jQuery("#css_editor_expert").hide();
+			jQuery("#css_editor_wrap").hide();
 			
 			//if opened - close autocomplete
 			if(jQuery('#layer_caption').data("is_open") == true)
 				jQuery( "#layer_caption" ).autocomplete("close");
 			else   //else open autocomplete
 			if(jQuery(this).hasClass("ui-state-active"))
-				jQuery( "#layer_caption" ).autocomplete( "search", "" );
+				jQuery( "#layer_caption" ).autocomplete( "search", "" ).data("ui-autocomplete")._renderItem = function(ul, item) {
+					var listItem = jQuery("<li></li>")
+						.data("item.autocomplete", item)
+						.append("<a>" + item.label + "</a>")
+						.appendTo(ul);
+						
+					listItem.attr('original-title', item.value);
+					return listItem;
+				};
 		});
 		
 		//handle autocomplete close
 		jQuery('#layer_caption').bind('autocompleteopen', function() {
 			jQuery(this).data('is_open',true);
-		});		
-
+			
+			//handle tooltip
+			jQuery('.ui-autocomplete li').tipsy({
+		        delayIn: 70,
+				html: true,
+				gravity:"w",	
+				//trigger:"manual",			
+				title: function(){
+					    setTimeout(function() {
+						    jQuery('.tp-present-caption-small').parent().addClass("tp-present-wrapper-small");
+							jQuery('.tp-present-caption-small').parent().parent().addClass("tp-present-wrapper-parent-small");	
+					    },10)
+						return '<div class="tp-present-caption-small"><div class="tp-caption '+this.getAttribute('original-title')+'">example</div></div>';
+					}
+			});	
+		});			
+		
 		jQuery('#layer_caption').bind('autocompleteclose', function() {
 			jQuery(this).data('is_open',false);
 		});	
 		
-		jQuery("body").click(function(){
-			jQuery( "#layer_caption" ).autocomplete("close");
+		//set layers autocompolete
+		jQuery( "#font_family" ).autocomplete({
+			source: initArrFontTypes,
+			minLength:0,
+			close:t.updateLayerFromFields
+		});
+		
+		//open the list on right button
+		jQuery("#font_family_down").click(function(event){
+			event.stopPropagation();
+			
+			//if opened - close autocomplete
+			if(jQuery('#font_family').data("is_open") == true)
+				jQuery( "#font_family" ).autocomplete("close");
+			else   //else open autocomplete
+			if(jQuery(this).hasClass("ui-state-active"))
+				jQuery( "#font_family" ).autocomplete( "search", "" ).data("ui-autocomplete");
+		});
+		
+		//handle autocomplete close
+		jQuery('#font_family').bind('autocompleteopen', function() {
+			jQuery(this).data('is_open',true);
+		});		
+		
+		jQuery('#font_family').bind('autocompleteclose', function() {
+			jQuery(this).data('is_open',false);
 		});
 		
 		
+		jQuery("body").click(function(){
+			jQuery( "#layer_caption" ).autocomplete("close");
+			jQuery( "#font_family" ).autocomplete("close");
+		});
+		
 		//set events:
-		jQuery("#form_layers select").change(updateLayerFromFields);
-		jQuery("#layer_text").keyup(updateLayerFromFields);
+		jQuery("#form_layers select").change(function(){
+			t.updateLayerFromFields();
+		});
+		jQuery("#layer_text").keyup(function(){t.updateLayerFromFields();});
 		var pressEnterFields = "#form_layers input, #form_layers textarea";
-		jQuery(pressEnterFields).blur(updateLayerFromFields);
+		jQuery(pressEnterFields).blur(function(){t.updateLayerFromFields();});
 		jQuery(pressEnterFields).keypress(function(event){
-			if(event.keyCode == 13)
-				updateLayerFromFields();
+			if(event.keyCode == 13){
+				t.updateLayerFromFields();
+			}
 		});
 		
 		//end time validation
@@ -244,8 +1317,33 @@ var UniteLayersRev = new function(){
 			if(event.keyCode == 13)
 				validateCurrentLayerTimes();
 		});
+		
+		//end speed update
+		jQuery("#layer_endspeed").blur(validateCurrentLayerTimes).keypress(function(event){
+				updateCurTimer("",jQuery('#sortlist li.ui-state-hover .tl-fullanim'));
+		});
+		
+		jQuery("#layer_endspeed").blur(function(){
+				updateCurTimer("",jQuery('#sortlist li.ui-state-hover .tl-fullanim'));
+		});
+
+
+		jQuery("#delay").keypress(function(event){
+			if (Number(jQuery('#delay').val())>0)	
+					g_slideTime = jQuery('#delay').val();
+			updateCurTimer("",jQuery('#sortlist li.ui-state-hover .tl-fullanim'));
+
+		});
+		
+		jQuery("#delay").blur(function(){
+			if (Number(jQuery('#delay').val())>0)	
+				g_slideTime = jQuery('#delay').val();
+			updateCurTimer("",jQuery('#sortlist li.ui-state-hover .tl-fullanim'));
+		});
+		
+		
 	}
-			
+	
 	
 	/**
 	 * init buttons actions
@@ -254,20 +1352,104 @@ var UniteLayersRev = new function(){
 		
 		//set event buttons actions:
 		jQuery("#button_add_layer").click(function(){
-			addLayerText();
+			if(jQuery(this).data('isstatic') == true){
+				addLayerText('static');
+			}else{
+				addLayerText();
+			}
 		});
 		
 		jQuery("#button_add_layer_image").click(function(){
-			UniteAdminRev.openAddImageDialog("Select Layer Image",function(urlImage){
-				addLayerImage(urlImage);
-			});
+			if(jQuery(this).data('isstatic') == true){
+				UniteAdminRev.openAddImageDialog("Select Static Layer Image",function(urlImage){
+					addLayerImage(urlImage, 'static');
+				});
+			}else{
+				UniteAdminRev.openAddImageDialog("Select Layer Image",function(urlImage){
+					addLayerImage(urlImage);
+				});
+			}
 		});
+		
+		
 		
 		//add youtube actions:
 		jQuery("#button_add_layer_video").click(function(){
-			UniteAdminRev.openVideoDialog(function(videoData){
-				addLayerVideo(videoData);
-			});
+			if(jQuery(this).data('isstatic') == true){
+				UniteAdminRev.openVideoDialog(function(videoData){
+					addLayerVideo(videoData, 'static');
+				});
+			}else{	
+				UniteAdminRev.openVideoDialog(function(videoData){
+					addLayerVideo(videoData);
+				});
+			}
+		});
+		
+		
+		// BUILD THE LAYER ANIMATION DIALOG
+		jQuery('#add_customanimation_in').click(function() {
+			if(!UniteLayersRev.getLayerGeneralParamsStatus()) return false; //false if fields are disabled
+			
+			currentAnimationType = 'customin';
+			stopAnimationInPreview();
+			initLayerAnimationDialog();
+			setNewAnimObj();
+		});
+		
+		// BUILD THE LAYER ANIMATION DIALOG
+		jQuery('#add_customanimation_out').click(function() {
+			if(!UniteLayersRev.getLayerGeneralParamsStatus()) return false; //false if fields are disabled
+			
+			currentAnimationType = 'customout';
+			
+			initLayerAnimationDialog();
+			setNewAnimObj();
+		});
+		
+		//build the random animation button
+		jQuery('#set-random-animation').click(function(){
+			jQuery('input[name="movex"]').val((Math.floor(Math.random() * 101) - 50) * 10);
+			jQuery('input[name="movey"]').val((Math.floor(Math.random() * 101) - 50) * 10);
+			jQuery('input[name="movez"]').val((Math.floor(Math.random() * 11) - 5) * 10);
+			
+			jQuery('input[name="rotationx"]').val((Math.floor(Math.random() * 101) - 50) * 10);
+			jQuery('input[name="rotationy"]').val((Math.floor(Math.random() * 101) - 50) * 10);
+			jQuery('input[name="rotationz"]').val((Math.floor(Math.random() * 101) - 50) * 10);
+			
+			jQuery('input[name="scalex"]').val((Math.floor(Math.random() * 31)) * 10);
+			jQuery('input[name="scaley"]').val((Math.floor(Math.random() * 31)) * 10);
+			
+			jQuery('input[name="skewx"]').val(Math.floor(Math.random() * 61));
+			jQuery('input[name="skewy"]').val(Math.floor(Math.random() * 61));
+			
+			jQuery('input[name="captionopacity"]').val(0);
+			jQuery('input[name="captionperspective"]').val(600);
+			
+			jQuery('input[name="originx"]').val((Math.floor(Math.random() * 41) - 20) * 10);
+			jQuery('input[name="originy"]').val((Math.floor(Math.random() * 41) - 20) * 10);
+			
+			jQuery("#caption-movex-slider").slider("value",jQuery('input[name="movex"]').val());
+			jQuery("#caption-movey-slider").slider("value",jQuery('input[name="movey"]').val());
+			jQuery("#caption-movez-slider").slider("value",jQuery('input[name="movez"]').val());
+			jQuery("#caption-rotationx-slider").slider("value",jQuery('input[name="rotationx"]').val());
+			jQuery("#caption-rotationy-slider").slider("value",jQuery('input[name="rotationy"]').val());
+			jQuery("#caption-rotationz-slider").slider("value",jQuery('input[name="rotationz"]').val());
+			jQuery("#caption-scalex-slider").slider("value",jQuery('input[name="scalex"]').val());
+			jQuery("#caption-scaley-slider").slider("value",jQuery('input[name="scaley"]').val());
+			jQuery("#caption-skewx-slider").slider("value",jQuery('input[name="skewx"]').val());
+			jQuery("#caption-skewy-slider").slider("value",jQuery('input[name="skewy"]').val());
+			jQuery("#caption-opacity-slider").slider("value",jQuery('input[name="captionopacity"]').val());
+			jQuery("#caption-perspective-slider").slider("value",jQuery('input[name="captionperspective"]').val());
+			jQuery("#caption-originx-slider").slider("value",jQuery('input[name="originx"]').val());
+			jQuery("#caption-originy-slider").slider("value",jQuery('input[name="originy"]').val());
+			
+			jQuery('input[name="captionspeed"]').val((Math.floor(Math.random() * 11) + 5) * 100);
+			
+			transition = jQuery('#caption-easing-demo option');
+			var random = Math.floor(transition.length * (Math.random() % 1));
+
+			transition.attr('selected',false).eq(random).attr('selected',true);
 		});
 		
 		//edit video actions
@@ -341,7 +1523,20 @@ var UniteLayersRev = new function(){
 			
 		});
 		
-
+		//insert button link - open the dialog
+		jQuery("#linkInsertTemplate").click(function(){			
+			if(jQuery(this).hasClass("disabled"))
+				return(false);
+			
+			var buttons = {"Cancel":function(){jQuery("#dialog_template_insert").dialog("close")}}
+			jQuery("#dialog_template_insert").dialog({
+						buttons:buttons,
+						minWidth:500,
+						dialogClass:"tpdialogs",
+						modal:true});
+			
+		});
+		
 	}	
 	
 	
@@ -349,6 +1544,488 @@ var UniteLayersRev = new function(){
 //		Init Function End
 //======================================================
 
+
+	/**************************************
+		-	INIT LAYER ANIMATION DIALOG	-
+	**************************************/
+	function initLayerAnimationDialog() {
+		var curAnimHandle = (currentAnimationType == 'customin') ? jQuery('#layer_animation').val() : jQuery('#layer_endanimation').val();
+		var curAnimText = (currentAnimationType == 'customin') ? jQuery('#layer_animation option:selected').text() : jQuery('#layer_endanimation option:selected').text();
+		var isOriginal = (curAnimHandle.indexOf('custom') > -1) ? false : true;
+		
+		var layerEasing = (currentAnimationType == 'customin') ? jQuery('#layer_easing option:selected').val() : jQuery('#layer_endeasing option:selected').val();
+		var layerSpeed = (currentAnimationType == 'customin') ? jQuery('#layer_speed').val() : jQuery('#layer_endspeed').val();
+		
+		if(layerEasing == 'nothing') layerEasing = jQuery('#layer_easing option:selected').val();
+		jQuery('#caption-easing-demo').val(layerEasing);
+		
+		if(parseInt(layerSpeed) == 0) layerSpeed = 600;
+		jQuery('input[name="captionspeed"]').val(layerSpeed);
+		
+		var cic = jQuery('#caption-inout-controll');
+		cic.data('direction',0);
+		jQuery('#revshowmetheinanim').addClass("reviconinaction");
+		jQuery('#revshowmetheoutanim').removeClass("reviconinaction");
+		
+		//set the transition direction to out
+		if(currentAnimationType == 'customout') jQuery('#caption-inout-controll').click();
+		
+		jQuery("#layeranimeditor_wrap").dialog({
+			modal:true,
+			resizable:false,
+			title:'Layer Animation Editor',
+			minWidth:700,
+			minHeight:500,
+			closeOnEscape:true,
+			open:function () {
+				jQuery(this).closest(".ui-dialog")
+					.find(".ui-button").each(function(i) {
+					   var cl;
+					   if (i==0) cl="revgray";
+					   if (i==1) cl="revgreen";
+					   if (i==2) cl="revred";
+					   if (i==3) cl="revred";
+					   jQuery(this).addClass(cl).addClass("button-primary").addClass("rev-uibuttons");						   						   
+			   })
+			},
+			close:function() {
+				setInAnimOfPreview();	
+			},
+			buttons:{
+				"Save/Change":function(){
+					var animObj = createNewAnimObj();
+					
+					UniteAdminRev.setErrorMessageID("dialog_error_message");						
+					
+					jQuery('#current-layer-handle').text(curAnimText);
+					jQuery('input[name="layeranimation_save_as"]').val(curAnimText);
+					
+					jQuery("#dialog-change-layeranimation").dialog({
+						modal: true,
+						buttons: {
+							'Save as': function() {
+								jQuery("#dialog-change-layeranimation-save-as").dialog({
+									modal: true,
+									buttons: {
+										'Save as new': function(){
+											var id = checkIfAnimExists(jQuery('input[name="layeranimation_save_as"]').val());
+											var update = true;
+											if(id !== false){
+												update = false;
+												if(confirm("Animation already exists, overwrite?")){
+													updateAnimInDb(jQuery('input[name="layeranimation_save_as"]').val(), animObj, id);
+													update = true;
+												}
+											}else{
+												updateAnimInDb(jQuery('input[name="layeranimation_save_as"]').val(), animObj, false);
+											}
+											if(update){
+												jQuery("#dialog-change-layeranimation-save-as").dialog("close");
+												jQuery("#dialog-change-layeranimation").dialog("close");
+												jQuery(this).dialog("close");
+												jQuery("#layeranimeditor_wrap").dialog("close");
+												setInAnimOfPreview();
+											}
+										}
+									}
+								});
+							},
+							Save: function() {
+								var id = checkIfAnimExists(jQuery('input[name="layeranimation_save_as"]').val());
+
+								if(id !== false){
+									if(confirm("Really overwrite animation?")){
+										updateAnimInDb(jQuery('input[name="layeranimation_save_as"]').val(), animObj, id);
+										jQuery(this).dialog("close");
+										jQuery("#layeranimeditor_wrap").dialog("close");
+										setInAnimOfPreview();
+									}
+								}else{
+									updateAnimInDb(jQuery('input[name="layeranimation_save_as"]').val(), animObj, false);
+									jQuery(this).dialog("close");
+									jQuery("#layeranimeditor_wrap").dialog("close");
+									setInAnimOfPreview();										
+								}
+							}
+						}
+					});
+				},
+				"Cancel":function(){
+					jQuery(this).dialog("close");
+					setInAnimOfPreview();						
+				},
+				Delete: function() {
+					
+					if(isOriginal){
+						alert("Default animations can't be deleted");
+					}else{
+						if(confirm('Really delete the animation "'+curAnimText+'"?')){
+							deleteAnimInDb(curAnimHandle);
+							setInAnimOfPreview();										
+							jQuery("#layeranimeditor_wrap").dialog("close");
+						}
+					}
+				}
+			}
+		});
+		
+		jQuery("#caption-rotationx-slider").slider({
+			range: "min",
+			min: -980,
+			max: 980,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="rotationx"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-rotationy-slider").slider({
+			range: "min",
+			min: -980,
+			max: 980,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="rotationy"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-rotationz-slider").slider({
+			range: "min",
+			min: -980,
+			max: 980,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="rotationz"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-movex-slider").slider({
+			range: "min",
+			min: -2000,
+			max: 2000,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="movex"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-movey-slider").slider({
+			range: "min",
+			min: -2000,
+			max: 2000,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="movey"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-movez-slider").slider({
+			range: "min",
+			min: -2000,
+			max: 2000,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="movez"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-scalex-slider").slider({
+			range: "min",
+			min: 0,
+			max: 800,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="scalex"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-scaley-slider").slider({
+			range: "min",
+			min: 0,
+			max: 800,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="scaley"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-skewx-slider").slider({
+			range: "min",
+			min: -180,
+			max: 180,
+			step:1,
+			slide: function(event, ui) {
+				jQuery('input[name="skewx"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-skewy-slider").slider({
+			range: "min",
+			min: -180,
+			max: 180,
+			step:1,
+			slide: function(event, ui) {
+				jQuery('input[name="skewy"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-opacity-slider").slider({
+			range: "min",
+			min: -0,
+			max: 100,
+			step:1,
+			slide: function(event, ui) {
+				jQuery('input[name="captionopacity"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-perspective-slider").slider({
+			range: "min",
+			min: -3000,
+			max: 3000,
+			step:1,
+			slide: function(event, ui) {
+				jQuery('input[name="captionperspective"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-originx-slider").slider({
+			range: "min",
+			min: -200,
+			max: 200,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="originx"]').val(ui.value);					
+				
+			}
+		});
+		
+		jQuery("#caption-originy-slider").slider({
+			range: "min",
+			min: -200,
+			max: 200,
+			step:10,
+			slide: function(event, ui) {
+				jQuery('input[name="originy"]').val(ui.value);					
+				
+			}
+		});
+	}
+	
+	/**
+	 * get the values of custom animation dialog
+	 */
+	var createNewAnimObj = function(){
+		var customAnim = new Object;
+		
+		customAnim['movex'] = jQuery('input[name="movex"]').val();
+		customAnim['movey'] = jQuery('input[name="movey"]').val();
+		customAnim['movez'] = jQuery('input[name="movez"]').val();
+		customAnim['rotationx'] = jQuery('input[name="rotationx"]').val();
+		customAnim['rotationy'] = jQuery('input[name="rotationy"]').val();
+		customAnim['rotationz'] = jQuery('input[name="rotationz"]').val();
+		customAnim['scalex'] = jQuery('input[name="scalex"]').val();
+		customAnim['scaley'] = jQuery('input[name="scaley"]').val();
+		customAnim['skewx'] = jQuery('input[name="skewx"]').val();
+		customAnim['skewy'] = jQuery('input[name="skewy"]').val();
+		customAnim['captionopacity'] = jQuery('input[name="captionopacity"]').val();
+		customAnim['captionperspective'] = jQuery('input[name="captionperspective"]').val();
+		customAnim['originx'] = jQuery('input[name="originx"]').val();
+		customAnim['originy'] = jQuery('input[name="originy"]').val();
+		
+		return customAnim;
+	}
+	
+	/**
+	 * set the values of custom animation dialog
+	 */
+	var setNewAnimObj = function(){
+		var customAnim = new Object;
+		
+		var selectedLayer = (currentAnimationType == 'customin') ? jQuery('#layer_animation').val() : jQuery('#layer_endanimation').val();
+		
+		if(selectedLayer.indexOf('customin') > -1 || selectedLayer.indexOf('customout') > -1){
+			selectedLayer = selectedLayer.replace('customin-', '').replace('customout-', '');
+			
+			if(typeof initLayerAnims === 'object' && !jQuery.isEmptyObject(initLayerAnims)){
+				for(var key in initLayerAnims){
+					if(initLayerAnims[key]['id'] == selectedLayer){
+						customAnim = initLayerAnims[key]['params'];
+					}
+				}
+			}
+		}
+		
+		if(!jQuery.isEmptyObject(customAnim)){
+			jQuery('input[name="movex"]').val(customAnim['movex']);
+			jQuery('input[name="movey"]').val(customAnim['movey']);
+			jQuery('input[name="movez"]').val(customAnim['movez']);
+			jQuery('input[name="rotationx"]').val(customAnim['rotationx']);
+			jQuery('input[name="rotationy"]').val(customAnim['rotationy']);
+			jQuery('input[name="rotationz"]').val(customAnim['rotationz']);
+			jQuery('input[name="scalex"]').val(customAnim['scalex']);
+			jQuery('input[name="scaley"]').val(customAnim['scaley']);
+			jQuery('input[name="skewx"]').val(customAnim['skewx']);
+			jQuery('input[name="skewy"]').val(customAnim['skewy']);
+			jQuery('input[name="captionopacity"]').val(customAnim['captionopacity']);
+			jQuery('input[name="captionperspective"]').val(customAnim['captionperspective']);
+			jQuery('input[name="originx"]').val(customAnim['originx']);
+			jQuery('input[name="originy"]').val(customAnim['originy']);
+		}else{
+			jQuery('input[name="movex"]').val(0);
+			jQuery('input[name="movey"]').val(0);
+			jQuery('input[name="movez"]').val(0);
+			jQuery('input[name="rotationx"]').val(0);
+			jQuery('input[name="rotationy"]').val(0);
+			jQuery('input[name="rotationz"]').val(0);
+			jQuery('input[name="scalex"]').val(100);
+			jQuery('input[name="scaley"]').val(100);
+			jQuery('input[name="skewx"]').val(0);
+			jQuery('input[name="skewy"]').val(0);
+			jQuery('input[name="captionopacity"]').val(0);
+			jQuery('input[name="captionperspective"]').val(600);
+			jQuery('input[name="originx"]').val(50);
+			jQuery('input[name="originy"]').val(50);
+		}
+		
+		jQuery("#caption-movex-slider").slider("value",jQuery('input[name="movex"]').val());
+		jQuery("#caption-movey-slider").slider("value",jQuery('input[name="movey"]').val());
+		jQuery("#caption-movez-slider").slider("value",jQuery('input[name="movez"]').val());
+		jQuery("#caption-rotationx-slider").slider("value",jQuery('input[name="rotationx"]').val());
+		jQuery("#caption-rotationy-slider").slider("value",jQuery('input[name="rotationy"]').val());
+		jQuery("#caption-rotationz-slider").slider("value",jQuery('input[name="rotationz"]').val());
+		jQuery("#caption-scalex-slider").slider("value",jQuery('input[name="scalex"]').val());
+		jQuery("#caption-scaley-slider").slider("value",jQuery('input[name="scaley"]').val());
+		jQuery("#caption-skewx-slider").slider("value",jQuery('input[name="skewx"]').val());
+		jQuery("#caption-skewy-slider").slider("value",jQuery('input[name="skewy"]').val());
+		jQuery("#caption-opacity-slider").slider("value",jQuery('input[name="captionopacity"]').val());
+		jQuery("#caption-perspective-slider").slider("value",jQuery('input[name="captionperspective"]').val());
+		jQuery("#caption-originx-slider").slider("value",jQuery('input[name="originx"]').val());
+		jQuery("#caption-originy-slider").slider("value",jQuery('input[name="originy"]').val());
+	}
+	
+	/**
+	 * check if anim handle already exists
+	 */
+	var checkIfAnimExists = function(handle){
+		if(typeof initLayerAnims === 'object' && !jQuery.isEmptyObject(initLayerAnims)){
+			for(var key in initLayerAnims){
+				if(initLayerAnims[key]['handle'] == handle) return initLayerAnims[key]['id'];
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * update animation in database
+	 */
+	var deleteAnimInDb = function(handle){
+		UniteAdminRev.setErrorMessageID("dialog_error_message");
+		handle = jQuery.trim(handle);
+		if(handle != ''){
+			var animSelect = (currentAnimationType == 'customin') ? jQuery('#layer_animation option') : jQuery('#layer_endanimation option');
+			
+			UniteAdminRev.ajaxRequest("delete_custom_anim",handle,function(response){
+				jQuery("#dialog_success_message").show().html(response.message);
+			
+				//update html select (got from response)
+				t.updateInitLayerAnim(response.customfull);
+				updateLayerAnimsInput(response.customin, 'customin');
+				updateLayerAnimsInput(response.customout, 'customout');
+			});
+		}
+	}
+	
+	/**
+	 * update animation in database
+	 */
+	var updateAnimInDb = function(handle, animObj, id){
+		UniteAdminRev.setErrorMessageID("dialog_error_message");
+		animObj['handle'] = handle;
+		
+		
+		if(id === false){ //create new
+			//insert in database
+			UniteAdminRev.ajaxRequest("insert_custom_anim",animObj,function(response){
+				jQuery("#dialog_success_message").show().html(response.message);
+			
+				//update html select (got from response)
+				t.updateInitLayerAnim(response.customfull);
+				updateLayerAnimsInput(response.customin, 'customin');
+				updateLayerAnimsInput(response.customout, 'customout');
+				
+				selectLayerAnim(handle);
+			});
+			
+		}else{ //update existing
+			
+			//update to database
+			UniteAdminRev.ajaxRequest("update_custom_anim",animObj,function(response){
+				jQuery("#dialog_success_message").show().html(response.message);
+			
+				//update html select (got from response)
+				t.updateInitLayerAnim(response.customfull);
+				updateLayerAnimsInput(response.customin, 'customin');
+				updateLayerAnimsInput(response.customout, 'customout');
+				
+				selectLayerAnim(handle);
+			});
+		}
+	}
+	
+	/**
+	 * update the layer animation inputs
+	 */
+	var selectLayerAnim = function(handle){
+		var animSelect = (currentAnimationType == 'customin') ? jQuery('#layer_animation option') : jQuery('#layer_endanimation option');
+		animSelect.each(function(){
+			if(jQuery(this).text() == handle)
+				jQuery(this).prop('selected', true);
+			else
+				jQuery(this).prop('selected', false);
+		});
+	}
+	
+	/**
+	 * update the layer animation inputs
+	 */
+	var updateLayerAnimsInput = function(customAnim, type){
+		if(type == 'customin'){
+			var animSelect = jQuery('#layer_animation');
+			var animOption = jQuery('#layer_animation option');
+			var current = jQuery('#layer_animation option:selected').val();
+		}else{
+			var animSelect = jQuery('#layer_endanimation');
+			var animOption = jQuery('#layer_endanimation option');
+			var current = jQuery('#layer_endanimation option:selected').val();
+		}
+		
+		animOption.each(function(){
+			if(jQuery(this).val().indexOf(type) > -1){
+				jQuery(this).remove();
+			}
+		});
+		
+		if(typeof customAnim === 'object' && !jQuery.isEmptyObject(customAnim)){
+			for(key in customAnim){
+				animSelect.append(new Option(customAnim[key], key));
+			}
+		}
+		animSelect.val(current);
+	}
+	
 	/**
 	 * show / hide offset row accorging the slide link value
 	 */
@@ -425,10 +2102,10 @@ var UniteLayersRev = new function(){
 	var getFirstStyle = function(){
 		var arrClasses = jQuery( "#layer_caption" ).autocomplete("option","source");
 		var firstStyle = "";
-				
-		if(arrClasses.length == 0)
+		
+		if(arrClasses == null || arrClasses.length == 0)
 			return("");
-				
+			
 		var firstStyle = arrClasses[0];
 		
 		return(firstStyle);
@@ -450,10 +2127,16 @@ var UniteLayersRev = new function(){
 		jQuery("#form_layers label, #form_layers .setting_text, #form_layers .setting_unit").addClass("text-disabled");
 		
 		jQuery("#layer_captions_down").removeClass("ui-state-active").addClass("ui-state-default");
+		jQuery("#font_family_down").removeClass("ui-state-active").addClass("ui-state-default");
 		
 		jQuery("#linkInsertButton").addClass("disabled");
+		jQuery("#linkInsertTemplate").addClass("disabled");
 		
 		jQuery("#align_table").addClass("table_disabled");
+		
+		if(!jQuery('#preview_looper').hasClass("deactivated")) jQuery('#preview_looper').click();
+		
+		layerGeneralParamsStatus = false;
 	}
 	
 	/**
@@ -468,105 +2151,16 @@ var UniteLayersRev = new function(){
 		jQuery("#form_layers label, #form_layers .setting_text, #form_layers .setting_unit").removeClass("text-disabled");
 		
 		jQuery("#layer_captions_down").removeClass("ui-state-default").addClass("ui-state-active");
+		jQuery("#font_family_down").removeClass("ui-state-default").addClass("ui-state-active");
 		
 		jQuery("#linkInsertButton").removeClass("disabled");
+		jQuery("#linkInsertTemplate").removeClass("disabled");
 		
 		jQuery("#align_table").removeClass("table_disabled"); 
-	}
-	
-	/**
-	 * set code mirror editor
-	 */
-	t.setCodeMirrorEditor = function(){
-		g_codemirrorCss = CodeMirror.fromTextArea(document.getElementById("textarea_edit"), {});
-	}
-	
-	/**
-	 * init dialog actions
-	 */
-	var initEditCSSDialog = function(){
-		jQuery("#button_edit_css").click(function(){
-			
-			UniteAdminRev.ajaxRequest("get_captions_css","",function(response){
-				
-				//update textarea with css:
-				var cssData = response.data;
-				
-				if(g_codemirrorCss != null)
-					g_codemirrorCss.setValue(cssData);
-				else{
-					jQuery("#textarea_edit").val(cssData);
-					setTimeout('UniteLayersRev.setCodeMirrorEditor()',500);
-				}
-								
-				//open captions edit dialog	
-				var buttons = {	
-						
-				//---- update button action:
-						
-				"Update":function(){
-					
-						UniteAdminRev.setErrorMessageID("dialog_error_message");						
-						var data;
-						if(g_codemirrorCss != null)
-							data = g_codemirrorCss.getValue();
-						else
-							data = jQuery("#textarea_edit").val();
-						
-						UniteAdminRev.ajaxRequest("update_captions_css",data,function(response){
-							jQuery("#dialog_success_message").show().html(response.message);
-							setTimeout("UniteLayersRev.closeCssDialog()",500);
-							
-							if(urlCssCaptions)
-								UniteAdminRev.loadCssFile(urlCssCaptions,"rs-plugin-captions-css");
-							
-							//update html select (got as "data" from response)
-							updateCaptionsInput(response.arrCaptions);
-						});
-				},
-				
-				//---- restore original button action:
-				
-				"Restore Original":function(){
-					UniteAdminRev.setErrorMessageID("dialog_error_message");
-					UniteAdminRev.ajaxRequest("restore_captions_css","",function(response){						
-						jQuery("#dialog_success_message").show().html("css content restored, please press update");
-						
-						if(g_codemirrorCss != null)
-							g_codemirrorCss.setValue(response.data);
-						else
-							jQuery("#textarea_edit").val(response.data);
-						
-						setTimeout("jQuery('#dialog_success_message').hide()",1000);
-					});					
-				},
-						
-						//----- cancel button action:
-				"Cancel":function(){t.closeCssDialog()}
-				};
-				
-				//lock scrollbars
-				jQuery('body').css({'overflow':'hidden'});
-				
-				//hide dialog error message
-				jQuery("#dialog_error_message").hide();
-				jQuery("#dialog_success_message").hide();
-				
-				//open the dialog
-				jQuery("#dialog_edit_css").dialog({
-					buttons:buttons,
-					minWidth:800,
-					modal:true,
-					dialogClass:"tpdialogs",
-					close: function(event, ui){
-						//return scrollbars
-						jQuery('body').css({'overflow':'auto'});
-			        }
-				});
-				
-			});	//main ajax request
-			
-		});	//edit css button click	
+
+		if(jQuery('#preview_looper').hasClass("deactivated")) jQuery('#preview_looper').click();
+		
+		layerGeneralParamsStatus = true;
 	}
 	
 	
@@ -577,31 +2171,42 @@ var UniteLayersRev = new function(){
 		for(var key in arrLayers){
 			var layer = arrLayers[key];
 			if(layer.order !== undefined){
-				var zindex = layer.order+1;
+				var zindex = layer.order+100;
 				jQuery("#slide_layer_"+key).css("z-index",zindex);
 			}
 		};		
 	}
 	
-	
-	/**
-	 * update the select html, set selected option, and update events.
-	 */
-	var updateCaptionsInput = function(arrCaptions){
-		
-		jQuery("#layer_caption").autocomplete("option","source",arrCaptions);
-		
-	}
-	
-	
 	/**
 	 * get layers array
 	 */
 	t.getLayers = function(){
-		if(selectedLayerSerial != -1)
-			updateLayerFromFields();
+		if(selectedLayerSerial != -1){
+			t.updateLayerFromFields();
+		}
+		//update sizes in images
+		updateLayersImageSizes();
 		
 		return(arrLayers);
+	}
+	
+	
+	/**
+	 * update image sizes
+	 */
+	var updateLayersImageSizes = function(){
+		
+		for (serial in arrLayers){
+			var layer = arrLayers[serial];
+			if(layer.type == "image"){
+				var htmlLayer = getHtmlLayerFromSerial(serial);
+				var objUpdate = {};
+
+				objUpdate.width = htmlLayer.width(); 
+				objUpdate.height = htmlLayer.height();
+				updateLayer(serial,objUpdate);
+			}
+		}
 	}
 	
 	
@@ -609,20 +2214,26 @@ var UniteLayersRev = new function(){
 	 * refresh layer events
 	 */
 	var refreshEvents = function(serial){
+		var layer = getHtmlLayerFromSerial(serial);	
+		
+		var grid_size = jQuery('#rs-grid-sizes option:selected').val();
 		
 		//update layer events.
-		var layer = getHtmlLayerFromSerial(serial);		
 		layer.draggable({
 					drag: onLayerDrag,	//set ondrag event
-					grid: [1,1]	//set the grid to 1 pixel
+					grid: [grid_size,grid_size],	//set the grid to 1 pixel
+/*					stop: function() {
+						updateHtmlLayersFromObject(getSerialFromID(jQuery(this).attr("id")),true);
+						console.log("Stopped");
+					}*/
 				});
-
 		
 		layer.click(function(event){
 			setLayerSelected(serial);
 			event.stopPropagation();
+			setInAnimOfPreview();
 		});
-				
+		
 	}
 
 	
@@ -638,6 +2249,7 @@ var UniteLayersRev = new function(){
 	 * get serial from sortID
 	 */
 	var getSerialFromSortID = function(sortID){
+		
 		var layerSerial = sortID.replace("layer_sort_","");
 		return(layerSerial);
 	}
@@ -645,8 +2257,15 @@ var UniteLayersRev = new function(){
 	/**
 	 * get html layer from serial
 	 */
-	var getHtmlLayerFromSerial = function(serial){
-		var htmlLayer = jQuery("#slide_layer_"+serial);
+	var getHtmlLayerFromSerial = function(serial, isDemo){
+		if(!isDemo)
+			isDemo = false;
+			
+		if(!isDemo)
+			var htmlLayer = jQuery("#slide_layer_"+serial);
+		else
+			var htmlLayer = jQuery("#demo_layer_"+serial);
+			
 		if(htmlLayer.length == 0)
 			UniteAdminRev.showErrorMessage("Html Layer with serial: "+serial+" not found!");
 		
@@ -702,14 +2321,18 @@ var UniteLayersRev = new function(){
 			UniteAdminRev.showErrorMessage("setLayer error, Layer with ID:"+layerID+"not found");
 			return(false);
 		}
-		arrLayers[layerID] = layer;
+		
+		arrLayers[layerID] = jQuery.extend({},layer);
 	}
 	
 	
 	/**
 	 * make layer html, with params from the object
 	 */
-	var makeLayerHtml = function(serial,objLayer){
+	var makeLayerHtml = function(serial,objLayer,isDemo){
+		if(!isDemo)
+			isDemo = false;
+			
 		var type = "text";
 		if(objLayer.type)
 			type = objLayer.type;
@@ -717,29 +2340,64 @@ var UniteLayersRev = new function(){
 		var zIndex = Number(objLayer.order)+1;
 		
 		var style = "z-index:"+zIndex+";position:absolute;";
-		var html = '<div id="slide_layer_' + serial + '" style="' + style + '" class="slide_layer tp-caption '+objLayer.style+'" >';		
+		switch(type){
+			case 'text':
+			case 'image':
+				if(parseFloat(objLayer['2d_rotation']) !== 0){
+					style += ' -moz-transform: rotate('+objLayer['2d_rotation']+'deg); -ms-transform: rotate('+objLayer['2d_rotation']+'deg); -o-transform: rotate('+objLayer['2d_rotation']+'deg); -webkit-transform: rotate('+objLayer['2d_rotation']+'deg); transform: rotate('+objLayer['2d_rotation']+'deg);';
+					style += ' -moz-transform-origin: '+parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_x'])+'%; -ms-transform-origin: '+parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_x'])+'%; -o-transform-origin: '+parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_x'])+'%; -webkit-transform-origin: '+parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_x'])+'%; transform-origin: '+parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_x'])+'%;';
+				}
+			break;
+		}
+		
+		if(objLayer.max_width !== 'auto')
+			style += ' max-width: '+objLayer.max_width+';';
+		
+		if(objLayer.max_height !== 'auto')
+			style += ' max-height: '+objLayer.max_height+';';
+		
+		if(objLayer.whitespace !== 'normal')
+			style += ' white-space: '+objLayer.whitespace+';';
+		
+		var static_class = '';
+		
+		if(typeof objLayer.special_type !== 'undefined' && objLayer.special_type == 'static') static_class = ' static_layer';
+		
+		if(type == "image") style += "line-height:0;";
+		
+		if(!isDemo)
+			var html = '<div id="slide_layer_' + serial + '" style="' + style + '" class="slide_layer tp-caption '+objLayer.style+static_class+'" >';		
+		else
+			var html = '<div id="demo_layer_' + serial + '" style="' + style + ' display: none;" class="demo_layer demo_layer_'+curDemoSlideID+' slide_layer tp-caption '+objLayer.style+static_class+'" >';		
 		
 		//add layer specific html
 		switch(type){
 			case "image":
-				html += '<img src="'+objLayer.image_url+'" alt="'+objLayer.text+'"></img>';
+				var addStyle = '';
+				if(objLayer.scaleX != "") addStyle += "width: " + objLayer.scaleX + "px; ";
+				if(objLayer.scaleY != "") addStyle += "height: " + objLayer.scaleY + "px;";
+				
+				html += '<img src="'+objLayer.image_url+'" alt="'+objLayer.alt+'" style="'+addStyle+'"></img>';
 			break;
 			default:
 			case "text":
 				html += objLayer.text;	
 			break;
 			case "video":
-				
 				var styleVideo = "width:"+objLayer.video_width+"px;height:"+objLayer.video_height+"px;";
-				
+				if(typeof (objLayer.video_data) !== "undefined"){
+					var useImage = (jQuery.trim(objLayer.video_data.previewimage) != '') ? objLayer.video_data.previewimage : objLayer.video_image_url;
+				}else{
+					var useImage = objLayer.video_image_url;
+				}
 				switch(objLayer.video_type){
 					case "youtube":						
 					case "vimeo":
-						styleVideo += ";background-image:url("+objLayer.video_image_url+");";
+						styleVideo += ";background-image:url("+useImage+");";
 					break;
 					case "html5":
-						if(objLayer.video_image_url !== undefined && objLayer.video_image_url != "")
-							styleVideo += ";background-image:url("+objLayer.video_image_url+");";
+						if(useImage !== undefined && useImage != "")
+							styleVideo += ";background-image:url("+useImage+");";
 					break;
 				}
 				
@@ -762,9 +2420,9 @@ var UniteLayersRev = new function(){
 	 */
 	var updateLayer = function(serial,objData){
 		var layer = getLayer(serial);
-		if(!layer)
+		if(!layer){
 			return(false);
-		
+		}
 		for(key in objData){
 			layer[key] = objData[key];
 		}
@@ -789,7 +2447,7 @@ var UniteLayersRev = new function(){
 	/**
 	 * add image layer
 	 */
-	var addLayerImage = function(urlImage){
+	var addLayerImage = function(urlImage, special_type){
 		
 		objLayer = {
 			style : "",
@@ -797,7 +2455,10 @@ var UniteLayersRev = new function(){
 			type : "image",
 			image_url : urlImage
 		};
-				
+		
+		if(typeof special_type !== 'undefined')
+			objLayer['special_type'] = special_type;
+			
 		addLayer(objLayer);
 	}
 	
@@ -849,8 +2510,12 @@ var UniteLayersRev = new function(){
 	/**
 	 * add video layer
 	 */
-	var addLayerVideo = function(videoData){
+	var addLayerVideo = function(videoData, special_type){
 		var objLayer = getVideoObjLayer(videoData);
+		
+		if(typeof special_type !== 'undefined')
+			objLayer['special_type'] = special_type;
+			
 		addLayer(objLayer);
 	}
 	
@@ -858,12 +2523,15 @@ var UniteLayersRev = new function(){
 	/**
 	 * add text layer
 	 */
-	var addLayerText = function(){
+	var addLayerText = function(special_type){
 		
 		var objLayer = {
-				text:initText + (id_counter+1),
-				type:"text"
+			text:initText + (id_counter+1),
+			type:"text"
 		};
+		
+		if(typeof special_type !== 'undefined')
+			objLayer['special_type'] = special_type;
 		
 		addLayer(objLayer);
 	}
@@ -872,10 +2540,13 @@ var UniteLayersRev = new function(){
 	/**
 	 * add layer
 	 */
-	var addLayer = function(objLayer,isInit){
-		
+	var addLayer = function(objLayer,isInit,isDemo){
+	
 		if(!isInit)
 			var isInit = false;
+		
+		if(!isDemo)
+			var isDemo = false;
 		
 		//set init fields (if not set):
 		if(objLayer.order == undefined)
@@ -900,13 +2571,99 @@ var UniteLayersRev = new function(){
 				objLayer.top = initTop;	
 		}
 		
+		//set Loop Animations
+		if(objLayer.loop_animation == undefined)			
+			objLayer.loop_animation = jQuery("#layer_loop_animation option:selected").val();
+		
+		if(objLayer.loop_easing == undefined)			
+			objLayer.loop_easing = jQuery("#layer_loop_easing").val();
+		
+		if(objLayer.loop_speed == undefined)			
+			objLayer.loop_speed = jQuery("#layer_loop_speed").val();
+		
+		if(objLayer.loop_startdeg == undefined)			
+			objLayer.loop_startdeg = jQuery("#layer_loop_startdeg").val();
+		
+		if(objLayer.loop_enddeg == undefined)			
+			objLayer.loop_enddeg = jQuery("#layer_loop_enddeg").val();
+		
+		if(objLayer.loop_xorigin == undefined)			
+			objLayer.loop_xorigin = jQuery("#layer_loop_xorigin").val();
+		
+		if(objLayer.loop_yorigin == undefined)			
+			objLayer.loop_yorigin = jQuery("#layer_loop_yorigin").val();
+		
+		if(objLayer.loop_xstart == undefined)			
+			objLayer.loop_xstart = jQuery("#layer_loop_xstart").val();
+		
+		if(objLayer.loop_xend == undefined)			
+			objLayer.loop_xend = jQuery("#layer_loop_xend").val();
+		
+		if(objLayer.loop_ystart == undefined)			
+			objLayer.loop_ystart = jQuery("#layer_loop_ystart").val();
+		
+		if(objLayer.loop_yend == undefined)			
+			objLayer.loop_yend = jQuery("#layer_loop_yend").val();
+		
+		if(objLayer.loop_zoomstart == undefined)			
+			objLayer.loop_zoomstart = jQuery("#layer_loop_zoomstart").val();
+		
+		if(objLayer.loop_zoomend == undefined)			
+			objLayer.loop_zoomend = jQuery("#layer_loop_zoomend").val();
+		
+		if(objLayer.loop_angle == undefined)			
+			objLayer.loop_angle = jQuery("#layer_loop_angle").val();
+		
+		if(objLayer.loop_radius == undefined)			
+			objLayer.loop_radius = jQuery("#layer_loop_radius").val();
+		
+		
 		//set animation:
 		if(objLayer.animation == undefined)			
-			objLayer.animation = jQuery("#layer_animation").val();
+			objLayer.animation = jQuery("#layer_animation option:selected").val();
 		
 		//set easing:
 		if(objLayer.easing == undefined)
 			objLayer.easing = jQuery("#layer_easing").val();
+		
+		if(objLayer.split == undefined)
+			objLayer.split = jQuery("#layer_split").val();
+		
+		if(objLayer.endsplit == undefined)
+			objLayer.endsplit = jQuery("#layer_endsplit").val();
+		
+		if(objLayer.splitdelay == undefined)
+			objLayer.splitdelay = jQuery("#layer_splitdelay").val();
+			
+		if(objLayer.endsplitdelay == undefined)
+			objLayer.endsplitdelay = jQuery("#layer_endsplitdelay").val();
+		
+		if(objLayer.max_height == undefined)
+			objLayer.max_height = jQuery("#layer_max_height").val();
+		
+		if(objLayer.max_width == undefined)
+			objLayer.max_width = jQuery("#layer_max_width").val();
+		
+		if(objLayer['2d_rotation'] == undefined)
+			objLayer['2d_rotation'] = jQuery("#layer_2d_rotation").val();
+		
+		if(objLayer['2d_origin_x'] == undefined)
+			objLayer['2d_origin_x'] = jQuery("#layer_2d_origin_x").val();
+		
+		if(objLayer['2d_origin_y'] == undefined)
+			objLayer['2d_origin_y'] = jQuery("#layer_2d_origin_x").val();
+		
+		if(objLayer.parallax_level == undefined)
+			objLayer.parallax_level = jQuery("#parallax_level").val();
+		
+		if(objLayer.whitespace == undefined)
+			objLayer.whitespace = jQuery("#layer_whitespace option:selected").val();
+		
+		if(objLayer.static_start == undefined)
+			objLayer.static_start = jQuery("#layer_static_start option:selected").val();
+		
+		if(objLayer.static_end == undefined)
+			objLayer.static_end = jQuery("#layer_static_end option:selected").val();
 		
 		//set speed:
 		if(objLayer.speed == undefined)			
@@ -923,7 +2680,7 @@ var UniteLayersRev = new function(){
 			objLayer.hiddenunder = "";	
 
 		if(objLayer.resizeme == undefined)			
-			objLayer.resizeme = "";		
+			objLayer.resizeme = "true";		
 		
 		//set image link
 		if(objLayer.link == undefined)
@@ -979,22 +2736,31 @@ var UniteLayersRev = new function(){
 		if(objLayer.corner_right == undefined)			
 			objLayer.corner_right = "nothing";
 		
+		if(objLayer.width == undefined)			
+			objLayer.width = -1;
+		objLayer.width = Number(objLayer.width);
+
+		if(objLayer.height == undefined)			
+			objLayer.height = -1;
+		objLayer.height = Number(objLayer.height);
+		
 		//round position
 		objLayer.top = Math.round(objLayer.top);
 		objLayer.left = Math.round(objLayer.left);
 		
 		objLayer.serial = id_counter;
 		
-		arrLayers[id_counter] = objLayer;
+		if(!isDemo)
+			arrLayers[id_counter] = jQuery.extend({},objLayer);
 		
 		//add html
-		var htmlLayer = makeLayerHtml(id_counter,objLayer);
+		var htmlLayer = makeLayerHtml(id_counter,objLayer,isDemo);
 		container.append(htmlLayer);
 		
-		var objHtmlLayer = getHtmlLayerFromSerial(id_counter);
+		var objHtmlLayer = getHtmlLayerFromSerial(id_counter,isDemo);
 		
 		//update layer position
-		updateHtmlLayerPosition(objHtmlLayer,objLayer.top,objLayer.left,objLayer.align_hor,objLayer.align_vert);
+		updateHtmlLayerPosition(isInit,objHtmlLayer,objLayer,objLayer.top,objLayer.left,objLayer.align_hor,objLayer.align_vert);
 		
 		//update corners
 		updateHtmlLayerCorners(objHtmlLayer,objLayer);
@@ -1003,21 +2769,24 @@ var UniteLayersRev = new function(){
 		updateCrossIconPosition(objHtmlLayer,objLayer);
 		
 		//add layer to sortbox
-		addToSortbox(id_counter,objLayer);
+		if(!isDemo)
+			addToSortbox(id_counter,objLayer);
 		
 		//refresh draggables
-		refreshEvents(id_counter);
+		if(!isDemo)
+			refreshEvents(id_counter);
+		
 		id_counter++;
 		
 		//enable "delete all" button, not event, but anyway :)
 		jQuery("#button_delete_all").removeClass("button-disabled");
 		
 		//select the layer
-		if(isInit == false){
+		if(isInit == false && !isDemo){
 			setLayerSelected(objLayer.serial);
 			jQuery("#layer_text").focus();
 		}
-				
+		
 	}
 	
 	
@@ -1040,7 +2809,7 @@ var UniteLayersRev = new function(){
 		if(flagFound == false)
 			UniteAdminRev.showErrorMessage("Can't delete layer, serial: "+serial+" not found");
 		
-		arrLayers = arrLayersNew;
+		arrLayers = jQuery.extend({},arrLayersNew);
 	}
 	
 	/**
@@ -1092,6 +2861,7 @@ var UniteLayersRev = new function(){
 		
 		addLayer(obj2);
 		redrawSortbox();
+		initDisallowCaptionsOnClick();
 	}
 	
 	
@@ -1118,6 +2888,32 @@ var UniteLayersRev = new function(){
 		
 		disableFormFields();
 		jQuery("#button_delete_all").addClass("button-disabled");		
+		
+		//add all layers from init
+		if(initDemoLayers){
+			var len = initDemoLayers.length;
+			if(len){
+				for(var i=0;i<len;i++){
+					for(var key in initDemoLayers[i]){
+						curDemoSlideID = i;
+						addLayer(initDemoLayers[i][key],true,true);
+					}
+				}
+			}else{
+				for(var i in initDemoLayers){
+					for(var key in initDemoLayers[i]){
+						curDemoSlideID = i;
+						addLayer(initDemoLayers[i][key],true,true);
+					}
+				}
+			}
+			
+			jQuery('select[name="rev_show_the_slides"] option[value="none"]').attr("selected","selected");
+			jQuery("#divLayers-wrapper").addClass("trans_bg");
+			jQuery("#divLayers-wrapper").css("background-image","none");
+			jQuery("#divLayers-wrapper").css("background-color","transparent");
+		}
+		
 	}
 	
 	/**
@@ -1190,6 +2986,7 @@ var UniteLayersRev = new function(){
 		var crossHalfW = Math.round(crossWidth / 2);
 		var crossHalfH = Math.round(crossHeight / 2);
 		
+
 		var posx = 0;
 		var posy = 0;
 		switch(objLayer.align_hor){
@@ -1223,29 +3020,43 @@ var UniteLayersRev = new function(){
 	/**
 	 * update html layer position
 	 */
-	var updateHtmlLayerPosition = function(htmlLayer,top,left,align_hor,align_vert){
+	var updateHtmlLayerPosition = function(isInit,htmlLayer,objLayer,top,left,align_hor,align_vert){
 		
 		//update positions by align
-		var width = htmlLayer.width();
-		var height = htmlLayer.height();
+		var width = htmlLayer.outerWidth();
+		var height = htmlLayer.outerHeight();
+		
+
+		//get sizes from saved if on get
+		if(isInit == true && objLayer.type == "image"){
+			if(objLayer.width != -1)
+				width = objLayer.width;
+			
+			if(objLayer.height != -1)
+				height = objLayer.height;
+		}
+		
 		var totalWidth = container.width();
 		var totalHeight = container.height();
 		
-		var objCss = {};
+
 		
+		var objCss = {};
+
 		//handle horizontal
 		switch(align_hor){
 			default:
 			case "left":
 				objCss["right"] = "auto";
 				objCss["left"] = left+"px";
+
 			break;
 			case "right":
 				objCss["left"] = "auto";
 				objCss["right"] = left+"px"; 
 			break;
 			case "center":
-				var realLeft = (totalWidth - width)/2;
+				var realLeft = (totalWidth - width)/2;				
 				realLeft = Math.round(realLeft) + left;
 				objCss["left"] = realLeft + "px";
 				objCss["right"] = "auto";
@@ -1271,9 +3082,9 @@ var UniteLayersRev = new function(){
 			break;
 		}		
 		
+
 		//objCss["top"] = top+"px";		
 		//objCss["top"] = top+"px";		
-		
 		htmlLayer.css(objCss);
 	}
 	
@@ -1286,15 +3097,16 @@ var UniteLayersRev = new function(){
 		if(objLayer.type != "video")
 			return(objLayer);
 		
-		if(objLayer.video_data && objLayer.video_data.fullwidth && objLayer.video_data.fullwidth == true){
-			objLayer.top = 0;
-			objLayer.left = 0;
-			objLayer.align_hor = "left";
-			objLayer.align_vert = "top";
-			objLayer.video_width = container.width();
-			objLayer.video_height = container.height();
+		if(typeof (objLayer.video_data) !== "undefined"){
+			if(objLayer.video_data && objLayer.video_data.fullwidth && objLayer.video_data.fullwidth == true){
+				objLayer.top = 0;
+				objLayer.left = 0;
+				objLayer.align_hor = "left";
+				objLayer.align_vert = "top";
+				objLayer.video_width = container.width();
+				objLayer.video_height = container.height();
+			}
 		}
-				
 		return(objLayer);
 	}
 	
@@ -1302,7 +3114,7 @@ var UniteLayersRev = new function(){
 	/**
 	 * update html layers from object
 	 */
-	var updateHtmlLayersFromObject = function(serial){
+	var updateHtmlLayersFromObject = function(serial,posresets){
 		if(!serial)
 			serial = selectedLayerSerial
 			
@@ -1342,16 +3154,28 @@ var UniteLayersRev = new function(){
 		}
 		
 		//set position
-		updateHtmlLayerPosition(htmlLayer,objLayer.top,objLayer.left,objLayer.align_hor,objLayer.align_vert);
+		// KRISZTIAN REMOVED THE CALL BASED ON DRAG ISSUES
+		if (posresets)	
+			updateHtmlLayerPosition(false,htmlLayer,objLayer,objLayer.top,objLayer.left,objLayer.align_hor,objLayer.align_vert);
 		
 		updateCrossIconPosition(htmlLayer,objLayer);		
 	}
 	
+	/**
+	 THE CHANGE OF POSITION FIELD TRIGGERS THE REPOSITIONINNG OF THE LAYER
+	**/
+	var positionChanged = function() {
+		jQuery("#layer_top, #layer_left").change(function() {
+			setTimeout(function() {
+				updateHtmlLayersFromObject(getSerialFromID(jQuery('.layer_selected').attr('id')),true);	
+			},19);
+		});
+	}
 	
 	/**
 	 * update layer from html fields
 	 */
-	var updateLayerFromFields = function(){
+	t.updateLayerFromFields = function(){
 		
 		if(selectedLayerSerial == -1){
 			UniteAdminRev.showErrorMessage("No layer selected, can't update.");
@@ -1359,23 +3183,70 @@ var UniteLayersRev = new function(){
 		}
 		
 		var objUpdate = {};
-		
+	
+
+
 		objUpdate.style = jQuery("#layer_caption").val();
 		objUpdate.text = jQuery("#layer_text").val();
 		objUpdate.top = Number(jQuery("#layer_top").val());
-		objUpdate.left = Number(jQuery("#layer_left").val());				
-		objUpdate.animation = jQuery("#layer_animation").val();		
+		objUpdate.left = Number(jQuery("#layer_left").val());
+		
+		objUpdate.max_height = jQuery("#layer_max_height").val();
+		objUpdate.max_width = jQuery("#layer_max_width").val();
+		objUpdate.parallax_level = jQuery("#parallax_level").val();
+		objUpdate['2d_rotation'] = jQuery("#layer_2d_rotation").val();
+		objUpdate['2d_origin_x'] = jQuery("#layer_2d_origin_x").val();
+		objUpdate['2d_origin_y'] = jQuery("#layer_2d_origin_y").val();
+		objUpdate['static_start'] = jQuery("#layer_static_start option:selected").val();
+		objUpdate['static_end'] = jQuery("#layer_static_end option:selected").val();
+		objUpdate.whitespace = jQuery("#layer_whitespace option:selected").val();
+
+		//set Loop Animations
+		objUpdate.loop_animation = jQuery("#layer_loop_animation option:selected").val();
+		objUpdate.loop_easing = jQuery("#layer_loop_easing").val();
+		objUpdate.loop_speed = jQuery("#layer_loop_speed").val();
+		objUpdate.loop_startdeg = jQuery("#layer_loop_startdeg").val();
+		objUpdate.loop_enddeg = jQuery("#layer_loop_enddeg").val();
+		objUpdate.loop_xorigin = jQuery("#layer_loop_xorigin").val();
+		objUpdate.loop_yorigin = jQuery("#layer_loop_yorigin").val();
+		objUpdate.loop_xstart = jQuery("#layer_loop_xstart").val();
+		objUpdate.loop_xend = jQuery("#layer_loop_xend").val();
+		objUpdate.loop_ystart = jQuery("#layer_loop_ystart").val();
+		objUpdate.loop_yend = jQuery("#layer_loop_yend").val();
+		objUpdate.loop_zoomstart = jQuery("#layer_loop_zoomstart").val();
+		objUpdate.loop_zoomend = jQuery("#layer_loop_zoomend").val();
+		objUpdate.loop_angle = jQuery("#layer_loop_angle").val();
+		objUpdate.loop_radius = jQuery("#layer_loop_radius").val();
+		
+		objUpdate.animation = jQuery("#layer_animation option:selected").val();
 		objUpdate.speed = jQuery("#layer_speed").val();
 		objUpdate.align_hor = jQuery("#layer_align_hor").val();
 		objUpdate.align_vert = jQuery("#layer_align_vert").val();
 		objUpdate.hiddenunder = jQuery("#layer_hidden").is(":checked");
 		objUpdate.resizeme = jQuery("#layer_resizeme").is(":checked");		
 		objUpdate.easing = jQuery("#layer_easing").val();
+		objUpdate.split = jQuery("#layer_split").val();
+		objUpdate.endsplit = jQuery("#layer_endsplit").val();
+		objUpdate.splitdelay = jQuery("#layer_splitdelay").val();
+		objUpdate.endsplitdelay = jQuery("#layer_endsplitdelay").val();
 		objUpdate.link_slide = jQuery("#layer_slide_link").val();
 		objUpdate.scrollunder_offset = jQuery("#layer_scrolloffset").val();		
+		objUpdate.alt = jQuery("#layer_alt").val();	
+		objUpdate.scaleX = jQuery("#layer_scaleX").val();
+		objUpdate.scaleY = jQuery("#layer_scaleY").val();
+		objUpdate.scaleProportional = jQuery("#layer_proportional_scale").is(":checked");	
 		
+		objUpdate.attrID = jQuery("#layer_id").val();
+		objUpdate.attrClasses = jQuery("#layer_classes").val();
+		objUpdate.attrTitle = jQuery("#layer_title").val();
+		objUpdate.attrRel = jQuery("#layer_rel").val();
 		objUpdate.link = jQuery("#layer_image_link").val();
 		objUpdate.link_open_in = jQuery("#layer_link_open_in").val();
+		objUpdate.link_id = jQuery("#layer_link_id").val();
+		objUpdate.link_class = jQuery("#layer_link_class").val();
+		objUpdate.link_title = jQuery("#layer_link_title").val();
+		objUpdate.link_rel = jQuery("#layer_link_rel").val();
+		
 		
 		objUpdate.endtime = jQuery("#layer_endtime").val();				
 		objUpdate.endanimation = jQuery("#layer_endanimation").val();				
@@ -1397,6 +3268,28 @@ var UniteLayersRev = new function(){
 		//update the timeline with the new data
 		updateCurrentLayerTimeline();
 		
+		UniteCssEditorRev.setCssPreviewLive();
+		
+		//event on element for href
+		initDisallowCaptionsOnClick();
+		
+		
+		var type = "text";
+		if(objLayer.type)
+			type = objLayer.type;
+
+		switch(type){
+			case 'text':
+			case 'image':
+				var rotation = parseFloat(objLayer['2d_rotation']);
+				punchgs.TweenLite.set(jQuery('#slide_layer_' + selectedLayerSerial),{rotationZ:rotation,transformOrigin:parseFloat(objLayer['2d_origin_x'])+'% '+parseFloat(objLayer['2d_origin_y']+'%')});
+			break;
+		}
+		
+		jQuery('#slide_layer_' + selectedLayerSerial).css('max-width', objLayer.max_width);
+		jQuery('#slide_layer_' + selectedLayerSerial).css('max-height', objLayer.max_height);
+		jQuery('#slide_layer_' + selectedLayerSerial).css('white-space', objLayer.whitespace);
+		
 	}
 	
 	
@@ -1405,7 +3298,7 @@ var UniteLayersRev = new function(){
 	 */
 	var redrawLayerHtml = function(serial){
 		
-		var objLayer = getLayer(serial);		
+		var objLayer = getLayer(serial);
 		var html = makeLayerHtml(serial,objLayer)
 		var htmlInner = jQuery(html).html();
 		var htmlLayer = getHtmlLayerFromSerial(serial);
@@ -1418,15 +3311,62 @@ var UniteLayersRev = new function(){
 	 * update layer parameters from the object
 	 */
 	var updateLayerFormFields = function(serial){
+	
 		var objLayer = arrLayers[serial];
+
 		
 		jQuery("#layer_caption").val(objLayer.style);
-		jQuery("#layer_text").val(objLayer.text);
+		jQuery("#layer_text").val(UniteAdminRev.stripslashes(objLayer.text));
+		jQuery("#layer_alt").val(objLayer.alt);
+		jQuery("#layer_scaleX").val(objLayer.scaleX);
+		jQuery("#layer_scaleY").val(objLayer.scaleY);
+		
+		jQuery("#layer_max_height").val(objLayer.max_height);
+		jQuery("#layer_max_width").val(objLayer.max_width);
+		jQuery("#layer_2d_rotation").val(objLayer['2d_rotation']);
+		jQuery("#layer_2d_origin_x").val(objLayer['2d_origin_x']);
+		jQuery("#layer_2d_origin_y").val(objLayer['2d_origin_y']);
+		
+		jQuery("#layer_static_start option[value='"+objLayer.static_start+"']").attr('selected', 'selected');
+		changeEndStaticFunctions();
+		jQuery("#layer_static_end option[value='"+objLayer.static_end+"']").attr('selected', 'selected');
+		
+		jQuery("#parallax_level").val(objLayer.parallax_level);
+		jQuery("#layer_whitespace option[value='"+objLayer.whitespace+"']").attr('selected', 'selected');
+		
+		if(objLayer.scaleProportional == "true" || objLayer.scaleProportional == true)
+			jQuery("#layer_proportional_scale").prop("checked",true);
+		else
+			jQuery("#layer_proportional_scale").prop("checked",false);
 		jQuery("#layer_top").val(objLayer.top);
 		jQuery("#layer_left").val(objLayer.left);
-		jQuery("#layer_animation").val(objLayer.animation);
+		
+		//set Loop Animations
+		jQuery("#layer_loop_animation option[value='"+objLayer.loop_animation+"']").attr('selected', 'selected');
+		jQuery("#layer_loop_easing").val(objLayer.loop_easing);
+		jQuery("#layer_loop_speed").val(objLayer.loop_speed);
+		jQuery("#layer_loop_startdeg").val(objLayer.loop_startdeg);
+		jQuery("#layer_loop_enddeg").val(objLayer.loop_enddeg);
+		jQuery("#layer_loop_xorigin").val(objLayer.loop_xorigin);
+		jQuery("#layer_loop_yorigin").val(objLayer.loop_yorigin);
+		jQuery("#layer_loop_xstart").val(objLayer.loop_xstart);
+		jQuery("#layer_loop_xend").val(objLayer.loop_xend);
+		jQuery("#layer_loop_ystart").val(objLayer.loop_ystart);
+		jQuery("#layer_loop_yend").val(objLayer.loop_yend);
+		jQuery("#layer_loop_zoomstart").val(objLayer.loop_zoomstart);
+		jQuery("#layer_loop_zoomend").val(objLayer.loop_zoomend);
+		jQuery("#layer_loop_angle").val(objLayer.loop_angle);
+		jQuery("#layer_loop_radius").val(objLayer.loop_radius);
+		
+		jQuery("#layer_animation option[value='"+objLayer.animation+"']").attr('selected', 'selected');
 		
 		jQuery("#layer_easing").val(objLayer.easing);
+		
+		jQuery("#layer_split").val(objLayer.split);
+		jQuery("#layer_endsplit").val(objLayer.endsplit);
+		jQuery("#layer_splitdelay").val(objLayer.splitdelay);
+		jQuery("#layer_endsplitdelay").val(objLayer.endsplitdelay);
+		
 		jQuery("#layer_slide_link").val(objLayer.link_slide);
 		jQuery("#layer_scrolloffset").val(objLayer.scrollunder_offset);
 		
@@ -1446,7 +3386,12 @@ var UniteLayersRev = new function(){
 		
 		jQuery("#layer_image_link").val(objLayer.link);
 		jQuery("#layer_link_open_in").val(objLayer.link_open_in);
+		jQuery("#layer_link_id").val(objLayer.link_id);
+		jQuery("#layer_link_class").val(objLayer.link_class);
+		jQuery("#layer_link_title").val(objLayer.link_title);
+		jQuery("#layer_link_rel").val(objLayer.link_rel);
 		
+
 		jQuery("#layer_endtime").val(objLayer.endtime);
 		jQuery("#layer_endanimation").val(objLayer.endanimation);
 		jQuery("#layer_endeasing").val(objLayer.endeasing);
@@ -1455,14 +3400,25 @@ var UniteLayersRev = new function(){
 		//set advanced params
 		jQuery("#layer_cornerleft").val(objLayer.corner_left);
 		jQuery("#layer_cornerright").val(objLayer.corner_right);
-				
+		
 		//set align table
 		var alignClass = "#linkalign_"+objLayer.align_hor+"_"+objLayer.align_vert;
 		jQuery("#align_table a").removeClass("selected");
 		jQuery(alignClass).addClass("selected");
 		
+		jQuery("#layer_id").val(objLayer.attrID);
+		jQuery("#layer_classes").val(objLayer.attrClasses);
+		jQuery("#layer_title").val(objLayer.attrTitle);
+		jQuery("#layer_rel").val(objLayer.attrRel);
+		
+		
+	
+		
 		//show / hide go under slider offset row
-		showHideOffsetRow();
+		showHideOffsetRow();	
+		showHideLoopFunctions(); //has to be the last thing done to not interrupt settings
+		
+
 	}
 	
 	
@@ -1482,14 +3438,26 @@ var UniteLayersRev = new function(){
 		unselectSortboxItems();
 		selectedLayerSerial = -1;
 		disableFormFields();
-		hideLayerTimeline();
+
 		
 		//reset elements
+		jQuery("#layer_alt_row").hide();
+		jQuery("#layer_scale_title_row").hide();
+		jQuery("#layer_max_width_row").hide();
+		jQuery("#layer_max_height_row").hide();
+		jQuery("#layer_whitespace_row").hide();
+		jQuery("#layer_scaleX_row").hide();
+		jQuery("#layer_scaleY_row").hide();
+		jQuery("#layer_proportional_scale_row").hide();
 		jQuery("#button_edit_video_row").hide();
 		jQuery("#button_change_image_source_row").hide();
 		jQuery("#layer_text").css("height","80px");
 		
 		jQuery("#layer_image_link_row").hide();
+		jQuery("#layer_link_id_row").hide();
+		jQuery("#layer_link_class_row").hide();
+		jQuery("#layer_link_title_row").hide();
+		jQuery("#layer_link_rel_row").hide();
 		jQuery("#layer_link_open_in_row").hide();
 	}
 	
@@ -1499,10 +3467,13 @@ var UniteLayersRev = new function(){
 	 */
 	var setLayerSelected = function(serial){
 		
+
 		if(selectedLayerSerial == serial)
 			return(false);
 		
+
 		objLayer = getLayer(serial);
+
 		
 		var layer = getHtmlLayerFromSerial(serial);
 		
@@ -1511,48 +3482,82 @@ var UniteLayersRev = new function(){
 		
 		//set selected class
 		layer.addClass("layer_selected");
-						
+		
 		setSortboxItemSelected(serial);
 		
 		//update selected serial var
 		selectedLayerSerial = serial;
-		
 		//update bottom fields
 		updateLayerFormFields(serial);
-		
+
 		//enable form fields
 		enableFormFields();
-				
+
+		
 		//do specific operations depends on type
 		switch(objLayer.type){
 			case "video":	//show edit video button
 				jQuery("#linkInsertButton").addClass("disabled");
+				jQuery("#linkInsertTemplate").addClass("disabled");
 				jQuery("#button_edit_video_row").show();
 				
 				jQuery("#layer_text").css("height","25px");
+				
+				jQuery("#layer_2d_rotation_row").hide();
+				jQuery("#layer_2d_origin_x_row").hide();
+				jQuery("#layer_2d_origin_y_row").hide();
+				jQuery("#layer_2d_title_row").hide();				
 			break;
 			case "image":	
 				//disable the insert button
 				jQuery("#linkInsertButton").addClass("disabled");
+				jQuery("#linkInsertTemplate").addClass("disabled");
 				
 				//show / hide some elements
+				jQuery("#layer_alt_row").show();
+				jQuery("#layer_scale_title_row").show();
+				jQuery("#layer_scaleX_row").show();
+				jQuery("#layer_scaleY_row").show();
+				//initScaleImage();
+				jQuery("#layer_proportional_scale_row").show();
 				jQuery("#button_change_image_source_row").show();
 				jQuery("#layer_text").css("height","25px");
 				jQuery("#layer_image_link_row").show();
 				jQuery("#layer_link_open_in_row").show();
+				jQuery("#layer_link_id_row").show();
+				jQuery("#layer_link_class_row").show();
+				jQuery("#layer_link_title_row").show();
+				jQuery("#layer_link_rel_row").show();
+				jQuery("#layer_2d_rotation_row").show();
+				jQuery("#layer_2d_origin_x_row").show();
+				jQuery("#layer_2d_origin_y_row").show();
 			break;
 			default:  //set layer text to default height
 				jQuery("#layer_text").css("height","80px");
+				jQuery("#layer_max_width_row").show();
+				jQuery("#layer_max_height_row").show();
+				jQuery("#layer_whitespace_row").show();
+				jQuery("#layer_2d_rotation_row").show();
+				jQuery("#layer_2d_origin_x_row").show();
+				jQuery("#layer_2d_origin_y_row").show();
 			break;
 		}
 		
+		
+
 		//hide edit video button
 		if(objLayer.type != "video"){
 			jQuery("#button_edit_video_row").hide();
 		}
 		
+
 		//hide image layer related fields
-		if(objLayer.type != "image"){			
+		if(objLayer.type != "image"){
+			jQuery("#layer_alt_row").hide();
+			jQuery("#layer_scale_title_row").hide();
+			jQuery("#layer_scaleX_row").hide();
+			jQuery("#layer_scaleY_row").hide();
+			jQuery("#layer_proportional_scale_row").hide();
 			jQuery("#layer_image_link_row").hide();
 			jQuery("#layer_link_open_in_row").hide();
 			jQuery("#button_change_image_source_row").hide();
@@ -1563,10 +3568,16 @@ var UniteLayersRev = new function(){
 			jQuery("#layer_cornerleft_row").show();
 			jQuery("#layer_cornerright_row").show();
 			jQuery("#layer_resizeme_row").show();
+			jQuery("#layer_max_width_row").show();
+			jQuery("#layer_max_height_row").show();
+			jQuery("#layer_whitespace_row").show();
 		}else{
 			jQuery("#layer_cornerleft_row").hide();
 			jQuery("#layer_cornerright_row").hide();
 			jQuery("#layer_resizeme_row").hide();
+			jQuery("#layer_max_width_row").hide();
+			jQuery("#layer_max_height_row").hide();
+			jQuery("#layer_whitespace_row").hide();
 		}
 						
 			
@@ -1580,9 +3591,8 @@ var UniteLayersRev = new function(){
 		updateCurrentLayerTimeline();
 		
 		//set focus to text editor
-		jQuery("#layer_text").focus();
+		//jQuery("#layer_text").focus();
 	}
-	
 	
 	/**
 	 * 
@@ -1591,7 +3601,7 @@ var UniteLayersRev = new function(){
 	var isLayerSelected = function(serial){
 		return(serial == selectedLayerSerial);
 	}
-
+	
 	/**
 	 * hide in html and sortbox
 	 */
@@ -1622,7 +3632,7 @@ var UniteLayersRev = new function(){
 	
 	
 	/**
-	 * hide all layers
+	 * show all layers
 	 */
 	var showAllLayers = function(){
 		for (serial in arrLayers)
@@ -1635,6 +3645,23 @@ var UniteLayersRev = new function(){
 	var hideAllLayers = function(){
 		for (serial in arrLayers)
 			hideLayer(serial,true);
+	}
+	
+	/**
+	 * hide in html and sortbox
+	 */
+	var lockAllLayers = function(serial){
+		for (serial in arrLayers)	
+			lockLayer(serial);
+	}
+	
+	
+	/**
+	 * show layer in html and sortbox
+	 */
+	var unlockAllLayers = function(serial){
+		for (serial in arrLayers)	
+			unlockLayer(serial);
 	}
 		
 		
@@ -1658,6 +3685,47 @@ var UniteLayersRev = new function(){
 		
 		return(true);
 	}
+	
+		
+	/**
+	 * get true / false if the layer can be moved
+	 */
+	var isLayerLocked = function(serial){
+		var htmlLayer = jQuery("#slide_layer_"+serial);
+		var isLocked = htmlLayer.attr('aria-disabled');
+		
+		if(typeof(isLocked) == 'undefined')
+			return false;
+		else
+			return (isLocked == 'false') ? false : true;
+	}
+	
+	
+	/**
+	 * hide in html and sortbox
+	 */
+	var lockLayer = function(serial){
+		setSortboxItemLocked(serial);
+		
+		var layer = getHtmlLayerFromSerial(serial);	
+		layer.draggable('disable');
+	}
+	
+	
+	/**
+	 * show layer in html and sortbox
+	 */
+	var unlockLayer = function(serial){
+		setSortboxItemUnlocked(serial);
+		
+		var layer = getHtmlLayerFromSerial(serial);	
+		layer.draggable('enable');
+	}
+	
+	
+
+	
+	
 	
 	
 //======================================================
@@ -1689,38 +3757,21 @@ var UniteLayersRev = new function(){
 			onSortboxTimeChange(jQuery(this));
 		});
 		
-		/*
-		//set input depth events:
-		jQuery("#sortlist").delegate(".sortbox_depth","keyup",function(event){
-			if(event.keyCode == 13)
-				onSortboxDepthChange(jQuery(this));
-		});
 		
-		jQuery("#sortlist").delegate(".sortbox_depth","blur",function(event){
-			onSortboxDepthChange(jQuery(this));
-		});
-		*/
-
-		jQuery("#sortlist").delegate(".sortbox_depth","focus",function(event){
-			jQuery(this).blur();
-		});
 		
+				
 		//set click event
 		jQuery("#sortlist").delegate("li","mousedown",function(){
+		
 			var serial = getSerialFromSortID(this.id);
 			setLayerSelected(serial);
 		});
 		
-		//sort type buttons events
-		jQuery(".button_sorttype").click(function(){
-			var mode = this.id.replace("button_sort_","");
-			changeSortmode(mode);
-		});
 		
 		//on show / hide layer icon click - show / hide layer
 		jQuery("#sortlist").delegate(".sortbox_eye","mousedown",function(event){
-			
-			var sortboxID = jQuery(this).parent().attr("id");
+
+			var sortboxID = jQuery(this).parent().parent().parent().attr("id");
 			var serial = getSerialFromSortID(sortboxID);
 			if(isLayerVisible(serial))
 				hideLayer(serial);
@@ -1728,6 +3779,20 @@ var UniteLayersRev = new function(){
 				showLayer(serial);
 			
 			//prevnt the layer from selecting
+			event.stopPropagation();
+		});
+		
+		//on show / hide layer icon click - show / hide layer
+		jQuery("#sortlist").delegate(".sortbox_lock","mousedown",function(event){
+			
+			var sortboxID = jQuery(this).parent().parent().parent().attr("id");
+			var serial = getSerialFromSortID(sortboxID);
+			if(isLayerLocked(serial))
+				unlockLayer(serial);
+			else
+				lockLayer(serial);
+
+			//prevent the layer from selecting
 			event.stopPropagation();
 		});
 		
@@ -1744,6 +3809,47 @@ var UniteLayersRev = new function(){
 			}
 				
 		});
+		
+		//Lock / Unlock all layers
+		jQuery("#button_sort_lock").click(function(){
+			var button = jQuery(this);
+			if(button.hasClass("e-disabled")){	//show all
+				button.removeClass("e-disabled");
+				unlockAllLayers();
+			}else{	//hide all
+				button.addClass("e-disabled");
+				lockAllLayers();
+			}				
+		});
+
+		//on show / hide layer icon click - show / hide layer
+		jQuery("#sortlist").delegate(".till_slideend","mousedown",function(event){
+
+			var sortboxID = jQuery(this).parent().parent().parent().attr("id");
+			var serial = getSerialFromSortID(sortboxID);
+			var objLayer = getLayer(serial);
+			
+			var button = jQuery(this);
+
+			if (button.hasClass("tillendon")) {
+				button.removeClass("tillendon")
+				// KRIKI
+
+				if (objLayer.realEndTime == g_slideTime) {
+					objLayer.realEndTime = g_slideTime - 200;
+					button.closest('li').find('.sortbox_timeend').val(g_slideTime-200);
+					updateCurrentLayerTimeline();						
+				}
+			} else {
+				button.addClass("tillendon");
+				objLayer.realEndTime = g_slideTime;				
+				button.closest('li').find('.sortbox_timeend').val(g_slideTime);
+				updateCurrentLayerTimeline();								
+			}
+
+
+		});
+
 		
 	}
 	
@@ -1775,37 +3881,23 @@ var UniteLayersRev = new function(){
 		sortItem.removeClass("sortitem-hidden");
 	}
 	
+	/**
+	 * set sortbox item locked mode
+	 */
+	var setSortboxItemLocked = function(serial){
+		var sortItem = getHtmlSortItemFromSerial(serial);
+		sortItem.addClass("sortitem-locked");
+	}
 	
 	/**
-	 * 
-	 * change sortmode, display the changes
+	 * set sortbox item unlocked mode
 	 */
-	var changeSortmode = function(mode){
-		
-		if(mode != "depth" && mode != "time"){
-			trace("wrong mode: "+mode);
-		}
-		if(sortMode == mode)
-			return(false);
-		
-		sortMode = mode;
-		
-		redrawSortbox();
-
-		//change to time mode
-		if(sortMode == "time"){
-			
-			jQuery("#button_sort_time").removeClass("ui-state-hover").addClass("ui-state-active");
-			jQuery("#button_sort_depth").removeClass("ui-state-active").addClass("ui-state-hover");	
-			
-		}else{	//change to depth mode
-			
-			jQuery("#button_sort_depth").removeClass("ui-state-hover").addClass("ui-state-active");
-			jQuery("#button_sort_time").removeClass("ui-state-active").addClass("ui-state-hover");
-			
-			updateOrderFromSortbox();
-		}
+	var setSortboxItemUnlocked = function(serial){
+		var sortItem = getHtmlSortItemFromSerial(serial);
+		sortItem.removeClass("sortitem-locked");
 	}
+	
+	
 	
 	
 	/**
@@ -1813,7 +3905,17 @@ var UniteLayersRev = new function(){
 	 * add layer to sortbox
 	 */
 	var addToSortbox = function(serial,objLayer){
+
 		
+		if (objLayer.realEndTime=="undefined" || objLayer.realEndTime==undefined) 
+			objLayer = getLayerExtendedParams(objLayer);
+
+		var endslideclass = "";	
+		if (objLayer.endSpeed ==0 || objLayer.endSpeed == undefined || objLayer.realEndTime >= g_slideTime || objLayer.endWithSlide) {
+			objLayer.endWithSlide = true;
+			var endslideclass = "tillendon";			
+		}
+
 		var isVisible = isLayerVisible(serial);
 		var classLI = "";
 		if(isVisible == false)
@@ -1822,15 +3924,252 @@ var UniteLayersRev = new function(){
 		var sortboxText = getSortboxText(objLayer.text);
 		var depth = Number(objLayer.order)+1;
 		
-		var htmlSortbox = '<li id="layer_sort_'+serial+'" class="ui-state-default'+classLI+'"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>';
-		htmlSortbox += '<span class="sortbox_text">' + sortboxText + '</span>';
-		htmlSortbox += '<div class="sortbox_eye"></div>';
-		htmlSortbox += '<input type="text" class="sortbox_time" title="Edit Timeline" value="'+objLayer.time+'">';
+		var htmlSortbox = '<li id="layer_sort_'+serial+'" class="ui-state-default'+classLI+'">';		
+		htmlSortbox += '<div class="sort_content_container">';
+		htmlSortbox += '<span style="display:table-cell"><i class="eg-icon-sort"></i></span>';		
+		htmlSortbox += '<div class="layer_sort_input_depth sortbox-tablecell">';				
 		htmlSortbox += '<input type="text" class="sortbox_depth" readonly title="Edit Depth" value="'+depth+'">';
-		htmlSortbox += '<div class="clear"></div>';
+		htmlSortbox += '</div>';
+		htmlSortbox += '<div class="sortbox-tablecell sort-iconcollection">';
+		htmlSortbox += '<span class="sortbox_eye" title="Show / Hide Layer" class="tipsy_enabled_top"><i class="eg-icon-eye"></i><i class="eg-icon-eye-off"></i></span>';
+		htmlSortbox += '<span class="sortbox_lock" title="Lock / Unlock Layer" class="tipsy_enabled_top"><i class="eg-icon-lock-open"></i><i class="eg-icon-lock"></i></span>';
+		htmlSortbox += '<span class="till_slideend '+endslideclass+'" title="Snap to Slide End / Custom End" class="tipsy_enabled_top"><i class="eg-icon-back-in-time"></i><i class="eg-icon-minus"></i></span>';		
+		htmlSortbox += '</div>';
+		
+		htmlSortbox += '<div style="position:relative;" class="sort-hover-part layer_sort_layer_text_field sortbox-tablecell" <span class="sortbox_text"><i style="margin:0px 10px" class="';
+
+		switch (objLayer.type) {
+			case "text":
+				htmlSortbox += 'eg-icon-font';
+			break;
+			case "image":
+				htmlSortbox += 'eg-icon-picture-1';
+			break;				
+			case "video":
+				htmlSortbox += 'eg-icon-video';
+			break;					
+		}
+
+		htmlSortbox += '"></i>'+sortboxText + '</span>';
+		htmlSortbox += '<div class="timeline">';
+		htmlSortbox += '<div class="tl-fullanim"><div class="tl-startanim"></div><div class="tl-endanim"></div></div>';
+		htmlSortbox += '</div>';
+		htmlSortbox += '</div>';
+
+		htmlSortbox += '<div class="layer_sort_inputs sortbox-tablecell">';
+		htmlSortbox += '<input type="text" class="sortbox_time" title="Edit Layer Start" value="'+objLayer.time+'">';		
+		
+		
+		htmlSortbox += '<input type="text" class="sortbox_timeend" title="Edit Layer End" value="'+objLayer.realEndTime+'">';				
+		htmlSortbox += '</div>';
+		htmlSortbox += '</div>';		
 		htmlSortbox += '</li>';
 		
 		jQuery("#sortlist").append(htmlSortbox);
+		
+
+		
+		var cur = jQuery('#layer_sort_'+serial+" .timeline"),
+			dragfull = cur.find('.tl-fullanim');
+
+		setCurTimer(dragfull);
+				
+		
+		dragfull.draggable({
+			containment:"parent",
+			//snap:".tl-fullanim",
+			axis:"x",
+			stop:function() {
+				updateCurTimer("stop",jQuery(this));
+			},
+			drag:function() {
+				updateCurTimer("resize",jQuery(this));
+			}					
+		})
+		
+		dragfull.resizable({
+			containment:"parent",
+			handles:"w,e",
+			stop:function() {
+				updateCurTimer("stop",jQuery(this));
+			},
+			resize:function() {
+				updateCurTimer("resize",jQuery(this));
+			}
+			//snap:".tl-fullanim"
+		});
+		
+		var iwrapper = jQuery('#layer_sort_'+serial+" .layer_sort_inputs");
+		
+		iwrapper.find('input').keypress(function(event){
+			if(event.keyCode == 13)
+				changeTimerInputs();			
+		}).blur(changeTimerInputs);
+
+	}
+	
+	/**
+	 check if the Layer should go till Slide End, or should animate our before.
+	 if objLayer.endWithSlide == true -> the Layer should not get any "data-end" output !!
+	*/
+	var checkTillSlideEnd = function(li,objLayer) {
+		if ( objLayer.realEndTime >= g_slideTime) {
+			objLayer.endWithSlide = true;
+			li.find('.till_slideend').addClass("tillendon");			
+		} else {
+			objLayer.endWithSlide = false;
+			li.find('.till_slideend').removeClass("tillendon");			
+			
+		}
+ 
+	}
+	
+	/**
+	  on Input Change we need to resize and reposition all available Timer lines
+	*/
+	var changeTimerInputs = function() {
+		var li = jQuery(this).closest("li"),
+					sortLayerID = li.attr("id"),
+					serial = getSerialFromSortID(sortLayerID);				
+					objLayer = getLayer(serial),
+					iwrapper = jQuery(this).closest('.layer_sort_inputs'),
+					times = iwrapper.find('.sortbox_time'),
+					timee = iwrapper.find('.sortbox_timeend');
+
+				if (Number(timee.val()) < Number(times.val())) { 
+					timee.val((parseInt(times.val(),0) + 1000+ objLayer.speed+objLayer.endspeed));
+				}
+					
+				objLayer.time = Number(times.val());
+				objLayer.realEndTime = Number(timee.val());
+				checkTillSlideEnd(li,objLayer);
+				setCurTimer(li.find('.tl-fullanim'));
+				jQuery('#layer_endtime').val((objLayer.realEndTime-objLayer.endSpeedFinal));
+	}
+	
+	/**
+	 * update timeline of current layer
+	 */
+	var updateCurrentLayerTimeline = function(){
+
+		jQuery('#sortlist').find('.tl-fullanim').each(function() {
+			setCurTimer(jQuery(this));
+		})
+
+	}
+	
+	/**
+		Set the Current Timer Line to Position end start/end time should be set as well
+	*/
+	var setCurTimer = function(timer) {
+
+				var li = timer.closest("li"),
+					sortLayerID = li.attr("id"),
+					serial = getSerialFromSortID(sortLayerID);				
+					objLayer = getLayer(serial);
+				
+				var tl = li.find('.timeline'),
+					tw = tl.width(),
+					dragfull = li.find('.tl-fullanim'),
+					dragstart =dragfull.find('.tl-startanim'),
+					dragend = dragfull.find('.tl-endanim'),
+					ft = g_slideTime;
+					if (objLayer.realEndTime=="undefined" || objLayer.realEndTime==undefined) 
+						objLayer = getLayerExtendedParams(objLayer);
+
+					dragfull.css({width:((objLayer.realEndTime - objLayer.time) / ft)*100+"%",
+								  left: ((objLayer.time) / ft) *100+"%"});	
+								  
+					dragstart.css({width:(objLayer.speed / ft)*tw+"px" });
+					dragend.css({width:(objLayer.endspeed / ft)*tw+"px" });
+					
+					checkTillSlideEnd(li,objLayer);	
+					
+					jQuery('#layer_endtime').val((objLayer.realEndTime-objLayer.endSpeedFinal));				
+	}
+	
+	/**
+		Update the Current Timelines
+	*/
+	var updateCurTimer = function(event,timer) {
+
+				var li = timer.closest("li"),
+					sortLayerID = li.attr("id"),
+					serial = getSerialFromSortID(sortLayerID),
+					objLayer = getLayer(serial),					
+					l = timer.position().left,
+					w = timer.width(),
+					tl = li.find('.timeline'),
+					tw = tl.width(),
+					dragstart = tl.find('.tl-startanim'),
+					dragend = tl.find('.tl-endanim');							
+
+				objLayer = getLayerExtendedParams(objLayer);
+				
+				
+				
+				if (l+w > tw) timer.css({left:(tw-w)});
+				if (l<0) timer.css({left:"0px"});
+				if (w > tw) timer.width(tw);					
+				
+				var	ft = g_slideTime,
+					ns = Math.round(((l / tl.width()) * ft)/50)*50,
+					ne = ns+Math.round(((w / tl.width()) * ft)/50)*50,
+					dif = ne-ns;
+				
+				if (ne>ft) {
+					ne = ft;
+					ns = ne - dif;
+				}
+				
+				if (ns<0) ns=0;
+								
+				li.find('.sortbox_time').val(ns);
+				li.find('.sortbox_timeend').val(ne);				
+				
+				if (event=="stop") {
+					timer.css({left:(timer.position().left / tw)*100+"%",
+							   width:(timer.width() / tw)*100+"%"
+					})
+				}
+				
+
+				dragstart.css({width:(objLayer.speed / ft)*tw+"px" });
+				dragend.css({width:(objLayer.endspeed / ft)*tw+"px" });
+				
+				objLayer.endTimeFinal = ne - objLayer.endSpeedFinal;
+				objLayer.endtime = ne - objLayer.endSpeedFinal;
+				objLayer.realEndTime = ne;
+				objLayer.time = ns;
+				objLayer.timeLast = objLayer.endTimeFinal;
+				
+
+				jQuery('#layer_endtime').val((objLayer.realEndTime-objLayer.endSpeedFinal));
+				
+				checkTillSlideEnd(li,objLayer);
+				
+				
+			}
+	
+	/**
+		Show / HIde The Timelines
+	*/
+	var showHideTimeines = function() {
+		/* HIDE / SHOW  TIMELINES */
+		
+		jQuery('#button_sort_timing').click(function() {
+			var bst = jQuery(this);
+			if (bst.hasClass("off")) {
+				bst.removeClass("off");
+				bst.find('.onoff').html('- on');
+				punchgs.TweenLite.to(jQuery('#sortlist .timeline'),0.5,{autoAlpha:0.5,overwrite:"auto"});
+			} else {
+				punchgs.TweenLite.to(jQuery('#sortlist .timeline'),0.5,{autoAlpha:0,overwrite:"auto"});
+				bst.addClass("off");				
+				bst.find('.onoff').html('- off');				
+			}
+		})
+
 	}
 	
 	
@@ -1894,7 +4233,7 @@ var UniteLayersRev = new function(){
 	 * get sortbox text from layer html
 	 */
 	var getSortboxText = function(text){
-		sorboxTextSize = 50;
+		sorboxTextSize = 20;
 		var textSortbox = UniteAdminRev.stripTags(text);
 		
 		//if no content - escape html
@@ -1919,21 +4258,25 @@ var UniteLayersRev = new function(){
 				
 		emptySortbox();
 				
-		var layers_array = getLayersSorted(mode);
+		var layers_array = getLayersSorted("depth");
 		
 		if(layers_array.length == 0)
 			return(false);
 		
 		for(var i=0; i<layers_array.length;i++){
 			var objLayer = layers_array[i];
+
 			addToSortbox(objLayer.serial,objLayer);
 		}
+		
+
 				
 		if(selectedLayerSerial != -1)
 			setSortboxItemSelected(selectedLayerSerial);
 		
 	}
 		
+	
 	
 	/**
 	 * remove all from sortbox
@@ -1968,11 +4311,7 @@ var UniteLayersRev = new function(){
 	 * on sortbox sorted event.
 	 */
 	var onSortboxSorted = function(){
-		
-		if(sortMode == "depth")
 			updateOrderFromSortbox();
-		else	//sort by time
-			redistributeTimes();
 		
 	}
 		
@@ -2016,19 +4355,16 @@ var UniteLayersRev = new function(){
 	 * change time on the layer from the sortbox and reorder
 	 */
 	var onSortboxTimeChange = function(inputBox){
-		
+
 		//update the time by inputbox:
 		var timeValue = inputBox.val();
 		timeValue = Number(timeValue);
-		var sortLayerID = inputBox.parent().attr("id");
+		var sortLayerID = inputBox.parent().parent().parent().attr("id");
+
 		var serial = getSerialFromSortID(sortLayerID);		
 		var objUpdate = {time:timeValue};
 		
-		updateLayer(serial,objUpdate);
-		
-		if(sortMode == "time")
-			redrawSortbox();
-		
+		updateLayer(serial,objUpdate);				
 		validateCurrentLayerTimes();
 	}
 	
@@ -2050,8 +4386,7 @@ var UniteLayersRev = new function(){
 		
 		redrawSortbox();
 		
-		if(sortMode == "depth")
-			updateOrderFromSortbox();
+		updateOrderFromSortbox();
 		
 	}
 	
@@ -2165,18 +4500,20 @@ var UniteLayersRev = new function(){
 		var layerSerial = getSerialFromID(this.id);
 		var htmlLayer = jQuery(this); 
 		var position = htmlLayer.position();
-		
 		var objLayer = getLayer(layerSerial);
 		
 		var posTop = Math.round(position.top);
 		var posLeft = Math.round(position.left);		
-		var layerWidth = htmlLayer.width();
+		var layerWidth = htmlLayer.outerWidth();
 		var totalWidth = container.width();
-		var layerHeight = htmlLayer.height();
+		var layerHeight = htmlLayer.outerHeight();
 		var totalHeight = container.height();
 		
 		var updateY,updateX;
-			
+		
+
+		setLayerSelected(layerSerial);
+		
 		switch(objLayer.align_hor){
 			case "left":
 				updateX = posLeft;
@@ -2203,12 +4540,12 @@ var UniteLayersRev = new function(){
 			break;
 		}
 		
-		var objUpdate = {top:updateY,left:updateX};
+		var objUpdate = {top:updateY,left:updateX,width:layerWidth,height:layerHeight};
 		updateLayer(layerSerial,objUpdate);	
 		
 		//update the position back with the rounded numbers (improve precision)
-		updateHtmlLayerPosition(htmlLayer,objUpdate.top,objUpdate.left);
-		
+		updateHtmlLayerPosition(false,htmlLayer,objLayer,objUpdate.top,objUpdate.left,"left","top");
+
 		//update bottom fields (only if selected)
 		if(isLayerSelected(layerSerial))
 			updateLayerFormFields(layerSerial);
@@ -2220,9 +4557,10 @@ var UniteLayersRev = new function(){
 	 */
 	var moveLayer = function(serial,dir,step){
 		var layer = getLayer(serial);
+		
 		if(!layer)
 			return(false);
-		
+
 		switch(dir){
 			case "down":
 				arrLayers[serial].top += step;
@@ -2241,7 +4579,7 @@ var UniteLayersRev = new function(){
 				return(false);
 			break;
 		}
-		
+
 		updateHtmlLayersFromObject(serial);
 		
 		if(isLayerSelected(serial))
@@ -2271,6 +4609,7 @@ var UniteLayersRev = new function(){
 		
 		var endTime = layer.endtime;
 		
+
 		var realEndTime;
 		
 		if(!endTime || endTime == undefined || endTime == ""){	//end time does not given
@@ -2279,7 +4618,9 @@ var UniteLayersRev = new function(){
 		}else{	//end time given
 			realEndTime = Number(endTime) + Number(endSpeed);
 		}
-		
+
+
+				
 		layer.endTimeFinal = Number(endTime); 	 //time caption stay - without end transition
 		layer.endSpeedFinal = Number(endSpeed); 	
 		layer.realEndTime = Number(realEndTime); //time with end transition
@@ -2290,76 +4631,313 @@ var UniteLayersRev = new function(){
 	}
 	
 	
-	/**
-	 * hide layer timeline
-	 */
-	var hideLayerTimeline = function(){
-		jQuery("#layer_timeline").hide();
-	}
 	
-	
-	/**
-	 * show layer timeline
-	 */
-	var showLayerTimeline = function(xStart,widthLast,mode){
+	//======================================================
+	//	Scale Functions
+	//======================================================
+		/**
+		 * calculate image height/width
+		 */
 		
-		var props = {};
-		props.left = xStart+"px";
-		props.width = widthLast+"px";
-		var layerTimeline = jQuery("#layer_timeline");
-		
-		if(mode == "error"){
-			layerTimeline.addClass("layertime-error");
-			layerTimeline.prop("title","Error - Something wrong with the caption times!");
-		}
-		else{
-			layerTimeline.removeClass("layertime-error");
-			layerTimeline.prop("title","");
-		}
-		
-		jQuery("#layer_timeline").show().css(props);
-	}
-	
-	
-	/**
-	 * update timeline of current layer
-	 */
-	var updateCurrentLayerTimeline = function(){
-		var layer = getCurrentLayer();
-		if(!layer)
-			return(false);
-		
-		layer = getLayerExtendedParams(layer);
-		
-		var gTimeline = jQuery("#global_timeline");		
-		var gWidth = gTimeline.width();
-		
-		var multiplier = gWidth / g_slideTime;
-		
-		var widthLast = Math.round(layer.timeLast * multiplier);
-		var widthStart = Math.round(layer.speed * multiplier);
-		var widthEnd = Math.round(layer.endSpeedFinal * multiplier);
+		var scaleImage = function(){
+			jQuery("#layer_scaleX").change(function(){
+				if(jQuery("#layer_proportional_scale").is(":checked"))
+					scaleProportional(true);
+				else
+					scaleNormal();
+			});
+			
+			jQuery("#layer_scaleY").change(function(){
+				if(jQuery("#layer_proportional_scale").is(":checked"))
+					scaleProportional(false);
+				else
+					scaleNormal();
+			});
+			
+			jQuery("#layer_proportional_scale").click(function(){
+				if(jQuery(this).is(":checked")){
+					scaleProportional(true);
+				}else{
+					scaleNormal();
+				}
+			});
+			
+			
+			jQuery("#reset-scale").click(function(){
+				resetImageDimensions();
+				jQuery("#layer_proportional_scale").attr('checked', false);
+				jQuery("#layer_scaleX_text").html(jQuery("#layer_scaleX_text").data("textnormal")).css("width", "10px");
+				jQuery("#layer_scaleX").val("");
+				jQuery("#layer_scaleY").val("");
 				
-		var xStart = Math.round(layer.time * multiplier);
-		var xEnd = Math.round(layer.endTimeFinal * multiplier);	//start of the end transition
+				jQuery("#slide_layer_" + selectedLayerSerial + " img").css("width", "");
+				jQuery("#slide_layer_" + selectedLayerSerial + " img").css("height", "");
+				t.updateLayerFromFields();
+			});
+			
+		}
 		
-		var xFinal = xStart + widthLast;
-		
-		if(xFinal > (gWidth+1)){
-			var errorWidth;
-			if(xStart >= gWidth){
-				hideLayerTimeline();
+		var scaleProportional = function(useX){
+			var serial = selectedLayerSerial;
+			
+			resetImageDimensions();
+			
+			var imgObj = new Image();
+			imgObj.src = jQuery("#slide_layer_" + serial + " img").attr("src");
+			
+			if(useX){
+				var x = parseInt(jQuery("#layer_scaleX").val());
+				if(isNaN(x)) x = imgObj.width;
+				var y = Math.round(100 / imgObj.width * x / 100 * imgObj.height, 0);
 			}else{
-				errorWidth = gWidth - xStart;
-				showLayerTimeline(xStart,errorWidth,"error");	//show error timeline mode
+				var y = parseInt(jQuery("#layer_scaleY").val());
+				if(isNaN(y)) y = imgObj.height;
+				var x = Math.round(100 / imgObj.height * y / 100 * imgObj.width, 0);
 			}
+			
+			jQuery("#slide_layer_" + serial + " img").css("width", x + "px");
+			jQuery("#slide_layer_" + serial + " img").css("height", y + "px");
+
+			jQuery("#slide_layer_" + serial).css("width", jQuery("#slide_layer_" + serial + " img").width() + "px");
+			jQuery("#slide_layer_" + serial).css("height", jQuery("#slide_layer_" + serial + " img").height() + "px");
+			
+			jQuery("#slide_layer_" + serial + " img").css("width", "100%");
+			jQuery("#slide_layer_" + serial + " img").css("height", "100%");
+			
+			jQuery("#layer_scaleX").val(x);
+			jQuery("#layer_scaleY").val(y);
 		}
-		else{
-			showLayerTimeline(xStart,widthLast);
+		
+		var scaleNormal = function(){
+			var serial = selectedLayerSerial;
+			
+			resetImageDimensions();
+			
+			jQuery("#slide_layer_" + serial + " img").css("width", jQuery("#layer_scaleX").val() + "px");
+			jQuery("#slide_layer_" + serial + " img").css("height", jQuery("#layer_scaleY").val() + "px");
+
+			jQuery("#slide_layer_" + serial).css("width", jQuery("#slide_layer_" + serial + " img").width() + "px");
+			jQuery("#slide_layer_" + serial).css("height", jQuery("#slide_layer_" + serial + " img").height() + "px");
+			
+			jQuery("#slide_layer_" + serial + " img").css("width", "100%");
+			jQuery("#slide_layer_" + serial + " img").css("height", "100%");
 		}
+		
+		var resetImageDimensions = function(){
+			var imgObj = new Image();
+			imgObj.src = jQuery("#slide_layer_" + selectedLayerSerial + " img").attr("src");
+			
+			jQuery("#slide_layer_" + selectedLayerSerial).css("width", imgObj.width + "px");
+			jQuery("#slide_layer_" + selectedLayerSerial).css("height", imgObj.height + "px");
+		}
+		
+	//======================================================
+	//	Scale Functions End
+	//======================================================
+	
+	t.getLayerGeneralParamsStatus = function(){
+		return layerGeneralParamsStatus;
 	}
 	
+	//======================================================
+	//	Main Background Image Functions
+	//======================================================
 	
+	var initBackgroundFunctions = function(){
+	
+		jQuery('#slide_bg_fit').change(function(){
+			if(jQuery(this).val() == 'percentage'){
+				jQuery('input[name="bg_fit_x"]').show();
+				jQuery('input[name="bg_fit_y"]').show();
+				
+				jQuery('#divLayers-wrapper').css('background-size', jQuery('input[name="bg_fit_x"]').val()+'% '+jQuery('input[name="bg_fit_y"]').val()+'%');
+			}else{
+				jQuery('input[name="bg_fit_x"]').hide();
+				jQuery('input[name="bg_fit_y"]').hide();
+				
+				jQuery('#divLayers-wrapper').css('background-size', jQuery(this).val());
+			}
+		});
+		
+		jQuery('input[name="bg_fit_x"]').change(function(){
+			jQuery('#divLayers-wrapper').css('background-size', jQuery('input[name="bg_fit_x"]').val()+'% '+jQuery('input[name="bg_fit_y"]').val()+'%');
+		});
+		
+		jQuery('input[name="bg_fit_y"]').change(function(){
+			jQuery('#divLayers-wrapper').css('background-size', jQuery('input[name="bg_fit_x"]').val()+'% '+jQuery('input[name="bg_fit_y"]').val()+'%');
+		});
+		
+		jQuery('#slide_bg_position').change(function(){
+			if(jQuery(this).val() == 'percentage'){
+				jQuery('input[name="bg_position_x"]').show();
+				jQuery('input[name="bg_position_y"]').show();
+				
+				jQuery('#divLayers-wrapper').css('background-position', jQuery('input[name="bg_fit_x"]').val()+'% '+jQuery('input[name="bg_fit_y"]').val()+'%');
+			}else{
+				jQuery('input[name="bg_position_x"]').hide();
+				jQuery('input[name="bg_position_y"]').hide();
+				
+				jQuery('#divLayers-wrapper').css('background-position', jQuery(this).val());
+			}
+		});
+		
+		jQuery('input[name="bg_position_x"]').change(function(){
+			jQuery('#divLayers-wrapper').css('background-position', jQuery('input[name="bg_position_x"]').val()+'% '+jQuery('input[name="bg_position_y"]').val()+'%');
+		});
+		
+		jQuery('input[name="bg_position_y"]').change(function(){
+			jQuery('#divLayers-wrapper').css('background-position', jQuery('input[name="bg_position_x"]').val()+'% '+jQuery('input[name="bg_position_y"]').val()+'%');
+		});
+		
+		jQuery('#slide_bg_repeat').change(function(){
+			jQuery('#divLayers-wrapper').css('background-repeat', jQuery(this).val());
+		});
+		
+		jQuery('input[name="kenburn_effect"]').change(function(){
+			if(jQuery(this).val() == "on"){
+				jQuery('#kenburn_wrapper').show();
+				jQuery('#bg-position-lbl').hide();
+				jQuery('#bg-start-position-wrapper').children().appendTo(jQuery('#bg-start-position-wrapper-kb'));
+				jQuery('#bg-setting-wrap').hide();
+				
+				jQuery('#divLayers-wrapper').css('background-repeat', '');
+				jQuery('#divLayers-wrapper').css('background-position', '');
+				jQuery('#divLayers-wrapper').css('background-size', '');
+				
+				jQuery('input[name="kb_start_fit"]').change();
+			}else{
+				jQuery('#kenburn_wrapper').hide();
+				jQuery('#bg-position-lbl').show();
+				jQuery('#bg-start-position-wrapper-kb').children().appendTo(jQuery('#bg-start-position-wrapper'));
+				jQuery('#bg-setting-wrap').show();
+				
+				jQuery('#slide_bg_repeat').change();
+				jQuery('#slide_bg_position').change();
+				jQuery('#slide_bg_fit').change();
+			}
+		});
+		
+		
+		jQuery('#slide_bg_end_position').change(function(){
+			if(jQuery(this).val() == 'percentage'){
+				jQuery('input[name="bg_end_position_x"]').show();
+				jQuery('input[name="bg_end_position_y"]').show();
+			}else{
+				jQuery('input[name="bg_end_position_x"]').hide();
+				jQuery('input[name="bg_end_position_y"]').hide();
+			}
+		});
+		
+		
+		jQuery('input[name="kb_start_fit"]').change(function(){
+			var fitVal = parseInt(jQuery(this).val());
+			var limg = new Image();
+			limg.onload = function() {
+				calculateKenBurnScales(fitVal, limg.width, limg.height, jQuery('#divLayers-wrapper'));
+			}
+			
+			var urlImage = '';
+			if(jQuery('#radio_back_image').is(':checked'))
+				urlImage = jQuery("#image_url").val();
+			else if(jQuery('#radio_back_external').is(':checked'))
+				urlImage = jQuery("#slide_bg_external").val();
+			
+			if(urlImage != ''){
+				limg.src = urlImage;
+			}
+			
+		});
+		
+		var calculateKenBurnScales = function(proc,owidth,oheight,opt) {
+		   var ow = owidth;
+		   var oh = oheight;
+		   
+		   var factor = (opt.width() /ow);
+		   var nheight = oh * factor;
+		   
+		   var hfactor = (nheight / opt.height())*proc;
+		   
+		   jQuery('#divLayers-wrapper').css('background-size', proc+"% "+hfactor+"%");
+		}
+		
+	}
+	
+	//======================================================
+	//	Main Background Image Functions End
+	//======================================================
+	
+	var initLoopFunctions = function(){
+		
+		jQuery('select[name="layer_loop_animation"]').change(function(){
+			showHideLoopFunctions();
+		});
+		
+		jQuery('#layer_static_start').change(function(){
+			changeEndStaticFunctions();
+		});
+	}
+	
+	var showHideLoopFunctions = function(){
+		
+		jQuery('select[name="layer_loop_animation"]').each(function(){
+			jQuery("#layer_easing_wrapper").hide();
+			jQuery("#layer_speed_wrapper").hide();
+			jQuery("#layer_degree_wrapper").hide();
+			jQuery("#layer_origin_wrapper").hide();
+			jQuery("#layer_x_wrapper").hide();
+			jQuery("#layer_y_wrapper").hide();
+			jQuery("#layer_zoom_wrapper").hide();
+			jQuery("#layer_angle_wrapper").hide();
+			jQuery("#layer_radius_wrapper").hide();
+			
+			switch(jQuery(this).val()){
+				case 'none':
+				break;
+				case 'rs-pendulum':
+					jQuery("#layer_easing_wrapper").show();
+					jQuery("#layer_speed_wrapper").show();
+					jQuery("#layer_degree_wrapper").show();
+					jQuery("#layer_origin_wrapper").show();
+				break;
+				case 'rs-slideloop':
+					jQuery("#layer_easing_wrapper").show();
+					jQuery("#layer_speed_wrapper").show();
+					jQuery("#layer_x_wrapper").show();
+					jQuery("#layer_y_wrapper").show();
+				break;
+				case 'rs-pulse':
+					jQuery("#layer_easing_wrapper").show();
+					jQuery("#layer_speed_wrapper").show();
+					jQuery("#layer_zoom_wrapper").show();
+				break;
+				case 'rs-wave':
+					jQuery("#layer_speed_wrapper").show();
+					jQuery("#layer_angle_wrapper").show();
+					jQuery("#layer_radius_wrapper").show();
+					jQuery("#layer_origin_wrapper").show();
+				break;
+			}
+		});
+	}
+	
+	var changeEndStaticFunctions = function(){
+	
+		jQuery('#layer_static_start').each(function(){
+			var cur_att = parseInt(jQuery(this).val());
+			var cur_end = jQuery('#layer_static_end option:selected').val();
+			var go_max_up_to = parseInt(jQuery('#layer_static_end option:last-child').val());
+			var go_up_to = parseInt(jQuery('#layer_static_start option:last-child').val()) + 1;
+			
+			jQuery('#layer_static_end').empty();
+			
+			for(var cur=cur_att+ 1; cur<=go_max_up_to; cur++){
+				jQuery("#layer_static_end").append('<option value="'+cur+'">'+cur+'</option>');
+			}
+			
+			jQuery("#layer_static_end option[value='"+cur_end+"']").attr('selected', 'selected');
+		});
+	}
+
 }
 
 
