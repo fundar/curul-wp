@@ -1,6 +1,13 @@
 /* Have fun adding your style here :) - PS: At all times this file should contain a comment or a rule, otherwise opera might act buggy :( */
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
 /* General Custom CSS */
+/*
+Desktop Styles
+================================================== */
+/** body **/
+#top {
+    background: url("images/background.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
 /** header **/
     .main_menu {
         background: url(images/bg-left-nav.png) no-repeat bottom left;
@@ -71,10 +78,7 @@
     #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
     #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
     
-/*
-Desktop Styles
-================================================== */
-/* Note: Add new css to the media query below that you want to only effect the desktop view of your site */
+
 
 
 @media only screen and (min-width: 768px) {
