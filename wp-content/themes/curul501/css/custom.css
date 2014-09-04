@@ -10,7 +10,7 @@ body {
 }
 /** header **/
     .main_menu {
-        background: url(images/bg-left-nav.png) no-repeat bottom left;
+        background: url("images/bg-left-nav.png") no-repeat bottom left;
        
    
     }
