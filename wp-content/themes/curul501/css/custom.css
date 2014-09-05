@@ -6,7 +6,7 @@ Desktop Styles
 ================================================== */
 /** body **/
 body {
-    background: #000;
+     background: url("images/background.png") repeat-x 0 0;
 }
 /** header **/
     .main_menu {
