@@ -101,6 +101,15 @@ body {
         font-weight:400;
         text-transform:uppercase;
     }
+    boton{
+        color:#fff;
+        cursor:pointer;
+        background:#D3B166;
+        border-radius:0;
+        outline: 0 none;
+        text-decoration: none;
+        padding: 9px 22px;    
+    }
     
 
 
