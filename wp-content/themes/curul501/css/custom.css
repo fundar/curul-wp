@@ -106,12 +106,13 @@ body {
     .boton{
         color:#fff !important;
         cursor:pointer;
-        background:#D3B166;
+        background:#EABB67;
         border-radius:0;
         outline: 0 none;
         text-decoration: none;
         padding: 9px 22px;
         margin-top:10px;
+        font-size:18px;
     }
     
 
