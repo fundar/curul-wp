@@ -8,7 +8,12 @@ Desktop Styles
 /** body **/
 body {
      background: url("images/background.png") repeat-x 0 0;
-     font: 13px/15px 'colaborate-thinregular'; 
+     font-family:'colaborate-thinregular';}
+     
+/** generales**/
+p{
+    font-family:'colaborate-thinregular';
+    
 }
 /** header **/
     .main_menu {
