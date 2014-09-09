@@ -84,8 +84,14 @@ body {
    .parrafo-sl1 > p{
         color:#676767;
         font-family:'colaborate-thinregular';
-        font-size:14px;
+        font-size:22px;
         
+    }
+    h1.titulo1{
+        color:#D3B166;
+        font-family:'Oswald';
+        font-family:27px;
+        font-weight:300;
     }
     
 
