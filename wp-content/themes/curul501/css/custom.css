@@ -8,6 +8,7 @@ Desktop Styles
 /** body **/
 body {
      background: url("images/background.png") repeat-x 0 0;
+     font: 13px/15px 'colaborate-thinregular'; 
 }
 /** header **/
     .main_menu {
@@ -102,13 +103,14 @@ body {
         text-transform:uppercase;
     }
     .boton{
-        color:#fff;
+        color:#fff !important;
         cursor:pointer;
         background:#D3B166;
         border-radius:0;
         outline: 0 none;
         text-decoration: none;
-        padding: 9px 22px;    
+        padding: 9px 22px;
+        margin-top:10px;
     }
     
 
