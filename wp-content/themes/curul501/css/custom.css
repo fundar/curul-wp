@@ -101,7 +101,7 @@ body {
         font-weight:400;
         text-transform:uppercase;
     }
-    boton{
+    .boton{
         color:#fff;
         cursor:pointer;
         background:#D3B166;
