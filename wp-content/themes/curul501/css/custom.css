@@ -92,6 +92,7 @@ body {
         font-family:'Oswald';
         font-size:27px;
         font-weight:400;
+        text-transform:uppercase;
     }
     h2.titulo2{
         color:#512B60;
