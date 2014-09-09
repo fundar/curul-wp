@@ -90,8 +90,14 @@ body {
     h1.titulo1{
         color:#D3B166;
         font-family:'Oswald';
-        font-family:27px;
-        font-weight:300;
+        font-size:27px;
+        font-weight:400;
+    }
+    h2.titulo2{
+        color:#512B60;
+        font-family:'Oswald';
+        font-size:54px;
+        font-weight:400;
     }
     
 
