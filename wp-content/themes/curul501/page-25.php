@@ -14,11 +14,11 @@ global $avia_config;
 
 			<div class='container'>
 
-				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
+			
 
                 
 				<!--end content-->
-				<div>weqfret</div>
+				
 				</main>
 
 				
