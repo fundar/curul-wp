@@ -29,17 +29,12 @@ global $avia_config;
 				<!--end content-->
 				</main>
 
-				<?php
-
-				//get the sidebar
-				$avia_config['currently_viewing'] = 'page';
-				get_sidebar();
-
-				?>
+				
 
 			</div><!--end container-->
 
 		</div><!-- close default .container_wrap element -->
+		<div>weqfret</div>
 
 
 
