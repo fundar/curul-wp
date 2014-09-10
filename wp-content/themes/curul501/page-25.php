@@ -11,6 +11,10 @@ global $avia_config;
 	 ?>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" style="background-color: rgb(233, 233, 233); padding: 0px; position: absolute; max-height: none; overflow: visible; left: 0px; width: 1642px; height: 534px;">
+			<?php putRevSlider("carrusel-home","homepage") ?>
+			</div>
+
 
 			<div class='container'>
 
