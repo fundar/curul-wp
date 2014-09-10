@@ -25,9 +25,7 @@ global $avia_config;
                     $avia_config['size'] = avia_layout_class( 'main' , false) == 'entry_without_sidebar' ? '' : 'entry_with_sidebar';
                     get_template_part( 'includes/loop', 'page' );
                     ?>
-                    <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" style="background-color: rgb(233, 233, 233); padding: 0px; position: absolute; max-height: none; overflow: visible; left: 0px; width: 1642px; height: 534px;">
-			
-		    </div>
+
                     <div class="main_color container_wrap fullsize" id="after_layer_slider_1">
 			<div class="container">
 				 <div class="template-page content  twelve alpha units">
