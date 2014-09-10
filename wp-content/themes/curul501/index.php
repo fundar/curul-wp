@@ -28,7 +28,7 @@
 
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-grdsyrdy
+
 			<div class='container template-blog '>
 
 				<main class='content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
