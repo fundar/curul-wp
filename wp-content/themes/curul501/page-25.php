@@ -28,12 +28,12 @@ global $avia_config;
                      <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" style="background-color: rgb(233, 233, 233); padding: 0px; position: absolute; max-height: none; overflow: visible; left: 0px; width: 1642px; height: 534px;">
 			<?php putRevSlider("carrusel-home","homepage") ?>
 		    </div>
-		    <div class="main_color container_wrap fullsize" id="after_layer_slider_1"><div class="container"><div class="template-page content  twelve alpha units"><div class="post-entry post-entry-type-page post-entry-25"><div class="entry-content-wrapper clearfix">
+<div class="main_color container_wrap fullsize" id="after_layer_slider_1"><div class="container"><div class="template-page content  twelve alpha units"><div class="post-entry post-entry-type-page post-entry-25"><div class="entry-content-wrapper clearfix">
 <div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling  ">
 <p></p><section itemtype="http://schema.org/CreativeWork" itemscope="itemscope" class="av_textblock_section"><div itemprop="text" class="avia_textblock "><p>Click here to add your own text</p>
 </div></section>
 </div>
-                                </div></div></div></div></div><!--fin iniciativas-->
+</div></div></div></div></div><!--fin iniciativas-->
 				<!--end content-->
 				</main>
 
