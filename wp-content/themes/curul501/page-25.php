@@ -14,11 +14,13 @@ global $avia_config;
 
 			<div class='container'>
                                    
-				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
-          
+				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>        
 				<!--end content-->
 				</main>
-				<div class="main_color container_wrap fullsize" id="after_layer_slider_1">
+			</div><!--end container-->
+		</div><!-- close default .container_wrap element -->
+
+               <div class="main_color container_wrap fullsize" id="after_layer_slider_1">
 					<div class="container">
 						<div class="template-page content  twelve alpha units">
 						       <div class="post-entry post-entry-type-page post-entry-25">
@@ -32,16 +34,8 @@ global $avia_config;
 						       </div>
 						</div>
 					</div>
-				</div><!-- close default .container_wrap element -->
-				<!--fin iniciativas-->
-
-
+		</div>			
 				
-
-			</div><!--end container-->
-
-		
-
-
+				<!--fin iniciativas-->
 
 <?php get_footer(); ?>
