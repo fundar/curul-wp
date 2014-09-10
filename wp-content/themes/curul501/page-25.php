@@ -30,6 +30,7 @@ global $avia_config;
 						       </div>
 						</div>
 					</div>
+				</div><!-- close default .container_wrap element -->
 				<!--fin iniciativas-->
 				<!--end content-->
 				</main>
@@ -45,7 +46,7 @@ global $avia_config;
 
 			</div><!--end container-->
 
-		</div><!-- close default .container_wrap element -->
+		
 
 
 
