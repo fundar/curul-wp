@@ -25,21 +25,28 @@ global $avia_config;
                     $avia_config['size'] = avia_layout_class( 'main' , false) == 'entry_without_sidebar' ? '' : 'entry_with_sidebar';
                     get_template_part( 'includes/loop', 'page' );
                     ?>
-                    <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-shadow avia-bg-style-scroll avia-builder-el-1 el_after_av_fullscreen el_before_av_section container_wrap fullsize">
-			<div class="container">
-				 <div class="template-page content  twelve alpha units">
-			                 <div class="post-entry post-entry-type-page post-entry-25">
-						<div class="entry-content-wrapper clearfix">
-                                                         <div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling ">
-								INICIATIVAS
-                                                         </div>
-                                                 </div>
-					 </div>
-				 </div>
-			</div>
-		    </div><!--fin iniciativas-->
+					<div id="av_section_1" class="avia-section main_color avia-section-default avia-no-shadow avia-bg-style-scroll avia-builder-el-1 el_after_av_fullscreen el_before_av_section container_wrap fullsize">
+					    <div class="container">
+						     <div class="template-page content  twelve alpha units">
+							     <div class="post-entry post-entry-type-page post-entry-25">
+								    <div class="entry-content-wrapper clearfix">
+									     <div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling ">
+										    INICIATIVAS
+									     </div>
+								     </div>
+							     </div>
+						     </div>
+					    </div>
+					    <?php
+
+				//get the sidebar
+				$avia_config['currently_viewing'] = 'page';
+				get_sidebar();
+
+				?>
+					</div><!--fin iniciativas-->
 				<!--end content-->
-				</main> 
+			        </main> 
 
 				<?php
 
