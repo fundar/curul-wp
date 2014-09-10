@@ -25,8 +25,7 @@ global $avia_config;
                     $avia_config['size'] = avia_layout_class( 'main' , false) == 'entry_without_sidebar' ? '' : 'entry_with_sidebar';
                     get_template_part( 'includes/loop', 'page' );
                     ?>
-
-                    <div class="main_color container_wrap fullsize" id="after_layer_slider_1">
+                    <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-shadow avia-bg-style-scroll avia-builder-el-1 el_after_av_fullscreen el_before_av_section container_wrap fullsize">
 			<div class="container">
 				 <div class="template-page content  twelve alpha units">
 			                 <div class="post-entry post-entry-type-page post-entry-25">
