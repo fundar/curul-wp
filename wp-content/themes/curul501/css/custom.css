@@ -122,7 +122,6 @@ p{
      /** footer**/
     #buscador.desktop {
         width: 100%;
-         overflow-y: scroll;
      }
      #buscador {
         background: none repeat scroll 0 0 #3E2F52;
