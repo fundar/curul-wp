@@ -16,6 +16,8 @@ global $avia_config;
                                    
 				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
           
+				<!--end content-->
+				</main>
 				<div class="main_color container_wrap fullsize" id="after_layer_slider_1">
 					<div class="container">
 						<div class="template-page content  twelve alpha units">
@@ -32,17 +34,9 @@ global $avia_config;
 					</div>
 				</div><!-- close default .container_wrap element -->
 				<!--fin iniciativas-->
-				<!--end content-->
-				</main>
 
 
-				<?php
-
-				//get the sidebar
-				$avia_config['currently_viewing'] = 'page';
-				get_sidebar();
-
-				?>
+				
 
 			</div><!--end container-->
 
