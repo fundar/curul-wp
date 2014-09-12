@@ -12,7 +12,7 @@ global $avia_config;
 		/* Run the loop to output the posts.
 		* If you want to overload this in a child theme then include a file
 		* called loop-page.php and that will be used instead.
-		*/s
+		*/
 		$avia_config['size'] = avia_layout_class( 'main' , false) == 'entry_without_sidebar' ? '' : 'entry_with_sidebar';
 		get_template_part( 'includes/loop', 'page' );
 		?>			
@@ -27,9 +27,9 @@ global $avia_config;
 						    </div>
 					     </div>
 					</div><!--fin iniciativas-->	
+					<?php get_sidebar(); ?>
 					<aside class="sidebar sidebar_right three alpha units" role="complementary">
 					<div class="inner_sidebar extralight-border">
-					<?php get_sidebar(); ?>	
 					4t456y547y
 					</div>
 					</aside>
