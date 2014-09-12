@@ -8,7 +8,9 @@ global $avia_config;
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 	    <div class='container'>
 		<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
-			
+		<?php
+
+		?>			
 			<div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling  ">
 				<div class="container">
 					<div class="template-page content nine alpha units">
