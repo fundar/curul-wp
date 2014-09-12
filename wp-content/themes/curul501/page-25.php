@@ -38,13 +38,12 @@ global $avia_config;
 									     
 							
 										 <?php
-										    wp_reset_query();
-										    //get the sidebar
-										    $avia_config['currently_viewing'] = 'blog';
-										    if(is_front_page()) $avia_config['currently_viewing'] = "frontpage";
-										    get_sidebar();
-						    
-										    ?>										
+
+				//get the sidebar
+				$avia_config['currently_viewing'] = 'page';
+				get_sidebar();
+
+				?>									
 										<!--end content-->
 										
 						                             
