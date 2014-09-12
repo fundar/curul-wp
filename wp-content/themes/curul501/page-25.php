@@ -27,13 +27,9 @@ global $avia_config;
 						    </div>
 					     </div>
 					</div><!--fin iniciativas-->
-													     							
-					<?php
-					//get the sidebar
-					$avia_config['currently_viewing'] = 'page';
-					get_sidebar();
-					?>															       								   
-					
+					<aside class="sidebar sidebar_right three alpha units" role="complementary">	
+					<?php get_sidebar(); ?>
+					</aside>
 				</div>	
 			</div>		     
 		</main> 
