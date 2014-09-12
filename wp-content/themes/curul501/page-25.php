@@ -29,6 +29,7 @@ global $avia_config;
 					</div><!--fin iniciativas-->	
 					<aside class="sidebar sidebar_right three alpha units" role="complementary">
 					<div class="inner_sidebar extralight-border">
+					<?php get_sidebar(); ?>	
 					4t456y547y
 					</div>
 					</aside>
