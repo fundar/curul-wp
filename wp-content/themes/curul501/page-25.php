@@ -29,7 +29,9 @@ global $avia_config;
 					</div><!--fin iniciativas-->
 					<aside role="complementary">	
 					<?php get_sidebar(); ?>
+					<div class="inner_sidebar extralight-border">
 					4t456y547y
+					</div>
 					</aside>
 				</div>	
 			</div>		     
