@@ -34,18 +34,17 @@ global $avia_config;
 								    </div>
 							     </div>
 							</div><!--fin iniciativas-->
-							<aside class="sidebar sidebar_right three alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+							<aside class="sidebar sidebar_right three alpha units" role="complementary">
 									     <div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third el_before_av_section avia-builder-el-last ">
 							
+										 <?php
+										    wp_reset_query();
+										    //get the sidebar
+										    $avia_config['currently_viewing'] = 'blog';
+										    if(is_front_page()) $avia_config['currently_viewing'] = "frontpage";
+										    get_sidebar();
 						    
-
-					                                       <?php
-						
-										//get the sidebar
-										$avia_config['currently_viewing'] = 'page';
-										get_sidebar();
-						
-										?>										
+										    ?>										
 										<!--end content-->
 										
 						                             </div>
