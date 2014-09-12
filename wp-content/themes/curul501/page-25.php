@@ -35,7 +35,7 @@ global $avia_config;
 							     </div>
 							</div><!--fin iniciativas-->
 							<aside class="sidebar sidebar_right three alpha units" role="complementary">
-									     <div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third el_before_av_section avia-builder-el-last ">
+									     
 							
 										 <?php
 										    wp_reset_query();
@@ -47,7 +47,7 @@ global $avia_config;
 										    ?>										
 										<!--end content-->
 										
-						                             </div>
+						                             
 								   
 							</aside>
 						</div>	
