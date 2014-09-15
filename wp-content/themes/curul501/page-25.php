@@ -29,7 +29,7 @@ global $avia_config;
 					</div><!--fin iniciativas-->	
 					<aside class="sidebar sidebar_right three alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
                                                  <div class="inner_sidebar extralight-border">
-				                   <?php get_sidebar( $name ); ?> 
+				                  
 					         </div>
 					</aside>
 					
