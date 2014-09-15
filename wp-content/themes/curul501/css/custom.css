@@ -94,6 +94,9 @@ p{
     width: 28px;
     z-index: 2;
     }
+    .team-social a{
+        color: #34213D !important;
+    }
     #top #wrap_all .av-social-link-facebook:hover  a{color:#fff; background-color:#908098; }
     #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
     #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
