@@ -49,11 +49,12 @@ p{
         margin-top: 14px;
     }
     .av-main-nav > li > a {
+        color: #34213d !important;
         font-family: 'Oswald' !important;
         font-size: 16px;
         font-weight: 300;
-        text-transform:uppercase;
-        
+        text-transform: uppercase;
+    }   
     }
     #header_main nav .social_bookmarks {
     background: none repeat scroll 0 0 #FFFFFF !important;
