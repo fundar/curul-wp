@@ -18,7 +18,7 @@ global $avia_config;
 		?>			
 			<div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling  ">
 				<div class="container">
-					<div class="template-page nine alpha units">
+					<div class="nine alpha units">
 					     <div class="post-entry post-entry-type-page post-entry-25">
 						    <div class="entry-content-wrapper clearfix">
 							     <div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first ">
