@@ -5,9 +5,9 @@ global $avia_config;
 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
 	 ?>
-	<main class="template-page nine alpha units" itemprop="mainContentOfPage" role="main">
+	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 	    <div class='container'>
-		<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
+		<main class='template-page <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
 		<?php
 		/* Run the loop to output the posts.
 		* If you want to overload this in a child theme then include a file
