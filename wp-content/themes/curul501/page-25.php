@@ -5,7 +5,7 @@ global $avia_config;
 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
 	 ?>
-	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+	<main class="template-page nine alpha units" itemprop="mainContentOfPage" role="main">
 	    <div class='container'>
 		<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
 		<?php
