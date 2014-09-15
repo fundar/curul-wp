@@ -25,6 +25,9 @@ p{
     top: 0;
     z-index: 2;
 }
+.container_wrap .container_wrap_first .main_color .sidebar_right{
+    background-color: #f5f5f5;
+}
 /** header **/
     .main_menu {
         background: url("images/bg-left-nav.png") no-repeat bottom left;
