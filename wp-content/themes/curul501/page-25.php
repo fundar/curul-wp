@@ -22,7 +22,7 @@ global $avia_config;
 					     <div class="post-entry post-entry-type-page post-entry-25">
 						    <div class="entry-content-wrapper clearfix">
 							     <div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first ">
-								    INICIATIVAS
+								<h1 class="main-title entry-title">INICIATIVAS</h1>
 							     </div>
 						    </div>
 					     </div>
