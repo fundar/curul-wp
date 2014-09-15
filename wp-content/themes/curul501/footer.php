@@ -153,26 +153,12 @@
 		}
 	?>
 
-
-<?php
-
-
-
-
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
-
-
-	wp_footer();
-
-
-?>
-<a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
-<div id="fb-root"></div>
 <aside id="buscador" class="desktop" data-no-touch="" data-track-id="" style="">
 	ijij
 </aside>
+<?php wp_footer(); ?>
+
+<a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
+<div id="fb-root"></div>
 </body>
 </html>
