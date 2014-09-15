@@ -16,7 +16,6 @@ p{
     
 }
 #main {
-    background-color: #ffffff;
     height: calc(100% - 56px);
     left: 0;
     overflow-x: hidden;
