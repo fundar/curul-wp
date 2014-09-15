@@ -57,7 +57,8 @@ p{
     }   
     
     #header_main nav .social_bookmarks {
-    background: none repeat scroll 0 0 #FFFFFF !important;
+    background: none repeat scroll 0 0 #34213d  !important;
+    color:#fff;
     clear: none;
     float: left;
     height: 70px;
