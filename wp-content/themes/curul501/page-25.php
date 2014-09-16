@@ -30,7 +30,8 @@ global $avia_config;
 					<aside class="sidebar sidebar_right three alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
                                                  <div class="inner_sidebar extralight-border">
 				                  
-					         </div>
+						 </div>
+						 <div class="line-amarilla"> </div>
 					</aside>
 					
 				</div>	
