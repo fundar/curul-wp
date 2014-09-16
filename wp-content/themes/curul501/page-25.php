@@ -23,6 +23,7 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 							     <div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first ">
 								<h1 class="main-title entry-title">INICIATIVAS</h1>
+								<div class="line-amarilla"> </div>
 							     </div>
 						    </div>
 					     </div>
@@ -31,7 +32,7 @@ global $avia_config;
                                                  <div class="inner_sidebar extralight-border">
 				                  
 						 </div>
-						 <div class="line-amarilla"> </div>
+						 
 					</aside>
 					
 				</div>	
