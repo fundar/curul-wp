@@ -24,13 +24,14 @@ p{
     top: 0;
     z-index: 2;
 }
-.template-page .entry-content-wrapper h1, .template-page .entry-content-wrapper h2 {
+.entry-content-wrapper h1{
     background: none repeat scroll 0 0 #eabb67;
     color: white;
     display: inline-block;
-    font-family:'Oswald';
+    font-family: 'Oswald';
     font-weight: 400;
     letter-spacing: 0;
+    margin-bottom: 0;
     padding: 5px;
     text-transform: uppercase;
 }
