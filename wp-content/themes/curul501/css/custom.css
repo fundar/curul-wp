@@ -24,7 +24,7 @@ p{
     top: 0;
     z-index: 2;
 }
-.entry-content-wrapper h1{
+.entry-title h1{
     background: none repeat scroll 0 0 #eabb67;
     color: white;
     display: inline-block;
