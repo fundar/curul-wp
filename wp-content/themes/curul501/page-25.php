@@ -21,7 +21,7 @@ global $avia_config;
 					<div class="content  nine alpha units">
 					     <div class="post-entry post-entry-type-page post-entry-25">
 						    <div class="entry-content-wrapper clearfix">							     
-								<h1 class="main-title entry-title">INICIATIVAS</h1>
+								<h1 class="entry-title">INICIATIVAS</h1>
 								<div class="line-amarilla"> </div>
 							    
 						    </div>
