@@ -483,7 +483,7 @@ add_theme_support('force-post-thumbnails-in-widget');
 require_once( 'functions-enfold.php');
 
 /**
- * Custom Post Type "Solicitudes"
+ * Custom Post Type "Iniciativas"
  */
 add_action( 'init', 'create_post_type_iniciativas' );
 function create_post_type_iniciativas() {
@@ -495,7 +495,7 @@ function create_post_type_iniciativas() {
                 'singular_label' => __( 'Iniciativa' ),		
                 'all_items' => __('Iniciativas'),
                 'add_new_item' => __('Añadir una iniciativa nueva'),
-                'edit_item' => __('Editar solicitud'),
+                'edit_item' => __('Editar iniciativa'),
 		'search_items'       => __( 'Buscar Iniciativas' ),
 		'not_found'          => __( 'No iniciativas encontradas' ),
 		'not_found_in_trash' => __( 'No iniciativas encontradas en basura' ),
