@@ -27,6 +27,9 @@ p{
 .main_color{
     background:#f4f4f4;
 }
+.inner_sidebar {
+    margin-left:0px;
+}
 h1.entry-title-yellow {
     background: none repeat scroll 0 0 #eabb67;
     color: white;
