@@ -36,7 +36,7 @@ p{
 h1.entry-title-yellow {
     background: none repeat scroll 0 0 #eabb67;
     color: white;
-    display: inline-block;
+    display: block;
     font-family: 'Oswald';
     font-size: 18px;
     font-weight: 400;
