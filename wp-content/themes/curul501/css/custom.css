@@ -30,6 +30,9 @@ p{
 .inner_sidebar {
     margin-left:0px;
 }
+.main_color aside{
+    border:0 solid #f4f4f4;
+}
 h1.entry-title-yellow {
     background: none repeat scroll 0 0 #eabb67;
     color: white;
