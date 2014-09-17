@@ -16,7 +16,7 @@ p{
     
 }
 #main {
-    height: calc(100% - 56px);
+    height: calc(100% - 156px);
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -29,6 +29,19 @@ h1.entry-title {
     color: white;
     display: inline-block;
     font-family: 'Oswald';
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    padding: 5px;
+    text-transform: uppercase;
+}
+h1.title-sidebar {
+    background: none repeat scroll 0 0 #29193E;
+    color: white;
+    display: inline-block;
+    font-family: 'Oswald';
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 0;
     margin-bottom: 0;
