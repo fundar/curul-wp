@@ -24,6 +24,9 @@ p{
     top: 0;
     z-index: 2;
 }
+.main_color{
+    background:#f4f4f4;
+}
 h1.entry-title {
     background: none repeat scroll 0 0 #eabb67;
     color: white;
