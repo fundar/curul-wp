@@ -482,3 +482,57 @@ add_theme_support('force-post-thumbnails-in-widget');
 
 require_once( 'functions-enfold.php');
 
+/**
+ * Custom Post Type "Solicitudes"
+ */
+add_action( 'init', 'create_post_type_solicitudes' );
+function create_post_type_solicitudes() {
+    register_post_type( 'solicitud',
+        array(
+            'labels' => array(
+                'name' => __( 'Solicitudes' ),
+                'singular_name' => __( 'Solicitud' ),
+                'singular_label' => __( 'Solicitud' ),		
+                'all_items' => __('Solicitudes'),
+                'add_new_item' => __('Añadir una solicitud nueva'),
+                'edit_item' => __('Editar solicitud'),
+		'search_items'       => __( 'Buscar Solicitudes' ),
+		'not_found'          => __( 'No solicitudes encontradas' ),
+		'not_found_in_trash' => __( 'No solicitudes encontradas en basura' ),
+		'menu_name'          => 'Solicitudes'
+            ),
+        'public' => true,
+        'has_archive' => true,
+        'capability_type' => 'post',
+        'hierarchical' => true,
+        'query_var' => true,
+        'menu_position' => 5,
+        'menu_icon' => get_stylesheet_directory_uri() . '/images/solicitud_icon.png',
+        'rewrite' => array('slug' => 'solicitudes'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments' )	
+        )
+    );
+    
+}
+
+function my_taxonomies_iniciativa() {
+  $labels = array(
+    'name'              => _x( 'Iniciativa Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Iniciativa Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Iniciativa Categories' ),
+    'all_items'         => __( 'All Iniciativa Categories' ),
+    'parent_item'       => __( 'Parent Iniciativa Category' ),
+    'parent_item_colon' => __( 'Parent Iniciativa Category:' ),
+    'edit_item'         => __( 'Edit Iniciativa Category' ), 
+    'update_item'       => __( 'Update Iniciativa Category' ),
+    'add_new_item'      => __( 'Add New Iniciativa Category' ),
+    'new_item_name'     => __( 'New Iniciativa Category' ),
+    'menu_name'         => __( 'Categorias' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'iniciativa_category', 'iniciativa', $args );
+}
+add_action( 'init', 'my_taxonomies_iniciativa', 0 );
