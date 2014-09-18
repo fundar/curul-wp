@@ -1,18 +1,31 @@
-<?php get_header(); ?>
+<?php
+	global $avia_config;
+
+	/*
+	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
+	 */
+	 get_header();
+
+	$title  = __('Blog - Latest News', 'avia_framework'); //default blog title
+	$t_link = home_url('/');
+	$t_sub = "";
+
+	if(avia_get_option('frontpage') && $new = avia_get_option('blogpage'))
+	{
+		$title 	= get_the_title($new); //if the blog is attached to a page use this title
+		$t_link = get_permalink($new);
+		$t_sub =  avia_post_meta($new, 'subtitle');
+	}
+
+	if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title(array('heading'=>'strong', 'title' => $title, 'link' => $t_link, 'subtitle' => $t_sub));
+
+?>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
 			<div class='container template-blog template-single-blog '>
 
-				<main class="content units">
-					
-					<?php if(have_posts()): the_post(); ?>
-		                        <div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
-					<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-					<?php the_content(); ?>
-					<p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
-					 <?php endwhile; else : ?>
-					  <?php endif; ?>
+				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
 
                     <?php
                     /* Run the loop to output the posts.
