@@ -485,6 +485,13 @@ require_once( 'functions-enfold.php');
 /**
  * Custom Post Type "Iniciativas"
  */
+
+function codex_custom_init() {
+    $args = array( 'public' => true, 'label' => 'Books' );
+    register_post_type( 'book', $args );
+}
+
+add_action( 'init', 'codex_custom_init' );
 add_action( 'init', 'create_post_type_iniciativas' );
 function create_post_type_iniciativas() {
     register_post_type( 'iniciativa',
@@ -527,7 +534,7 @@ function my_taxonomies_iniciativa() {
     'update_item'       => __( 'Update Iniciativa Category' ),
     'add_new_item'      => __( 'Add New Iniciativa Category' ),
     'new_item_name'     => __( 'New Iniciativa Category' ),
-    'menu_name'         => __( 'Categorias' ),
+    'menu_name'         => __( 'Categories' ),
   );
   $args = array(
     'labels' => $labels,
@@ -536,3 +543,4 @@ function my_taxonomies_iniciativa() {
   register_taxonomy( 'iniciativa_category', 'iniciativa', $args );
 }
 add_action( 'init', 'my_taxonomies_iniciativa', 0 );
+
