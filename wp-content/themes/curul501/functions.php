@@ -488,7 +488,7 @@ require_once( 'functions-enfold.php');
 
 function codex_custom_init() {
     $args = array( 'public' => true, 'label' => 'Iniciativas' );
-    register_post_type( 'book', $args );
+    register_post_type( 'iniciativa', $args );
 }
 add_action( 'init', 'codex_custom_init' );
 
