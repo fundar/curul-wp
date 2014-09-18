@@ -72,6 +72,9 @@ h1.title-sidebar {
     border-bottom-width: 0;
     z-index: 1;
 }
+.av_header_transparency > #header_main {
+    background: url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
+}
     .main_menu {
         background: url("images/bg-left-nav.png") no-repeat bottom left;
        
