@@ -4,7 +4,15 @@
 
 			<div class='container template-blog template-single-blog '>
 
-				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
+				<main class="content units">
+					
+					<?php if(have_posts()): the_post(); ?>
+		                        <div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+					<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+					<?php the_content(); ?>
+					<p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_category( ', ' ); ?></p>
+					 <?php endwhile; else : ?>
+					  <?php endif; ?>
 
                     <?php
                     /* Run the loop to output the posts.
