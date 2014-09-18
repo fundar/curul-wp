@@ -73,7 +73,7 @@ h1.title-sidebar {
     z-index: 1;
 }
 .av_header_transparency > #header_main {
-    background-image: url("images/background.png");
+    background-image: none;
     background-color:rgba(0, 0, 0, 0);
 }
     .main_menu {
