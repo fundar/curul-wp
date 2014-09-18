@@ -8,7 +8,7 @@
 
 
 
-	if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title(array('heading'=>'strong', 'title' => $title, 'link' => $t_link, 'subtitle' => $t_sub));
+	
 
 ?>
 
