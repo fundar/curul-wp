@@ -9,23 +9,23 @@
 			<div class='container template-blog template-single-blog '>
 
 				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-		<?php the_content(); ?>
-	</div>
-
-<?php endwhile; ?>
-
-					
+					<?php
+					/* Run the loop to output the posts.
+					* If you want to overload this in a child theme then include a file
+					* called loop-index.php and that will be used instead.
+					*
+					*/
+		    
+					    get_template_part( 'includes/loop', 'index' );
+					?> 
 				</main>
 					
 				<!--end content-->
 				
 
 			<aside class="sidebar sidebar_right three alpha units" role="complementary">
-				
+			<?php avia_social_share_links(); ?> 	
 			</aside>
 
 
