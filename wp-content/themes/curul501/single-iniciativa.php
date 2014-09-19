@@ -18,7 +18,10 @@
 					*/
 		    
 					    get_template_part( 'includes/loop', 'index' );
-								    
+					?> 
+					</main>
+					
+					<?php			    
 					    //show related posts based on tags if there are any
 					    get_template_part( 'includes/related-posts');
 		    
@@ -28,7 +31,7 @@
 					?>
 
 				<!--end content-->
-				</main>
+				
 
 			<aside class="sidebar sidebar_right three alpha units" role="complementary">
 				
