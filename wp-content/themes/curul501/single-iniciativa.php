@@ -1,16 +1,5 @@
-<?php
-	global $avia_config;
+<?php get_header(); ?>
 
-	/*
-	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
-	 */
-	 get_header();
-
-
-
-	
-
-?>
 		<div class="container">
 			<div class="content  nine alpha units">
 			     <div class="post-entry post-entry-type-page post-entry-25">
