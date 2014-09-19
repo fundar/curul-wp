@@ -17,6 +17,7 @@ p{
 }
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
+    border: 0 solid #f4f4f4;
 }
 #main {
     height: calc(100% - 156px);
@@ -27,8 +28,10 @@ p{
     top: 0;
     z-index: 2;
 }
+
 .main_color{
     background:#f4f4f4;
+    
 }
 .inner_sidebar {
     margin-left:0px;
