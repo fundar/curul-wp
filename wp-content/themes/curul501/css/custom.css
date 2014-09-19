@@ -37,6 +37,10 @@ p{
 .top60 {
     margin-top: 65px;
 }
+.template-single-blog  {
+    background: none repeat scroll 0 0 #fff;
+    margin-top: 30px;
+}
 .inner_sidebar {
     margin-left:0px;
 }

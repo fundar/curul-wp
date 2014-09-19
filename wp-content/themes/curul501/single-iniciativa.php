@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 		<div class="container top60">										     
-						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
+						<h1 class="entry-title-yellow">Iniciativas</h1>
 						<div class="line-amarilla"> </div>
 		</div>
 
