@@ -211,7 +211,7 @@ if(!class_exists('avia_social_share_links'))
 			
 			$this->html .= "<div class='av-share-box'>";
 			$this->html .= 		"<h5 class='av-share-link-description'>";
-			$this->html .= 			__("Share this entry",'avia_framework');
+			$this->html .= 			__("Compartir",'avia_framework');
 			$this->html .= 		"</h5>";
 			$this->html .= 		"<ul class='av-share-box-list noLightbox'>";
 			
