@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+	
+
+	/*
+	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
+	 */
+	 get_header();
+
+
+
+	
+
+?>
 
 		<div class="container">
 			<div class="content  nine alpha units">
