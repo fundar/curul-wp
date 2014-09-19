@@ -15,6 +15,9 @@ p{
     font-family:'colaborate-thinregular';
     
 }
+#main, .html_stretched #wrap_all {
+    background-color: #f4f4f4;
+}
 #main {
     height: calc(100% - 156px);
     left: 0;
