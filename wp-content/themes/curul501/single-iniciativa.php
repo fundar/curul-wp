@@ -13,8 +13,20 @@
 ?>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		
 
 			<div class='container template-blog template-single-blog '>
+				<div class="container">
+					<div class="content  nine alpha units">
+					     <div class="post-entry post-entry-type-page post-entry-25">
+						    <div class="entry-content-wrapper clearfix">							     
+								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
+								<div class="line-amarilla"> </div>
+							    
+						    </div>
+					     </div>
+					</div>
+				</div>
 
 				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
 
