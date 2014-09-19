@@ -1,22 +1,7 @@
-<?php
-	
-
-	/*
-	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
-	 */
-	 get_header();
-
-
-
-	
-
-?>
-
-		<div class="container">
-										     
+<?php get_header(); ?>
+		<div class="container top60">										     
 						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 						<div class="line-amarilla"> </div>
-
 		</div>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>

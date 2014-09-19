@@ -34,6 +34,9 @@ p{
     border: 0 solid #f4f4f4;
     
 }
+.top60 {
+    margin-top: 65px;
+}
 .inner_sidebar {
     margin-left:0px;
 }
