@@ -13,15 +13,10 @@
 ?>
 
 		<div class="container">
-			<div class="content  nine alpha units">
-			     <div class="post-entry post-entry-type-page post-entry-25">
-				    <div class="entry-content-wrapper clearfix">							     
+										     
 						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 						<div class="line-amarilla"> </div>
-					    
-				    </div>
-			     </div>
-			</div>
+
 		</div>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
