@@ -10,7 +10,15 @@
 
 				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
 
-					// check if we got posts to display:
+					<?php
+global $avia_config, $post_loop_count;
+
+$post_loop_count= 1;
+$post_class 	= "post-entry-".avia_get_the_id();
+
+
+
+// check if we got posts to display:
 if (have_posts()) :
 
 	while (have_posts()) : the_post();
