@@ -215,9 +215,9 @@ h1.title-sidebar {
         display: block !important;
     }
      /** cpt **/
-    .iniciativa{
-        margin:30px 0;
-    }
+    .iniciativa {
+    padding: 30px 30px 30px 0;
+}
     .iniciativa > .entry-content-wrapper .post-title h1 {
     font-family: 'colaborate-thinregular';
     font-size: 28px;
