@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://curul501.org/wp-content/themes/curul501/css/fonts/stylesheet.css);
+
 /* Table of Content
 ==================================================
 	#Reset & Basics
@@ -65,7 +68,7 @@
 	/*font-stacks*/
 	.lucida-sans-websave{	font-family:"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif ;	}
 	.georgia-websave{		font-family:"Georgia", "Times New Roman", Times, serif;	}
-	.arial-websave{			font-family: Arial, Helvetica, Verdana, sans-serif;	}
+	.arial-websave{			font-family: 'colaborate-thinregular', Arial, Helvetica, Verdana, sans-serif;	}
 	.verdana-websave{		font-family: Verdana, Arial, Helvetica, sans-serif;	}
 	.helvetica-websave{		font-family: Helvetica, "HelveticaNeue", "Helvetica Neue", Arial, Verdana, sans-serif;	}
 	.helvetica-neue-websave{font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;	}
