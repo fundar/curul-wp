@@ -215,12 +215,12 @@ h1.title-sidebar {
         display: block !important;
     }
      /** cpt **/
-     h1.entry-content-wrapper .post-title {
+    .entry-content-wrapper .post-title h1 {
     font-family: 'colaborate-thinregular';
     font-size: 28px;
     line-height: 1.3em;
     }
-    h2.entry-content-wrapper .post-title {
+    .entry-content-wrapper .post-title h2 {
     font-family: 'colaborate-thinregular';
     font-size: 20px;
     line-height: 1.3em;
