@@ -8,7 +8,7 @@
 		
 			<div class='container template-blog template-single-blog '>
 
-				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
+				<main class='iniciativa units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
 				        <header class="iniciativa entry-content-header">
 						<h1 itemprop="headline" class="post-title entry-title">
 							Phasellus viverra eros vel sem blandit, quis scelerisque neque malesuada

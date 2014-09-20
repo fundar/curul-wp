@@ -215,16 +215,20 @@ h1.title-sidebar {
         display: block !important;
     }
      /** cpt **/
-     iniciativa > .entry-content-wrapper .post-title h1 {
+    .iniciativa{
+        margin:30px 0;
+    }
+    .iniciativa > .entry-content-wrapper .post-title h1 {
     font-family: 'colaborate-thinregular';
     font-size: 28px;
     line-height: 1.3em;
     }
-     iniciativa > .entry-content-wrapper .post-title h2 {
+    .iniciativa > .entry-content-wrapper .post-title h2 {
     font-family: 'colaborate-thinregular';
     font-size: 20px;
     line-height: 1.3em;
     }
+    
 
 
 
