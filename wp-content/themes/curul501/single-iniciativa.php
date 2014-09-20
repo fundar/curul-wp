@@ -13,9 +13,9 @@
 						<h1 itemprop="headline" class="post-title entry-title">
 							Phasellus viverra eros vel sem blandit, quis scelerisque neque malesuada
 						</h1>
-						<h2 itemprop="headline" class="post-title entry-title">
+						<h3 itemprop="headline" class="post-title entry-title">
 							Con proyecto de decreto, que reforma y adiciona los articulos 6o., 73, 76, 78, 89, 105, 108, 110, 111, 116 y 122 
-						</h2>
+						</h3>
 					</header>
 					<div class="entry-content" itemprop="text">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices aliquet condimentum. Aenean id tristique ligula. Nunc sed varius turpis, nec malesuada risus. Donec convallis tellus vitae ligula sagittis malesuada. Proin vitae quam hendrerit, pretium erat id, semper dolor. Nam ornare eget turpis eget rutrum. Morbi ante sem, aliquet vel laoreet et, molestie ut metus. Cras tincidunt convallis nibh, a egestas purus egestas quis. Maecenas non placerat dui, vel iaculis tellus. Etiam tempor lorem elit, a lobortis velit viverra sed. Pellentesque volutpat pretium nisl ac interdum. Sed accumsan, odio vitae convallis fringilla, elit ligula imperdiet augue, ut ullamcorper nulla sapien a dolor. Etiam aliquet enim eget tristique rutrum. Nulla non augue libero. Cras rutrum enim mi, in vehicula diam suscipit eget. Aenean elementum metus nec velit ultrices imperdiet.</p>
