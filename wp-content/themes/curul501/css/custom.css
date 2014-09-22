@@ -232,7 +232,24 @@ h1.title-sidebar {
     #top #main .sidebar {
     border-left-width: 0px;
     }
-    
+    .sidebar-votos{
+        background:#512B60;
+    }
+    .vota{
+        font-family: 'Oswald';
+        font-weight:300;
+        color:#fff;
+        font-size:46px;
+        text-transform:uppercase; 
+    }
+    .encurul{
+        font-family: 'Oswald';
+        font-weight:300;
+        color:#fff;
+        font-size:17px;
+        text-transform:uppercase;
+        
+    }
 
 
 

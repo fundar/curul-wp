@@ -27,6 +27,10 @@
 				
 
 			<aside class="sidebar sidebar_right three alpha units" role="complementary">
+			<div class="sidebar-votos">
+				<p class="vota">Vota</p>
+				<p class="encurul"> en curul</p>
+			</div>
 			<?php avia_social_share_links(); ?> 	
 			</aside>
 
