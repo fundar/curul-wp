@@ -77,10 +77,14 @@ h1.title-sidebar {
     height:2px;
     width:100%;
 }
-.linea-morado{
-    background: none repeat scroll 0 0 #29193E;
-    height:1px;
-    width:100%;
+.linea-morado {
+    background: none repeat scroll 0 0 #9a95a0;
+    display: block;
+    height: 1px;
+    margin-bottom: 12px;
+    margin-right: 38px;
+    margin-top: 0;
+    width: 100%;
 }
 .container_wrap .container_wrap_first .main_color .sidebar_right{
     background-color: #f5f5f5;
