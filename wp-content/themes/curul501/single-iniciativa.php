@@ -13,6 +13,7 @@
 						<h1 itemprop="headline" class="post-title entry-title">
 							Phasellus viverra eros vel sem blandit, quis scelerisque neque malesuada
 						</h1>
+						<div class="linea-morado"></div>
 						<h3 itemprop="headline" class="post-title entry-title">
 							Con proyecto de decreto, que reforma y adiciona los articulos 6o., 73, 76, 78, 89, 105, 108, 110, 111, 116 y 122 
 						</h3>
