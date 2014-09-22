@@ -229,6 +229,10 @@ h1.title-sidebar {
     line-height: 1.3em;
     }
     
+    #top #main .sidebar {
+    border-left-width: 0px;
+    }
+    
 
 
 
