@@ -242,12 +242,11 @@ h1.title-sidebar {
     border-left-width: 0px;
     }
     .content, .sidebar {
-    padding-top: 50px;
+    padding-top: 35px;
     }
     .sidebar-votos {
         background: none repeat scroll 0 0 #512b60;
         display: block;
-        margin: 33px 0;
         padding: 26px;
         width: 100%;
     }
