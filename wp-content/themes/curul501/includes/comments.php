@@ -169,7 +169,7 @@ endif; // end have_comments()
 		*/
 		 
 		 echo "<div class='comment_container ".avia_layout_class('entry',false)." units $indent'>";
-		 echo "<h3 class='miniheading'>".__('Leave a Reply','avia_framework')."</h3>";
+		 echo "<h3 class='miniheading'>".__('Deja un comentario','avia_framework')."</h3>";
 		 echo "<span class='minitext'>".__('Want to join the discussion? <br/>Feel free to contribute!','avia_framework')."</span>";
 		 comment_form();
 		 echo "</div>";
