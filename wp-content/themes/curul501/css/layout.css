@@ -2413,8 +2413,8 @@ border-bottom-width: 1px;
 
 
 .miniheading, .author_name, #reply-title, #top .logged-in-as, .dynamic-column-title{
+color: #512b60 !important;
 font-weight: 600;
-letter-spacing: 1px;
 }
 
 #comments span, .minitext, .form-allowed-tags, #reply-title small, #commentform label{
