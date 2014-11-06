@@ -4,7 +4,7 @@ Plugin Name: Disqus Comment System
 Plugin URI: http://disqus.com/
 Description: The Disqus comment system replaces your WordPress comment system with your comments hosted and powered by Disqus. Head over to the Comments admin page to set up your Disqus Comment System.
 Author: Disqus <team@disqus.com>
-Version: 2.80
+Version: 2.81
 Author URI: http://disqus.com/
 */
 
@@ -18,7 +18,7 @@ define('DISQUS_CAN_EXPORT',         is_file(dirname(__FILE__) . '/export.php'));
 if (!defined('DISQUS_DEBUG')) {
     define('DISQUS_DEBUG',          false);
 }
-define('DISQUS_VERSION',            '2.80');
+define('DISQUS_VERSION',            '2.81');
 define('DISQUS_SYNC_TIMEOUT',       30);
 
 /**
@@ -284,14 +284,21 @@ function dsq_sync_comments($comments) {
     foreach ( $comments as $comment ) {
         $thread_map[$comment->thread->id] = null;
     }
-    $thread_ids = "'" . implode("', '", array_keys($thread_map)) . "'";
 
-    $results = $wpdb->get_results($wpdb->prepare("
+    $thread_ids = array_keys($thread_map);
+
+    // add as many placeholders as needed
+    $sql = "
         SELECT post_id, meta_value 
         FROM $wpdb->postmeta 
-        WHERE meta_key = 'dsq_thread_id' AND meta_value IN (%s) 
-        LIMIT 1
-    ", $thread_ids));
+        WHERE meta_key = 'dsq_thread_id' AND meta_value IN (".implode(', ', array_fill(0, count($thread_ids), '%s')).")
+    ";
+
+    // Call $wpdb->prepare passing the values of the array as separate arguments
+    $query = call_user_func_array(array($wpdb, 'prepare'), array_merge(array($sql), $thread_ids));
+
+    $results = $wpdb->get_results($query);
+    
     foreach ( $results as $result ) {
         $thread_map[$result->meta_value] = $result->post_id;
     }
@@ -683,11 +690,16 @@ function dsq_get_pending_post_ids() {
 function dsq_clear_pending_post_ids($post_ids) {
     global $wpdb;
 
-    $post_ids_query = "'" . implode("', '", $post_ids) . "'";
-    $wpdb->query($wpdb->prepare("
+    // add as many placeholders as needed
+    $sql = "
         DELETE FROM {$wpdb->postmeta} 
-        WHERE meta_key = 'dsq_needs_sync' AND post_id IN (%s)
-    ", $post_ids_query));
+        WHERE meta_key = 'dsq_needs_sync' AND post_id IN (".implode(', ', array_fill(0, count($post_ids), '%s')).")
+    ";
+
+    // Call $wpdb->prepare passing the values of the array as separate arguments
+    $query = call_user_func_array(array($wpdb, 'prepare'), array_merge(array($sql), $post_ids));
+
+    $wpdb->query($query);
 
     update_meta_cache('dsq_needs_sync', $post_ids);
 }
@@ -980,7 +992,7 @@ function dsq_comments_text($comment_text) {
     global $post;
 
     if ( dsq_can_replace() ) {
-        return '<span class="dsq-postid" rel="'.esc_attr(dsq_identifier_for_post($post)).'">'.$comment_text.'</span>';
+        return '<span class="dsq-postid" data-dsqidentifier="'.esc_attr(dsq_identifier_for_post($post)).'">'.$comment_text.'</span>';
     } else {
         return $comment_text;
     }
