@@ -91,6 +91,12 @@ h1.title-sidebar {
 }
 /** header **/
 
+#top .av_header_transparency #header_meta {
+    background: none repeat scroll 0 0 #432b4d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+}
+
 .avia-menu.av_menu_icon_beside {
     border-right-style: solid;
     border-right-width: 0px;
