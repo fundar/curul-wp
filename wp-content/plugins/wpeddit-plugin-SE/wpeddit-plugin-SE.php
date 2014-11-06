@@ -483,7 +483,7 @@ function epicred_vote(){
 			
 			if($al != -1){
 				if($al == 1){
-					$vote = $vote-2;
+					$vote = $vote-1;
 				}else{
 				$vote = $vote-1;
 				}	
@@ -1170,7 +1170,7 @@ function epicred_vote_comment(){
 			
 			if($al != -1){
 				if($al == 1){
-					$vote = $vote-2;
+					$vote = $vote-1;
 					$ups = $ups -1;
 					$downs = $downs + 1;
 				}else{
