@@ -90,6 +90,13 @@ h1.title-sidebar {
     background-color: #f5f5f5;
 }
 /** header **/
+
+.avia-menu.av_menu_icon_beside {
+    border-right-style: solid;
+    border-right-width: 0px;
+    margin-right: 0;
+    padding-right: 0;
+}
     #header_main {
     background: url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
     border-bottom-style: solid;
