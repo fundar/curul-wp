@@ -240,6 +240,7 @@ h1.title-sidebar {
     
     #top #main .sidebar {
     border-left-width: 0px;
+    width:30%;
     }
     .content, .sidebar {
     padding-top: 35px;
