@@ -1193,74 +1193,7 @@ function epicred_vote_comment(){
 	exit;
 }
 
-function epic_reddit_voting_comment($ID){
-	global $wp_query,$post,$wpdb, $current_user,$query_string;
-    get_currentuserinfo();
-	$wpdb->myo_ip   = $wpdb->prefix . 'epicred_comment';
-			
-	$postvote = get_comment_meta($ID, 'wpeddit_comment_votes' ,true);
-	
-	if($postvote == NULL){
-				$postvote = 0;
-	}
-			
-			//again if IP locked set the fid variable to be the IP address.
-	if(get_option('epicred_ip') == 'yes'){
-		$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
-		$fid = "'" . $ipAddr . "'";	
-	}else{
-		$fid = $current_user->ID;
-	}
-			
-			$query = "SELECT epicred_option FROM $wpdb->myo_ip WHERE epicred_ip = $fid AND epicred_id = $ID";
-			$al = $wpdb->get_var($query);
-			if($al == NULL){
-				$al = 0;
-			}
-			if($al == 1){
-				$redclassu = 'upmod';
-				$redclassd = 'down';
-				$redscore = 'likes';
-			}elseif($al == -1){
-				$redclassd = 'downmod';
-				$redclassu = 'up';
-				$redscore = "dislikes";
-			}else{
-				$redclassu = "up";
-				$redclassd = "down";
-				$redscore = "unvoted";
-			}
-			
-			 ?>
-			
-			
-			<?php wpeddit_comment_ranking($ID); ?>
 
-			
-			<?php if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-			<div class = 'logged-in-only'>
-			
-			<?php } ?>
-			
-
-			<div class = 'reddit-voting'>
-				<ul class="unstyled">
-			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-					<div class="arrowc2 <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score2 <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrowc2 <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<?php }else{ ?>
-					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrowc <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>	
-					<?php }  ?>
-				</ul>
-			</div>	
-			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-			</div>
-			<?php } 
-	
-}
 
 /* Retreve The Value */
 function wpeddit_vote($comment) {
