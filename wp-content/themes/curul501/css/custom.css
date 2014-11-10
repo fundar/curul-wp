@@ -3,8 +3,7 @@
 @import url(fonts/stylesheet.css);
 /* General Custom CSS */
 /
-Desktop Styles
-================================================== */
+/** Desktop Styles **/
 /** body **/
 body {
      background: url("images/background.png") repeat-x 0 0;
@@ -19,6 +18,16 @@ p{
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
     
+}
+
+.container {
+    background: none repeat scroll 0 0 #fff;}
+.white-bg {
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
+    margin-bottom: 60px;
+    margin-top: 66px;
+    padding: 0 20px 20px;
 }
 .entry-content-wrapper{
     border:0;

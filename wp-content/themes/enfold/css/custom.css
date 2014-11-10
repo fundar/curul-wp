@@ -29,6 +29,13 @@ p{
     top: 0;
     z-index: 2;
 }
+.white-bg {
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
+    margin-bottom: 60px;
+    margin-top: 66px;
+    padding: 0 20px 20px;
+}
 .alternate_color, .alternate_color .site-background, .alternate_color .first-quote, .alternate_color .related_image_wrap, .alternate_color .gravatar img .alternate_color .hr_content, .alternate_color .news-thumb, .alternate_color .post-format-icon, .alternate_color .ajax_controlls a, .alternate_color .tweet-text.avatar_no, .alternate_color .toggler, .alternate_color .toggler.activeTitle:hover, .alternate_color #js_sort_items, .alternate_color.inner-entry, .alternate_color .grid-entry-title, .alternate_color .related-format-icon, .grid-entry .alternate_color .avia-arrow, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery img, .alternate_color .grid-content, .alternate_color .av-share-box ul, #top .alternate_color .av-related-style-full .related-format-icon, .alternate_color .related_posts.av-related-style-full a:hover, .alternate_color.avia-fullwidth-portfolio .pagination .current, .alternate_color.avia-fullwidth-portfolio .pagination a {
     background-color: transparent;
     color: #666666;

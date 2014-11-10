@@ -13,7 +13,7 @@ global $avia_config;
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
 			<div class='container'>
-
+                           <div class="white-bg">
 				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
 
                     <?php
@@ -36,7 +36,7 @@ global $avia_config;
 				get_sidebar();
 
 				?>
-
+			   </div>
 			</div><!--end container-->
 
 		</div><!-- close default .container_wrap element -->
