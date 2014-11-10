@@ -1,8 +1,8 @@
 /* Have fun adding your style here :) - PS: At all times this file should contain a comment or a rule, otherwise opera might act buggy :( */
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
-@import url(http://curul501.org/wp-content/themes/curul501/css/fonts/stylesheet.css);
+@import url("http://fonts.googleapis.com/css?family=Oswald:400,300,700");
+@import url(fonts/stylesheet.css);
 /* General Custom CSS */
-/*
+/
 Desktop Styles
 ================================================== */
 /** body **/
@@ -13,11 +13,20 @@ body {
 /** generales**/
 p{
     font-family:'colaborate-thinregular';
+    font-size:14px;
     
 }
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
     
+}
+.entry-content-wrapper{
+    border:0;
+}
+.content {
+    border-right-style: solid;
+    border-right-width: 0;
+    margin-right: -1px;
 }
 #main {
     height: calc(100% - 156px);
@@ -28,7 +37,10 @@ p{
     top: 0;
     z-index: 2;
 }
-
+.alternate_color, .alternate_color .site-background, .alternate_color .first-quote, .alternate_color .related_image_wrap, .alternate_color .gravatar img .alternate_color .hr_content, .alternate_color .news-thumb, .alternate_color .post-format-icon, .alternate_color .ajax_controlls a, .alternate_color .tweet-text.avatar_no, .alternate_color .toggler, .alternate_color .toggler.activeTitle:hover, .alternate_color #js_sort_items, .alternate_color.inner-entry, .alternate_color .grid-entry-title, .alternate_color .related-format-icon, .grid-entry .alternate_color .avia-arrow, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery img, .alternate_color .grid-content, .alternate_color .av-share-box ul, #top .alternate_color .av-related-style-full .related-format-icon, .alternate_color .related_posts.av-related-style-full a:hover, .alternate_color.avia-fullwidth-portfolio .pagination .current, .alternate_color.avia-fullwidth-portfolio .pagination a {
+    background-color: transparent;
+    color: #666666;
+}
 .main_color{
     background:#f4f4f4;
     border: 0 solid #f4f4f4;
@@ -239,8 +251,9 @@ h1.title-sidebar {
     }
     
     #top #main .sidebar {
-    border-left-width: 0px;
-    width:30%;
+    border-left-style: solid;
+    border-left-width: 1px;
+   
     }
     .content, .sidebar {
     padding-top: 35px;

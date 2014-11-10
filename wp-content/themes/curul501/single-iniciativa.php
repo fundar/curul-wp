@@ -8,7 +8,7 @@
 		
 			<div class='container template-blog template-single-blog '>
 
-				<main class="iniciativa units nine alpha " itemprop="mainContentOfPage" role="main">
+				<main class="content units av-content-small alpha" role="main">
 				        <header class="entry-content-header">
 						<h1 itemprop="headline" class="post-title entry-title">
 							Phasellus viverra eros vel sem blandit, quis scelerisque neque malesuada
