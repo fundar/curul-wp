@@ -744,15 +744,17 @@ function wpeddit_hot_comments($posts){
 
 
 
-//add_filter( 'the_content', 'wpeddit_content_filter', 20 );
+add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
 	if(!is_page() && !is_admin()){
-	if(is_page('members-2') ){
-	$content =  $content;
-	}else
+		if(is_page('members-2') ){
+			$hola="hola";
+			$content =  $hola.$content;
+			}else{
 	$newcontent = epic_reddit_voting();
 	$content = $newcontent . $content;
+	}
 	}
     // Returns the content.
     return $content;
