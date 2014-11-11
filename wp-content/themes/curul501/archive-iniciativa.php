@@ -13,11 +13,12 @@
 			if(get_post_meta($blogpage_id, 'header', true) == 'no') $showheader = false;
 		}
 		
-	 	if($showheader)
-	 	{
-			echo avia_title(array('title' => avia_which_archive()));
-		}
+	 	
 	?>
+	        <div class="container top60">
+			<h1 class="entry-title-yellow">Iniciativas</h1>
+			<div class="line-amarilla"> </div>
+		</div>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 
