@@ -18,7 +18,12 @@ global $avia_config;
 								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 								<div class="line-amarilla"> </div>
 								<div class="container template-blog ">
-									uw9deyuw89qyr89y378yrt873y78r78
+									<div class="post_date">
+										<div class="post_date">
+										<span>03</span>
+										Jul
+										</div>
+									</div>
 								</div>								
 							    
 						    </div>

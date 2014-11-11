@@ -284,6 +284,22 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
     #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
     
+    /** home iniciativas **/
+    .post_date {
+    color: #512B60;
+    float: left;
+    height: 50px;
+    padding: 10px 2%;
+    text-align: center;
+   }
+   .post_date span {
+    color: #512B60;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 25px;
+    }
+    
     /**silder home **/   
    .parrafo-sl1 > p{
         color:#676767;
