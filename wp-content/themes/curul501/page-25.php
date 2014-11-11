@@ -17,6 +17,9 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">							     
 								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 								<div class="line-amarilla"> </div>
+								<div class="container template-blog ">
+									uw9deyuw89qyr89y378yrt873y78r78
+								</div>								
 							    
 						    </div>
 					     </div>
