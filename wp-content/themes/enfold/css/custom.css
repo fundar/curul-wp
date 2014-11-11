@@ -134,6 +134,12 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
+
+img.bullet-sb{
+    margin: -4px 8px 0 0;
+    top: 2px;
+    vertical-align: middle;
+}
 .line-amarilla {
     background: none repeat scroll 0 0 #eabb67;
     height: 2px;
