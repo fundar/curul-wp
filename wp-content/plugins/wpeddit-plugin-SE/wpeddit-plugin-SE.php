@@ -748,14 +748,15 @@ add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
 	if(!is_page() && !is_admin()){
-		if(is_page('members-2') ){
-			$hola="hola";
-			$content =  $hola.$content;
-			}else{
+	if (is_page('members-2')) { // or whatever other condition you like
+        remove_filter( 'the_content', 'wpeddit_content_filter' );
+        return $content;
+		}else{
 	$newcontent = epic_reddit_voting();
 	$content = $newcontent . $content;
 	}
 	}
+	
     // Returns the content.
     return $content;
 }
