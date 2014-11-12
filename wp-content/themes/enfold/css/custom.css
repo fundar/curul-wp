@@ -73,7 +73,7 @@ p{
 .top60 {
     margin-top: 65px;
 }
-.template-blog {
+.post {
     background: none repeat scroll 0 0 #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     margin: 43px auto;
@@ -422,5 +422,10 @@ Mobile Styles
 
 @media only screen and (max-width: 767px) {
   /* Add your Mobile Styles here */
+  
+  /**home**/
+  div.post-entry-25 {
+    padding-right: 0px;
+}
 
 }

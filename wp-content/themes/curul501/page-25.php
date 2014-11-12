@@ -10,27 +10,37 @@ global $avia_config;
 	    <div class='container'>
 		<main class='template-page  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
 			
-			<div class="flex_column av_one_full first  avia-builder-el-1  el_after_av_revolutionslider  avia-builder-el-no-sibling  ">
-				<div class="container">
+			
+				<div class="container_wrap container_wrap_first main_color sidebar_right ">
+				
 					<div class="content  nine alpha units">
 					     <div class="post-entry post-entry-type-page post-entry-25">
-						    <div class="entry-content-wrapper clearfix">							     
+						    <div class="entry-content-wrapper clearfix">
 								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 								<div class="line-amarilla"> </div>
-								<div class="container template-blog ">
-									<div class="post_date">
-										<div class="post_date">
-										<span>03</span>
-										Feb, 2014
+								
+					                        <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small ">
+									<div  class="container av-content-full units">
+										<div class="container template-blog">
+												<div class="post_date">
+												<span>03</span>
+												Feb, 2014
+												</div>
+												<div class="entry-content">
+												<p>
+													Dar autonomía a los órganos garantes federal y estatales, dar facultad al IFAI para promover acciones de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos políticos, fideicomisios públicos).
+												</p>
+												</div>
 										</div>
 									</div>
-								</div>								
-							    
+								</article>
+							
 						    </div>
 					     </div>
 					</div><!--fin iniciativas-->					
-				</div>	
-			</div>		     
+				</div>
+				
+					     
 		</main>
 		
                
@@ -41,7 +51,7 @@ global $avia_config;
 		get_sidebar();
 
 		?>
-			 </div></div>
+			 
 						 
 					
 	   </div><!--end container-->
