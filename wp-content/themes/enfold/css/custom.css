@@ -481,8 +481,8 @@ Mobile Styles
         width: 100% !important;
     }
     .datos {
-   
-    float: none;
+        text-align:left;
+     
 
     }
 
