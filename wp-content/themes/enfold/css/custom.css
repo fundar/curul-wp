@@ -315,14 +315,34 @@ div.post-entry-25 {
     line-height: 25px;
     margin-bottom: 8px;
 }
+.datos {
+    display: block;
+    float: left;
+    font-family: colaborate-thinregular;
+    font-size: 11px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
 .topTop {
     margin-top: -20px !important;
+}
+.leftRI {
+    border-left: 1px solid #9991a8;
+    height: 64px;
+    margin-left: 0 !important;
+    width: 35.33% !important;
 }
 .entry-content {
     min-height: 52px;
     overflow: hidden;
-    padding: 0 20px;
 }
+.entry-status {
+    min-height: 52px;
+    overflow: hidden;
+    padding:0 20px 0 5px;
+}
+
 p.resemen-recientes-iniciativas {
     margin: 0;
     padding: 0;
@@ -441,13 +461,16 @@ Mobile Styles
 @media only screen and (max-width: 767px) {
   /* Add your Mobile Styles here */
   
-  /**home**/
-  div.post-entry-25 {
+    /**home**/
+    div.post-entry-25 {
     padding-right: 0px;
-}
-.topTop {
-    margin-top:0 !important;
-}
+    }
+    .topTop {
+        margin-top:0 !important;
+    }
+    .leftRI {
+        width: 100% !important;
+    }
 
 
 }

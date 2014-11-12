@@ -35,7 +35,22 @@ global $avia_config;
 													</p>
 												</div>
 											</div><!--fin fecha y resumen-->
-											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last ">
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI">
+												<div class="flex_column av_one_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first ">
+													<div class="datos">
+													Status
+													</div>
+												</div> 
+												<div class="flex_column av_one_third avia-builder-el-1 el_after_av_one_third el_before_av_one_third ">
+														 <div class="datos">
+												                 Votaci&oacute;n final
+														 </div>
+												</div>
+												<div class="flex_column av_one_third avia-builder-el-2 el_after_av_one_third avia-builder-el-last ">
+													<div class="datos">
+												         Propuesta por:
+													</div>
+																									</div>
 													
 											</div>
 											
