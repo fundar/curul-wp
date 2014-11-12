@@ -21,7 +21,7 @@ global $avia_config;
 									<div class="post_date">
 										<div class="post_date">
 										<span>03</span>
-										Jul
+										Feb, 2014
 										</div>
 									</div>
 								</div>								

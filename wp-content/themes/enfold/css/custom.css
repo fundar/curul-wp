@@ -291,13 +291,16 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
     
     /** home iniciativas **/
-    .post_date {
-    color: #512B60;
-    float: left;  
+.post_date {
+    color: #512b60;
+    float: left;
+    font-family: colaborate-thinregular;
+    font-size: 11px;
     height: 50px;
     padding: 10px 2%;
     text-align: center;
-   }
+    text-transform: uppercase;
+}
    .post_date span {
     color: #512B60;
     display: block;
