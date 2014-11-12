@@ -295,13 +295,16 @@ div.post-entry-25 {
     /** home iniciativas **/
 .post_date {
     color: #512b60;
+    display: block;
     float: left;
     font-family: colaborate-thinregular;
     font-size: 11px;
-    padding-right:13px;
+    min-height: 40px;
+    overflow: hidden;
+    padding-right: 13px;
+    padding-top: 7px;
     text-align: center;
     text-transform: uppercase;
-    min-height:40px;
 }
   .post_date span {
     color: #512b60;
@@ -313,13 +316,13 @@ div.post-entry-25 {
     margin-bottom: 8px;
 }
 .topTop {
-    margin-top: 0px !important;
+    margin-top: -20px !important;
 }
 .entry-content {
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     min-height: 52px;
     overflow: hidden;
-    padding: 50px 20px 30px;
+    padding: 0 20px;
 }
 p.resemen-recientes-iniciativas {
     margin: 0;
