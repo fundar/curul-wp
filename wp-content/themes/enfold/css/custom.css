@@ -78,6 +78,12 @@ p{
     margin: 43px auto;
     box-shadow:0 0 6px rgba(0, 0, 0, 0.1);
 }
+
+.template-blog .blog-meta {
+    float: left;
+    margin-left: 30px;
+    margin-right: 50px;
+}
 .template-single-blog {
     background: none repeat scroll 0 0 #fff;
     margin: 43px auto;
