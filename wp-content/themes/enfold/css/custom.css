@@ -79,7 +79,6 @@ p{
     margin: 43px auto;
     padding: 10px;
 }
-
 .template-blog .blog-meta {
     float: left;
     margin-left: 30px;
@@ -184,6 +183,9 @@ div.post-entry-25 {
 }
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
+}
+.pleca-29193E {
+    border-bottom: 4px solid #512b60 !important;
 }
 .container_wrap .container_wrap_first .main_color .sidebar_right{
     background-color: #f5f5f5;
@@ -296,9 +298,10 @@ div.post-entry-25 {
     float: left;
     font-family: colaborate-thinregular;
     font-size: 11px;
-    padding: 4px 0;
+    padding-right:13px;
     text-align: center;
     text-transform: uppercase;
+    min-height:40px;
 }
   .post_date span {
     color: #512b60;
@@ -308,6 +311,9 @@ div.post-entry-25 {
     font-weight: 700;
     line-height: 25px;
     margin-bottom: 8px;
+}
+.topTop {
+    margin-top: -12px;
 }
     
     /**silder home **/   
