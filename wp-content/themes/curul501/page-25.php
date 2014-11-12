@@ -50,6 +50,7 @@ global $avia_config;
 													<div class="datos">
 												         Propuesta por:
 													</div>
+													<img src="wp-content/themes/curul501/images/avatar-m-42x42.png">
 												</div>
 													
 											</div>

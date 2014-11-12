@@ -480,6 +480,11 @@ Mobile Styles
     .leftRI {
         width: 100% !important;
     }
+    .datos {
+   
+    float: none;
+
+    }
 
 
 }
