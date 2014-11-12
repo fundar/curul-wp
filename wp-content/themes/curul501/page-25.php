@@ -19,7 +19,7 @@ global $avia_config;
 								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 								<div class="line-amarilla"> </div>
 								
-					                        <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-29193E">
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-29193E">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
 											<!--Inicio fecga y resumen-->
@@ -28,18 +28,20 @@ global $avia_config;
 													<span>03</span>
 													Feb, 2014
 												</div>
-												<p>
-													Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
-													de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos).
-												</p>
-											</div><!--fin fecga y resumen-->
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos).
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last ">
 													
 											</div>
 											
 										</div>
 									</div>
-								</article>
+							</article>
 							
 						    </div>
 					     </div>
