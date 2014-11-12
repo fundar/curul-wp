@@ -50,7 +50,7 @@ global $avia_config;
 													<div class="datos">
 												         Propuesta por:
 													</div>
-																									</div>
+												</div>
 													
 											</div>
 											
