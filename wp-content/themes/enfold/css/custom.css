@@ -301,14 +301,15 @@ div.post-entry-25 {
     text-align: center;
     text-transform: uppercase;
 }
-   .post_date span {
-    color: #512B60;
+  .post_date span {
+    color: #512b60;
     display: block;
-    font-size: 32px;
+    font-family: oswald;
+    font-size: 41px;
     font-weight: 700;
     line-height: 25px;
-     font-family: oswald;
-    }
+    margin-bottom: 8px;
+}
     
     /**silder home **/   
    .parrafo-sl1 > p{
