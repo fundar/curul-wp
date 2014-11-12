@@ -28,7 +28,9 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 												<p>
-													Dar autonomía a los órganos garantes federal y estatales, dar facultad al IFAI para promover acciones de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos políticos, fideicomisios públicos).
+													Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+													 de inconstitucionalidad y
+													ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos).
 												</p>
 												</div>
 										</div>
