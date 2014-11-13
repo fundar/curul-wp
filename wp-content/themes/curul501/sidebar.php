@@ -22,7 +22,7 @@ if(!empty($avia_config['overload_sidebar'])) $avia_config['currently_viewing'] =
 
 
 echo "<div class='sidebar sidebar_".$sidebar." ".$sidebar_smartphone." ".avia_layout_class( 'sidebar', false )." units' ".avia_markup_helper(array('context' => 'sidebar', 'echo' => false)).">";
-    echo "<div class='inner_sidebar extralight-border'>";
+    echo "<div class='inner_sidebar'>";
 
         //Display a subnavigation for pages that is automatically generated, so the users do not need to work with widgets
         $av_sidebar_menu = avia_sidebar_menu(false);
