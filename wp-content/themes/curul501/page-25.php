@@ -36,35 +36,33 @@ global $avia_config;
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI">
-												<div class="flex_column av_one_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first ">
+												<div class="col-status">
 													<div class="datos">
 													Status
 													</div>
 												</div> 
-												<div class="flex_column av_one_third avia-builder-el-1 el_after_av_one_third el_before_av_one_third ">
-														 <div class="datos">
-												                 Votaci&oacute;n final
-														 </div>
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final
+													</div>
+													<div class="votos-oficiles">
+														50
+													</div>
 												</div>
-												<div class="flex_column av_one_third avia-builder-el-2 el_after_av_one_third avia-builder-el-last ">
+												<div class="col-status-2">
 													<div class="datos">
 												         Propuesta por:
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
 													</div>
-													<img src="wp-content/themes/curul501/images/avatar-m-42x42.png">
-												</div>
-													
-											</div>
-											
+												</div>													
+											</div>											
 										</div>
 									</div>
-							</article>
-							
+							</article>							
 						    </div>
 					     </div>
 					</div><!--fin iniciativas-->					
-				</div>
-				
-					     
+				</div>					     
 		</main>
 		
                

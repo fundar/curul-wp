@@ -325,13 +325,66 @@ div.post-entry-25 {
     text-align: center;
     width: 100%;
 }
+span.datos{
+    display: inline-block;
+    margin-top: 4px;
+    vertical-align: middle;
+}
 .topTop {
     margin-top: -20px !important;
 }
+.col-status {
+    display: block;
+    float: left;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 30.333%;
+    z-index: 1;
+}
+.col-status-1 {
+    display: block;
+    float: left;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 32%;
+    z-index: 1;
+}
+.col-status-2 {
+    display: block;
+    float: left;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 37%;
+    z-index: 1;
+}
+.votos-oficiles {
+    color: #9991a8;
+    display: block;
+    font-family: 'oswald';
+    font-size: 38px;
+    line-height: 50px;
+}
+.photo-avatar img {
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 27px;
+    width: auto;
+}
 .leftRI {
     border-left: 1px solid #988fa7;
-    min-height: 64px;
-    height:85px;
+    height: 100px !important;
     margin-left: 0 !important;
     width: 35.33% !important;
 }
@@ -479,11 +532,13 @@ Mobile Styles
     }
     .leftRI {
         width: 100% !important;
+         border-left:0px solid;
+         border-top:1px solid #ccc;
     }
-    .datos {
-        text-align:left;
-     
-
+    span.datos{
+    display: inline-block;
+    margin-top: 4px;
+    vertical-align: middle;
     }
 
 
