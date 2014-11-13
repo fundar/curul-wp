@@ -38,12 +38,13 @@ global $avia_config;
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI">
 												<div class="col-status">
 													<div class="datos">
-													Status
-													</div>
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
 												</div> 
 												<div class="col-status-1">
 													<div class="datos">
-													Votaci&oacute;n final
+													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
 														50
