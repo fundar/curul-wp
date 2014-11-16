@@ -34,7 +34,7 @@ global $avia_config;
 													</p>
 												</div>
 											</div><!--fin fecha y resumen-->
-											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI">
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
 												<div class="col-status">
 													<div class="datos">
 													Status													
@@ -50,13 +50,11 @@ global $avia_config;
 													</div>
 												</div>
 												<div class="col-status-2">
-													<div class="datos">
-												         Propuesta por:
+													<div class="datos">Propuesta por:</div>
 													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
-													<div class="">
-														<img src="">
-															<span>Partido Revolucionario Institucional</span>
-													</div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
+															<span>PRI</span>
+													
 													</div>
 												</div>													
 											</div>
