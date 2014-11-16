@@ -29,7 +29,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -59,7 +59,9 @@ global $avia_config;
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-											<?php avia_social_share_links(); ?>
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
