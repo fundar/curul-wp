@@ -183,7 +183,7 @@ img.bullet-sb{
 div.post-entry-25 {
     padding-right: 50px;
 }
-a:hover.iniciativas-home{color:yellow;}
+.iniciativas-home a:hover{color:yellow;}
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
 }
@@ -368,6 +368,9 @@ span.datos{
     width: 37%;
     z-index: 1;
 }
+.in-box-share{
+    width:50%;
+}
 .logo-partido img {
     display: block;
     margin: auto;
@@ -548,15 +551,18 @@ p.resemen-recientes-iniciativas {
     /** share social **/
 .av-share-box {
     background:#FFF !important;
-    border-color: transparent !important;
     clear: both;
     float: left;
     font-size: 13px;
     margin-bottom: 0;
     margin-top: 19px;
     padding: 0;
-    width: 48%;
+    width: 100%;
 }
+.av-share-box ul{border-width: 0;border-color:transparent;background-color:transparent !important;width: 91%;width: 91%;text-align:left;}
+.av-share-box ul li:first-child {border: medium none;}
+.av-share-box ul li a {padding: 0;color:#9991A8;font-size: 12px;}
+.av-share-box-list{border:0 solid #fff;}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
