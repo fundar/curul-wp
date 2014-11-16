@@ -17,6 +17,7 @@ p{
      color: rgba(68, 68, 68, 0.8);
     
 }
+a:hover{text-decoration:none;}
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
     
@@ -182,11 +183,15 @@ img.bullet-sb{
 div.post-entry-25 {
     padding-right: 50px;
 }
+a:hover.iniciativas-home{color:yellow;}
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
 }
 .pleca-29193E {
     border-bottom: 4px solid #512b60 !important;
+}
+.pleca-624070 {
+    border-bottom: 4px solid #624070 !important;
 }
 .container_wrap .container_wrap_first .main_color .sidebar_right{
     background-color: #f5f5f5;
@@ -373,6 +378,24 @@ span.datos{
     line-height: 12px;
     margin-top: 6px;
     text-align: center;
+}
+.vta-curul {
+    background: url("images/bg-vta-recientes.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+    bottom: 0;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 34.99%;
+}
+.vta-curul span {
+    color: #512b60;
+    display: inline-block;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding-top: 4px;
+    vertical-align: middle;
 }
 .votos-oficiles {
     color: #9991a8;
@@ -569,6 +592,9 @@ Mobile Styles
     }
     .top12{
     padding-top: 12px;   
+    }
+    .vta-curul{
+        width:100%;
     }
 
 }

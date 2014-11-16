@@ -18,7 +18,7 @@ global $avia_config;
 								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
 								<div class="line-amarilla"> </div>
 								
-				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-29193E">
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
 											<!--Inicio fecga y resumen-->
@@ -29,8 +29,8 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
-														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos).
+														<a class="ini-home" href="">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
 											</div><!--fin fecha y resumen-->
@@ -61,9 +61,10 @@ global $avia_config;
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
 											<?php avia_social_share_links(); ?>
 											</div>
-											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last">
-												jhyui
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
 											</div>
+
 											
 										</div>
 									</div>
