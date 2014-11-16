@@ -37,14 +37,10 @@
 
 
 			</div><!--end container-->
-                        <div class="container top60">					<?php			    
-					    //show related posts based on tags if there are any
-					    get_template_part( 'includes/related-posts');
-		    
-					    //wordpress function that loads the comments template "comments.php"
-					    comments_template( '/includes/comments.php');
-		    
-					?>
+                        <div class="container top60">
+			<?php			    		    
+		        comments_template( '/includes/comments.php');
+		        ?>
 			</div>
 		</div><!-- close default .container_wrap element -->
 

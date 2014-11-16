@@ -519,6 +519,18 @@ p.resemen-recientes-iniciativas {
         text-align:center;
         
     }
+    /** share social **/
+.av-share-box {
+    background:#FFF !important;
+    border-color: transparent !important;
+    clear: both;
+    float: left;
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-top: 19px;
+    padding: 0;
+    width: 48%;
+}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
