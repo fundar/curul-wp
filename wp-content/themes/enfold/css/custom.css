@@ -363,6 +363,17 @@ span.datos{
     width: 37%;
     z-index: 1;
 }
+.logo-partido img {
+    display: block;
+    margin: auto;
+}
+.logo-partido span {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 6px;
+    text-align: center;
+}
 .votos-oficiles {
     color: #9991a8;
     display: block;
@@ -371,16 +382,8 @@ span.datos{
     line-height: 44px;
 }
 .photo-avatar img {
-    bottom: 0;
-    display: block;
-    height: auto;
-    left: 0;
     margin: auto;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 27px;
-    width: auto;
+
 }
 .temporizador img {
     bottom: 0;
@@ -564,6 +567,8 @@ Mobile Styles
     margin-top: 4px;
     vertical-align: middle;
     }
-
+    .top12{
+    padding-top: 12px;   
+    }
 
 }
