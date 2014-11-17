@@ -559,9 +559,16 @@ p.resemen-recientes-iniciativas {
     padding: 0;
     width: 100%;
 }
+.av-share-box ul li {
+    border-left-style: solid;
+    border-left-width: 0 ;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+}
 .av-share-box ul{border-width: 0;border-color:transparent;background-color:transparent !important;width: 91%;width: 91%;text-align:left;}
 .av-share-box ul li:first-child {border: medium none;}
-.av-share-box ul li a {padding: 0;color:#9991A8;font-size: 12px;}
+.av-share-box ul li a {padding: 0;color:#9991A8 !important;font-size: 12px;}
 .av-share-box-list{border:0 solid #fff;}
 
 @media only screen and (min-width: 768px) {
