@@ -294,9 +294,11 @@ div.post-entry-25 {
     .team-social a{
         color: #34213D !important;
     }
-    #top #wrap_all .av-social-link-facebook:hover  a{color:#fff; background-color:#908098; }
-    #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
-    #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
+    #top #wrap_all .av-social-link-facebook:hover  a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-twitter:hover   a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-mail:hover      a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-gplus:hover     a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-linkedin:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
 .post_date {
