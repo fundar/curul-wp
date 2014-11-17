@@ -74,13 +74,7 @@
 				<!--end content-->
 				</main>
 
-				<?php
-
-				//get the sidebar
-				$avia_config['currently_viewing'] = 'blog';
-				get_sidebar();
-
-				?>
+				
 
 			</div><!--end container-->
 
