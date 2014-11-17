@@ -20,11 +20,11 @@
 			<div class="line-amarilla"> </div>
 		</div>
 
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		<div class='container_wrap container_wrap_first main_color fullsize'>
 
-			<div class='container template-blog '>
+			<div class='container'>
 
-				<main class='content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
+				<main class='template-page content  av-content-full alpha units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
 
                     <div class="category-term-description">
                         <?php echo term_description(); ?>
