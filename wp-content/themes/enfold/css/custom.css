@@ -43,6 +43,10 @@ a:hover{text-decoration:none;}
     background:#fff;
     box-shadow:0 0 6px rgba(0, 0, 0, 0.1);
 }
+.post-entry{
+    background:#fff;
+    box-shadow:0 0 6px rgba(0, 0, 0, 0.1);
+}
 .content {
     border-right-style: solid;
     border-right-width: 0;
@@ -78,7 +82,7 @@ a:hover{text-decoration:none;}
 .post {
     background: none repeat scroll 0 0 #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin: 43px auto 0;
+    margin: 0 auto;
     padding: 10px;
 }
 .template-blog .blog-meta {
@@ -112,11 +116,11 @@ h1.entry-title-yellow {
     color: white;
     display: inline-block;
     font-family: 'Oswald';
-    font-size: 30px;
+    font-size: 31px;
     font-weight: 400;
     letter-spacing: -0.01em !important;
     margin-bottom: 0;
-    padding:2px 6px;
+    padding: 3px 6px 2px;
     text-transform: uppercase;
 }
 
@@ -184,11 +188,9 @@ img.bullet-sb{
 div.post-entry-25 {
     padding-right: 50px;
 }
-
-a.iniciativas-home{color:#676767;}
-a.iniciativas-home:hover{color:#624070;}
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
+    margin-top:43px;
 }
 .pleca-29193E {
     border-bottom: 4px solid #512b60 !important;
@@ -305,6 +307,8 @@ a.iniciativas-home:hover{color:#624070;}
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
+a.iniciativas-home{color:#676767;}
+a.iniciativas-home:hover{color:#624070;}
 .post_date {
     color: #512b60;
     display: block;
@@ -617,3 +621,5 @@ Mobile Styles
     }
 
 }
+/** iniciativas archive **/
+.box-menu{ margin-top:10px;}

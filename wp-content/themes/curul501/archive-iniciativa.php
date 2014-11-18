@@ -19,17 +19,26 @@
 			<h1 class="entry-title-yellow">Iniciativas</h1>
 			<div class="line-amarilla"> </div>
 		</div>
+		<div class="container box-menu">
+				<div class="search-table">
+					<div class="search-field">						
+						<select class="search-field search-table" name="category">
+							<option value="1">Tema</option>
+							<option value="2">Tema 2</option>
+							
+							
+							
+						</select>
+					</div>
+	
+				</div>
+		</div>
 
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 
 			<div class='container'>
 
 				<main class='template-page content  av-content-full alpha units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
-
-                    <div class="category-term-description">
-                        <?php echo term_description(); ?>
-                    </div>
-
                   				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
