@@ -13,11 +13,12 @@ global $avia_config;
 			
 				<div class="container_wrap container_wrap_first main_color sidebar_right ">
 					<div class="content  nine alpha units">
-					     <div class="post-entry post-entry-type-page post-entry-25">
-						    <div class="entry-content-wrapper clearfix">
-								<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
-								<div class="line-amarilla"> </div>
-								
+						<div class="post-entry-25">
+						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
+						<div class="line-amarilla"> </div>
+						</div>
+						<div class="post-entry post-entry-type-page post-entry-25">
+						    <div class="entry-content-wrapper clearfix">								
 				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
