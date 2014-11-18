@@ -30,48 +30,59 @@
                         <?php echo term_description(); ?>
                     </div>
 
-                    <?php
-                    $blog_layout = apply_filters('avf_blog_style', avia_get_option('blog_style','multi-big'), 'archive');
-                    if($blog_layout == 'blog-grid')
-                    {
-                        global $posts;
-                        $post_ids = array();
-                        foreach($posts as $post) $post_ids[] = $post->ID;
+                  				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="images/18px-PRI.png">
+															<span>PRI</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                        if(!empty($post_ids))
-                        {
-                            $atts   = array(
-                                'type' => 'grid',
-                                'items' => get_option('posts_per_page'),
-                                'columns' => 3,
-                                'class' => 'avia-builder-el-no-sibling',
-                                'paginate' => 'yes',
-                                'use_main_query_pagination' => 'yes',
-                                'custom_query' => array( 'post__in'=>$post_ids, 'post_type'=>get_post_types() )
-                            );
-
-                            $blog = new avia_post_slider($atts);
-                            $blog->query_entries();
-                            echo "<div class='entry-content-wrapper'>".$blog->html()."</div>";
-                        }
-                        else
-                        {
-                            get_template_part( 'includes/loop', 'index' );
-                        }
-                    }
-                    else
-                    {
-                        /* Run the loop to output the posts.
-                        * If you want to overload this in a child theme then include a file
-                        * called loop-index.php and that will be used instead.
-                        */
-
-                        $more = 0;
-                        get_template_part( 'includes/loop', 'index' );
-                    }
-                    ?>
-
-				<!--end content-->
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
 				</main>
 
 				
