@@ -135,6 +135,7 @@ h1.title-sidebar {
 }
 .title_container .main-title {
     background: none repeat scroll 0 0 #eabb67;
+    display: inline-block;
     font-family: oswald;
     font-size: 30px;
     font-weight: 400;
@@ -183,7 +184,9 @@ img.bullet-sb{
 div.post-entry-25 {
     padding-right: 50px;
 }
-.iniciativas-home a:hover{color:yellow;}
+
+a.iniciativas-home{color:#676767;}
+a.iniciativas-home:hover{color:#624070;}
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
 }
