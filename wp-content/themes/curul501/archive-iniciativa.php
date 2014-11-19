@@ -48,19 +48,19 @@
 			       </div>
 			       <div id="filter">				
 				       <select class="sorter-turno sort" name="category">
-					       <option value="1">Fecha de turno</option>
+					       <option value="1">Fecha de elecci&oacute;n</option>
 					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
+					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
 				       </select>
 			       </div>
 			       <div id="filter">				
 				       <select class="sorter-votacion sort" name="category">
 					       <option value="1">Fecha de votaci&oacute;n</option>
 					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
+					       <option value="2">Opcion 2 fgbhfgh</option>	
 				       </select>
 			       </div>
-			       <div id="filter2">										
+			       <div id="filter">										
 				       <select class="sorter-estado sort" name="category">
 					       <option value="1">Estado actual</option>
 					       <option value="2">Opcion 1</option>
