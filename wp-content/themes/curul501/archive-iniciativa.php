@@ -20,19 +20,53 @@
 			<div class="line-amarilla"> </div>
 		</div>
 		<div class="container box-menu">
-				<div class="search-table">
-					<div class="search-field">						
-						<select class="search-field search-table" name="category">
-							<option value="1">Tema</option>
-							<option value="2">Tema 2</option>
-							
-							
-							
-						</select>
-					</div>
-	
-				</div>
+			<div class="search-table" id="filter">
+									
+				<select class="sorter-tema" name="category">
+					<option value="1">Tema</option>
+					<option value="2">Tema 2</option>							
+				</select>
+			
+								
+				<select class="sorter-proponente" name="category">
+					<option value="2">Proponente(s)</option>
+					<option value="2">Opcion 2</option>														
+				</select>
+								
+				<select class="sorter-partido" name="category">
+					<option value="1">Partido</option>
+					<option value="2">PRI</option>														
+				</select>
+			
+									
+				<select class="sorter-comision" name="category">
+					<option value="1">Comisi&oacute;n dictaminadora</option>
+					<option value="2">Opcion 1</option>
+					<option value="2">Opcion 2</option>	
+				</select>
+			
+				<select class="sorter-turno" name="category">
+					<option value="1">Fecha de turno</option>
+					<option value="2">Opcion 1</option>
+					<option value="2">Opcion 2</option>	
+				</select>
+				
+				<select class="sorter-votacion" name="category">
+					<option value="1">Fecha de votaci&oacute;n</option>
+					<option value="2">Opcion 1</option>
+					<option value="2">Opcion 2</option>	
+				</select>
+			
+									
+				<select class="sorter-estado" name="category">
+					<option value="1">Estado actual</option>
+					<option value="2">Opcion 1</option>
+					<option value="2">Opcion 2</option>	
+				</select>
+								
+			</div>
 		</div>
+		
 
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 
