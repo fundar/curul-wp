@@ -1275,5 +1275,3 @@ return $comment;
  
 }
 add_filter( 'comment_text', 'wpeddit_vote' );
-
-?>
