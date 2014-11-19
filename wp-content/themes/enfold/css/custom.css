@@ -17,6 +17,18 @@ p{
      color: rgba(68, 68, 68, 0.8);
     
 }
+.main_color h1{
+    color: #2e1439;
+    font-family: oswald;
+    font-size: 28px;
+    font-weight: 300;
+    text-rendering: optimizelegibility;
+}
+.main_color h3 {
+    color: #717172;
+    font: 19px 'colaborate-regular';
+    text-rendering: optimizelegibility;
+}
 a:hover{text-decoration:none;}
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
@@ -177,7 +189,7 @@ img.bullet-sb{
     width: 100%;
 }
 .linea-morado {
-    background: none repeat scroll 0 0 #d5d2d7;
+    background: none repeat scroll 0 0 rgba(67, 43, 77, 0.4);
     display: block;
     height: 1px;
     margin-bottom: 12px;
