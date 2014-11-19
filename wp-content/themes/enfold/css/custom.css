@@ -581,14 +581,15 @@ p.resemen-recientes-iniciativas {
 .av-share-box ul li a {padding: 0;color:#9991A8 !important;font-size: 12px;}
 .av-share-box-list{border:0 solid #fff;}
 /** sort data iniciativas**/
+#top .input-text, #top input[type="text"], #top input[type="input"], #top input[type="password"], #top input[type="email"], #top input[type="number"], #top input[type="url"], #top input[type="tel"], #top input[type="search"], #top textarea, #top select {
+    background: none repeat scroll 0 0 #f4f4f4;
+    display: block;
+    font: 15px "colaborate-thinregular";
+    height: 36px;
+   
 
-.avia-mozilla #top select, .avia-mozilla #top .avia_ajax_form .select, .avia-mozilla #top .entry-content-wrapper select {
-    background-image: none;
-        -moz-appearance: window;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 120%;
 }
+
 
 #filter{
     background-color:transparent;
@@ -605,47 +606,30 @@ p.resemen-recientes-iniciativas {
 }
 #filter:after {
     background: url("images/flecha-morada.png") no-repeat scroll 12px center #f4f4f4;
+    border-top: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+    border-left: 0 solid #c1c1c1;
     box-sizing: border-box;
     content: "";
     display: block;
-    height: 34px !important;
+    height: 36px !important;
+    margin-right: 8px;
     pointer-events: none;
     position: absolute;
-    right: 11px;
-    top: 1px;
+    right: 0;
+    top: 0;
     width: 30px;
 }
 
-#filter2{
-    background-color:transparent;
-    float: left;
-    font-size: 1.1em;    
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -moz-appearance: window;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display:block;
-     position: relative;
-}
-#filter2:after {
-    background: url("images/flecha-morada.png") no-repeat scroll 12px center #f4f4f4;
-    box-sizing: border-box;
-    content: "";
-    display: block;
-    height: 35px !important;
-    pointer-events: none;
-    position: absolute;
-    right: 1px;
-    top: 1px;
-    width: 30px;
-}
 .sort{
     background: none repeat scroll 0 0 #f4f4f4 !important;
     font-family: colaborate-thinregular !important;
-    font-size: 14px !important; 
+    font-size: 14px !important;
+    border: 1px solid #c1c1c1 !important;
+}
+#filter select.sort:hover{
+    color:#624070!important;
 }
 
 #filter select.sorter-tema{
@@ -672,9 +656,10 @@ p.resemen-recientes-iniciativas {
     width:160px;
     margin-right:10px;
 }
-#filter2 select.sorter-estado {
-    width:135px;
-    margin-right:0;
+
+#filter select.sorter-estado {
+    margin-right: 10px;
+    width: 125px;
 }
 
 
