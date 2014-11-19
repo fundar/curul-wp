@@ -581,6 +581,7 @@ p.resemen-recientes-iniciativas {
 .av-share-box ul li a {padding: 0;color:#9991A8 !important;font-size: 12px;}
 .av-share-box-list{border:0 solid #fff;}
 /** sort data iniciativas**/
+.box-menu{ margin-top:10px;}  
 #top .input-text, #top input[type="text"], #top input[type="input"], #top input[type="password"], #top input[type="email"], #top input[type="number"], #top input[type="url"], #top input[type="tel"], #top input[type="search"], #top textarea, #top select {
     background: none repeat scroll 0 0 #f4f4f4;
     display: block;
@@ -701,7 +702,45 @@ Mobile Styles
     .vta-curul{
         width:100%;
     }
+    .box-menu{
+    margin-top:20px !important;
+    }   
+    #filter {
+    float: none;
+    margin: 0;     
+    }
+    #filter:after {
+        margin-right: 0;
+    }
+    #filter select.sorter-tema {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-proponente {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-partido {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-comision {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-turno {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-votacion {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-estado {
+        margin-right:0px;
+        width:100%;
+    }
+    }
+    /** iniciativas archive **/
 
-}
-/** iniciativas archive **/
-.box-menu{ margin-top:10px;}
+    
