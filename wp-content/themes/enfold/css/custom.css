@@ -591,6 +591,9 @@ p.resemen-recientes-iniciativas {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    background-image:url(images/flecha-morada.png);
+    -moz-appearance: none;
+
 }
 #filter select.sorter-tema{
     width:95px;
@@ -618,6 +621,10 @@ p.resemen-recientes-iniciativas {
 #filter select.sorter-estado {
     width:138px;
     margin-right:0;
+}
+select {
+text-overflow: " ";	
+-moz-appearance:treeitem;
 }
 
 @media only screen and (min-width: 768px) {

@@ -22,7 +22,7 @@
 		<div class="container box-menu">
 			<div class="search-table" id="filter">
 									
-				<select class="sorter-tema" name="category">
+				<select class="sorter-tema" name="category"  style="-moz-appearance: none";>
 					<option value="1">Tema</option>
 					<option value="2">Tema 2</option>							
 				</select>
@@ -93,7 +93,7 @@
 												<div class="col-status">
 													<div class="datos">
 													Status													
-													<div class="temporizador"><img src="images/barra-temporizador.png"></div>
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png" /></div>
 													</div>													
 												</div> 
 												<div class="col-status-1">
@@ -106,8 +106,8 @@
 												</div>
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-													<div class="photo-avatar"><img src="images/avatar-m-42x42.png"></div>
-													<div class="logo-partido"><img src="images/18px-PRI.png">
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
 															<span>PRI</span>
 													
 													</div>
