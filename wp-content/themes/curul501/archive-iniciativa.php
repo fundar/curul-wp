@@ -430,7 +430,7 @@
 													<div class="datos">Propuesta por:</div>
 													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
 													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PMC.png">
-															<span>PNA</span>
+															<span>PMC</span>
 													
 													</div>
 												</div>													

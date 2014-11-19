@@ -107,7 +107,7 @@ global $avia_config;
 													<div class="datos">Propuesta por:</div>
 													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-h-42x42.png"></div>
 													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PAN.png">
-															<span>PAN</span>
+															<span>PMC</span>
 													
 													</div>
 												</div>													
