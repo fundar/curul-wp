@@ -17,6 +17,19 @@ p{
      color: rgba(68, 68, 68, 0.8);
     
 }
+.main_color h1{
+    color: #2e1439;
+    font-family: oswald;
+    font-size: 28px;
+    font-weight: 300;
+    text-rendering: optimizelegibility;
+}
+.main_color h3 {
+    color: #717172;
+    font: 19px 'colaborate-regular';
+    text-rendering: optimizelegibility;
+}
+a:hover{text-decoration:none;}
 #main, .html_stretched #wrap_all {
     background-color: #f4f4f4;
     
@@ -39,6 +52,10 @@ p{
     border:0;
 }
 .white {
+    background:#fff;
+    box-shadow:0 0 6px rgba(0, 0, 0, 0.1);
+}
+.post-entry{
     background:#fff;
     box-shadow:0 0 6px rgba(0, 0, 0, 0.1);
 }
@@ -77,7 +94,7 @@ p{
 .post {
     background: none repeat scroll 0 0 #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin: 43px auto 0;
+    margin: 0 auto;
     padding: 10px;
 }
 .template-blog .blog-meta {
@@ -111,11 +128,11 @@ h1.entry-title-yellow {
     color: white;
     display: inline-block;
     font-family: 'Oswald';
-    font-size: 30px;
+    font-size: 31px;
     font-weight: 400;
     letter-spacing: -0.01em !important;
     margin-bottom: 0;
-    padding:2px 6px;
+    padding: 3px 6px 2px;
     text-transform: uppercase;
 }
 
@@ -134,6 +151,7 @@ h1.title-sidebar {
 }
 .title_container .main-title {
     background: none repeat scroll 0 0 #eabb67;
+    display: inline-block;
     font-family: oswald;
     font-size: 30px;
     font-weight: 400;
@@ -171,7 +189,7 @@ img.bullet-sb{
     width: 100%;
 }
 .linea-morado {
-    background: none repeat scroll 0 0 #d5d2d7;
+    background: none repeat scroll 0 0 rgba(67, 43, 77, 0.4);
     display: block;
     height: 1px;
     margin-bottom: 12px;
@@ -184,9 +202,14 @@ div.post-entry-25 {
 }
 .post-entry-25 > .entry-content-wrapper {
     padding: 0px;
+    margin-top:43px;
 }
 .pleca-29193E {
     border-bottom: 4px solid #512b60 !important;
+}
+.pleca-624070 {
+    border-bottom: 4px solid #624070 !important;
+    margin-bottom: 50px;
 }
 .container_wrap .container_wrap_first .main_color .sidebar_right{
     background-color: #f5f5f5;
@@ -289,11 +312,16 @@ div.post-entry-25 {
     .team-social a{
         color: #34213D !important;
     }
-    #top #wrap_all .av-social-link-facebook:hover  a{color:#fff; background-color:#908098; }
-    #top #wrap_all .av-social-link-twitter:hover   a{color:#fff; background-color:#908098; }
-    #top #wrap_all .av-social-link-mail:hover      a{color:#fff; background-color:#908098; }
+    #top #wrap_all .av-social-link-facebook:hover  a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-twitter:hover   a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-mail:hover      a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-gplus:hover     a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-linkedin:hover  a{color:#624070 !important; background-color:#fff; }
+    #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
+a.iniciativas-home{color:#676767;}
+a.iniciativas-home:hover{color:#624070;}
 .post_date {
     color: #512b60;
     display: block;
@@ -363,6 +391,38 @@ span.datos{
     width: 37%;
     z-index: 1;
 }
+.in-box-share{
+    width:50%;
+}
+.logo-partido img {
+    display: block;
+    margin: auto;
+}
+.logo-partido span {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 6px;
+    text-align: center;
+}
+.vta-curul {
+    background: url("images/bg-vta-recientes.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+    bottom: 0;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 34.99%;
+}
+.vta-curul span {
+    color: #512b60;
+    display: inline-block;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding-top: 4px;
+    vertical-align: middle;
+}
 .votos-oficiles {
     color: #9991a8;
     display: block;
@@ -371,16 +431,8 @@ span.datos{
     line-height: 44px;
 }
 .photo-avatar img {
-    bottom: 0;
-    display: block;
-    height: auto;
-    left: 0;
     margin: auto;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 27px;
-    width: auto;
+
 }
 .temporizador img {
     bottom: 0;
@@ -472,7 +524,7 @@ p.resemen-recientes-iniciativas {
     .desktop {
         display: block !important;
     }
-     /** cpt **/
+     /** cpt single iniciativas**/
     .iniciativa {
     padding: 30px 30px 30px 0;
     }
@@ -486,7 +538,9 @@ p.resemen-recientes-iniciativas {
     font-size: 20px;
     line-height: 1.3em;
     }
-    
+    .cpt-iniciativa {
+    margin-right: 50px;
+    }   
     #top #main .sidebar {
     border-left-width: 0px;
 
@@ -519,6 +573,111 @@ p.resemen-recientes-iniciativas {
         text-align:center;
         
     }
+    /** share social **/
+.av-share-box {
+    background:#FFF !important;
+    clear: both;
+    float: left;
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-top: 19px;
+    padding: 0;
+    width: 100%;
+}
+.av-share-box ul li {
+    border-left-style: solid;
+    border-left-width: 0 ;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+}
+.av-share-box ul{border-width: 0;border-color:transparent;background-color:transparent !important;width: 91%;width: 91%;text-align:left;}
+.av-share-box ul li:first-child {border: medium none;}
+.av-share-box ul li a {padding: 0;color:#9991A8 !important;font-size: 12px;}
+.av-share-box-list{border:0 solid #fff;}
+/** sort data iniciativas**/
+.box-menu{ margin-top:10px;}  
+#top .input-text, #top input[type="text"], #top input[type="input"], #top input[type="password"], #top input[type="email"], #top input[type="number"], #top input[type="url"], #top input[type="tel"], #top input[type="search"], #top textarea, #top select {
+    background: none repeat scroll 0 0 #f4f4f4;
+    display: block;
+    font: 15px "colaborate-thinregular";
+    height: 36px;
+   
+
+}
+
+
+#filter{
+    background-color:transparent;
+    float: left;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-appearance: window;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display:block;
+     position: relative;
+}
+#filter:after {
+    background: url("images/flecha-morada.png") no-repeat scroll 12px center #f4f4f4;
+    border-top: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+    border-left: 0 solid #c1c1c1;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 36px !important;
+    margin-right: 8px;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+}
+
+.sort{
+    background: none repeat scroll 0 0 #f4f4f4 !important;
+    font-family: colaborate-thinregular !important;
+    font-size: 14px !important;
+    border: 1px solid #c1c1c1 !important;
+}
+#filter select.sort:hover{
+    color:#624070!important;
+}
+
+#filter select.sorter-tema{
+    width:99px;
+    margin-right:10px;
+}
+#filter select.sorter-proponente{
+    width:138px;
+    margin-right:10px;
+}
+#filter select.sorter-partido{
+    width:103px;
+    margin-right:10px;
+}
+#filter select.sorter-comision{
+    width:190px;
+    margin-right:10px;
+}
+#filter select.sorter-turno{
+    width:145px;
+    margin-right:10px;
+}
+#filter select.sorter-votacion{
+    width:160px;
+    margin-right:10px;
+}
+
+#filter select.sorter-estado {
+    margin-right: 10px;
+    width: 125px;
+}
+
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
@@ -552,6 +711,51 @@ Mobile Styles
     margin-top: 4px;
     vertical-align: middle;
     }
+    .top12{
+    padding-top: 12px;   
+    }
+    .vta-curul{
+        width:100%;
+    }
+    .box-menu{
+    margin-top:20px !important;
+    }   
+    #filter {
+    float: none;
+    margin: 0;     
+    }
+    #filter:after {
+        margin-right: 0;
+    }
+    #filter select.sorter-tema {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-proponente {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-partido {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-comision {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-turno {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-votacion {
+        margin-right:0px;
+        width:100%;
+    }
+    #filter select.sorter-estado {
+        margin-right:0px;
+        width:100%;
+    }
+    }
+    /** iniciativas archive **/
 
-
-}
+    

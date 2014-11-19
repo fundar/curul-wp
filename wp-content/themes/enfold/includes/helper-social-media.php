@@ -147,12 +147,9 @@ if(!class_exists('avia_social_share_links'))
 				//'twitter' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://twitter.com/home?status=[title]%20[shortlink]"),
 				'twitter' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://twitter.com/share?text=[title]&url=[shortlink]"),
 				'gplus' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://plus.google.com/share?url=[permalink]" , 'label' => __("Share on Google+",'avia_framework')),
-				'pinterest' => array("encode"=>true, "encode_urls"=>true, "pattern" => "http://pinterest.com/pin/create/button/?url=[permalink]&amp;description=[title]&amp;media=[thumbnail]"),
 				'linkedin' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://linkedin.com/shareArticle?mini=true&amp;title=[title]&amp;url=[permalink]"),
-				'tumblr' 	=> array("encode"=>true, "encode_urls"=>true, "pattern" => "http://www.tumblr.com/share/link?url=[permalink]&amp;name=[title]&amp;description=[excerpt]"),
-				'vk' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://vk.com/share.php?url=[permalink]"),
-				'reddit' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://reddit.com/submit?url=[permalink]&amp;title=[title]"),
 				'mail' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "mailto:?subject=[title]&amp;body=[permalink]", 'label' => __("Share by Mail",'avia_framework') ),
+				'comment' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "mailto:?subject=[title]&amp;body=[permalink]", 'label' => __("Share by Mail",'avia_framework') ),
 			);
 			
 			$this->args = array_merge($default_arguments, apply_filters( 'avia_social_share_link_arguments', $args));
@@ -213,9 +210,6 @@ if(!class_exists('avia_social_share_links'))
 			if($this->counter == 0) return;
 			
 			$this->html .= "<div class='av-share-box'>";
-			$this->html .= 		"<h5 class='av-share-link-description'>";
-			$this->html .= 	apply_filters('avia_social_share_title', __("Share this entry",'avia_framework'), $this->args);
-			$this->html .= 		"</h5>";
 			$this->html .= 		"<ul class='av-share-box-list noLightbox'>";
 			
 			foreach($this->args as $key => $share)
@@ -223,7 +217,6 @@ if(!class_exists('avia_social_share_links'))
 				if(empty($share['url'])) continue;
 			
 				$icon = isset($share['icon']) ? $share['icon'] : $key;
-				$name = isset($share['label'])? $share['label']: __("Share on",'avia_framework'). " " .ucfirst($key);
 				
 				$blank = strpos($share['url'], 'mailto') !== false ? "" : "target='_blank'";
 				

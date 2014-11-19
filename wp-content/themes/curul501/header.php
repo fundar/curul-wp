@@ -11,6 +11,8 @@
 <html <?php language_attributes(); ?> class="<?php echo " html_{$style} ".$responsive." ".avia_header_class_string();?> ">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 <!-- page title, displayed in your browser bar -->
 <title><?php if(function_exists('avia_set_title_tag')) { echo avia_set_title_tag(); } ?></title>

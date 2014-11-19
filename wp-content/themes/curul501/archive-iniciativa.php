@@ -19,68 +19,441 @@
 			<h1 class="entry-title-yellow">Iniciativas</h1>
 			<div class="line-amarilla"> </div>
 		</div>
+<!--Inicio filtros iniciativas -->
+		<div class="container box-menu">
+			<div class="search-table">
+				<div id="filter">
+				       <select class="sorter-tema sort" name="category">
+					       <option value="1">Tema</option>
+					       <option value="2">Tema 2</option>							
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-proponente sort" name="category">
+					       <option value="2">Proponente(s)</option>
+					       <option value="2">Opcion 2</option>														
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-partido sort" name="category">
+					       <option value="1">Partido</option>
+					       <option value="2">PRI</option>														
+				       </select>
+			       </div>
+			       <div id="filter">										
+				       <select class="sorter-comision sort" name="category">
+					       <option value="1">Comisi&oacute;n dictaminadora</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-turno sort" name="category">
+					       <option value="1">Fecha de elecci&oacute;n</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-votacion sort" name="category">
+					       <option value="1">Fecha de votaci&oacute;n</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 fgbhfgh</option>	
+				       </select>
+			       </div>
+			       <div id="filter">										
+				       <select class="sorter-estado sort" name="category">
+					       <option value="1">Estado actual</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
+				       </select>
+			       </div>					
+			</div>
+		</div>
+<!-- Fin filtros iniciativas -->		
 
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		<div class='container_wrap container_wrap_first main_color fullsize'>
 
-			<div class='container template-blog '>
+			<div class='container'>
 
-				<main class='content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
+				<main class='template-page content  av-content-full alpha units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
+															<span>PRI</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                    <div class="category-term-description">
-                        <?php echo term_description(); ?>
-                    </div>
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-h-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PAN.png">
+															<span>PAN</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                    <?php
-                    $blog_layout = apply_filters('avf_blog_style', avia_get_option('blog_style','multi-big'), 'archive');
-                    if($blog_layout == 'blog-grid')
-                    {
-                        global $posts;
-                        $post_ids = array();
-                        foreach($posts as $post) $post_ids[] = $post->ID;
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRD.png">
+															<span>PAN</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                        if(!empty($post_ids))
-                        {
-                            $atts   = array(
-                                'type' => 'grid',
-                                'items' => get_option('posts_per_page'),
-                                'columns' => 3,
-                                'class' => 'avia-builder-el-no-sibling',
-                                'paginate' => 'yes',
-                                'use_main_query_pagination' => 'yes',
-                                'custom_query' => array( 'post__in'=>$post_ids, 'post_type'=>get_post_types() )
-                            );
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-h-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PVE.png">
+															<span>PVEM</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                            $blog = new avia_post_slider($atts);
-                            $blog->query_entries();
-                            echo "<div class='entry-content-wrapper'>".$blog->html()."</div>";
-                        }
-                        else
-                        {
-                            get_template_part( 'includes/loop', 'index' );
-                        }
-                    }
-                    else
-                    {
-                        /* Run the loop to output the posts.
-                        * If you want to overload this in a child theme then include a file
-                        * called loop-index.php and that will be used instead.
-                        */
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PT.png">
+															<span>PT</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-                        $more = 0;
-                        get_template_part( 'includes/loop', 'index' );
-                    }
-                    ?>
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-h-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PNA.png">
+															<span>PNA</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
 
-				<!--end content-->
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													<p class="resemen-recientes-iniciativas">
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
+													</p>
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													</div>													
+												</div> 
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														130
+													</div>
+												</div>
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PMC.png">
+															<span>PMC</span>
+													
+													</div>
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+											</div>
+
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->							
+
+
+
 				</main>
 
-				<?php
-
-				//get the sidebar
-				$avia_config['currently_viewing'] = 'blog';
-				get_sidebar();
-
-				?>
+				
 
 			</div><!--end container-->
 
