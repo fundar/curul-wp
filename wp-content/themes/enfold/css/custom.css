@@ -582,50 +582,101 @@ p.resemen-recientes-iniciativas {
 .av-share-box-list{border:0 solid #fff;}
 /** sort data iniciativas**/
 
-#filter select {
+.avia-mozilla #top select, .avia-mozilla #top .avia_ajax_form .select, .avia-mozilla #top .entry-content-wrapper select {
+    background-image: none;
+        -moz-appearance: window;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 120%;
+}
+
+#filter{
     background-color:transparent;
-    font-size: 1.1em;
-    font-family: 'colaborate-thinregular';
+    float: left;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-appearance: window;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display:block;
+     position: relative;
+}
+#filter:after {
+    background: url("images/flecha-morada.png") no-repeat scroll 12px center #f4f4f4;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 34px !important;
+    pointer-events: none;
+    position: absolute;
+    right: 11px;
+    top: 1px;
+    width: 30px;
+}
+
+#filter2{
+    background-color:transparent;
     float: left;
     font-size: 1.1em;    
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    background-image:url(images/flecha-morada.png);
+    -moz-appearance: window;
+    -webkit-appearance: none;
     -moz-appearance: none;
-
+    appearance: none;
+    display:block;
+     position: relative;
 }
+#filter2:after {
+    background: url("images/flecha-morada.png") no-repeat scroll 12px center #f4f4f4;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 35px !important;
+    pointer-events: none;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 30px;
+}
+.sort{
+    background: none repeat scroll 0 0 #f4f4f4 !important;
+    font-family: colaborate-thinregular !important;
+    font-size: 14px !important; 
+}
+
 #filter select.sorter-tema{
-    width:95px;
+    width:99px;
     margin-right:10px;
 }
 #filter select.sorter-proponente{
-    width:140px;
+    width:138px;
     margin-right:10px;
 }
 #filter select.sorter-partido{
-    width:105px;
+    width:103px;
     margin-right:10px;
 }
 #filter select.sorter-comision{
-    width:192px;       
+    width:190px;
+    margin-right:10px;
 }
 #filter select.sorter-turno{
     width:145px;
     margin-right:10px;
 }
 #filter select.sorter-votacion{
-    width:165px;
+    width:160px;
     margin-right:10px;
 }
-#filter select.sorter-estado {
-    width:138px;
+#filter2 select.sorter-estado {
+    width:135px;
     margin-right:0;
 }
-select {
-text-overflow: " ";	
--moz-appearance:treeitem;
-}
+
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
