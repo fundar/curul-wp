@@ -1371,6 +1371,10 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param array $post_data      Parsed array of post data.
 		 * @param array $content_struct Post data array.
 		 */
+		#fixed post_data["post_type"]
+		$post_data['post_type'] = $post_data['post_type2'];
+		unset(['post_type2']);
+		
 		$post_data = apply_filters( 'xmlrpc_wp_insert_post_data', $post_data, $content_struct );
 
 		$post_ID = $update ? wp_update_post( $post_data, true ) : wp_insert_post( $post_data, true );
