@@ -18,7 +18,8 @@
 	        <div class="container top60">
 			<h1 class="entry-title-yellow">Iniciativas</h1>
 			<div class="line-amarilla"> </div>
-		</div>		
+		</div>
+<!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
 				<div id="filter">
@@ -69,7 +70,7 @@
 			       </div>					
 			</div>
 		</div>
-		
+<!-- Fin filtros iniciativas -->		
 
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 
