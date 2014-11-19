@@ -19,20 +19,20 @@ function create_post_type_iniciativas() {
                 'all_items' => __('Iniciativas'),
                 'add_new_item' => __('Añadir una iniciativa nueva'),
                 'edit_item' => __('Editar iniciativa'),
-		'search_items'       => __( 'Buscar Iniciativas' ),
-		'not_found'          => __( 'No iniciativas encontradas' ),
-		'not_found_in_trash' => __( 'No iniciativas encontradas en basura' ),
-		'menu_name'          => 'Iniciativas'
-            ),
-        'public' => true,
-        'has_archive' => true,
-        'capability_type' => 'post',
-        'hierarchical' => true,
-        'query_var' => true,
-        'menu_position' => 5,
-        'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
-        'rewrite' => array('slug' => 'iniciativas'),
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments' )	
+				'search_items'       => __( 'Buscar Iniciativas' ),
+				'not_found'          => __( 'No iniciativas encontradas' ),
+				'not_found_in_trash' => __( 'No iniciativas encontradas en basura' ),
+				'menu_name'          => 'Iniciativas'
+			),
+			'public' => true,
+			'has_archive' => true,
+			'capability_type' => 'post',
+			'hierarchical' => true,
+			'query_var' => true,
+			'menu_position' => 5,
+			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
+			'rewrite' => array('slug' => 'iniciativas'),
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
         )
     );
     
