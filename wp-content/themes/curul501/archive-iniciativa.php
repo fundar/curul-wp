@@ -18,52 +18,55 @@
 	        <div class="container top60">
 			<h1 class="entry-title-yellow">Iniciativas</h1>
 			<div class="line-amarilla"> </div>
-		</div>
+		</div>		
 		<div class="container box-menu">
-			<div class="search-table" id="filter">
-									
-				<select class="sorter-tema" name="category"  style="-moz-appearance: none";>
-					<option value="1">Tema</option>
-					<option value="2">Tema 2</option>							
-				</select>
-			
-								
-				<select class="sorter-proponente" name="category">
-					<option value="2">Proponente(s)</option>
-					<option value="2">Opcion 2</option>														
-				</select>
-								
-				<select class="sorter-partido" name="category">
-					<option value="1">Partido</option>
-					<option value="2">PRI</option>														
-				</select>
-			
-									
-				<select class="sorter-comision" name="category">
-					<option value="1">Comisi&oacute;n dictaminadora</option>
-					<option value="2">Opcion 1</option>
-					<option value="2">Opcion 2</option>	
-				</select>
-			
-				<select class="sorter-turno" name="category">
-					<option value="1">Fecha de turno</option>
-					<option value="2">Opcion 1</option>
-					<option value="2">Opcion 2</option>	
-				</select>
-				
-				<select class="sorter-votacion" name="category">
-					<option value="1">Fecha de votaci&oacute;n</option>
-					<option value="2">Opcion 1</option>
-					<option value="2">Opcion 2</option>	
-				</select>
-			
-									
-				<select class="sorter-estado" name="category">
-					<option value="1">Estado actual</option>
-					<option value="2">Opcion 1</option>
-					<option value="2">Opcion 2</option>	
-				</select>
-								
+			<div class="search-table">
+				<div id="filter">
+				       <select class="sorter-tema sort" name="category">
+					       <option value="1">Tema</option>
+					       <option value="2">Tema 2</option>							
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-proponente sort" name="category">
+					       <option value="2">Proponente(s)</option>
+					       <option value="2">Opcion 2</option>														
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-partido sort" name="category">
+					       <option value="1">Partido</option>
+					       <option value="2">PRI</option>														
+				       </select>
+			       </div>
+			       <div id="filter">										
+				       <select class="sorter-comision sort" name="category">
+					       <option value="1">Comisi&oacute;n dictaminadora</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-turno sort" name="category">
+					       <option value="1">Fecha de turno</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-votacion sort" name="category">
+					       <option value="1">Fecha de votaci&oacute;n</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2</option>	
+				       </select>
+			       </div>
+			       <div id="filter2">										
+				       <select class="sorter-estado sort" name="category">
+					       <option value="1">Estado actual</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
+				       </select>
+			       </div>					
 			</div>
 		</div>
 		
