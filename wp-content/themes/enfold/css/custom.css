@@ -511,7 +511,7 @@ p.resemen-recientes-iniciativas {
     .desktop {
         display: block !important;
     }
-     /** cpt **/
+     /** cpt single iniciativas**/
     .iniciativa {
     padding: 30px 30px 30px 0;
     }
@@ -525,7 +525,9 @@ p.resemen-recientes-iniciativas {
     font-size: 20px;
     line-height: 1.3em;
     }
-    
+    .cpt-iniciativa {
+    margin-right: 50px;
+    }   
     #top #main .sidebar {
     border-left-width: 0px;
 
