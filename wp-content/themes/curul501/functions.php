@@ -61,12 +61,15 @@ function create_post_type_iniciativas() {
 }
 add_action( 'init', 'create_post_type_iniciativas' );
 
+/**
+ * Custom Post Type "representante"
+ */
 function create_post_type_representantes() {
     register_post_type( 'representante',
         array(
             'labels' => array(
                 'name' => __( 'Representantes' ),
-                'singular_name' => __( 'Representantes' ),
+                'singular_name' => __( 'Representante' ),
                 'singular_label' => __( 'Representante' ),		
                 'all_items' => __('Representantes'),
                 'add_new_item' => __('Añadir un Representante'),
@@ -81,7 +84,7 @@ function create_post_type_representantes() {
 			'capability_type' => 'post',
 			'hierarchical' => true,
 			'query_var' => true,
-			'menu_position' => 5,
+			'menu_position' => 6,
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
 			'rewrite' => array('slug' => 'representantes'),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
