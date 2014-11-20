@@ -96,7 +96,7 @@ function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 	//error_log(print_r($data["custom_fields"],true));
 	//error_log(print_r($postarr["custom_fields"],true));
 	
-	if($data["post_excerpt"] == "") {
+	if($postarr["post_excerpt"] == "") {
 		$p2_custom_post_type = "iniciativa";
 	} else {
 		$p2_custom_post_type = "representante";
