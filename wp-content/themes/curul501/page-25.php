@@ -92,10 +92,10 @@ global $avia_config;
 			
                 </div>
 		</div><!--end sidebar-->
-					
+				
 	   </div><!--end container-->
 	</div><!-- close default .container_wrap element -->
 
  
-<?php endif; ?>
+<?php endif; ?>	
 <?php get_footer(); ?>	
