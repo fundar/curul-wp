@@ -13,7 +13,6 @@ global $avia_config;
          <div class="line-amarilla"> </div>
 	 </div>
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-
 			<div class='container'>
 
 				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
