@@ -61,16 +61,45 @@ function create_post_type_iniciativas() {
 }
 add_action( 'init', 'create_post_type_iniciativas' );
 
+function create_post_type_representantes() {
+    register_post_type( 'representante',
+        array(
+            'labels' => array(
+                'name' => __( 'Representantes' ),
+                'singular_name' => __( 'Representantes' ),
+                'singular_label' => __( 'Representante' ),		
+                'all_items' => __('Representantes'),
+                'add_new_item' => __('Añadir un Representante'),
+                'edit_item' => __('Editar Representante'),
+				'search_items'       => __( 'Buscar Representantes' ),
+				'not_found'          => __( 'No representantes encontradas' ),
+				'not_found_in_trash' => __( 'No representantes encontradas en basura' ),
+				'menu_name'          => 'Representantes'
+			),
+			'public' => true,
+			'has_archive' => true,
+			'capability_type' => 'post',
+			'hierarchical' => true,
+			'query_var' => true,
+			'menu_position' => 5,
+			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
+			'rewrite' => array('slug' => 'iniciativas'),
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
+        )
+    );
+    
+}
+add_action( 'init', 'create_post_type_representantes' );
+
 
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	error_log(print_r($data["custom_fields"],true));
-	error_log(print_r($postarr["custom_fields"],true));
+	//error_log(print_r($data["custom_fields"],true));
+	//error_log(print_r($postarr["custom_fields"],true));
 	
-	foreach($data["custom_fields"] as $key => $value) {
-		if($data["custom_fields"][$key]["key"] == "wp_post_type") {
-			$p2_custom_post_type = $data["custom_fields"][$key]["value"];
-			break;
-		}
+	if($data["post_excerpt"] == "") {
+		$p2_custom_post_type = "iniciativa";
+	} else {
+		$p2_custom_post_type = "representante";
 	}
 	
     //$p2_custom_post_type = 'iniciativa'; //Change this to the custom post type you are using for your blog
