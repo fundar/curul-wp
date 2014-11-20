@@ -83,7 +83,7 @@ function create_post_type_representantes() {
 			'query_var' => true,
 			'menu_position' => 5,
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
-			'rewrite' => array('slug' => 'iniciativas'),
+			'rewrite' => array('slug' => 'representantes'),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
         )
     );
