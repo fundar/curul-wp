@@ -7,8 +7,29 @@ global $avia_config;
 /**
  * Custom Post Type "Iniciativas"
  */
+function my_taxonomies_iniciativa() {
+  $labels = array(
+    'name'              => _x( 'Iniciativa Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Iniciativa Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Iniciativa Categories' ),
+    'all_items'         => __( 'All Iniciativa Categories' ),
+    'parent_item'       => __( 'Parent Iniciativa Category' ),
+    'parent_item_colon' => __( 'Parent Iniciativa Category:' ),
+    'edit_item'         => __( 'Edit Iniciativa Category' ), 
+    'update_item'       => __( 'Update Iniciativa Category' ),
+    'add_new_item'      => __( 'Add New Iniciativa Category' ),
+    'new_item_name'     => __( 'New Iniciativa Category' ),
+    'menu_name'         => __( 'Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'iniciativa_category', 'iniciativa', $args );
+}
+add_action( 'init', 'my_taxonomies_iniciativa', 0 );
 
-add_action( 'init', 'create_post_type_iniciativas' );
+
 function create_post_type_iniciativas() {
     register_post_type( 'iniciativa',
         array(
@@ -37,26 +58,4 @@ function create_post_type_iniciativas() {
     );
     
 }
-
-function my_taxonomies_iniciativa() {
-  $labels = array(
-    'name'              => _x( 'Iniciativa Categories', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Iniciativa Category', 'taxonomy singular name' ),
-    'search_items'      => __( 'Search Iniciativa Categories' ),
-    'all_items'         => __( 'All Iniciativa Categories' ),
-    'parent_item'       => __( 'Parent Iniciativa Category' ),
-    'parent_item_colon' => __( 'Parent Iniciativa Category:' ),
-    'edit_item'         => __( 'Edit Iniciativa Category' ), 
-    'update_item'       => __( 'Update Iniciativa Category' ),
-    'add_new_item'      => __( 'Add New Iniciativa Category' ),
-    'new_item_name'     => __( 'New Iniciativa Category' ),
-    'menu_name'         => __( 'Categories' ),
-  );
-  $args = array(
-    'labels' => $labels,
-    'hierarchical' => true,
-  );
-  register_taxonomy( 'iniciativa_category', 'iniciativa', $args );
-}
-add_action( 'init', 'my_taxonomies_iniciativa', 0 );
-
+add_action( 'init', 'create_post_type_iniciativas' );
