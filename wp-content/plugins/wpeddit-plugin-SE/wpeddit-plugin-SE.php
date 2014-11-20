@@ -747,7 +747,7 @@ function wpeddit_hot_comments($posts){
 add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
-	if(is_single()  && $post->post_type == 'iniciativa' ){
+	if($post->post_type == 'iniciativa' ){
     $newcontent = epic_reddit_voting();
 	$content = $newcontent . $content;
 	}
