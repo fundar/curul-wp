@@ -63,7 +63,15 @@ add_action( 'init', 'create_post_type_iniciativas' );
 
 
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-    $p2_custom_post_type = 'iniciativa'; //Change this to the custom post type you are using for your blog
+	foreach($data["custom_fields"] as $key => $value) {
+		if($data["custom_fields"][$key]["key"] == "wp_post_type") {
+			$p2_custom_post_type = $data["custom_fields"][$key]["value"];
+			break;
+		}
+	}
+	
+    //$p2_custom_post_type = 'iniciativa'; //Change this to the custom post type you are using for your blog
+    
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
         return $data;
