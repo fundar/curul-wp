@@ -25,7 +25,7 @@ function my_taxonomies_iniciativa() {
     'labels' => $labels,
     'hierarchical' => true,
   );
-  register_taxonomy( 'iniciativa_category', 'iniciativa', $args );
+  register_taxonomy( 'iniciativa_category', 'post', $args );
 }
 add_action( 'init', 'my_taxonomies_iniciativa', 0 );
 
@@ -51,6 +51,7 @@ function create_post_type_iniciativas() {
 			'hierarchical' => true,
 			'query_var' => true,
 			'menu_position' => 5,
+			'taxonomies' => array("iniciativa_category"),
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
 			'rewrite' => array('slug' => 'iniciativas'),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
