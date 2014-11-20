@@ -30,7 +30,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -83,7 +83,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -136,7 +136,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -189,7 +189,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -242,7 +242,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -295,7 +295,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
@@ -348,7 +348,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos-3/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
+														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
 														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
 													</p>
 												</div>
