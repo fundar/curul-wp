@@ -63,10 +63,9 @@ add_action( 'init', 'create_post_type_iniciativas' );
 
 
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	die(var_dump($data));
-	foreach($data["custom_fields"] as $key => $value) {
-		if($data["custom_fields"][$key]["key"] == "wp_post_type") {
-			$p2_custom_post_type = $data["custom_fields"][$key]["value"];
+	foreach($postarr["custom_fields"] as $key => $value) {
+		if($postarr["custom_fields"][$key]["key"] == "wp_post_type") {
+			$p2_custom_post_type = $postarr["custom_fields"][$key]["value"];
 			break;
 		}
 	}
