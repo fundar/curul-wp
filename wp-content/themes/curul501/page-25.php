@@ -18,21 +18,25 @@ global $avia_config;
 						<div class="line-amarilla"> </div>
 						</div>
 						<div class="post-entry post-entry-type-page post-entry-25">
-						    <div class="entry-content-wrapper clearfix">								
+						    <div class="entry-content-wrapper clearfix">
+					                <?php if ( have_posts() ) : ?>
+					                <?php
+						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => -1 );
+						        $loop = new WP_Query( $args );
+						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
-											<!--Inicio fecga y resumen-->
+											<!--Inicio fecha y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
 													<span>13</span>
 													Feb, 2014
 												</div>
 												<div class="entry-content">
-													<p class="resemen-recientes-iniciativas">
-														<a class="iniciativas-home" href="iniciativas/que-reforma-el-articulo-3o-de-la-constitucion-politica-de-los-estados-unidos-mexicanos/">Dar autonomia a los organos garantes federal y estatales, dar facultad al IFAI para promover acciones
-														de inconstitucionalidad y ampliar sujetos obligados (sindicatos, partidos politicos, fideicomisios publicos</a>
-													</p>
+													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
+			                                                                                          <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+												         </p>
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
@@ -71,25 +75,27 @@ global $avia_config;
 											
 										</div>
 									</div>
-							</article><!--fin iniciativas-->							
+							</article><!--fin iniciativas-->
+							<?php endwhile; ?>
+							
 						    </div>
-					     </div>
-					</div><!--fin content-->					
-				</div><!--fin ccontainer_wrap -->					     
-		</main>
-		<?php
-
-		//get the sidebar
-		$avia_config['currently_viewing'] = 'page';
-		get_sidebar();
-
-		?>
-	 
-						 
+					</div>
+				</div>
 					
+		<!--end content-->			
+		</main>				    
+                <!--sidebar-->
+		<div class="sidebar sidebar_right smartphones_sidebar_active alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+                <div class="inner_sidebar">
+		<?php if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar('sidebar inicio') ) : ?>
+		<?php endif; ?>
+			
+                </div>
+		</div><!--end sidebar-->
+				
 	   </div><!--end container-->
 	</div><!-- close default .container_wrap element -->
 
-
-
+ 
+<?php endif; ?>	
 <?php get_footer(); ?>	

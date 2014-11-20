@@ -57,13 +57,14 @@
 		</div>
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		
+		        <?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : the_post(); ?>
 			<div class='container template-blog template-single-blog '>
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
 				        <header class="entry-content-header">
 						<h1 itemprop="headline" class="post-title entry-title">
-							Phasellus viverra eros vel sem blandit, quis scelerisque neque malesuada
+							<?php the_title(); ?>
 						</h1>
 						<div class="linea-morado"></div>
 						<h3 itemprop="headline" class="post-title entry-title">
@@ -71,9 +72,9 @@
 						</h3>
 					</header>
 					<div class="entry-content" itemprop="text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices aliquet condimentum. Aenean id tristique ligula. Nunc sed varius turpis, nec malesuada risus. Donec convallis tellus vitae ligula sagittis malesuada. Proin vitae quam hendrerit, pretium erat id, semper dolor. Nam ornare eget turpis eget rutrum. Morbi ante sem, aliquet vel laoreet et, molestie ut metus. Cras tincidunt convallis nibh, a egestas purus egestas quis. Maecenas non placerat dui, vel iaculis tellus. Etiam tempor lorem elit, a lobortis velit viverra sed. Pellentesque volutpat pretium nisl ac interdum. Sed accumsan, odio vitae convallis fringilla, elit ligula imperdiet augue, ut ullamcorper nulla sapien a dolor. Etiam aliquet enim eget tristique rutrum. Nulla non augue libero. Cras rutrum enim mi, in vehicula diam suscipit eget. Aenean elementum metus nec velit ultrices imperdiet.</p>
+					<? the_content(); ?>
 					</div>
-
+                                         <?php endwhile; endif; ?>
 				</main>
 					
 				<!--end content-->
