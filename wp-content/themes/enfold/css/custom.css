@@ -25,8 +25,8 @@ p{
     text-rendering: optimizelegibility;
 }
 .main_color h3 {
-    color: #717172;
-    font: 19px 'colaborate-regular';
+    color: #432B4D;
+    font: 19px 'colaborate-thinregular';
     text-rendering: optimizelegibility;
 }
 a:hover{text-decoration:none;}
@@ -573,6 +573,9 @@ p.resemen-recientes-iniciativas {
         text-align:center;
         
     }
+    .bullet-arrow li {
+    background: url("images/") no-repeat scroll 15px 12px rgba(0, 0, 0, 0);
+}
     /** share social **/
 .av-share-box {
     background:#FFF !important;

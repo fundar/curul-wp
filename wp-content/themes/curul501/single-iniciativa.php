@@ -68,11 +68,18 @@
 						</h1>
 						<div class="linea-morado"></div>
 						<h3 itemprop="headline" class="post-title entry-title">
-							Con proyecto de decreto, que reforma y adiciona los articulos 6o., 73, 76, 78, 89, 105, 108, 110, 111, 116 y 122 
+							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 						</h3>
 					</header>
 					<div class="entry-content" itemprop="text">
+					<ul>
+						<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+						<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
+					</ul>
+					<div>
 					<? the_content(); ?>
+					</div>
+					<li><?php echo get_post_meta($post->ID, 'epicredvote', true); ?></li>
 					</div>
                                          <?php endwhile; endif; ?>
 				</main>
