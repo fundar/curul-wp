@@ -95,7 +95,7 @@
 				<p class="encurul"> en curul</p>
 				
 			</div>			
-			<div class="textwidget share-sidebar-vota"><?php avia_social_share_links(); ?></div>
+			<div class="textwidget share-sidebar-tatyvota"><?php avia_social_share_links(); ?></div>
 			<div class="textwidget">
 			<div class="linea-morado"></div>
 			<?php echo get_post_meta($post->ID, 'wp_topics', true); ?>

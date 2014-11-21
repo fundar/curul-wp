@@ -99,7 +99,7 @@
 												<div class="col-status">
 													<div class="datos">
 													Status													
-													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													<div class="temporizador"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" /></div>
 													</div>													
 												</div> 
 												<div class="col-status-1">
@@ -112,8 +112,8 @@
 												</div>
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
-													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
+													<div class="photo-avatar"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
 															<span>PRI</span>
 													
 													</div>
