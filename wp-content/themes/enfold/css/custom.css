@@ -598,7 +598,11 @@ li.sub-info-li {
 .share-sidebar-vota {
     margin: -10px 0 66px;
 }
-
+.tab-item-temas{
+    float: left;
+    margin-left: -94px;
+    width: 80px;
+}
 
     /** share social **/
 .av-share-box {
