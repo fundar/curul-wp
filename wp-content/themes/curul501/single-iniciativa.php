@@ -72,14 +72,16 @@
 						</h3>
 					</header>
 					<div class="entry-content" itemprop="text">
-					<ul>
-						<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
-						<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
-					</ul>
-					<div>
-					<? the_content(); ?>
-					</div>
-					<li><?php echo get_post_meta($post->ID, 'epicredvote', true); ?></li>
+						<ul class="lista-iniciativas">
+							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
+						</ul>
+						<? the_content(); ?>					
+						<div class="pleca-sub-info"></div>
+						<ul class="sub-info">
+							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_fecha_votacion_tm', true); ?></li>
+							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Legislatura</li>
+						</ul>
 					</div>
                                          <?php endwhile; endif; ?>
 				</main>
@@ -91,8 +93,23 @@
 			<div class="sidebar-votos">
 				<p class="vota">Vota</p>
 				<p class="encurul"> en curul</p>
+				
+			</div>			
+			<div class="textwidget share-sidebar-vota"><?php avia_social_share_links(); ?></div>
+			<div class="textwidget">
+			<div class="linea-morado"></div>
+			<?php echo get_post_meta($post->ID, 'wp_topics', true); ?>
 			</div>
-			<?php avia_social_share_links(); ?> 	
+			<div class="textwidget">
+			<div class="linea-morado"></div>
+			<?php echo get_post_meta($post->ID, 'wp_gaceta', true); ?>Texto integro
+			</div>
+			<div class="textwidget">			
+			<div class="linea-morado"></div>
+			Gaceta parlamentaria<?php echo get_post_meta($post->ID, 'wp_gaceta', true); ?>
+			</div>
+			
+			</div>
 			</aside>
 
 

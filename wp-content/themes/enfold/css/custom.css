@@ -11,22 +11,24 @@ body {
      font-family:'colaborate-thinregular';}
      
 /** generales**/
-p{
-    font-family:'colaborate-thinregular';
-    font-size:18px;
-     color: rgba(68, 68, 68, 0.8);
-    
+p {
+    color: rgba(68, 68, 68, 0.7);
+    font-family: 'colaborate-regular';
+    font-size: 15px;
 }
+li{
+    color: rgba(68, 68, 68, 0.7);
+    }
 .main_color h1{
-    color: #2e1439;
+    color: #512b60;
     font-family: oswald;
     font-size: 28px;
     font-weight: 300;
     text-rendering: optimizelegibility;
 }
 .main_color h3 {
-    color: #432B4D;
-    font: 19px 'colaborate-thinregular';
+    color: #000;
+    font: 19px 'colaborate-regular';
     text-rendering: optimizelegibility;
 }
 a:hover{text-decoration:none;}
@@ -191,6 +193,7 @@ img.bullet-sb{
 .linea-morado {
     background: none repeat scroll 0 0 rgba(67, 43, 77, 0.4);
     display: block;
+    float: left;
     height: 1px;
     margin-bottom: 12px;
     margin-right: 38px;
@@ -573,15 +576,36 @@ p.resemen-recientes-iniciativas {
         text-align:center;
         
     }
-    .bullet-arrow li {
-    background: url("images/") no-repeat scroll 15px 12px rgba(0, 0, 0, 0);
+
+ul.lista-iniciativas {
+    margin: 16px 0;
 }
+li.bullet-arrow {
+    background: url("images/bullet-arrow.png") no-repeat scroll 14px 9px rgba(0, 0, 0, 0);
+    color: #512b60;
+    font: 15px 'colaborate-regular';
+    margin: 0 0 0 -14px;
+    padding: 5px 0 8px 26px;
+}
+.pleca-sub-info{height:1px; background:none repeat scroll 0 0 rgba(67, 43, 77, 0.4);width:40px;margin:30px 0 10px;}
+ul.sub-info {
+    margin:9px 0;
+}
+li.sub-info-li {
+    font: 12px 'colaborate-regular';
+    margin: 3px 0;
+}
+.share-sidebar-vota {
+    margin: -10px 0 66px;
+}
+
+
     /** share social **/
 .av-share-box {
     background:#FFF !important;
     clear: both;
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 0;
     margin-top: 19px;
     padding: 0;
@@ -608,8 +632,6 @@ p.resemen-recientes-iniciativas {
    
 
 }
-
-
 #filter{
     background-color:transparent;
     float: left;    
@@ -640,7 +662,6 @@ p.resemen-recientes-iniciativas {
     top: 0;
     width: 30px;
 }
-
 .sort{
     background: none repeat scroll 0 0 #f4f4f4 !important;
     font-family: colaborate-thinregular !important;
@@ -680,6 +701,7 @@ p.resemen-recientes-iniciativas {
     margin-right: 10px;
     width: 125px;
 }
+
 
 
 @media only screen and (min-width: 768px) {
