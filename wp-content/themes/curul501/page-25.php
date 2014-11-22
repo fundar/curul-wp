@@ -37,6 +37,7 @@ global $avia_config;
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                          <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
+													  <p><?php the_excerpt(); ?></p>
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">

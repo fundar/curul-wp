@@ -323,8 +323,17 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
-a.iniciativas-home{color:#676767;}
-a.iniciativas-home:hover{color:#624070;}
+a.iniciativas-home {
+    border-bottom: 1px solid rgba(153, 145, 168, 0.3);
+    color: #512b60;
+    display: block;
+    font-family: oswald;
+    font-size: 22px;
+    font-weight: 300;
+    padding-bottom: 12px;
+    text-rendering: optimizelegibility;
+}
+a.iniciativas-home:hover{color:#724b83;}
 .post_date {
     color: #512b60;
     display: block;
