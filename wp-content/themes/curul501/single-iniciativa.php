@@ -95,11 +95,13 @@
 				<p class="encurul"> en curul</p>
 				
 			</div>			
-			<div class="textwidget share-sidebar-vota"><?php avia_social_share_links(); ?></div>
+			<div class="textwidget share-sidebar-vota">
+			         <?php avia_social_share_links(); ?>
+			</div>
 			<div class="textwidget">
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
-					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" />
+			           <img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" />
 				</div>
 				<?php echo get_post_meta($post->ID, 'wp_topics', true); ?>
 			</div>

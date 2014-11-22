@@ -636,6 +636,9 @@ li.sub-info-li {
    
 
 }
+.no-aqui{
+    display:none;
+}
 #filter{
     background-color:transparent;
     float: left;    
@@ -705,8 +708,23 @@ li.sub-info-li {
     margin-right: 10px;
     width: 125px;
 }
+/** wpeddit custom style**/
+span.line-truncate {
+    font-family: 'colaborate-regular';
+}
 
+.discovery-post h3 {
+    color: #ccc !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25em;
+    font-family:'colaborate-regular' !important;
+}
 
+a.publisher-anchor-color {
+    color: #000 !important;
+    font-family: 'colaborate-thinregular';
+}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
