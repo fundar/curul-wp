@@ -127,7 +127,7 @@
 			<div class="flex_cell_inner">
 			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 			<div class="avia_textblock " itemprop="text">
-			<p class="titulos-voto">Votaci&oacute;n en pleno</p>
+			<p class="titulos-voto">Votaci&oacute;n en pleno </p>
 			</div>
 			</section>
 			</div>
@@ -147,7 +147,9 @@
 			<div class="flex_cell_inner">
 			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 			<div class="avia_textblock " itemprop="text">
-			<p>Click here to add your own text</p>
+			<p class="num-votos-pleno">500</p>
+			<p class="total-votos-pleno">Votos totales</p>
+			
 			</div>
 			</section>
 			</div>

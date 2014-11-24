@@ -666,9 +666,33 @@ div#av-layout-grid-1 {
 }
 p.titulos-voto {
     color: #2e1439;
-    font: lighter 34px/36px 'oswald';
+    font: lighter 34px 'oswald';
     margin: 0;
-    padding: 14px 17px 14px 13px;
+    padding: 3px 17px 0 13px;
+}
+.titulos-voto span {
+    color: #2e1439;
+    display: block;
+    margin: -11px 0 0;
+    padding: 0 17px 14px 0;
+}
+p.num-votos-pleno {
+    color: #2e1439;
+    display: block;
+    font: 38px 'colaborate-regular';
+    position: relative;
+    text-align: center;
+    top: -7px;
+}
+p.total-votos-pleno {
+    background: none repeat scroll 0 0 rgb(231, 232, 234);
+    color: #2e1439;
+    display: block;
+    font: 19px 'colaborate-regular';
+    padding: 4px;
+    position: relative;
+    text-align: center;
+    top: -35px;
 }
     /** share social **/
 .av-share-box {
