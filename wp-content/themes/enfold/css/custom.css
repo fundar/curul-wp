@@ -655,7 +655,21 @@ li.sub-info-li {
 .tab-item-temas{
 width:100%;
 }
-
+.pleno {
+    background: url("images/bg-votacion-pleno.jpg") no-repeat scroll right top rgb(231, 232, 234);
+    padding: 0 30px 0 0;
+    vertical-align: top;
+}
+div#av-layout-grid-1 {
+    margin-bottom: 54px !important;
+    padding-bottom: 40px;
+}
+p.titulos-voto {
+    color: #2e1439;
+    font: lighter 34px/36px 'oswald';
+    margin: 0;
+    padding: 14px 17px 14px 13px;
+}
     /** share social **/
 .av-share-box {
     background:#FFF !important;
@@ -760,7 +774,7 @@ width:100%;
     margin-right: 10px;
     width: 125px;
 }
-/** greid **/
+/** grid **/
 #top div .no_padding {
   padding: 0 !important;
 
