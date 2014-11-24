@@ -702,6 +702,16 @@ p.titulos-voto-2 {
     font: lighter 40px 'oswald';
     text-align: left;
 }
+.boton-proceso {
+    background: url("images/proceso-btn.png") no-repeat scroll 25px 12px #ecbc6d;
+    color: #fff !important;
+    display: block;
+    font: 21px 'colaborate-regular';
+    margin: 25px 0;
+    padding: 32px 30px 32px 100px;
+    vertical-align: -moz-middle-with-baseline;
+    width: 100%;
+}
 p.num-votos-pleno {
     color: #2e1439;
     display: block;

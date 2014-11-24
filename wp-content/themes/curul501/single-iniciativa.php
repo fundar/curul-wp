@@ -190,11 +190,9 @@
 			</div>
 		
 		        <div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
-				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-				<div class="avia_textblock " itemprop="text">
-				<p>Click here to add your own text</p>
+				<div  itemprop="text">
+				<a class="avia_textblock boton-proceso" href="">Clic para ver proceso legislativo</a>
 				</div>
-				</section>
                          </div>
 
 		</div>
