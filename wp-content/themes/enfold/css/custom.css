@@ -663,9 +663,15 @@ width:100%;
     vertical-align: top;
     width: 100% !important;
 }
+.status-i {
+    background: url("images/bg-votacion-pleno.jpg") no-repeat scroll right top rgb(231, 232, 234);
+    display: block;
+    margin-bottom: 30px;
+    padding: 0 30px 0 0;
+    vertical-align: top;
+}
 div#av-layout-grid-1 {
-    margin-bottom: 54px !important;
-    padding-bottom: 40px;
+
 }
 p.titulos-voto {
     color: #2e1439;
@@ -673,11 +679,28 @@ p.titulos-voto {
     margin: 0;
     padding: 3px 17px 0 13px;
 }
+p.titulos-voto-2 {
+    color: #2e1439;
+    font: lighter 34px 'oswald';
+    margin: -32px 0 0;
+    padding: 3px 17px 0 13px;
+}
 .titulos-voto span {
     color: #2e1439;
     display: block;
     margin: -11px 0 0;
     padding: 0 17px 14px 0;
+}
+.titulos-voto-2 span{
+    color: #2e1439;
+    display: block;
+    margin: -11px 0 0;
+    padding: 0 17px 14px 0;
+}
+.resultado {
+    color: #777779;
+    font: lighter 40px 'oswald';
+    text-align: left;
 }
 p.num-votos-pleno {
     color: #2e1439;
@@ -700,6 +723,14 @@ p.total-votos-pleno {
 .logo-pp {
     float: left;
     margin: 0 19px;
+}
+.griss {
+    background: url("images/bg-boton-grafica.png") repeat scroll 0 0 rgb(231, 232, 234);
+    display: inline-block;
+    font: 21px 'colaborate-regular';
+    margin-bottom: 49px !important;
+    padding: 9px !important;
+    text-align: center;
 }
     /** share social **/
 .av-share-box {
