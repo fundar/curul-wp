@@ -68,25 +68,97 @@
 						</h1>
 						<div class="linea-morado"></div>
 						<h3 itemprop="headline" class="post-title entry-title">
-							Con proyecto de decreto, que reforma y adiciona los articulos 6o., 73, 76, 78, 89, 105, 108, 110, 111, 116 y 122 
+							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 						</h3>
 					</header>
-					<div class="entry-content" itemprop="text">
-					<? the_content(); ?>
+					<div class="entry-content no-voto" itemprop="text">
+						<ul class="lista-iniciativas">
+							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
+						</ul>
+						<? the_content(); ?>					
+						<div class="pleca-sub-info"></div>
+						<ul class="sub-info">
+							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_fecha_votacion_tm', true); ?></li>
+							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Legislatura</li>
+						</ul>
 					</div>
                                          <?php endwhile; endif; ?>
 				</main>
 					
 				<!--end content-->
 				
-
-			<aside class="sidebar sidebar_right three alpha units" role="complementary">
+                <!-- inicio barra leteral derecha -->
+		<aside class="sidebar sidebar_right three alpha units" role="complementary">
 			<div class="sidebar-votos">
 				<p class="vota">Vota</p>
 				<p class="encurul"> en curul</p>
 			</div>
-			<?php avia_social_share_links(); ?> 	
-			</aside>
+			<div class="textwidget share-sidebar-vota">
+			         <?php avia_social_share_links(); ?>
+			</div>
+			<!-- empieza sidebar-->
+			<div class="textwidget sb">
+				<div class="linea-morado"></div>
+				<div class="tab-item-temas">
+			        <p class="tema-img"> Temas:</br>
+				<?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
+				</div>
+				
+			</div>
+			
+			<div class="textwidget sb-1">
+				<div class="linea-morado"></div>
+				<div class="tab-item-temas">
+				<p class="texto-img">Texto integro</p>
+				</div>
+			</div>
+			<div class="textwidget sb-2">			
+				<div class="linea-morado"></div>
+				<p class="gaceta-img">Gaceta parlamentaria</p>	
+			</div>
+		</aside>
+		<!-- votaciones en pleno -->
+		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
+			
+                <div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">
+	
+			<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
+			<div class="flex_cell_inner">
+			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+			<div class="avia_textblock " itemprop="text">
+			<p class="titulos-voto">Votaci&oacute;n en pleno </p>
+			</div>
+			</section>
+			</div>
+			</div>
+			
+			<div class="flex_cell no_margin av_three_fifth avia-builder-el-3 el_after_av_cell_one_fifth el_before_av_cell_one_fifth " style="vertical-align:top;padding:0 10px 0 10px ;">
+			<div class="flex_cell_inner">
+			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+			<div class="avia_textblock " itemprop="text">
+			<p>Click here to add your own text</p>
+			</div>
+			</section>
+			</div>
+			</div>
+			
+			<div class="flex_cell no_margin av_one_fifth avia-builder-el-5 el_after_av_cell_three_fifth avia-builder-el-last " style="vertical-align:top;padding:0 0 0 10px ;">
+			<div class="flex_cell_inner">
+			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+			<div class="avia_textblock " itemprop="text">
+			<p class="num-votos-pleno">500</p>
+			<p class="total-votos-pleno">Votos totales</p>
+			
+			</div>
+			</section>
+			</div>
+                        </div>
+
+                </div>
+
+
+		</div>
 
 
 			</div><!--end container-->

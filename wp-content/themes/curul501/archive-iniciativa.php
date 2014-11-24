@@ -90,16 +90,17 @@
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                          <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
-
+													 <?php the_excerpt(); ?> 
+                          
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
 												<div class="col-status">
 													<div class="datos">
 													Status													
-													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													<div class="temporizador"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" /></div>
 													</div>													
 												</div> 
 												<div class="col-status-1">
@@ -112,8 +113,8 @@
 												</div>
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
-													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
+													<div class="photo-avatar"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/avatar-m-42x42.png"></div>
+													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
 															<span>PRI</span>
 													
 													</div>
@@ -126,6 +127,11 @@
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
+												
+												
+												
+												
+												
 											</div>
 
 											
@@ -136,8 +142,5 @@
 				</main>
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
-
-
-
 
 <?php get_footer(); ?>

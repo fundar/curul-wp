@@ -11,21 +11,27 @@ body {
      font-family:'colaborate-thinregular';}
      
 /** generales**/
-p{
-    font-family:'colaborate-thinregular';
-    font-size:18px;
-     color: rgba(68, 68, 68, 0.8);
-    
+p {
+    color: rgba(68, 68, 68, 0.7);
+    font-family: 'colaborate-regular';
+    font-size: 15px;
+}
+li{
+    color: rgba(68, 68, 68, 0.7);
+    }
+.main_color .meta-color, .main_color .sidebar, .main_color .sidebar a, .main_color .minor-meta, .main_color .minor-meta a, .main_color .text-sep, .main_color blockquote, .main_color .post_nav a, .main_color .comment-text, .main_color .side-container-inner, .main_color .news-time, .main_color .pagination a, .main_color .pagination span, .main_color .tweet-text.avatar_no .tweet-time, #top .main_color .extra-mini-title, .main_color .team-member-job-title, .main_color .team-social a, .main_color #js_sort_items a, .grid-entry-excerpt, .main_color .avia-testimonial-subtitle, .main_color .commentmetadata a, .main_color .social_bookmarks a, .main_color .meta-heading > *, .main_color .slide-meta, .main_color .slide-meta a, .main_color .taglist, .main_color .taglist a, .main_color .phone-info, .main_color .phone-info a, .main_color .av-sort-by-term a, .main_color .av-magazine-time, .main_color .av-magazine .av-magazine-entry-icon, .main_color .av-catalogue-content, .main_color .wp-playlist-item-length {
+    color: rgba(68, 68, 68, 0.7);
 }
 .main_color h1{
-    color: #2e1439;
+    color: #512b60;
     font-family: oswald;
     font-size: 28px;
     font-weight: 300;
     text-rendering: optimizelegibility;
 }
+
 .main_color h3 {
-    color: #717172;
+    color: rgba(68, 68, 68, 0.7);
     font: 19px 'colaborate-regular';
     text-rendering: optimizelegibility;
 }
@@ -42,6 +48,10 @@ a:hover{text-decoration:none;}
     position: relative;
     top: 0;
     z-index: 2;
+}
+.top8 {
+    display: block;
+    margin-top: -5px;
 }
 
 .alternate_color, .alternate_color .site-background, .alternate_color .first-quote, .alternate_color .related_image_wrap, .alternate_color .gravatar img .alternate_color .hr_content, .alternate_color .news-thumb, .alternate_color .post-format-icon, .alternate_color .ajax_controlls a, .alternate_color .tweet-text.avatar_no, .alternate_color .toggler, .alternate_color .toggler.activeTitle:hover, .alternate_color #js_sort_items, .alternate_color.inner-entry, .alternate_color .grid-entry-title, .alternate_color .related-format-icon, .grid-entry .alternate_color .avia-arrow, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery img, .alternate_color .grid-content, .alternate_color .av-share-box ul, #top .alternate_color .av-related-style-full .related-format-icon, .alternate_color .related_posts.av-related-style-full a:hover, .alternate_color.avia-fullwidth-portfolio .pagination .current, .alternate_color.avia-fullwidth-portfolio .pagination a {
@@ -320,8 +330,19 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
-a.iniciativas-home{color:#676767;}
-a.iniciativas-home:hover{color:#624070;}
+a.iniciativas-home {
+    border-bottom: 1px solid rgba(153, 145, 168, 0.3);
+    color: #512b60;
+    display:block;
+    font-family: oswald;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-top: -2px;
+    padding-bottom: 12px;
+    text-rendering: optimizelegibility;
+}
+a.iniciativas-home:hover{color:#724b83;}
 .post_date {
     color: #512b60;
     display: block;
@@ -549,21 +570,22 @@ p.resemen-recientes-iniciativas {
     padding-top: 35px;
     }
     .sidebar-votos {
-        background: none repeat scroll 0 0 #512b60;
-        display: block;
-        padding: 26px;
-        width: 100%;
-    }
+    background: none repeat scroll 0 0 #512b60;
+    display: block;
+    padding: 10px 26px;
+    width: 100%;
+   }
     .vota {
-        color: #fff;
-        display: block;
-        font-family: 'Oswald';
-        font-size: 46px;
-        font-weight: 300;
-        margin-bottom: 0;
-        text-align: center;
-        text-transform: uppercase;
-    }
+    color: #fff;
+    display: block;
+    font-family: 'Oswald';
+    font-size: 46px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    }           
     .encurul{
         font-family: 'Oswald';
         font-weight:300;
@@ -573,12 +595,111 @@ p.resemen-recientes-iniciativas {
         text-align:center;
         
     }
+.sb {
+    display: block;
+    padding-top: 59px;
+}
+.sb-1 {
+    display: block;
+    padding-top: 10px;
+}
+.sb-2 {
+    display: block;
+    padding-top: 0px;
+}
+.tema-img {
+    background: url("images/temas-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
+    display: block;
+    height: 35px;
+    padding: 0 0 0 30px;
+    width: 100%;
+}
+.no-voto > .reddit-voting {
+    display:none;
+}
+.texto-img {
+    background: url("images/texto-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
+    display: block;
+    height: 35px;
+    padding: 4px 0 0 30px;
+    width: 100%;
+}
+.gaceta-img {
+    background: url("images/gaceta-icono.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 35px;
+    padding: 2px 0 0 30px;
+    width: 100%;
+}
+ul.lista-iniciativas {
+    margin: 16px 0;
+}
+li.bullet-arrow {
+    background: url("images/bullet-arrow.png") no-repeat scroll 14px 9px rgba(0, 0, 0, 0);
+    color: #512b60;
+    font: 15px 'colaborate-regular';
+    margin: 0 0 0 -14px;
+    padding: 5px 0 8px 26px;
+}
+.pleca-sub-info{height:1px; background:none repeat scroll 0 0 rgba(68, 68, 68, 0.7);width:40px;margin:30px 0 10px;}
+ul.sub-info {
+    margin:9px 0;
+}
+li.sub-info-li {
+    font: 12px 'colaborate-regular';
+    margin: 3px 0;
+}
+.share-sidebar-vota {
+    margin: -10px 0 66px;
+}
+.tab-item-temas{
+width:100%;
+}
+.pleno {
+    background: url("images/bg-votacion-pleno.jpg") no-repeat scroll right top rgb(231, 232, 234);
+    padding: 0 30px 0 0;
+    vertical-align: top;
+}
+div#av-layout-grid-1 {
+    margin-bottom: 54px !important;
+    padding-bottom: 40px;
+}
+p.titulos-voto {
+    color: #2e1439;
+    font: lighter 34px 'oswald';
+    margin: 0;
+    padding: 3px 17px 0 13px;
+}
+.titulos-voto span {
+    color: #2e1439;
+    display: block;
+    margin: -11px 0 0;
+    padding: 0 17px 14px 0;
+}
+p.num-votos-pleno {
+    color: #2e1439;
+    display: block;
+    font: 38px 'colaborate-regular';
+    position: relative;
+    text-align: center;
+    top: -7px;
+}
+p.total-votos-pleno {
+    background: none repeat scroll 0 0 rgb(231, 232, 234);
+    color: #2e1439;
+    display: block;
+    font: 19px 'colaborate-regular';
+    padding: 4px;
+    position: relative;
+    text-align: center;
+    top: -35px;
+}
     /** share social **/
 .av-share-box {
     background:#FFF !important;
     clear: both;
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 0;
     margin-top: 19px;
     padding: 0;
@@ -605,8 +726,9 @@ p.resemen-recientes-iniciativas {
    
 
 }
-
-
+.no-aqui{
+    display:none;
+}
 #filter{
     background-color:transparent;
     float: left;    
@@ -637,7 +759,6 @@ p.resemen-recientes-iniciativas {
     top: 0;
     width: 30px;
 }
-
 .sort{
     background: none repeat scroll 0 0 #f4f4f4 !important;
     font-family: colaborate-thinregular !important;
@@ -676,6 +797,17 @@ p.resemen-recientes-iniciativas {
 #filter select.sorter-estado {
     margin-right: 10px;
     width: 125px;
+}
+/** grid **/
+#top div .no_padding {
+  padding: 0 !important;
+
+}
+/** wpeddit custom style**/
+.share-sidebar-vota > .reddit-voting {
+    background: none repeat scroll 0 0 #512b60;
+    margin-top: -10px;
+    width: 100%;
 }
 
 
