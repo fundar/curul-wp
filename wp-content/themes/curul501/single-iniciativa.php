@@ -175,7 +175,7 @@
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="titulos-voto">Estatus <span>de la</span></p><p class="titulos-voto-2"><span">iniciativa</span></p>
+				<p class="titulos-voto">Status <span>de la</span></p><p class="titulos-voto-2"><span">iniciativa</span></p>
 				</div>
 				</section>
 				</div>
