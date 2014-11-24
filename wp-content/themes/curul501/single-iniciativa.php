@@ -121,43 +121,53 @@
 		<!-- votaciones en pleno -->
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
 			
-                <div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">
-	
-			<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
-			<div class="flex_cell_inner">
-			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-			<div class="avia_textblock " itemprop="text">
-			<p class="titulos-voto">Votaci&oacute;n en pleno </p>
-			</div>
-			</section>
-			</div>
-			</div>
-			
-			<div class="flex_cell no_margin av_three_fifth avia-builder-el-3 el_after_av_cell_one_fifth el_before_av_cell_one_fifth " style="vertical-align:top;padding:0 10px 0 10px ;">
-			<div class="flex_cell_inner">
-			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-			<div class="avia_textblock " itemprop="text">
-			<p>Click here to add your own text</p>
-			</div>
-			</section>
-			</div>
-			</div>
-			
-			<div class="flex_cell no_margin av_one_fifth avia-builder-el-5 el_after_av_cell_three_fifth avia-builder-el-last " style="vertical-align:top;padding:0 0 0 10px ;">
-			<div class="flex_cell_inner">
-			<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-			<div class="avia_textblock " itemprop="text">
-			<p class="num-votos-pleno">500</p>
-			<p class="total-votos-pleno">Votos totales</p>
-			
-			</div>
-			</section>
-			</div>
-                        </div>
-
+                <div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
+				<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
+					<div class="flex_cell_inner">
+					<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+					<div class="avia_textblock " itemprop="text">
+					<p class="titulos-voto">Votaci&oacute;n <span>en pleno</span> </p>
+					</div>
+					</section>
+					</div>
+				</div>				
+				<div class="flex_cell no_margin av_three_fifth avia-builder-el-3 el_after_av_cell_one_fifth el_before_av_cell_one_fifth " style="vertical-align:top;padding:0 10px 0 10px ;">
+					<div class="flex_cell_inner">
+					<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+					<div class="avia_textblock " itemprop="text">
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
+						</div>
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
+						</div>
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
+						</div>
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
+						</div>
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
+						</div>
+						<div class="logo-pp">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
+						</div>			
+					</div>
+					</section>
+					</div>
+				</div>				
+				<div class="flex_cell no_margin av_one_fifth avia-builder-el-5 el_after_av_cell_three_fifth avia-builder-el-last " style="vertical-align:top;padding:0 0 0 10px ;">
+					<div class="flex_cell_inner">
+					<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+					<div class="avia_textblock " itemprop="text">
+					<p class="num-votos-pleno">500</p>
+					<p class="total-votos-pleno">Votos totales</p>			
+					</div>
+					</section>
+					</div>
+				</div>
                 </div>
-
-
 		</div>
 
 
@@ -168,6 +178,4 @@
 		        ?>
 			</div>
 		</div><!-- close default .container_wrap element -->
-
-
 <?php get_footer(); ?>
