@@ -657,17 +657,32 @@ width:100%;
 }
 .pleno {
     background: url("images/bg-votacion-pleno.jpg") no-repeat scroll right top rgb(231, 232, 234);
+    display: block;
+    height: 100px;
+    padding: 0 30px 0 0;
+    vertical-align: top;
+    width: 100% !important;
+}
+.status-i {
+    background: url("images/bg-votacion-pleno.jpg") no-repeat scroll right top rgb(231, 232, 234);
+    display: block;
+    margin-bottom: 30px;
     padding: 0 30px 0 0;
     vertical-align: top;
 }
 div#av-layout-grid-1 {
-    margin-bottom: 54px !important;
-    padding-bottom: 40px;
+
 }
 p.titulos-voto {
     color: #2e1439;
     font: lighter 34px 'oswald';
     margin: 0;
+    padding: 3px 17px 0 13px;
+}
+p.titulos-voto-2 {
+    color: #2e1439;
+    font: lighter 34px 'oswald';
+    margin: -32px 0 0;
     padding: 3px 17px 0 13px;
 }
 .titulos-voto span {
@@ -676,13 +691,34 @@ p.titulos-voto {
     margin: -11px 0 0;
     padding: 0 17px 14px 0;
 }
+.titulos-voto-2 span{
+    color: #2e1439;
+    display: block;
+    margin: -11px 0 0;
+    padding: 0 17px 14px 0;
+}
+.resultado {
+    color: #777779;
+    font: lighter 40px 'oswald';
+    text-align: left;
+}
+.boton-proceso {
+    background: url("images/proceso-btn.png") no-repeat scroll 25px 12px #ecbc6d;
+    color: #fff !important;
+    display: block;
+    font: 21px 'colaborate-regular';
+    margin: 25px 0;
+    padding: 32px 30px 32px 100px;
+    vertical-align: -moz-middle-with-baseline;
+    width: 100%;
+}
 p.num-votos-pleno {
     color: #2e1439;
     display: block;
-    font: 38px 'colaborate-regular';
+    font: 44px 'colaborate-regular';
     position: relative;
     text-align: center;
-    top: -7px;
+    top: -46px;
 }
 p.total-votos-pleno {
     background: none repeat scroll 0 0 rgb(231, 232, 234);
@@ -692,7 +728,19 @@ p.total-votos-pleno {
     padding: 4px;
     position: relative;
     text-align: center;
-    top: -35px;
+    top: -50px;
+}
+.logo-pp {
+    float: left;
+    margin: 0 19px;
+}
+.griss {
+    background: url("images/bg-boton-grafica.png") repeat scroll 0 0 rgb(231, 232, 234);
+    display: inline-block;
+    font: 21px 'colaborate-regular';
+    margin-bottom: 49px !important;
+    padding: 9px !important;
+    text-align: center;
 }
     /** share social **/
 .av-share-box {
