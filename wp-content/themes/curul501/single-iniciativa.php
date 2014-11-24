@@ -71,7 +71,7 @@
 							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 						</h3>
 					</header>
-					<div class="entry-content" itemprop="text">
+					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
 							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
@@ -88,37 +88,48 @@
 					
 				<!--end content-->
 				
-
-			<aside class="sidebar sidebar_right three alpha units" role="complementary">
+                <!-- inicio barra leteral derecha -->
+		<aside class="sidebar sidebar_right three alpha units" role="complementary">
 			<div class="sidebar-votos">
 				<p class="vota">Vota</p>
 				<p class="encurul"> en curul</p>
-				
-			</div>			
+			</div>
 			<div class="textwidget share-sidebar-vota">
 			         <?php avia_social_share_links(); ?>
 			</div>
-			<div class="textwidget">
+			<!-- empieza sidebar-->
+			<div class="textwidget sb">
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
-			           <img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" />
+			        <p class="tema-img"> Temas:</br>
+				<?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
 				</div>
-				<?php echo get_post_meta($post->ID, 'wp_topics', true); ?>
-			</div>
-			<div class="textwidget">
-				<div class="linea-morado"></div>
-				<div class="tab-item-temas">
-					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" />
-				</div>
-				<?php echo get_post_meta($post->ID, 'wp_gaceta', true); ?>Texto integro
-				</div>
-			<div class="textwidget">			
-				<div class="linea-morado"></div>
-				Gaceta parlamentaria<?php echo get_post_meta($post->ID, 'wp_gaceta', true); ?>
+				
 			</div>
 			
+			<div class="textwidget sb-1">
+				<div class="linea-morado"></div>
+				<div class="tab-item-temas">
+				<p class="texto-img">Texto integro</p>
+				</div>
 			</div>
-			</aside>
+			<div class="textwidget sb-2">			
+				<div class="linea-morado"></div>
+				<p class="gaceta-img">Gaceta parlamentaria</p>	
+			</div>
+		</aside>
+		<!-- votaciones en pleno -->
+		<div class="container pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
+		        <div class="flex_cell no_margin av_one_fifth  avia-builder-el-1  el_before_av_cell_three_fifth  avia-builder-el-first no_padding">
+			Votacion en pleno
+			</div>
+			<div class="flex_cell no_margin av_three_fifth el_after_av_cell_one_fifth  el_before_av_cell_one_fifth no_padding">
+				logotipos partidos
+			</div>
+			 <div class="flex_cell no_margin av_one_fifth el_after_av_cell_three_fifth  avia-builder-el-last no_padding">
+				total de votos
+			</div>
+		</div>
 
 
 			</div><!--end container-->

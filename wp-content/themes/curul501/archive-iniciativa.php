@@ -92,7 +92,7 @@
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
-													 <p> <?php the_excerpt(); ?> </p>
+													 <?php the_excerpt(); ?> 
                           
 												</div>
 											</div><!--fin fecha y resumen-->
@@ -127,6 +127,11 @@
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
+												
+												
+												
+												
+												
 											</div>
 
 											
@@ -137,8 +142,5 @@
 				</main>
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
-
-
-
 
 <?php get_footer(); ?>
