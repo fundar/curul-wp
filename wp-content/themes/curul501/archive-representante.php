@@ -26,20 +26,20 @@
 			<div class="search-table">
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
-					       <option value="1">Tema</option>
+					       <option value="1">Partidos pol&iacute;ticos</option>
 					       <option value="2">Tema 2</option>							
 				       </select>
 			       </div>
 			       <div id="filter">				
 				       <select class="sorter-proponente sort" name="category">
-					       <option value="2">Proponente(s)</option>
-					       <option value="2">Opcion 2</option>														
+					       <option value="2">Estado</option>
+					       <option value="2">Aguascalientes</option>														
 				       </select>
 			       </div>
 			       <div id="filter">				
 				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
+					       <option value="1">Comisiones</option>
+					       <option value="2">Seguridad P&uacute;blica</option>														
 				       </select>
 			       </div>				
 			</div>
