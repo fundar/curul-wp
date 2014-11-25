@@ -47,8 +47,6 @@
 			</div>
 		</div>
 <!-- Fin filtros iniciativas -->		
-<!-- Fin filtros iniciativas -->		
-
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 
 			<div class='container'>

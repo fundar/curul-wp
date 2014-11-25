@@ -11,7 +11,7 @@ global $avia_config;
 		<main class='template-page  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
 			
 			
-				<div class="container_wrap container_wrap_first main_color sidebar_right ">
+				<div class="container_wrap container_wrap_first main_color sidebar_right">
 					<div class="content  nine alpha units">
 						<div class="post-entry-25">
 						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
