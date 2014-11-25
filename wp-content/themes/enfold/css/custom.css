@@ -857,7 +857,46 @@ p.total-votos-pleno {
     margin-top: -10px;
     width: 100%;
 }
-
+/** representantes **/
+div .av_four_fifth {
+    margin-left: 6%;
+    width: 84.8%;
+}
+div .av_one_fifth {
+    margin-left: 0;
+    width: 15.2%;
+}
+.vota-rep {
+    background: none repeat scroll 0 0 #512B60;
+    display: block;
+    height: 92px;
+}
+#av-layout-grid-2{
+    margin:0;
+    padding:0;
+    
+}
+.no-padding-rep{padding:0;}
+.post_foto{
+    display: block;
+    float: left;
+    min-height: 40px;
+    overflow: hidden;
+    padding-right: 15px;
+    text-align: center;
+}
+.share-social-representante {
+    display: block;
+    position: relative;
+    top: -7px;
+    width: 31%;
+    z-index: 1000;
+}
+.pleca-624070-representantes {
+    border-bottom: 4px solid #624070 !important;
+}
+.share-social-representante > .av-share-box { background: none repeat scroll 0 0 transparent !important;}
+.share-social-representante > .av-share-box:hover { background: none repeat scroll 0 0 transparent !important;}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
@@ -935,7 +974,12 @@ Mobile Styles
         margin-right:0px;
         width:100%;
     }
+    .share-social-representante {
+    width: 100%;}
+    .share-social-representante > .av-share-box { background: none repeat scroll 0 0 transparent !important;
+     }
     }
     /** iniciativas archive **/
+    
 
     
