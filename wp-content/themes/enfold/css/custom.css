@@ -869,7 +869,7 @@ div .av_one_fifth {
 .vota-rep {
     background: none repeat scroll 0 0 #512B60;
     display: block;
-    height: 92px;
+    height: 76px;
 }
 #av-layout-grid-2{
     margin:0;
@@ -897,6 +897,11 @@ div .av_one_fifth {
 }
 .share-social-representante > .av-share-box { background: none repeat scroll 0 0 transparent !important;}
 .share-social-representante > .av-share-box:hover { background: none repeat scroll 0 0 transparent !important;}
+
+#filter select.sorter-rep {
+    margin-right: 10px;
+    width: 160px;
+}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
