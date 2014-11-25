@@ -40,12 +40,12 @@
 <!-- Fin filtros iniciativas -->
 <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 <div class='container'>
-	<main class='template-page  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>    
-		<div class="container_wrap container_wrap_first main_color sidebar_right">
-			<div class="post-entry post-entry-type-page post-entry-25">
+	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
+                <article class="post-1 post type-post status-publish format-standard hentry category-uncategorized post-entry post-entry-type-standard post-entry-1 post-loop-1 post-parity-odd post-entry-last single-small " itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
+			
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
-				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
+				
 				        <header class="entry-content-header">
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
@@ -55,11 +55,12 @@
 							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 						</h3>
 					</header>
-
+                                          <? the_content(); ?>
                                          <?php endwhile; endif; ?>
-				</main>
-			</div>
-		</div>
+				
+			
+		
+		</article>
 	</main>
 	<!--sidebar-->
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
