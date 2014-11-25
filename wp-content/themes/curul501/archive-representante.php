@@ -64,8 +64,14 @@
 												</div>
 												<div class="entry-content"> 
 			                                                                                <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>												      
-													<p>Partido pol&iacute;tico</p>
-                          
+													    <div id="nav-representantes">
+														<ul>
+														<li><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> Partido Revolucionario Institucional <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>
+														<li class="navrepr-left">Cargo: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?></li>
+														<li class="navrepr-left">Iniciativas <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?></li>
+														<li class="navrepr-left no-borde"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png"> <span>30</span> Iniciativas</li>
+                                                                                                                </ul>
+												            </div>                          
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_fifth vota-rep">

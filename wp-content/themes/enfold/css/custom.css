@@ -867,6 +867,31 @@ a.grafikas:hover{
     width: 100%;
 }
 /** representantes **/
+.no-borde{
+    border-right: 0px solid rgba(153, 145, 168, 0.3) !important; 
+}
+img.icono-repre {
+    margin-top: -3px;
+    padding-right: 4px;
+    vertical-align: middle;
+}
+#nav-representantes ul{
+    margin-left:0;
+}
+#nav-representantes li {
+    border-right: 1px solid rgba(153, 145, 168, 0.3);
+    display: inline-block;
+    font: 12px 'colaborate-regular';
+    margin-top: 7px;
+    padding: 0 15px 0 0;
+}
+
+#nav-representantes span{
+    color:#512B60;
+}
+li.navrepr-left {
+    padding-left: 15px !important;
+}
 div .av_four_fifth {
     margin-left: 6%;
     width: 84.8%;
@@ -896,10 +921,11 @@ div .av_one_fifth {
 }
 .share-social-representante {
     display: block;
+    margin-bottom: 85px;
+    margin-top: -13px;
     position: relative;
-    top: -7px;
-    width: 31%;
-    z-index: 1000;
+    width: 40%;
+
 }
 .pleca-624070-representantes {
     border-bottom: 4px solid #624070 !important;
