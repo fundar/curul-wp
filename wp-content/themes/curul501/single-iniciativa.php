@@ -74,7 +74,7 @@
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
-							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li></li>
+							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
