@@ -168,7 +168,7 @@
 					</div>
 			</div>
 		<div class="container griss">
-			<a href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
+			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
 		</div>
 		
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
