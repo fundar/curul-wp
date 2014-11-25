@@ -41,7 +41,7 @@
 <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 <div class='container'>
 	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
-                <article class="post-1 post type-post status-publish format-standard hentry category-uncategorized post-entry post-entry-type-standard post-entry-1 post-loop-1 post-parity-odd post-entry-last single-small " itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
+                <article class="post-representante post-entry-last single-small" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
 			
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
@@ -52,10 +52,147 @@
 						</h1>
 						<div class="linea-morado"></div>
 						<h3 itemprop="headline" class="post-title entry-title">
-							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
+						Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 						</h3>
 					</header>
-                                          <? the_content(); ?>
+					<div class="entry-content no-voto" itemprop="text">
+						<ul class="lista-iniciativas">
+							<li class="bullet-arrow">Tipo de elecci&oacute;n
+							<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p></li>
+							<li class="bullet-arrow">Comisiones a las que pertenece
+							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+							<li class="bullet-arrow">Iniciativas propuestas
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices aliquet condimentum. Aenean id tristique ligula. Nunc sed varius turpis, nec malesuada risus.</p></li>							
+                                                        <li class="bullet-arrow">Curriculum</li>
+								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/academica-icon.png">												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											 <div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Trayectoria acad&eacute;mica</h4>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+												</div>
+										         </div>
+										         <footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>
+
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/legislativo-icon.png">
+												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											<div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Trayectoria legislativa</p>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+												</div>
+											</div>
+											<footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>
+									
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/administrativa-icon.png">
+												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											<div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Trayectoria administrativa</p>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+												</div>
+											</div>
+											<footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>
+									
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/empresarial-icon.png">
+												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											<div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Trayectoria empresarial</p>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+												</div>
+											</div>
+											<footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/publicaciones-icon.png">
+												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											<div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Publicaciones</p>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+												</div>
+											</div>
+											<footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/rubros-icon.png">
+												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											<div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Otros rubros</p>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+												</div>
+											</div>
+											<footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>									
+								</ul>
+						</ul>
+						
+
+ <? the_content(); ?>
+					</div>
                                          <?php endwhile; endif; ?>
 				
 			
@@ -63,7 +200,7 @@
 		</article>
 	</main>
 	<!--sidebar-->
-	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 	<div class="inner_sidebar">
 	gseyryu
 	</div>
