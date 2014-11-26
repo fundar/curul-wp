@@ -57,7 +57,6 @@
 							$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
 							$district = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
-							
 						?>
 		
 				        <header class="entry-content-header">
@@ -243,9 +242,6 @@
 		
 		<div id="map" style="width: 235px; height:323px;"></div>
 		<!-- Fin Mapa representantes -->
-		
-		
-		<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/mapa.png">
 		
 		<div class="textwidget share-sidebar-vota">
 			 <?php avia_social_share_links(); ?>
