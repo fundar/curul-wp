@@ -54,6 +54,10 @@ a:hover{text-decoration:none;}
     margin-top: -5px;
 }
 
+.header_color .header_bg, .header_color .main_menu ul ul, .header_color .main_menu .menu ul li a, .header_color .pointer_arrow_wrap .pointer_arrow, .header_color .avia_mega_div, .header_color .av-subnav-menu > li ul, .header_color .av-subnav-menu a {
+    background-color:transparent;
+    color: #919191;
+}
 .alternate_color, .alternate_color .site-background, .alternate_color .first-quote, .alternate_color .related_image_wrap, .alternate_color .gravatar img .alternate_color .hr_content, .alternate_color .news-thumb, .alternate_color .post-format-icon, .alternate_color .ajax_controlls a, .alternate_color .tweet-text.avatar_no, .alternate_color .toggler, .alternate_color .toggler.activeTitle:hover, .alternate_color #js_sort_items, .alternate_color.inner-entry, .alternate_color .grid-entry-title, .alternate_color .related-format-icon, .grid-entry .alternate_color .avia-arrow, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery-big, .alternate_color .avia-gallery img, .alternate_color .grid-content, .alternate_color .av-share-box ul, #top .alternate_color .av-related-style-full .related-format-icon, .alternate_color .related_posts.av-related-style-full a:hover, .alternate_color.avia-fullwidth-portfolio .pagination .current, .alternate_color.avia-fullwidth-portfolio .pagination a {
     background-color: transparent;
     color: #666666;
@@ -753,7 +757,7 @@ a.grafikas:hover{
 }
     /** share social **/
 .av-share-box {
-    background:#FFF !important;
+    background:transparent !important;
     clear: both;
     float: left;
     font-size: 15px;
@@ -868,12 +872,10 @@ a.grafikas:hover{
 }
 /** representantes **/
 .no-borde{
-    border-right: 0px solid rgba(153, 145, 168, 0.3) !important; 
+    border: 0px solid rgba(153, 145, 168, 0.3) !important; 
 }
 img.icono-repre {
-    margin-top: -3px;
-    padding-right: 4px;
-    vertical-align: middle;
+    padding-right: 8px;
 }
 #nav-representantes ul{
     margin-left:0;
@@ -927,12 +929,10 @@ p.cpt-repre {
     color: #512b60;
 }
 .sidebar-cpt-representantes {
-    background: none repeat scroll 0 0 rgba(250, 250, 250, 0.9);
     float: left !important;
     margin-left: 22px !important;
-    margin-top: 36px;
-    padding: 20px;
-    width: 19% !important;
+    margin-top: -14px;
+    width: 22.8% !important;
 }
 .no-padding-rep{padding:0;}
 .post_foto{
@@ -950,6 +950,43 @@ p.cpt-repre {
     position: relative;
     width: 40%;
 
+}
+
+div.sidebar-representantes  {
+    margin-top: -1px;
+}
+
+.sidebar-representantes ul{
+    margin: 0;
+    padding: 0;
+}
+.sidebar-representantes li {
+    border-bottom: 1px solid rgba(67, 43, 77, 0.4);
+    font: 12px 'colaborate-regular';
+    padding: 18px;
+}
+li.logo-partidoo-sb{
+    display:block;
+    padding-left: 0px;
+    vertical-align: middle;
+}
+li.twitter-sb {
+    background: url("images/twitter-icono.png") no-repeat scroll 2px 11px rgba(0, 0, 0, 0);
+    display:block;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+li.correo-sb {
+    background: url("images/correo-icono.png") no-repeat scroll 2px 13px rgba(0, 0, 0, 0);
+    display: block;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+li.ir-sb {
+    background: url("images/ir-icono.png") no-repeat scroll 2px 9px rgba(0, 0, 0, 0);
+    display: block;
+    padding-left: 30px;
+    vertical-align: middle;
 }
 .pleca-624070-representantes {
     border-bottom: 4px solid #624070 !important;
@@ -1035,6 +1072,11 @@ Mobile Styles
         width:100%;
     }
     #filter select.sorter-estado {
+        margin-right:0px;
+        width:100%;
+    }
+    
+    #filter select.sorter-rep {
         margin-right:0px;
         width:100%;
     }
