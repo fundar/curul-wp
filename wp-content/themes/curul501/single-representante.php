@@ -7,6 +7,9 @@
 	 get_header();
 
 	?>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			 <!-- titulo-->
 			<div class="container top60">
@@ -204,21 +207,34 @@
 		
 		</article>
 	</main>
+	
 	<!--sidebar-->
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
-	<div class="sidebar-representantes">
-		<ul>
-		<li class="logo-partidoo-sb"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> PRI <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>	
-		<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
-		<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
-		<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>
-		</ul>
-				
-	</div>
-	<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/mapa.png">
-	<div class="textwidget share-sidebar-vota">
-		 <?php avia_social_share_links(); ?>
-	</div>
+		<div class="sidebar-representantes">
+			<ul>
+			<li class="logo-partidoo-sb"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> PRI <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>	
+			<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
+			<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
+			<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>
+			</ul>
+		</div>
+		
+		<?php 
+		
+			$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
+			$district = get_post_meta($post->ID, 'wp_district_clean', true);
+			$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
+			die(var_dump($district));
+		?>
+		
+		wp-content/themes/curul501/
+		<div id="map" style="width: 235px; height:323px;"></div>
+		
+		<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/mapa.png">
+		
+		<div class="textwidget share-sidebar-vota">
+			 <?php avia_social_share_links(); ?>
+		</div>
 	</div><!--end sidebar-->
 				
    </div><!--end container-->
