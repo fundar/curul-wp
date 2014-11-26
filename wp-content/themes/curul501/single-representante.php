@@ -52,7 +52,14 @@
 			
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
-				
+						
+						<?php 
+							$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
+							$district = get_post_meta($post->ID, 'wp_district_clean', true);
+							$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
+							
+						?>
+		
 				        <header class="entry-content-header">
 						<div class="post_foto">
 							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
@@ -224,12 +231,6 @@
 		</div>
 		
 		<!-- Mapa representantes -->
-		<?php 
-			$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
-			$district = get_post_meta($post->ID, 'wp_district_clean', true);
-			$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
-		?>
-		
 		<?php if($district == "") { ?>
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
