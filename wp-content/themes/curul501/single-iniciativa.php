@@ -136,21 +136,69 @@
 						<div class="avia_textblock " itemprop="text">
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">5000
+										</li >										
+										<li class="hand-down">2000
+										</li >
+									</ul>
+								</div>
 							</div>
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">5000
+										</li >										
+										<li class="hand-down">2000
+										</li >
+									</ul>
+								</div>																
 							</div>
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">5000
+										</li >										
+										<li class="hand-down">2000
+										</li >
+									</ul>
+								</div>								
 							</div>
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">5000
+										</li >										
+										<li class="hand-down">2000
+										</li >
+									</ul>
+								</div>								
 							</div>
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">5000
+										</li >										
+										<li class="hand-down">20000
+										</li >
+									</ul>
+								</div>								
 							</div>
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up">50000
+										</li >										
+										<li class="hand-down">2000
+										</li >
+									</ul>
+								</div>								
 							</div>			
 						</div>
 						</section>
