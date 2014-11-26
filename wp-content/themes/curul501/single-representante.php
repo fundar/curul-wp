@@ -201,8 +201,18 @@
 	</main>
 	<!--sidebar-->
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
-	<div class="inner_sidebar">
-	gseyryu
+	<div class="sidebar-representantes">
+		<ul>
+		<li><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> Partido Revolucionario Institucional <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>		
+		<li><?php echo get_post_meta($post->ID, 'wp_email', true); ?></li>
+		<li><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</li>
+		<li class="no-borde"><a href=""> elizabethyanez.mx</a></li>
+		</ul>
+				
+	</div>
+	<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/mapa.png">
+	<div class="textwidget share-sidebar-vota">
+		 <?php avia_social_share_links(); ?>
 	</div>
 	</div><!--end sidebar-->
 				
