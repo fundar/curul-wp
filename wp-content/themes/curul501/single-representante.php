@@ -55,6 +55,7 @@
 						
 						<?php 
 							$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
+							die(var_dump($state));
 							$district = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
 							
