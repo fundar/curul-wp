@@ -7,8 +7,12 @@
 	 get_header();
 
 	?>
+	
+	<!-- Mapa representantes -->
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<style> #map {  border-top: 2px solid #48265C; border-bottom: 2px solid #48265C;} </style>
+	<!-- Fin Mapa representantes -->
 	
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			 <!-- titulo-->
@@ -219,16 +223,26 @@
 			</ul>
 		</div>
 		
+		<!-- Mapa representantes -->
 		<?php 
-		
 			$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
 			$district = get_post_meta($post->ID, 'wp_district_clean', true);
 			$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
-			die(var_dump($district));
 		?>
 		
-		wp-content/themes/curul501/
+		<?php if($district == "") { ?>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
+			<script type="text/javascript">$(document).ready( function () { setMap("<?php echo $circum;?>"); });</script>
+		<?php } else { ?>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
+			<script type="text/javascript">$(document).ready( function () { setMap("<?php echo $state;?>", "<?php echo $district;?>"); });</script>
+		<?php } ?>
+		
 		<div id="map" style="width: 235px; height:323px;"></div>
+		<!-- Fin Mapa representantes -->
+		
 		
 		<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/mapa.png">
 		
