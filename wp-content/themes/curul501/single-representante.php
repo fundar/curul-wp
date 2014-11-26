@@ -47,6 +47,10 @@
                         <?php while (have_posts()) : the_post(); ?>
 				
 				        <header class="entry-content-header">
+						<div class="post_foto">
+							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+						</div>
+						<div class="entry-content-wrapper clearfix standard-content cabecera-representante ">
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
 						</h1>
@@ -54,6 +58,7 @@
 						<h3 itemprop="headline" class="post-title entry-title">
 						Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 						</h3>
+						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
