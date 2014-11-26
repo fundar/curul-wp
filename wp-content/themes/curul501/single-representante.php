@@ -203,10 +203,10 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 	<div class="sidebar-representantes">
 		<ul>
-		<li><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> Partido Revolucionario Institucional <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>		
-		<li><?php echo get_post_meta($post->ID, 'wp_email', true); ?></li>
-		<li><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</li>
-		<li class="no-borde"><a href=""> elizabethyanez.mx</a></li>
+		<li class="logo-partidoo-sb"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> PRI <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>	
+		<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
+		<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
+		<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>
 		</ul>
 				
 	</div>

@@ -757,7 +757,7 @@ a.grafikas:hover{
 }
     /** share social **/
 .av-share-box {
-    background:#FFF !important;
+    background:transparent !important;
     clear: both;
     float: left;
     font-size: 15px;
@@ -875,9 +875,7 @@ a.grafikas:hover{
     border: 0px solid rgba(153, 145, 168, 0.3) !important; 
 }
 img.icono-repre {
-    margin-top: -3px;
-    padding-right: 4px;
-    vertical-align: middle;
+    padding-right: 8px;
 }
 #nav-representantes ul{
     margin-left:0;
@@ -955,12 +953,40 @@ p.cpt-repre {
 }
 
 div.sidebar-representantes  {
-    margin-top: 18px;
+    margin-top: -1px;
+}
+
+.sidebar-representantes ul{
+    margin: 0;
+    padding: 0;
 }
 .sidebar-representantes li {
     border-bottom: 1px solid rgba(67, 43, 77, 0.4);
     font: 12px 'colaborate-regular';
-    padding: 13px;
+    padding: 18px;
+}
+li.logo-partidoo-sb{
+    display:block;
+    padding-left: 0px;
+    vertical-align: middle;
+}
+li.twitter-sb {
+    background: url("images/twitter-icono.png") no-repeat scroll 2px 11px rgba(0, 0, 0, 0);
+    display:block;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+li.correo-sb {
+    background: url("images/correo-icono.png") no-repeat scroll 2px 13px rgba(0, 0, 0, 0);
+    display: block;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+li.ir-sb {
+    background: url("images/ir-icono.png") no-repeat scroll 2px 9px rgba(0, 0, 0, 0);
+    display: block;
+    padding-left: 30px;
+    vertical-align: middle;
 }
 .pleca-624070-representantes {
     border-bottom: 4px solid #624070 !important;
