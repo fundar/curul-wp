@@ -631,6 +631,10 @@ li.hand-down {
     display: block;
     padding-top: 0px;
 }
+p.parrafo-temas {
+    margin-left: 30px;
+    margin-top: -24px;
+}
 .tema-img {
     background: url("images/temas-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
     display: block;
