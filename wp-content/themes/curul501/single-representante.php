@@ -57,7 +57,6 @@
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
-							die(var_dump($initiatives["loop"]->posts));
 						?>
 		
 				        <header class="entry-content-header">
@@ -85,7 +84,13 @@
 								<?php if($intiatives["count"] == 0) { ?>
 									<p>No se enceuntran iniciativas relacionadas</p>
 								<?php } else { ?>
-									<p>No se enceuntran iniciativas relacionadas</p>
+									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
+										<p>
+											<a class="iniciativas-home" href="<?php the_permalink($initiative->ID); ?>" title="Permanent Link to <?php echo $initiative->post_title;?>">
+												<?php echo $initiative->post_title;?>
+											</a>
+										</p>
+									<?php } ?>
 								<?php } ?>
 							</li>
 							
