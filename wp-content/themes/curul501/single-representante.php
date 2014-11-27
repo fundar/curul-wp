@@ -81,7 +81,7 @@
 							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
 							
 							<li class="bullet-arrow">Iniciativas propuestas
-								<?php if($intiatives["count"] == 0) { ?>
+								<?php if($initiatives["count"] == 0) { ?>
 									<p>No se enceuntran iniciativas relacionadas</p>
 								<?php } else { ?>
 									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
