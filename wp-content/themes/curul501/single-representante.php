@@ -49,21 +49,6 @@
 <div class='container'>
 	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
                 <article class="post-representante post-entry-last single-small" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
-				<?php
-					$args = array('post_type' => 'representante',
-					   'meta_query' => array(
-							array (
-								'key'	  => 'wp_commissions',
-								'value'   => 'Transparencia y Anticorrupción',
-								'compare' => 'LIKE' 
-							)
-						)
-					);
-								   
-					$loop = new WP_Query($args);
-					$num  = $loop->post_count;
-					die(var_dump($num));
-				?>
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 						
