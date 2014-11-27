@@ -62,7 +62,7 @@
 				        <header class="entry-content-header">
 						
 						<div class="post_foto">
-							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+							<?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
 						</div>
 						
 						<div class="cabecera-representante ">
