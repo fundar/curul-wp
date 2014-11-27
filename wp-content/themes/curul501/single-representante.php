@@ -53,7 +53,6 @@
                     <?php while (have_posts()) : the_post(); ?>
 						
 						<?php
-							die(var_dump( get_post_meta($post->ID, '_thumbnail_id', true)));
 							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
