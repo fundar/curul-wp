@@ -56,8 +56,8 @@
 							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
-							$intiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
-							die(var_dump($initiatives["loop"]->posts));
+							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
+							die(var_dump($initiatives["loop"]["posts"]));
 						?>
 		
 				        <header class="entry-content-header">
