@@ -496,7 +496,17 @@ span.datos{
     overflow: hidden;
     padding:0 20px 0 5px;
 }
-
+.sidebar ul li {
+    background: url("images/bullet-arrow.png") no-repeat scroll 2px 7px rgba(0, 0, 0, 0);
+    font: 14px 'colaborate-regular';
+    list-style-type: none;
+    margin: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+#weddit_hot_widget-2{
+    margin-top:-64px;
+}
 p.resemen-recientes-iniciativas {
     margin: 0;
     padding: 0;
