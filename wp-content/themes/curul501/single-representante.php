@@ -50,7 +50,7 @@
 	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
                 <article class="post-representante post-entry-last single-small" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
 		        <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()) : the_post(); ?>
 						
 						<?php 
 							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
@@ -64,12 +64,15 @@
 							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
 						</div>
 						<div class="cabecera-representante ">
+						
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
 						</h1>
+						
 						<div class="linea-morado"></div>
+						
 						<h3 itemprop="headline" class="post-title entry-title">
-						Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+							Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 						</h3>
 						</div>
 					</header>
@@ -96,7 +99,6 @@
 									<?php } ?>
 								<?php } ?>
 							</li>
-							
 							
 							<li class="bullet-arrow">Curriculum</li>
 								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
@@ -226,12 +228,9 @@
 						</ul>
 						
 
- <? the_content(); ?>
+					<? the_content(); ?>
 					</div>
-                                         <?php endwhile; endif; ?>
-				
-			
-		
+				<?php endwhile; endif; ?>
 		</article>
 	</main>
 	
@@ -239,7 +238,18 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 		<div class="sidebar-representantes">
 			<ul>
-			<li class="logo-partidoo-sb"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> PRI <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>	
+			
+			<li class="logo-partidoo-sb">
+				<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+				
+				<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?> 
+				<?php if($district == "") { ?>
+					Distrito: <?php echo $district;?>
+				<?php } else { ?>
+					Circunscripción: <?php echo $circum;?>
+				<?php } ?>
+			</li>	
+			
 			<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
 			<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
 			<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>

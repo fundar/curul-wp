@@ -144,12 +144,12 @@ function getRepresentativesByState($state) {
 }
 
 /*Get representatives by political party*/
-function getRepresentativesByPoliticalParty($politicalParty) {
+function getRepresentativesByPoliticalParty($idPoliticalParty) {
 	$args = array('post_type' => 'representante',
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_id_political_party',
-				'value'   => $politicalParty
+				'value'   => $idPoliticalParty
 			)
 		)
 	);
@@ -176,4 +176,43 @@ function getInitativesByRepresentative($slug) {
 	$count = $loop->post_count;
 	
 	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get political party array*/
+function getPoliticalParty($idPoliticalParty) {
+	if($idPoliticalParty == 1) {
+		$array["name"]       = "Partido Revolucionario Institucional";
+		$array["short_name"] = "PRI";
+		$array["url_logo"]   = "18px-PRI.png";
+	} elseif($idPoliticalParty == 2) {
+		$array["name"]       = "Partido de la Revolución Democrática";
+		$array["short_name"] = "PRD";
+		$array["url_logo"]   = "18px-PRD.png";
+	} elseif($idPoliticalParty == 3) {
+		$array["name"]       = "Partido Verde Ecologista de México";
+		$array["short_name"] = "PVEM";
+		$array["url_logo"]   = "18px-PVE.png";
+	} elseif($idPoliticalParty == 4) {
+		$array["name"]       = "Partido Acción Nacional";
+		$array["short_name"] = "PAN";
+		$array["url_logo"]   = "18px-PAN.png";
+	} elseif($idPoliticalParty == 5) {
+		$array["name"]       = "Partido del Trabajo";
+		$array["short_name"] = "PT";
+		$array["url_logo"]   = "18px-PT.png";
+	} elseif($idPoliticalParty == 6) {
+		$array["name"]       = "Movimiento Ciudadano";
+		$array["short_name"] = "PRD";
+		$array["url_logo"]   = "18px-PMC.png";
+	} elseif($idPoliticalParty == 7) {
+		$array["name"]       = "Partido Nueva Alianza";
+		$array["short_name"] = "PRD";
+		$array["url_logo"]   = "18px-PNA.png";
+	} else {
+		$array["name"]       = "Sin partido";
+		$array["short_name"] = "SP";
+		$array["url_logo"]   = "18px-SP.png";
+	}
+	
+	return $array;
 }
