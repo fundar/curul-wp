@@ -53,9 +53,11 @@
                         <?php while (have_posts()) : the_post(); ?>
 						
 						<?php 
-							$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
-							$district = get_post_meta($post->ID, 'wp_district_clean', true);
-							$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
+							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
+							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
+							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
+							$intiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
+							die(var_dump($intiatives));
 						?>
 		
 				        <header class="entry-content-header">
