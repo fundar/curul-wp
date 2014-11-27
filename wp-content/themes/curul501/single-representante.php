@@ -86,7 +86,7 @@
 								<?php } else { ?>
 									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
 										<p>
-											<a class="iniciativas-home" href="<?php the_permalink($initiative->ID); ?>" title="Permanent Link to <?php echo $initiative->post_title;?>">
+											<a class="" href="<?php the_permalink($initiative->ID); ?>" title="Permanent Link to <?php echo $initiative->post_title;?>">
 												<?php echo $initiative->post_title;?>
 											</a>
 										</p>
