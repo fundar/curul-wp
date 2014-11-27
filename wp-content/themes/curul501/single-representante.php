@@ -53,8 +53,8 @@
 					$args = array('post_type' => 'representante',
 					   'meta_query' => array(
 							array (
-								'key' => 'wp_commissions',
-								'value' => 'Vivienda'
+								'key' => 'wp_clave_estado',
+								'value' => '29'
 							)
 						)
 					);
