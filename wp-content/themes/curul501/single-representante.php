@@ -60,20 +60,20 @@
 						?>
 		
 				        <header class="entry-content-header">
+						
 						<div class="post_foto">
 							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
 						</div>
+						
 						<div class="cabecera-representante ">
+							<h1 itemprop="headline" class="post-title entry-title">
+								<?php the_title(); ?>
+							</h1>
 						
-						<h1 itemprop="headline" class="post-title entry-title">
-							<?php the_title(); ?>
-						</h1>
-						
-						<div class="linea-morado"></div>
-						
-						<h3 itemprop="headline" class="post-title entry-title">
-							Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
-						</h3>
+							<div class="linea-morado"></div>
+							<h3 itemprop="headline" class="post-title entry-title">
+								Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+							</h3>
 						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
@@ -238,23 +238,40 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 		<div class="sidebar-representantes">
 			<ul>
-			
-			<li class="logo-partidoo-sb">
-				<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+				<li class="logo-partidoo-sb">
+					<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+					
+					<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
+					<br/><br/>
+					
+					<?php if($district == "") { ?>
+						Circunscripción: <?php echo $circum;?>
+					<?php } else { ?>
+						Distrito: <?php echo $district;?>
+					<?php } ?>
+				</li>	
 				
-				<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
-				<br/><br/>
+				<li class="correo-sb">
+					<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
+						<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
+					</a>
+				</li>
 				
-				<?php if($district == "") { ?>
-					Circunscripción: <?php echo $circum;?>
-				<?php } else { ?>
-					Distrito: <?php echo $district;?>
+				<?php if(get_post_meta($post->ID, 'wp_twitter', true) != "") { ?>
+					<li class="twitter-sb">
+						<a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
+						</a>
+					</li>
 				<?php } ?>
-			</li>	
-			
-			<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
-			<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
-			<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>
+				
+				<?php if(get_post_meta($post->ID, 'wp_website', true) != "") { ?>
+					<li class="no-borde ir-sb">
+						<a href="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
+						</a>
+					</li>
+				<?php } ?>
 			</ul>
 		</div>
 		
