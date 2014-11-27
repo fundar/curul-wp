@@ -63,7 +63,7 @@
 													<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
 												</div>
 												<div class="entry-content"> 
-			                                                                                <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>												      
+			                                                                                <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 													    <div id="nav-representantes">
 														<ul>
 														<li><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> Partido Revolucionario Institucional <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>
