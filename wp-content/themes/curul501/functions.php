@@ -202,7 +202,7 @@ function getPoliticalParty($idPoliticalParty) {
 		$array["url_logo"]   = "18px-PT.png";
 	} elseif($idPoliticalParty == 6) {
 		$array["name"]       = "Movimiento Ciudadano";
-		$array["short_name"] = "PRD";
+		$array["short_name"] = "Movimiento Ciudadano";
 		$array["url_logo"]   = "18px-PMC.png";
 	} elseif($idPoliticalParty == 7) {
 		$array["name"]       = "Partido Nueva Alianza";
