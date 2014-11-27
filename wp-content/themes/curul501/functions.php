@@ -95,6 +95,7 @@ function create_post_type_representantes() {
 add_action( 'init', 'create_post_type_representantes' );
 
 
+/*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 	$p2_custom_post_type = "representante"; //iniciativa|representante
     
@@ -106,3 +107,73 @@ function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 }
 
 add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
+
+/*Get representatives by commission*/
+function getRepresentativesByCommission($commission) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_commissions_slug',
+				'value'   => $commission,
+				'compare' => 'LIKE' 
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives by state (clave_estado)[int]*/
+function getRepresentativesByState($state) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_clave_estado',
+				'value'   => $state
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives by political party*/
+function getRepresentativesByPoliticalParty($politicalParty) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_id_political_party',
+				'value'   => $politicalParty
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get initiatives by representative (wp_slug) */
+function getInitativesByRepresentative($slug) {
+	$args = array('post_type' => 'iniciativa',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_slug',
+				'value'   => $slug,
+				'compare' => 'LIKE'
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
