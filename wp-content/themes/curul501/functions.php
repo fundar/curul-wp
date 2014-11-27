@@ -3,8 +3,6 @@
 global $avia_config;
 
 
-add_theme_support( 'post-thumbnails' );
-
 /**
  * Custom Post Type "Iniciativas"
  */
