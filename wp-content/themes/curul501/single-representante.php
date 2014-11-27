@@ -57,7 +57,7 @@
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
 							$intiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
-							die(var_dump($intiatives));
+							die(var_dump($initiatives["posts"]));
 						?>
 		
 				        <header class="entry-content-header">
@@ -80,9 +80,17 @@
 							<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p></li>
 							<li class="bullet-arrow">Comisiones a las que pertenece
 							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+							
 							<li class="bullet-arrow">Iniciativas propuestas
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices aliquet condimentum. Aenean id tristique ligula. Nunc sed varius turpis, nec malesuada risus.</p></li>							
-                                                        <li class="bullet-arrow">Curriculum</li>
+								<?php if($intiatives["count"] == 0) { ?>
+									<p>No se enceuntran iniciativas relacionadas</p>
+								<?php } else { ?>
+									<p>No se enceuntran iniciativas relacionadas</p>
+								<?php } ?>
+							</li>
+							
+							
+							<li class="bullet-arrow">Curriculum</li>
 								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
 									<li class="avia_start_animation">
 										<div class="iconlist_icon avia-font-">
