@@ -53,8 +53,9 @@
 					$args = array('post_type' => 'representante',
 					   'meta_query' => array(
 							array (
-								'key' => 'wp_clave_estado',
-								'value' => '29'
+								'key'	  => 'wp_commissions',
+								'value'   => 'Vivienda',
+								'compare' => 'LIKE' 
 							)
 						)
 					);
