@@ -242,7 +242,8 @@
 			<li class="logo-partidoo-sb">
 				<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
 				
-				<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?> 
+				<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
+				<br/>
 				<?php if($district == "") { ?>
 					Distrito: <?php echo $district;?>
 				<?php } else { ?>
