@@ -246,9 +246,9 @@
 				<br/><br/>
 				
 				<?php if($district == "") { ?>
-					Distrito: <?php echo $district;?>
-				<?php } else { ?>
 					Circunscripción: <?php echo $circum;?>
+				<?php } else { ?>
+					Distrito: <?php echo $district;?>
 				<?php } ?>
 			</li>	
 			
