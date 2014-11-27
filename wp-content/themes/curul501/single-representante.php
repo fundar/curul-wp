@@ -56,13 +56,14 @@
 							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
+							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
 						?>
 		
 				        <header class="entry-content-header">
 						
 						<div class="post_foto">
-							<?php echo get_the_post_thumbnail($post->ID); ?>
+							<img width="125" height="169" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
 						</div>
 						
 						<div class="cabecera-representante ">
