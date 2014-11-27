@@ -76,9 +76,12 @@
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Tipo de elecci&oacute;n
-							<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p></li>
+								<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
+							</li>
+							
 							<li class="bullet-arrow">Comisiones a las que pertenece
-							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+								<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+							</li>
 							
 							<li class="bullet-arrow">Iniciativas propuestas
 								<?php if($initiatives["count"] == 0) { ?>
