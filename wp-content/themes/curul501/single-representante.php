@@ -54,7 +54,7 @@
 					   'meta_query' => array(
 							array (
 								'key'	  => 'wp_commissions',
-								'value'   => 'Vivienda',
+								'value'   => 'Transparencia y Anticorrupción',
 								'compare' => 'LIKE' 
 							)
 						)
