@@ -24,7 +24,7 @@
 			<div class="search-table">
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
-					       <option value="1"><?php echo is_page($page_id); ?> </option>
+					       <option value="1">Tema</option>
 					       <option value="2">Tema 2</option>							
 				       </select>
 			       </div>
