@@ -142,11 +142,9 @@
 														</header>
 														
 														<div class="iconlist_content " itemprop="text">
-															<p>
-																<?php foreach($elements as $element) { ?>
-																	<?php echo $element;?><br/>
-																<?php } ?>
-															</p>
+															<?php foreach($elements as $element) { ?>
+																<p><?php echo $element;?></p>
+															<?php } ?>
 														</div>
 													</div>
 													
