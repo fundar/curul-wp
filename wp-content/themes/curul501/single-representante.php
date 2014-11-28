@@ -103,138 +103,60 @@
 							</li>
 							
 							<li class="bullet-arrow">Curriculum</li>
-								<?php if($resume != "") {?>
-									<?php foreach($resume as $value) { ?>
-										<?php $resArray = explode("_____", $value->trayectoria); die(var_dump($resArray)); ?>
-									<?php } ?>
+								<?php if($resume != "") { ?>
+									<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
+										<?php 
+										
+										foreach($resume as $value) {
+											$resArray = explode("_____", $value->trayectoria);
+											
+											if($resArray[0] == "Trayectoria administrativa") {
+												$icon = "administrativa-icon.png";
+											} elseif($resArray[0] == "Trayectoria académica") {
+												$icon = "academica-icon.png";
+											} elseif($resArray[0] == "Otros rubros") {
+												$icon = "rubros-icon.png";
+											} elseif($resArray[0] == "Trayectoria legislativa") {
+												$icon = "legislativo-icon.png";
+											} elseif($resArray[0] == "Trayectoria empresarial") {
+												$icon = "empresarial-icon.png";
+											} elseif($resArray[0] == "Trayectoria política") {
+												$icon = "politica-icon.png";
+											} else {
+												$icon = "default-icon.png";
+											}
+											
+											$elements = explode("|", $resArray[1]);
+										?>
+											<li class="avia_start_animation">
+												<div class="iconlist_icon avia-font-">
+													<div class="iconlist-char">
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $icon;?>">
+													</div>
+												</div>
+												
+												<article class="article-icon-entry">
+													<div class="iconlist_content_wrap">
+														<header class="entry-content-header">
+															<p class="cpt-repre"><?php echo $resArray[0];?></h4>
+														</header>
+														
+														<div class="iconlist_content " itemprop="text">
+															<?php foreach($elements as $element) { ?>
+																<p><?php echo $element;?></p>
+															<?php } ?>
+														</div>
+													</div>
+													
+													<footer class="entry-footer"></footer>
+												</article>
+												
+												<div class="iconlist-timeline"></div>
+											</li>
+										<?php } ?>
+									</ul>
 								<?php } ?>
-								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/academica-icon.png">												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											 <div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria acad&eacute;mica</h4>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-												</div>
-										         </div>
-										         <footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/legislativo-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria legislativa</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/administrativa-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria administrativa</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/empresarial-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria empresarial</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/publicaciones-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Publicaciones</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/rubros-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Otros rubros</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>									
-								</ul>
 						</ul>
-						
-
 					<? the_content(); ?>
 					</div>
 				<?php endwhile; endif; ?>
