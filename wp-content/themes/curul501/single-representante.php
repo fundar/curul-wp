@@ -90,7 +90,7 @@
 							
 							<li class="bullet-arrow">Iniciativas propuestas
 								<?php if($initiatives["count"] == 0) { ?>
-									<p>No se enceuntran iniciativas relacionadas</p>
+									<p>No se encuentran iniciativas relacionadas</p>
 								<?php } else { ?>
 									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
 										<p>
@@ -155,6 +155,8 @@
 											</li>
 										<?php } ?>
 									</ul>
+								<?php } else { ?>
+									<p>No hay información disponible</p>
 								<?php } ?>
 						</ul>
 					<? the_content(); ?>
