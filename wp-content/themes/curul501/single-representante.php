@@ -50,35 +50,46 @@
 	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
                 <article class="post-representante post-entry-last single-small" itemprop="blogPost" itemtype="https://schema.org/BlogPosting" itemscope="itemscope">
 		        <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()) : the_post(); ?>
 						
-						<?php 
-							$state	  = get_post_meta($post->ID, 'wp_clave_estado', true);
-							$district = get_post_meta($post->ID, 'wp_district_clean', true);
-							$circum   = get_post_meta($post->ID, 'wp_circumscription', true);
+						<?php
+							$state	    = get_post_meta($post->ID, 'wp_clave_estado', true);
+							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
+							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
+							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
+							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
+							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
 						?>
 		
 				        <header class="entry-content-header">
+						
 						<div class="post_foto">
-							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+							<img width="125" height="169" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
 						</div>
+						
 						<div class="cabecera-representante ">
-						<h1 itemprop="headline" class="post-title entry-title">
-							<?php the_title(); ?>
-						</h1>
-						<div class="linea-morado"></div>
-						<h3 itemprop="headline" class="post-title entry-title">
-						Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
-						</h3>
+							<h1 itemprop="headline" class="post-title entry-title">
+								<?php the_title(); ?>
+							</h1>
+						
+							<div class="linea-morado"></div>
+							<h3 itemprop="headline" class="post-title entry-title">
+								Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+							</h3>
 						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Tipo de elecci&oacute;n
-							<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p></li>
+								<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
+							</li>
+							
 							<li class="bullet-arrow">Comisiones a las que pertenece
-							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
+								<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+							</li>
+							
 							<li class="bullet-arrow">Iniciativas propuestas
+<<<<<<< HEAD
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices aliquet condimentum. Aenean id tristique ligula. Nunc sed varius turpis, nec malesuada risus.</p></li>							
                                                         <li class="bullet-arrow">Curriculum</li>
 								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
@@ -136,104 +147,79 @@
 												</header>
 												<div class="iconlist_content " itemprop="text">
 												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+=======
+								<?php if($initiatives["count"] == 0) { ?>
+									<p>No se enceuntran iniciativas relacionadas</p>
+								<?php } else { ?>
+									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
+										<p>
+											<a class="" href="<?php echo get_permalink($initiative->ID); ?>" title="<?php echo $initiative->post_title;?>">
+												<?php echo $initiative->post_title;?>
+											</a>
+										</p>
+									<?php } ?>
+								<?php } ?>
+							</li>
+							
+							<li class="bullet-arrow">Curriculum</li>
+								<?php if($resume != "") { ?>
+									<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
+										<?php 
+										
+										foreach($resume as $value) {
+											$resArray = explode("_____", $value->trayectoria);
+											
+											if($resArray[0] == "Trayectoria administrativa") {
+												$icon = "administrativa-icon.png";
+											} elseif($resArray[0] == "Trayectoria académica") {
+												$icon = "academica-icon.png";
+											} elseif($resArray[0] == "Otros rubros") {
+												$icon = "rubros-icon.png";
+											} elseif($resArray[0] == "Trayectoria legislativa") {
+												$icon = "legislativo-icon.png";
+											} elseif($resArray[0] == "Trayectoria empresarial/iniciativa privada") {
+												$icon = "empresarial-icon.png";
+											} elseif($resArray[0] == "Trayectoria política") {
+												$icon = "politica-icon.png";
+											} else {
+												$icon = "default-icon.png";
+											}
+											
+											$elements = explode("|", $resArray[1]);
+										?>
+											<li class="avia_start_animation">
+												<div class="iconlist_icon avia-font-">
+													<div class="iconlist-char">
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $icon;?>">
+													</div>
+>>>>>>> origin/master
 												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/administrativa-icon.png">
 												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria administrativa</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/empresarial-icon.png">
+												<article class="article-icon-entry">
+													<div class="iconlist_content_wrap">
+														<header class="entry-content-header">
+															<p class="cpt-repre"><?php echo $resArray[0];?></h4>
+														</header>
+														
+														<div class="iconlist_content " itemprop="text">
+															<?php foreach($elements as $element) { ?>
+																<p><?php echo $element;?></p>
+															<?php } ?>
+														</div>
+													</div>
+													
+													<footer class="entry-footer"></footer>
+												</article>
 												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Trayectoria empresarial</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/publicaciones-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Publicaciones</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>
-									<li class="avia_start_animation">
-										<div class="iconlist_icon avia-font-">
-										         <div class="iconlist-char">
-												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/rubros-icon.png">
-												
-											 </div>
-										</div>
-										<article class="article-icon-entry">
-											<div class="iconlist_content_wrap">
-												<header class="entry-content-header">
-												         <p class="cpt-repre">Otros rubros</p>
-												</header>
-												<div class="iconlist_content " itemprop="text">
-												         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-												</div>
-											</div>
-											<footer class="entry-footer"></footer>
-										</article>
-										<div class="iconlist-timeline"></div>
-									</li>									
-								</ul>
+												<div class="iconlist-timeline"></div>
+											</li>
+										<?php } ?>
+									</ul>
+								<?php } ?>
 						</ul>
-						
-
- <? the_content(); ?>
+					<? the_content(); ?>
 					</div>
-                                         <?php endwhile; endif; ?>
-				
-			
-		
+				<?php endwhile; endif; ?>
 		</article>
 	</main>
 	
@@ -241,10 +227,40 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 		<div class="sidebar-representantes">
 			<ul>
-			<li class="logo-partidoo-sb"><img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png"> PRI <?php echo get_post_meta($post->ID, 'wp_id_political_party', true); ?> </li>	
-			<li class="correo-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_email', true); ?></a></li>
-			<li class="twitter-sb"><a href=""><?php echo get_post_meta($post->ID, 'wp_', true); ?>twiiter</a></li>
-			<li class="no-borde ir-sb"><a href=""> elizabethyanez.mx</a></li>
+				<li class="logo-partidoo-sb">
+					<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+					
+					<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
+					<br/><br/>
+					
+					<?php if($district == "") { ?>
+						Circunscripción: <?php echo $circum;?>
+					<?php } else { ?>
+						Distrito: <?php echo $district;?>
+					<?php } ?>
+				</li>	
+				
+				<li class="correo-sb">
+					<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
+						<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
+					</a>
+				</li>
+				
+				<?php if(get_post_meta($post->ID, 'wp_twitter', true) != "") { ?>
+					<li class="twitter-sb">
+						<a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
+						</a>
+					</li>
+				<?php } ?>
+				
+				<?php if(get_post_meta($post->ID, 'wp_website', true) != "") { ?>
+					<li class="no-borde ir-sb">
+						<a href="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
+						</a>
+					</li>
+				<?php } ?>
 			</ul>
 		</div>
 		

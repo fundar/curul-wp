@@ -3,7 +3,6 @@
 global $avia_config;
 
 
-
 /**
  * Custom Post Type "Iniciativas"
  */
@@ -95,6 +94,7 @@ function create_post_type_representantes() {
 add_action( 'init', 'create_post_type_representantes' );
 
 
+/*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 	$p2_custom_post_type = "representante"; //iniciativa|representante
     
@@ -106,3 +106,112 @@ function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 }
 
 add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
+
+/*Get representatives by commission*/
+function getRepresentativesByCommission($commission) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_commissions_slug',
+				'value'   => $commission,
+				'compare' => 'LIKE' 
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives by state (clave_estado)[int]*/
+function getRepresentativesByState($state) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_clave_estado',
+				'value'   => $state
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives by political party*/
+function getRepresentativesByPoliticalParty($idPoliticalParty) {
+	$args = array('post_type' => 'representante',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_id_political_party',
+				'value'   => $idPoliticalParty
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get initiatives by representative (wp_slug) */
+function getInitativesByRepresentative($slug) {
+	$args = array('post_type' => 'iniciativa',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_slug',
+				'value'   => $slug,
+				'compare' => 'LIKE'
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get political party array*/
+function getPoliticalParty($idPoliticalParty) {
+	if($idPoliticalParty == 1) {
+		$array["name"]       = "Partido Revolucionario Institucional";
+		$array["short_name"] = "PRI";
+		$array["url_logo"]   = "18px-PRI.png";
+	} elseif($idPoliticalParty == 2) {
+		$array["name"]       = "Partido de la Revolución Democrática";
+		$array["short_name"] = "PRD";
+		$array["url_logo"]   = "18px-PRD.png";
+	} elseif($idPoliticalParty == 3) {
+		$array["name"]       = "Partido Verde Ecologista de México";
+		$array["short_name"] = "PVEM";
+		$array["url_logo"]   = "18px-PVE.png";
+	} elseif($idPoliticalParty == 4) {
+		$array["name"]       = "Partido Acción Nacional";
+		$array["short_name"] = "PAN";
+		$array["url_logo"]   = "18px-PAN.png";
+	} elseif($idPoliticalParty == 5) {
+		$array["name"]       = "Partido del Trabajo";
+		$array["short_name"] = "PT";
+		$array["url_logo"]   = "18px-PT.png";
+	} elseif($idPoliticalParty == 6) {
+		$array["name"]       = "Movimiento Ciudadano";
+		$array["short_name"] = "Movimiento Ciudadano";
+		$array["url_logo"]   = "18px-PMC.png";
+	} elseif($idPoliticalParty == 7) {
+		$array["name"]       = "Partido Nueva Alianza";
+		$array["short_name"] = "PRD";
+		$array["url_logo"]   = "18px-PNA.png";
+	} else {
+		$array["name"]       = "Sin partido";
+		$array["short_name"] = "SP";
+		$array["url_logo"]   = "18px-SP.png";
+	}
+	
+	return $array;
+}
