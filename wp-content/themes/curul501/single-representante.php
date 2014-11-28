@@ -118,7 +118,7 @@
 												$icon = "rubros-icon.png";
 											} elseif($resArray[0] == "Trayectoria legislativa") {
 												$icon = "legislativo-icon.png";
-											} elseif($resArray[0] == "Trayectoria empresarial") {
+											} elseif($resArray[0] == "Trayectoria empresarial/iniciativa privada") {
 												$icon = "empresarial-icon.png";
 											} elseif($resArray[0] == "Trayectoria política") {
 												$icon = "politica-icon.png";
