@@ -101,6 +101,26 @@
 										</article>
 										<div class="iconlist-timeline"></div>
 									</li>
+									
+									<li class="avia_start_animation">
+										<div class="iconlist_icon avia-font-">
+										         <div class="iconlist-char">
+												<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/politico-icon.png">												
+											 </div>
+										</div>
+										<article class="article-icon-entry">
+											 <div class="iconlist_content_wrap">
+												<header class="entry-content-header">
+												         <p class="cpt-repre">Trayectoria pol&iacute;tica</h4>
+												</header>
+												<div class="iconlist_content " itemprop="text">
+												         <p><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+												</div>
+										         </div>
+										         <footer class="entry-footer"></footer>
+										</article>
+										<div class="iconlist-timeline"></div>
+									</li>									
 
 									<li class="avia_start_animation">
 										<div class="iconlist_icon avia-font-">
