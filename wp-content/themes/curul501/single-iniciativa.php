@@ -244,13 +244,17 @@
                          </div>
 
 		</div>
+                
 
-
-			</div><!--end container-->
-                        <div class="container top60">
+		</div><!--end container fin de iniciativa-->
+		<div class="container tabla">
+			Aqu&iacute; va la tabla
+		</div>			
+                <div class="container top60">
 			<?php			    		    
 		        comments_template( '/includes/comments.php');
 		        ?>
 			</div>
 		</div><!-- close default .container_wrap element -->
+
 <?php get_footer(); ?>
