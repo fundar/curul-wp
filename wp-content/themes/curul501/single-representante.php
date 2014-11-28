@@ -104,7 +104,9 @@
 							
 							<li class="bullet-arrow">Curriculum</li>
 								<?php if($resume != "") {?>
-									<?php die(var_dump($resume)); ?>
+									<?php foreach($resume as $value) { ?>
+										<?php $resArray = explode("_____", $value); die(var_dump($resArray)); ?>
+									<?php } ?>
 								<?php } ?>
 								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
 									<li class="avia_start_animation">
