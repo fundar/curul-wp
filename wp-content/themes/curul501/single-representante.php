@@ -121,7 +121,7 @@
 											} elseif($resArray[0] == "Trayectoria empresarial/iniciativa privada") {
 												$icon = "empresarial-icon.png";
 											} elseif($resArray[0] == "Trayectoria política") {
-												$icon = "politica-icon.png";
+												$icon = "politico-icon.png";
 											} else {
 												$icon = "default-icon.png";
 											}

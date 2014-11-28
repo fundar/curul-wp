@@ -247,20 +247,23 @@ div.post-entry-25 {
     margin-right: 0;
     padding-right: 0;
 }
-    #header_main {
-    background: url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
+#header_main {
+    background: none rgba(0, 0, 0, 0);
     border-bottom-style: solid;
     border-bottom-width: 0;
     z-index: 1;
+}
+.html_header_top.html_header_sticky #header {
+    background:url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
+    position: fixed;
 }
 .av_header_transparency > #header_main {
     background-image: none;
     background-color:rgba(0, 0, 0, 0);
 }
     .main_menu {
-        background: url("images/bg-left-nav.png") no-repeat bottom left;
-       
-   
+    background: url("images/bg-left-nav.png") no-repeat bottom left;       
+    box-shadow: 58px 0 2px rgba(0, 0, 0, 0.1);
     }
     .av-main-nav-wrap ul {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -493,7 +496,17 @@ span.datos{
     overflow: hidden;
     padding:0 20px 0 5px;
 }
-
+.sidebar ul li {
+    background: url("images/bullet-arrow.png") no-repeat scroll 2px 7px rgba(0, 0, 0, 0);
+    font: 14px 'colaborate-regular';
+    list-style-type: none;
+    margin: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+#weddit_hot_widget-2{
+    margin-top:-64px;
+}
 p.resemen-recientes-iniciativas {
     margin: 0;
     padding: 0;
@@ -791,8 +804,9 @@ a.grafikas:hover{
     width: 100%;
 }
 .av-share-box ul li {
+    background-image: none !important;
     border-left-style: solid;
-    border-left-width: 0 ;
+    border-left-width: 0;
     display: table-cell;
     margin: 0;
     padding: 0;
@@ -808,8 +822,6 @@ a.grafikas:hover{
     display: block;
     font: 15px "colaborate-thinregular";
     height: 36px;
-   
-
 }
 .no-aqui{
     display:none;
@@ -997,20 +1009,20 @@ li.logo-partidoo-sb{
     padding-left: 0px;
     vertical-align: middle;
 }
-li.twitter-sb {
-    background: url("images/twitter-icono.png") no-repeat scroll 2px 11px rgba(0, 0, 0, 0);
-    display:block;
-    padding-left: 30px;
-    vertical-align: middle;
-}
 li.correo-sb {
-    background: url("images/correo-icono.png") no-repeat scroll 2px 13px rgba(0, 0, 0, 0);
+    background: url("images/correo-icono.png") no-repeat scroll 2px 19px rgba(0, 0, 0, 0);
     display: block;
     padding-left: 30px;
     vertical-align: middle;
 }
+li.twitter-sb {
+    background: url("images/twitter-icono.png") no-repeat scroll 2px 14px rgba(0, 0, 0, 0);
+    display:block;
+    padding-left: 30px;
+    vertical-align: middle;
+}
 li.ir-sb {
-    background: url("images/ir-icono.png") no-repeat scroll 2px 9px rgba(0, 0, 0, 0);
+    background: url("images/ir-icono.png") no-repeat scroll 2px 17px rgba(0, 0, 0, 0);
     display: block;
     padding-left: 30px;
     vertical-align: middle;
