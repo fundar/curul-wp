@@ -57,6 +57,7 @@
 							$district   = get_post_meta($post->ID, 'wp_district_clean', true);
 							$circum     = get_post_meta($post->ID, 'wp_circumscription', true);
 							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
+							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
 						?>
 		
@@ -102,6 +103,9 @@
 							</li>
 							
 							<li class="bullet-arrow">Curriculum</li>
+								<?php if($resume != "") {?>
+									<?php die(var_dump($resume)); ?>
+								<?php } ?>
 								<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
 									<li class="avia_start_animation">
 										<div class="iconlist_icon avia-font-">
