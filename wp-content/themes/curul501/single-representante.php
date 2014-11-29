@@ -90,7 +90,7 @@
 							
 							<li class="bullet-arrow">Iniciativas propuestas
 								<?php if($initiatives["count"] == 0) { ?>
-									<p>No se enceuntran iniciativas relacionadas</p>
+									<p>No se encuentran iniciativas relacionadas</p>
 								<?php } else { ?>
 									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
 										<p>
@@ -121,7 +121,7 @@
 											} elseif($resArray[0] == "Trayectoria empresarial/iniciativa privada") {
 												$icon = "empresarial-icon.png";
 											} elseif($resArray[0] == "Trayectoria política") {
-												$icon = "politica-icon.png";
+												$icon = "politico-icon.png";
 											} else {
 												$icon = "default-icon.png";
 											}
@@ -155,6 +155,8 @@
 											</li>
 										<?php } ?>
 									</ul>
+								<?php } else { ?>
+									<p>No hay información disponible</p>
 								<?php } ?>
 						</ul>
 					<? the_content(); ?>
