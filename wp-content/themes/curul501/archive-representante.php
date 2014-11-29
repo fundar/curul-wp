@@ -70,7 +70,8 @@
 											<ul>
 												<li>
 													<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> <?php echo $politicalParty["name"];?>
+													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
+													<?php echo utf8_decode($politicalParty["name"]);?>
 												</li>
 												
 												<li class="navrepr-left">
