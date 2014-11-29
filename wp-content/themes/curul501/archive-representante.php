@@ -59,7 +59,7 @@
 								<div class="flex_column av_four_fifth  first ">
 									<div class="post_foto">
 										<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
-										<img width="125" height="169" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+										<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
 									</div>
 									
 									<div class="entry-content"> 
