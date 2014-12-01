@@ -59,6 +59,12 @@
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
+						<?php
+							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+
+						?>
 			<div class='container template-blog template-single-blog '>
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
@@ -73,8 +79,13 @@
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
-							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
-							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li>
+							<li class="bullet-arrow">Comisiones
+							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+							</li>
+							<li class="bullet-arrow">Propuesta por:
+							<p><?php if($presentada_representante != "") { echo $presentada_representante;} ?>
+							<?php if($presentada_partido != "") { echo $presentada_partido;} ?>
+							<?php if($presentada_dependencia != "") { echo $presentada_dependencia;} ?></p></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
@@ -102,7 +113,8 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_topics', true)); ?>
+				</p>
 				</div>
 				
 			</div>
@@ -111,11 +123,11 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 				<p class="texto-img">Texto integro</p>
-				</div>
+				</div>			
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
-				<p class="gaceta-img">Gaceta parlamentaria</p>	
+				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>"> <p class="gaceta-img">Gaceta parlamentaria</p></a>
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
