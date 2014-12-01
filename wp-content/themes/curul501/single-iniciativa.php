@@ -74,7 +74,7 @@
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Comisiones:
-							<p><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></p>
+							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
 							</li>
 							<li class="bullet-arrow">Propuesta por: 
 							</p><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></p></li>
@@ -105,20 +105,21 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", ($post->ID, 'wp_topics', true); ?></p>
 				</div>
 				
 			</div>
 			
 			<div class="textwidget sb-1">
 				<div class="linea-morado"></div>
+				<!--Texto integro
 				<div class="tab-item-temas">
 				<p class="texto-img">Texto integro</p>
-				</div>
+				</div> -->
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
-				<p class="gaceta-img">Gaceta parlamentaria</p>	
+				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>"><p class="gaceta-img">Gaceta parlamentaria</p></a>	
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
@@ -234,7 +235,7 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado">Publicada</p>
+				<p class="resultado"><?php echo get_post_meta($post->ID, 'wp_status', true); ?></p>
 				</div>
 				</section>
                          </div>
