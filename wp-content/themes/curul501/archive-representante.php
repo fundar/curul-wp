@@ -9,7 +9,7 @@
 	?>
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		    <!-- inicio mapa de representantes-->
-		   <div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">			
+		   <div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
 		       <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
 					<div class="container">Mapa</div>
                 </div>
@@ -26,24 +26,36 @@
 			<!--Inicio filtros representantes -->
 			<div class="container box-menu">
 				<div class="search-table">
-					<div id="filter">
-						   <select class="sorter-rep sort" name="category">
-							   <option value="1">Partidos pol&iacute;ticos</option>
-							   <option value="2">Tema 2</option>							
+					<form name="filter-representanes" id="filter-representanes">
+						<div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="0">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>">
+										<?php echo $value["name"];?>
+									</option>
+								<?php } ?>
 						   </select>
 					   </div>
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="category">
-							   <option value="1">Estado</option>
-							   <option value="2">Estado</option>														
+						   <select class="sorter-rep sort" name="estado" id="estado-filter">
+							   <option value="0">Estado</option>
+							   <?php $statesArray = geStates(); ?>
+							   <?php foreach($statesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>">
+										<?php echo $value["name"];?>
+									</option>
+								<?php } ?>
 						   </select>
 					   </div>
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="category">
+						   <select class="sorter-rep sort" name="comision" id="comision-filter">
 							   <option value="1">Comisiones</option>
-							   <option value="2">Seguridad P&uacute;blica</option>														
+							   <option value="2">Seguridad P&uacute;blica</option>
 						   </select>
-					   </div>				
+					   </div>
+					</form>				
 				</div>
 			</div>
 			<!-- Fin filtros representantes -->		
@@ -106,3 +118,11 @@
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#partido-politico-filter").change( function() {
+			jQuery("#filter-representanes").submit();
+		});
+	});
+</script>
