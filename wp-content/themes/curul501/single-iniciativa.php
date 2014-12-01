@@ -105,7 +105,7 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo str_replace('|', ", ", ($post->ID, 'wp_topics', true); ?></p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", ($post->ID, 'wp_topics', true)); ?></p>
 				</div>
 				
 			</div>
@@ -119,7 +119,7 @@
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
-				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>"><p class="gaceta-img">Gaceta parlamentaria</p></a>	
+				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true);?>"><p class="gaceta-img">Gaceta parlamentaria</p></a>	
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
