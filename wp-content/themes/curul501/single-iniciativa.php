@@ -249,7 +249,7 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado"><?php echo status_final; ?></p>
+				<p class="resultado"><?php echo $status_final; ?></p>
 				</div>
 				</section>
                          </div>
