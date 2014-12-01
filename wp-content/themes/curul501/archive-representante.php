@@ -1,6 +1,6 @@
 <?php
 	global $avia_config, $more;
-
+	$selectedOption = "partido-verde-ecologista-de-mexico";
 	/*
 	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	 */
@@ -32,7 +32,7 @@
 							   <option value="">Partidos pol&iacute;ticos</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>">
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -43,7 +43,7 @@
 							   <option value="">Estado</option>
 							   <?php $statesArray = geStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>">
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -122,9 +122,25 @@
 <script type="text/javascript">
 	jQuery(document).ready( function () {
 		jQuery("#partido-politico-filter").change( function() {
-			console.log(jQuery("#partido-politico-filter option:selected").val());
-			
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#estado-filter").change( function() {
+			if(jQuery("#estado-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
 				jQuery("#filter-representanes").submit();
 			}
 		});
