@@ -73,8 +73,11 @@
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
-							<li class="bullet-arrow"><?php echo get_post_meta($post->ID, 'wp_commissions', true); ?></li>
-							<li class="bullet-arrow">Propuesta por: <?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></li>
+							<li class="bullet-arrow">Comisiones:
+							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+							</li>
+							<li class="bullet-arrow">Propuesta por: 
+							</p><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?></p></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
@@ -102,20 +105,22 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_topics', true)); ?>
+				</p>
 				</div>
 				
 			</div>
 			
-			<div class="textwidget sb-1">
+			<!--<div class="textwidget sb-1">
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 				<p class="texto-img">Texto integro</p>
-				</div>
+				</div>-->
+				
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
-				<p class="gaceta-img">Gaceta parlamentaria</p>	
+				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>"> <p class="gaceta-img">Gaceta parlamentaria</p></a>
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
