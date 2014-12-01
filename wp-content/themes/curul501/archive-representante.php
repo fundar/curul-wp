@@ -33,7 +33,7 @@
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>">
-										<?php echo $value["name"];?>
+										<?php echo utf8_decode($value["name"]);?>
 									</option>
 								<?php } ?>
 						   </select>
