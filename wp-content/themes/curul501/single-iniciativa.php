@@ -82,10 +82,10 @@
 							<li class="bullet-arrow">Comisiones
 							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
 							</li>
-							<li class="bullet-arrow">Propuesta por:
-							<p><?php if($presentada_representante != "") { echo $presentada_representante;} ?>
-							<?php if($presentada_partido != "") { echo $presentada_partido;} ?>
-							<?php if($presentada_dependencia != "") { echo $presentada_dependencia;} ?></p></li>
+							<li class="bullet-arrow">Propuesta por
+							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
+							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
+							<?php if($presentada_representante != "") { echo $presentada_representante;} ?></p></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
