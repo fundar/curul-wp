@@ -29,7 +29,7 @@
 					<form name="filter-representanes" id="filter-representanes">
 						<div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
-							   <option value="0">Partidos pol&iacute;ticos</option>
+							   <option value="">Partidos pol&iacute;ticos</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>">
@@ -40,7 +40,7 @@
 					   </div>
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="estado" id="estado-filter">
-							   <option value="0">Estado</option>
+							   <option value="">Estado</option>
 							   <?php $statesArray = geStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>">
@@ -51,7 +51,7 @@
 					   </div>
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="comision" id="comision-filter">
-							   <option value="1">Comisiones</option>
+							   <option value="">Comisiones</option>
 							   <option value="2">Seguridad P&uacute;blica</option>
 						   </select>
 					   </div>
@@ -122,7 +122,11 @@
 <script type="text/javascript">
 	jQuery(document).ready( function () {
 		jQuery("#partido-politico-filter").change( function() {
-			jQuery("#filter-representanes").submit();
+			console.log(jQuery("#partido-politico-filter option:selected").val());
+			
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#filter-representanes").submit();
+			}
 		});
 	});
 </script>
