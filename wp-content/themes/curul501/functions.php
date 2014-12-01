@@ -125,12 +125,12 @@ function getRepresentativesByCommission($commission) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-/*Get representatives by state (clave_estado)[int]*/
+/*Get representatives by state*/
 function getRepresentativesByState($state) {
 	$args = array('post_type' => 'representante',
 		'meta_query' => array(
 			array (
-				'key'     => 'wp_clave_estado',
+				'key'     => 'wp_zone_state',
 				'value'   => $state
 			)
 		)
@@ -143,12 +143,12 @@ function getRepresentativesByState($state) {
 }
 
 /*Get representatives by political party*/
-function getRepresentativesByPoliticalParty($idPoliticalParty) {
+function getRepresentativesByPoliticalParty($slug) {
 	$args = array('post_type' => 'representante',
 		'meta_query' => array(
 			array (
-				'key'     => 'wp_id_political_party',
-				'value'   => $idPoliticalParty
+				'key'     => 'wp_political_party_slug',
+				'value'   => $slug
 			)
 		)
 	);
@@ -310,4 +310,36 @@ function geStates() {
 	);
 	
 	return $states;
+}
+
+/*get data by parameter $_GET */
+function getDataRepresentatives() {
+	if(isset($_GET["partido-politico"])) {
+		$result = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
+		$data = $result["loop"]->have_posts();
+	} elseif(isset($_GET["estado"])) {
+		$result = getRepresentativesByState($_GET["estado"]);
+		$data = $result["loop"]->have_posts();
+	} elseif(isset($_GET["comision"])) {
+		$result = getRepresentativesByCommission($_GET["comision"]);
+		$data = $result["loop"]->have_posts();
+	} else {
+		$data = have_posts();
+	}
+	
+	return $data;
+}
+
+
+/*get data by parameter $_GET */
+function getParameterValueGET() {
+	if(isset($_GET["partido-politico"])) {
+		return $_GET["partido-politico"];
+	} elseif(isset($_GET["estado"])) {
+		return $_GET["estado"];
+	} elseif(isset($_GET["comision"])) {
+		return $_GET["comision"];
+	} else {
+		return "";
+	}
 }

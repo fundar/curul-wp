@@ -1,11 +1,13 @@
 <?php
 	global $avia_config, $more;
-	$selectedOption = "partido-verde-ecologista-de-mexico";
+	$selectedOption = getParameterValueGET();
+	$data = getDataRepresentatives();
 	/*
-	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
-	 */
-	 get_header();
-
+	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
+	*/
+	get_header();
+	
+	
 	?>
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		    <!-- inicio mapa de representantes-->
@@ -63,8 +65,8 @@
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 			<div class='container'>
 				<main class='template-page content  av-content-full alpha units'>
-					<?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
+					<?php if ($data) : ?>
+                        <?php while ($data) : $data->the_post(); ?>
 							<!--Inicio representantes-->
 							<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
 								<!--Inicio fecga y resumen-->
