@@ -106,8 +106,6 @@
 											</div>
 										</div>
 									</div><!--fin fecha y resumen-->
-									
-									<div class="flex_column av_one_fifth vota-rep"></div>
 								</article><!--fin representantes-->
 								
 								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
@@ -158,8 +156,6 @@
 											</div>
 										</div>
 									</div><!--fin fecha y resumen-->
-									
-									<div class="flex_column av_one_fifth vota-rep"></div>
 								</article><!--fin representantes-->
 								
 								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
