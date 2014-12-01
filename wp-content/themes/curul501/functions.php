@@ -324,7 +324,9 @@ function getDataRepresentatives() {
 		$result = getRepresentativesByCommission($_GET["comision"]);
 		$data = $result["loop"]->have_posts();
 	} else {
+		die("ok");
 		$data = have_posts();
+		die("as");
 	}
 	
 	return $data;
