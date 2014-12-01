@@ -105,7 +105,8 @@
 				<div class="linea-morado"></div>
 				<div class="tab-item-temas">
 			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo get_post_meta($post->ID, 'wp_topics', true); ?></p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_topics', true)); ?>
+				</p>
 				</div>
 				
 			</div>
