@@ -63,6 +63,12 @@
 							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
 							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
 							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+							$elements = explode("|", $status_iniciativa);
+   						    $status_final=count($elements)-1;
+
+
+
 
 						?>
 			<div class='container template-blog template-single-blog '>
@@ -243,7 +249,7 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado">Publicada</p>
+				<p class="resultado"><?php echo status_final; ?></p>
 				</div>
 				</section>
                          </div>
