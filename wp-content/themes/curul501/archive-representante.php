@@ -43,7 +43,7 @@
 							   <option value="">Estado</option>
 							   <?php $statesArray = geStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
