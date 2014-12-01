@@ -234,14 +234,12 @@
 					</div>
 			</div>
 			
-											<?php } ?>
-			
 			
 			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
 		</div>
-		
+									<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
