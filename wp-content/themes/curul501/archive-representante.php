@@ -65,63 +65,117 @@
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 			<div class='container'>
 				<main class='template-page content  av-content-full alpha units'>
-					<?php if ($data) : ?>
-                        <?php while ($data) : $data->the_post(); ?>
-							<!--Inicio representantes-->
-							<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
-								<!--Inicio fecga y resumen-->
-								<div class="flex_column av_four_fifth  first ">
-									<div class="post_foto">
-										<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
-										<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
-									</div>
+					<?php if($data) { ?>
+						<?php if ($data->have_posts()) { ?>
+							<?php while ($data->have_posts()) : $data->the_post(); ?>
+								<!--Inicio representantes-->
+								<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
+									<!--Inicio fecga y resumen-->
+									<div class="flex_column av_four_fifth  first ">
+										<div class="post_foto">
+											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
+											<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+										</div>
+										
+										<div class="entry-content"> 
+											<a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+											<div id="nav-representantes">
+												<ul>
+													<li>
+														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
+														<?php echo utf8_encode($politicalParty["name"]);?>
+													</li>
+													
+													<li class="navrepr-left">
+														Cargo: Diputado
+													</li>
+													
+													<li class="navrepr-left">
+														Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+													</li>
+													
+													<li class="navrepr-left no-borde">
+														<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
+														<span><?php echo $initiatives["count"];?></span> Iniciativas
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div><!--fin fecha y resumen-->
 									
-									<div class="entry-content"> 
-										<a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
-											<?php the_title(); ?>
-										</a>
-										<div id="nav-representantes">
-											<ul>
-												<li>
-													<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
-													<?php echo utf8_encode($politicalParty["name"]);?>
-												</li>
-												
-												<li class="navrepr-left">
-													Cargo: Diputado
-												</li>
-												
-												<li class="navrepr-left">
-													Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
-												</li>
-												
-												<li class="navrepr-left no-borde">
-													<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
-													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
-													<span><?php echo $initiatives["count"];?></span> Iniciativas
-												</li>
-											</ul>
-									    </div>
-									</div>
-								</div><!--fin fecha y resumen-->
+									<div class="flex_column av_one_fifth vota-rep"></div>
+								</article><!--fin representantes-->
 								
-								<div class="flex_column av_one_fifth vota-rep"></div>
-							</article><!--fin representantes-->
-							
-							<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-								<div class="share-social-representante ">
-									<?php avia_social_share_links(); ?>
+								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+									<div class="share-social-representante ">
+										<?php avia_social_share_links(); ?>
+									</div>
 								</div>
-							</div>
-							<?php 	endwhile; else: ?>
-							<?php							
-								endif;
-								if(empty($avia_config['remove_pagination'] ))
-								{
-									echo "<div class='{$blog_style}'>".avia_pagination('', 'nav')."</div>";
-								}
-							?>
+							<?php endwhile; ?>
+						<?php } ?>
+					<?php } else { ?>
+						<?php if (have_posts()) { ?>
+							<?php while (have_posts()) : the_post(); ?>
+								<!--Inicio representantes-->
+								<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
+									<!--Inicio fecga y resumen-->
+									<div class="flex_column av_four_fifth  first ">
+										<div class="post_foto">
+											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
+											<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+										</div>
+										
+										<div class="entry-content"> 
+											<a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+												<?php the_title(); ?>
+											</a>
+											<div id="nav-representantes">
+												<ul>
+													<li>
+														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
+														<?php echo utf8_encode($politicalParty["name"]);?>
+													</li>
+													
+													<li class="navrepr-left">
+														Cargo: Diputado
+													</li>
+													
+													<li class="navrepr-left">
+														Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+													</li>
+													
+													<li class="navrepr-left no-borde">
+														<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
+														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
+														<span><?php echo $initiatives["count"];?></span> Iniciativas
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div><!--fin fecha y resumen-->
+									
+									<div class="flex_column av_one_fifth vota-rep"></div>
+								</article><!--fin representantes-->
+								
+								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+									<div class="share-social-representante ">
+										<?php avia_social_share_links(); ?>
+									</div>
+								</div>
+							<?php endwhile; ?>
+						<?php } ?>
+					<?php } ?>
+					
+					<?php							
+						if(empty($avia_config['remove_pagination'] )) {
+							echo "<div class='{$blog_style}'>".avia_pagination('', 'nav')."</div>";
+						}
+					?>
 				</main>
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
