@@ -140,7 +140,7 @@
 										foreach($voto as $value) {
 											$resArray = explode(":", $value->total);
 											}
-										echo $resArray[0];
+									echo $resArray[1];
 											?>
 										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
@@ -232,7 +232,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno">500</p>
+						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
