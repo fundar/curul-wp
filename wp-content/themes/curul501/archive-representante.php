@@ -66,7 +66,7 @@
 			<div class='container'>
 				<main class='template-page content  av-content-full alpha units'>
 					<?php if ($data) : ?>
-                        <?php while ($data) : the_post(); ?>
+                        <?php while ($data) : $data->the_post(); ?>
 							<!--Inicio representantes-->
 							<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
 								<!--Inicio fecga y resumen-->
