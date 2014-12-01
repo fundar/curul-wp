@@ -66,6 +66,8 @@
 							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
+							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -133,6 +135,8 @@
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
+										<?php if($voto != "") { ?>
+
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
 			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
 					<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
@@ -229,6 +233,11 @@
 						</div>
 					</div>
 			</div>
+			
+											<?php } ?>
+			
+			
+			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
 		</div>
