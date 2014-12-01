@@ -215,3 +215,99 @@ function getPoliticalParty($idPoliticalParty) {
 	
 	return $array;
 }
+
+/*Get political parties array*/
+function getPoliticalParties() {
+	$politicalParties = array();
+	
+	$array["id_political_party"] = "1";
+	$array["name"]       = "Partido Revolucionario Institucional";
+	$array["short_name"] = "PRI";
+	$array["slug"]		 = "partido-revolucionario-institucional";
+	$array["url_logo"]   = "18px-PRI.png";
+	array_push($politicalParties, $array);
+	
+	$array["id_political_party"] = 2;
+	$array["name"]       = "Partido de la Revolución Democrática";
+	$array["short_name"] = "PRD";
+	$array["slug"]		 = "partido-de-la-revolucion-democratica";
+	$array["url_logo"]   = "18px-PRD.png";
+	array_push($politicalParties, $array);
+	
+	$array["id_political_party"] = 3;
+	$array["name"]       = "Partido Verde Ecologista de México";
+	$array["short_name"] = "PVEM";
+	$array["slug"]		 = "partido-verde-ecologista-de-mexico";
+	$array["url_logo"]   = "18px-PVE.png";
+	array_push($politicalParties, $array);
+
+	$array["id_political_party"] = 4;
+	$array["name"]       = "Partido Acción Nacional";
+	$array["short_name"] = "PAN";
+	$array["slug"]		 = "partido-accion-nacional";
+	$array["url_logo"]   = "18px-PAN.png";
+	array_push($politicalParties, $array);
+
+	$array["id_political_party"] = 5;
+	$array["name"]       = "Partido del Trabajo";
+	$array["short_name"] = "PT";
+	$array["slug"]		 = "partido-del-trabajo";
+	$array["url_logo"]   = "18px-PT.png";
+	array_push($politicalParties, $array);
+
+	$array["id_political_party"] = 6;
+	$array["name"]       = "Movimiento Ciudadano";
+	$array["short_name"] = "Movimiento Ciudadano";
+	$array["slug"]		 = "movimiento-ciudadano";
+	$array["url_logo"]   = "18px-PMC.png";
+	array_push($politicalParties, $array);
+
+	$array["id_political_party"] = 7;
+	$array["name"]       = "Partido Nueva Alianza";
+	$array["short_name"] = "PRD";
+	$array["slug"]		 = "partido-nueva-alianza";
+	$array["url_logo"]   = "18px-PNA.png";
+	array_push($politicalParties, $array);
+	
+	return $politicalParties;
+}
+
+/*Get states array*/
+function geStates() {
+	$states = array(
+		array("name" => "Tamaulipas", "cve" => "28", "slug" => "slug"),
+		array("name" => "Guanajuato", "cve" => "11", "slug" => "slug"),
+		array("name" => "Chiapas", "cve" => "7", "slug" => "slug"),
+		array("name" => "Oaxaca", "cve" => "20", "slug" => "slug"),
+		array("name" => "Querétaro", "cve" => "22", "slug" => "slug"),
+		array("name" => "México", "cve" => "15", "slug" => "slug"),
+		array("name" => "Coahuila", "cve" => "5", "slug" => "slug"),
+		array("name" => "Puebla", "cve" => "21", "slug" => "slug"),
+		array("name" => "Distrito Federal", "cve" => "9", "slug" => "slug"),
+		array("name" => "Chihuahua", "cve" => "8", "slug" => "slug"),
+		array("name" => "Guerrero", "cve" => "12", "slug" => "slug"),
+		array("name" => "Nayarit", "cve" => "18", "slug" => "slug"),
+		array("name" => "Hidalgo", "cve" => "13", "slug" => "slug"),
+		array("name" => "Tabasco", "cve" => "27", "slug" => "slug"),
+		array("name" => "Colima", "cve" => "6", "slug" => "slug"),
+		array("name" => "Tlaxcala", "cve" => "29", "slug" => "slug"),
+		array("name" => "Zacatecas", "cve" => "32", "slug" => "slug"),
+		array("name" => "Durango", "cve" => "10", "slug" => "slug"),
+		array("name" => "Baja California Sur", "cve" => "3", "slug" => "slug"),
+		array("name" => "San Luis Potosí", "cve" => "24", "slug" => "slug"),
+		array("name" => "Nuevo León", "cve" => "19", "slug" => "slug"),
+		array("name" => "Morelos", "cve" => "17", "slug" => "slug"),
+		array("name" => "Jalisco", "cve" => "14", "slug" => "slug"),
+		array("name" => "Campeche", "cve" => "4", "slug" => "slug"),
+		array("name" => "Quintana Roo", "cve" => "23", "slug" => "slug"),
+		array("name" => "Yucatán", "cve" => "31", "slug" => "slug"),
+		array("name" => "Sinaloa", "cve" => "25", "slug" => "slug"),
+		array("name" => "Michoacán", "cve" => "16", "slug" => "slug"),
+		array("name" => "Aguascalientes", "cve" => "1", "slug" => "slug"),
+		array("name" => "Sonora", "cve" => "26", "slug" => "slug"),
+		array("name" => "Baja California", "cve" => "2", "slug" => "slug"),
+		array("name" => "Veracruz", "cve" => "30", "slug" => "slug")
+	);
+	
+	return $states;
+}
