@@ -325,7 +325,6 @@ function getDataRepresentatives() {
 		$data = $result["loop"]->have_posts();
 	} else {
 		$data = have_posts();
-		die("as");
 	}
 	
 	return $data;
