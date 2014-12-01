@@ -138,7 +138,14 @@
 										</div>
 									</div>
 							</article><!--fin iniciativas-->
-							<?php endwhile; endif; ?>
+							<?php 	endwhile; else: ?>
+							<?php							
+								endif;
+								if(empty($avia_config['remove_pagination'] ))
+								{
+									echo "<div class='{$blog_style}'>".avia_pagination('', 'nav')."</div>";
+								}
+							?>							
 				</main>
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->

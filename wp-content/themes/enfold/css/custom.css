@@ -1038,6 +1038,20 @@ li.ir-sb {
     width: 160px;
 }
 
+/**paginación**/
+#top .pagination .current, #top .pagination a, #top .fullsize .template-blog .pagination a{
+     color:#432B4D;
+     width: 25px;
+     height: 25px;
+     line-height: 25px;
+}
+#top .pagination a:hover{
+     background:#9991A8 !important;
+
+}
+
+
+
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
