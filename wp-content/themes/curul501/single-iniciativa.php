@@ -66,7 +66,9 @@
 							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
-							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+							$voto=($post->ID, 'wp_votos');
+							$decode 	= json_decode($voto, true);
+							
 
 
 						?>
@@ -231,7 +233,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo $total_total= "total".$voto[8]['total']; ?></p>
+						<p class="num-votos-pleno"><?php echo $total_total= "total".$decode[8]['total']; ?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
