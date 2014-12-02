@@ -124,7 +124,7 @@
 								<article class="post type-post post-archive">
 										<div class="post_foto">
 											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
-											<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+											<img src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
 										</div>										
 											<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
 												<?php the_title(); ?>
