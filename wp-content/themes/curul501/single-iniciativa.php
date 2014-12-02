@@ -67,11 +67,7 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							echo $voto[8]['ausente'];
-							
-
-
-
+							echo $voto->total[8];
 						?>
 			<div class='container template-blog template-single-blog '>
 

@@ -111,6 +111,12 @@ a:hover{text-decoration:none;}
     margin: 0 auto;
     padding: 10px;
 }
+.post-archive {
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 20px 18px 0;
+}
 .template-blog .blog-meta {
     float: left;
     margin-left: 30px;
@@ -337,10 +343,11 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** home iniciativas **/
+
 a.iniciativas-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
     color: #512b60;
-    display:block;
+    display: block;
     font-family: oswald;
     font-size: 22px;
     font-weight: 300;
@@ -349,7 +356,24 @@ a.iniciativas-home {
     padding-bottom: 12px;
     text-rendering: optimizelegibility;
 }
+
+a.representantes-home {
+    border-bottom: 1px solid rgba(153, 145, 168, 0.3);
+    color: #512b60;
+    display: block;
+    float: left;
+    font-family: oswald;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-top: -2px;
+    min-height: 91px;
+    padding-bottom: 12px;
+    text-rendering: optimizelegibility;
+    width: 89%;
+}
 a.iniciativas-home:hover{color:#724b83;}
+a.representantes-home:hover{color:#724b83;}
 .post_date {
     color: #512b60;
     display: block;
@@ -858,42 +882,52 @@ a.grafikas:hover{
 }
 .sort{
     background: none repeat scroll 0 0 #f4f4f4 !important;
-    font-family: colaborate-thinregular !important;
+    font-family: 'colaborate-regular' !important;
     font-size: 14px !important;
     border: 1px solid #c1c1c1 !important;
+    color:#7b718e;
 }
 #filter select.sort:hover{
-    color:#624070!important;
+    color:#432B4D!important;
+   
+    
 }
 
 #filter select.sorter-tema{
     width:99px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);
 }
 #filter select.sorter-proponente{
     width:138px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);   
 }
 #filter select.sorter-partido{
     width:103px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);    
 }
 #filter select.sorter-comision{
     width:190px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);    
 }
 #filter select.sorter-turno{
     width:145px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);
 }
 #filter select.sorter-votacion{
     width:160px;
     margin-right:10px;
+    color: rgba(68, 68, 68, 0.9);
 }
 
 #filter select.sorter-estado {
     margin-right: 10px;
     width: 125px;
+    color: rgba(68, 68, 68, 0.9);
 }
 /** grid **/
 #top div .no_padding {
@@ -914,7 +948,9 @@ img.icono-repre {
     padding-right: 8px;
 }
 div.cabecera-representante {
-    padding: 0 0 0 100px;
+    margin-bottom: 10px;
+    min-height: 98px;
+    padding: 0 0 0 104px;
 }
 #nav-representantes ul{
     margin-left:0;
@@ -924,7 +960,7 @@ div.cabecera-representante {
     display: inline-block;
     font: 12px 'colaborate-regular';
     margin-top: 7px;
-    padding: 0 15px 0 0;
+    padding: 0 14px 0 0;
 }
 
 #nav-representantes span{
@@ -974,13 +1010,19 @@ p.cpt-repre {
     width: 22.8% !important;
 }
 .no-padding-rep{padding:0;}
-.post_foto{
+.post_foto {
+    border: 1px solid #f4f4f4;
     display: block;
     float: left;
-    min-height: 40px;
+    height: 114px;
+    margin-right: 14px;
     overflow: hidden;
-    padding-right: 15px;
     text-align: center;
+    width: 89px;
+}
+.post_foto > img {
+     width:100%;
+     height:100%;
 }
 .share-social-representante {
     display: block;
@@ -990,9 +1032,23 @@ p.cpt-repre {
     width: 40%;
 
 }
+.post_foto-In {
+    border: 1px solid #f4f4f4;
+    display: block;
+    float: left;
+    height: 104px;
+    margin-right: 27px;
+    overflow: hidden;
+    text-align: center;
+    width: 84px;
+}
+.post_foto-In > img {
+     width:100%;
+     height:100%;
+}
 
 div.sidebar-representantes  {
-    margin-top: -1px;
+    margin-top: 11px;
 }
 
 .sidebar-representantes ul{
@@ -1036,6 +1092,7 @@ li.ir-sb {
 #filter select.sorter-rep {
     margin-right: 10px;
     width: 160px;
+    color: rgba(68, 68, 68, 0.9);
 }
 
 /**paginación**/
@@ -1047,10 +1104,12 @@ li.ir-sb {
 }
 #top .pagination a:hover{
      background:#9991A8 !important;
-
 }
+/**footer**/
 
-
+#footer {
+    background: none repeat scroll 0 0 #432b4d;
+}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
@@ -1136,9 +1195,44 @@ Mobile Styles
     .share-social-representante {
     width: 100%;}
     .share-social-representante > .av-share-box { background: none repeat scroll 0 0 transparent !important;
-     }
+     }       
+    .main_color h1 {
+    font-size: 21px;
     }
-    /** iniciativas archive **/
+    .main_color h3 {
+    font: 15px 'colaborate-regular';
+    }
+    .post_foto-In {
+    margin-right: 0;
+    }
+    a.representantes-home {
+    border-bottom: 1px solid rgba(153, 145, 168, 0.3);
+    color: #512b60;
+    display: block;
+    float: none;
+    font-family: oswald;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-top: -2px;
+    min-height: 130px;
+    padding-bottom: 12px;
+    text-rendering: optimizelegibility;
+    width:100%;
+    }
+    #nav-representantes li {
+    border-right: 0 solid rgba(153, 145, 168, 0.3);
+    display: block;
+    font: 12px 'colaborate-regular';
+    margin-top: 9px;
+    padding: 0;
+    }
+    li.navrepr-left {
+    padding-left: 0px !important;
+    }
+    
+    }
+
     
 
     
