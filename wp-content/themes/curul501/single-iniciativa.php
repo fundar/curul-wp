@@ -233,7 +233,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo $total_total= "total".$voto1[8]['total']."<br>";?></p>
+						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
