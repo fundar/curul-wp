@@ -63,6 +63,13 @@
 							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
 							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
 							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+							$elements = explode("|", $status_iniciativa);
+   						    $status_final=count($elements)-1;
+							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+							echo "el voto es".$voto[1]['favor'];
+
+
 
 						?>
 			<div class='container template-blog template-single-blog '>
@@ -82,10 +89,10 @@
 							<li class="bullet-arrow">Comisiones
 							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
 							</li>
-							<li class="bullet-arrow">Propuesta por:
-							<p><?php if($presentada_representante != "") { echo $presentada_representante;} ?>
-							<?php if($presentada_partido != "") { echo $presentada_partido;} ?>
-							<?php if($presentada_dependencia != "") { echo $presentada_dependencia;} ?></p></li>
+							<li class="bullet-arrow">Propuesta por
+							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
+							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
+							<?php if($presentada_representante != "") { echo $presentada_representante;} ?></p></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
@@ -131,6 +138,12 @@
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
+										<?php if($voto != "") {
+										foreach($voto as $value) {
+											$resArray = explode(":", $value->total);
+											}
+											?>
+										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
 			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
 					<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
@@ -220,17 +233,20 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno">500</p>
+						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
 						</div>
 					</div>
 			</div>
+			
+			
+			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
 		</div>
-		
+									<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
@@ -243,7 +259,7 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado">Publicada</p>
+				<p class="resultado"><?php echo $elements[$status_final]; ?></p>
 				</div>
 				</section>
                          </div>

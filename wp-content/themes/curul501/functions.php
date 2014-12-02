@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
+	$p2_custom_post_type = "representante"; //iniciativa|representante
     
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
@@ -125,12 +125,12 @@ function getRepresentativesByCommission($commission) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-/*Get representatives by state (clave_estado)[int]*/
+/*Get representatives by state*/
 function getRepresentativesByState($state) {
 	$args = array('post_type' => 'representante',
 		'meta_query' => array(
 			array (
-				'key'     => 'wp_clave_estado',
+				'key'     => 'wp_zone_state',
 				'value'   => $state
 			)
 		)
@@ -143,12 +143,12 @@ function getRepresentativesByState($state) {
 }
 
 /*Get representatives by political party*/
-function getRepresentativesByPoliticalParty($idPoliticalParty) {
+function getRepresentativesByPoliticalParty($slug) {
 	$args = array('post_type' => 'representante',
 		'meta_query' => array(
 			array (
-				'key'     => 'wp_id_political_party',
-				'value'   => $idPoliticalParty
+				'key'     => 'wp_political_party_slug',
+				'value'   => $slug
 			)
 		)
 	);
@@ -275,39 +275,71 @@ function getPoliticalParties() {
 /*Get states array*/
 function geStates() {
 	$states = array(
-		array("name" => "Tamaulipas", "cve" => "28", "slug" => "slug"),
-		array("name" => "Guanajuato", "cve" => "11", "slug" => "slug"),
-		array("name" => "Chiapas", "cve" => "7", "slug" => "slug"),
-		array("name" => "Oaxaca", "cve" => "20", "slug" => "slug"),
-		array("name" => "Querétaro", "cve" => "22", "slug" => "slug"),
-		array("name" => "México", "cve" => "15", "slug" => "slug"),
-		array("name" => "Coahuila", "cve" => "5", "slug" => "slug"),
-		array("name" => "Puebla", "cve" => "21", "slug" => "slug"),
-		array("name" => "Distrito Federal", "cve" => "9", "slug" => "slug"),
-		array("name" => "Chihuahua", "cve" => "8", "slug" => "slug"),
-		array("name" => "Guerrero", "cve" => "12", "slug" => "slug"),
-		array("name" => "Nayarit", "cve" => "18", "slug" => "slug"),
-		array("name" => "Hidalgo", "cve" => "13", "slug" => "slug"),
-		array("name" => "Tabasco", "cve" => "27", "slug" => "slug"),
-		array("name" => "Colima", "cve" => "6", "slug" => "slug"),
-		array("name" => "Tlaxcala", "cve" => "29", "slug" => "slug"),
-		array("name" => "Zacatecas", "cve" => "32", "slug" => "slug"),
-		array("name" => "Durango", "cve" => "10", "slug" => "slug"),
-		array("name" => "Baja California Sur", "cve" => "3", "slug" => "slug"),
-		array("name" => "San Luis Potosí", "cve" => "24", "slug" => "slug"),
-		array("name" => "Nuevo León", "cve" => "19", "slug" => "slug"),
-		array("name" => "Morelos", "cve" => "17", "slug" => "slug"),
-		array("name" => "Jalisco", "cve" => "14", "slug" => "slug"),
-		array("name" => "Campeche", "cve" => "4", "slug" => "slug"),
-		array("name" => "Quintana Roo", "cve" => "23", "slug" => "slug"),
-		array("name" => "Yucatán", "cve" => "31", "slug" => "slug"),
-		array("name" => "Sinaloa", "cve" => "25", "slug" => "slug"),
-		array("name" => "Michoacán", "cve" => "16", "slug" => "slug"),
 		array("name" => "Aguascalientes", "cve" => "1", "slug" => "slug"),
-		array("name" => "Sonora", "cve" => "26", "slug" => "slug"),
 		array("name" => "Baja California", "cve" => "2", "slug" => "slug"),
-		array("name" => "Veracruz", "cve" => "30", "slug" => "slug")
+		array("name" => "Baja California Sur", "cve" => "3", "slug" => "slug"),
+		array("name" => "Campeche", "cve" => "4", "slug" => "slug"),
+		array("name" => "Coahuila", "cve" => "5", "slug" => "slug"),
+		array("name" => "Colima", "cve" => "6", "slug" => "slug"),
+		array("name" => "Chiapas", "cve" => "7", "slug" => "slug"),
+		array("name" => "Chihuahua", "cve" => "8", "slug" => "slug"),
+		array("name" => "Distrito Federal", "cve" => "9", "slug" => "slug"),
+		array("name" => "Durango", "cve" => "10", "slug" => "slug"),
+		array("name" => "Guanajuato", "cve" => "11", "slug" => "slug"),
+		array("name" => "Guerrero", "cve" => "12", "slug" => "slug"),
+		array("name" => "Hidalgo", "cve" => "13", "slug" => "slug"),
+		array("name" => "Jalisco", "cve" => "14", "slug" => "slug"),
+		array("name" => "México", "cve" => "15", "slug" => "slug"),
+		array("name" => "Michoacán", "cve" => "16", "slug" => "slug"),
+		array("name" => "Morelos", "cve" => "17", "slug" => "slug"),
+		array("name" => "Nayarit", "cve" => "18", "slug" => "slug"),
+		array("name" => "Nuevo León", "cve" => "19", "slug" => "slug"),
+		array("name" => "Oaxaca", "cve" => "20", "slug" => "slug"),
+		array("name" => "Puebla", "cve" => "21", "slug" => "slug"),
+		array("name" => "Querétaro", "cve" => "22", "slug" => "slug"),
+		array("name" => "Quintana Roo", "cve" => "23", "slug" => "slug"),
+		array("name" => "San Luis Potosí", "cve" => "24", "slug" => "slug"),
+		array("name" => "Sinaloa", "cve" => "25", "slug" => "slug"),
+		array("name" => "Sonora", "cve" => "26", "slug" => "slug"),
+		array("name" => "Tabasco", "cve" => "27", "slug" => "slug"),
+		array("name" => "Tamaulipas", "cve" => "28", "slug" => "slug"),
+		array("name" => "Tlaxcala", "cve" => "29", "slug" => "slug"),
+		array("name" => "Veracruz", "cve" => "30", "slug" => "slug"),
+		array("name" => "Yucatán", "cve" => "31", "slug" => "slug"),
+		array("name" => "Zacatecas", "cve" => "32", "slug" => "slug")
 	);
 	
 	return $states;
+}
+
+/*get data by parameter $_GET */
+function getDataRepresentatives() {
+	if(isset($_GET["partido-politico"])) {
+		$result = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["estado"])) {
+		$result = getRepresentativesByState($_GET["estado"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["comision"])) {
+		$result = getRepresentativesByCommission($_GET["comision"]);
+		$data = $result["loop"];
+	} else {
+		return false;
+	}
+	
+	return $data;
+}
+
+
+/*get data by parameter $_GET */
+function getParameterValueGET() {
+	if(isset($_GET["partido-politico"])) {
+		return $_GET["partido-politico"];
+	} elseif(isset($_GET["estado"])) {
+		return $_GET["estado"];
+	} elseif(isset($_GET["comision"])) {
+		return $_GET["comision"];
+	} else {
+		return "";
+	}
 }
