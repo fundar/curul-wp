@@ -67,6 +67,10 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+							echo $voto[8]['ausente'];
+							
+
+
 
 						?>
 			<div class='container template-blog template-single-blog '>
@@ -136,11 +140,9 @@
 		</aside>
 		<!-- votaciones en pleno -->
 										<?php if($voto != "") {
-										
 										foreach($voto as $value) {
 											$resArray = explode(":", $value->total);
 											}
-									echo $resArray[1];
 											?>
 										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
