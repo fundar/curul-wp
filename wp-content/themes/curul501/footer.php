@@ -152,13 +152,14 @@
 			echo "<div class='bg_container' style='background-image:url(".$avia_config['fullscreen_image'].");'></div>";
 		}
 	?>
-
 <aside id="buscador" class="desktop" data-no-touch="" data-track-id="" style="">
 	ijij
 </aside>
+
 <?php wp_footer(); ?>
 
 <a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
 <div id="fb-root"></div>
+
 </body>
 </html>
