@@ -138,12 +138,10 @@
 										<?php if($voto != "") {
 										
 										foreach($voto as $value) {
-											$resArray = explode(":", $value->id_political_party);
+											$resArray = explode(":", $value->total);
 											}
-										echo "cer".$resArray[0];
-										echo "uno".$resArray[1];
-										echo "dos".$resArray[2];
-										?>
+										echo $resArray[0];
+											?>
 										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
 			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
