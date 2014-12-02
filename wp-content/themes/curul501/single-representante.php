@@ -63,7 +63,7 @@
 		
 				        <header class="entry-content-header">
 						
-						<div class="post_foto">
+						<div class="post_foto-In">
 							<img width="125" height="169" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
 						</div>
 						
