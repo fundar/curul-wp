@@ -161,7 +161,7 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php$pri_favor= "favor pri".$voto[7]['favor'];?>
+										<li class="hand-up"><?php $pri_favor= "favor pri".$voto[7]['favor']; ?>
 										</li >										
 										<li class="hand-down">2000
 										</li >
