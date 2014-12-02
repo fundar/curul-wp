@@ -137,9 +137,8 @@
 		<!-- votaciones en pleno -->
 										<?php if($voto != "") {
 										
-										foreach($voto as $value) {
 											$resArray = explode(":", $value->total);
-											}
+											
 									echo $resArray[1];
 											?>
 										
