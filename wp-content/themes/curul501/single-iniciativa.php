@@ -135,8 +135,14 @@
 			</div>
 		</aside>
 		<!-- votaciones en pleno -->
-										<?php if($voto != "") { ?>
-
+										<?php if($voto != "") {
+										
+										foreach($voto as $value) {
+											$resArray = explode(":", $value->total);
+											}
+										echo $resArray[0];
+											?>
+										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
 			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
 					<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
