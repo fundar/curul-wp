@@ -114,21 +114,19 @@
 									</div>
 								</div>
 							<?php endwhile; ?>
+						<?php } else { ?>
+							<p>No se encontraron representantes con esta busqueda</p>
 						<?php } ?>
 					<?php } else { ?>
 						<?php if (have_posts()) { ?>
 							<?php while (have_posts()) : the_post(); ?>
 								<!--Inicio representantes-->
-								<article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small">
-									<!--Inicio fecga y resumen-->
-									<div class="flex_column av_four_fifth  first ">
+								<article class="post type-post post-archive">
 										<div class="post_foto">
 											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
 											<img width="100" height="144" src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
-										</div>
-										
-										<div class="entry-content"> 
-											<a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+										</div>										
+											<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
 												<?php the_title(); ?>
 											</a>
 											<div id="nav-representantes">
@@ -154,8 +152,8 @@
 													</li>
 												</ul>
 											</div>
-										</div>
-									</div><!--fin fecha y resumen-->
+										
+									
 								</article><!--fin representantes-->
 								
 								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
@@ -169,7 +167,7 @@
 					
 					<?php							
 						if(empty($avia_config['remove_pagination'] )) {
-							echo "<div class='{$blog_style}'>".avia_pagination('', 'nav')."</div>";
+							echo "<div class='{$blog_style}'>" . avia_pagination('', 'nav') . "</div>";
 						}
 					?>
 				</main>
@@ -204,4 +202,3 @@
 		});
 	});
 </script>
-
