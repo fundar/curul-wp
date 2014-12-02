@@ -67,7 +67,8 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							echo "el voto es".$voto[1]['favor'];
+							echo $voto[8]['ausente'];
+							
 
 
 
