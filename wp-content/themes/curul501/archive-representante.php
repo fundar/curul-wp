@@ -114,9 +114,9 @@
 									</div>
 								</div>
 							<?php endwhile; ?>
-						<?php } ?>
-							<p>No se encontraron representantes con esta busqueda</p>
 						<?php } else { ?>
+							<p>No se encontraron representantes con esta busqueda</p>
+						<?php } ?>
 					<?php } else { ?>
 						<?php if (have_posts()) { ?>
 							<?php while (have_posts()) : the_post(); ?>
