@@ -10,14 +10,6 @@
 	
 	?>
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		    <!-- inicio mapa de representantes-->
-		   <div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
-		       <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
-					<div class="container">Mapa</div>
-                </div>
-		   </div>
-            <!-- fin mapa de representantes-->
-			
 			<!-- titulo-->
 			<div class="container top60">
 				<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
@@ -179,6 +171,15 @@
 					?>
 				</main>
 			</div><!--end container-->
+			
+			<!-- inicio mapa de representantes-->
+			<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
+		       <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
+					<div class="container">Mapa</div>
+                </div>
+			</div>
+            <!-- fin mapa de representantes-->
+            
 		</div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
 
