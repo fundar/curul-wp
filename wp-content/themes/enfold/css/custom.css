@@ -370,7 +370,7 @@ a.representantes-home {
     min-height: 91px;
     padding-bottom: 12px;
     text-rendering: optimizelegibility;
-    width: 86%;
+    width: 89%;
 }
 a.iniciativas-home:hover{color:#724b83;}
 a.representantes-home:hover{color:#724b83;}
@@ -1105,7 +1105,11 @@ li.ir-sb {
 #top .pagination a:hover{
      background:#9991A8 !important;
 }
+/**footer**/
 
+#footer {
+    background: none repeat scroll 0 0 #432b4d;
+}
 
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */

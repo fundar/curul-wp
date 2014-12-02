@@ -50,7 +50,7 @@
 		
 		<div class='container_wrap container_wrap_first main_color fullsize'>
 			<div class='container'>
-				<main class='template-page content  content av-content-small alpha units'>
+				<main class='template-page content  content fullsize alpha units'>
 					<?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 							<!--Inicio representantes-->
