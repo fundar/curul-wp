@@ -316,15 +316,15 @@ function geStates() {
 function getDataRepresentatives() {
 	if(isset($_GET["partido-politico"])) {
 		$result = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
-		$data = $result["loop"]->have_posts();
+		$data = $result["loop"];
 	} elseif(isset($_GET["estado"])) {
 		$result = getRepresentativesByState($_GET["estado"]);
-		$data = $result["loop"]->have_posts();
+		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
 		$result = getRepresentativesByCommission($_GET["comision"]);
-		$data = $result["loop"]->have_posts();
+		$data = $result["loop"];
 	} else {
-		$data = have_posts();
+		return false;
 	}
 	
 	return $data;
