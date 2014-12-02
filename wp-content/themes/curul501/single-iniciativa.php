@@ -136,12 +136,8 @@
 		</aside>
 		<!-- votaciones en pleno -->
 										<?php if($voto != "") {
-										
-										foreach($voto as $value) {
-											$resArray = explode(":", $value->total);
-															echo $resArray[1];
+										echo $total_votos= explode(":", $value->total);
 
-											}
 											?>
 										
 		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
