@@ -67,7 +67,8 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							echo $voto->total[8];
+							$votos 	= get_post_meta($post->ID, 'wp_votos');
+							$votos_decode =	json_decode($votos,true);
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -160,7 +161,7 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php $votos_decode[1]['favor'];?>
 										</li >										
 										<li class="hand-down">2000
 										</li >
@@ -230,7 +231,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
+						<p class="num-votos-pleno"><?php echo $votos_decode[8]['ausente'];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
