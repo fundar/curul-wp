@@ -251,3 +251,31 @@
    </div><!--end container-->
 </div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#partido-politico-filter").change( function() {
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#estado-filter").change( function() {
+			if(jQuery("#estado-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+	});
+</script>
