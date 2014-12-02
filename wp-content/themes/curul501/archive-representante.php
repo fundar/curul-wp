@@ -40,10 +40,11 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="estado" id="estado-filter">
 							   <option value="">Estado</option>
-							   <?php $statesArray = geStates(); ?>
+							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
@@ -51,10 +52,16 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="comision" id="comision-filter">
 							   <option value="">Comisiones</option>
-							   <option value="2">Seguridad P&uacute;blica</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
 						   </select>
 					   </div>
 					</form>				
