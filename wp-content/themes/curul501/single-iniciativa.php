@@ -67,7 +67,7 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+							$votos 	= get_post_meta($post->ID, 'wp_votos');
 							$votos_decode =	json_decode($votos,true);
 						?>
 			<div class='container template-blog template-single-blog '>
