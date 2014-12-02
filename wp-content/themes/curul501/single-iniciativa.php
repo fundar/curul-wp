@@ -69,8 +69,6 @@
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
 							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
 							$votos_decode =	json_decode($votos,true);
-							echo $votos_decode[8]['total'];
-							$voto->total[8];
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -233,7 +231,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
+						<p class="num-votos-pleno"><?php echo $votos_decode[8]['total'];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
