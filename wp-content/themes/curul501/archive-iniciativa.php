@@ -116,8 +116,8 @@
 													</div>
 													<div class="hands-vote">
 									
-													<li class="hand-up"><?phpecho $decode[8]['favor']; ?></li>										
-													<li class="hand-down"><?phpecho $decode[8]['contra']; ?></li>
+													<li class="hand-up"><?php echo $decode[8]['favor']; ?></li>										
+													<li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
 									
 													</div>
 												</div>
