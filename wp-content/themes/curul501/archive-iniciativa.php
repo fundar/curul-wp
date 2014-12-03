@@ -114,7 +114,7 @@
 													<div class="datos">
 													Status													
 													<div class="temporizador"> 
-													<?php echo $elements[$status_final]; ?>
+													<p><?php echo $elements[$status_final]; ?></p>
 													</div>
 													</div>													
 												</div> 
@@ -130,9 +130,10 @@
 														<?php	echo $decode[8]['total']; ?>
 													</div>
 													<div class="hands-vote">
-									
-													<li class="hand-up"><?php echo $decode[8]['favor']; ?></li>										
-													<li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
+									                                <ul>
+													        <li class="hand-up"><?php echo $decode[8]['favor']; ?></li>
+													        <li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
+													</ul>
 									
 													</div>
 												</div>
@@ -143,7 +144,7 @@
 													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
-													Sin Votaci&oacute;n 													
+													<p class="estiloEstatusP">Sin Votaci&oacute;n</p>													
 													</div>
 													
 												</div>											
@@ -154,11 +155,12 @@
 												
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-														<?php
+													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
 														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
 														?>
+													</p>
 													
 													
 												</div>													
