@@ -1027,6 +1027,7 @@ p.cpt-repre {
     float: left !important;
     margin-left: 22px !important;
     margin-top: -14px;
+    padding-left: 0 !important;
     width: 22.8% !important;
 }
 .no-padding-rep{padding:0;}
@@ -1263,6 +1264,9 @@ Mobile Styles
     li.navrepr-left {
     padding-left: 0px !important;
     }
+    .sidebar-cpt-representantes {
+    width: 100% !important;
+   }
     
     }
 
