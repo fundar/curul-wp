@@ -128,10 +128,10 @@
 
 																					<div class="col-status-1">
 													<div class="datos">
-													Sin Votaci&oacute;n 													
+													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
-														
+													Sin Votaci&oacute;n 													
 													</div>
 													
 												</div>											
