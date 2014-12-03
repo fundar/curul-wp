@@ -129,7 +129,10 @@
 												
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-													<div class="photo-avatar"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/avatar-m-42x42.png"></div>
+														<?php
+														$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
+														?>
+													<div class="photo-avatar"><img src="<?php echo $avatar_url;?>"></div>
 													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
 															<span>PRI</span>
 													
