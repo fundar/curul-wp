@@ -72,7 +72,8 @@
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
 							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
-							$fecha = explode(" ", $fecha_votacion);
+							$explode = explode(" ", $fecha_votacion);
+							$fecha = $explode[0];
 
 												
 						?>
