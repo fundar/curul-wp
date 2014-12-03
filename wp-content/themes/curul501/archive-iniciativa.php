@@ -124,7 +124,20 @@
 									
 													</div>
 												</div>
+																					<?php } else {  ?>
+
+																					<div class="col-status-1">
+													<div class="datos">
+													Sin Votaci&oacute;n 													
+													</div>
+													<div class="votos-oficiles">
+														
+													</div>
+													
+												</div>											
 																					<?php } ?>
+
+																					
 
 												
 												<div class="col-status-2">
