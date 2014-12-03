@@ -71,7 +71,7 @@
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$pp = json_decode($WorkingArray, true);
-							echo $pp[8]['total'];
+							echo $pp[7]['total'];
 
 							
 						?>
