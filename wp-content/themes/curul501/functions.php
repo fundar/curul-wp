@@ -165,7 +165,7 @@ function getRepresentatives() {
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
 	
-	echo json_encode($loop);
+	echo json_encode($loop->posts);
 	exit;
 	return array("loop" => $loop, "count" => $count);
 }
