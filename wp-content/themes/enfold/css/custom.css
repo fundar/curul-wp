@@ -399,16 +399,33 @@ a.representantes-home:hover{color:#724b83;}
 .datos {
     display: block;
     float: left;
-    font-family: colaborate-thinregular;
-    font-size: 13px;
+    font-family: colaborate-regular;
+    font-size: 14px;
     overflow: hidden;
+    padding: 0 9px;
     text-align: center;
     width: 100%;
+    word-wrap: normal;
+    color:#512B60;
 }
 span.datos{
     display: inline-block;
     margin-top: 4px;
     vertical-align: middle;
+}
+.temporizador > p {
+    font-family: colaborate-regular;
+    font-size: 12px;
+    line-height: 13px;
+    overflow: hidden;
+}
+p.estiloEstatusP {
+    display: block;
+    font-family: colaborate-regular;
+    font-size: 12px;
+    line-height: 13px;
+    padding: 21px 10px 5px 5px;
+    text-align: center;
 }
 .topTop {
     margin-top: -20px !important;
@@ -535,25 +552,27 @@ p.resemen-recientes-iniciativas {
     margin: 0;
     padding: 0;
 }
-.hands-vote ul{
-    margin:0;
-    padding:0;
+
+.hands-vote ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
 }
 .hands-vote li {
     font: 12px 'colaborate-regular';
     height: 18px;
+    margin-left: 14px;
     margin-top: 5px;
-    padding-left: 23px;
     vertical-align: middle;
 }
 
 li.hand-up {
-    background: url("images/hand-up.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("images/hand-up.png") no-repeat scroll 19px 0 rgba(0, 0, 0, 0);
     padding-top: 4px;
 }
 
 li.hand-down {
-    background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+    background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
     padding-top: 0;
 }
     /**silder home **/   
