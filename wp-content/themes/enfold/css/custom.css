@@ -613,7 +613,7 @@ li.hand-down {
         width: 100%;
      }
      #buscador {
-        background: none repeat scroll 0 0 #3E2F52;
+        background: none repeat scroll 0 0 #281b2e;
         bottom: 0;
         height: 55px;
         left: 0;
@@ -1130,6 +1130,12 @@ li.ir-sb {
 
 #footer {
     background: none repeat scroll 0 0 #432b4d;
+}
+
+#menu-headermenu li > a {
+    color: rgba(250, 250, 250, 0.52);
+    font: 300 14px/14px oswald;
+    text-transform: uppercase;
 }
 /** loop-index.php blog **/
 .container_wrap {
