@@ -79,6 +79,19 @@
 				<main class='template-page content  av-content-full alpha units'>
 				<?php if (have_posts()) : ?>
                                 <?php while (have_posts()) : the_post(); ?>
+														<?php										
+														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+														$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													    $WorkingArray = json_decode(json_encode($votos),true);
+												        $decode = json_decode($WorkingArray, true);
+														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+														$elements = explode("|", $status_iniciativa);
+														$status_final=count($elements)-1;
+														?>
+								
+																
 				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
@@ -101,20 +114,12 @@
 													<div class="datos">
 													Status													
 													<div class="temporizador"> 
-													<?php
-													$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
-													$elements = explode("|", $status_iniciativa);
-													$status_final=count($elements)-1;
-													echo $elements[$status_final];
-													?>
+													<?php echo $elements[$status_final]; ?>
 													</div>
 													</div>													
 												</div> 
 												<?php
-													$votos 	= get_post_meta($post->ID, 'wp_votos', true);
-													$WorkingArray = json_decode(json_encode($votos),true);
-												    $decode = json_decode($WorkingArray, true);
-													
+																								
 												  if($votos != "") { ?>
 												
 												<div class="col-status-1">
@@ -150,9 +155,6 @@
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
 														<?php
-														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
-														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
-														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
 														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
 														if($presentada_representante != "") { echo $presentada_representante;} 
