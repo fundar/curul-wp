@@ -1121,7 +1121,10 @@ div.tituloBlog {
     margin: 20px auto;
     padding: 0;
 }
-
+#top #main .sidebar {
+    border-left-width: 0;
+    padding-left: 25px;
+}
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
