@@ -159,11 +159,8 @@
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
 														if($presentada_representante != "") { echo $presentada_representante;} 
 														?>
-													<div class="photo-avatar"><img src="<?php echo $avatar_url;?>"></div>
-													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
-															<span>PRI</span>
 													
-													</div>
+													
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
