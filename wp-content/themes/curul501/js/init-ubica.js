@@ -39,7 +39,7 @@ function getPip(lat, lng) {
     var resultPip 	 = leafletPip.pointInLayer([lng, lat], estadosLayer);
     
     if(resultPip.length) {
-		jQuery.getJSON("js/geojson/estado-" + resultPip[0].feature.properties.CVE_ENT + ".geojson")
+		jQuery.getJSON("/wp-content/themes/curul501/js/geojson/estado-" + resultPip[0].feature.properties.CVE_ENT + ".geojson")
 		.success(function (distritosGeoJson) {
 			var distritosLayer = L.geoJson(distritosGeoJson);
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
