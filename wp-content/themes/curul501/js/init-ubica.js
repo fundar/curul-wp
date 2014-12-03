@@ -48,6 +48,7 @@ function getPip(lat, lng) {
 			
 			if(resultDisrtPip.length) {
 				jQuery(".map-info-representante").html("Estado :" +  sMarker.options.NOMBRE +", Distrito: " + resultDisrtPip[0].feature.properties.DISTRITO);
+				jQuery("#loading-gif").hide();
 			} else {
 				console.log("Asegurate de estar en territorio mexicano");
 			}
