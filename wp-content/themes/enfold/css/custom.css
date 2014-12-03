@@ -1145,6 +1145,23 @@ div.tituloBlog {
     border-left-width: 0;
     padding-left: 25px;
 }
+#top h1 a, #top h2 a, #top h3 a, #top h4 a, #top h5 a, #top h6 a {
+    color: #512b60;
+    font-family: oswald;
+    font-size: 22px;
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+}
+.bottom30{
+     margin-bottom:30px;
+}
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
