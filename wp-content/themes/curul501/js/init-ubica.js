@@ -27,8 +27,6 @@ function setMap() {
 			sMarker.bindPopup("<div class='map-info-representante'>" + feature.properties.NOMBRE + "</div>").openPopup();
 			
 			getPip(e.latlng.lat, e.latlng.lng);
-			
-			jQuery("#loading-gif").hide();
 		});
 	}
 	
