@@ -71,15 +71,11 @@
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
-							echo $decode[1]['total'];
-							echo $decode[2]['total'];
-							echo $decode[3]['total'];
-							echo $decode[3]['favor'];
+							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
+							$explode = explode(" ", $fecha_votacion);
+							$fecha = $explode[0];
 
-
-
-
-							
+												
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -106,8 +102,8 @@
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
 						<ul class="sub-info">
-							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_fecha_votacion_tm', true); ?></li>
-							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Legislatura</li>
+							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
+							<li class="sub-info-li">LXII Legislatura</li>
 						</ul>
 					</div>
                                          <?php endwhile; endif; ?>
@@ -172,9 +168,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[8]['total'];?>
+										<li class="hand-up"><?php echo $decode[7]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php $decode[8]['total'];?>
+										<li class="hand-down"><?php echo $decode[7]['contra'];?>
 										</li >
 									</ul>
 								</div>
@@ -183,9 +179,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[6]['favor'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[6]['contra'];?>
 										</li >
 									</ul>
 								</div>																
@@ -194,9 +190,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[5]['favor'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[5]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -205,9 +201,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[4]['favor'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[4]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -216,9 +212,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[2]['favor'];?>
 										</li >										
-										<li class="hand-down">20000
+										<li class="hand-down"><?php echo $decode[2]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -227,9 +223,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">50000
+										<li class="hand-up"><?php echo $decode[1]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php echo $decode[1]['total'];?>
+										<li class="hand-down"><?php echo $decode[1]['contra'];?>
 										</li >
 									</ul>
 								</div>								

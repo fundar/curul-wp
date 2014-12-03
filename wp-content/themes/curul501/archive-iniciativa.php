@@ -103,14 +103,30 @@
 													<div class="temporizador"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" /></div>
 													</div>													
 												</div> 
+												<?php
+													$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													$WorkingArray = json_decode(json_encode($votos),true);
+												    $decode = json_decode($WorkingArray, true);
+													
+												  if($votos != "") { ?>
+												
 												<div class="col-status-1">
 													<div class="datos">
 													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
-														130
+														<?php	echo $decode[8]['total']; ?>
+													</div>
+													<div class="hands-vote">
+									
+													<li class="hand-up"><?php echo $decode[8]['favor']; ?></li>										
+													<li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
+									
 													</div>
 												</div>
+																					<?php } ?>
+
+												
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
 													<div class="photo-avatar"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/avatar-m-42x42.png"></div>
