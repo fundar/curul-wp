@@ -89,6 +89,9 @@
 														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
 														$elements = explode("|", $status_iniciativa);
 														$status_final=count($elements)-1;
+													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug)
+
 														?>
 								
 																
@@ -158,7 +161,8 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
-														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
+														if($presentada_representante != "") { if($presentada_representante == "Monreal Ávila Ricardo"){ ?> <a href="www.curul.org/representantes/<?php echo $presentada_representante_slug ?>"><?php echo $presentada_representante  ?></a><?php
+}echo str_replace('|', ", ", $presentada_representante);} 
 														?>
 													</p>
 													
