@@ -168,7 +168,7 @@
 									<ul>
 										<li class="hand-up"><?php $decode[8]['total'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php $decode[8]['total'];?>
 										</li >
 									</ul>
 								</div>
@@ -223,7 +223,7 @@
 									<ul>
 										<li class="hand-up">50000
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[8]['total'];?>
 										</li >
 									</ul>
 								</div>								
