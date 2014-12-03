@@ -26,7 +26,7 @@
 			<div class='container bottom30'>
 
 				<main class='content units <?php avia_layout_class( 'content' ); ?> <?php echo avia_blog_class_string(); ?>' <?php avia_markup_helper(array('context' => 'content','post_type'=>'post'));?>>
-				 <div class='bottom30'>
+				
 
                     <?php
                     /* Run the loop to output the posts.
