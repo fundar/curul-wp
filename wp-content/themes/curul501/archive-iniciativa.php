@@ -107,8 +107,10 @@
 													<div class="datos">
 													Votaci&oacute;n final													
 													</div>
-													<div class="votos-oficiles">
-														130
+													<div class="votos-oficiles"><?php $votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													$WorkingArray = json_decode(json_encode($votos),true);
+													$decode = json_decode($WorkingArray, true);
+													echo $decode[8]['total']; ?>
 													</div>
 												</div>
 												<div class="col-status-2">
