@@ -145,7 +145,7 @@ if(!class_exists('avia_social_share_links'))
 			(
 				'facebook' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://www.facebook.com/sharer.php?u=[permalink]&amp;t=[title]"),
 				//'twitter' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://twitter.com/home?status=[title]%20[shortlink]"),
-				'twitter' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://twitter.com/share?text=[title]&url=[shortlink]"),
+				'twitter' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://twitter.com/share?text=[title]&url=[permalink]"),
 				'gplus' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://plus.google.com/share?url=[permalink]" , 'label' => __("Share on Google+",'avia_framework')),
 				'linkedin' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://linkedin.com/shareArticle?mini=true&amp;title=[title]&amp;url=[permalink]"),
 				'mail' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "mailto:?subject=[title]&amp;body=[permalink]", 'label' => __("Share by Mail",'avia_framework') ),
