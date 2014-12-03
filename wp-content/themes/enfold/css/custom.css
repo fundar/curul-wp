@@ -642,6 +642,11 @@ li.hand-down {
     .desktop {
         display: block !important;
     }
+    
+#socket {
+    font-size: 11px;
+    z-index: 1;
+}
      /** cpt single iniciativas**/
     .iniciativa {
     padding: 30px 30px 30px 0;
