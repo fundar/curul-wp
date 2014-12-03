@@ -20,7 +20,7 @@ function setMap() {
 		
 		layer.on('click', function(e) {
 			jQuery("#loading-gif").show();
-			
+			console.log("Espere un momento el gato esta buscando a la rata ... ");
 			map.removeLayer(sMarker);
 			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { CVE_ENT : feature.properties.CVE_ENT, NOMBRE : feature.properties.NOMBRE }).addTo(map);
