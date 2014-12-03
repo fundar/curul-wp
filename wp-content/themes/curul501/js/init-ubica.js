@@ -19,6 +19,8 @@ function setMap() {
 		});
 		
 		layer.on('click', function(e) {
+			jQuery("#loading-gif").show();
+			
 			map.removeLayer(sMarker);
 			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { CVE_ENT : feature.properties.CVE_ENT, NOMBRE : feature.properties.NOMBRE }).addTo(map);
@@ -45,7 +47,8 @@ function getPip(lat, lng) {
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
 			
 			if(resultDisrtPip.length) {
-				jQuery(".map-info-representante").html("Estado :" +  sMarker.options.NOMBRE +", Distrito: " + resultDisrtPip[0].feature.properties.DISTRITO);
+				jQuery(".map-info-representante").html("<strong>Estado</strong><br/>" +  sMarker.options.NOMBRE +"<br/><strong>Distrito</strong><br/>" + resultDisrtPip[0].feature.properties.DISTRITO + "");
+				jQuery("#loading-gif").hide();
 			} else {
 				console.log("Asegurate de estar en territorio mexicano");
 			}
