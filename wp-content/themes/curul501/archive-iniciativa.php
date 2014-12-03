@@ -161,7 +161,8 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
-														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
+														if($presentada_representante != "") { if($presentada_representante == "Monreal Ávila Ricardo"){ ?> <a href="www.curul.org/representantes/<?php echo $presentada_representante_slug ?>"><?php echo $presentada_representante  ?></a><?php
+}echo str_replace('|', ", ", $presentada_representante);} 
 														?>
 													</p>
 													
