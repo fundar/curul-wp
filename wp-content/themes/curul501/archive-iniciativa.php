@@ -100,7 +100,14 @@
 												<div class="col-status">
 													<div class="datos">
 													Status													
-													<div class="temporizador"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/barra-temporizador.png" /></div>
+													<div class="temporizador"> 
+													<?php
+													$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+													$elements = explode("|", $status_iniciativa);
+													$status_final=count($elements)-1;
+													echo $elements[$status_final];
+													?>
+													</div>
 													</div>													
 												</div> 
 												<?php
