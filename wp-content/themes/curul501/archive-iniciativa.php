@@ -109,7 +109,7 @@
 													</div>
 													<div class="votos-oficiles">
 													<?php
-													echo $votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													$votos 	= get_post_meta($post->ID, 'wp_votos', true);
 													$WorkingArray = json_decode(json_encode($votos),true);
 												    $decode = json_decode($WorkingArray, true);
 													echo $decode[8]['total']; ?>
