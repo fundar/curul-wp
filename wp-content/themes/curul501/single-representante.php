@@ -1,5 +1,7 @@
 <?php
 	global $avia_config, $more;
+	$selectedOption = getParameterValueGET();
+	$data = getDataRepresentatives();
 
 	/*
 	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -21,30 +23,51 @@
 			<div class="line-amarilla"> </div>
 		        </div>
 			<!-- fin de titulo-->
-<!--Inicio filtros iniciativas -->
-		<div class="container box-menu">
-			<div class="search-table">
-				<div id="filter">
-				       <select class="sorter-rep sort" name="category">
-					       <option value="1">Partidos pol&iacute;ticos</option>
-					       <option value="2">Tema 2</option>							
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-rep sort" name="category">
-					       <option value="1">Estado</option>
-					       <option value="2">Estado</option>														
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-rep sort" name="category">
-					       <option value="1">Comisiones</option>
-					       <option value="2">Seguridad P&uacute;blica</option>														
-				       </select>
-			       </div>				
+		
+			<!--Inicio filtros representantes -->
+			<div class="container box-menu">
+				<div class="search-table">
+					<form name="filter-representanes" id="filter-representanes" action="/representantes">
+						<div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="estado" id="estado-filter">
+							   <option value="">Estado</option>
+							   <?php $statesArray = getStates(); ?>
+							   <?php foreach($statesArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="comision" id="comision-filter">
+							   <option value="">Comisiones</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					</form>				
+				</div>
 			</div>
-		</div>
-<!-- Fin filtros iniciativas -->
+			<!-- Fin filtros representantes -->	
+		
 <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 <div class='container'>
 	<main class="content av-content-small alpha units" itemtype="https://schema.org/Blog" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
@@ -228,3 +251,31 @@
    </div><!--end container-->
 </div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#partido-politico-filter").change( function() {
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#estado-filter").change( function() {
+			if(jQuery("#estado-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+	});
+</script>

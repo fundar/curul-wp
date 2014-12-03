@@ -10,14 +10,6 @@
 	
 	?>
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		    <!-- inicio mapa de representantes-->
-		   <div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
-		       <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
-					<div class="container">Mapa</div>
-                </div>
-		   </div>
-            <!-- fin mapa de representantes-->
-			
 			<!-- titulo-->
 			<div class="container top60">
 				<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
@@ -40,10 +32,11 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="estado" id="estado-filter">
 							   <option value="">Estado</option>
-							   <?php $statesArray = geStates(); ?>
+							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
@@ -51,10 +44,16 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="comision" id="comision-filter">
 							   <option value="">Comisiones</option>
-							   <option value="2">Seguridad P&uacute;blica</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->name;?>
+									</option>
+								<?php } ?>
 						   </select>
 					   </div>
 					</form>				
@@ -172,6 +171,15 @@
 					?>
 				</main>
 			</div><!--end container-->
+			
+			<!-- inicio mapa de representantes-->
+			<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
+		       <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
+					<div class="container">Mapa</div>
+                </div>
+			</div>
+            <!-- fin mapa de representantes-->
+            
 		</div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
 

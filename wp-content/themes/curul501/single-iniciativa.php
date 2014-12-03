@@ -67,11 +67,19 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							echo $voto[8]['ausente'];
+							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+							//$votos_decode =	json_decode($votos,true);
+							$WorkingArray = json_decode(json_encode($votos),true);
+							$decode = json_decode($WorkingArray, true);
+							echo $decode[1]['total'];
+							echo $decode[2]['total'];
+							echo $decode[3]['total'];
+							echo $decode[3]['favor'];
+
+
+
+
 							
-
-
-
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -164,9 +172,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php $decode[8]['total'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php $decode[8]['total'];?>
 										</li >
 									</ul>
 								</div>
@@ -221,7 +229,7 @@
 									<ul>
 										<li class="hand-up">50000
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[1]['total'];?>
 										</li >
 									</ul>
 								</div>								
@@ -234,7 +242,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo$resArray[0];?></p>
+						<p class="num-votos-pleno"><?php echo $decode[8]['total'];?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
