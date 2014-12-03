@@ -111,11 +111,11 @@ a:hover{text-decoration:none;}
     margin: 0 auto;
     padding: 10px;
 }
-.post-archive {
-    background: none repeat scroll 0 0 #fff;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    padding: 20px 18px 0;
+.template-blog .blog-meta {
+    display: none;
+    float: left;
+    margin-left: 30px;
+    margin-right: 50px;
 }
 .template-blog .blog-meta {
     float: left;
@@ -399,16 +399,33 @@ a.representantes-home:hover{color:#724b83;}
 .datos {
     display: block;
     float: left;
-    font-family: colaborate-thinregular;
-    font-size: 13px;
+    font-family: colaborate-regular;
+    font-size: 14px;
     overflow: hidden;
+    padding: 0 9px;
     text-align: center;
     width: 100%;
+    word-wrap: normal;
+    color:#512B60;
 }
 span.datos{
     display: inline-block;
     margin-top: 4px;
     vertical-align: middle;
+}
+.temporizador > p {
+    font-family: colaborate-regular;
+    font-size: 12px;
+    line-height: 13px;
+    overflow: hidden;
+}
+p.estiloEstatusP {
+    display: block;
+    font-family: colaborate-regular;
+    font-size: 12px;
+    line-height: 13px;
+    padding: 21px 10px 5px 5px;
+    text-align: center;
 }
 .topTop {
     margin-top: -20px !important;
@@ -535,25 +552,27 @@ p.resemen-recientes-iniciativas {
     margin: 0;
     padding: 0;
 }
-.hands-vote ul{
-    margin:0;
-    padding:0;
+
+.hands-vote ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
 }
 .hands-vote li {
     font: 12px 'colaborate-regular';
     height: 18px;
+    margin-left: 14px;
     margin-top: 5px;
-    padding-left: 23px;
     vertical-align: middle;
 }
 
 li.hand-up {
-    background: url("images/hand-up.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("images/hand-up.png") no-repeat scroll 19px 0 rgba(0, 0, 0, 0);
     padding-top: 4px;
 }
 
 li.hand-down {
-    background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+    background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
     padding-top: 0;
 }
     /**silder home **/   
@@ -798,7 +817,7 @@ p.total-votos-pleno {
 }
 .logo-pp {
     float: left;
-    margin: 0 19px;
+    margin: 0 13px;
 }
 .griss {
     background: url("images/bg-boton-grafica.png") repeat scroll 0 0 rgb(231, 232, 234);
@@ -1008,6 +1027,7 @@ p.cpt-repre {
     float: left !important;
     margin-left: 22px !important;
     margin-top: -14px;
+    padding-left: 0 !important;
     width: 22.8% !important;
 }
 .no-padding-rep{padding:0;}
@@ -1111,7 +1131,20 @@ li.ir-sb {
 #footer {
     background: none repeat scroll 0 0 #432b4d;
 }
-
+/** loop-index.php blog **/
+.container_wrap {
+    border-top-width: 0;
+}
+div.tituloBlog {
+    border-bottom: 2px solid #ccc;
+    display: table;
+    margin: 20px auto;
+    padding: 0;
+}
+#top #main .sidebar {
+    border-left-width: 0;
+    padding-left: 25px;
+}
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
@@ -1231,6 +1264,9 @@ Mobile Styles
     li.navrepr-left {
     padding-left: 0px !important;
     }
+    .sidebar-cpt-representantes {
+    width: 100% !important;
+   }
     
     }
 

@@ -132,10 +132,7 @@
 			</div>
 			
 			<div class="textwidget sb-1">
-				<div class="linea-morado"></div>
-				<div class="tab-item-temas">
-				<p class="texto-img">Texto integro</p>
-				</div>			
+						
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
@@ -208,6 +205,17 @@
 									</ul>
 								</div>								
 							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pt-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[3]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[3]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>							
 							<div class="logo-pp">
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
 								<div class="hands-vote">
