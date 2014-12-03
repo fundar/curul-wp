@@ -227,7 +227,7 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">50000
+										<li class="hand-up"><?php echo $decode[1]['total'];?>
 										</li >										
 										<li class="hand-down"><?php echo $decode[1]['total'];?>
 										</li >
