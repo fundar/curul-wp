@@ -114,6 +114,12 @@
 												    $decode = json_decode($WorkingArray, true);
 													echo $decode[8]['total']; ?>
 													</div>
+													<div class="hands-vote">
+									
+													<li class="hand-up"><?phpecho $decode[8]['favor']; ?></li>										
+													<li class="hand-down"><?phpecho $decode[8]['contra']; ?></li>
+									
+													</div>
 												</div>
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
