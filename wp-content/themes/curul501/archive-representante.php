@@ -1,6 +1,5 @@
 <?php
 	global $avia_config, $more;
-	getRepresentatives();
 	$selectedOption = getParameterValueGET();
 	$data = getDataRepresentatives();
 	/*
