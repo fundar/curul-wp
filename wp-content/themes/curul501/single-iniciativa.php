@@ -132,10 +132,7 @@
 			</div>
 			
 			<div class="textwidget sb-1">
-				<div class="linea-morado"></div>
-				<div class="tab-item-temas">
-				<p class="texto-img">Texto integro</p>
-				</div>			
+						
 			</div>
 			<div class="textwidget sb-2">			
 				<div class="linea-morado"></div>
