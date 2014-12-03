@@ -72,6 +72,12 @@
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
 							echo $decode[1]['total'];
+							echo $decode[2]['total'];
+							echo $decode[3]['total'];
+							echo $decode[3]['favor'];
+
+
+
 
 							
 						?>
@@ -223,7 +229,7 @@
 									<ul>
 										<li class="hand-up">50000
 										</li >										
-										<li class="hand-down"><?php echo $decode[8]['total'];?>
+										<li class="hand-down"><?php echo $decode[1]['total'];?>
 										</li >
 									</ul>
 								</div>								
