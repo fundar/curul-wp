@@ -197,9 +197,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php echo $decode[4]['total'];?>
+										<li class="hand-up"><?php echo $decode[4]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php echo $decode[4]['total'];?>
+										<li class="hand-down"><?php echo $decode[4]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -208,9 +208,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php echo $decode[2]['total'];?>
+										<li class="hand-up"><?php echo $decode[2]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php echo $decode[2]['total'];?>
+										<li class="hand-down"><?php echo $decode[2]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -219,9 +219,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php echo $decode[1]['total'];?>
+										<li class="hand-up"><?php echo $decode[1]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php echo $decode[1]['total'];?>
+										<li class="hand-down"><?php echo $decode[1]['contra'];?>
 										</li >
 									</ul>
 								</div>								
