@@ -89,6 +89,9 @@
 														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
 														$elements = explode("|", $status_iniciativa);
 														$status_final=count($elements)-1;
+													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+														echo $presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug)
+
 														?>
 								
 																
