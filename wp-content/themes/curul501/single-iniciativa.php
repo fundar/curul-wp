@@ -71,15 +71,7 @@
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
-							echo $decode[1]['total'];
-							echo $decode[2]['total'];
-							echo $decode[3]['total'];
-							echo $decode[3]['favor'];
-
-
-
-
-							
+												
 						?>
 			<div class='container template-blog template-single-blog '>
 
@@ -172,9 +164,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[8]['total'];?>
+										<li class="hand-up"><?php echo $decode[7]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php $decode[8]['total'];?>
+										<li class="hand-down"><?php echo $decode[7]['contra'];?>
 										</li >
 									</ul>
 								</div>
@@ -183,9 +175,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[6]['favor'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[6]['contra'];?>
 										</li >
 									</ul>
 								</div>																
@@ -194,9 +186,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[5]['favor'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[5]['contra'];?>
 										</li >
 									</ul>
 								</div>								
@@ -205,9 +197,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[4]['total'];?>
 										</li >										
-										<li class="hand-down">2000
+										<li class="hand-down"><?php echo $decode[4]['total'];?>
 										</li >
 									</ul>
 								</div>								
@@ -216,9 +208,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up">5000
+										<li class="hand-up"><?php echo $decode[2]['total'];?>
 										</li >										
-										<li class="hand-down">20000
+										<li class="hand-down"><?php echo $decode[2]['total'];?>
 										</li >
 									</ul>
 								</div>								
