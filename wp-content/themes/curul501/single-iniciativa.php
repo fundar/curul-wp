@@ -71,6 +71,9 @@
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
+							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
+							$fecha = explode(" ", $fecha_votacion);
+
 												
 						?>
 			<div class='container template-blog template-single-blog '>
@@ -98,8 +101,8 @@
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
 						<ul class="sub-info">
-							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_fecha_votacion_tm', true); ?></li>
-							<li class="sub-info-li"><?php echo get_post_meta($post->ID, 'wp_presentada', true); ?> Legislatura</li>
+							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
+							<li class="sub-info-li">LXII Legislatura</li>
 						</ul>
 					</div>
                                          <?php endwhile; endif; ?>
