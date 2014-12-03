@@ -47,7 +47,7 @@ function getPip(lat, lng) {
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
 			
 			if(resultDisrtPip.length) {
-				jQuery(".map-info-representante").html("Estado: " +  sMarker.options.NOMBRE +"<br/>Distrito: " + resultDisrtPip[0].feature.properties.DISTRITO);
+				jQuery(".map-info-representante").html("<strong>Estado</strong><br/>" +  sMarker.options.NOMBRE +"<br/><strong>Distrito</strong><br/>" + resultDisrtPip[0].feature.properties.DISTRITO + "");
 				jQuery("#loading-gif").hide();
 			} else {
 				console.log("Asegurate de estar en territorio mexicano");
