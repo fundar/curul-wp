@@ -159,9 +159,7 @@
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
 														if($presentada_representante != "") { echo $presentada_representante;} 
 														?>
-													<div class="photo-avatar"><img src="<?php echo $avatar_url;?>"></div>
-													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
-															<span>PRI</span>
+													
 													
 													</div>
 												</div>													
