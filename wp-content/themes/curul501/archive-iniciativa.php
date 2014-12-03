@@ -157,7 +157,7 @@
 														<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
 														if($presentada_partido != "") { echo $presentada_partido.", ";} 
-														if($presentada_representante != "") { echo $presentada_representante;} 
+														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
 														?>
 													
 													
