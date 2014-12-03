@@ -212,9 +212,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pt-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php echo $decode[4]['favor'];?>
+										<li class="hand-up"><?php echo $decode[3]['favor'];?>
 										</li >										
-										<li class="hand-down"><?php echo $decode[4]['contra'];?>
+										<li class="hand-down"><?php echo $decode[3]['contra'];?>
 										</li >
 									</ul>
 								</div>								
