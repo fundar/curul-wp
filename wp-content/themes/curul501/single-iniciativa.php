@@ -71,6 +71,7 @@
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
 							$decode = json_decode($WorkingArray, true);
+							echo $decode[1]['total'];
 
 							
 						?>
@@ -165,9 +166,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[7]['favor']; ?>
+										<li class="hand-up"><?php $decode[8]['total'];?>
 										</li >										
-										<li class="hand-down"><?php $decode[7]['contra']; ?>
+										<li class="hand-down">2000
 										</li >
 									</ul>
 								</div>
@@ -176,9 +177,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[6]['favor']; ?>
+										<li class="hand-up">5000
 										</li >										
-										<li class="hand-down"><?php $decode[6]['contra']; ?>
+										<li class="hand-down">2000
 										</li >
 									</ul>
 								</div>																
@@ -187,9 +188,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[5]['favor']; ?>
+										<li class="hand-up">5000
 										</li >										
-										<li class="hand-down"><?php $decode[5]['contra']; ?>
+										<li class="hand-down">2000
 										</li >
 									</ul>
 								</div>								
@@ -198,9 +199,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[4]['favor']; ?>
+										<li class="hand-up">5000
 										</li >										
-										<li class="hand-down"><?php $decode[4]['contra']; ?>
+										<li class="hand-down">2000
 										</li >
 									</ul>
 								</div>								
@@ -209,9 +210,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[2]['favor']; ?>
+										<li class="hand-up">5000
 										</li >										
-										<li class="hand-down"><?php $decode[2]['contra']; ?>
+										<li class="hand-down">20000
 										</li >
 									</ul>
 								</div>								
@@ -220,9 +221,9 @@
 								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
 								<div class="hands-vote">
 									<ul>
-										<li class="hand-up"><?php $decode[1]['favor']; ?>
+										<li class="hand-up">50000
 										</li >										
-										<li class="hand-down"><?php $decode[1]['contra']; ?>
+										<li class="hand-down">2000
 										</li >
 									</ul>
 								</div>								
