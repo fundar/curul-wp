@@ -19,12 +19,16 @@ function setMap() {
 		});
 		
 		layer.on('click', function(e) {
+			jQuery("#loading-gif").show();
+			
 			map.removeLayer(sMarker);
 			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { CVE_ENT : feature.properties.CVE_ENT, NOMBRE : feature.properties.NOMBRE }).addTo(map);
 			sMarker.bindPopup("<div class='map-info-representante'>" + feature.properties.NOMBRE + "</div>").openPopup();
 			
 			getPip(e.latlng.lat, e.latlng.lng);
+			
+			jQuery("#loading-gif").hide();
 		});
 	}
 	

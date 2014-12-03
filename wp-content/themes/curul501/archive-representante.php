@@ -11,7 +11,10 @@
 	?>
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<style> #map {  border-top: 2px solid #48265C; border-bottom: 2px solid #48265C;} </style>
+	<style>
+		#map {  border-top: 2px solid #48265C; border-bottom: 2px solid #48265C;}
+		#loading-gif { z-index:2; position:absolute; top:48%; left:48%; }
+	</style>
 	
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
@@ -179,6 +182,7 @@
 				<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
 				   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
 						<div id="map" style="width: 100%; height:500px;"></div>
+						<img src="<?php echo get_stylesheet_directory_uri() ?>/images/loading.gif" id="loading-gif">
 					</div>
 				</div>
 				<!-- fin mapa de representantes-->
@@ -193,6 +197,8 @@
 	
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+		jQuery("#loading-gif").hide();
+		
 		jQuery("#partido-politico-filter").change( function() {
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#estado-filter").remove();
