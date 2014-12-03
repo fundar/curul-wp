@@ -150,7 +150,12 @@
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
 														<?php
-														$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
+														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
+														if($presentada_partido != "") { echo $presentada_partido.", ";} 
+														if($presentada_representante != "") { echo $presentada_representante;} 
 														?>
 													<div class="photo-avatar"><img src="<?php echo $avatar_url;?>"></div>
 													<div class="logo-partido"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/18px-PRI.png">
