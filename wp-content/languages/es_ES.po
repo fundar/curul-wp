@@ -4619,7 +4619,7 @@ msgstr "Acceder"
 
 #: wp-includes/general-template.php:286
 msgid "Log out"
-msgstr "Desconectar"
+msgstr "Salir"
 
 #: wp-includes/general-template.php:407 wp-login.php:882
 msgid "Remember Me"
