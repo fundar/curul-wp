@@ -111,11 +111,11 @@ a:hover{text-decoration:none;}
     margin: 0 auto;
     padding: 10px;
 }
-.post-archive {
-    background: none repeat scroll 0 0 #fff;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    padding: 20px 18px 0;
+.template-blog .blog-meta {
+    display: none;
+    float: left;
+    margin-left: 30px;
+    margin-right: 50px;
 }
 .template-blog .blog-meta {
     float: left;
@@ -798,7 +798,7 @@ p.total-votos-pleno {
 }
 .logo-pp {
     float: left;
-    margin: 0 19px;
+    margin: 0 13px;
 }
 .griss {
     background: url("images/bg-boton-grafica.png") repeat scroll 0 0 rgb(231, 232, 234);
@@ -1111,7 +1111,20 @@ li.ir-sb {
 #footer {
     background: none repeat scroll 0 0 #432b4d;
 }
-
+/** loop-index.php blog **/
+.container_wrap {
+    border-top-width: 0;
+}
+div.tituloBlog {
+    border-bottom: 2px solid #ccc;
+    display: table;
+    margin: 20px auto;
+    padding: 0;
+}
+#top #main .sidebar {
+    border-left-width: 0;
+    padding-left: 25px;
+}
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
