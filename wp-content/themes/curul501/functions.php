@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	$p2_custom_post_type = "representante"; //iniciativa|representante
+	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
     
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
