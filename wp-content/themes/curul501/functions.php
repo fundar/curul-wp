@@ -388,6 +388,26 @@ function getDataRepresentatives() {
 	return $data;
 }
 
+/*get data by parameter $_GET */
+function getDataIniciativas() {
+	if(isset($_GET["partido-politico"])) {
+		$result = getInitiativasByPoliticalParty($_GET["partido-politico"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["estado"])) {
+		$result = getRepresentativesByState($_GET["estado"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["comision"])) {
+		$result = getRepresentativesByCommission($_GET["comision"]);
+		$data = $result["loop"];
+	} else {
+		return false;
+	}
+	
+	return $data;
+}
+
+
+
 
 /*get data by parameter $_GET */
 function getParameterValueGET() {
