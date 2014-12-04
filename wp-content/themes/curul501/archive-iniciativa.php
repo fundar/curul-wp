@@ -33,13 +33,18 @@
 					       <option value="2">Proponente(s)</option>
 					       <option value="2">Opcion 2</option>														
 				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
-				       </select>
-			       </div>
+			       </div>			       	   			   
+				   <div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>				   		   
 			       <div id="filter">										
 				       <select class="sorter-comision sort" name="category">
 					       <option value="1">Comisi&oacute;n dictaminadora</option>
