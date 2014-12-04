@@ -230,7 +230,7 @@ run.pieChart = function(votos, urlBase){
       legendPanel = {
           width: 200
       },
-      width = 750 - margins.left - margins.right - legendPanel.width,
+      width = 460 - margins.left - margins.right - legendPanel.width,
       height = 250 - margins.top - margins.bottom,
       dataset = [ { name: "Total de " + data.tag + ":" + data.total, data: data.partidos } ],
       series = dataset.map(function (d) { return d.name; }),
