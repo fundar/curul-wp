@@ -132,8 +132,10 @@ function getRepresentativesByCommission($commission) {
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
 	$posts_per_page = 5;
-	$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	//$paged  = (get_query_var('page')) ? get_query_var('page') : 1;
+	//$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged  = (get_query_var('page')) ? get_query_var('page') : 1;
+	
+	die(var_dump($paged));
 	$offset = ($posts_per_page * $paged ) - $posts_per_page;
 	
 	$args   = array(
