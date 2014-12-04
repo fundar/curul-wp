@@ -339,7 +339,7 @@
 				</div>
 			</div>
 
-			<div ng-app="" ng-controller="run.representantes_ctr">
+			<!--div ng-app="" ng-controller="run.representantes_ctr">
 			    <p>Name: <input type="text" ng-model="full_name"></p>
 			    <table>
 			      <tr>
@@ -358,8 +358,8 @@
 			      </tr>
 
 			    </table>
-			  </div>
-			  
+			  </div-->
+
 		</div>
 
 		<?php } ?>
