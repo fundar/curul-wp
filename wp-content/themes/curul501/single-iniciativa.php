@@ -5,7 +5,7 @@
 	  height: 375px;
 	}
 
-	#barchart{ opacity: 0; z-index: -10}
+	#barchart{ opacity: 0;}
 
 	table{
 	  border: 0.3px solid #ccc;
@@ -20,7 +20,6 @@
 	.axis path {
 	    fill: none;
 	}
-
 
 	#tooltip {
 	    position: relative;
@@ -338,6 +337,28 @@
 				  <p><span id="value">100</span> </p>
 				</div>
 			</div>
+
+			<!--div ng-app="" ng-controller="run.representantes_ctr">
+			    <p>Name: <input type="text" ng-model="full_name"></p>
+			    <table>
+			      <tr>
+			        <th>No. Representante</th>
+			        <th>Nombre</th>
+			        <th>Partido</th>
+			        <th>Tipo</th>
+			        <th>Zona</th>
+			      </tr>
+			      <tr ng-repeat="r in representantes | filter:full_name">
+			        <td> {{ (r.id_representative ) }} </td>
+			        <td> {{ (r.nombre ) }} </td>
+			        <td> {{ (r.partido ) }} </td>
+			        <td> {{ (r.tipo ) }} </td>
+			        <td> {{ (r.zone_state ) }} </td>
+			      </tr>
+
+			    </table>
+			  </div-->
+
 		</div>
 
 		<?php } ?>
