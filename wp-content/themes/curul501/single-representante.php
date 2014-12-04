@@ -111,12 +111,17 @@
 								<?php if($initiatives["count"] == 0) { ?>
 									<p>No se encuentran iniciativas relacionadas</p>
 								<?php } else { ?>
-									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
+									<?php foreach($initiatives["loop"]->posts as $key => $initiative) { ?>
 										<p>
 											<a class="" href="<?php echo get_permalink($initiative->ID); ?>" title="<?php echo $initiative->post_title;?>">
 												<?php echo $initiative->post_title;?>
 											</a>
 										</p>
+										<?php if($key == 4) break; ?>
+									<?php } ?>
+									
+									<?php if($initiatives["count"] > 5) { ?>
+										<p class="more-initiatives">Mostrando 5 iniciativas de <?php echo $initiatives["count"];?></p>
 									<?php } ?>
 								<?php } ?>
 							</li>
@@ -178,7 +183,7 @@
 									<p>No hay información disponible</p>
 								<?php } ?>
 						</ul>
-					<? the_content(); ?>
+					<?php the_content(); ?>
 					</div>
 				<?php endwhile; endif; ?>
 		</article>
