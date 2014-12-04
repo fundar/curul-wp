@@ -187,7 +187,7 @@ run.pieChart = function(votos, urlBase){
 
     function clear(){
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
-      jQuery("#barchart").animate({ opacity: 0 }, 500)
+      jQuery("#bar_chart").animate({ opacity: 0 }, 500)
       totalUpdate("500");
 
     }
@@ -220,7 +220,7 @@ run.pieChart = function(votos, urlBase){
     }
    
     plot = function(data){
-      d3.select("#barchart").remove();
+      d3.select("#bar_chart").remove();
       var margins = {
         top: 12,
         left: 48,
