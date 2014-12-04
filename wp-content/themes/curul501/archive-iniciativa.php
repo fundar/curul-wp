@@ -90,7 +90,7 @@
 														$elements = explode("|", $status_iniciativa);
 														$status_final=count($elements)-1;
 													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
-														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug)
+														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
 
 														?>
 								

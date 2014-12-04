@@ -11,8 +11,6 @@ function setMap() {
 		id: 'examples.map-20v6611k'
 	}).addTo(map);
 	
-	//fundarmexico.k9jdb8i3
-	
 	function onEachFeature(feature, layer) {
 		layer.setStyle({
 			fillOpacity: 0, opacity: 0.1, weight: 1.2, color: "#432B4D", fillColor: "#3E2F52"

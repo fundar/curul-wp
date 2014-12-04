@@ -159,6 +159,17 @@ function getRepresentativesByPoliticalParty($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get representatives*/
+function getRepresentatives() {
+	$args  = array('post_type' => 'representante');
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	echo json_encode($loop->posts);
+	exit;
+	return array("loop" => $loop, "count" => $count);
+}
+
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
