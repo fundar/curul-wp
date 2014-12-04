@@ -135,6 +135,8 @@ run.pieChart = function(votos, urlBase){
       center = pie_chart.append("circle")
           .attr("r", radius / 3)
           .on("click", zoomOut)
+          .style("fill", "#fff")
+          .style("fill-opacity", 0);
 
       center.append("title")
             .text("Volver");  
