@@ -1,4 +1,10 @@
-circle,path { cursor: pointer;  }
+*{
+  z-index: 1;
+}
+circle,
+path { 
+  cursor: pointer; 
+}
 
 circle {
   fill: none;
