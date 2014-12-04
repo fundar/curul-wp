@@ -187,6 +187,11 @@
 				<?php endwhile; endif; ?>
 		</article>
 	</main>
+
+
+	<div class="graficos">
+		
+	</div>
 	
 	<!--sidebar-->
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
