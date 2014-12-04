@@ -134,7 +134,7 @@ function getRepresentativesByState($state) {
 	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	$args  = array(
 		'post_type' => 'representante',
-		'posts_per_page' => 10,
+		'posts_per_page' => 2,
 		'paged' => $paged,
 		'meta_query' => array(
 			array (
