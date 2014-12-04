@@ -109,7 +109,7 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -131,7 +131,7 @@ function getRepresentativesByCommission($commission) {
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -152,7 +152,7 @@ function getRepresentativesByState($state) {
 
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -164,7 +164,8 @@ function getRepresentativesByPoliticalParty($slug) {
 			)
 		)
 	);
-
+	
+	
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
 	
