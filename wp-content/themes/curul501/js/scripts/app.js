@@ -3,7 +3,7 @@ run.pieChart = function(votos, urlBase){
       start = false;
       current_data = {}
 
-      var margin = {top: 230, right: 280, bottom: 230, left: 280},
+      var margin = {top: 200, right: 250, bottom: 200, left: 250},
           radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 40;
 
       var hue = d3.scale.category10();
