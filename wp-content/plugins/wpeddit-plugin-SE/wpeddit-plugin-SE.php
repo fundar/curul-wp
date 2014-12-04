@@ -743,11 +743,11 @@ function wpeddit_hot_comments($posts){
 }
 
 
-    wp_reset_query();
 
 add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
-	if ( $query->query['post_type']  == 'Iniciativas'){
+    
+	if ( is_post_type_archive('Iniciativas') ){
     $newcontent = epic_reddit_voting();
 	$content = $newcontent . $content;
 	}
