@@ -173,9 +173,9 @@
 					
 					<?php
 						if($data) {
-							wp_pagenavi(array('query' => $data ));
+							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav', $data) . "</div>";
 						} else {
-							wp_pagenavi();
+							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
 						}
 					?>
 				</main>
