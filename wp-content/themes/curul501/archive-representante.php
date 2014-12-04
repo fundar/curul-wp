@@ -27,7 +27,7 @@
 			<!--Inicio filtros representantes -->
 			<div class="container box-menu">
 				<div class="search-table">
-					<form name="filter-representanes" id="filter-representanes">
+					<form name="filter-representanes" id="filter-representanes" action="/representantes">
 						<div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
 							   <option value="">Partidos pol&iacute;ticos</option>
