@@ -1,10 +1,6 @@
 <style type="text/css">
 	#barchart{ opacity: 0;}
 
-	table{
-	  border: 0.3px solid #ccc;
-	}
-
 	#google-visualization-errors-0{ display: none; }
 
 	.partidos path{ fill: none; }
@@ -35,10 +31,14 @@
 	}
 
 	#pie_chart{
-	  width: 560px;
+	  width: 460px;
 	  float: left;
 	}
-	
+
+	#bar_chart{
+		float:left;
+	}
+
 	circle,
 	path { 
 	  cursor: pointer; 
