@@ -335,6 +335,8 @@
 	      )
 	    ); ?>;
 
+		var votos = <?php echo json_encode( array_values($voto) ); ?>;
+
 	    var representantes = <?php echo json_encode(
 	      array (
 	        0 => 
