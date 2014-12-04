@@ -161,7 +161,6 @@ function getRepresentativesByState($state) {
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	die(var_dump($paged));
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
