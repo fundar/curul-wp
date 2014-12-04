@@ -308,13 +308,6 @@
 						</div>
 					</div>
 			</div>
-	<script>
-		var votos = <?php echo json_encode( array_values($voto) ); ?>;
-		var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
-
-	    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-	    run.representantes_load(representantes)
-  	</script>	
 			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
@@ -326,6 +319,13 @@
 				  <p><span id="value">100</span> </p>
 				</div>
 			</div>
+			<script>
+				var votos = <?php echo json_encode( array_values($voto) ); ?>;
+				var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+
+			    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+			    run.representantes_load(representantes)
+		  	</script>	
 
 			<!--div ng-app="" ng-controller="run.representantes_ctr">
 			    <p>Name: <input type="text" ng-model="full_name"></p>
