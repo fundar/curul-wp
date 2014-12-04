@@ -323,9 +323,23 @@
 						</div>
 					</div>
 			</div>
-			
+			<?php var_dump($votos);?>
 	<script>
-	    var votos = <?php echo json_encode($voto); ?>;
+	    var votos = <?php echo json_encode(
+	      array (
+	        0 => array('id_voto' => 18,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 8,'tipo' => 'sp','favor' => 0,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 0,'total' => 0), 
+	        1 => array('id_voto' => 17,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 6,'tipo' => 'mc','favor' => 15,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 3,'total' => 18),
+	        2 => array('id_voto' => 16,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 7,'tipo' => 'pna','favor' => 9,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 1,'total' => 10),
+	        3 => array('id_voto' => 15,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 5,'tipo' => 'pt','favor' => 14,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 1,'total' => 15),
+	        4 => array('id_voto' => 14,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 3,'tipo' => 'pvem','favor' => 22,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 6,'total' => 28),
+	        5 => array('id_voto' => 13,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 2,'tipo' => 'prd','favor' => 73,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 29,'total' => 102),
+	        6 => array('id_voto' => 12,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 4,'tipo' => 'pan','favor' => 104,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 10,'total' => 114),
+	        7 => array('id_voto' => 11,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 1,'tipo' => 'pri','favor' => 186,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 27,'total' => 213),
+	        8 => array('id_voto' => 10,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 0,'tipo' => 'total','favor' => 423,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 77,'total' => 500)
+	      )
+	    ); ?>;
+
+		
 	    
 	    var representantes = <?php echo json_encode(
 	      array (
@@ -7332,8 +7346,8 @@
 	      )
 	    ); ?>;
 
-	    //run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-	    //run.representantes_load(representantes)
+	    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+	    run.representantes_load(representantes)
   	</script>	
 			
 		<div class="container griss">
