@@ -176,7 +176,7 @@ run.pieChart = function(votos, urlBase){
 
     function clear(){
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
-      $("#barchart").animate({ opacity: 0 }, 500)
+      jQuery("#barchart").animate({ opacity: 0 }, 500)
       totalUpdate("500");
 
     }
@@ -361,7 +361,7 @@ run.pieChart = function(votos, urlBase){
 
     
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
-      $("#barchart").animate({ opacity: 1 }, 1000)
+      jQuery("#barchart").animate({ opacity: 1 }, 1000)
      
     }
     // Zoom to the specified new root.
@@ -445,6 +445,6 @@ run.pieChart = function(votos, urlBase){
 }
 
 run.representantes_load = function(representantes){
-  this.representantes_ctr = function ($scope) { $scope.representantes = representantes; }
+  this.representantes_ctr = function (jQueryscope) { jQueryscope.representantes = representantes; }
 }
 
