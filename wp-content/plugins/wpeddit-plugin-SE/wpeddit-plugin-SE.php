@@ -746,7 +746,7 @@ function wpeddit_hot_comments($posts){
 
 add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
-    wp_reset_query();
+    
 	if ( $query->query['post_type']  == 'Iniciativas'){
     $newcontent = epic_reddit_voting();
 	$content = $newcontent . $content;
