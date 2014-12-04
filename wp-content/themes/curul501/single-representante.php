@@ -103,10 +103,6 @@
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
-							<li class="bullet-arrow">Tipo de elecci&oacute;n
-								<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
-							</li>
-							
 							<li class="bullet-arrow">Comisiones a las que pertenece
 								<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
 							</li>
@@ -115,12 +111,17 @@
 								<?php if($initiatives["count"] == 0) { ?>
 									<p>No se encuentran iniciativas relacionadas</p>
 								<?php } else { ?>
-									<?php foreach($initiatives["loop"]->posts as $initiative) { ?>
+									<?php foreach($initiatives["loop"]->posts as $key => $initiative) { ?>
 										<p>
 											<a class="" href="<?php echo get_permalink($initiative->ID); ?>" title="<?php echo $initiative->post_title;?>">
 												<?php echo $initiative->post_title;?>
 											</a>
 										</p>
+										<?php if($key == 4) break; ?>
+									<?php } ?>
+									
+									<?php if($initiatives["count"] > 5) { ?>
+										<p class="more-initiatives">Mostrando 5 iniciativas de <?php echo $initiatives["count"];?></p>
 									<?php } ?>
 								<?php } ?>
 							</li>
@@ -182,7 +183,7 @@
 									<p>No hay información disponible</p>
 								<?php } ?>
 						</ul>
-					<? the_content(); ?>
+					<?php the_content(); ?>
 					</div>
 				<?php endwhile; endif; ?>
 		</article>
@@ -202,18 +203,26 @@
 					
 					<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
 					<br/><br/>
-					
-					<?php if($district == "") { ?>
-						Circunscripción: <?php echo $circum;?>
-					<?php } else { ?>
-						Distrito: <?php echo $district;?>
-					<?php } ?>
-				</li>	
+				</li>
 				
-				<li class="correo-sb">
-					<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
-						<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
-					</a>
+				<li class="bullet-arrow">Tipo de elecci&oacute;n
+					<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
+				</li>
+							
+				<li class="bullet-arrow">
+					<?php if($district == "") { ?>
+						Circunscripción<p><?php echo $circum;?></p>
+					<?php } else { ?>
+						Distrito<p><?php echo $district;?></p>
+					<?php } ?>
+				</li>
+				
+				<li class="bullet-arrow">Correo
+					<p>
+						<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
+						</a>
+					</p>
 				</li>
 				
 				<?php if(get_post_meta($post->ID, 'wp_twitter', true) != "") { ?>
