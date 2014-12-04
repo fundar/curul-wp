@@ -202,13 +202,15 @@
 					
 					<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
 					<br/><br/>
-					
+				</li>
+				
+				<li class="correo-sb">
 					<?php if($district == "") { ?>
 						Circunscripción: <?php echo $circum;?>
 					<?php } else { ?>
 						Distrito: <?php echo $district;?>
 					<?php } ?>
-				</li>	
+				</li>
 				
 				<li class="correo-sb">
 					<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
