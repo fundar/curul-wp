@@ -1,6 +1,7 @@
 var run = {} 
 run.pieChart = function(votos, urlBase){
       start = false;
+      current_data = {}
 
       var margin = {top: 230, right: 280, bottom: 230, left: 280},
           radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 40;
@@ -127,8 +128,9 @@ run.pieChart = function(votos, urlBase){
           .attr("r", radius / 3)
           .style("fill", "#fff")
 
+      total_inicial = "500"
       total = pie_chart.append("text")
-          .text(function(d){return "500"})
+          .text(function(d){return total_inicial })
           .attr("font-family", "sans-serif")
           .attr("font-size", radius / 3)
           .attr("text-anchor", "middle")
@@ -375,6 +377,7 @@ run.pieChart = function(votos, urlBase){
     }
     // Zoom to the specified new root.
     function zoom(root, p) {
+      current_data = p
       if(root.parent == undefined) clear()
       if (document.documentElement.__transition__) return;
       // Rescale outside angles to match the new layout.
