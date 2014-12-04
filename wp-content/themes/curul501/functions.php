@@ -154,7 +154,7 @@ function getRepresentativesByState($state) {
 function getInitiativasByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
-		'post_type' => 'representante',
+		'post_type' => 'iniciativa',
 		'posts_per_page' => 10,
 		'paged' => $paged,
 		'meta_query' => array(
