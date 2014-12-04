@@ -325,7 +325,7 @@
 			</div>
 			
 	<script>
-	    var votos = <?php echo json_encode( $votos ); ?>;
+	    var votos = <?php echo json_encode($votos); ?>;
 	    
 	    var representantes = <?php echo json_encode(
 	      array (
@@ -7332,8 +7332,8 @@
 	      )
 	    ); ?>;
 
-	    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-	    run.representantes_load(representantes)
+	    //run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+	    //run.representantes_load(representantes)
   	</script>	
 			
 		<div class="container griss">
