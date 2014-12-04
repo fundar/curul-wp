@@ -109,7 +109,7 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
-	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -131,19 +131,11 @@ function getRepresentativesByCommission($commission) {
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
-	$posts_per_page = 5;
-	//$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$paged  = (get_query_var('page')) ? get_query_var('page') : 1;
-	
-	die(var_dump($paged));
-	$offset = ($posts_per_page * $paged ) - $posts_per_page;
-	
-	$args   = array(
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
 		'post_type' => 'representante',
-		'posts_per_page' => $posts_per_page,
-		'showposts' => $posts_per_page,
+		'posts_per_page' => 10,
 		'paged' => $paged,
-		'offset' => $offset,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
