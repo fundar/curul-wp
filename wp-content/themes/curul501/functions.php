@@ -131,11 +131,10 @@ function getRepresentativesByCommission($commission) {
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
-	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'representante',
-		'posts_per_page' => 5,
-		'page' => $paged,
+		'paged' => $paged,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
