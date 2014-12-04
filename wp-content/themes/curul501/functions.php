@@ -138,8 +138,6 @@ function getRepresentativesByState($state) {
 	$args   = array(
 		'post_type' => 'representante',
 		'posts_per_page' => $posts_per_page,
-		'paged' => $paged,
-		'offset' => $offset,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
