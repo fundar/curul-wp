@@ -67,20 +67,265 @@
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
- 	<script>
-	    var votos = <?php echo json_encode(
-	      array (
-	        0 => array('id_voto' => 18,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 8,'tipo' => 'sp','favor' => 0,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 0,'total' => 0), 
-	        1 => array('id_voto' => 17,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 6,'tipo' => 'mc','favor' => 15,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 3,'total' => 18),
-	        2 => array('id_voto' => 16,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 7,'tipo' => 'pna','favor' => 9,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 1,'total' => 10),
-	        3 => array('id_voto' => 15,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 5,'tipo' => 'pt','favor' => 14,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 1,'total' => 15),
-	        4 => array('id_voto' => 14,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 3,'tipo' => 'pvem','favor' => 22,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 6,'total' => 28),
-	        5 => array('id_voto' => 13,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 2,'tipo' => 'prd','favor' => 73,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 29,'total' => 102),
-	        6 => array('id_voto' => 12,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 4,'tipo' => 'pan','favor' => 104,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 10,'total' => 114),
-	        7 => array('id_voto' => 11,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 1,'tipo' => 'pri','favor' => 186,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 27,'total' => 213),
-	        8 => array('id_voto' => 10,'id_contador_voto' => 1,'id_initiative' => 8,'id_political_party' => 0,'tipo' => 'total','favor' => 423,'contra' => 0,'abstencion' => 0,'quorum' => 0,'ausente' => 77,'total' => 500)
-	      )
-	    ); ?>;
+ 	
+		<div class="container top60">										     
+						<h1 class="entry-title-yellow">Iniciativas</h1>
+						<div class="line-amarilla"> </div>
+		</div>
+
+<!--Inicio filtros iniciativas -->
+		<div class="container box-menu">
+			<div class="search-table">
+				<div id="filter">
+				       <select class="sorter-tema sort" name="category">
+					       <option value="1">Tema</option>
+					       <option value="2">Tema 2</option>							
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-proponente sort" name="category">
+					       <option value="2">Proponente(s)</option>
+					       <option value="2">Opcion 2</option>														
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-partido sort" name="category">
+					       <option value="1">Partido</option>
+					       <option value="2">PRI</option>														
+				       </select>
+			       </div>
+			       <div id="filter">										
+				       <select class="sorter-comision sort" name="category">
+					       <option value="1">Comisi&oacute;n dictaminadora</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-turno sort" name="category">
+					       <option value="1">Fecha de elecci&oacute;n</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
+				       </select>
+			       </div>
+			       <div id="filter">				
+				       <select class="sorter-votacion sort" name="category">
+					       <option value="1">Fecha de votaci&oacute;n</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 fgbhfgh</option>	
+				       </select>
+			       </div>
+			       <div id="filter">										
+				       <select class="sorter-estado sort" name="category">
+					       <option value="1">Estado actual</option>
+					       <option value="2">Opcion 1</option>
+					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
+				       </select>
+			       </div>					
+			</div>
+		</div>
+<!-- Fin filtros iniciativas -->		
+		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		        <?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : the_post(); ?>
+						<?php
+							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+							$elements = explode("|", $status_iniciativa);
+   						    $status_final=count($elements)-1;
+							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+							$representantes	        = get_post_meta($post->ID, 'wp_votos_representantes', true);
+							//$votos_decode =	json_decode($votos,true);
+							$WorkingArray = json_decode(json_encode($votos),true);
+							$decode = json_decode($WorkingArray, true);
+							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
+							$explode = explode(" ", $fecha_votacion);
+							$fecha = $explode[0];
+
+												
+						?>
+			<div class='container template-blog template-single-blog '>
+
+				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
+				        <header class="entry-content-header">
+						<h1 itemprop="headline" class="post-title entry-title">
+							<?php the_title(); ?>
+						</h1>
+						<div class="linea-morado"></div>
+						<h3 itemprop="headline" class="post-title entry-title">
+							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
+						</h3>
+					</header>
+					<div class="entry-content no-voto" itemprop="text">
+						<ul class="lista-iniciativas">
+							<li class="bullet-arrow">Comisiones
+							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+							</li>
+							<li class="bullet-arrow">Propuesta por
+							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
+							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
+							<?php if($presentada_representante != "") { echo $presentada_representante;} ?></p></li>
+						</ul>
+						<? the_content(); ?>					
+						<div class="pleca-sub-info"></div>
+						<ul class="sub-info">
+							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
+							<li class="sub-info-li">LXII Legislatura</li>
+						</ul>
+					</div>
+                                         <?php endwhile; endif; ?>
+				</main>
+					
+				<!--end content-->
+				
+                <!-- inicio barra leteral derecha -->
+		<aside class="sidebar sidebar_right three alpha units" role="complementary">
+			<div class="sidebar-votos">
+				<p class="vota">Vota</p>
+				<p class="encurul"> en curul</p>
+			</div>
+			<div class="textwidget share-sidebar-vota">
+			         <?php avia_social_share_links(); ?>
+			</div>
+			<!-- empieza sidebar-->
+			<div class="textwidget sb">
+				<div class="linea-morado"></div>
+				<div class="tab-item-temas">
+			        <p class="tema-img"> Temas:</p>
+				<p class="parrafo-temas"><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_topics', true)); ?>
+				</p>
+				</div>
+				
+			</div>
+			
+			<div class="textwidget sb-1">
+						
+			</div>
+			<div class="textwidget sb-2">			
+				<div class="linea-morado"></div>
+				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>" target="_blank"> <p class="gaceta-img">Gaceta parlamentaria</p></a>
+			</div>
+		</aside>
+		<!-- votaciones en pleno -->
+										<?php if($voto != "") {
+										foreach($voto as $value) {
+											$resArray = explode(":", $value->total);
+											}
+											?>
+										
+		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
+			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
+					<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
+						<div class="flex_cell_inner">
+						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+						<div class="avia_textblock " itemprop="text">
+						<p class="titulos-voto">Votaci&oacute;n <span>en pleno</span> </p>
+						</div>
+						</section>
+						</div>
+					</div>				
+					<div class="flex_cell no_margin av_three_fifth avia-builder-el-3 el_after_av_cell_one_fifth el_before_av_cell_one_fifth " style="vertical-align:top;padding:0 10px 0 10px ;">
+						<div class="flex_cell_inner">
+						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+						<div class="avia_textblock " itemprop="text">
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[7]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[7]['contra'];?>
+										</li >
+									</ul>
+								</div>
+							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[6]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[6]['contra'];?>
+										</li >
+									</ul>
+								</div>																
+							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[5]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[5]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[4]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[4]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pt-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[3]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[3]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>							
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[2]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[2]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>
+							<div class="logo-pp">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
+								<div class="hands-vote">
+									<ul>
+										<li class="hand-up"><?php echo $decode[1]['favor'];?>
+										</li >										
+										<li class="hand-down"><?php echo $decode[1]['contra'];?>
+										</li >
+									</ul>
+								</div>								
+							</div>			
+						</div>
+						</section>
+						</div>
+					</div>				
+					<div class="flex_cell no_margin av_one_fifth avia-builder-el-5 el_after_av_cell_three_fifth avia-builder-el-last " style="vertical-align:top;padding:0 0 0 10px ;">
+						<div class="flex_cell_inner">
+						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+						<div class="avia_textblock " itemprop="text">
+						<p class="num-votos-pleno"><?php echo $decode[8]['total'];?></p>
+						<p class="total-votos-pleno">Votos totales</p>			
+						</div>
+						</section>
+						</div>
+					</div>
+			</div>
+			
+	<script>
+	    var votos = <?php echo json_encode( $votos ); ?>;
 	    
 	    var representantes = <?php echo json_encode(
 	      array (
@@ -7090,262 +7335,6 @@
 	    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 	    run.representantes_load(representantes)
   	</script>	
-		<div class="container top60">										     
-						<h1 class="entry-title-yellow">Iniciativas</h1>
-						<div class="line-amarilla"> </div>
-		</div>
-
-<!--Inicio filtros iniciativas -->
-		<div class="container box-menu">
-			<div class="search-table">
-				<div id="filter">
-				       <select class="sorter-tema sort" name="category">
-					       <option value="1">Tema</option>
-					       <option value="2">Tema 2</option>							
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-proponente sort" name="category">
-					       <option value="2">Proponente(s)</option>
-					       <option value="2">Opcion 2</option>														
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-comision sort" name="category">
-					       <option value="1">Comisi&oacute;n dictaminadora</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-turno sort" name="category">
-					       <option value="1">Fecha de elecci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-votacion sort" name="category">
-					       <option value="1">Fecha de votaci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 fgbhfgh</option>	
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-estado sort" name="category">
-					       <option value="1">Estado actual</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
-				       </select>
-			       </div>					
-			</div>
-		</div>
-<!-- Fin filtros iniciativas -->		
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		        <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
-						<?php
-							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
-							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
-							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
-							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
-							$elements = explode("|", $status_iniciativa);
-   						    $status_final=count($elements)-1;
-							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
-							//$votos_decode =	json_decode($votos,true);
-							$WorkingArray = json_decode(json_encode($votos),true);
-							$decode = json_decode($WorkingArray, true);
-							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
-							$explode = explode(" ", $fecha_votacion);
-							$fecha = $explode[0];
-
-												
-						?>
-			<div class='container template-blog template-single-blog '>
-
-				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
-				        <header class="entry-content-header">
-						<h1 itemprop="headline" class="post-title entry-title">
-							<?php the_title(); ?>
-						</h1>
-						<div class="linea-morado"></div>
-						<h3 itemprop="headline" class="post-title entry-title">
-							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
-						</h3>
-					</header>
-					<div class="entry-content no-voto" itemprop="text">
-						<ul class="lista-iniciativas">
-							<li class="bullet-arrow">Comisiones
-							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
-							</li>
-							<li class="bullet-arrow">Propuesta por
-							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
-							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
-							<?php if($presentada_representante != "") { echo $presentada_representante;} ?></p></li>
-						</ul>
-						<? the_content(); ?>					
-						<div class="pleca-sub-info"></div>
-						<ul class="sub-info">
-							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
-							<li class="sub-info-li">LXII Legislatura</li>
-						</ul>
-					</div>
-                                         <?php endwhile; endif; ?>
-				</main>
-					
-				<!--end content-->
-				
-                <!-- inicio barra leteral derecha -->
-		<aside class="sidebar sidebar_right three alpha units" role="complementary">
-			<div class="sidebar-votos">
-				<p class="vota">Vota</p>
-				<p class="encurul"> en curul</p>
-			</div>
-			<div class="textwidget share-sidebar-vota">
-			         <?php avia_social_share_links(); ?>
-			</div>
-			<!-- empieza sidebar-->
-			<div class="textwidget sb">
-				<div class="linea-morado"></div>
-				<div class="tab-item-temas">
-			        <p class="tema-img"> Temas:</p>
-				<p class="parrafo-temas"><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_topics', true)); ?>
-				</p>
-				</div>
-				
-			</div>
-			
-			<div class="textwidget sb-1">
-						
-			</div>
-			<div class="textwidget sb-2">			
-				<div class="linea-morado"></div>
-				<a href="<?php echo get_post_meta($post->ID, 'wp_enlace_gaceta', true); ?>" target="_blank"> <p class="gaceta-img">Gaceta parlamentaria</p></a>
-			</div>
-		</aside>
-		<!-- votaciones en pleno -->
-										<?php if($voto != "") {
-										foreach($voto as $value) {
-											$resArray = explode(":", $value->total);
-											}
-											?>
-										
-		<div class="container votyacion-pleno" itemtype="https://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">			
-			<div id="av-layout-grid-1" class="av-layout-grid-container av-flex-cells avia-builder-el-0 avia-builder-el-no-sibling container_wrap fullsize">	
-					<div class="flex_cell no_margin av_one_fifth avia-builder-el-1 el_before_av_cell_three_fifth avia-builder-el-first pleno">
-						<div class="flex_cell_inner">
-						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-						<div class="avia_textblock " itemprop="text">
-						<p class="titulos-voto">Votaci&oacute;n <span>en pleno</span> </p>
-						</div>
-						</section>
-						</div>
-					</div>				
-					<div class="flex_cell no_margin av_three_fifth avia-builder-el-3 el_after_av_cell_one_fifth el_before_av_cell_one_fifth " style="vertical-align:top;padding:0 10px 0 10px ;">
-						<div class="flex_cell_inner">
-						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-						<div class="avia_textblock " itemprop="text">
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pri-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[7]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[7]['contra'];?>
-										</li >
-									</ul>
-								</div>
-							</div>
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pan-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[6]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[6]['contra'];?>
-										</li >
-									</ul>
-								</div>																
-							</div>
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/prd-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[5]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[5]['contra'];?>
-										</li >
-									</ul>
-								</div>								
-							</div>
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pvem-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[4]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[4]['contra'];?>
-										</li >
-									</ul>
-								</div>								
-							</div>
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pt-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[3]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[3]['contra'];?>
-										</li >
-									</ul>
-								</div>								
-							</div>							
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/panal-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[2]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[2]['contra'];?>
-										</li >
-									</ul>
-								</div>								
-							</div>
-							<div class="logo-pp">
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/images/pmc-54px.png">
-								<div class="hands-vote">
-									<ul>
-										<li class="hand-up"><?php echo $decode[1]['favor'];?>
-										</li >										
-										<li class="hand-down"><?php echo $decode[1]['contra'];?>
-										</li >
-									</ul>
-								</div>								
-							</div>			
-						</div>
-						</section>
-						</div>
-					</div>				
-					<div class="flex_cell no_margin av_one_fifth avia-builder-el-5 el_after_av_cell_three_fifth avia-builder-el-last " style="vertical-align:top;padding:0 0 0 10px ;">
-						<div class="flex_cell_inner">
-						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo $decode[8]['total'];?></p>
-						<p class="total-votos-pleno">Votos totales</p>			
-						</div>
-						</section>
-						</div>
-					</div>
-			</div>
-			
-			
 			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
