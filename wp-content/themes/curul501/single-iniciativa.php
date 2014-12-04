@@ -6,7 +6,7 @@
 	.partidos path{ fill: none; }
 
 	.axis path { fill: none; }
-
+/*
 	#tooltip {
 	    position: relative;
 	    text-align: center;
@@ -29,9 +29,9 @@
 	    font-size: 16px;
 	    line-height: 20px;
 	}
-
+*/
 	#pie_chart{
-	  width: 460px;
+	  width: 510px;
 	  float: left;
 	}
 
