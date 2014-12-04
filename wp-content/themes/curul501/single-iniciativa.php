@@ -34,6 +34,11 @@
 	    line-height: 20px;
 	}
 
+	#pie_chart{
+	  width: 560px;
+	  float: left;
+	}
+	
 	circle,
 	path { 
 	  cursor: pointer; 

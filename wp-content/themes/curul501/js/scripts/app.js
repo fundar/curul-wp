@@ -115,11 +115,13 @@ run.pieChart = function(votos, urlBase){
           .attr("r", radius + 40)
           .style("fill", "#f6f1f7");
 
-      border1.on("click", zoomOut)
 
       var border2 = pie_chart.append("circle")
           .attr("r", radius + 20)
           .style("fill", "#efe6f1");
+
+      border1.on("click", zoomOut)
+      border2.on("click", zoomOut)
 
       var back_center = pie_chart.append("circle")
           .attr("r", radius / 3)
@@ -155,15 +157,20 @@ run.pieChart = function(votos, urlBase){
     //})
 
     function zoomIn(p) {
+      if ( total[0][0].innerHTML != total_inicial){
+        zoomOut(p.parent); return 
+      }
+
       if (p.depth > 1) p = p.parent;
-      if (!p.children) return;
       totalUpdate( p.sum )
       processData(p, plot )
       zoom(p, p);
+
     } 
 
     function zoomOut(p) {
-      if (!p || !p.parent) return 
+      if(p == undefined) p = current_data
+      if (!p.parent) return 
       zoom(p.parent, p);
       createHovers()
     }
