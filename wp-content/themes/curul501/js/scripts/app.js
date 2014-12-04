@@ -12,7 +12,7 @@ run.pieChart = function(votos, urlBase){
           .clamp(true)
           .range([90, 20]);
 
-      var pie_chart = d3.select("body").append("svg")
+      var pie_chart = d3.select("#pie_chart").append("svg")
           .attr("id","pie_chart")
           .attr("width", margin.left + margin.right)
           .attr("height", margin.top + margin.bottom)
@@ -246,7 +246,7 @@ run.pieChart = function(votos, urlBase){
             return {  x: d.y, y: d.x, x0: d.y0 };
         });
       }),
-      barchart = d3.select('body')
+      barchart = d3.select('#bar_chart')
           .append('svg')
           .attr("id","barchart")
           .attr('width', width + margins.left + margins.right + legendPanel.width)
