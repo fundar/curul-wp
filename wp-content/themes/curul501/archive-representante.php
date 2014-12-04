@@ -175,9 +175,7 @@
 						if($data) {
 							wp_pagenavi(array('query' => $data ));
 						} else {
-							if(empty($avia_config['remove_pagination'] )) {
-								echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
-							}
+							wp_pagenavi();
 						}
 					?>
 				</main>
