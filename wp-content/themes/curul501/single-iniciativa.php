@@ -37,6 +37,7 @@
 
 	#bar_chart{
 		float:left;
+	  	width: 450px;
 	}
 
 	circle,
