@@ -198,11 +198,11 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 		<div class="sidebar-representantes">
 			<ul>
-				<li class="logo-partidoo-sb">
-					<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-					
-					<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
-					<br/><br/>
+				<li class="logo-partidoo-sb bullet-arrow">Partido político
+					<p>
+						<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+						<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
+					</p>
 				</li>
 				
 				<li class="bullet-arrow">Tipo de elecci&oacute;n
