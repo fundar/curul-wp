@@ -323,7 +323,6 @@
 						</div>
 					</div>
 			</div>
-			<?php var_dump($voto);?>
 	<script>
 	    var votos = <?php echo json_encode(
 	      array (
@@ -7350,16 +7349,16 @@
 			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
-		</div>
+			<div id="graficas_content">
+				<div id="pie_chart"></div>
+				<div id="bar_chart"></div>
 
-		<div id="graficas_content">
-			<div id="pie_chart"></div>
-			<div id="bar_chart"></div>
-
-			<div id="tooltip" class="hidden">
-			  <p><span id="value">100</span> </p>
+				<div id="tooltip" class="hidden">
+				  <p><span id="value">100</span> </p>
+				</div>
 			</div>
 		</div>
+
 		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
