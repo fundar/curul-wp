@@ -133,7 +133,7 @@ function getRepresentativesByCommission($commission) {
 function getRepresentativesByState($state) {
 	$posts_per_page = 5;
 	$paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$paged  = (get_query_var('page')) ? get_query_var('page') : 1;
+	//$paged  = (get_query_var('page')) ? get_query_var('page') : 1;
 	$offset = ($posts_per_page * $paged ) - $posts_per_page;
 	
 	$args   = array(
@@ -141,6 +141,7 @@ function getRepresentativesByState($state) {
 		'posts_per_page' => $posts_per_page,
 		'showposts' => $posts_per_page,
 		'paged' => $paged,
+		'offset' => $offset,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
