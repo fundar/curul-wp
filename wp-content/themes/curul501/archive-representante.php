@@ -171,9 +171,15 @@
 						<?php } ?>
 					<?php } ?>
 					
-					<?php							
-						if(empty($avia_config['remove_pagination'] )) {
-							echo "<div class='{$blog_style}'>" . avia_pagination('', 'nav') . "</div>";
+					<?php
+						if($data) {
+							if(empty($avia_config['remove_pagination'] )) {
+								echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav', $data) . "</div>";
+							}
+						} else {
+							if(empty($avia_config['remove_pagination'] )) {
+								echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
+							}
 						}
 					?>
 				</main>
