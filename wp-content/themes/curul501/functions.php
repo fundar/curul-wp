@@ -150,6 +150,32 @@ function getRepresentativesByState($state) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get initiativas by political party*/
+function getInitiativasByPoliticalParty($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_partidos_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
