@@ -5,7 +5,7 @@
 	  height: 375px;
 	}
 
-	#barchart{ opacity: 0; z-index: -10}
+	#barchart{ opacity: 0;}
 
 	table{
 	  border: 0.3px solid #ccc;
@@ -20,7 +20,6 @@
 	.axis path {
 	    fill: none;
 	}
-
 
 	#tooltip {
 	    position: relative;
