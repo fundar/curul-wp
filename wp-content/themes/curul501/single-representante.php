@@ -209,18 +209,20 @@
 					<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
 				</li>
 							
-				<li class="correo-sb">
+				<li class="bullet-arrow">
 					<?php if($district == "") { ?>
-						Circunscripción: <?php echo $circum;?>
+						Circunscripción<p><?php echo $circum;?></p>
 					<?php } else { ?>
-						Distrito: <?php echo $district;?>
+						Distrito<p><?php echo $district;?></p>
 					<?php } ?>
 				</li>
 				
-				<li class="correo-sb">
-					<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
-						<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
-					</a>
+				<li class="bullet-arrow">Correo
+					<p>
+						<a href="mailto:<?php echo get_post_meta($post->ID, 'wp_email', true); ?>">
+							<?php echo get_post_meta($post->ID, 'wp_email', true); ?>
+						</a>
+					</p>
 				</li>
 				
 				<?php if(get_post_meta($post->ID, 'wp_twitter', true) != "") { ?>
