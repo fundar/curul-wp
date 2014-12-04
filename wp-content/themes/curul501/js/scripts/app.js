@@ -12,7 +12,7 @@ run.pieChart = function(votos, urlBase){
           .clamp(true)
           .range([90, 20]);
 
-      var pie_chart = d3.select("#pie_chart").append("svg")
+      var pie_chart = d3.select("body").append("svg")
           .attr("id","pie_chart")
           .attr("width", margin.left + margin.right)
           .attr("height", margin.top + margin.bottom)
