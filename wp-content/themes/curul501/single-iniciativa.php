@@ -26,7 +26,7 @@
 	    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 	}
 	#tooltip.hidden { display: none; }
-	
+
 	#tooltip p {
 	    margin: 0;
 	    font-family: sans-serif;
@@ -311,21 +311,16 @@
 			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
-			<div id="graficas_content">
-				<div id="pie_chart"></div>
-				<div id="bar_chart"></div>
 
-				<div id="tooltip" class="hidden">
-				  <p><span id="value">100</span> </p>
-				</div>
+		</div>
+		
+		<div id="graficas_content">
+			<div id="pie_chart"></div>
+			<div id="bar_chart"></div>
+
+			<div id="tooltip" class="hidden">
+			  <p><span id="value">100</span> </p>
 			</div>
-			<script>
-				var votos = <?php echo json_encode( array_values($voto) ); ?>;
-				var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
-
-			    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-			    run.representantes_load(representantes)
-		  	</script>	
 
 			<!--div ng-app="" ng-controller="run.representantes_ctr">
 			    <p>Name: <input type="text" ng-model="full_name"></p>
@@ -347,8 +342,15 @@
 
 			    </table>
 			  </div-->
-
 		</div>
+		
+		<script>
+			var votos = <?php echo json_encode( array_values($voto) ); ?>;
+			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+
+		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+		    run.representantes_load(representantes)
+	  	</script>	
 
 		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
