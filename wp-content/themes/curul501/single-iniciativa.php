@@ -3,9 +3,6 @@
 	  float:right;
 	  width: 675px;
 	  height: 375px;
-	  position: absolute;
-	  top:0;
-	  right:0;
 	}
 
 	#barchart{ opacity: 0; z-index: -10}
