@@ -12,7 +12,7 @@ run.pieChart = function(votos, urlBase){
           .clamp(true)
           .range([90, 20]);
 
-      var pie_chart = d3.select("body").append("svg")
+      var pie_chart = d3.select("#pie_chart").append("svg")
           .attr("id","pie_chart")
           .attr("width", margin.left + margin.right)
           .attr("height", margin.top + margin.bottom)
@@ -177,8 +177,8 @@ run.pieChart = function(votos, urlBase){
     }
 
     function clear(){
-      //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
-      jQuery("#barchart").animate({ opacity: 0 }, 500)
+      //Velocity(document.querySelectorAll("#bar_chart")[0] , { opacity: 0 }, 500)
+      jQuery("#bar_chart").animate({ opacity: 0 }, 500)
       totalUpdate("500");
 
     }
@@ -211,7 +211,7 @@ run.pieChart = function(votos, urlBase){
     }
    
     plot = function(data){
-      d3.select("#barchart").remove();
+      d3.select("#bar_chart").remove();
       var margins = {
         top: 12,
         left: 48,
@@ -246,9 +246,9 @@ run.pieChart = function(votos, urlBase){
             return {  x: d.y, y: d.x, x0: d.y0 };
         });
       }),
-      barchart = d3.select('body')
+      bar_chart = d3.select('bar_chart')
           .append('svg')
-          .attr("id","barchart")
+          .attr("id","bar_chart")
           .attr('width', width + margins.left + margins.right + legendPanel.width)
           .attr('height', height + margins.top + margins.bottom )
           .append('g')
@@ -269,7 +269,7 @@ run.pieChart = function(votos, urlBase){
       yAxis = d3.svg.axis()
           .scale(yScale)
           .orient('left'),
-      groups = barchart.selectAll('g')
+      groups = bar_chart.selectAll('g')
           .data(dataset)
           .enter()
           .append('g')
@@ -295,8 +295,8 @@ run.pieChart = function(votos, urlBase){
               .text(d.x + " " + data.tag);
           /*
 
-            barchart.select(".partidos").selectAll("text").remove();
-            var ticks = barchart.select(".partidos").selectAll(".tick")
+            bar_chart.select(".partidos").selectAll("text").remove();
+            var ticks = bar_chart.select(".partidos").selectAll(".tick")
                         .append("svg:image")
                         .attr("xlink:href", function (d) {
                           return './statics/img/' + d + '.png'  ; 
@@ -315,28 +315,28 @@ run.pieChart = function(votos, urlBase){
           d3.select('#tooltip').classed('hidden', true);
       })
 
-      barchart.append('text')
+      bar_chart.append('text')
           .attr('fill', 'black')
           .attr('y', 0)
           .text(data.title);
 
-      barchart.append('g')
+      bar_chart.append('g')
           .attr('class', 'axis')
           .attr('transform', 'translate(0,' + height + ')')
           .call(xAxis);
 
-      barchart.append('g')
+      bar_chart.append('g')
           .attr('class', 'partidos')
           .call(yAxis);
 
-      barchart.append('rect')
+      bar_chart.append('rect')
           .attr('fill', 'white')
           .attr('width', 160)
           .attr('height', 30 * dataset.length)
           .attr('x', width + margins.left)
           .attr('y', 0);
       // cambiar texto por imagenes
-      barchart.select(".axis").selectAll("text")
+      bar_chart.select(".axis").selectAll("text")
         .attr("stroke", "#ccc")
         .attr("fill", "#ccc")
         .attr("font-family", "sans-serif")
@@ -349,8 +349,8 @@ run.pieChart = function(votos, urlBase){
 4      text-anchor="middle"
         */
 
-      barchart.select(".partidos").selectAll("text").remove();
-      var ticks = barchart.select(".partidos").selectAll(".tick")
+      bar_chart.select(".partidos").selectAll("text").remove();
+      var ticks = bar_chart.select(".partidos").selectAll(".tick")
                   .append("svg:image")
                   .attr("xlink:href", function (d) {
                     return urlBase + '/images/' + d.toLowerCase() + '-54px.png'  ; 
@@ -362,8 +362,8 @@ run.pieChart = function(votos, urlBase){
 ;
 
     
-      //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
-      jQuery("#barchart").animate({ opacity: 1 }, 1000)
+      //Velocity(document.querySelectorAll("#bar_chart")[0] , { opacity: 1 }, 1000)
+      jQuery("#bar_chart").animate({ opacity: 1 }, 1000)
      
     }
     // Zoom to the specified new root.

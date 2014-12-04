@@ -1,10 +1,4 @@
 <style type="text/css">
-	#barchart_content{
-	  float:right;
-	  width: 675px;
-	  height: 375px;
-	}
-
 	#barchart{ opacity: 0;}
 
 	table{
@@ -13,13 +7,9 @@
 
 	#google-visualization-errors-0{ display: none; }
 
-	.partidos path{
-	    fill: none;
-	}
+	.partidos path{ fill: none; }
 
-	.axis path {
-	    fill: none;
-	}
+	.axis path { fill: none; }
 
 	#tooltip {
 	    position: relative;
@@ -35,9 +25,8 @@
 	    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 	    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
 	}
-	#tooltip.hidden {
-	    display: none;
-	}
+	#tooltip.hidden { display: none; }
+	
 	#tooltip p {
 	    margin: 0;
 	    font-family: sans-serif;
