@@ -3,7 +3,7 @@
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/css/iniciativa.css" type="text/javascript"></script>
 	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
-	<script src="<?php echo egt_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
  	<script>
