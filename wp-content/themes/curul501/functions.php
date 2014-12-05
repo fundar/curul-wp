@@ -276,34 +276,42 @@ function getInitativesByRepresentative($slug) {
 /*Get political party array*/
 function getPoliticalParty($idPoliticalParty) {
 	if($idPoliticalParty == 1) {
+		$array["id_political_party"] = 1;
 		$array["name"]       = "Partido Revolucionario Institucional";
 		$array["short_name"] = "PRI";
 		$array["url_logo"]   = "18px-PRI.png";
 	} elseif($idPoliticalParty == 2) {
+		$array["id_political_party"] = 2;
 		$array["name"]       = "Partido de la Revolución Democrática";
 		$array["short_name"] = "PRD";
 		$array["url_logo"]   = "18px-PRD.png";
 	} elseif($idPoliticalParty == 3) {
+		$array["id_political_party"] = 3;
 		$array["name"]       = "Partido Verde Ecologista de México";
 		$array["short_name"] = "PVEM";
 		$array["url_logo"]   = "18px-PVE.png";
 	} elseif($idPoliticalParty == 4) {
+		$array["id_political_party"] = 4;
 		$array["name"]       = "Partido Acción Nacional";
 		$array["short_name"] = "PAN";
 		$array["url_logo"]   = "18px-PAN.png";
 	} elseif($idPoliticalParty == 5) {
+		$array["id_political_party"] = 5;
 		$array["name"]       = "Partido del Trabajo";
 		$array["short_name"] = "PT";
 		$array["url_logo"]   = "18px-PT.png";
 	} elseif($idPoliticalParty == 6) {
+		$array["id_political_party"] = 6;
 		$array["name"]       = "Movimiento Ciudadano";
 		$array["short_name"] = "Movimiento Ciudadano";
 		$array["url_logo"]   = "18px-PMC.png";
 	} elseif($idPoliticalParty == 7) {
+		$array["id_political_party"] = 7;
 		$array["name"]       = "Partido Nueva Alianza";
 		$array["short_name"] = "PRD";
 		$array["url_logo"]   = "18px-PNA.png";
 	} else {
+		$array["id_political_party"] = 0;
 		$array["name"]       = "Sin partido";
 		$array["short_name"] = "SP";
 		$array["url_logo"]   = "18px-SP.png";
