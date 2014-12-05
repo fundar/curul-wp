@@ -526,10 +526,7 @@ function getStatus() {
 		array("name" => "Precluida", "slug" => "precluida"),
 		array("name" => "Presentada", "slug" => "presentada"),
 		array("name" => "Publicado", "slug" => "publicado"),
-		array("name" => "ron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites"),
-
-
-
+		array("name" => "Se le dispensaron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites")
 		
 	);
 	
