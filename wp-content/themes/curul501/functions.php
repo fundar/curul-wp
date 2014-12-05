@@ -291,7 +291,7 @@ function getIniciativasByStatus($slug) {
 		'paged' => $paged,
 		'meta_query' => array(
 			array (
-				'key'     => 'wp_status_slug',
+				'key'     => 'wp_last_status_slug',
 				'value'   => $slug
 			)
 		)
