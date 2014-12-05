@@ -296,7 +296,7 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          jQuery("#tooltip").one("mousemove", function( event ) {
+          jQuery("#tooltip").on("mousemove", function( event ) {
               d3.select('#tooltip')
                   .style('left', ( event.pageX - 115) + 'px')
                   .style('top', ( event.pageY - 150) + 'px')
