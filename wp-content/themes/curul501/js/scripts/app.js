@@ -300,17 +300,17 @@ run.pieChart = function(votos, urlBase){
           var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
           jQuery("body").mousemove(function( event ) {
+              d3.select('#tooltip').classed('hidden', false);
+
               d3.select('#tooltip')
-                  .style('left', ( event.pageX -30) + 'px')
-                  .style('top', ( event.pageY - 30) + 'px')
+                  .style('left', ( event.pageX - 60) + 'px')
+                  .style('top', ( event.pageY - 60) + 'px')
                   .select('#value')
                   .text(d.x + " " + data.tag);
              
-              d3.select('#tooltip').classed('hidden', false);
           })
 
-      })
-          .on('mouseout', function () {
+      }).on('mouseout', function () {
           d3.select('#tooltip').classed('hidden', true);
       })
 
