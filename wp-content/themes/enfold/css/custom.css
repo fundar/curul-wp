@@ -91,7 +91,7 @@ a:hover{text-decoration:none;}
 .main_color{
     background:#f4f4f4;
     border: 0 solid #f4f4f4;
-    margin-bottom:60px;
+
     
 }
 
@@ -613,28 +613,67 @@ li.hand-down {
         font-size:18px;
     }
      /** footer**/
-     /**footer**/
-
      #footer {
          background: none repeat scroll 0 0 #432b4d;
      }
      
      #menu-footer li > a {
-         color: rgba(250, 250, 250, 0.52);
-         font: 300 14px/14px oswald;
-         text-transform: uppercase;
+     color: #A59AAA;
+     font: 300 15px/24px oswald;
+     text-transform: uppercase;
      }
-     #text-3 > .textwidget{
-         color: rgba(250, 250, 250, 0.52);
+     #text-3 > .widgettitle {
+         background: none repeat scroll 0 0 transparent;
+         color: #A59AAA;
+         margin-left: 0;
+         padding-left: 0;
+     }   
+     #text-3 > h3.textwidget{
+         color: #A59AAA;
          font:400 15px/14px oswald;
          text-transform: uppercase;
+         background:transparent;
           
      }
-    #buscador.desktop {
+     #text-10 {
+         margin-bottom: 0 !important;
+     }
+     #nav_menu-2 {
+         margin-top: 24px !important;
+     }
+     p.paraffo-contacto {
+     color: #A59AAA;
+     font: 14px 'colaborate-regular';
+     margin-top: -3px;
+     }
+     #contacto {
+          background: none repeat scroll 0 0 rgba(41, 23, 50, 1) !important;
+          border: medium none !important;
+          height: 30px !important;
+          margin: 0 0 17px !important;
+          width: 100% !important;
+     }
+     .enviar-3212 {
+          background: none repeat scroll 0 0 #a59aaa !important;
+          color: rgba(41, 23, 50, 1) !important;
+          font: 14px 'colaborate-regular';
+          padding: 5px 0 6px !important;
+          text-transform: uppercase;
+          width: 100%;
+     }
+     .enviar-3212:hover{
+          background: none repeat scroll 0 0 #978a9d !important;
+          color: rgba(41, 23, 50, .8) !important;
+     }     
+     .alto-p{
+          min-height: 103px !important;
+
+     }
+     #buscador.desktop {
         width: 100%;
      }
      #buscador {
-        background: none repeat scroll 0 0 #281b2e;
+        background: none repeat scroll 0 0 #291732;
         bottom: 0;
         height: 55px;
         left: 0;
