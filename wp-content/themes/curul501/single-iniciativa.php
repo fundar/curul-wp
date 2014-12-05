@@ -35,7 +35,7 @@
 	  float: left;
 	}
 
-	#bar_chart{
+	#bar_chart, #barchart {
 		float:left;
 	  	width: 450px;
 	}
