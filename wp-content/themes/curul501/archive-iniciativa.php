@@ -48,9 +48,11 @@
 			<div class='container'>
 
 				<main class='template-page content  av-content-full alpha units'>
-				<?php if (have_posts()) : ?>
-                                <?php while (have_posts()) : the_post(); ?>
-														<?php										
+			<?php if($data) { ?>
+						<?php if ($data->have_posts()) { ?>
+							<?php while ($data->have_posts()) : $data->the_post(); ?>
+							
+							<?php										
 														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
 														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
 														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
@@ -66,7 +68,8 @@
 														?>
 								
 																
-				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+				 <!--Inicio iniciaiva-->
+				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
 											<!--Inicio fecga y resumen-->
@@ -157,14 +160,130 @@
 										</div>
 									</div>
 							</article><!--fin iniciativas-->
-							<?php 	endwhile; else: ?>
-							<?php							
-								endif;
-								if(empty($avia_config['remove_pagination'] ))
-								{
-									echo "<div class='{$blog_style}'>".avia_pagination('', 'nav')."</div>";
-								}
-							?>							
+
+							<?php endwhile; ?>
+								<?php } else { ?>
+							<p>No se encontraron representantes con esta busqueda</p>
+						<?php } ?>
+					<?php } else { ?>
+
+
+
+
+			<?php if (have_posts()) { ?>
+                                <?php while (have_posts()) : the_post(); ?>
+														<?php										
+														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+														$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													    $WorkingArray = json_decode(json_encode($votos),true);
+												        $decode = json_decode($WorkingArray, true);
+														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+														$elements = explode("|", $status_iniciativa);
+														$status_final=count($elements)-1;
+													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
+
+														?>
+								
+																
+				 <!--Inicio iniciaiva-->
+				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+									<div class="entry-content-wrapper clearfix">
+										<div class="entry-content-wrapper clearfix">
+											<!--Inicio fecga y resumen-->
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
+												<div class="post_date">
+													<span>13</span>
+													Feb, 2014
+												</div>
+												<div class="entry-content">
+													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
+			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+												         </p>
+													 <?php the_excerpt(); ?> 
+                          
+												</div>
+											</div><!--fin fecha y resumen-->
+											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
+												<div class="col-status">
+													<div class="datos">
+													Status													
+													<div class="temporizador"> 
+													<p><?php echo $elements[$status_final]; ?></p>
+													</div>
+													</div>													
+												</div> 
+												<?php
+																								
+												  if($votos != "") { ?>
+												
+												<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+														<?php	echo $decode[8]['total']; ?>
+													</div>
+													<div class="hands-vote">
+									                                <ul>
+													        <li class="hand-up"><?php echo $decode[8]['favor']; ?></li>
+													        <li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
+													</ul>
+									
+													</div>
+												</div>
+																					<?php } else {  ?>
+
+																					<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+													<p class="estiloEstatusP">Sin Votaci&oacute;n</p>													
+													</div>
+													
+												</div>											
+																					<?php } ?>
+
+																					
+
+												
+												<div class="col-status-2">
+													<div class="datos">Propuesta por:</div>
+													<p class="estiloEstatusP">	<?php
+														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
+														if($presentada_partido != "") { echo $presentada_partido.", ";} 
+														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
+														?>
+													</p>
+													
+													
+												</div>													
+											</div>
+											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+												<div class="in-box-share">
+												<?php avia_social_share_links(); ?>
+												</div>
+											</div>
+											<div class="vta-curul">
+												<span>Votaci&oacute;n en Curul 501</span>
+												
+												
+												
+												
+												
+											</div>
+
+											
+										</div>
+									</div>
+							</article><!--fin iniciativas-->
+							<?php endwhile; ?>
+						<?php } ?>
+					<?php } ?>
+							
 				</main>
 				<?php
 						if($data) {
