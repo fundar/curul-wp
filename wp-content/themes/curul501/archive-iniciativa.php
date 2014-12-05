@@ -59,6 +59,19 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
+					 	<div id="filter">				
+						   <select class="sorter-rep sort" name="status" id="status-filter">
+							   <option value="">Status</option>
+							   <?php $statesArray = getStatus(); ?>
+							   <?php foreach($statusArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>  
+					   
 					   		   
 			       		
 					</form>				
