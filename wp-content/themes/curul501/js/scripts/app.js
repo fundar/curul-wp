@@ -296,19 +296,21 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          var xPos = parseFloat(d3.select(this).attr('x')) / 2 + parseFloat(d3.select(this).attr('width')) + 55;
-          var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
+          var xPos = 0
+          var yPos = 0
 
-          jQuery("body").mousemove(function( event ) {
-              d3.select('#tooltip').classed('hidden', false);
+          jQuery("body").mousemove(
+            function(event) { xPos = event.pageX; yPos = event.pageY }
+          )
 
-              d3.select('#tooltip')
-                  .style('left', ( event.pageX - 60) + 'px')
-                  .style('top', ( event.pageY - 60) + 'px')
-                  .select('#value')
-                  .text(d.x + " " + data.tag);
+          d3.select('#tooltip').classed('hidden', false);
+
+          d3.select('#tooltip')
+              .style('left', ( xPos - 60) + 'px')
+              .style('top', ( yPos - 60) + 'px')
+              .select('#value')
+              .text(d.x + " " + data.tag);
              
-          })
 
       }).on('mouseout', function () {
           d3.select('#tooltip').classed('hidden', true);
