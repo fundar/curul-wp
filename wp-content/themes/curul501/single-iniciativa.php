@@ -4,7 +4,7 @@
 	.partidos path{ fill: none; }
 
 	.axis path { fill: none; }
-/*
+
 	#tooltip {
 	    position: relative;
 	    text-align: center;
@@ -27,7 +27,7 @@
 	    font-size: 16px;
 	    line-height: 20px;
 	}
-*/
+
 	#pie_chart{
 	  width: 510px;
 	  float: left;
@@ -328,10 +328,21 @@
 		
 		<div id="graficas_content">
 			<div id="pie_chart"></div>
+
+			<div id="bartitle">
+			    <span id="bartitle_text"> </span> 
+			    <span id="bartitle_count"> </span> 
+			</div>
+
 			<div id="bar_chart"></div>
 
 			<div id="tooltip" class="hidden">
 			  <p><span id="value">100</span> </p>
+			</div>
+
+			<div id="title">
+			  <span id="title_text"> </span> 
+			  <span id="title_count"> </span> 
 			</div>
 
 			<!--div ng-app="" ng-controller="run.representantes_ctr">

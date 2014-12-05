@@ -188,6 +188,8 @@ run.pieChart = function(votos, urlBase){
     function clear(){
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
       jQuery("#barchart").animate({ opacity: 0 }, 500)
+      jQuery('#bartitle').fadeOut()
+
       totalUpdate("500");
 
     }
@@ -302,32 +304,18 @@ run.pieChart = function(votos, urlBase){
               .style('top', yPos + 'px')
               .select('#value')
               .text(d.x + " " + data.tag);
-          /*
-
-            barchart.select(".partidos").selectAll("text").remove();
-            var ticks = barchart.select(".partidos").selectAll(".tick")
-                        .append("svg:image")
-                        .attr("xlink:href", function (d) {
-                          return './statics/img/' + d + '.png'  ; 
-                        })
-                        .attr("width", 20)
-                        .attr("height", 20)
-                        .attr("x", -30)
-                        .attr("y", -10);
-
-
-          */
-
+         
           d3.select('#tooltip').classed('hidden', false);
       })
           .on('mouseout', function () {
           d3.select('#tooltip').classed('hidden', true);
       })
 
-      barchart.append('text')
-          .attr('fill', 'black')
-          .attr('y', 0)
-          .text(data.title);
+      d3.select('#bartitle_text')
+              .text( data.title );
+
+      d3.select('#bartitle_count')
+              .text( data.total );
 
       barchart.append('g')
           .attr('class', 'axis')
@@ -373,6 +361,8 @@ run.pieChart = function(votos, urlBase){
     
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
       jQuery("#barchart").animate({ opacity: 1 }, 1000)
+      jQuery('#bartitle').fadeIn()
+
      
     }
     // Zoom to the specified new root.
