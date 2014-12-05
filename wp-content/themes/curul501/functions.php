@@ -508,7 +508,7 @@ function getDataIniciativas() {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["estado"])) {
-		$result = getIniciativasByState($_GET["estado"]);
+		$result = getIniciativasByTemas($_GET["estado"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
 		$result = getIniciativasByCommission($_GET["comision"]);
