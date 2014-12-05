@@ -35,7 +35,20 @@
 									</option>
 								<?php } ?>
 						   </select>
-					   </div>				   		   
+					   </div>	
+
+					<div id="filter">				
+						   <select class="sorter-rep sort" name="comision" id="comision-filter">
+							   <option value="">Comisiones</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   		   
 			       		
 					</form>				
 				   
