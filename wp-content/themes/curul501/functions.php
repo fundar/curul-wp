@@ -507,6 +507,9 @@ function getTemas() {
 	return $temas;
 }
 
+
+ 
+
  /*Get STATUS array*/
 function getStatus() {
 	$status = array(
@@ -516,7 +519,15 @@ function getStatus() {
 		array("name" => "Turnada", "slug" => "turnada"),
 		array("name" => "Prórroga", "slug" => "prorroga"),
 		array("name" => "Devuelta", "slug" => "devuelta"),
-		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada")		
+		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada"),
+		array("name" => "Aprobada", "slug" => "aprobada"),
+		array("name" => "Desechada", "slug" => "desechada"),
+		array("name" => "Dictaminada", "slug" => "dictaminada"),
+		array("name" => "Precluida", "slug" => "precluida"),
+		array("name" => "Presentada", "slug" => "presentada"),
+		array("name" => "Publicado", "slug" => "publicado"),
+		array("name" => "Se le dispensaron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites")
+		
 	);
 	
 	return $status;
