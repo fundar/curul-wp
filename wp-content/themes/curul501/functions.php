@@ -184,12 +184,13 @@ function getRepresentatives($json = false) {
 	
 	while($loop->have_posts()) {
 		$loop->the_post();
-		$politicalParty = array_map('utf8_encode', getPoliticalParty(get_post_meta($loop->post->ID, 'wp_id_political_party', true)));
-		
 		$data[] = array(
 			"avatar_url" => get_post_meta($loop->post->ID, 'avatar_url', true),
-			"politicalParty" => $politicalParty,
-			"state" => get_post_meta($loop->post->ID, 'wp_zone_state', true),
+			"politicalParty" => array_map('utf8_encode', getPoliticalParty(get_post_meta($loop->post->ID, 'wp_id_political_party', true))),
+			"zone_state" => get_post_meta($loop->post->ID, 'wp_zone_state', true),
+			"clave_estado" => get_post_meta($loop->post->ID, 'wp_clave_estado', true),
+			"district" => get_post_meta($loop->post->ID, 'wp_district_clean', true),
+			"circum" => get_post_meta($loop->post->ID, 'wp_circumscription', true),
 			"name" => get_the_title($loop->post->ID)
 		);
 	}
