@@ -224,8 +224,6 @@ function getIniciativas() {
 	return array("loop" => $loop, "count" => $count);
 }
 
-
-
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
@@ -419,9 +417,6 @@ function getDataIniciativas() {
 	
 	return $data;
 }
-
-
-
 
 /*get data by parameter $_GET */
 function getParameterValueGET() {
