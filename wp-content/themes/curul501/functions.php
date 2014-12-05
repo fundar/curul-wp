@@ -237,18 +237,6 @@ function getRepresentatives() {
 	return array("loop" => $loop, "count" => $count);
 }
 
-
-/*Get iniciativas*/
-function getIniciativas() {
-	$args  = array('post_type' => 'iniciativa');
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	echo json_encode($loop->posts);
-	exit;
-	return array("loop" => $loop, "count" => $count);
-}
-
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
