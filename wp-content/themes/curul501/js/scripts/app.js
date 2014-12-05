@@ -298,8 +298,8 @@ run.pieChart = function(votos, urlBase){
       .on('mouseover', function (d) {
           jQuery("body").one("mousemove", function( event ) {
               d3.select('#tooltip')
-                  .style('left', ( event.pageX - 115) + 'px')
-                  .style('top', ( event.pageY - 150) + 'px')
+                  .style('left', ( event.pageX - 140) + 'px')
+                  .style('top', ( event.pageY - 140) + 'px')
                   .select('#value')
                   .text(d.x + " " + data.tag);
              
