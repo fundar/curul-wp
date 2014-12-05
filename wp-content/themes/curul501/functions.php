@@ -282,6 +282,31 @@ function getIniciativasByTemas($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get iniciativas by status party*/
+function getIniciativasByStatus($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_status_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
 
 
 /*Get initiatives by representative (wp_slug) */
@@ -516,6 +541,9 @@ function getDataIniciativas() {
 	} elseif(isset($_GET["tema"])) {
 		$result = getIniciativasByCommission($_GET["tema"]);
 		$data = $result["loop"];
+	} elseif(isset($_GET["status"])) {
+		$result = getIniciativasByCommission($_GET["status"]);
+		$data = $result["loop"];
 		
 		
 	} else {
@@ -534,7 +562,9 @@ function getParameterValueGET() {
 	} elseif(isset($_GET["comision"])) {
 		return $_GET["comision"];
 	} elseif(isset($_GET["tema"])) {
-		return $_GET["tema"];		
+		return $_GET["tema"];
+	} elseif(isset($_GET["status"])) {
+		return $_GET["status"];
 	} else {
 		return "";
 	}
