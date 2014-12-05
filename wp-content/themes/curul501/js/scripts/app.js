@@ -188,6 +188,8 @@ run.pieChart = function(votos, urlBase){
     function clear(){
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
       jQuery("#barchart").animate({ opacity: 0 }, 500)
+      jQuery('#bartitle').fadeOut()
+
       totalUpdate("500");
 
     }
@@ -294,40 +296,26 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          var xPos = parseFloat(d3.select(this).attr('x')) / 2 + d3.select(this).attr('width') -  8;
+          var xPos = parseFloat(d3.select(this).attr('x')) / 2 + parseFloat(d3.select(this).attr('width')) + 55;
           var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
           d3.select('#tooltip')
-              .style('left', xPos + 'px')
+              .style('left', xPos + 510 + 'px')
               .style('top', yPos + 'px')
               .select('#value')
               .text(d.x + " " + data.tag);
-          /*
-
-            barchart.select(".partidos").selectAll("text").remove();
-            var ticks = barchart.select(".partidos").selectAll(".tick")
-                        .append("svg:image")
-                        .attr("xlink:href", function (d) {
-                          return './statics/img/' + d + '.png'  ; 
-                        })
-                        .attr("width", 20)
-                        .attr("height", 20)
-                        .attr("x", -30)
-                        .attr("y", -10);
-
-
-          */
-
+         
           d3.select('#tooltip').classed('hidden', false);
       })
           .on('mouseout', function () {
           d3.select('#tooltip').classed('hidden', true);
       })
 
-      barchart.append('text')
-          .attr('fill', 'black')
-          .attr('y', 0)
-          .text(data.title);
+      d3.select('#bartitle_text')
+              .text( data.title );
+
+      d3.select('#bartitle_count')
+              .text( data.total );
 
       barchart.append('g')
           .attr('class', 'axis')
@@ -373,6 +361,8 @@ run.pieChart = function(votos, urlBase){
     
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
       jQuery("#barchart").animate({ opacity: 1 }, 1000)
+      jQuery('#bartitle').fadeIn()
+
      
     }
     // Zoom to the specified new root.

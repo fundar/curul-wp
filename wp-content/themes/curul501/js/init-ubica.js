@@ -1,4 +1,9 @@
 var sMarker = false;
+var primera = [2, 3, 8, 10, 14, 18, 25, 26];
+var segunda = [1, 5, 11, 19, 22, 24, 28, 32];
+var tercera = [4, 7, 20, 23, 27, 30, 31];
+var cuarta  = [9, 12, 17, 21, 29];
+var quinta  = [6, 13, 15, 16];
 
 function setMap() {
 	var map = L.map('map').setView([22.674847351188536, -101.77734374999999], 5);
@@ -17,14 +22,10 @@ function setMap() {
 		});
 		
 		layer.on('click', function(e) {
-			jQuery("#loading-gif").show();
-			console.log("Espere un momento el gato esta buscando a la rata ... ");
 			map.removeLayer(sMarker);
-			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { CVE_ENT : feature.properties.CVE_ENT, NOMBRE : feature.properties.NOMBRE }).addTo(map);
-			sMarker.bindPopup("<div class='map-info-representante'>" + feature.properties.NOMBRE + "</div>").openPopup();
-			
 			getPip(e.latlng.lat, e.latlng.lng);
+			map.setView(new L.LatLng(e.latlng.lat, e.latlng.lng), map._zoom);
 		});
 	}
 	
@@ -43,10 +44,50 @@ function getPip(lat, lng) {
 		.success(function (distritosGeoJson) {
 			var distritosLayer = L.geoJson(distritosGeoJson);
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
+			var district = resultDisrtPip[0].feature.properties.DISTRITO;
+			var state = parseInt(resultPip[0].feature.properties.CVE_ENT);
 			
 			if(resultDisrtPip.length) {
-				jQuery(".map-info-representante").html("<strong>Estado</strong><br/>" +  sMarker.options.NOMBRE +"<br/><strong>Distrito</strong><br/>" + resultDisrtPip[0].feature.properties.DISTRITO + "");
-				jQuery("#loading-gif").hide();
+				if(primera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+					var circum = "Primera";
+				} else if(segunda.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+					var circum = "Segunda";
+				} else if(tercera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+					var circum = "Tercera";
+				} else if(cuarta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+					var circum = "Cuarta";
+				} else if(quinta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+					var circum = "Quinta";
+				} else {
+					var circum = "";
+				}
+				
+				var results = jQuery(representatives).filter(function (i, value) {
+					return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
+				});
+				
+				var html = "";
+				
+				jQuery.each(results, function( index, value ) {
+					html += "<div class='representante-mapa'>";
+					html += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
+					html += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
+					html += "Tipo de elección: " + value.election_type + "<br/>";
+					
+					if(value.circum == "") {
+						html += "Distrito: " + value.district + "<br/>";
+					} else {
+						html += "Circunscripción: " + value.circum + "<br/>";
+					}
+					
+					html += "Tipo de elección: " + value.election_type + "<br/>";
+					html += "Estado: " + value.zone_state + "<br/>";
+					html += "Partido politico: " + value.politicalParty.name + "<br/>";
+					html += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
+					html += "</div>";
+				});
+				
+				jQuery(".map-info-representante").html(html);
 			} else {
 				console.log("Asegurate de estar en territorio mexicano");
 			}
