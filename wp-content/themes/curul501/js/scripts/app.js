@@ -299,7 +299,7 @@ run.pieChart = function(votos, urlBase){
           jQuery("body").one("mousemove", function( event ) {
               d3.select('#tooltip')
                   .style('left', ( event.pageX - 115) + 'px')
-                  .style('top', ( event.pageY - 115) + 'px')
+                  .style('top', ( event.pageY - 130) + 'px')
                   .select('#value')
                   .text(d.x + " " + data.tag);
              
