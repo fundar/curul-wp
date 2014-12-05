@@ -53,7 +53,7 @@
 							   <option value="">Temas</option>
 							   <?php $temasArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>

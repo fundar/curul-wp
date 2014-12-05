@@ -257,6 +257,33 @@ function getIniciativasByPoliticalParty($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get iniciativas by temas party*/
+function getIniciativasByTemas($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_topics_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+
+
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
@@ -274,6 +301,13 @@ function getInitativesByRepresentative($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
+
+
+
+
+
+
+
 /*********** Iniciativas ***************/
 
 /*Get political party array*/
@@ -474,11 +508,16 @@ function getDataIniciativas() {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["estado"])) {
-		$result = getIniciativasByState($_GET["estado"]);
+		$result = getIniciativasByTemas($_GET["estado"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
 		$result = getIniciativasByCommission($_GET["comision"]);
 		$data = $result["loop"];
+	} elseif(isset($_GET["tema"])) {
+		$result = getIniciativasByCommission($_GET["tema"]);
+		$data = $result["loop"];
+		
+		
 	} else {
 		return false;
 	}
@@ -494,6 +533,8 @@ function getParameterValueGET() {
 		return $_GET["estado"];
 	} elseif(isset($_GET["comision"])) {
 		return $_GET["comision"];
+	} elseif(isset($_GET["tema"])) {
+		return $_GET["tema"];		
 	} else {
 		return "";
 	}

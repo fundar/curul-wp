@@ -299,16 +299,19 @@ run.pieChart = function(votos, urlBase){
           var xPos = parseFloat(d3.select(this).attr('x')) / 2 + parseFloat(d3.select(this).attr('width')) + 55;
           var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
-          d3.select('#tooltip')
-              .style('left', xPos + 510 + 'px')
-              .style('top', yPos + 'px')
-              .select('#value')
-              .text(d.x + " " + data.tag);
-         
-          d3.select('#tooltip').classed('hidden', false);
+          jQuery("body").mousemove(function( event ) {
+              d3.select('#tooltip')
+                  .style('left', (event.pageX + 20) + 'px')
+                  .style('top',  event.pageY + 'px')
+                  .select('#value')
+                  .text(d.x + " " + data.tag);
+             
+              d3.select('#tooltip').classed('hidden', false);
+          })
+
       })
           .on('mouseout', function () {
-          d3.select('#tooltip').classed('hidden', true);
+          //d3.select('#tooltip').classed('hidden', true);
       })
 
       d3.select('#bartitle_text')
