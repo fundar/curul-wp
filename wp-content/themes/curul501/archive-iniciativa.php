@@ -342,6 +342,7 @@
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -350,6 +351,7 @@
 			if(jQuery("#tema-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -357,10 +359,21 @@
 		jQuery("#comision-filter").change( function() {
 			if(jQuery("#comision-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
+				jQuery("#partido-politico-filter").remove
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
+				
+		jQuery("#status-filter").change( function() {
+			if(jQuery("#status-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-politico-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
 		
 		setMap();
 	});
