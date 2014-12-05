@@ -301,7 +301,6 @@ run.pieChart = function(votos, urlBase){
 
           d3.select('#tooltip')
               .style('left', xPos + 510 + 'px')
-              .style('top', yPos + 'px')
               .select('#value')
               .text(d.x + " " + data.tag);
          
