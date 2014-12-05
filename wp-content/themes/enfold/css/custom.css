@@ -627,7 +627,20 @@ li.hand-down {
          color: #A59AAA;
          margin-left: 0;
          padding-left: 0;
-     }   
+     }
+     #text-8 > .widgettitle {
+         background: none repeat scroll 0 0 transparent;
+         color: #A59AAA;
+         margin-left: 0;
+         padding-left: 0;
+     }
+     #text-8 > h3.textwidget{
+         color: #A59AAA;
+         font:400 15px/14px oswald;
+         text-transform: uppercase;
+         background:transparent;
+          
+     }
      #text-3 > h3.textwidget{
          color: #A59AAA;
          font:400 15px/14px oswald;
