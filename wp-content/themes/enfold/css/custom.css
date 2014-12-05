@@ -574,7 +574,11 @@ li.hand-up {
 li.hand-down {
     background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
     padding-top: 0;
+    }
+.no-voto.logged-in-only{
+     display:none;
 }
+
     /**silder home **/   
    .parrafo-sl1 > p{
         color:#676767;
