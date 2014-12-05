@@ -107,6 +107,7 @@ function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 
 add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 
+/*********** Representantes ***************/
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -129,6 +130,84 @@ function getRepresentativesByCommission($commission) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get representatives by state*/
+function getRepresentativesByState($state) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_zone_state',
+				'value'   => $state
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives by political party*/
+function getRepresentativesByPoliticalParty($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_political_party_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get representatives*/
+function getRepresentatives($json = false) {
+	$args  = array('post_type' => 'representante');
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	while($loop->have_posts()) {
+		$loop->the_post();
+		$data[] = array(
+			"avatar_url" => get_post_meta($loop->post->ID, 'avatar_url', true),
+			"politicalParty" => array_map('utf8_encode', getPoliticalParty(get_post_meta($loop->post->ID, 'wp_id_political_party', true))),
+			"zone_state" => get_post_meta($loop->post->ID, 'wp_zone_state', true),
+			"clave_estado" => get_post_meta($loop->post->ID, 'wp_clave_estado', true),
+			"district" => get_post_meta($loop->post->ID, 'wp_district_clean', true),
+			"circum" => get_post_meta($loop->post->ID, 'wp_circumscription', true),
+			"name" => get_the_title($loop->post->ID)
+		);
+	}
+	
+	if($json) {
+		echo json_encode($data, JSON_NUMERIC_CHECK);
+		exit;
+	} else {
+		return array("data" => $data, "count" => $count);
+	}
+}
+/*********** Representantes ***************/
+
+
+
+
+/*********** Iniciativas ***************/
 /*Get iniciativas by commission*/
 function getIniciativasByCommission($commission) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -141,30 +220,6 @@ function getIniciativasByCommission($commission) {
 				'key'     => 'wp_commissions_slug',
 				'value'   => $commission,
 				'compare' => 'LIKE' 
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-
-
-
-
-/*Get representatives by state*/
-function getRepresentativesByState($state) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_zone_state',
-				'value'   => $state
 			)
 		)
 	);
@@ -200,43 +255,6 @@ function getIniciativasByPoliticalParty($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-
-/*Get representatives by political party*/
-function getRepresentativesByPoliticalParty($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_political_party_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-
-/*Get representatives*/
-function getRepresentatives() {
-	$args  = array('post_type' => 'representante');
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	echo json_encode($loop->posts);
-	exit;
-	return array("loop" => $loop, "count" => $count);
-}
-
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
@@ -254,38 +272,47 @@ function getInitativesByRepresentative($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
+/*********** Iniciativas ***************/
 
 /*Get political party array*/
 function getPoliticalParty($idPoliticalParty) {
 	if($idPoliticalParty == 1) {
+		$array["id_political_party"] = 1;
 		$array["name"]       = "Partido Revolucionario Institucional";
 		$array["short_name"] = "PRI";
 		$array["url_logo"]   = "18px-PRI.png";
 	} elseif($idPoliticalParty == 2) {
+		$array["id_political_party"] = 2;
 		$array["name"]       = "Partido de la Revolución Democrática";
 		$array["short_name"] = "PRD";
 		$array["url_logo"]   = "18px-PRD.png";
 	} elseif($idPoliticalParty == 3) {
+		$array["id_political_party"] = 3;
 		$array["name"]       = "Partido Verde Ecologista de México";
 		$array["short_name"] = "PVEM";
 		$array["url_logo"]   = "18px-PVE.png";
 	} elseif($idPoliticalParty == 4) {
+		$array["id_political_party"] = 4;
 		$array["name"]       = "Partido Acción Nacional";
 		$array["short_name"] = "PAN";
 		$array["url_logo"]   = "18px-PAN.png";
 	} elseif($idPoliticalParty == 5) {
+		$array["id_political_party"] = 5;
 		$array["name"]       = "Partido del Trabajo";
 		$array["short_name"] = "PT";
 		$array["url_logo"]   = "18px-PT.png";
 	} elseif($idPoliticalParty == 6) {
+		$array["id_political_party"] = 6;
 		$array["name"]       = "Movimiento Ciudadano";
 		$array["short_name"] = "Movimiento Ciudadano";
 		$array["url_logo"]   = "18px-PMC.png";
 	} elseif($idPoliticalParty == 7) {
+		$array["id_political_party"] = 7;
 		$array["name"]       = "Partido Nueva Alianza";
 		$array["short_name"] = "PRD";
 		$array["url_logo"]   = "18px-PNA.png";
 	} else {
+		$array["id_political_party"] = 0;
 		$array["name"]       = "Sin partido";
 		$array["short_name"] = "SP";
 		$array["url_logo"]   = "18px-SP.png";
