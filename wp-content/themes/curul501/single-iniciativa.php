@@ -35,7 +35,6 @@
 
 	#bar_chart, #barchart {
 		float:left;
-		opacity: 0;
 	  	width: 450px;
 		overflow-y: hidden;
 	}
