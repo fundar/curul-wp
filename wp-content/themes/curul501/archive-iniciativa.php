@@ -166,6 +166,13 @@
 								}
 							?>							
 				</main>
+				<?php
+						if($data) {
+							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav', $data) . "</div>";
+						} else {
+							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
+						}
+					?>
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
 
