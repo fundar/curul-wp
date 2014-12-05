@@ -12,7 +12,7 @@ body {
      
 /** generales**/
 p {
-    color: rgba(68, 68, 68, 0.7);
+    color: rgba(68, 68, 68, 0.9);
     font-family: 'colaborate-regular';
     font-size: 15px;
 }
@@ -342,7 +342,7 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-linkedin:hover  a{color:#624070 !important; background-color:#fff; }
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
-    /** home iniciativas **/
+    /** iniciativas **/
 
 a.iniciativas-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
@@ -575,7 +575,7 @@ li.hand-down {
     background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
-.no-voto.logged-in-only{
+.no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
 
