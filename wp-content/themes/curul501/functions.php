@@ -548,17 +548,14 @@ function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
-	} elseif(isset($_GET["estado"])) {
-		$result = getIniciativasByTemas($_GET["estado"]);
-		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
 		$result = getIniciativasByCommission($_GET["comision"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["tema"])) {
-		$result = getIniciativasByCommission($_GET["tema"]);
+		$result = getIniciativasByTemas($_GET["tema"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["status"])) {
-		$result = getIniciativasByCommission($_GET["status"]);
+		$result = getIniciativasByStatus($_GET["status"]);
 		$data = $result["loop"];
 		
 		
