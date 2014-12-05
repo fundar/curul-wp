@@ -365,6 +365,7 @@
 
 		    jQuery("#grafikas").on("click", function(e){
 		    	jQuery("#graficas_content").slideToggle();
+				return false;		    	
 		    })
 	  	</script>	
 
