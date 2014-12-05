@@ -216,7 +216,7 @@
 		
 		jQuery("#partido-politico-filter").change( function() {
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#estado-filter").remove();
+				jQuery("#category").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
