@@ -177,16 +177,32 @@ function getRepresentativesByPoliticalParty($slug) {
 }
 
 /*Get representatives*/
-function getRepresentatives() {
+function getRepresentatives($json = false;) {
 	$args  = array('post_type' => 'representante');
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
 	
-	echo json_encode($loop->posts);
-	exit;
-	return array("loop" => $loop, "count" => $count);
+	while($loop->have_posts()) {
+		$loop->the_post();
+		$data[] = array(
+			"avatar_url" => get_post_meta($post->ID, 'avatar_url', true),
+			"politicalParty" => getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)),
+			"states" => get_post_meta($post->ID, 'wp_zone_state', true),
+			"name" => the_title()
+		);
+	}
+	
+	if($json) {
+		echo json_encode($data, JSON_NUMERIC_CHECK);
+		exit;
+	} else {
+		return array("data" => $data, "count" => $count);
+	}
 }
 /*********** Representantes ***************/
+
+
+
 
 /*********** Iniciativas ***************/
 /*Get iniciativas by commission*/
