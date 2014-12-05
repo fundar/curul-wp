@@ -359,7 +359,7 @@
 		jQuery("#comision-filter").change( function() {
 			if(jQuery("#comision-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove
+				jQuery("#partido-politico-filter").remove();
 				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
