@@ -492,9 +492,9 @@ function getTemas() {
 		array("name" => "publicidad oficial", "slug" => "publicidad-oficial"),
 		array("name" => "parlamento abierto", "slug" => "parlamento-abierto"),
 		array("name" => "participación ciudadana", "slug" => "participacion-ciudadana"),
-		array("name" => "presupuesto", "cve" => "7", "slug" => "presupuesto"),
-		array("name" => "migración", "cve" => "8", "slug" => "migracion"),
-		array("name" => "salud", "cve" => "9", "slug" => "salud"),
+		array("name" => "presupuesto",  "slug" => "presupuesto"),
+		array("name" => "migración", "slug" => "migracion"),
+		array("name" => "salud",  "slug" => "salud"),
 		array("name" => "industrias extractivas", "slug" => "industrias-extractivas"),
 		array("name" => "minería",  "slug" => "mineria"),
 		array("name" => "derechos humanos",  "slug" => "derechos-humanos"),
@@ -506,6 +506,22 @@ function getTemas() {
 	
 	return $temas;
 }
+
+ /*Get STATUS array*/
+function getStatus() {
+	$status = array(
+		array("name" => "Turnada", "slug" => "turnada"),
+		array("name" => "Dictaminada en sentido negativo",  "slug" => "dictaminada-en-sentido-negativo"),
+		array("name" => "Enviada", "slug" => "enviada"),
+		array("name" => "Turnada", "slug" => "turnada"),
+		array("name" => "Prórroga", "slug" => "prorroga"),
+		array("name" => "Devuelta", "slug" => "devuelta"),
+		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada")		
+	);
+	
+	return $status;
+}
+	  
 
 
 
