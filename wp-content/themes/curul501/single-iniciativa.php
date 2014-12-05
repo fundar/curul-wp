@@ -363,7 +363,7 @@
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
 
-		    jQuery("#grafikas").on("click", function(e){
+		    jQuery(".grafikas").on("click", function(e){
 		    	jQuery("#graficas_content").slideToggle();
 				return false;		    	
 		    })
