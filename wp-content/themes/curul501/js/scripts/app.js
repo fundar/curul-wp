@@ -301,8 +301,8 @@ run.pieChart = function(votos, urlBase){
 
           jQuery("body").one("mousemove", function( event ) {
               d3.select('#tooltip')
-                  .style('left', ( event.pageX - 30) + 'px')
-                  .style('top', ( event.pageY - 30) + 'px')
+                  .style('left', ( event.pageX - 60) + 'px')
+                  .style('top', ( event.pageY - 60) + 'px')
                   .select('#value')
                   .text(d.x + " " + data.tag);
              
