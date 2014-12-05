@@ -1,4 +1,64 @@
+<style type="text/css">
+	#barchart{ opacity: 0;}
+
+	#google-visualization-errors-0{ display: none; }
+
+	.partidos path{ fill: none; }
+
+	.axis path { fill: none; }
+/*
+	#tooltip {
+	    position: relative;
+	    text-align: center;
+	    width: 140px;
+	    height: auto;
+	    padding: 10px;
+	    background-color: white;
+	    -webkit-border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    border-radius: 10px;
+	    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	}
+	#tooltip.hidden { display: none; }
+
+	#tooltip p {
+	    margin: 0;
+	    font-family: sans-serif;
+	    font-size: 16px;
+	    line-height: 20px;
+	}
+*/
+	#pie_chart{
+	  width: 510px;
+	  float: left;
+	}
+
+	#bar_chart, #barchart {
+		float:left;
+	  	width: 450px;
+	}
+
+	circle,
+	path { 
+	  cursor: pointer; 
+	}
+
+	circle {
+	  fill: none;
+	  pointer-events: all;
+	}
+  
+</style>
+
+
 <?php get_header(); ?>
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
+
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
+ 	
 		<div class="container top60">										     
 						<h1 class="entry-title-yellow">Iniciativas</h1>
 						<div class="line-amarilla"> </div>
@@ -67,6 +127,7 @@
 							$elements = explode("|", $status_iniciativa);
    						    $status_final=count($elements)-1;
 							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
+							$representantes 	= json_decode(get_post_meta($post->ID, 'wp_votos_representantes', true));
 							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
 							//$votos_decode =	json_decode($votos,true);
 							$WorkingArray = json_decode(json_encode($votos),true);
@@ -254,17 +315,55 @@
 					</div>
 			</div>
 			
-			
-			
 		<div class="container griss">
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
+
 		</div>
-									<?php } ?>
+		
+		<div id="graficas_content">
+			<div id="pie_chart"></div>
+			<div id="bar_chart"></div>
+
+			<div id="tooltip" class="hidden">
+			  <p><span id="value">100</span> </p>
+			</div>
+
+			<!--div ng-app="" ng-controller="run.representantes_ctr">
+			    <p>Name: <input type="text" ng-model="full_name"></p>
+			    <table>
+			      <tr>
+			        <th>No. Representante</th>
+			        <th>Nombre</th>
+			        <th>Partido</th>
+			        <th>Tipo</th>
+			        <th>Zona</th>
+			      </tr>
+			      <tr ng-repeat="r in representantes | filter:full_name">
+			        <td> {{ (r.id_representative ) }} </td>
+			        <td> {{ (r.nombre ) }} </td>
+			        <td> {{ (r.partido ) }} </td>
+			        <td> {{ (r.tipo ) }} </td>
+			        <td> {{ (r.zone_state ) }} </td>
+			      </tr>
+
+			    </table>
+			  </div-->
+		</div>
+		
+		<script>
+			var votos = <?php echo json_encode( array_values($voto) ); ?>;
+			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+
+		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+		    run.representantes_load(representantes)
+	  	</script>	
+
+		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="titulos-voto">Status <span>de la</span></p><p class="titulos-voto-2"><span">iniciativa</span></p>
+				<p class="titulos-voto">Status <span>de la</span></p><p class="titulos-voto-2"><span>iniciativa</span></p>
 				</div>
 				</section>
 				</div>

@@ -109,7 +109,11 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
-	$args = array('post_type' => 'representante',
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_commissions_slug',
@@ -127,7 +131,11 @@ function getRepresentativesByCommission($commission) {
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
-	$args = array('post_type' => 'representante',
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
@@ -142,9 +150,39 @@ function getRepresentativesByState($state) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get initiativas by political party*/
+function getInitiativasByPoliticalParty($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_partidos_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
-	$args = array('post_type' => 'representante',
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_political_party_slug',
@@ -152,9 +190,13 @@ function getRepresentativesByPoliticalParty($slug) {
 			)
 		)
 	);
-
+	
+	
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
 	
 	return array("loop" => $loop, "count" => $count);
 }
@@ -346,6 +388,26 @@ function getDataRepresentatives() {
 	return $data;
 }
 
+/*get data by parameter $_GET */
+function getDataIniciativas() {
+	if(isset($_GET["partido-politico"])) {
+		$result = getInitiativasByPoliticalParty($_GET["partido-politico"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["estado"])) {
+		$result = getRepresentativesByState($_GET["estado"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["comision"])) {
+		$result = getRepresentativesByCommission($_GET["comision"]);
+		$data = $result["loop"];
+	} else {
+		return false;
+	}
+	
+	return $data;
+}
+
+
+
 
 /*get data by parameter $_GET */
 function getParameterValueGET() {
@@ -368,4 +430,64 @@ function add_login_logout_link($items, $args) {
         ob_end_clean();
         $items .= '<li>'. $loginoutlink .'</li>';
     return $items;
+}
+
+
+function avia_pagination2($pages = '', $wrapper = 'div', $custom = false) {
+	global $paged;
+
+	if(get_query_var('paged')) {
+	     $paged = get_query_var('paged');
+	} elseif(get_query_var('page')) {
+	     $paged = get_query_var('page');
+	} else {
+	     $paged = 1;
+	}
+
+	$output = "";
+	$prev = $paged - 1;
+	$next = $paged + 1;
+	$range = 2; // only edit this if you want to show more page-links
+	$showitems = ($range * 2)+1;
+
+
+
+	if($pages == '') {
+		if($custom) {
+			$pages = $custom->max_num_pages;
+			if(!$pages) {
+				$pages = 1;
+			}
+		} else {
+			global $wp_query;
+			//$pages = ceil(wp_count_posts($post_type)->publish / $per_page);
+			$pages = $wp_query->max_num_pages;
+			if(!$pages) {
+				$pages = 1;
+			}
+		}
+		
+	}
+
+	$method = "get_pagenum_link";
+
+	if(1 != $pages) {
+		$output .= "<$wrapper class='pagination'>";
+		$output .= "<span class='pagination-meta'>".sprintf(__("Page %d of %d", 'avia_framework'), $paged, $pages)."</span>";
+		$output .= ($paged > 2 && $paged > $range+1 && $showitems < $pages)? "<a href='".$method(1)."'>&laquo;</a>":"";
+		$output .= ($paged > 1 && $showitems < $pages)? "<a href='".$method($prev)."'>&lsaquo;</a>":"";
+
+
+		for($i=1; $i <= $pages; $i++) {
+			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+				$output .= ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".$method($i)."' class='inactive' >".$i."</a>";
+			}
+		}
+
+		$output .= ($paged < $pages && $showitems < $pages) ? "<a href='".$method($next)."'>&rsaquo;</a>" :"";
+		$output .= ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".$method($pages)."'>&raquo;</a>":"";
+		$output .= "</$wrapper>\n";
+	}
+
+	return $output;
 }

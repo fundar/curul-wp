@@ -1,5 +1,7 @@
 <?php
 	global $avia_config, $more;
+	$selectedOption = getParameterValueGET();
+	$data = getDataIniciativas();
 
 	/*
 	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -22,6 +24,7 @@
 <!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
+								<form name="filter-representanes" id="filter-representanes" action="/iniciativas">
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
 					       <option value="1">Tema</option>
@@ -33,13 +36,18 @@
 					       <option value="2">Proponente(s)</option>
 					       <option value="2">Opcion 2</option>														
 				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
-				       </select>
-			       </div>
+			       </div>			       	   			   
+				   <div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>				   		   
 			       <div id="filter">										
 				       <select class="sorter-comision sort" name="category">
 					       <option value="1">Comisi&oacute;n dictaminadora</option>
@@ -67,7 +75,9 @@
 					       <option value="2">Opcion 1</option>
 					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
 				       </select>
-			       </div>					
+			       </div>		
+					</form>				
+				   
 			</div>
 		</div>
 <!-- Fin filtros iniciativas -->		
@@ -199,3 +209,37 @@
 		</div><!-- close default .container_wrap element -->
 
 <?php get_footer(); ?>
+
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#loading-gif").hide();
+		
+		jQuery("#partido-politico-filter").change( function() {
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#estado-filter").change( function() {
+			if(jQuery("#estado-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		setMap();
+	});
+	
+</script>
+
