@@ -186,8 +186,8 @@ run.pieChart = function(votos, urlBase){
     }
 
     function clear(){
-      //Velocity(document.querySelectorAll("#bar_chart")[0] , { opacity: 0 }, 500)
-      jQuery("#bar_chart").animate({ opacity: 0 }, 500)
+      //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
+      jQuery("#barchart").animate({ opacity: 0 }, 500)
       totalUpdate("500");
 
     }
@@ -220,7 +220,7 @@ run.pieChart = function(votos, urlBase){
     }
    
     plot = function(data){
-      d3.select("#bar_chart").remove();
+      d3.select("#barchart").remove();
       var margins = {
         top: 12,
         left: 48,
@@ -255,9 +255,9 @@ run.pieChart = function(votos, urlBase){
             return {  x: d.y, y: d.x, x0: d.y0 };
         });
       }),
-      bar_chart = d3.select('#bar_chart')
+      barchart = d3.select('#bar_chart')
           .append('svg')
-          .attr("id","bar_chart")
+          .attr("id","barchart")
           .attr('width', width + margins.left + margins.right + legendPanel.width)
           .attr('height', height + margins.top + margins.bottom )
           .append('g')
@@ -278,7 +278,7 @@ run.pieChart = function(votos, urlBase){
       yAxis = d3.svg.axis()
           .scale(yScale)
           .orient('left'),
-      groups = bar_chart.selectAll('g')
+      groups = barchart.selectAll('g')
           .data(dataset)
           .enter()
           .append('g')
@@ -304,8 +304,8 @@ run.pieChart = function(votos, urlBase){
               .text(d.x + " " + data.tag);
           /*
 
-            bar_chart.select(".partidos").selectAll("text").remove();
-            var ticks = bar_chart.select(".partidos").selectAll(".tick")
+            barchart.select(".partidos").selectAll("text").remove();
+            var ticks = barchart.select(".partidos").selectAll(".tick")
                         .append("svg:image")
                         .attr("xlink:href", function (d) {
                           return './statics/img/' + d + '.png'  ; 
@@ -324,28 +324,28 @@ run.pieChart = function(votos, urlBase){
           d3.select('#tooltip').classed('hidden', true);
       })
 
-      bar_chart.append('text')
+      barchart.append('text')
           .attr('fill', 'black')
           .attr('y', 0)
           .text(data.title);
 
-      bar_chart.append('g')
+      barchart.append('g')
           .attr('class', 'axis')
           .attr('transform', 'translate(0,' + height + ')')
           .call(xAxis);
 
-      bar_chart.append('g')
+      barchart.append('g')
           .attr('class', 'partidos')
           .call(yAxis);
 
-      bar_chart.append('rect')
+      barchart.append('rect')
           .attr('fill', 'white')
           .attr('width', 160)
           .attr('height', 30 * dataset.length)
           .attr('x', width + margins.left)
           .attr('y', 0);
       // cambiar texto por imagenes
-      bar_chart.select(".axis").selectAll("text")
+      barchart.select(".axis").selectAll("text")
         .attr("stroke", "#ccc")
         .attr("fill", "#ccc")
         .attr("font-family", "sans-serif")
@@ -358,8 +358,8 @@ run.pieChart = function(votos, urlBase){
 4      text-anchor="middle"
         */
 
-      bar_chart.select(".partidos").selectAll("text").remove();
-      var ticks = bar_chart.select(".partidos").selectAll(".tick")
+      barchart.select(".partidos").selectAll("text").remove();
+      var ticks = barchart.select(".partidos").selectAll(".tick")
                   .append("svg:image")
                   .attr("xlink:href", function (d) {
                     return urlBase + '/images/' + d.toLowerCase() + '-54px.png'  ; 
@@ -371,8 +371,8 @@ run.pieChart = function(votos, urlBase){
 ;
 
     
-      //Velocity(document.querySelectorAll("#bar_chart")[0] , { opacity: 1 }, 1000)
-      jQuery("#bar_chart").animate({ opacity: 1 }, 1000)
+      //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
+      jQuery("#barchart").animate({ opacity: 1 }, 1000)
      
     }
     // Zoom to the specified new root.
