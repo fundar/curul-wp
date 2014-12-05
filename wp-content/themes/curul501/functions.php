@@ -185,6 +185,7 @@ function getRepresentatives($json = false) {
 	while($loop->have_posts()) {
 		$loop->the_post();
 		$data[] = array(
+			"permalink" => get_permalink($loop->post->ID),
 			"avatar_url" => get_post_meta($loop->post->ID, 'avatar_url', true),
 			"politicalParty" => array_map('utf8_encode', getPoliticalParty(get_post_meta($loop->post->ID, 'wp_id_political_party', true))),
 			"zone_state" => get_post_meta($loop->post->ID, 'wp_zone_state', true),
