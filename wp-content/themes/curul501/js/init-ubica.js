@@ -66,8 +66,8 @@ function getPip(lat, lng) {
 					return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
 				});
 				
-				var html  = "";
-				var html2 = "";
+				var html  = "<p>Representación proporcional</p>";
+				var html2 = "<p>Mayoria relativa</p>";
 				
 				jQuery.each(results, function( index, value ) {
 					if(value.circum == "") {
