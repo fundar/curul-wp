@@ -129,6 +129,31 @@ function getRepresentativesByCommission($commission) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get iniciativas by commission*/
+function getIniciativasByCommission($commission) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_commissions_slug',
+				'value'   => $commission,
+				'compare' => 'LIKE' 
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+
+
+
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -150,8 +175,8 @@ function getRepresentativesByState($state) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-/*Get initiativas by political party*/
-function getInitiativasByPoliticalParty($slug) {
+/*Get iniciativas by political party*/
+function getIniciativasByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'iniciativa',
@@ -391,13 +416,13 @@ function getDataRepresentatives() {
 /*get data by parameter $_GET */
 function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
-		$result = getInitiativasByPoliticalParty($_GET["partido-politico"]);
+		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["estado"])) {
-		$result = getRepresentativesByState($_GET["estado"]);
+		$result = getIniciativasByState($_GET["estado"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
-		$result = getRepresentativesByCommission($_GET["comision"]);
+		$result = getIniciativasByCommission($_GET["comision"]);
 		$data = $result["loop"];
 	} else {
 		return false;
@@ -405,9 +430,6 @@ function getDataIniciativas() {
 	
 	return $data;
 }
-
-
-
 
 /*get data by parameter $_GET */
 function getParameterValueGET() {
