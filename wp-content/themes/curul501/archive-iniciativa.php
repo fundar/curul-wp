@@ -25,18 +25,6 @@
 		<div class="container box-menu">
 			<div class="search-table">
 								<form name="filter-iniciativas" id="filter-iniciativas" action="/iniciativas">
-				<div id="filter">
-				       <select class="sorter-tema sort" name="category">
-					       <option value="1">Tema</option>
-					       <option value="2">Tema 2</option>							
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-proponente sort" name="category">
-					       <option value="2">Proponente(s)</option>
-					       <option value="2">Opcion 2</option>														
-				       </select>
-			       </div>			       	   			   
 				   <div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
 							   <option value="">Partidos pol&iacute;ticos</option>
@@ -48,34 +36,7 @@
 								<?php } ?>
 						   </select>
 					   </div>				   		   
-			       <div id="filter">										
-				       <select class="sorter-comision sort" name="category">
-					       <option value="1">Comisi&oacute;n dictaminadora</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-turno sort" name="category">
-					       <option value="1">Fecha de elecci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-votacion sort" name="category">
-					       <option value="1">Fecha de votaci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 fgbhfgh</option>	
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-estado sort" name="category">
-					       <option value="1">Estado actual</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
-				       </select>
-			       </div>		
+			       		
 					</form>				
 				   
 			</div>
