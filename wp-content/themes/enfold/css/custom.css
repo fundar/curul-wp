@@ -1042,6 +1042,11 @@ a.grafikas:hover{
     margin-top: -10px;
     width: 100%;
 }
+.share-sidebar-vota > .logged-in-only > .reddit-voting {
+    background: none repeat scroll 0 0 #512b60;
+    margin-top: -10px;
+    width: 100%;
+}
 /** representantes **/
 .no-borde{
     border: 0px solid rgba(153, 145, 168, 0.3) !important; 
