@@ -178,7 +178,7 @@ function getRepresentativesByPoliticalParty($slug) {
 
 /*Get representatives*/
 function getRepresentatives($json = false) {
-	$args  = array('post_type' => 'representante');
+	$args  = array('post_type' => 'representante', 'posts_per_page' => 600);
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
 	
