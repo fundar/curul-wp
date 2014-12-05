@@ -1,5 +1,7 @@
 <?php
 	global $avia_config, $more;
+	$selectedOption = getParameterValueGET();
+	$data = getDataIniciativas();
 
 	/*
 	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -22,8 +24,7 @@
 <!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
-								<form name="filter-representanes" id="filter-representanes" action="/representantes">
-
+								<form name="filter-representanes" id="filter-representanes" action="/iniciativas">
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
 					       <option value="1">Tema</option>
