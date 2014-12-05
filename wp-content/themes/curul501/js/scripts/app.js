@@ -307,7 +307,7 @@ run.pieChart = function(votos, urlBase){
           })
 
       }).on('mouseout', function () {
-          $( "#tooltip" ).off("mousemove", "**");
+          //$( "#tooltip" ).off("mousemove", "**");
           d3.select('#tooltip').classed('hidden', true);
       })
 
