@@ -14,7 +14,8 @@ global $avia_config;
 		<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
 		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
 				<div id="map" style="width: 100%; height:500px;"></div>
-				<div class="map-info-representante"></div>
+				<div class="map-info-representante-mayoria"></div>
+				<div class="map-info-representante-proporcional"></div>
 			</div>
 		</div>
 		<!-- fin mapa de representantes-->
