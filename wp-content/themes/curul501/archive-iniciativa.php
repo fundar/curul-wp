@@ -24,7 +24,7 @@
 <!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
-								<form name="filter-representanes" id="filter-representanes" action="/iniciativas">
+								<form name="filter-iniciativas" id="filter-iniciativas" action="/iniciativas">
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
 					       <option value="1">Tema</option>
@@ -218,7 +218,7 @@
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#estado-filter").remove();
 				jQuery("#comision-filter").remove();
-				jQuery("#filter-representanes").submit();
+				jQuery("#filter-iniciativas").submit();
 			}
 		});
 		
@@ -226,7 +226,7 @@
 			if(jQuery("#estado-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
-				jQuery("#filter-representanes").submit();
+				jQuery("#filter-iniciativas").submit();
 			}
 		});
 		
@@ -234,7 +234,7 @@
 			if(jQuery("#comision-filter option:selected").val() != "") {
 				jQuery("#estado-filter").remove();
 				jQuery("#partido-politico-filter").remove();
-				jQuery("#filter-representanes").submit();
+				jQuery("#filter-iniciativas").submit();
 			}
 		});
 		
