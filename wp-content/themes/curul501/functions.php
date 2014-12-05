@@ -185,10 +185,10 @@ function getRepresentatives($json = false) {
 	while($loop->have_posts()) {
 		$loop->the_post();
 		$data[] = array(
-			"avatar_url" => get_post_meta($post->ID, 'avatar_url', true),
-			"politicalParty" => getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)),
-			"states" => get_post_meta($post->ID, 'wp_zone_state', true),
-			"name" => the_title()
+			"avatar_url" => get_post_meta($loop->post->ID, 'avatar_url', true),
+			"politicalParty" => getPoliticalParty(get_post_meta($loop->post->ID, 'wp_id_political_party', true)),
+			"states" => get_post_meta($loop->post->ID, 'wp_zone_state', true),
+			"name" => get_the_title($loop->post->ID)
 		);
 	}
 	
