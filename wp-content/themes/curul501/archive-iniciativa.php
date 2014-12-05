@@ -22,6 +22,8 @@
 <!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
+								<form name="filter-representanes" id="filter-representanes" action="/representantes">
+
 				<div id="filter">
 				       <select class="sorter-tema sort" name="category">
 					       <option value="1">Tema</option>
@@ -72,7 +74,9 @@
 					       <option value="2">Opcion 1</option>
 					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
 				       </select>
-			       </div>					
+			       </div>		
+					</form>				
+				   
 			</div>
 		</div>
 <!-- Fin filtros iniciativas -->		
