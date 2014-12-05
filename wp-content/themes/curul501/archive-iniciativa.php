@@ -369,7 +369,7 @@
 			if(jQuery("#status-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-politico-filter").remove();
+				jQuery("#comision-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
