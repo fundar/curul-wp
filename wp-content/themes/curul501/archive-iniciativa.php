@@ -163,7 +163,7 @@
 
 							<?php endwhile; ?>
 								<?php } else { ?>
-							<p>No se encontraron representantes con esta busqueda</p>
+							<p>No se encontraron iniciativas con esta busqueda</p>
 						<?php } ?>
 					<?php } else { ?>
 
