@@ -48,6 +48,17 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="tema" id="tema-filter">
+							   <option value="">Temas</option>
+							   <?php $statesArray = getTemas(); ?>
+							   <?php foreach($temasArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
 					   		   
 			       		
 					</form>				
@@ -316,14 +327,14 @@
 		
 		jQuery("#partido-politico-filter").change( function() {
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#category").remove();
+				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
 		
-		jQuery("#estado-filter").change( function() {
-			if(jQuery("#estado-filter option:selected").val() != "") {
+		jQuery("#tema-filter").change( function() {
+			if(jQuery("#tema-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#filter-iniciativas").submit();
@@ -332,7 +343,7 @@
 		
 		jQuery("#comision-filter").change( function() {
 			if(jQuery("#comision-filter option:selected").val() != "") {
-				jQuery("#estado-filter").remove();
+				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
