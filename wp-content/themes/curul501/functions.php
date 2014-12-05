@@ -150,8 +150,8 @@ function getRepresentativesByState($state) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-/*Get initiativas by political party*/
-function getInitiativasByPoliticalParty($slug) {
+/*Get iniciativas by political party*/
+function getIniciativasByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'iniciativa',
@@ -211,6 +211,20 @@ function getRepresentatives() {
 	exit;
 	return array("loop" => $loop, "count" => $count);
 }
+
+
+/*Get iniciativas*/
+function getIniciativas() {
+	$args  = array('post_type' => 'iniciativa');
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	echo json_encode($loop->posts);
+	exit;
+	return array("loop" => $loop, "count" => $count);
+}
+
+
 
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
@@ -391,7 +405,7 @@ function getDataRepresentatives() {
 /*get data by parameter $_GET */
 function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
-		$result = getInitiativasByPoliticalParty($_GET["partido-politico"]);
+		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["estado"])) {
 		$result = getRepresentativesByState($_GET["estado"]);
