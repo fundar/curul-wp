@@ -51,7 +51,7 @@
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="tema" id="tema-filter">
 							   <option value="">Temas</option>
-							   <?php $statesArray = getTemas(); ?>
+							   <?php $temassArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
