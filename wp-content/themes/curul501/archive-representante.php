@@ -9,13 +9,6 @@
 	
 	
 	?>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<style>
-		#map {  border-top: 2px solid #48265C; border-bottom: 2px solid #48265C;}
-		#loading-gif { z-index:100; position:fixed; top:30%; left:40%; }
-	</style>
-	
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
 			<div class="container top60">
