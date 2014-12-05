@@ -257,7 +257,7 @@ run.pieChart = function(votos, urlBase){
       }),
       barchart = d3.select('#bar_chart')
           .append('svg')
-          .attr("id","barchart")
+          .attr("id","bar_chart")
           .attr('width', width + margins.left + margins.right + legendPanel.width)
           .attr('height', height + margins.top + margins.bottom )
           .append('g')
@@ -372,7 +372,7 @@ run.pieChart = function(votos, urlBase){
 
     
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 1 }, 1000)
-      jQuery("#barchart").animate({ opacity: 1 }, 1000)
+      jQuery("#bar_chart").animate({ opacity: 1 }, 1000)
      
     }
     // Zoom to the specified new root.
