@@ -9,7 +9,7 @@
 	    position: relative;
 	    text-align: center;
 	    width: 140px;
-	    height: auto;
+	    height: 30px;
 	    padding: 10px;
 	    background-color: white;
 	    -webkit-border-radius: 10px;
@@ -26,6 +26,8 @@
 	    font-family: sans-serif;
 	    font-size: 16px;
 	    line-height: 20px;
+	     width: 140px;
+	    height: 30px;
 	}
 
 	#pie_chart{
