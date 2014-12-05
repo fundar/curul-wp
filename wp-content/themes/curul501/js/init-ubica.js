@@ -63,7 +63,7 @@ function getPip(lat, lng) {
 				}
 				
 				var results = jQuery(representatives).filter(function (i, value) {
-					return value.circum == circum || (value.clave_estado == state && value.district == district);
+					return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
 				});
 				
 				var html = "";
