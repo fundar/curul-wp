@@ -192,6 +192,7 @@ function getRepresentatives($json = false) {
 			"clave_estado" => get_post_meta($loop->post->ID, 'wp_clave_estado', true),
 			"district" => get_post_meta($loop->post->ID, 'wp_district_clean', true),
 			"circum" => get_post_meta($loop->post->ID, 'wp_circumscription', true),
+			"election_type" => get_post_meta($post->ID, 'wp_election_type', true),
 			"name" => get_the_title($loop->post->ID)
 		);
 	}
