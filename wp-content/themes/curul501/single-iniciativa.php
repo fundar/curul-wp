@@ -1,6 +1,4 @@
 <style type="text/css">
-	#barchart{ opacity: 0;}
-
 	#google-visualization-errors-0{ display: none; }
 
 	.partidos path{ fill: none; }
@@ -37,9 +35,15 @@
 
 	#bar_chart, #barchart {
 		float:left;
+		opacity: 0;
 	  	width: 450px;
+		overflow-y: hidden;
 	}
 
+	#pie_chart{
+		overflow-y: hidden;
+	}
+	
 	circle,
 	path { 
 	  cursor: pointer; 
