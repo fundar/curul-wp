@@ -513,6 +513,11 @@ function getDataIniciativas() {
 	} elseif(isset($_GET["comision"])) {
 		$result = getIniciativasByCommission($_GET["comision"]);
 		$data = $result["loop"];
+	} elseif(isset($_GET["tema"])) {
+		$result = getIniciativasByCommission($_GET["tema"]);
+		$data = $result["loop"];
+		
+		
 	} else {
 		return false;
 	}
@@ -528,6 +533,8 @@ function getParameterValueGET() {
 		return $_GET["estado"];
 	} elseif(isset($_GET["comision"])) {
 		return $_GET["comision"];
+	} elseif(isset($_GET["tema"])) {
+		return $_GET["tema"];		
 	} else {
 		return "";
 	}
