@@ -2,7 +2,7 @@
 	global $avia_config, $more;
 	$selectedOption = getParameterValueGET();
 	$data = getDataRepresentatives();
-	getRepresentatives(true);
+	
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
@@ -197,6 +197,7 @@
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/leaflet-pip.min.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-ubica.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/representatives.js" type="text/javascript"></script>
 	
 <script type="text/javascript">
 	jQuery(document).ready( function () {
