@@ -237,28 +237,6 @@ function getRepresentatives($json = false) {
 	}
 }
 
-/*Get representatives Jose*/
-
-function getRepresentatives2($json = false) {
-	$args  = array('post_type' => 'representante', 'posts_per_page' => 600);
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	while($loop->have_posts()) {
-		$loop->the_post();
-		$data[] = array(
-			"full_name" => get_post_meta($loop->post->ID, 'wp_full_name', true),
-			"slug" => get_post_meta($loop->post->ID, 'wp_slug', true)
-		);
-	}
-	
-	if($json) {
-		echo json_encode($data, JSON_NUMERIC_CHECK);
-		exit;
-	} else {
-		return array("data" => $data, "count" => $count);
-	}
-}
 
 /*********** Representantes ***************/
 
