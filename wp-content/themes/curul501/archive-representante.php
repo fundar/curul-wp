@@ -35,7 +35,7 @@
 					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="estado" id="estado-filter">
-							   <option value="">Estado</option>
+							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
@@ -58,7 +58,7 @@
 					   </div>
 					   
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="tipo-eleccion" id="comision-filter">
+						   <select class="sorter-rep sort" name="tipo-eleccion" id="tipo-eleccion-filter">
 							   <option value="">Tipo de elección</option>
 								<option value="representacion-proporcional" <?php if($selectedOption == "representacion-proporcional") echo 'selected="selected"'?>>
 									Representación proporcional
@@ -101,7 +101,7 @@
 													</li>
 													
 													<li class="navrepr-left">
-														Tipo de elección: <?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
 													</li>
 													
 													<li class="navrepr-left">
@@ -153,6 +153,10 @@
 													</li>
 													
 													<li class="navrepr-left">
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+													</li>
+													
+													<li class="navrepr-left">
 														Cargo: Diputado
 													</li>
 													
@@ -200,6 +204,7 @@
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#estado-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
 				jQuery("#filter-representanes").submit();
 			}
 		});
@@ -208,12 +213,23 @@
 			if(jQuery("#estado-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
 				jQuery("#filter-representanes").submit();
 			}
 		});
 		
 		jQuery("#comision-filter").change( function() {
 			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#tipo-eleccion-filter").change( function() {
+			if(jQuery("#tipo-eleccion-filter option:selected").val() != "") {
+				jQuery("#comision-filter").remove();
 				jQuery("#estado-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#filter-representanes").submit();

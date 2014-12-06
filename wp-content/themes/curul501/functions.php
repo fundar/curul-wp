@@ -181,9 +181,9 @@ function getRepresentativesByTypeElection($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
 	if($slug == "representacion-proporcional") {
-		$slug = "Representación Proporcional";
+		$slug = utf8_encode("Representación Proporcional");
 	} else {
-		$slug = "Mayoría Relativa";
+		$slug = utf8_encode("Mayoría Relativa");
 	}
 	
 	$args  = array(
@@ -655,9 +655,14 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
+<<<<<<< HEAD
 	} elseif(isset($_GET["representantes"])) {
 		return $_GET["representantes"];
 		
+=======
+	} elseif(isset($_GET["tipo-eleccion"])) {
+		return $_GET["tipo-eleccion"];
+>>>>>>> origin/master
 	} else {
 		return "";
 	}
