@@ -654,6 +654,8 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
+	} elseif(isset($_GET["tipo-eleccion"])) {
+		return $_GET["tipo-eleccion"];
 	} else {
 		return "";
 	}
