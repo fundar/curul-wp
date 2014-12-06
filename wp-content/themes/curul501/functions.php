@@ -761,7 +761,8 @@ function posts_column_views($defaults){
     return $defaults;
 }
 function posts_custom_column_views($column_name, $id){
+	$id=$wp_query->post->ID;
 	if($column_name === 'post_views'){
-        echo getPostViews($wp_query->post->ID);
+        echo getPostViews($id);
     }
 }
