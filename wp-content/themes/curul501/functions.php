@@ -725,13 +725,3 @@ function is_post_type($type){
     if($type == get_post_type($wp_query->post->ID)) return true;
     return false;
 }
-
-add_filter( 'pre_get_posts', 'my_get_posts' );
-
-function my_get_posts( $query ) {
-
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'iniciativa' ) );
-
-	return $query;
-}
