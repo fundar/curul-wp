@@ -296,21 +296,17 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          var xPos = parseFloat(d3.select(this).attr('x')) / 2 + parseFloat(d3.select(this).attr('width')) + 55;
-          var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
-
-          jQuery("body").mousemove(function( event ) {
+          jQuery("body").one("mousemove", function( event ) {
               d3.select('#tooltip')
-                  .style('left', (event.pageX + 20) + 'px')
-                  .style('top',  event.pageY + 'px')
+                  .style('left', ( event.pageX - 115) + 'px')
+                  .style('top', ( event.pageY - 150) + 'px')
                   .select('#value')
                   .text(d.x + " " + data.tag);
              
               d3.select('#tooltip').classed('hidden', false);
           })
 
-      })
-          .on('mouseout', function () {
+      }).on('mouseout', function () {
           //d3.select('#tooltip').classed('hidden', true);
       })
 

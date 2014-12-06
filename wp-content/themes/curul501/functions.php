@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	$p2_custom_post_type = "representante"; //iniciativa|representante
+	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
     
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
@@ -267,6 +267,31 @@ function getIniciativasByTemas($slug) {
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_topics_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+/*Get iniciativas by status party*/
+function getIniciativasByStatus($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_last_status_slug',
 				'value'   => $slug
 			)
 		)
@@ -467,9 +492,9 @@ function getTemas() {
 		array("name" => "publicidad oficial", "slug" => "publicidad-oficial"),
 		array("name" => "parlamento abierto", "slug" => "parlamento-abierto"),
 		array("name" => "participación ciudadana", "slug" => "participacion-ciudadana"),
-		array("name" => "presupuesto", "cve" => "7", "slug" => "presupuesto"),
-		array("name" => "migración", "cve" => "8", "slug" => "migracion"),
-		array("name" => "salud", "cve" => "9", "slug" => "salud"),
+		array("name" => "presupuesto",  "slug" => "presupuesto"),
+		array("name" => "migración", "slug" => "migracion"),
+		array("name" => "salud",  "slug" => "salud"),
 		array("name" => "industrias extractivas", "slug" => "industrias-extractivas"),
 		array("name" => "minería",  "slug" => "mineria"),
 		array("name" => "derechos humanos",  "slug" => "derechos-humanos"),
@@ -481,6 +506,33 @@ function getTemas() {
 	
 	return $temas;
 }
+
+
+ 
+
+ /*Get STATUS array*/
+function getStatus() {
+	$status = array(
+		array("name" => "Turnada", "slug" => "turnada"),
+		array("name" => "Dictaminada en sentido negativo",  "slug" => "dictaminada-en-sentido-negativo"),
+		array("name" => "Enviada", "slug" => "enviada"),
+		array("name" => "Turnada", "slug" => "turnada"),
+		array("name" => "Prórroga", "slug" => "prorroga"),
+		array("name" => "Devuelta", "slug" => "devuelta"),
+		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada"),
+		array("name" => "Aprobada", "slug" => "aprobada"),
+		array("name" => "Desechada", "slug" => "desechada"),
+		array("name" => "Dictaminada", "slug" => "dictaminada"),
+		array("name" => "Precluida", "slug" => "precluida"),
+		array("name" => "Presentada", "slug" => "presentada"),
+		array("name" => "Publicado", "slug" => "publicado"),
+		array("name" => "Se le dispensaron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites")
+		
+	);
+	
+	return $status;
+}
+	  
 
 
 
@@ -507,14 +559,14 @@ function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 		$data = $result["loop"];
-	} elseif(isset($_GET["estado"])) {
-		$result = getIniciativasByTemas($_GET["estado"]);
-		$data = $result["loop"];
 	} elseif(isset($_GET["comision"])) {
 		$result = getIniciativasByCommission($_GET["comision"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["tema"])) {
-		$result = getIniciativasByCommission($_GET["tema"]);
+		$result = getIniciativasByTemas($_GET["tema"]);
+		$data = $result["loop"];
+	} elseif(isset($_GET["status"])) {
+		$result = getIniciativasByStatus($_GET["status"]);
 		$data = $result["loop"];
 		
 		
@@ -534,7 +586,9 @@ function getParameterValueGET() {
 	} elseif(isset($_GET["comision"])) {
 		return $_GET["comision"];
 	} elseif(isset($_GET["tema"])) {
-		return $_GET["tema"];		
+		return $_GET["tema"];
+	} elseif(isset($_GET["status"])) {
+		return $_GET["status"];
 	} else {
 		return "";
 	}
@@ -608,4 +662,12 @@ function avia_pagination2($pages = '', $wrapper = 'div', $custom = false) {
 	}
 
 	return $output;
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+	if(!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+	}
 }

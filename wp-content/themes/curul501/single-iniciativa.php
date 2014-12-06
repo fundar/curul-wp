@@ -26,8 +26,6 @@
 	    font-family: sans-serif;
 	    font-size: 16px;
 	    line-height: 20px;
-	    width: auto;
-	    height: auto;
 	}
 
 	#pie_chart{
@@ -342,10 +340,6 @@
 			  <p><span id="value">100</span> </p>
 			</div>
 
-			<div id="title">
-			  <span id="title_text"> </span> 
-			  <span id="title_count"> </span> 
-			</div>
 
 			<!--div ng-app="" ng-controller="run.representantes_ctr">
 			    <p>Name: <input type="text" ng-model="full_name"></p>

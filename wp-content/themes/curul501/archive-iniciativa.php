@@ -59,6 +59,19 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
+					 	<div id="filter">				
+						   <select class="sorter-rep sort" name="status" id="status-filter">
+							   <option value="">Status</option>
+							   <?php $statusArray = getStatus(); ?>
+							   <?php foreach($statusArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>  
+					   
 					   		   
 			       		
 					</form>				
@@ -329,6 +342,7 @@
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -337,6 +351,7 @@
 			if(jQuery("#tema-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -345,9 +360,20 @@
 			if(jQuery("#comision-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
+				jQuery("#status-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
+				
+		jQuery("#status-filter").change( function() {
+			if(jQuery("#status-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
 		
 		setMap();
 	});

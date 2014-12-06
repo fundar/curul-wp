@@ -9,13 +9,6 @@
 	
 	
 	?>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<style>
-		#map {  border-top: 2px solid #48265C; border-bottom: 2px solid #48265C;}
-		#loading-gif { z-index:100; position:fixed; top:30%; left:40%; }
-	</style>
-	
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
 			<div class="container top60">
@@ -179,25 +172,10 @@
 						}
 					?>
 				</main>
-				
-				<!-- inicio mapa de representantes-->
-				<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
-				   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
-						<div id="map" style="width: 100%; height:500px;"></div>
-						<div class="map-info-representante"></div>
-					</div>
-				</div>
-				<!-- fin mapa de representantes-->
-            
 			</div><!--end container-->
 		</div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
 
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/leaflet-pip.min.js" type="text/javascript"></script>
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-ubica.js" type="text/javascript"></script>
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/representatives.js" type="text/javascript"></script>
-	
 <script type="text/javascript">
 	jQuery(document).ready( function () {
 		jQuery("#loading-gif").hide();
