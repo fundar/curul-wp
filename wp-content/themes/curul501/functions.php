@@ -655,14 +655,10 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
-<<<<<<< HEAD
 	} elseif(isset($_GET["representantes"])) {
 		return $_GET["representantes"];
-		
-=======
 	} elseif(isset($_GET["tipo-eleccion"])) {
 		return $_GET["tipo-eleccion"];
->>>>>>> origin/master
 	} else {
 		return "";
 	}
