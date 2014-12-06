@@ -181,9 +181,9 @@ function getRepresentativesByTypeElection($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
 	if($slug == "representacion-proporcional") {
-		$slug = utf8_decode("Representación Proporcional");
+		$slug = utf8_encode("Representación Proporcional");
 	} else {
-		$slug = utf8_decode("Mayoría Relativa");
+		$slug = utf8_encode("Mayoría Relativa");
 	}
 	
 	$args  = array(
