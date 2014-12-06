@@ -612,7 +612,7 @@ function getDataIniciativas() {
 		$result = getIniciativasByStatus($_GET["status"]);
 		$data = $result["loop"];
 	} elseif(isset($_GET["postulante"])) {
-		$result = getIniciativasbyRepresentantes($_GET["postulante"]);
+		$result = getInitativesByRepresentative($_GET["postulante"]);
 		$data = $result["loop"];
 	} else {
 		return false;
