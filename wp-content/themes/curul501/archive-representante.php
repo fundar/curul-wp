@@ -2,7 +2,6 @@
 	global $avia_config, $more;
 	$selectedOption = getParameterValueGET();
 	$data = getDataRepresentatives();
-		getRepresentatives2(true);
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
