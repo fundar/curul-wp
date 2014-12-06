@@ -176,6 +176,38 @@ function getRepresentativesByPoliticalParty($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
+/*Get representatives by election type*/
+function getRepresentativesByTypeElection($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	
+	if($slug == "representacion-proporcional") {
+		$slug = "Representación Proporcional";
+	} else {
+		$slug = "Mayoría Relativa";
+	}
+	
+	$args  = array(
+		'post_type' => 'representante',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_election_type',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
 /*Get representatives*/
 function getRepresentatives($json = false) {
 	$args  = array('post_type' => 'representante', 'posts_per_page' => 600);
@@ -571,6 +603,9 @@ function getDataRepresentatives() {
 	} elseif(isset($_GET["comision"])) {
 		$result = getRepresentativesByCommission($_GET["comision"]);
 		$data = $result["loop"];
+	} elseif(isset($_GET["tipo-eleccion"])) {
+		$result = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
+		$data = $result["loop"];	
 	} else {
 		return false;
 	}
