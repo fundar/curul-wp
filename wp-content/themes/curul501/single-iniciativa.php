@@ -141,10 +141,8 @@
 							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
 							$explode = explode(" ", $fecha_votacion);
 							$fecha = $explode[0];
-							echo setPostViews(get_the_ID()); 
-
-						echo "hola". $wp_query->post->ID
-												
+							echo setPostViews($wp_query->post->ID); 
+						
 						?>
 			<div class='container template-blog template-single-blog '>
 
