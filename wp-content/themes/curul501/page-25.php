@@ -30,7 +30,7 @@ global $avia_config;
 											<!--Inicio fecha y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
-													<span>13</span>
+													<span>15</span>
 													Feb, 2014
 												</div>
 												<div class="entry-content">
