@@ -101,7 +101,7 @@
 													</li>
 													
 													<li class="navrepr-left">
-														Tipo de elección: <?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
 													</li>
 													
 													<li class="navrepr-left">
@@ -153,7 +153,7 @@
 													</li>
 													
 													<li class="navrepr-left">
-														Tipo de elección: <?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
 													</li>
 													
 													<li class="navrepr-left">
