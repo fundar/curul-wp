@@ -237,28 +237,6 @@ function getRepresentatives($json = false) {
 	}
 }
 
-/*Get representatives Jose*/
-
-function getRepresentatives2($json = false) {
-	$args  = array('post_type' => 'representante', 'posts_per_page' => 600);
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	while($loop->have_posts()) {
-		$loop->the_post();
-		$data[] = array(
-			"full_name" => get_post_meta($loop->post->ID, 'wp_full_name', true),
-			"slug" => get_post_meta($loop->post->ID, 'wp_slug', true)
-		);
-	}
-	
-	if($json) {
-		echo json_encode($data, JSON_NUMERIC_CHECK);
-		exit;
-	} else {
-		return array("data" => $data, "count" => $count);
-	}
-}
 
 /*********** Representantes ***************/
 
@@ -633,8 +611,8 @@ function getDataIniciativas() {
 	} elseif(isset($_GET["status"])) {
 		$result = getIniciativasByStatus($_GET["status"]);
 		$data = $result["loop"];
-	} elseif(isset($_GET["representantes"])) {
-		$result = getIniciativasbyRepresentantes($_GET["representantes"]);
+	} elseif(isset($_GET["postulante"])) {
+		$result = getInitativesByRepresentative($_GET["postulante"]);
 		$data = $result["loop"];
 	} else {
 		return false;
@@ -655,8 +633,8 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
-	} elseif(isset($_GET["representantes"])) {
-		return $_GET["representantes"];
+	} elseif(isset($_GET["postulante"])) {
+		return $_GET["postulante"];
 	} elseif(isset($_GET["tipo-eleccion"])) {
 		return $_GET["tipo-eleccion"];
 	} else {
@@ -740,4 +718,51 @@ function remove_admin_bar() {
 	if(!current_user_can('administrator') && !is_admin()) {
 	  show_admin_bar(false);
 	}
+}
+
+function is_post_type($type){
+    global $wp_query;
+    if($type == get_post_type($wp_query->post->ID)) return true;
+    return false;
+}
+
+// function to display number of posts.
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+
+// function to count views.
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+
+// Add it to a column in WP-Admin
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
+function posts_column_views($defaults){
+    $defaults['post_views'] = __('Views');
+    return $defaults;
+}
+function posts_custom_column_views($column_name, $id){
+	$id=$wp_query->post->ID;
+	if($column_name === 'post_views'){
+        echo getPostViews($id);
+    }
 }

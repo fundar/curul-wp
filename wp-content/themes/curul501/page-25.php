@@ -21,13 +21,41 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => -1 );
+						        //$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
+								
+								$args = array(
+	'posts_per_page' => '10',
+    'post_type' => 'iniciativa',
+    'order' => 'DESC',
+    'meta_key' => 'post_views_count',
+    'orderby' => 'meta_value_num');
+								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+				 <!--Inicio iniciaiva-->
+				
+				
+				<?php										
+														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
+														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
+														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
+														$votos 	= get_post_meta($post->ID, 'wp_votos', true);
+													    $WorkingArray = json_decode(json_encode($votos),true);
+												        $decode = json_decode($WorkingArray, true);
+														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
+														$elements = explode("|", $status_iniciativa);
+														$status_final=count($elements)-1;
+													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
+
+														?>
+								
+																
+				 <!--Inicio iniciaiva-->
+				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
-											<!--Inicio fecha y resumen-->
+											<!--Inicio fecga y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
 													<span>13</span>
@@ -35,33 +63,66 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                          <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
-													  <div class="top8"><?php the_excerpt(); ?></p></div>
+													 <?php the_excerpt(); ?> 
+                          
 												</div>
 											</div><!--fin fecha y resumen-->
 											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
 												<div class="col-status">
 													<div class="datos">
 													Status													
-													<div class="temporizador"><img src="wp-content/themes/curul501/images/barra-temporizador.png"></div>
+													<div class="temporizador"> 
+													<p><?php echo $elements[$status_final]; ?></p>
+													</div>
 													</div>													
 												</div> 
+												<?php
+																								
+												  if($votos != "") { ?>
+												
 												<div class="col-status-1">
 													<div class="datos">
 													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
-														130
+														<?php	echo $decode[8]['total']; ?>
+													</div>
+													<div class="hands-vote">
+									                                <ul>
+													        <li class="hand-up"><?php echo $decode[8]['favor']; ?></li>
+													        <li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
+													</ul>
+									
 													</div>
 												</div>
+																					<?php } else {  ?>
+
+																					<div class="col-status-1">
+													<div class="datos">
+													Votaci&oacute;n final													
+													</div>
+													<div class="votos-oficiles">
+													<p class="estiloEstatusP">Sin Votaci&oacute;n</p>													
+													</div>
+													
+												</div>											
+																					<?php } ?>
+
+																					
+
+												
 												<div class="col-status-2">
 													<div class="datos">Propuesta por:</div>
-													<div class="photo-avatar"><img src="wp-content/themes/curul501/images/avatar-m-42x42.png"></div>
-													<div class="logo-partido"><img src="wp-content/themes/curul501/images/18px-PRI.png">
-															<span>PRI</span>
+													<p class="estiloEstatusP">	<?php
+														if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} 
+														if($presentada_partido != "") { echo $presentada_partido.", ";} 
+														if($presentada_representante != "") { echo str_replace('|', ", ", $presentada_representante);} 
+														?>
+													</p>
 													
-													</div>
+													
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
@@ -71,13 +132,19 @@ global $avia_config;
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
+												
+												
+												
+												
+												
 											</div>
 
 											
 										</div>
 									</div>
-							</article><!--fin iniciativas-->
-							<?php endwhile; ?>
+							</article>
+							<!--fin iniciativas-->
+											<?php endwhile; ?>
 							
 						    </div>
 					</div>
