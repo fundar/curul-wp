@@ -229,6 +229,7 @@
 		
 		jQuery("#tipo-eleccion-filter").change( function() {
 			if(jQuery("#tipo-eleccion-filter option:selected").val() != "") {
+				jQuery("#comision-filter").remove();
 				jQuery("#estado-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#filter-representanes").submit();
