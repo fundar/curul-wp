@@ -633,8 +633,9 @@ function getDataIniciativas() {
 	} elseif(isset($_GET["status"])) {
 		$result = getIniciativasByStatus($_GET["status"]);
 		$data = $result["loop"];
-		
-		
+	} elseif(isset($_GET["representantes"])) {
+		$result = getIniciativasbyRepresentantes($_GET["representantes"]);
+		$data = $result["loop"];
 	} else {
 		return false;
 	}
@@ -654,6 +655,9 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
+	} elseif(isset($_GET["representantes"])) {
+		return $_GET["representantes"];
+		
 	} else {
 		return "";
 	}
