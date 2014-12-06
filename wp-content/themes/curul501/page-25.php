@@ -21,10 +21,11 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => -1 );
+						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				 <!--Inicio iniciaiva--><article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
+				 <!--Inicio iniciaiva-->
+				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
 											<!--Inicio fecha y resumen-->
