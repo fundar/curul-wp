@@ -73,7 +73,7 @@
 					   </div>  
 					   
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="representante" id="representante-filter">
+						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
 							   <option value="">Representante</option>
 							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
 								<?php foreach($RepresentanteArray as $value) { ?>
@@ -355,7 +355,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
-				jQuery("#representante-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -365,7 +365,7 @@
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
-				jQuery("#representante-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -375,7 +375,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#status-filter").remove();
-				jQuery("#representante-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -385,14 +385,14 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
-				jQuery("#representante-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
 		
 		
-		jQuery("#representante-filter").change( function() {
-			if(jQuery("#representante-filter option:selected").val() != "") {
+		jQuery("#postulante-filter").change( function() {
+			if(jQuery("#postulante-filter option:selected").val() != "") {
 				jQuery("#tema-filter").remove();
 				jQuery("#status-filter").remove();
 				jQuery("#partido-politico-filter").remove();
