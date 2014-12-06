@@ -56,6 +56,18 @@
 								<?php } ?>
 						   </select>
 					   </div>
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="tipo-eleccion" id="comision-filter">
+							   <option value="">Tipo de elección</option>
+								<option value="representacion-proporcional" <?php if($selectedOption == "representacion-proporcional") echo 'selected="selected"'?>>
+									Representación proporcional
+								</option>
+								<option value="mayoria-relativa" <?php if($selectedOption == "mayoria-relativa") echo 'selected="selected"'?>>
+									Mayoría relativa
+								</option>
+						   </select>
+					   </div>
 					</form>				
 				</div>
 			</div>
@@ -86,6 +98,10 @@
 														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
 														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
 														<?php echo utf8_encode($politicalParty["name"]);?>
+													</li>
+													
+													<li class="navrepr-left">
+														Tipo de elección: <?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
 													</li>
 													
 													<li class="navrepr-left">
