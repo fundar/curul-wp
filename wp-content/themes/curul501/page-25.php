@@ -21,7 +21,15 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
+						        //$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
+								
+								$args = array(
+	'posts_per_page' => '10',
+    'post_type' => 'iniciativa',
+    'order' => 'DESC',
+    'meta_key' => 'post_views_count',
+    'orderby' => 'meta_value_num');
+								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				 <!--Inicio iniciaiva-->
