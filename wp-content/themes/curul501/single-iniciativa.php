@@ -143,7 +143,7 @@
 							$fecha = $explode[0];
 							echo setPostViews(get_the_ID()); 
 
-
+						echo "hola". $wp_query->post->ID
 												
 						?>
 			<div class='container template-blog template-single-blog '>
