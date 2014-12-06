@@ -633,8 +633,8 @@ function getParameterValueGET() {
 		return $_GET["tema"];
 	} elseif(isset($_GET["status"])) {
 		return $_GET["status"];
-	} elseif(isset($_GET["representantes"])) {
-		return $_GET["representantes"];
+	} elseif(isset($_GET["postulante"])) {
+		return $_GET["postulante"];
 	} elseif(isset($_GET["tipo-eleccion"])) {
 		return $_GET["tipo-eleccion"];
 	} else {
