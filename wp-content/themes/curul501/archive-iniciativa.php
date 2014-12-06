@@ -72,6 +72,18 @@
 						   </select>
 					   </div>  
 					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="representante" id="representante-filter">
+							   <option value="">Representante</option>
+							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
+								<?php foreach($RepresentanteArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->full_name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
 					   		   
 			       		
 					</form>				
@@ -343,6 +355,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#representante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -352,6 +365,7 @@
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#representante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -361,6 +375,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#representante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -370,9 +385,22 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#representante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
+		
+		
+		jQuery("#representante-filter").change( function() {
+			if(jQuery("#representante-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
 		
 		
 		setMap();

@@ -2,7 +2,6 @@
 	global $avia_config, $more;
 	$selectedOption = getParameterValueGET();
 	$data = getDataRepresentatives();
-		getRepresentatives(true);
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
@@ -36,7 +35,7 @@
 					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="estado" id="estado-filter">
-							   <option value="">Estado</option>
+							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
@@ -55,6 +54,18 @@
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="tipo-eleccion" id="tipo-eleccion-filter">
+							   <option value="">Tipo de elección</option>
+								<option value="representacion-proporcional" <?php if($selectedOption == "representacion-proporcional") echo 'selected="selected"'?>>
+									Representación proporcional
+								</option>
+								<option value="mayoria-relativa" <?php if($selectedOption == "mayoria-relativa") echo 'selected="selected"'?>>
+									Mayoría relativa
+								</option>
 						   </select>
 					   </div>
 					</form>				
@@ -87,6 +98,10 @@
 														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
 														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
 														<?php echo utf8_encode($politicalParty["name"]);?>
+													</li>
+													
+													<li class="navrepr-left">
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
 													</li>
 													
 													<li class="navrepr-left">
@@ -138,6 +153,10 @@
 													</li>
 													
 													<li class="navrepr-left">
+														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+													</li>
+													
+													<li class="navrepr-left">
 														Cargo: Diputado
 													</li>
 													
@@ -185,6 +204,7 @@
 			if(jQuery("#partido-politico-filter option:selected").val() != "") {
 				jQuery("#estado-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
 				jQuery("#filter-representanes").submit();
 			}
 		});
@@ -193,12 +213,23 @@
 			if(jQuery("#estado-filter option:selected").val() != "") {
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
 				jQuery("#filter-representanes").submit();
 			}
 		});
 		
 		jQuery("#comision-filter").change( function() {
 			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#estado-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#tipo-eleccion-filter").remove();
+				jQuery("#filter-representanes").submit();
+			}
+		});
+		
+		jQuery("#tipo-eleccion-filter").change( function() {
+			if(jQuery("#tipo-eleccion-filter option:selected").val() != "") {
+				jQuery("#comision-filter").remove();
 				jQuery("#estado-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#filter-representanes").submit();
