@@ -812,7 +812,7 @@ li.sub-info-li {
     margin: 3px 0;
 }
 .share-sidebar-vota {
-    margin: -10px 0 66px;
+    margin:3px 0 66px;
 }
 .tab-item-temas{
 width:100%;
@@ -844,7 +844,7 @@ p.titulos-voto {
 p.titulos-voto-2 {
     color: #2e1439;
     font: lighter 34px 'oswald';
-    margin: -32px 0 0;
+    margin: -18px 0 0;
     padding: 3px 17px 0 13px;
 }
 .titulos-voto span {
@@ -857,13 +857,13 @@ p.titulos-voto-2 {
     color: #2e1439;
     display: block;
     margin: -11px 0 0;
-    padding: 0 17px 14px 0;
+    padding: 0 17px 7px 0;
 }
 .resultado {
     color: #777779;
-    font: lighter 40px 'oswald';
+    font: lighter 30px/40px 'oswald';
+    margin: 24px 0 0;
     text-align: left;
-    margin:0;
 }
 .boton-proceso {
     background: url("images/proceso-btn.png") no-repeat scroll 25px 12px #ecbc6d;
@@ -1039,7 +1039,23 @@ a.grafikas:hover{
 .no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
-.share-sidebar-vota > .reddit-voting {
+.entry-content > .reddit-voting{
+     width: 83px;
+     display:none;    
+}
+.in-box-share > .reddit-voting{
+     width: 83px;
+     display:none;       
+}
+.entry-content > .reddit-voting{
+     width: 83px;
+     display:none;    
+}
+.in-box-share > .logged-in-only > .reddit-voting{
+     width: 83px;
+     display:none;       
+}
+.share-sidebar-vota > .logged-in-only > .reddit-voting {
     background: none repeat scroll 0 0 #512b60;
     margin-top: -10px;
     width: 100%;
@@ -1049,6 +1065,29 @@ a.grafikas:hover{
     margin-top: -10px;
     width: 100%;
 }
+ul.unstyled {
+    display: inline-block;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+.arrow {
+     float: left;
+}
+.arrow {
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin: 2px 8px 0;
+    outline: medium none;
+    width: 16px;
+}
+.score {
+     float: left;
+}
+
+
 /** representantes **/
 .no-borde{
     border: 0px solid rgba(153, 145, 168, 0.3) !important; 
