@@ -24,7 +24,7 @@ global $avia_config;
 									
 									$id=0;
 									$id = $_GET['id'];
-									if ( $_GET['id'] === '1' ){ 
+									if ( $_GET['id'] == '1' ){ 
 									$args = array(
 											'posts_per_page' => '10',
 											'post_type' => 'iniciativa',
