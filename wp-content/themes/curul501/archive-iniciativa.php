@@ -128,7 +128,7 @@
 													Feb, 2014
 												</div>
 												<div class="entry-content">
-													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
+													 <p class="resemen-recientes-iniciativas no-voto titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
 													 <?php the_excerpt(); ?> 
