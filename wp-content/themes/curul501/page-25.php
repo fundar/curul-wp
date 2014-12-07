@@ -32,7 +32,8 @@ global $avia_config;
 											'meta_key' => 'post_views_count',
 											'orderby' => 'meta_value_num');
 													}  
-						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
+													echo $id;
+						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
 								
 								
 						        $loop = new WP_Query( $args );
