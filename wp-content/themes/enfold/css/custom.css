@@ -1027,7 +1027,7 @@ a.grafikas:hover{
     color: rgba(68, 68, 68, 0.9);
 }
 /** grid **/
-#top div .no_padding {
+#top div .no_padding{
   padding: 0 !important;
 
 }
