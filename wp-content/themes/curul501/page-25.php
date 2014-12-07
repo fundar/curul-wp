@@ -39,7 +39,7 @@ global $avia_config;
 				<div class="container_wrap container_wrap_first main_color sidebar_right">
 					<div class="content  nine alpha units">
 						<div class="post-entry-25">
-						<h1 class="entry-title-yellow">Iniciativas <?php $tipo; ?></h1>
+						<h1 class="entry-title-yellow">Iniciativas <?php echo $tipo; ?></h1>
 						<div class="line-amarilla"> </div>
 						</div>
 						<div class="post-entry post-entry-type-page post-entry-25">
