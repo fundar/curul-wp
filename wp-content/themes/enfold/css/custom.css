@@ -575,9 +575,7 @@ li.hand-down {
     background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
-.no-voto > .logged-in-only > .reddit-voting{
-     display:none;
-}
+
 
     /**silder home **/   
    .parrafo-sl1 > p{
@@ -780,9 +778,7 @@ p.parrafo-temas {
     padding: 0 0 0 30px;
     width: 100%;
 }
-.no-voto > .reddit-voting {
-    display:none;
-}
+
 .texto-img {
     background: url("images/texto-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
     display: block;
@@ -1037,6 +1033,12 @@ a.grafikas:hover{
 
 }
 /** wpeddit custom style**/
+.no-voto > .reddit-voting {
+    display:none;
+}
+.no-voto > .logged-in-only > .reddit-voting{
+     display:none;
+}
 .share-sidebar-vota > .reddit-voting {
     background: none repeat scroll 0 0 #512b60;
     margin-top: -10px;

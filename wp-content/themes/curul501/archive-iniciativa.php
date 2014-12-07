@@ -198,6 +198,7 @@
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
+												<div class="in-box-share"></div>
 												
 												
 												
