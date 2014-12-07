@@ -192,7 +192,7 @@
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-												<div class="in-box-share">
+												<div class="in-box-share no-voto">
 												<?php avia_social_share_links(); ?>
 												</div>
 											</div>
