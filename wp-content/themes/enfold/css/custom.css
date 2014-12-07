@@ -1091,6 +1091,22 @@ ul.unstyled {
 .score {
      float: left;
 }
+.arrow2 {
+     float: left;
+}
+.arrow2 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin: 2px 8px 0;
+    outline: medium none;
+    width: 16px;
+}
+.score2 {
+     float: left;
+}
 
 /** representantes **/
 .no-borde{
