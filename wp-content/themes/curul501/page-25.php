@@ -31,7 +31,14 @@ global $avia_config;
 											'meta_key' => 'post_views_count',
 											'orderby' => 'meta_value_num');
 													} elseif ( $_GET['id'] == '2' ){
-												echo "hola";
+												$args = array(
+											'posts_per_page' => '1',
+											'post_type' => 'iniciativa',
+											'order' => 'DESC',
+											'meta_key' => 'epicredrank',
+											'orderby' => 'meta_value_num');
+												
+												
 								}
 								else{
 								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
