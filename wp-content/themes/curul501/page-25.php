@@ -30,8 +30,11 @@ global $avia_config;
 											'order' => 'DESC',
 											'meta_key' => 'post_views_count',
 											'orderby' => 'meta_value_num');
-													} else{
-						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
+													} elseif ( $_GET['id'] == '2' ){
+												echo "hola";
+								}
+								else{
+								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
 								}
 								
 						        $loop = new WP_Query( $args );
