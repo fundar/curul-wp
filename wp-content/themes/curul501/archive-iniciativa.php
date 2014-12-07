@@ -127,7 +127,7 @@
 													<span>13</span>
 													Feb, 2014
 												</div>
-												<div class="entry-content">
+												<div class="entry-content no-voto">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
@@ -192,7 +192,7 @@
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-												<div class="in-box-share">
+												<div class="in-box-share no-voto">
 												<?php avia_social_share_links(); ?>
 												</div>
 											</div>
