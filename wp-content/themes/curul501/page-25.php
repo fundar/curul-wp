@@ -22,7 +22,6 @@ global $avia_config;
 					                <?php if ( have_posts() ) : ?>
 					                <?php
 									
-									$id=0;
 									$id = $_GET['id'];
 									if ( $_GET['id'] == '1' ){ 
 									$args = array(
@@ -31,10 +30,9 @@ global $avia_config;
 											'order' => 'DESC',
 											'meta_key' => 'post_views_count',
 											'orderby' => 'meta_value_num');
-													}  
-													echo $id;
+													} else{
 						        $args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
-								
+								}
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
