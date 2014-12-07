@@ -2,7 +2,32 @@
 global $avia_config;
 
 	 get_header();
-
+	 $tipo="Recientes";
+	$id = $_GET['id'];
+	if ( $_GET['id'] == '1' ){ 
+											$args = array(
+											'posts_per_page' => '10',
+											'post_type' => 'iniciativa',
+											'order' => 'DESC',
+											'meta_key' => 'post_views_count',
+											'orderby' => 'meta_value_num');
+											$tipo="Mas vistas";
+													} elseif ( $_GET['id'] == '2' ){
+												$args = array(
+											'posts_per_page' => '1',
+											'post_type' => 'iniciativa',
+											'order' => 'DESC',
+											'meta_key' => 'epicredrank',
+											'orderby' => 'meta_value_num');
+											$tipo="Mas Votadas";
+												
+												
+								}
+								else{
+								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
+								}
+								
+	 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
 	 ?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
@@ -14,7 +39,7 @@ global $avia_config;
 				<div class="container_wrap container_wrap_first main_color sidebar_right">
 					<div class="content  nine alpha units">
 						<div class="post-entry-25">
-						<h1 class="entry-title-yellow">Iniciativas Recientes</h1>
+						<h1 class="entry-title-yellow">Iniciativas <?php $tipo; ?></h1>
 						<div class="line-amarilla"> </div>
 						</div>
 						<div class="post-entry post-entry-type-page post-entry-25">
@@ -22,27 +47,6 @@ global $avia_config;
 					                <?php if ( have_posts() ) : ?>
 					                <?php
 									
-									$id = $_GET['id'];
-									if ( $_GET['id'] == '1' ){ 
-									$args = array(
-											'posts_per_page' => '10',
-											'post_type' => 'iniciativa',
-											'order' => 'DESC',
-											'meta_key' => 'post_views_count',
-											'orderby' => 'meta_value_num');
-													} elseif ( $_GET['id'] == '2' ){
-												$args = array(
-											'posts_per_page' => '1',
-											'post_type' => 'iniciativa',
-											'order' => 'DESC',
-											'meta_key' => 'epicredrank',
-											'orderby' => 'meta_value_num');
-												
-												
-								}
-								else{
-								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
-								}
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
