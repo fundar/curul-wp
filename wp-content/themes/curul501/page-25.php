@@ -1,5 +1,3 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 <?php
 global $avia_config;
 
@@ -187,12 +185,14 @@ global $avia_config;
  
 <?php endif; ?>	
 <?php get_footer(); ?>	
-<script>
+
+<script type="text/javascript">
 $(document).ready(function()
     {
         $(".textwidget a").on("click", function(event)
         {
             event.preventDefault();            
+
             $('.container').load(this.href);
         });
     });
