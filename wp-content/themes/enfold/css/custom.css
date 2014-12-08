@@ -196,8 +196,9 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
-#text-5 > .textwidget > .widgettitle > a{
-     color:#fff;
+#text-5 > .textwidget > .widgettitle > a {
+    color: #fff;
+    font: 400 18px 'oswald';
 }
 
 img.bullet-sb{
