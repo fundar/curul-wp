@@ -196,7 +196,7 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
-#text-5 > .textwidget > .widgettitle h3 > a{
+#text-5 > .textwidget > .widgettitle > a{
      color:#fff;
 }
 
@@ -1438,7 +1438,7 @@ Mobile Styles
     Estilos de gráficas por iniciativa
 */    
 
-    .partidos path{ fill: none; }
+.partidos path{ fill: none; }
 
     .axis path { fill: none; }
 
@@ -1506,7 +1506,7 @@ Mobile Styles
     #bartitle #bartitle_text{
     }
     
-    #bartitle #bartitle_count{
+    #bartitle #bartitle_text{
     }
 
     a.representante_lnk:hover{
