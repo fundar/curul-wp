@@ -342,7 +342,7 @@
 
 			      jQuery(document).ready( function () {
 			        for(var i in representantes){
-			          var row  = "<td> <a href='curul501.org/representates/" + representantes[i].slug + "'>" +  representantes[i].nombre + "</a> </td>"
+			          var row  = "<td> <?php echo get_site_url(); ?>/representates/" + representantes[i].slug + "'>" +  representantes[i].nombre + "</a> </td>"
 			              row  += "<td>" + representantes[i].partido + "</td>"
 			              row  += "<td>" + representantes[i].tipo + "</td>"
 			              row  += "<td>" +  (representantes[i].zone_state || "No conocido" ) + "</td>"
