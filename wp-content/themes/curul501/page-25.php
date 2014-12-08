@@ -32,12 +32,8 @@ global $avia_config;
 		
 	?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-	<?php 
-		if($id!= ""){
-		putRevSlider("carrusel-home","homepage")
-		}
-		?>
-	   
+	<?php	if($id != "") { putRevSlider("carrusel-home","homepage")} ?>
+	   														
 
 	   <div class='container'>
 		<main class='template-page  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
