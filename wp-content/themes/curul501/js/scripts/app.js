@@ -302,7 +302,7 @@ run.pieChart = function(votos, urlBase){
           jQuery("body").one("mousemove", function( event ) {
             jQuery("#tooltip").css( {
                 left: (event.pageX - 40)  + 'px', 
-                top: (event.pageY - 70) + 'px'
+                top: (event.pageY - 100) + 'px'
             })
             jQuery("#tooltip p #value").text(d.x + " " + data.tag)
 
@@ -310,8 +310,8 @@ run.pieChart = function(votos, urlBase){
           })
 
       }).on('mouseout', function () {
-          //jQuery("#tooltip p #value").text("")
-          //d3.select('#tooltip').classed('hidden', true);
+          jQuery("#tooltip p #value").text("")
+          d3.select('#tooltip').classed('hidden', true);
       })
 
       d3.select('#bartitle_text')
