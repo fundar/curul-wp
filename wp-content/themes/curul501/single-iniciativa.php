@@ -67,11 +67,13 @@
 
 
 ?>
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
+	<!-- jose comentando lo de kevin pruebas  
+	 
+	<script src="<?php // echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
+	<script src="<?php //echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
- 	
+	<script src="<?php //echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
+ 	-->
 		<div class="container top60">										     
 						<h1 class="entry-title-yellow">Iniciativas</h1>
 						<div class="line-amarilla"> </div>
@@ -392,10 +394,10 @@
 			    </table>
 			  </div-->
 		</div>
-		
+		<!-- jose comento lo de kevin
 		<script>
-			var votos = <?php echo json_encode( array_values($voto) ); ?>;
-			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+			var votos = <?php //echo json_encode( array_values($voto) ); ?>;
+			var representantes = <?php //echo json_encode( array_values($representantes) ); ?>;
 
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
@@ -405,7 +407,7 @@
 				return false;		    	
 		    })
 	  	</script>	
-
+                      -->
 		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
