@@ -115,10 +115,6 @@ function epicred__init(){
     wp_enqueue_script("jquery");
     wp_enqueue_script( 'jquery-form',array('jquery')); 
     wp_enqueue_script('epicred-ajax',plugins_url('/js/epicred.js',__FILE__),array('jquery'));
-	wp_enqueue_script('apprise-ajax',plugins_url('/js/apprise-1.5.min.js',__FILE__),array('jquery'));
-    wp_enqueue_style('epicred-css', plugins_url('/css/apprisemin.css',__FILE__) );
-
-	
     wp_localize_script( 'epicred-ajax', 'EpicAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	
 	if(!is_admin()){

@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 	
    $(".logged-in-only").bind("click", function () { 
 
-	apprise('You must be logged in to vote');
+	alert('You must be logged in to vote');
 	
 
 	});
