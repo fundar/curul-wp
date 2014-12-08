@@ -59,7 +59,14 @@
 </style>
 
 
-<?php get_header(); ?>
+<?php get_header(); 
+	
+	global $avia_config, $more;
+	$selectedOption = getParameterValueGET();
+	$data = getDataRepresentatives();
+
+
+?>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
@@ -439,3 +446,64 @@
 		</div><!-- close default .container_wrap element -->
 
 <?php get_footer(); ?>
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#loading-gif").hide();
+		
+		jQuery("#partido-politico-filter").change( function() {
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		jQuery("#tema-filter").change( function() {
+			if(jQuery("#tema-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+				
+		jQuery("#status-filter").change( function() {
+			if(jQuery("#status-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		
+		jQuery("#postulante-filter").change( function() {
+			if(jQuery("#postulante-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		
+		
+		setMap();
+	});
+	
+</script>
