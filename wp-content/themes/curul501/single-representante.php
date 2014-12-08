@@ -94,6 +94,22 @@
 							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
 							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
+							
+							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
+							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
+							$htmlcommis = "<p>";
+							$link = get_site_url() . "/representantes/?comision=";
+							
+							if($commissions) {
+								foreach($commissions as $key => $commission) {
+									$htmlcommis .= "<a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a>, ";
+								}
+							} else {
+								$htmlcommis .= "No se encuentran comisiones relacionadas";
+							}
+							
+							$htmlcommis = rtrim($htmlcommis, ", ");
+							$htmlcommis .= "</p>";
 						?>
 		
 				        <header class="entry-content-header">
@@ -109,14 +125,17 @@
 						
 							<div class="linea-morado"></div>
 							<h3 itemprop="headline" class="post-title entry-title">
-								Representante de <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+								Representante de 
+								<a href="<?php echo get_site_url() . '/representantes/?estado=' . get_post_meta($post->ID, 'wp_zone_state', true); ?>" title="Filtro por estado">
+									<?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+								</a>
 							</h3>
 						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Comisiones a las que pertenece
-								<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							
 							<li class="bullet-arrow">Iniciativas propuestas
@@ -213,12 +232,25 @@
 				<li class="logo-partidoo-sb bullet-arrow">Grupo parlamentario
 					<p>
 						<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-						<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
+						<a href="<?php echo get_site_url() . '/representantes/?partido-politico=' . $politicalParty["slug"] ;?>" title="<?php echo $politicalParty["short_name"];?>">
+							<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>">
+							<?php echo $politicalParty["short_name"];?>
+						</a>
 					</p>
 				</li>
 				
 				<li class="bullet-arrow">Tipo de elecci&oacute;n
-					<p><?php echo get_post_meta($post->ID, 'wp_election_type', true); ?></p>
+					<p>
+						<?php if(get_post_meta($post->ID, 'wp_election_type', true) == "Mayoría Relativa") { ?>
+							<a href="<?php echo get_site_url() . '/representantes/?tipo-eleccion=mayoria-relativa';?>" title="<?php echo get_post_meta($post->ID, 'wp_election_type', true);?>">
+								<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+							</a>
+						<?php } else { ?>
+							<a href="<?php echo get_site_url() . '/representantes/?tipo-eleccion=representacion-proporcional';?>" title="<?php echo get_post_meta($post->ID, 'wp_election_type', true);?>">
+								<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+							</a>
+						<?php } ?>
+					</p>
 				</li>
 							
 				<li class="bullet-arrow">
