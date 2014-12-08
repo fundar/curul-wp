@@ -163,6 +163,9 @@ run.pieChart = function(votos, urlBase){
         zoomOut(p.parent); return 
       }
 
+      jQuery("#pie_chart").animate({ "left": "-=50px" }, "slow" );
+      
+
       if (p.depth > 1) p = p.parent;
       totalUpdate( p.sum )
       processData(p, plot )
