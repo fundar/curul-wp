@@ -1500,8 +1500,13 @@ Mobile Styles
         
     }
 
-    #bartitle{
+    #bartitle #bartitle_text{
     }
     
-    #bartitle{
+    #bartitle #bartitle_text{
+    }
+
+    a.representante_lnk{
+        color:#A973BC;
+        font-size: 1.2em;
     }
