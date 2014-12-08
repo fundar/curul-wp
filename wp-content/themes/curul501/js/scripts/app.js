@@ -444,8 +444,3 @@ run.pieChart = function(votos, urlBase){
 
     d3.select("#pie_chart").style("height", margin.top + margin.bottom + "px");
 }
-
-run.representantes_load = function(representantes){
-  this.representantes_ctr = function (jQueryscope) { jQueryscope.representantes = representantes; }
-}
-
