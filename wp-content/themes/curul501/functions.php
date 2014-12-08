@@ -255,19 +255,19 @@ function getRepresentatives($json = false) {
 function getDataRepresentatives() {
 	$meta_query = false;
 	
-	if(isset($_GET["partido-politico"])) {
+	if(isset($_GET["partido-politico"]) and $_GET["partido-politico"] != "") {
 		$meta_query[] = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
 	}
 	
-	if(isset($_GET["estado"])) {
+	if(isset($_GET["estado"]) and $_GET["estado"] != "") {
 		$meta_query[] = getRepresentativesByState($_GET["estado"]);
 	}
 	
-	if(isset($_GET["comision"])) {
+	if(isset($_GET["comision"]) and $_GET["comision"] != "") {
 		$meta_query[] = getRepresentativesByCommission($_GET["comision"]);
 	}
 	
-	if(isset($_GET["tipo-eleccion"])) {
+	if(isset($_GET["tipo-eleccion"]) and $_GET["tipo-eleccion"] != "") {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
 	}
 	
