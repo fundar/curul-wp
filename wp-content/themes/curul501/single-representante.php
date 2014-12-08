@@ -30,7 +30,7 @@
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
 						<div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
-							   <option value="">Partidos pol&iacute;ticos</option>
+							   <option value="">Grupos parlamentarios</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
@@ -210,7 +210,7 @@
 	<div class="sidebar sidebar_right smartphones_sidebar_active alpha units sidebar-cpt-representantes" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 		<div class="sidebar-representantes">
 			<ul>
-				<li class="logo-partidoo-sb bullet-arrow">Partido político
+				<li class="logo-partidoo-sb bullet-arrow">Grupo parlamentario
 					<p>
 						<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
 						<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"><?php echo $politicalParty["short_name"];?>
