@@ -408,7 +408,7 @@
 			          var row  = "<td>" + representantes[i].nombre + "</td>"
 			              row  += "<td>" + representantes[i].partido + "</td>"
 			              row  += "<td>" + representantes[i].tipo + "</td>"
-			              row  += "<td>" + ( ( isset(representantes[i].zone_state) )? representantes[i].zone_state : "No conocido" )+ "</td>"
+			              row  += "<td>" +  (representantes[i].zone_state || "No conocido" ) + "</td>"
 			          
 			          jQuery("#table_id tbody").append("<tr>" + row + "</tr>")
 			        }
