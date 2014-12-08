@@ -1,10 +1,5 @@
 <?php
 	global $avia_config, $more;
-	$selectedCommission = getParameterValueGET('comision');
-	$selectedType = getParameterValueGET('tipo-eleccion');
-	$selectedPolitical = getParameterValueGET('partido-politico');
-	$selectedState = getParameterValueGET('estado');
-	
 	$data = getDataRepresentatives();
 
 	/*
@@ -37,7 +32,7 @@
 							   <option value="">Grupos parlamentarios</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo $value["slug"];?>">
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -49,7 +44,7 @@
 							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedStates == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["name"]);?>">
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -61,7 +56,7 @@
 							   <option value="">Comisiones</option>
 							    <?php $commissionsArray = getCommissions(); ?>
 								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>">
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
@@ -71,10 +66,10 @@
 						<div id="filter">				
 						   <select class="sorter-rep sort" name="tipo-eleccion" id="tipo-eleccion-filter">
 							   <option value="">Tipo de elección</option>
-								<option value="representacion-proporcional" <?php if($selectedType == "representacion-proporcional") echo 'selected="selected"'?>>
+								<option value="representacion-proporcional">
 									Representación proporcional
 								</option>
-								<option value="mayoria-relativa" <?php if($selectedOption == "mayoria-relativa") echo 'selected="selected"'?>>
+								<option value="mayoria-relativa">
 									Mayoría relativa
 								</option>
 						   </select>
