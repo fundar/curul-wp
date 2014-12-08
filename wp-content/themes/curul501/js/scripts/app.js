@@ -299,11 +299,17 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
+          var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + 500 ;
+          var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) ;
+          //var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
+
           jQuery("body").one("mousemove", function( event ) {
             jQuery("#tooltip").css( {
-                left: (event.pageX - 40)  + 'px', 
-                top: (event.pageY - 150) + 'px'
+                left: xPos  + 'px', 
+                top: yPos + 'px'
             })
+
+            console.log((event.pageX - 40))
             jQuery("#tooltip p #value").text(d.x + " " + data.tag)
 
             d3.select('#tooltip').classed('hidden', false);
