@@ -1,66 +1,3 @@
-<style type="text/css">
-	.partidos path{ fill: none; }
-
-	.axis path { fill: none; }
-
-	#tooltip {
-	    position: relative;
-	    text-align: center;
-	    width: 140px;
-	    height: 30px;
-	    padding: 0px;
-	    background-color: white;
-
-	    -webkit-border-radius: 10px;
-	    -moz-border-radius: 10px;
-	    border-radius: 10px;
-	    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-	    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-	    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-	}
-	#tooltip.hidden { display: none; }
-
-	#tooltip p {
-		position: absolute;
-		margin: 8px;
-	    font-family: sans-serif;
-	    font-size: 16px;
-	    line-height: 20px;
-	    max-width: 140px;
-	    max-height: 30px;
-	}
-
-	#pie_chart{
-	  width: 510px;
-	  float: left;
-	}
-
-	#bar_chart, #barchart {
-		float:left;
-	  	width: 450px;
-		overflow-y: hidden;
-	}
-
-	#pie_chart{
-		overflow-y: hidden;
-	}
-
-	circle,
-	path { 
-	  cursor: pointer; 
-	}
-
-	circle {
-	  fill: none;
-	  pointer-events: all;
-	}
-  
-  	#graficas_content{
-  		display:none;
-  	}
-</style>
-
-
 <?php get_header(); 
 	
 	global $avia_config, $more;
@@ -69,13 +6,13 @@
 
 
 ?>
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
+ 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
-
+	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
+	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
 
-	 <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
- 	 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
   
  	
 		<div class="container top60">										     
@@ -405,14 +342,40 @@
 
 			      jQuery(document).ready( function () {
 			        for(var i in representantes){
-			          var row  = "<td>" + representantes[i].nombre + "</td>"
+			          var row  = "<td> <a href='<?php echo get_bloginfo('url'); ?>/representates/" + representantes[i].slug + "'>" +  representantes[i].nombre + "</a> </td>"
 			              row  += "<td>" + representantes[i].partido + "</td>"
 			              row  += "<td>" + representantes[i].tipo + "</td>"
 			              row  += "<td>" +  (representantes[i].zone_state || "No conocido" ) + "</td>"
 			          
 			          jQuery("#table_id tbody").append("<tr>" + row + "</tr>")
 			        }
-			        jQuery('#table_id').DataTable();
+
+			        jQuery('#table_id').DataTable({
+			        	"language": {
+						    "sProcessing":     "Procesando...",
+						    "sLengthMenu":     "Mostrar _MENU_ registros",
+						    "sZeroRecords":    "No se encontraron resultados",
+						    "sEmptyTable":     "Ningún dato disponible en esta tabla",
+						    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+						    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+						    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+						    "sInfoPostFix":    "",
+						    "sSearch":         "Buscar:",
+						    "sUrl":            "",
+						    "sInfoThousands":  ",",
+						    "sLoadingRecords": "Cargando...",
+						    "oPaginate": {
+						        "sFirst":    "Primero",
+						        "sLast":     "Último",
+						        "sNext":     "Siguiente",
+						        "sPrevious": "Anterior"
+						    },
+						    "oAria": {
+						        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+						        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+						    }
+						}
+			        });
 			      } );
 			  </script>
 		</div>
