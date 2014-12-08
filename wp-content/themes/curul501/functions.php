@@ -278,7 +278,7 @@ function getDataRepresentatives() {
 			'posts_per_page' => 10,
 			'paged' => $paged,
 			'orderby' => 'title', 'order' => 'ASC',
-			'meta_query' => array($meta_query)
+			'meta_query' => $meta_query
 		);
 		
 		var_dump($args);
