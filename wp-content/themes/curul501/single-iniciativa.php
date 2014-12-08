@@ -32,7 +32,7 @@
 
 	#pie_chart{
 	  width: 510px;
-	  margin: 0 auto;
+	  //margin: 0 auto;
 	  /*float: left;*/
 	}
 
