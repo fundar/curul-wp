@@ -6,7 +6,7 @@
 	#tooltip {
 	    position: relative;
 	    text-align: center;
-	    width: 140px;
+	    width: 160px;
 	    height: 30px;
 	    padding: 0px;
 	    background-color: white;
