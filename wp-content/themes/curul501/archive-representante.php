@@ -134,6 +134,7 @@
 						<?php } ?>
 					<?php } else { ?>
 						<?php if (have_posts()) { ?>
+							<?php query_posts('orderby=title&order=ASC'); ?>
 							<?php while (have_posts()) : the_post(); ?>
 								<!--Inicio representantes-->
 								<article class="post type-post post-archive">
