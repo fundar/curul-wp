@@ -278,7 +278,6 @@ function getDataRepresentatives() {
 			'orderby' => 'title', 'order' => 'ASC',
 			'meta_query' => $meta_query
 		);
-		var_dump($args);
 		$loop = new WP_Query($args);
 		
 		return $loop;
