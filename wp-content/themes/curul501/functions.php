@@ -278,14 +278,10 @@ function getDataRepresentatives() {
 			'posts_per_page' => 10,
 			'paged' => $paged,
 			'orderby' => 'title', 'order' => 'ASC',
-			'meta_query' => array($meta_query)
+			'meta_query' => array('relation' => 'AND', $meta_query)
 		);
 		
-		$loop  = new WP_Query($args);
-		$count = $loop->post_count;
-		
-		$wp_query = NULL;
-		$wp_query = $temp_query;
+		$loop = new WP_Query($args);
 		
 		return $loop;
 	} else {
