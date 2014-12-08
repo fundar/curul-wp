@@ -404,7 +404,7 @@
 
 			  <script type="text/javascript">
 
-			      $(document).ready( function () {
+			      jQuery(document).ready( function () {
 			        for(var i in representantes){
 			          var row   = "<td>" + representantes[i].id_representative + "</td>"
 			              row  += "<td>" + representantes[i].nombre + "</td>"
@@ -412,9 +412,9 @@
 			              row  += "<td>" + representantes[i].tipo + "</td>"
 			              row  += "<td>" + representantes[i].zone_state + "</td>"
 			          
-			          $("#table_id tbody").append("<tr>" + row + "</tr>")
+			          jQuery("#table_id tbody").append("<tr>" + row + "</tr>")
 			        }
-			        $('#table_id').DataTable();
+			        jQuery('#table_id').DataTable();
 			      } );
 			  </script>
 		</div>
