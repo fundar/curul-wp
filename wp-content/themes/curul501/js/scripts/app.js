@@ -310,8 +310,8 @@ run.pieChart = function(votos, urlBase){
           })
 
       }).on('mouseout', function () {
-          jQuery("#tooltip p #value").text("")
-          d3.select('#tooltip').classed('hidden', true);
+          //jQuery("#tooltip p #value").text("")
+          //d3.select('#tooltip').classed('hidden', true);
       })
 
       d3.select('#bartitle_text')
