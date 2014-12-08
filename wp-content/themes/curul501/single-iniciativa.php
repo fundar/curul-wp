@@ -342,14 +342,14 @@
 
 			      jQuery(document).ready( function () {
 			        for(var i in representantes){
-			          var row  = "<td>" + representantes[i].nombre + "</td>"
+			          var row  = "<td> <a href='./representates/" + representantes[i].slug + "'>" +  representantes[i].nombre + "</a> </td>"
 			              row  += "<td>" + representantes[i].partido + "</td>"
 			              row  += "<td>" + representantes[i].tipo + "</td>"
 			              row  += "<td>" +  (representantes[i].zone_state || "No conocido" ) + "</td>"
 			          
 			          jQuery("#table_id tbody").append("<tr>" + row + "</tr>")
 			        }
-			        
+
 			        jQuery('#table_id').DataTable({
 			        	"language": {
 						    "sProcessing":     "Procesando...",
