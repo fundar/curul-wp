@@ -299,7 +299,7 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) ;
+          var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + 500 ;
           var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) ;
           //var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
@@ -307,8 +307,6 @@ run.pieChart = function(votos, urlBase){
             jQuery("#tooltip").css( {
                 left: xPos  + 'px', 
                 top: yPos + 'px'
-                //left: (event.pageX - 60)  + 'px', 
-                //top: (event.pageY - 165) + 'px'
             })
 
             console.log((event.pageX - 40))
