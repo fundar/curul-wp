@@ -4,7 +4,7 @@ global $avia_config;
 	 get_header();
 	 $tipo="Recientes";
 	$id = $_GET['id'];
-	if ( $_GET['id'] == '1' ){ 
+		if ( $_GET['id'] == '1' ){ 
 											$args = array(
 											'posts_per_page' => '10',
 											'post_type' => 'iniciativa',
@@ -29,10 +29,17 @@ global $avia_config;
 								
 	 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
-	 ?>
+		
+	?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-	<?php putRevSlider("carrusel-home","homepage") ?>
-	    <div class='container'>
+	<?php 
+		if($id!= ""){
+		putRevSlider("carrusel-home","homepage")
+		}
+		?>
+	   
+
+	   <div class='container'>
 		<main class='template-page  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>              
 			
 			
