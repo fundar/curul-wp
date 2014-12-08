@@ -196,6 +196,9 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
+#text-5 > .textwidget > h3.widgettitle > a{
+     color:#fff;
+}
 
 img.bullet-sb{
     margin: -4px 8px 0 0;
