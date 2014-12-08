@@ -299,19 +299,19 @@ run.pieChart = function(votos, urlBase){
       .attr('height', function (d) { return yScale.rangeBand();  })
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
-          var el = jQuery("#tooltip");
+          var tooltip = jQuery("#tooltip");
+          var pie_chart = jQuery("#pie_chart");
 
-          var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + 500  + (el.width() / 2);
+          var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + pie_chart.width()  + (tooltip.width() / 2);
           var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) - 10;
           //var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
           jQuery("body").one("mousemove", function( event ) {
-            jQuery("#tooltip").css( {
+            tooltip.css( {
                 left: xPos  + 'px', 
                 top: yPos + 'px'
             })
 
-            console.log((event.pageX - 40))
             jQuery("#tooltip p #value").text(d.x + " " + data.tag)
 
             d3.select('#tooltip').classed('hidden', false);
