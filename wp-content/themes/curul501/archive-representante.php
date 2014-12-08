@@ -68,6 +68,10 @@
 								</option>
 						   </select>
 					   </div>
+					   
+					   <div id="filter">				
+						   <input type="submit" value="Filtrar" />
+					   </div>
 					</form>				
 				</div>
 			</div>
