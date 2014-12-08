@@ -6,7 +6,7 @@
 	.axis path { fill: none; }
 
 	#tooltip {
-	    position: relative;
+	    position: absolute;
 	    text-align: center;
 	    width: 140px;
 	    height: 30px;
@@ -26,6 +26,8 @@
 	    font-family: sans-serif;
 	    font-size: 16px;
 	    line-height: 20px;
+	    max-width: 140px;
+	    max-height: 30px;
 	}
 
 	#pie_chart{
