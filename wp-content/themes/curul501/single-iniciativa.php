@@ -121,6 +121,9 @@
 							$ano = $explode2[0];
 							$mes = $explode2[1];
 							$dia = $explode2[2];
+							$presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+														
+							
 
 
 
@@ -147,7 +150,10 @@
 							<li class="bullet-arrow">Propuesta por
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
 							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
-							<?php if($presentada_representante != "") { echo $presentada_representante;} ?></p></li>
+							<?php if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', ", ", $presentada_representante);} ?> </a></p></li>
+							
+							
+							
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
