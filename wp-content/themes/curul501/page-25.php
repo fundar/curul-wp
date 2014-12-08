@@ -32,7 +32,7 @@ global $avia_config;
 		
 	?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-	<?php	if($id != "") { putRevSlider("carrusel-home","homepage")} ?>
+	<?php	if($id != "")  putRevSlider("carrusel-home","homepage") ?>
 	   														
 
 	   <div class='container'>
