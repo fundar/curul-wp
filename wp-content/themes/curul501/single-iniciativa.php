@@ -61,7 +61,14 @@
 </style>
 
 
-<?php get_header(); ?>
+<?php get_header(); 
+	
+	global $avia_config, $more;
+	$selectedOption = getParameterValueGET();
+	$data = getDataRepresentatives();
+
+
+?>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
@@ -73,56 +80,77 @@
 		</div>
 
 <!--Inicio filtros iniciativas -->
+		<!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
-				<div id="filter">
-				       <select class="sorter-tema sort" name="category">
-					       <option value="1">Tema</option>
-					       <option value="2">Tema 2</option>							
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-proponente sort" name="category">
-					       <option value="2">Proponente(s)</option>
-					       <option value="2">Opcion 2</option>														
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-comision sort" name="category">
-					       <option value="1">Comisi&oacute;n dictaminadora</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-turno sort" name="category">
-					       <option value="1">Fecha de elecci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-votacion sort" name="category">
-					       <option value="1">Fecha de votaci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 fgbhfgh</option>	
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-estado sort" name="category">
-					       <option value="1">Estado actual</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
-				       </select>
-			       </div>					
+								<form name="filter-iniciativas" id="filter-iniciativas" action="/iniciativas">
+				   <div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>	
+
+					<div id="filter">				
+						   <select class="sorter-rep sort" name="comision" id="comision-filter">
+							   <option value="">Comisiones</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="tema" id="tema-filter">
+							   <option value="">Temas</option>
+							   <?php $temasArray = getTemas(); ?>
+							   <?php foreach($temasArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					 	<div id="filter">				
+						   <select class="sorter-rep sort" name="status" id="status-filter">
+							   <option value="">Status</option>
+							   <?php $statusArray = getStatus(); ?>
+							   <?php foreach($statusArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>  
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
+							   <option value="">Representante</option>
+							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
+								<?php foreach($RepresentanteArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->full_name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   		   
+			       		
+					</form>				
+				   
 			</div>
 		</div>
+<!-- Fin filtros iniciativas -->		
+
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		        <?php if (have_posts()) : ?>
@@ -143,6 +171,18 @@
 							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
 							$explode = explode(" ", $fecha_votacion);
 							$fecha = $explode[0];
+							$id=$wp_query->post->ID;
+							setPostViews($id); 
+							$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
+							$explode_listado = explode(" ", $fecha_listado);
+							$fecha_sin_hora=$explode_listado[0];
+							$explode2 = explode("-", $fecha_sin_hora);
+							$ano = $explode2[0];
+							$mes = $explode2[1];
+							$dia = $explode2[2];
+
+
+
 
 												
 						?>
@@ -171,7 +211,7 @@
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
 						<ul class="sub-info">
-							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
+							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $dia."-".$mes."-".$ano; ?></li>
 							<li class="sub-info-li">LXII Legislatura</li>
 						</ul>
 					</div>
@@ -418,3 +458,64 @@
 		</div><!-- close default .container_wrap element -->
 
 <?php get_footer(); ?>
+<script type="text/javascript">
+	jQuery(document).ready( function () {
+		jQuery("#loading-gif").hide();
+		
+		jQuery("#partido-politico-filter").change( function() {
+			if(jQuery("#partido-politico-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		jQuery("#tema-filter").change( function() {
+			if(jQuery("#tema-filter option:selected").val() != "") {
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		jQuery("#comision-filter").change( function() {
+			if(jQuery("#comision-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+				
+		jQuery("#status-filter").change( function() {
+			if(jQuery("#status-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#postulante-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		
+		jQuery("#postulante-filter").change( function() {
+			if(jQuery("#postulante-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
+		
+		
+		setMap();
+	});
+	
+</script>

@@ -72,6 +72,18 @@
 						   </select>
 					   </div>  
 					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
+							   <option value="">Representante</option>
+							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
+								<?php foreach($RepresentanteArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->full_name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
 					   		   
 			       		
 					</form>				
@@ -100,7 +112,15 @@
 														$elements = explode("|", $status_iniciativa);
 														$status_final=count($elements)-1;
 													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
-														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
+														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);			
+														$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
+														$explode_listado = explode(" ", $fecha_listado);
+														$fecha_sin_hora=$explode_listado[0];
+														$explode2 = explode("-", $fecha_sin_hora);
+														$ano = $explode2[0];
+														$mes = $explode2[1];
+														$dia = $explode2[2];
+													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
 
 														?>
 								
@@ -112,10 +132,10 @@
 											<!--Inicio fecga y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
-													<span>13</span>
-													Feb, 2014
+													<span><?php echo $dia; ?></span>
+													<?php echo $meses[$mes]; ?>, <?php echo $ano; ?>
 												</div>
-												<div class="entry-content">
+												<div class="entry-content no-voto">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
@@ -180,12 +200,13 @@
 												</div>													
 											</div>
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-												<div class="in-box-share">
+												<div class="in-box-share no-voto">
 												<?php avia_social_share_links(); ?>
 												</div>
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
+												<div class="in-box-share"></div>
 												
 												
 												
@@ -221,6 +242,15 @@
 														$status_final=count($elements)-1;
 													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
 														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
+														$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
+														$explode_listado = explode(" ", $fecha_listado);
+														$fecha_sin_hora=$explode_listado[0];
+														$explode2 = explode("-", $fecha_sin_hora);
+														$ano = $explode2[0];
+														$mes = $explode2[1];
+														$dia = $explode2[2];
+													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
+
 
 														?>
 								
@@ -232,8 +262,8 @@
 											<!--Inicio fecga y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
-													<span>13</span>
-													Feb, 2014
+														<span><?php echo $dia; ?></span>
+													<?php echo $meses[$mes]; ?>, <?php echo $ano; ?>
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
@@ -343,6 +373,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -352,6 +383,7 @@
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -361,6 +393,7 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#status-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
@@ -370,9 +403,22 @@
 				jQuery("#tema-filter").remove();
 				jQuery("#partido-politico-filter").remove();
 				jQuery("#comision-filter").remove();
+				jQuery("#postulante-filter").remove();
 				jQuery("#filter-iniciativas").submit();
 			}
 		});
+		
+		
+		jQuery("#postulante-filter").change( function() {
+			if(jQuery("#postulante-filter option:selected").val() != "") {
+				jQuery("#tema-filter").remove();
+				jQuery("#status-filter").remove();
+				jQuery("#partido-politico-filter").remove();
+				jQuery("#comision-filter").remove();
+				jQuery("#filter-iniciativas").submit();
+			}
+		});
+		
 		
 		
 		setMap();
