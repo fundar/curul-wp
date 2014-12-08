@@ -1,6 +1,4 @@
 <style type="text/css">
-	#google-visualization-errors-0{ display: none; }
-
 	.partidos path{ fill: none; }
 
 	.axis path { fill: none; }
@@ -12,6 +10,7 @@
 	    height: 30px;
 	    padding: 0px;
 	    background-color: white;
+	    
 	    -webkit-border-radius: 10px;
 	    -moz-border-radius: 10px;
 	    border-radius: 10px;
