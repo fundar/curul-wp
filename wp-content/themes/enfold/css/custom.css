@@ -197,7 +197,7 @@ h3.widgettitle{
     padding: 10px;
 }
 #text-5 > .textwidget > .widgettitle > a {
-    color: #fff;
+    color: #fff !important;
     font: 400 18px 'Oswald' !important;
 }
 
