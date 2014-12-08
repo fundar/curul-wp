@@ -71,56 +71,77 @@
 		</div>
 
 <!--Inicio filtros iniciativas -->
+		<!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
-				<div id="filter">
-				       <select class="sorter-tema sort" name="category">
-					       <option value="1">Tema</option>
-					       <option value="2">Tema 2</option>							
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-proponente sort" name="category">
-					       <option value="2">Proponente(s)</option>
-					       <option value="2">Opcion 2</option>														
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-partido sort" name="category">
-					       <option value="1">Partido</option>
-					       <option value="2">PRI</option>														
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-comision sort" name="category">
-					       <option value="1">Comisi&oacute;n dictaminadora</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-turno sort" name="category">
-					       <option value="1">Fecha de elecci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 reytruytrui7yigfhgfjhgj ghjkuyki ujyki</option>	
-				       </select>
-			       </div>
-			       <div id="filter">				
-				       <select class="sorter-votacion sort" name="category">
-					       <option value="1">Fecha de votaci&oacute;n</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 fgbhfgh</option>	
-				       </select>
-			       </div>
-			       <div id="filter">										
-				       <select class="sorter-estado sort" name="category">
-					       <option value="1">Estado actual</option>
-					       <option value="2">Opcion 1</option>
-					       <option value="2">Opcion 2 htrujytiuyoyuitpotuiy´'o0+'+8+</option>	
-				       </select>
-			       </div>					
+								<form name="filter-iniciativas" id="filter-iniciativas" action="/iniciativas">
+				   <div id="filter">
+						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
+							   <option value="">Partidos pol&iacute;ticos</option>
+							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
+							   <?php foreach($politicalPartiesArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>	
+
+					<div id="filter">				
+						   <select class="sorter-rep sort" name="comision" id="comision-filter">
+							   <option value="">Comisiones</option>
+							    <?php $commissionsArray = getCommissions(); ?>
+								<?php foreach($commissionsArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="tema" id="tema-filter">
+							   <option value="">Temas</option>
+							   <?php $temasArray = getTemas(); ?>
+							   <?php foreach($temasArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					 	<div id="filter">				
+						   <select class="sorter-rep sort" name="status" id="status-filter">
+							   <option value="">Status</option>
+							   <?php $statusArray = getStatus(); ?>
+							   <?php foreach($statusArray as $value) { ?>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["name"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>  
+					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
+							   <option value="">Representante</option>
+							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
+								<?php foreach($RepresentanteArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->full_name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   		   
+			       		
+					</form>				
+				   
 			</div>
 		</div>
+<!-- Fin filtros iniciativas -->		
+
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		        <?php if (have_posts()) : ?>
