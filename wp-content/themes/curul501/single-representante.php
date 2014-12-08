@@ -97,16 +97,19 @@
 							
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
-							$htmlcommis = "";
+							$htmlcommis = "<p>";
 							$link = get_site_url() . "/representantes/?comision=";
 							
 							if($commissions) {
 								foreach($commissions as $key => $commission) {
-									$htmlcommis .= "<p><a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a></p>";
+									$htmlcommis .= "<a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a>, ";
 								}
 							} else {
-								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
+								$htmlcommis .= "No se encuentran comisiones relacionadas";
 							}
+							
+							$htmlcommis = rtrim($htmlcommis, ", ");
+							$htmlcommis .= "</p>";
 						?>
 		
 				        <header class="entry-content-header">
