@@ -164,7 +164,7 @@ run.pieChart = function(votos, urlBase){
       }
 
       jQuery("#pie_chart").animate({ "left": "-=50px" }, "slow" );
-      
+
 
       if (p.depth > 1) p = p.parent;
       totalUpdate( p.sum )
@@ -300,17 +300,18 @@ run.pieChart = function(votos, urlBase){
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
           jQuery("body").one("mousemove", function( event ) {
-              d3.select('#tooltip')
-                  .style('left', ( event.pageX - 115) + 'px')
-                  .style('top', ( event.pageY - 150) + 'px')
-                  .select('#value')
-                  .text(d.x + " " + data.tag);
-             
-              d3.select('#tooltip').classed('hidden', false);
+            jQuery("#tooltip").css( {
+                left: ( event.pageX - 115) + 'px', 
+                top: ( event.pageY - 150) + 'px'
+            })
+            jQuery("#tooltip p #value").text(d.x + " " + data.tag)
+
+            d3.select('#tooltip').classed('hidden', false);
           })
 
       }).on('mouseout', function () {
-          //d3.select('#tooltip').classed('hidden', true);
+          jQuery("#tooltip p #value").text("")
+          d3.select('#tooltip').classed('hidden', true);
       })
 
       d3.select('#bartitle_text')
