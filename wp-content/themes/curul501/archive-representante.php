@@ -236,8 +236,6 @@
 				jQuery("#filter-representanes").submit();
 			}
 		});
-		
-		setMap();
 	});
 	
 </script>
