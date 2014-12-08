@@ -69,7 +69,7 @@
 						   </select>
 					   </div>
 					   
-					   <div id="filter">				
+					   <div>				
 						   <input type="submit" value="Filtrar" />
 					   </div>
 					</form>				
