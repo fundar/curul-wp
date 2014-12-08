@@ -1507,6 +1507,5 @@ Mobile Styles
     }
 
     a.representante_lnk:hover{
-        color: #686F7F;
-        font-size: 1.1em;
+        font-weight: bolder;
     }
