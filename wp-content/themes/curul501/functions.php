@@ -408,7 +408,7 @@ function getPoliticalParty($idPoliticalParty) {
 	} elseif($idPoliticalParty == 7) {
 		$array["id_political_party"] = 7;
 		$array["name"]       = "Partido Nueva Alianza";
-		$array["short_name"] = "PRD";
+		$array["short_name"] = "PNA";
 		$array["url_logo"]   = "18px-PNA.png";
 	} else {
 		$array["id_political_party"] = 0;

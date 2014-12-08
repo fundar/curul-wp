@@ -23,7 +23,7 @@
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
 						<div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
-							   <option value="">Partidos pol&iacute;ticos</option>
+							   <option value="">Grupos parlamentarios</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
