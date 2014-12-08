@@ -268,6 +268,7 @@ function getDataRepresentatives() {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
 	}
 	
+	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args  = array(
@@ -275,7 +276,7 @@ function getDataRepresentatives() {
 			'posts_per_page' => 10,
 			'paged' => $paged,
 			'orderby' => 'title', 'order' => 'ASC',
-			'meta_query' => array('relation' => 'AND', $meta_query)
+			'meta_query' => $meta_query
 		);
 		var_dump($args);
 		$loop = new WP_Query($args);
