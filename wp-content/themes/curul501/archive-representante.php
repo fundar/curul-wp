@@ -68,6 +68,10 @@
 								</option>
 						   </select>
 					   </div>
+					   
+					   <div id="filter">				
+						   <input type="submit" value="Filtrar" />
+					   </div>
 					</form>				
 				</div>
 			</div>
@@ -199,6 +203,7 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+		/*
 		jQuery("#loading-gif").hide();
 		
 		jQuery("#partido-politico-filter").change( function() {
@@ -236,6 +241,6 @@
 				jQuery("#filter-representanes").submit();
 			}
 		});
+		*/
 	});
-	
 </script>

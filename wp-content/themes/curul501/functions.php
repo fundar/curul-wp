@@ -110,6 +110,8 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 /*********** Representantes ***************/
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
+	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
+	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'representante',
@@ -133,6 +135,8 @@ function getRepresentativesByCommission($commission) {
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
+	return array('key' => 'wp_zone_state', 'value' => $state);
+	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
 		'post_type' => 'representante',
@@ -155,7 +159,11 @@ function getRepresentativesByState($state) {
 
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
+	return array('key' => 'wp_political_party_slug', 'value' => $slug);
+	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	
+	
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -188,6 +196,8 @@ function getRepresentativesByTypeElection($slug) {
 	} else {
 		$slug = utf8_encode("Mayoría Relativa");
 	}
+	
+	return array('key' => 'wp_election_type', 'value' => $slug);
 	
 	$args  = array(
 		'post_type' => 'representante',
@@ -241,7 +251,49 @@ function getRepresentatives($json = false) {
 	}
 }
 
-
+/*get data by parameter $_GET */
+function getDataRepresentatives() {
+	$meta_query = false;
+	
+	if(isset($_GET["partido-politico"]) and $_GET["partido-politico"] != "") {
+		$meta_query[] = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
+	}
+	
+	if(isset($_GET["estado"]) and $_GET["estado"] != "") {
+		$meta_query[] = getRepresentativesByState($_GET["estado"]);
+	}
+	
+	if(isset($_GET["comision"]) and $_GET["comision"] != "") {
+		$meta_query[] = getRepresentativesByCommission($_GET["comision"]);
+	}
+	
+	if(isset($_GET["tipo-eleccion"]) and $_GET["tipo-eleccion"] != "") {
+		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
+	}
+	
+	if($meta_query) {
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$args  = array(
+			'post_type' => 'representante',
+			'posts_per_page' => 10,
+			'paged' => $paged,
+			'orderby' => 'title', 'order' => 'ASC',
+			'meta_query' => array($meta_query)
+		);
+		
+		var_dump($args);
+		
+		$loop  = new WP_Query($args);
+		$count = $loop->post_count;
+		
+		$wp_query = NULL;
+		$wp_query = $temp_query;
+		
+		return array("loop" => $loop, "count" => $count);
+	} else {
+		return false;
+	}
+}
 /*********** Representantes ***************/
 
 
@@ -582,30 +634,6 @@ function getStatus() {
 	);
 	
 	return $status;
-}
-	  
-
-
-
-/*get data by parameter $_GET */
-function getDataRepresentatives() {
-	if(isset($_GET["partido-politico"])) {
-		$result = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["estado"])) {
-		$result = getRepresentativesByState($_GET["estado"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["comision"])) {
-		$result = getRepresentativesByCommission($_GET["comision"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["tipo-eleccion"])) {
-		$result = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
-		$data = $result["loop"];	
-	} else {
-		return false;
-	}
-	
-	return $data;
 }
 
 /*get data by parameter $_GET */

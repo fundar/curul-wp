@@ -14,7 +14,7 @@ global $avia_config;
 											$tipo="Mas vistas";
 													} elseif ( $_GET['id'] == '2' ){
 												$args = array(
-											'posts_per_page' => '1',
+											'posts_per_page' => '10',
 											'post_type' => 'iniciativa',
 											'order' => 'DESC',
 											'meta_key' => 'epicredrank',
@@ -24,7 +24,7 @@ global $avia_config;
 												
 								}
 								else{
-								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 2 );
+								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 5 );
 								}
 								
 	 

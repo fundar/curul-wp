@@ -94,6 +94,22 @@
 							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
 							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
+							
+							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
+							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
+							$htmlcommis = "<p>";
+							$link = get_site_url() . "/representantes/?comision=";
+							
+							if($commissions) {
+								foreach($commissions as $key => $commission) {
+									$htmlcommis .= "<a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a>, ";
+								}
+							} else {
+								$htmlcommis .= "No se encuentran comisiones relacionadas";
+							}
+							
+							$htmlcommis = rtrim($htmlcommis, ", ");
+							$htmlcommis .= "</p>";
 						?>
 		
 				        <header class="entry-content-header">
@@ -119,7 +135,7 @@
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Comisiones a las que pertenece
-								<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							
 							<li class="bullet-arrow">Iniciativas propuestas
