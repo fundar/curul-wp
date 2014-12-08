@@ -203,7 +203,7 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#submit-filter").click( function(e) {
+		jQuery("#submit-filter").click( function(event) {
 			event.preventDefault();
 			
 			if(jQuery("#partido-politico-filter option:selected").val() == "") {
