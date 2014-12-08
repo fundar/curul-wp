@@ -199,6 +199,7 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+		/*
 		jQuery("#loading-gif").hide();
 		
 		jQuery("#partido-politico-filter").change( function() {
@@ -236,6 +237,6 @@
 				jQuery("#filter-representanes").submit();
 			}
 		});
+		*/
 	});
-	
 </script>
