@@ -122,6 +122,18 @@
 							$mes = $explode2[1];
 							$dia = $explode2[2];
 							$presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
+							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
+							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
+							$htmlcommis = "";
+							$link = get_site_url() . "/iniciativas/?comision=";
+							
+							if($commissions) {
+								foreach($commissions as $key => $commission) {
+									$htmlcommis .= "<p><a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a></p>";
+								}
+							} else {
+								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
+							}
 														
 							
 
@@ -145,7 +157,7 @@
 					<div class="entry-content no-voto" itemprop="text">
 						<ul class="lista-iniciativas">
 							<li class="bullet-arrow">Comisiones
-							<p><?php echo str_replace('|', ", ", get_post_meta($post->ID, 'wp_commissions', true)); ?></p>
+								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							<li class="bullet-arrow">Propuesta por
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
