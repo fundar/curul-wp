@@ -69,6 +69,7 @@
 
 
 ?>
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
@@ -387,29 +388,23 @@
 
 
 			<table id="table_id" class="display">
-		     	<thead>
-			        <tr>
+			      <thead>
+			          <tr>
 			            <th class="id_representante" >No. Representante</th>
 			            <th class="nombre" >Nombre</th>
 			            <th class="partido" >Partido</th>
 			            <th class="tipo" >Tipo</th>
 			            <th class="zone_state" >Zona</th>
-			        </tr>
-			    </thead>
-			    <tbody>
+			          </tr>
+			      </thead>
+			      <tbody>
 			         
-			    </tbody>
-			</table>
+			      </tbody>
+			  </table>
 
-			
-		</div>
-		
-		<script>
-			var votos = <?php echo json_encode( array_values($voto) ); ?>;
-			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+			  <script type="text/javascript">
 
-		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-		     $(document).ready( function () {
+			      $(document).ready( function () {
 			        for(var i in representantes){
 			          var row   = "<td>" + representantes[i].id_representative + "</td>"
 			              row  += "<td>" + representantes[i].nombre + "</td>"
@@ -421,6 +416,15 @@
 			        }
 			        $('#table_id').DataTable();
 			      } );
+			  </script>
+		</div>
+		
+		<script>
+			var votos = <?php echo json_encode( array_values($voto) ); ?>;
+			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+
+		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
+		    run.representantes_load(representantes)
 
 		    jQuery(".grafikas").on("click", function(e){
 		    	jQuery("#graficas_content").slideToggle();
