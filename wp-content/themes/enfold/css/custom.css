@@ -1051,7 +1051,7 @@ a.grafikas:hover{
      width: 83px;
      display:none;       
 }
-.entry-contengitt > .logged-in-only > .reddit-voting{
+.entry-content > .logged-in-only > .reddit-voting{
      width: 83px;
      display:none;    
 }
