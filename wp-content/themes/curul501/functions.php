@@ -256,7 +256,7 @@ function getDataRepresentatives() {
 	$meta_query = false;
 	
 	if(isset($_GET["partido-politico"]) and $_GET["partido-politico"] != "") {
-		$meta_query[] = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
+		$meta_query = getRepresentativesByPoliticalParty($_GET["partido-politico"]);
 	}
 	
 	if(isset($_GET["estado"]) and $_GET["estado"] != "") {
@@ -278,10 +278,8 @@ function getDataRepresentatives() {
 			'posts_per_page' => 10,
 			'paged' => $paged,
 			'orderby' => 'title', 'order' => 'ASC',
-			'meta_query' => $meta_query
+			'meta_query' => array($meta_query)
 		);
-		
-		var_dump($args);
 		
 		$loop  = new WP_Query($args);
 		$count = $loop->post_count;
