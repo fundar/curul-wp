@@ -111,83 +111,20 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
 	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_commissions_slug',
-				'value'   => $commission,
-				'compare' => 'LIKE' 
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
 	return array('key' => 'wp_zone_state', 'value' => $state);
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_zone_state',
-				'value'   => $state
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
 	return array('key' => 'wp_political_party_slug', 'value' => $slug);
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_political_party_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by election type*/
 function getRepresentativesByTypeElection($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
 	if($slug == "representacion-proporcional") {
 		$slug = utf8_encode("Representación Proporcional");
 	} else {
@@ -195,28 +132,6 @@ function getRepresentativesByTypeElection($slug) {
 	}
 	
 	return array('key' => 'wp_election_type', 'value' => $slug);
-	
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_election_type',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives*/
@@ -267,7 +182,6 @@ function getDataRepresentatives() {
 	if(isset($_GET["tipo-eleccion"]) and $_GET["tipo-eleccion"] != "") {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
 	}
-	
 	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
