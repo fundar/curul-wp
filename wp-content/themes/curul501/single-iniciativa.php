@@ -4,13 +4,13 @@
 	.axis path { fill: none; }
 
 	#tooltip {
-	    position: absolute;
+	    position: relative;
 	    text-align: center;
 	    width: 140px;
 	    height: 30px;
 	    padding: 0px;
 	    background-color: white;
-	    
+
 	    -webkit-border-radius: 10px;
 	    -moz-border-radius: 10px;
 	    border-radius: 10px;
