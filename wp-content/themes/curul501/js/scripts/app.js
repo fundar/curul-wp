@@ -303,8 +303,7 @@ run.pieChart = function(votos, urlBase){
           var pie_chart = jQuery("#pie_chart");
 
           var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + pie_chart.width()  + (tooltip.width() / 2);
-          var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) - 10;
-          //var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
+          var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) - (tooltip.height() / 2);
 
           jQuery("body").one("mousemove", function( event ) {
             tooltip.css( {
