@@ -162,8 +162,6 @@ function getRepresentativesByPoliticalParty($slug) {
 	return array('key' => 'wp_political_party_slug', 'value' => $slug);
 	
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
-	
 	$args  = array(
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
@@ -176,7 +174,6 @@ function getRepresentativesByPoliticalParty($slug) {
 			)
 		)
 	);
-	
 	
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
@@ -280,7 +277,7 @@ function getDataRepresentatives() {
 			'orderby' => 'title', 'order' => 'ASC',
 			'meta_query' => array('relation' => 'AND', $meta_query)
 		);
-		
+		var_dump($args);
 		$loop = new WP_Query($args);
 		
 		return $loop;
