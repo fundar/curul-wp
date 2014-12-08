@@ -1,4 +1,4 @@
-<style type="text/css">
+<!--<style type="text/css">
 	#google-visualization-errors-0{ display: none; }
 
 	.partidos path{ fill: none; }
@@ -57,7 +57,7 @@
   		display:none;
   	}
 </style>
-
+-->
 
 <?php get_header(); 
 	
