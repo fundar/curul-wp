@@ -69,10 +69,13 @@
 
 
 ?>
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
 
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
+
+	 <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
+ 	 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+  
  	
 		<div class="container top60">										     
 						<h1 class="entry-title-yellow">Iniciativas</h1>
@@ -383,26 +386,22 @@
 			</div>
 
 
-			<!--div ng-app="" ng-controller="run.representantes_ctr">
-			    <p>Name: <input type="text" ng-model="full_name"></p>
-			    <table>
-			      <tr>
-			        <th>No. Representante</th>
-			        <th>Nombre</th>
-			        <th>Partido</th>
-			        <th>Tipo</th>
-			        <th>Zona</th>
-			      </tr>
-			      <tr ng-repeat="r in representantes | filter:full_name">
-			        <td> {{ (r.id_representative ) }} </td>
-			        <td> {{ (r.nombre ) }} </td>
-			        <td> {{ (r.partido ) }} </td>
-			        <td> {{ (r.tipo ) }} </td>
-			        <td> {{ (r.zone_state ) }} </td>
-			      </tr>
+			<table id="table_id" class="display">
+		     	<thead>
+			        <tr>
+			            <th class="id_representante" >No. Representante</th>
+			            <th class="nombre" >Nombre</th>
+			            <th class="partido" >Partido</th>
+			            <th class="tipo" >Tipo</th>
+			            <th class="zone_state" >Zona</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			         
+			    </tbody>
+			</table>
 
-			    </table>
-			  </div-->
+			
 		</div>
 		
 		<script>
@@ -410,7 +409,18 @@
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
 
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
-		    run.representantes_load(representantes)
+		     $(document).ready( function () {
+			        for(var i in representantes){
+			          var row   = "<td>" + representantes[i].id_representative + "</td>"
+			              row  += "<td>" + representantes[i].nombre + "</td>"
+			              row  += "<td>" + representantes[i].partido + "</td>"
+			              row  += "<td>" + representantes[i].tipo + "</td>"
+			              row  += "<td>" + representantes[i].zone_state + "</td>"
+			          
+			          $("#table_id tbody").append("<tr>" + row + "</tr>")
+			        }
+			        $('#table_id').DataTable();
+			      } );
 
 		    jQuery(".grafikas").on("click", function(e){
 		    	jQuery("#graficas_content").slideToggle();
