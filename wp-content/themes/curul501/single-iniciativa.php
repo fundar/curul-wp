@@ -21,7 +21,8 @@
 	#tooltip.hidden { display: none; }
 
 	#tooltip p {
-	    margin: 0;
+		position: absolute;
+		margin: 8px;
 	    font-family: sans-serif;
 	    font-size: 16px;
 	    line-height: 20px;
