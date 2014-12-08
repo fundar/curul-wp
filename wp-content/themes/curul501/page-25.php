@@ -186,15 +186,3 @@ global $avia_config;
 <?php endif; ?>	
 <?php get_footer(); ?>	
 
-<script type="text/javascript">
-$(document).ready(function()
-    {
-        $(".textwidget a").on("click", function(event)
-        {
-            event.preventDefault();            
-
-            $('.container').load(this.href);
-        });
-    });
-</script>
-
