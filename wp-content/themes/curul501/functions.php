@@ -115,6 +115,7 @@ function getRepresentativesByCommission($commission) {
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
 		'paged' => $paged,
+		'orderby' => 'title', 'order' => 'ASC',
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_commissions_slug',
@@ -137,6 +138,7 @@ function getRepresentativesByState($state) {
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
 		'paged' => $paged,
+		'orderby' => 'title', 'order' => 'ASC',
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_zone_state',
@@ -158,6 +160,7 @@ function getRepresentativesByPoliticalParty($slug) {
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
 		'paged' => $paged,
+		'orderby' => 'title', 'order' => 'ASC',
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_political_party_slug',
@@ -190,6 +193,7 @@ function getRepresentativesByTypeElection($slug) {
 		'post_type' => 'representante',
 		'posts_per_page' => 10,
 		'paged' => $paged,
+		'orderby' => 'title', 'order' => 'ASC',
 		'meta_query' => array(
 			array (
 				'key'     => 'wp_election_type',
@@ -210,7 +214,7 @@ function getRepresentativesByTypeElection($slug) {
 
 /*Get representatives*/
 function getRepresentatives($json = false) {
-	$args  = array('post_type' => 'representante', 'posts_per_page' => 600);
+	$args  = array('post_type' => 'representante', 'posts_per_page' => 600, 'orderby' => 'title', 'order' => 'ASC');
 	$loop  = new WP_Query($args);
 	$count = $loop->post_count;
 	
