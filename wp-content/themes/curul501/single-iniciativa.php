@@ -171,6 +171,16 @@
 							$fecha = $explode[0];
 							$id=$wp_query->post->ID;
 							setPostViews($id); 
+							$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
+							$explode_listado = explode(" ", $fecha_listado);
+							$fecha_sin_hora=$explode_listado[0];
+							$explode2 = explode("-", $fecha_sin_hora);
+							$ano = $explode2[0];
+							$mes = $explode2[1];
+							$dia = $explode2[2];
+
+
+
 
 												
 						?>
@@ -199,7 +209,7 @@
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
 						<ul class="sub-info">
-							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $fecha; ?></li>
+							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $dia."-".$mes."-".$ano; ?></li>
 							<li class="sub-info-li">LXII Legislatura</li>
 						</ul>
 					</div>
