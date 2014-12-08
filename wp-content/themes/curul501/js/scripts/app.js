@@ -300,7 +300,7 @@ run.pieChart = function(votos, urlBase){
       .attr('width', function (d) { return xScale(d.x); })
       .on('mouseover', function (d) {
           var xPos = parseFloat(d3.select(this).attr('x'))  + parseFloat(d3.select(this).attr('width')) + 500 ;
-          var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) ;
+          var yPos = parseFloat(d3.select(this).attr('y'))  + parseFloat(d3.select(this).attr('height')) - 10;
           //var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2 ;
 
           jQuery("body").one("mousemove", function( event ) {
