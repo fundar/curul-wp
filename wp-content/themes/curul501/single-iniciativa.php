@@ -32,7 +32,8 @@
 
 	#pie_chart{
 	  width: 510px;
-	  float: left;
+	  margin: 0 auto;
+	  /*float: left;*/
 	}
 
 	#bar_chart, #barchart {
