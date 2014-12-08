@@ -301,7 +301,7 @@ run.pieChart = function(votos, urlBase){
       .on('mouseover', function (d) {
           jQuery("body").one("mousemove", function( event ) {
             jQuery("#tooltip").css( {
-                left: event.pageX  + 'px', 
+                left: (event.pageX - 25)  + 'px', 
                 top: event.pageY  + 'px'
             })
             jQuery("#tooltip p #value").text(d.x + " " + data.tag)
