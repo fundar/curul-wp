@@ -287,7 +287,7 @@ function getDataRepresentatives() {
 		$wp_query = NULL;
 		$wp_query = $temp_query;
 		
-		return array("loop" => $loop, "count" => $count);
+		return $loop;
 	} else {
 		return false;
 	}
