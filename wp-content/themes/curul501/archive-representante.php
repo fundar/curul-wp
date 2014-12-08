@@ -133,8 +133,8 @@
 							<p>No se encontraron representantes con esta busqueda</p>
 						<?php } ?>
 					<?php } else { ?>
+						<?php query_posts($query_string.'&orderby=title&order=ASC'); ?>
 						<?php if (have_posts()) { ?>
-							<?php query_posts('orderby=title&order=ASC'); ?>
 							<?php while (have_posts()) : the_post(); ?>
 								<!--Inicio representantes-->
 								<article class="post type-post post-archive">
