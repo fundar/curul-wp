@@ -6,13 +6,13 @@
 
 
 ?>
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/angular.min.js" type="text/javascript"></script>
+ 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
-
+	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
+	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
 
-	 <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
- 	 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
   
  	
 		<div class="container top60">										     
