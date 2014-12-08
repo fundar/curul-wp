@@ -1506,7 +1506,7 @@ Mobile Styles
     #bartitle #bartitle_text{
     }
 
-    a.representante_lnk{
-        color:#A973BC;
+    a.representante_lnk:hover{
+        color:#A264B9;
         font-size: 1.2em;
     }
