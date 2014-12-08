@@ -120,7 +120,7 @@
 														$ano = $explode2[0];
 														$mes = $explode2[1];
 														$dia = $explode2[2];
-													    $meses=array('01'=>'Enero','02'=>'Febrero','03'=>'Marzo','04'=>'Abril','05'=>'Mayo','06'=>'Junio','07'=>'Julio','08'=>'Agosto','09'=>'Septiembre','10'=>'Octubre','11'=>'Noviembre','12'=>'Diciembre');
+													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
 
 														?>
 								
@@ -242,6 +242,15 @@
 														$status_final=count($elements)-1;
 													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
 														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
+														$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
+														$explode_listado = explode(" ", $fecha_listado);
+														$fecha_sin_hora=$explode_listado[0];
+														$explode2 = explode("-", $fecha_sin_hora);
+														$ano = $explode2[0];
+														$mes = $explode2[1];
+														$dia = $explode2[2];
+													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
+
 
 														?>
 								
@@ -253,8 +262,8 @@
 											<!--Inicio fecga y resumen-->
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
 												<div class="post_date">
-													<span>13</span>
-													Feb, 2014
+														<span><?php echo $dia; ?></span>
+													<?php echo $meses[$mes]; ?>, <?php echo $ano; ?>
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
