@@ -196,7 +196,7 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
-#text-5 > .textwidget > h3.widgettitle > a{
+#text-5 > .textwidget > .widgettitle h3 > a{
      color:#fff;
 }
 
