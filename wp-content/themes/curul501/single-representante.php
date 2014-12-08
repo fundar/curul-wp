@@ -129,7 +129,7 @@
 							<div class="linea-morado"></div>
 							<h3 itemprop="headline" class="post-title entry-title">
 								Representante de 
-								<a href="<?php echo get_site_url() . '/representantes/?estado=' . get_post_meta($post->ID, 'wp_zone_state', true); ?>" title="Filtro por estado">
+								<a class="entidad-del-representante" href="<?php echo get_site_url() . '/representantes/?estado=' . get_post_meta($post->ID, 'wp_zone_state', true); ?>" title="Filtro por estado">
 									<?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 								</a>
 							</h3>

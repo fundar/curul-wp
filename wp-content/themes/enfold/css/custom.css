@@ -1182,6 +1182,10 @@ p.cpt-repre {
     padding-left: 0 !important;
     width: 22.8% !important;
 }
+
+.main_color h3 > a  {
+    font: 19px 'colaborate-regular' !important;
+}
 .no-padding-rep{padding:0;}
 .post_foto {
     border: 1px solid #f4f4f4;
