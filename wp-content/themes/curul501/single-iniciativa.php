@@ -390,7 +390,6 @@
 			<table id="table_id" class="display">
 			      <thead>
 			          <tr>
-			            <th class="id_representante" >No. Representante</th>
 			            <th class="nombre" >Nombre</th>
 			            <th class="partido" >Partido</th>
 			            <th class="tipo" >Tipo</th>
@@ -406,11 +405,10 @@
 
 			      jQuery(document).ready( function () {
 			        for(var i in representantes){
-			          var row   = "<td>" + representantes[i].id_representative + "</td>"
-			              row  += "<td>" + representantes[i].nombre + "</td>"
+			          var row  = "<td>" + representantes[i].nombre + "</td>"
 			              row  += "<td>" + representantes[i].partido + "</td>"
 			              row  += "<td>" + representantes[i].tipo + "</td>"
-			              row  += "<td>" + representantes[i].zone_state + "</td>"
+			              row  += "<td>" + ( ( isset(representantes[i].zone_state) )? representantes[i].zone_state : "No conocido" )+ "</td>"
 			          
 			          jQuery("#table_id tbody").append("<tr>" + row + "</tr>")
 			        }
