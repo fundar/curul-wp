@@ -294,7 +294,7 @@
 													Votaci&oacute;n final													
 													</div>
 													<div class="votos-oficiles">
-														<?php	echo $decode[8]['total']; ?>
+														<?php //	echo $decode[8]['total']; ?>
 													</div>
 													<div class="hands-vote">
 									                                <ul>
