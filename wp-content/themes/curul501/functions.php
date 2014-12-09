@@ -97,6 +97,8 @@ add_action( 'init', 'create_post_type_representantes' );
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
+
+	//$slug = wp_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent );
     
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
@@ -106,6 +108,47 @@ function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 }
 
 add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
+
+/*   */
+add_filter('wp_unique_post_slug', 'wpse72553_cross_type_unique_slugs',10,5);
+function wpse72553_cross_type_unique_slugs( $slug, $post_ID, $post_status, $post_type, $post_parent ){
+
+    global $wpdb, $wp_rewrite;
+
+    //Don't touch hierarchical post types
+    $hierarchical_post_types = get_post_types( array('hierarchical' => true) );
+    if( in_array( $post_type, $hierarchical_post_types ) )
+          return $slug;
+
+    if( 'attachment' == $post_type ){
+         //These will be unique anyway
+         return $slug;
+    }
+
+
+    $feeds = $wp_rewrite->feeds;
+    if ( ! is_array( $feeds ) )
+         $feeds = array();
+
+
+     //Lets make sure the slug is really unique:
+     $check_sql = "SELECT post_name FROM $wpdb->posts WHERE post_name = %s AND ID != %d LIMIT 1";
+     $post_name_check = $wpdb->get_var( $wpdb->prepare( $check_sql, $slug, $post_ID ) );
+
+     if ( $post_name_check || in_array( $slug, $feeds) ) {
+          $suffix = 2;
+
+          do {
+              $alt_post_name = substr ($slug, 0, 200 - ( strlen( $suffix ) + 1 ) ) . "-$suffix";
+              $post_name_check = $wpdb->get_var( $wpdb->prepare($check_sql, $alt_post_name, $post_ID ) );
+              $suffix++;
+          } while ( $post_name_check );
+
+          $slug = $alt_post_name;
+      }
+
+    return $slug;
+}
 
 /*********** Representantes ***************/
 /*Get representatives by commission*/
