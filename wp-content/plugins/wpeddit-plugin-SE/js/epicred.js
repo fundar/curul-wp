@@ -1,10 +1,16 @@
 jQuery(document).ready(function ($) {
 	
    $(".logged-in-only").bind("click", function () { 
-
-	alert('You must be logged in to vote');
-	
-
+	   //alert('You must be logged in to vote');
+      $.colorbox({
+        width:450, 
+        initialWidth:450, 
+        initialHeight: 100, 
+        height: 100, 
+        html: "<h3 style='text-align: center;'> Para votar necesitas ingresar al sistema </h3>",
+        transition: "none",
+        closeButton: false
+      });
 	});
 	      
    $(".arrow").bind("click", function () { 
