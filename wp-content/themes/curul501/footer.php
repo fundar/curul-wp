@@ -165,7 +165,6 @@
 		<style>
 			.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{} 
 		</style>
-		<a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 		<div id="modal" class="popupContainer" style="display:none;">
@@ -202,9 +201,10 @@
 		</div>
 		<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
 		<script type="text/javascript">
-			jQuery(".modal_trigger_login > a").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+			jQuery("#modal_trigger_login").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
 			jQuery(function(){
+				// Calling Login Form
 				jQuery("#login_form").click(function(){
 					jQuery(".social_login").hide();
 					jQuery(".user_login").show();
