@@ -171,6 +171,7 @@
 		</header>
 		
 		<section class="popupBody">
+			<?php do_action( 'wordpress_social_login' ); ?>
 			<!-- Social Login -->
 			<div class="social_login">
 				<div class="">
