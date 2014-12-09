@@ -122,8 +122,19 @@
 														$dia = $explode2[2];
 													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
 														$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
-
-														?>
+														$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
+														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
+														$htmlpresentadas = "";
+														$link_representante = get_site_url() . "/representantes/?comision=";
+													
+														if($presentadas) {
+															foreach($presentadas as $key => $presentada) {
+																$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+																}
+															} else {
+														$htmlpresentadas = "<p>No se encuentran comisiones relacionadas</p>";
+																	}
+																				?>
 								
 																
 				 <!--Inicio iniciaiva-->
@@ -192,7 +203,8 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
 														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
-														if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', " ", $presentada_representante);} ?> </a>
+														<?php echo $htmlpresentadas; ?>
+														
 													</p>
 													
 												</div>													
@@ -248,8 +260,19 @@
 														$mes = $explode2[1];
 														$dia = $explode2[2];
 													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
-  													$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
-
+														$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
+														$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
+														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
+														$htmlpresentadas = "";
+														$link_representante = get_site_url() . "/representantes/?comision=";
+													
+														if($presentadas) {
+															foreach($presentadas as $key => $presentada) {
+																$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+																}
+															} else {
+														$htmlpresentadas = "<p>No se encuentran comisiones relacionadas</p>";
+																	}
 
 														?>
 								
@@ -320,7 +343,8 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
 														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
-														if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', " ", $presentada_representante);} ?> </a>
+														<?php echo $htmlpresentadas; ?>
+														
 													</p>
 													
 													
