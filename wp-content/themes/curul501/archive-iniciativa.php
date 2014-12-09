@@ -1,6 +1,6 @@
 <?php
 	global $avia_config, $more;
-	$selectedOption = getParameterValueGET();
+	//$selectedOption = getParameterValueGET();
 	$data = getDataIniciativas();
 	$selectedPolitical = getParameterValueGET('partido-politico');
 
