@@ -97,7 +97,6 @@
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 						<?php
-							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
 							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
 							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
 							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
@@ -121,7 +120,6 @@
 							$ano = $explode2[0];
 							$mes = $explode2[1];
 							$dia = $explode2[2];
-							$presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
 							$htmlcommis = "";
@@ -139,7 +137,7 @@
 								$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
 							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
 							$htmlpresentadas = "";
-							$link_representante = get_site_url() . "/representantes/?comision=";
+							$link_representante = get_site_url() . "/representantes/";
 							
 							if($presentadas) {
 								foreach($presentadas as $key => $presentada) {
