@@ -202,7 +202,7 @@
 		</div>
 		<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
 		<script type="text/javascript">
-			jQuery("#modal_trigger_login > a").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+			jQuery(".modal_trigger_login > a").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
 			jQuery(function(){
 				// Calling Login Form
