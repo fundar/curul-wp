@@ -205,7 +205,6 @@
 			jQuery(".modal_trigger_login > a").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
 			jQuery(function(){
-				// Calling Login Form
 				jQuery("#login_form").click(function(){
 					jQuery(".social_login").hide();
 					jQuery(".user_login").show();
