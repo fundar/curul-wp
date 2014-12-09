@@ -221,6 +221,14 @@ function getDataIniciativas() {
 	
 	if(isset($_GET["tema"]) and $_GET["tema"] != "") {
 		$meta_query[] = getIniciativasByTema($_GET["tema"]);
+		
+	
+	if(isset($_GET["status"]) and $_GET["status"] != "") {
+		$meta_query[] = getIniciativasByStatus($_GET["status"]);
+			
+		
+		
+		
 	}
 	
 	if($meta_query) {
@@ -257,6 +265,9 @@ function getIniciativasByTema($tema) {
 	return array('key' => 'wp_topics_slug', 'value' => $tema, 'compare' => 'LIKE' );
 }
 
+function getIniciativasByStatus($status) {
+	return array('key' => 'wp_last_status_slug', 'value' => $tema, 'compare' => 'LIKE' );
+}
 
 /*********** Iniciativas ***************/
 
@@ -336,7 +347,7 @@ function getIniciativasByTemas($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 */
-/*Get iniciativas by status party*/
+/*Get iniciativas by status party
 function getIniciativasByStatus($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -361,7 +372,7 @@ function getIniciativasByStatus($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-
+*/
 
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
