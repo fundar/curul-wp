@@ -84,7 +84,9 @@
 						   </select>
 					   </div>
 					   
-					   		   
+					   	<div>				
+						   <input type="submit" value="Filtrar" id="submit-filter"/>
+					   </div>   
 			       		
 					</form>				
 				   
