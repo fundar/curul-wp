@@ -72,6 +72,8 @@ run.pieChart = function(votos, urlBase){
           }
 
       for (var i in votos){
+        if(votos[i].id_political_party == 0) total_inicial = votos[i].total
+
         if(votos[i].id_political_party != 0 && votos[i].tipo != 'sp'){
           for(var j in root.children){
             var categoria = root.children[j]
@@ -128,7 +130,7 @@ run.pieChart = function(votos, urlBase){
           .attr("r", radius / 3)
           .style("fill", "#fff")
 
-      total_inicial = "500"
+      
       total = pie_chart.append("text")
           .text(function(d){return total_inicial })
           .attr("font-family", "sans-serif")
