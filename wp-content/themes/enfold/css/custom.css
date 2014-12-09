@@ -1285,7 +1285,7 @@ li.ir-sb {
 }
 #filter select.sorter-parlamentarios {
     margin-right: 10px;
-    width: 165px;
+    width: 180px;
     color: rgba(68, 68, 68, 0.9);
 }
 /**paginación**/
@@ -1324,7 +1324,10 @@ div.tituloBlog {
      margin-bottom:30px;
 }
 
-
+.post-entry-7 {
+    background:transparent !important;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0) !important;
+}
 
 
 h1, h2, h3, h4, h5, h6 {
