@@ -5,11 +5,12 @@ jQuery(document).ready(function ($) {
       $.colorbox({
         width:450, 
         initialWidth:450, 
-        initialHeight: 95, 
-        height: 95, 
+        initialHeight: 90, 
+        height: 90, 
         html: "<h3 style='text-align: center;'> Para votar necesitas ingresar al sistema </h3>",
         transition: "none",
-        closeButton: false
+        closeButton: false,
+        scrolling: false
       });
 	});
 	      
