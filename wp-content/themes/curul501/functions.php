@@ -214,6 +214,9 @@ function getDataIniciativas() {
 		$meta_query[] = getIniciativasByPoliticalParty($_GET["partido-politico"]);
 	}
 	
+	if(isset($_GET["comision"]) and $_GET["comision"] != "") {
+		$meta_query[] = getIniciativasByCommission($_GET["comision"]);
+	}
 	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
