@@ -125,11 +125,11 @@
 														$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
 														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
 														$htmlpresentadas = "";
-														$link_representante = get_site_url() . "/representantes/?comision=";
+														$link_representante = get_site_url() . "/representantes/";
 													
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
-																$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+																$htmlpresentadas .= "<a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a>";
 																}
 															} else {
 														$htmlpresentadas = "<p>No se encuentran comisiones relacionadas</p>";
@@ -264,7 +264,7 @@
 														$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
 														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
 														$htmlpresentadas = "";
-														$link_representante = get_site_url() . "/representantes/?comision=";
+														$link_representante = get_site_url() . "/representantes/";
 													
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
