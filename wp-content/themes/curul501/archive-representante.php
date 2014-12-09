@@ -1,6 +1,9 @@
 <?php
 	global $avia_config, $more;
-	$selectedOption = getParameterValueGET();
+	$selectedCommission = getParameterValueGET('comision');
+	$selectedType = getParameterValueGET('tipo-eleccion');
+	$selectedPolitical = getParameterValueGET('partido-politico');
+	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -26,7 +29,7 @@
 							   <option value="">Grupos parlamentarios</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -38,7 +41,7 @@
 							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedOption == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedState == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -50,23 +53,27 @@
 							   <option value="">Comisiones</option>
 							    <?php $commissionsArray = getCommissions(); ?>
 								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
 						   </select>
 					   </div>
 					   
-					   <div id="filter">				
+						<div id="filter">				
 						   <select class="sorter-rep sort" name="tipo-eleccion" id="tipo-eleccion-filter">
 							   <option value="">Tipo de elección</option>
-								<option value="representacion-proporcional" <?php if($selectedOption == "representacion-proporcional") echo 'selected="selected"'?>>
+								<option value="representacion-proporcional" <?php if($selectedType == "representacion-proporcional") echo 'selected="selected"'?>>
 									Representación proporcional
 								</option>
-								<option value="mayoria-relativa" <?php if($selectedOption == "mayoria-relativa") echo 'selected="selected"'?>>
+								<option value="mayoria-relativa" <?php if($selectedType == "mayoria-relativa") echo 'selected="selected"'?>>
 									Mayoría relativa
 								</option>
 						   </select>
+						</div>
+						
+						<div>				
+						   <input type="submit" value="Filtrar" id="submit-filter"/>
 					   </div>
 					</form>				
 				</div>
@@ -199,43 +206,26 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#loading-gif").hide();
-		
-		jQuery("#partido-politico-filter").change( function() {
-			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#estado-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#tipo-eleccion-filter").remove();
-				jQuery("#filter-representanes").submit();
-			}
-		});
-		
-		jQuery("#estado-filter").change( function() {
-			if(jQuery("#estado-filter option:selected").val() != "") {
+		jQuery("#submit-filter").click( function(event) {
+			event.preventDefault();
+			
+			if(jQuery("#partido-politico-filter option:selected").val() == "") {
 				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#tipo-eleccion-filter").remove();
-				jQuery("#filter-representanes").submit();
 			}
-		});
-		
-		jQuery("#comision-filter").change( function() {
-			if(jQuery("#comision-filter option:selected").val() != "") {
+			
+			if(jQuery("#estado-filter option:selected").val() == "") {
 				jQuery("#estado-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#tipo-eleccion-filter").remove();
-				jQuery("#filter-representanes").submit();
 			}
-		});
-		
-		jQuery("#tipo-eleccion-filter").change( function() {
-			if(jQuery("#tipo-eleccion-filter option:selected").val() != "") {
+			
+			if(jQuery("#comision-filter option:selected").val() == "") {
 				jQuery("#comision-filter").remove();
-				jQuery("#estado-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#filter-representanes").submit();
 			}
+			
+			if(jQuery("#tipo-eleccion-filter option:selected").val() == "") {
+				jQuery("#tipo-eleccion-filter").remove();
+			}
+			
+			jQuery("#filter-representanes").submit();
 		});
 	});
-	
 </script>
