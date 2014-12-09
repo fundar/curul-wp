@@ -587,7 +587,7 @@ function add_login_logout_link($items, $args) {
         ob_start();
         wp_loginout('index.php');
         $loginoutlink = ob_get_contents();
-        var_dump($loginoutlink);
+        die(var_dump($loginoutlink));
         ob_end_clean();
         $items .= '<li class="modal_trigger_login">'. $loginoutlink .'</li>';
     return $items;
