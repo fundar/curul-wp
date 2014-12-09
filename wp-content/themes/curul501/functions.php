@@ -227,6 +227,10 @@ function getDataIniciativas() {
 		$meta_query[] = getIniciativasByStatus($_GET["status"]);
 	}
 	
+	if(isset($_GET["representante"]) and $_GET["representante"] != "") {
+		$meta_query[] = getIniciativasByRepresentante($_GET["representante"]);
+	}
+	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args  = array(
@@ -263,6 +267,9 @@ function getIniciativasByTema($tema) {
 
 function getIniciativasByStatus($status) {
 	return array('key' => 'wp_last_status_slug', 'value' => $status, 'compare' => 'LIKE' );
+}
+function getIniciativasByRepresentante($representante) {
+	return array('key' => 'wp_presentada_slug', 'value' => $representante, 'compare' => 'LIKE' );
 }
 
 
