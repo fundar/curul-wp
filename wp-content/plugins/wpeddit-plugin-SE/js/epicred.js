@@ -5,8 +5,8 @@ jQuery(document).ready(function ($) {
       $.colorbox({
         width:450, 
         initialWidth:450, 
-        initialHeight: 80, 
-        height: 80, 
+        initialHeight: 90, 
+        height: 90, 
         html: "<h3 style='text-align: center;'> Para votar necesitas ingresar al sistema </h3>",
         transition: "none",
         closeButton: false
