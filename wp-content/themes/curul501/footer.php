@@ -168,7 +168,7 @@
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 	<div id="modal" class="popupContainer" style="display:none;">
 		<header class="popupHeader">
-			<span class="header_title">Login</span>
+			<span class="header_title">Acceder</span>
 			<span class="modal_close"><i class="fa fa-times"></i></span>
 		</header>
 		
@@ -176,7 +176,7 @@
 			<!-- Social Login -->
 			<div class="social_login">
 				<div class="wp-social-login-widget">
-					<div id="wp-social-login-connect-with" class="wp-social-login-connect-with">Connect with:</div>
+					<div id="wp-social-login-connect-with" class="wp-social-login-connect-with">Conectate con:</div>
 					<div id="wp-social-login-connect-options" class="wp-social-login-provider-list">
 						<a rel="nofollow" href="javascript:void(0);" title="Connect with Facebook" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-facebook" data-provider="Facebook"> 
 							<img alt="Facebook" title="Connect with Facebook" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png" />	
