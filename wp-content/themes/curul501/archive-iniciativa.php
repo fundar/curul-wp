@@ -268,7 +268,7 @@
 													
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
-																$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+																$htmlpresentadas .= "<a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a>";
 																}
 															} else {
 														$htmlpresentadas = "<p>No se encuentran comisiones relacionadas</p>";
