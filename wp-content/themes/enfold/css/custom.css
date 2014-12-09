@@ -1041,9 +1041,6 @@ a.grafikas:hover{
 
 }
 /** wpeddit custom style**/
-.no-voto{
-    display:none;
-}
 .no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
