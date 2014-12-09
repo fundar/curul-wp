@@ -160,7 +160,9 @@
 
 <a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
 <div id="fb-root"></div>
-
+	<style>
+		.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{} 
+	</style>
 	<a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
@@ -173,33 +175,26 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<?php wsl_render_login_form_login(); ?>
-				
-				
-				<div class="">
-					<a href="#" class="social_box fb">
-						<span class="icon"><i class="fa fa-facebook"></i></span>
-						<span class="icon_title">Connect with Facebook</span>
-						
-					</a>
 
-					<a href="#" class="social_box google">
-						<span class="icon"><i class="fa fa-google-plus"></i></span>
-						<span class="icon_title">Connect with Google</span>
-					</a>
-				</div>
-
-				<div class="centeredText">
-					<span>Or use your Email address</span>
-				</div>
-
-				<div class="action_btns">
-					<div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-					<div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-				</div>
+				<div class="wp-social-login-widget">
+					<div class="wp-social-login-connect-with">{connect_with_caption}</div>
+					<div class="wp-social-login-provider-list">
+						<a class="wp-social-login-provider wp-social-login-provider-facebook">
+							<img src="{provider_icon_facebook}" />
+						</a>
+						<a class="wp-social-login-provider wp-social-login-provider-google">
+							<img src="{provider_icon_google}" />
+						</a>
+						<a class="wp-social-login-provider wp-social-login-provider-twitter">
+							<img src="{provider_icon_twitter}" />
+						</a>
+					</div> <!-- / div.wp-social-login-connect-options -->
+					<div class="wp-social-login-widget-clearing"></div>
+				</div> <!-- / div.wp-social-login-widget -->
 			</div>
 		</section>
-	</div>	
+	</div>
+	<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
 	<script type="text/javascript">
 		jQuery("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
