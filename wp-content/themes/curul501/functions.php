@@ -590,7 +590,7 @@ function add_login_logout_link($items, $args) {
         ob_end_clean();
         
         if($loginoutlink == '<a href="http://curul501.org/wp-login.php?redirect_to=index.php">Acceder</a>') {
-			$items .= '<li><a class="modal_trigger_login">Acceder</a></li>';
+			$items .= '<li><a style="cursor:pointer;" id="modal_trigger_login">Acceder</a></li>';
 		} else {
 			$items .= '<li>'. $loginoutlink .'</li>';
 		}
