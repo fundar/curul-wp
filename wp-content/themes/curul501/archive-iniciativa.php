@@ -410,7 +410,7 @@
 				jQuery("#tipo-eleccion-filter").remove();
 			}
 			
-			jQuery("#filter-representanes").submit();
+			jQuery("#filter-iniciativas").submit();
 		});
 	});
 </script>
