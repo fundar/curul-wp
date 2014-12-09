@@ -171,9 +171,25 @@
 		</header>
 		
 		<section class="popupBody">
-			<?php do_action( 'wordpress_social_login' ); ?>
 			<!-- Social Login -->
 			<div class="social_login">
+				<?php do_action( 'wordpress_social_login' ); ?>
+				<div class="wp-social-login-widget">
+					<div class="wp-social-login-connect-with">{connect_with_caption}</div>
+					<div class="wp-social-login-provider-list">
+						<a class="wp-social-login-provider wp-social-login-provider-facebook">
+							<img src="{provider_icon_facebook}" />
+						</a>
+						<a class="wp-social-login-provider wp-social-login-provider-google">
+							<img src="{provider_icon_google}" />
+						</a>
+						<a class="wp-social-login-provider wp-social-login-provider-twitter">
+							<img src="{provider_icon_twitter}" />
+						</a>
+					</div> <!-- / div.wp-social-login-connect-options -->
+					<div class="wp-social-login-widget-clearing"></div>
+				</div> <!-- / div.wp-social-login-widget -->
+				
 				<div class="">
 					<a href="#" class="social_box fb">
 						<span class="icon"><i class="fa fa-facebook"></i></span>
