@@ -115,6 +115,7 @@ function epicred__init(){
     wp_enqueue_script("jquery");
     wp_enqueue_script( 'jquery-form',array('jquery')); 
     wp_enqueue_style('colorbox-css', plugins_url('/css/colorbox.css',__FILE__) );
+    wp_enqueue_script('colorbox',plugins_url('/js/jquery.colorbox-min.js',__FILE__),array('jquery'));
     wp_enqueue_script('epicred-ajax',plugins_url('/js/epicred.js',__FILE__),array('jquery'));
     wp_localize_script( 'epicred-ajax', 'EpicAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	
