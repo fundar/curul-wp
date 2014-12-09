@@ -453,9 +453,9 @@
                 
 
 		</div><!--end container fin de iniciativa-->
-		<div class="container tabla">
+		<!--div class="container tabla">
 			Aqu&iacute; va la tabla
-		</div>			
+		</div-->			
                 <div class="container top60">
 			<?php			    		    
 		        comments_template( '/includes/comments.php');
