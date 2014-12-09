@@ -82,7 +82,7 @@
 					   </div>  
 					   
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
+						   <select class="sorter-rep sort" name="representante" id="representante-filter">
 							   <option value="">Representante</option>
 							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
 								<?php foreach($RepresentanteArray as $value) { ?>
