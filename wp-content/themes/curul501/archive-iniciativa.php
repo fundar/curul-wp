@@ -4,6 +4,7 @@
 	$data = getDataIniciativas();
 	$selectedPolitical = getParameterValueGET('partido-politico');
 	$selectedCommission = getParameterValueGET('comision');
+	$selectedTema = getParameterValueGET('tema');
 
 
 
@@ -57,7 +58,7 @@
 							   <option value="">Temas</option>
 							   <?php $temasArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedTema == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -407,6 +408,11 @@
 			if(jQuery("#comision-filter option:selected").val() == "") {
 				jQuery("#comision-filter").remove();
 			}
+			
+			if(jQuery("#tema-filter option:selected").val() == "") {
+				jQuery("#tema-filter").remove();
+			}
+			
 			
 			if(jQuery("#tipo-eleccion-filter option:selected").val() == "") {
 				jQuery("#tipo-eleccion-filter").remove();
