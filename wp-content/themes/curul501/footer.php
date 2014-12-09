@@ -175,22 +175,26 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-
 				<div class="wp-social-login-widget">
-					<div class="wp-social-login-connect-with">{connect_with_caption}</div>
-					<div class="wp-social-login-provider-list">
-						<a class="wp-social-login-provider wp-social-login-provider-facebook">
-							<img src="{provider_icon_facebook}" />
+					<div id="wp-social-login-connect-with" class="wp-social-login-connect-with">Connect with:</div>
+					<div id="wp-social-login-connect-options" class="wp-social-login-provider-list">
+						<a rel="nofollow" href="javascript:void(0);" title="Connect with Facebook" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-facebook" data-provider="Facebook"> 
+							<img alt="Facebook" title="Connect with Facebook" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png" />	
 						</a>
-						<a class="wp-social-login-provider wp-social-login-provider-google">
-							<img src="{provider_icon_google}" />
+						<a rel="nofollow" href="javascript:void(0);" title="Connect with Google" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-google" data-provider="Google"> 
+							<img alt="Google" title="Connect with Google" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/google.png" />	
 						</a>
-						<a class="wp-social-login-provider wp-social-login-provider-twitter">
-							<img src="{provider_icon_twitter}" />
+						<a rel="nofollow" href="javascript:void(0);" title="Connect with Twitter" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-twitter" data-provider="Twitter"> 
+							<img alt="Twitter" title="Connect with Twitter" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/twitter.png" />	
 						</a>
-					</div> <!-- / div.wp-social-login-connect-options -->
+						<a rel="nofollow" href="javascript:void(0);" title="Connect with LinkedIn" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-linkedin" data-provider="LinkedIn"> 
+							<img alt="LinkedIn" title="Connect with LinkedIn" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/linkedin.png" />	
+						</a>
+						<input id="wsl_popup_base_url" type="hidden" value="http://curul501.org/wp-login.php?action=wordpress_social_authenticate&#038;" />
+						<input type="hidden" id="wsl_login_form_uri" value="http://curul501.org/wp-login.php" />
+					</div> 
 					<div class="wp-social-login-widget-clearing"></div>
-				</div> <!-- / div.wp-social-login-widget -->
+				</div>
 			</div>
 		</section>
 	</div>
