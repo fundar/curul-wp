@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         initialWidth:300, 
         initialHeight: 150, 
         height: 150, 
-        html: "<h2> Para votar necesitas ingresar al sistema </h2>",
+        html: "<h3> Para votar necesitas ingresar al sistema </h3>",
         transition: "none" 
       });
 	});
