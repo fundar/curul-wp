@@ -4,8 +4,10 @@ jQuery(document).ready(function ($) {
 	   //alert('You must be logged in to vote');
       $.colorbox({
         width:300, 
-        height: 50, 
-        html: "<p> Para votar necesitas ingresar al sistema </p>",
+        initialWidth:300, 
+        initialHeight: 150, 
+        height: 150, 
+        html: "<h1> Para votar necesitas ingresar al sistema </h1>",
         transition: "fade" 
       });
 	});
