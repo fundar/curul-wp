@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         initialHeight: 150, 
         height: 150, 
         html: "<h2> Para votar necesitas ingresar al sistema </h2>",
-        transition: "fade" 
+        transition: "none" 
       });
 	});
 	      
