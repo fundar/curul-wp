@@ -631,17 +631,10 @@ function getParameterValueGET($var = "") {
 	if(isset($_GET[$var])) {
 		return $_GET[$var];
 	} else {
-		if(isset($_GET["tema"])) {
-			return $_GET["tema"];
-		} elseif(isset($_GET["status"])) {
-			return $_GET["status"];
-		} elseif(isset($_GET["postulante"])) {
-			return $_GET["postulante"];
-		} else {
 			return "";
 		}
 	}	
-}
+
 
 add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
 function add_login_logout_link($items, $args) {
