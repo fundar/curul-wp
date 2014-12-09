@@ -2,37 +2,13 @@
 global $avia_config;
 
 	 get_header();
-	 $tipo="Recientes";
-	$id = $_GET['id'];
-		if ( $_GET['id'] == '1' ){ 
-											$args = array(
-											'posts_per_page' => '10',
-											'post_type' => 'iniciativa',
-											'order' => 'DESC',
-											'meta_key' => 'post_views_count',
-											'orderby' => 'meta_value_num');
-											$tipo="Mas vistas";
-													} elseif ( $_GET['id'] == '2' ){
-												$args = array(
-											'posts_per_page' => '10',
-											'post_type' => 'iniciativa',
-											'order' => 'DESC',
-											'meta_key' => 'epicredrank',
-											'orderby' => 'meta_value_num');
-											$tipo="Mas Votadas";
-												
-												
-								}
-								else{
-								$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 5 );
-								}
-								
+							
 	 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
 		
 	?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-	<?php	if($id == "")  putRevSlider("carrusel-home","homepage") ?>
+	<?php	 putRevSlider("carrusel-home","homepage") ?>
 	   														
 
 	   <div class='container'>
