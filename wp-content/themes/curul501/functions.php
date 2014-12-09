@@ -218,6 +218,11 @@ function getDataIniciativas() {
 		$meta_query[] = getIniciativasByCommission($_GET["comision"]);
 	}
 	
+	
+	if(isset($_GET["tema"]) and $_GET["tema"] != "") {
+		$meta_query[] = getIniciativasByTema($_GET["tema"]);
+	}
+	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args  = array(
@@ -248,6 +253,9 @@ function getIniciativasByCommission($commission) {
 	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
 }
 
+function getIniciativasByTema($tema) {
+	return array('key' => 'wp_topics_slug', 'value' => $tema, 'compare' => 'LIKE' );
+}
 
 
 /*********** Iniciativas ***************/
@@ -303,7 +311,7 @@ function getIniciativasByPoliticalParty($slug) {
 }
 */
 
-/*Get iniciativas by temas party*/
+/*Get iniciativas by temas party
 function getIniciativasByTemas($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -327,7 +335,7 @@ function getIniciativasByTemas($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
-
+*/
 /*Get iniciativas by status party*/
 function getIniciativasByStatus($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
