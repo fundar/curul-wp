@@ -2,6 +2,8 @@
 	global $avia_config, $more;
 	$selectedOption = getParameterValueGET();
 	$data = getDataIniciativas();
+	$selectedPolitical = getParameterValueGET('partido-politico');
+
 
 	/*
 	 * get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -30,7 +32,7 @@
 							   <option value="">Partidos pol&iacute;ticos</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
