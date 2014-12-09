@@ -160,56 +160,59 @@
 
 <a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
 <div id="fb-root"></div>
-	<style>
-		.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{} 
-	</style>
-	<a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
 
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
-	<div id="modal" class="popupContainer" style="display:none;">
-		<header class="popupHeader">
-			<span class="header_title">Acceder</span>
-			<span class="modal_close"><i class="fa fa-times"></i></span>
-		</header>
-		
-		<section class="popupBody">
-			<!-- Social Login -->
-			<div class="social_login">
-				<div class="wp-social-login-widget">
-					<div id="wp-social-login-connect-with" class="wp-social-login-connect-with">Conectate con:</div>
-					<div id="wp-social-login-connect-options" class="wp-social-login-provider-list">
-						<a rel="nofollow" href="javascript:void(0);" title="Connect with Facebook" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-facebook" data-provider="Facebook"> 
-							<img alt="Facebook" title="Connect with Facebook" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png" />	
-						</a>
-						<a rel="nofollow" href="javascript:void(0);" title="Connect with Google" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-google" data-provider="Google"> 
-							<img alt="Google" title="Connect with Google" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/google.png" />	
-						</a>
-						<a rel="nofollow" href="javascript:void(0);" title="Connect with Twitter" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-twitter" data-provider="Twitter"> 
-							<img alt="Twitter" title="Connect with Twitter" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/twitter.png" />	
-						</a>
-						<a rel="nofollow" href="javascript:void(0);" title="Connect with LinkedIn" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-linkedin" data-provider="LinkedIn"> 
-							<img alt="LinkedIn" title="Connect with LinkedIn" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/linkedin.png" />	
-						</a>
-						<input id="wsl_popup_base_url" type="hidden" value="http://curul501.org/wp-login.php?action=wordpress_social_authenticate&#038;" />
-						<input type="hidden" id="wsl_login_form_uri" value="http://curul501.org/wp-login.php" />
-					</div> 
-					<div class="wp-social-login-widget-clearing"></div>
+	<!-- Login -->
+		<style>
+			.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{} 
+		</style>
+		<a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
+		<div id="modal" class="popupContainer" style="display:none;">
+			<header class="popupHeader">
+				<span class="header_title">Acceder</span>
+				<span class="modal_close"><i class="fa fa-times"></i></span>
+			</header>
+			
+			<section class="popupBody">
+				<!-- Social Login -->
+				<div class="social_login">
+					<div class="wp-social-login-widget">
+						<div id="wp-social-login-connect-with" class="wp-social-login-connect-with">Conectate con:</div>
+						<div id="wp-social-login-connect-options" class="wp-social-login-provider-list">
+							<a rel="nofollow" href="javascript:void(0);" title="Connect with Facebook" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-facebook" data-provider="Facebook"> 
+								<img alt="Facebook" title="Connect with Facebook" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png" />	
+							</a>
+							<a rel="nofollow" href="javascript:void(0);" title="Connect with Google" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-google" data-provider="Google"> 
+								<img alt="Google" title="Connect with Google" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/google.png" />	
+							</a>
+							<a rel="nofollow" href="javascript:void(0);" title="Connect with Twitter" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-twitter" data-provider="Twitter"> 
+								<img alt="Twitter" title="Connect with Twitter" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/twitter.png" />	
+							</a>
+							<a rel="nofollow" href="javascript:void(0);" title="Connect with LinkedIn" class="wsl_connect_with_provider wp-social-login-provider wp-social-login-provider-linkedin" data-provider="LinkedIn"> 
+								<img alt="LinkedIn" title="Connect with LinkedIn" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/linkedin.png" />	
+							</a>
+							<input id="wsl_popup_base_url" type="hidden" value="http://curul501.org/wp-login.php?action=wordpress_social_authenticate&#038;" />
+							<input type="hidden" id="wsl_login_form_uri" value="http://curul501.org/wp-login.php" />
+						</div> 
+						<div class="wp-social-login-widget-clearing"></div>
+					</div>
 				</div>
-			</div>
-		</section>
-	</div>
-	<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
-	<script type="text/javascript">
-		jQuery("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+			</section>
+		</div>
+		<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
+		<script type="text/javascript">
+			jQuery("#modal_trigger_login > a").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
-		jQuery(function(){
-			// Calling Login Form
-			jQuery("#login_form").click(function(){
-				jQuery(".social_login").hide();
-				jQuery(".user_login").show();
-				return false;
-			});
-		})
-	</script>
+			jQuery(function(){
+				// Calling Login Form
+				jQuery("#login_form").click(function(){
+					jQuery(".social_login").hide();
+					jQuery(".user_login").show();
+					return false;
+				});
+			})
+		</script>
+	<!-- Login -->
 </body>
 </html>
