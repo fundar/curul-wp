@@ -227,8 +227,8 @@ function getDataIniciativas() {
 		$meta_query[] = getIniciativasByStatus($_GET["status"]);
 	}
 	
-	if(isset($_GET["representante"]) and $_GET["representante"] != "") {
-		$meta_query[] = getIniciativasByRepresentante($_GET["representante"]);
+	if(isset($_GET["postulante"]) and $_GET["postulante"] != "") {
+		$meta_query[] = getIniciativasByPostulante($_GET["postulante"]);
 	}
 	
 	if($meta_query) {
@@ -268,8 +268,8 @@ function getIniciativasByTema($tema) {
 function getIniciativasByStatus($status) {
 	return array('key' => 'wp_last_status_slug', 'value' => $status, 'compare' => 'LIKE' );
 }
-function getIniciativasByRepresentante($representante) {
-	return array('key' => 'wp_presentada_slug', 'value' => $representante, 'compare' => 'LIKE' );
+function getIniciativasByPostulante($postulante) {
+	return array('key' => 'wp_presentada_slug', 'value' => $postulante, 'compare' => 'LIKE' );
 }
 
 

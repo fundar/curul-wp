@@ -6,7 +6,7 @@
 	$selectedCommission = getParameterValueGET('comision');
 	$selectedTema = getParameterValueGET('tema');
 	$selectedStatus = getParameterValueGET('status');
-	$selectedRepresentante = getParameterValueGET('representante');
+	$selectedPostulante = getParameterValueGET('postulante');
 
 
 
@@ -82,11 +82,11 @@
 					   </div>  
 					   
 					   <div id="filter">				
-						   <select class="sorter-rep sort" name="representante" id="representante-filter">
+						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
 							   <option value="">Representante</option>
 							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
 								<?php foreach($RepresentanteArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedRepresentante == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedPostulante == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->full_name;?>
 									</option>
 								<?php } ?>
@@ -421,13 +421,11 @@
 				jQuery("#status-filter").remove();
 			}
 			
-			if(jQuery("#representante-filter option:selected").val() == "") {
-				jQuery("#representante-filter").remove();
+			if(jQuery("#postulante-filter option:selected").val() == "") {
+				jQuery("#postulante-filter").remove();
 			}
 			
-			if(jQuery("#tipo-eleccion-filter option:selected").val() == "") {
-				jQuery("#tipo-eleccion-filter").remove();
-			}
+			
 			
 			jQuery("#filter-iniciativas").submit();
 		});
