@@ -1,9 +1,12 @@
 <?php get_header(); 
 	
 	global $avia_config, $more;
-	$selectedOption = getParameterValueGET();
-	$data = getDataRepresentatives();
-
+	$data = getDataIniciativas();
+	$selectedPolitical = getParameterValueGET('partido-politico');
+	$selectedCommission = getParameterValueGET('comision');
+	$selectedTema = getParameterValueGET('tema');
+	$selectedStatus = getParameterValueGET('status');
+	$selectedPostulante = getParameterValueGET('postulante');
 
 ?>
  	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
@@ -20,7 +23,6 @@
 						<div class="line-amarilla"> </div>
 		</div>
 
-<!--Inicio filtros iniciativas -->
 		<!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
@@ -30,7 +32,7 @@
 							   <option value="">Partidos pol&iacute;ticos</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -42,7 +44,7 @@
 							   <option value="">Comisiones</option>
 							    <?php $commissionsArray = getCommissions(); ?>
 								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
@@ -53,7 +55,7 @@
 							   <option value="">Temas</option>
 							   <?php $temasArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedTema == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -65,7 +67,7 @@
 							   <option value="">Status</option>
 							   <?php $statusArray = getStatus(); ?>
 							   <?php foreach($statusArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedStatus == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -77,20 +79,21 @@
 							   <option value="">Representante</option>
 							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
 								<?php foreach($RepresentanteArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedPostulante == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->full_name;?>
 									</option>
 								<?php } ?>
 						   </select>
 					   </div>
 					   
-					   		   
+					   	<div>				
+						   <input type="submit" value="Filtrar" id="submit-filter"/>
+					   </div>   
 			       		
 					</form>				
 				   
 			</div>
 		</div>
-<!-- Fin filtros iniciativas -->		
 
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
@@ -463,62 +466,36 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#loading-gif").hide();
-		
-		jQuery("#partido-politico-filter").change( function() {
-			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		jQuery("#tema-filter").change( function() {
-			if(jQuery("#tema-filter option:selected").val() != "") {
+		jQuery("#submit-filter").click( function(event) {
+			event.preventDefault();
+			
+			if(jQuery("#partido-politico-filter option:selected").val() == "") {
 				jQuery("#partido-politico-filter").remove();
+			}
+			
+			if(jQuery("#estado-filter option:selected").val() == "") {
+				jQuery("#estado-filter").remove();
+			}
+			
+			if(jQuery("#comision-filter option:selected").val() == "") {
 				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
 			}
-		});
-		
-		jQuery("#comision-filter").change( function() {
-			if(jQuery("#comision-filter option:selected").val() != "") {
+			
+			if(jQuery("#tema-filter option:selected").val() == "") {
 				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
+			}
+			
+			if(jQuery("#status-filter option:selected").val() == "") {
 				jQuery("#status-filter").remove();
+			}
+			
+			if(jQuery("#postulante-filter option:selected").val() == "") {
 				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
 			}
+			
+			
+			
+			jQuery("#filter-iniciativas").submit();
 		});
-				
-		jQuery("#status-filter").change( function() {
-			if(jQuery("#status-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		jQuery("#postulante-filter").change( function() {
-			if(jQuery("#postulante-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		
-		setMap();
 	});
-	
 </script>
