@@ -235,18 +235,24 @@ function getDataIniciativas() {
 
 
 
-/*Get representatives by political party*/
+/*Get iniciativas  by political party*/
 
 function getIniciativasByPoliticalParty($slug) {
 	return array('key' => 'wp_presentada_partidos_slug', 'value' => $slug);
 }
+
+function getIniciativasByCommission($commission) {
+	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
+}
+
+
 
 /*********** Iniciativas ***************/
 
 
 
 
-/*Get iniciativas by commission*/
+/*Get iniciativas by commission
 function getIniciativasByCommission($commission) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -267,7 +273,7 @@ function getIniciativasByCommission($commission) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
-
+*/
 /*Get iniciativas by political party
 function getIniciativasByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
