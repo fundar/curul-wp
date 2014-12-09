@@ -52,7 +52,7 @@ function create_post_type_iniciativas() {
 			'menu_position' => 5,
 			'taxonomies' => array("iniciativa_category"),
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
-			'rewrite' => array('slug' => 'iniciativas','with_front' => FALSE),
+			'rewrite' => array('slug' => 'iniciativas'),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
         )
     );
