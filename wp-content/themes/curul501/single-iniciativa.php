@@ -161,10 +161,10 @@
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							<li class="bullet-arrow">Propuesta por
-							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br>";} ?>
+							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
 							<?php if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;} ?>
 							
-							<?php if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', " ", $presentada_representante);} ?> </a></p></li>
+							<?php if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', ", ", $presentada_representante);} ?> </a></p></li>
 							
 							
 							
