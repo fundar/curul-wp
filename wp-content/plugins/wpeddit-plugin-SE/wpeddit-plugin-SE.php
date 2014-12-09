@@ -110,21 +110,17 @@ Author URI: http://www.epicplugins.com/
 function epicred__init(){
   
     global $epicred_slugs, $epicred_taxonomy; #} Req
-    |
+    
     #} Admin & Public
     wp_enqueue_script("jquery");
     wp_enqueue_script( 'jquery-form',array('jquery')); 
-    //wp_enqueue_style('colorbox-css', plugins_url('/css/colorbox.css',__FILE__) );
-    //wp_enqueue_script('colorbox',plugins_url('/js/jquery.colorbox-min.js',__FILE__),array('jquery'));
     wp_enqueue_script('epicred-ajax',plugins_url('/js/epicred.js',__FILE__),array('jquery'));
     wp_localize_script( 'epicred-ajax', 'EpicAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
-    
-
-    if(!is_admin()){
+	
+	if(!is_admin()){
     wp_enqueue_style('epicred-css', plugins_url('/css/epicred.css',__FILE__) );
-    }
+	}
     
-
     #} Admin only
     if (is_admin()) {
     wp_enqueue_style('myo-polling-admin-css', plugins_url('/css/epicadmin.css',__FILE__) );
