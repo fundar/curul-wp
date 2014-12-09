@@ -149,10 +149,7 @@ global $avia_config;
 														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
 														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
 														if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', " ", $presentada_representante);} ?> </a>
-													</p>
-													
-														
-														?>
+
 													</p>
 													
 													
