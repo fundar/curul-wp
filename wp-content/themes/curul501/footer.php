@@ -161,5 +161,53 @@
 <a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
 <div id="fb-root"></div>
 
+	<a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
+	<div id="modal" class="popupContainer" style="display:none;">
+		<header class="popupHeader">
+			<span class="header_title">Login</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</header>
+		
+		<section class="popupBody">
+			<!-- Social Login -->
+			<div class="social_login">
+				<div class="">
+					<a href="#" class="social_box fb">
+						<span class="icon"><i class="fa fa-facebook"></i></span>
+						<span class="icon_title">Connect with Facebook</span>
+						
+					</a>
+
+					<a href="#" class="social_box google">
+						<span class="icon"><i class="fa fa-google-plus"></i></span>
+						<span class="icon_title">Connect with Google</span>
+					</a>
+				</div>
+
+				<div class="centeredText">
+					<span>Or use your Email address</span>
+				</div>
+
+				<div class="action_btns">
+					<div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+					<div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+				</div>
+			</div>
+		</section>
+	</div>	
+	<script type="text/javascript">
+		jQuery("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+
+		jQuery(function(){
+			// Calling Login Form
+			jQuery("#login_form").click(function(){
+				jQuery(".social_login").hide();
+				jQuery(".user_login").show();
+				return false;
+			});
+		})
+	</script>
 </body>
 </html>
