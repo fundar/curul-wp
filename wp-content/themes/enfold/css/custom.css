@@ -197,8 +197,8 @@ h3.widgettitle{
     padding: 10px;
 }
 #text-5 > .textwidget > .widgettitle > a {
-    color: #fff;
-    font: 400 18px 'oswald';
+    color: #fff !important;
+    font: 400 18px 'Oswald' !important;
 }
 
 img.bullet-sb{
@@ -1182,8 +1182,8 @@ p.cpt-repre {
     padding-left: 0 !important;
     width: 22.8% !important;
 }
-
-.main_color h3 > a  {
+.main_color h3 > a {
+    color: #666 !important;
     font: 19px 'colaborate-regular' !important;
 }
 .no-padding-rep{padding:0;}
