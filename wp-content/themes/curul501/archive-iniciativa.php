@@ -421,6 +421,7 @@
 		
 		
 		
+		setMap();
 	});
 	
 </script>
