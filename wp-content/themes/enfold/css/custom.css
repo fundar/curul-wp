@@ -1003,6 +1003,7 @@ a.grafikas:hover{
     border: 1px solid #c1c1c1 !important;
     color:#7b718e;
 }
+
 #filter select.sort:hover{
     color:#432B4D!important;
    
@@ -1282,7 +1283,11 @@ li.ir-sb {
     width: 160px;
     color: rgba(68, 68, 68, 0.9);
 }
-
+#filter select.sorter-parlamentarios {
+    margin-right: 10px;
+    width: 165px;
+    color: rgba(68, 68, 68, 0.9);
+}
 /**paginación**/
 #top .pagination .current, #top .pagination a, #top .fullsize .template-blog .pagination a{
      color:#432B4D;

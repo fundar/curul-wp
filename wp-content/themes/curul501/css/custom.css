@@ -12,12 +12,12 @@ body {
      
 /** generales**/
 p {
-    color: rgba(68, 68, 68, 0.7);
+    color: rgba(68, 68, 68, 0.9);
     font-family: 'colaborate-regular';
     font-size: 15px;
 }
 li{
-    color: rgba(68, 68, 68, 0.7);
+    color: rgba(68, 68, 68, 0.9);
     }
 .main_color .meta-color, .main_color .sidebar, .main_color .sidebar a, .main_color .minor-meta, .main_color .minor-meta a, .main_color .text-sep, .main_color blockquote, .main_color .post_nav a, .main_color .comment-text, .main_color .side-container-inner, .main_color .news-time, .main_color .pagination a, .main_color .pagination span, .main_color .tweet-text.avatar_no .tweet-time, #top .main_color .extra-mini-title, .main_color .team-member-job-title, .main_color .team-social a, .main_color #js_sort_items a, .grid-entry-excerpt, .main_color .avia-testimonial-subtitle, .main_color .commentmetadata a, .main_color .social_bookmarks a, .main_color .meta-heading > *, .main_color .slide-meta, .main_color .slide-meta a, .main_color .taglist, .main_color .taglist a, .main_color .phone-info, .main_color .phone-info a, .main_color .av-sort-by-term a, .main_color .av-magazine-time, .main_color .av-magazine .av-magazine-entry-icon, .main_color .av-catalogue-content, .main_color .wp-playlist-item-length {
     color: rgba(68, 68, 68, 0.7);
@@ -91,7 +91,7 @@ a:hover{text-decoration:none;}
 .main_color{
     background:#f4f4f4;
     border: 0 solid #f4f4f4;
-    margin-bottom:60px;
+
     
 }
 
@@ -196,6 +196,10 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
+#text-5 > .textwidget > .widgettitle > a {
+    color: #fff !important;
+    font: 400 18px 'Oswald' !important;
+}
 
 img.bullet-sb{
     margin: -4px 8px 0 0;
@@ -254,7 +258,7 @@ div.post-entry-25 {
     padding-right: 0;
 }
 #header_main {
-    background: none rgba(0, 0, 0, 0);
+    background:rgba(250, 250, 250, 0.9);
     border-bottom-style: solid;
     border-bottom-width: 0;
     z-index: 1;
@@ -263,13 +267,15 @@ div.post-entry-25 {
     background:url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
     position: fixed;
 }
+#top .av_header_transparency.av_alternate_logo_active .logo a > img {
+    opacity: 1;
+}
 .av_header_transparency > #header_main {
     background-image: none;
     background-color:rgba(0, 0, 0, 0);
 }
     .main_menu {
     background: url("images/bg-left-nav.png") no-repeat bottom left;       
-    box-shadow: 58px 0 2px rgba(0, 0, 0, 0.1);
     }
     .av-main-nav-wrap ul {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -342,8 +348,7 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-linkedin:hover  a{color:#624070 !important; background-color:#fff; }
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
-    /** home iniciativas **/
-
+    /** iniciativas **/
 a.iniciativas-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
     color: #512b60;
@@ -356,7 +361,6 @@ a.iniciativas-home {
     padding-bottom: 12px;
     text-rendering: optimizelegibility;
 }
-
 a.representantes-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
     color: #512b60;
@@ -392,7 +396,7 @@ a.representantes-home:hover{color:#724b83;}
     display: block;
     font-family: oswald;
     font-size: 41px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 25px;
     margin-bottom: 8px;
 }
@@ -525,8 +529,7 @@ p.estiloEstatusP {
     background:#988fa7;
     height:100%;
     width:1px;
-}
-    
+}   
 .entry-content {
     min-height: 52px;
     overflow: hidden;
@@ -554,8 +557,9 @@ p.resemen-recientes-iniciativas {
 }
 
 .hands-vote ul {
+    display: block;
     list-style: none outside none;
-    margin: 0;
+    margin: 49px 0 0;
     padding: 0;
 }
 .hands-vote li {
@@ -565,21 +569,30 @@ p.resemen-recientes-iniciativas {
     margin-top: 5px;
     vertical-align: middle;
 }
+.hands-vote-inic ul {
+    display: block;
+    list-style: none outside none;
+    margin: 30px 16px 0;
+    padding: 0;
+}
+.hands-vote-inic li {
+    font: 12px 'colaborate-regular';
+    height: 18px;
+    margin-left: 14px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
 
 li.hand-up {
-    background: url("images/hand-up.png") no-repeat scroll 19px 0 rgba(0, 0, 0, 0);
+    background: url("images/hand-up.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding-top: 4px;
 }
 
 li.hand-down {
-    background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
+    background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
-.no-voto.logged-in-only{
-     display:none;
-}
-
-    /**silder home **/   
+/**silder home **/   
    .parrafo-sl1 > p{
         color:#676767;
         font-family:'colaborate-thinregular';
@@ -618,39 +631,75 @@ li.hand-down {
      }
      
      #menu-footer li > a {
-         color: rgba(250, 250, 250, 0.52);
-         font: 300 14px/14px oswald;
-         text-transform: uppercase;
+     color: #A59AAA;
+     font: 300 15px/24px oswald;
+     text-transform: uppercase;
      }
      #text-3 > .widgettitle {
          background: none repeat scroll 0 0 transparent;
-         color: rgba(250, 250, 250, 0.52);
+         color: #A59AAA;
          margin-left: 0;
          padding-left: 0;
-     }   
-     #text-3 > h3.textwidget{
-         color: rgba(250, 250, 250, 0.52);
+     }
+     #text-8 > .widgettitle {
+         background: none repeat scroll 0 0 transparent;
+         color: #A59AAA;
+         margin-left: 0;
+         padding-left: 0;
+     }
+     #text-8 > h3.textwidget{
+         color: #A59AAA;
          font:400 15px/14px oswald;
          text-transform: uppercase;
          background:transparent;
           
      }
-     p.paraffo-contacto{
-          color: rgba(250, 250, 250, 0.45);
-          font:14px 'colaborate-regular';
+     #text-3 > h3.textwidget{
+         color: #A59AAA;
+         font:400 15px/14px oswald;
+         text-transform: uppercase;
+         background:transparent;
           
      }
+     #text-10 {
+         margin-bottom: 0 !important;
+     }
+     #nav_menu-2 {
+         margin-top: 24px !important;
+     }
+     p.paraffo-contacto {
+     color: #A59AAA;
+     font: 14px 'colaborate-regular';
+     margin-top: -3px;
+     }
      #contacto {
-          background: none repeat scroll 0 0 rgba(41, 23, 50, 1);
-          border: medium none;
-          height: 30px;
+          background: none repeat scroll 0 0 rgba(41, 23, 50, 1) !important;
+          border: medium none !important;
+          height: 30px !important;
+          margin: 0 0 17px !important;
+          width: 100% !important;
+     }
+     .enviar-3212 {
+          background: none repeat scroll 0 0 #a59aaa !important;
+          color: rgba(41, 23, 50, 1) !important;
+          font: 14px 'colaborate-regular';
+          padding: 5px 0 6px !important;
+          text-transform: uppercase;
           width: 100%;
+     }
+     .enviar-3212:hover{
+          background: none repeat scroll 0 0 #978a9d !important;
+          color: rgba(41, 23, 50, .8) !important;
+     }     
+     .alto-p{
+          min-height: 103px !important;
+
      }
      #buscador.desktop {
         width: 100%;
      }
      #buscador {
-        background: none repeat scroll 0 0 #281b2e;
+        background: none repeat scroll 0 0 #291732;
         bottom: 0;
         height: 55px;
         left: 0;
@@ -744,9 +793,10 @@ p.parrafo-temas {
     padding: 0 0 0 30px;
     width: 100%;
 }
-.no-voto > .reddit-voting {
-    display:none;
-}
+<<<<<<< HEAD
+=======
+
+>>>>>>> implementacion
 .texto-img {
     background: url("images/texto-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
     display: block;
@@ -780,7 +830,7 @@ li.sub-info-li {
     margin: 3px 0;
 }
 .share-sidebar-vota {
-    margin: -10px 0 66px;
+    margin:3px 0 66px;
 }
 .tab-item-temas{
 width:100%;
@@ -812,7 +862,7 @@ p.titulos-voto {
 p.titulos-voto-2 {
     color: #2e1439;
     font: lighter 34px 'oswald';
-    margin: -32px 0 0;
+    margin: -18px 0 0;
     padding: 3px 17px 0 13px;
 }
 .titulos-voto span {
@@ -825,13 +875,13 @@ p.titulos-voto-2 {
     color: #2e1439;
     display: block;
     margin: -11px 0 0;
-    padding: 0 17px 14px 0;
+    padding: 0 17px 7px 0;
 }
 .resultado {
     color: #777779;
-    font: lighter 40px 'oswald';
+    font: lighter 30px/40px 'oswald';
+    margin: 24px 0 0;
     text-align: left;
-    margin:0;
 }
 .boton-proceso {
     background: url("images/proceso-btn.png") no-repeat scroll 25px 12px #ecbc6d;
@@ -996,16 +1046,83 @@ a.grafikas:hover{
     color: rgba(68, 68, 68, 0.9);
 }
 /** grid **/
-#top div .no_padding {
+#top div .no_padding{
   padding: 0 !important;
 
 }
 /** wpeddit custom style**/
+.no-voto > .logged-in-only > .reddit-voting{
+     display:none;
+}
+.no-voto > .reddit-voting {
+    display:none;
+}
+
+.entry-content > .reddit-voting{
+     width: 83px;
+     display:none;    
+}
+.in-box-share > .reddit-voting{
+     width: 83px;
+     display:none;       
+}
+.entry-content > .logged-in-only > .reddit-voting{
+     width: 83px;
+     display:none;    
+}
+.in-box-share > .logged-in-only > .reddit-voting{
+     width: 83px;
+     display:none;       
+}
+.share-sidebar-vota > .logged-in-only > .reddit-voting {
+    background: none repeat scroll 0 0 #512b60;
+    margin-top: -10px;
+    width: 100%;
+}
 .share-sidebar-vota > .reddit-voting {
     background: none repeat scroll 0 0 #512b60;
     margin-top: -10px;
     width: 100%;
 }
+
+ul.unstyled {
+    display: inline-block;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+.arrow {
+     float: left;
+}
+.arrow {
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin: 2px 8px 0;
+    outline: medium none;
+    width: 16px;
+}
+.score {
+     float: left;
+}
+.arrow2 {
+     float: left;
+}
+.arrow2 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin: 2px 8px 0;
+    outline: medium none;
+    width: 16px;
+}
+.score2 {
+     float: left;
+}
+
 /** representantes **/
 .no-borde{
     border: 0px solid rgba(153, 145, 168, 0.3) !important; 
@@ -1075,6 +1192,10 @@ p.cpt-repre {
     margin-top: -14px;
     padding-left: 0 !important;
     width: 22.8% !important;
+}
+.main_color h3 > a {
+    color: #666 !important;
+    font: 19px 'colaborate-regular' !important;
 }
 .no-padding-rep{padding:0;}
 .post_foto {
@@ -1327,8 +1448,83 @@ Mobile Styles
     width: 100% !important;
    }
     
-}
+    }
+
+/*
+    Estilos de gráficas por iniciativa
+*/    
+
+.partidos path{ fill: none; }
+
+    .axis path { fill: none; }
+
+    #tooltip {
+        position: relative;
+        text-align: center;
+        width: 160px;
+        height: 30px;
+        padding: 0px;
+        background-color: white;
+
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    #tooltip.hidden { display: none; }
+
+    #tooltip p {
+        position: absolute;
+        margin: 8px;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        max-width: 140px;
+        max-height: 30px;
+    }
+
+    #pie_chart{
+      width: 510px;
+      float: left;
+    }
+
+    #bar_chart, #barchart {
+        float:left;
+        width: 450px;
+        overflow-y: hidden;
+    }
+
+    #pie_chart{
+        overflow-y: hidden;
+    }
+
+    circle,
+    path { 
+      cursor: pointer; 
+    }
+
+    circle {
+      fill: none;
+      pointer-events: all;
+    }
+  
+    #graficas_content{
+        display:none;
+    }
 
     
+    #bartitle{
+        
+    }
 
+    #bartitle #bartitle_text{
+    }
     
+    #bartitle #bartitle_text{
+    }
+
+    a.representante_lnk:hover{
+        font-weight: bolder;
+    }
