@@ -173,7 +173,7 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<?php do_action( 'wordpress_social_login' ); ?>
+				<?php wsl_render_login_form(); ?>
 				
 				<div class="">
 					<a href="#" class="social_box fb">
