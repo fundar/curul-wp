@@ -3,6 +3,8 @@ jQuery(document).ready(function ($) {
    $(".logged-in-only").bind("click", function () { 
 	   //alert('You must be logged in to vote');
       $.colorbox({
+        width:300, 
+        height: 50, 
         html: "<p> Para votar necesitas ingresar al sistema </p>",
         transition: "fade" 
       });
