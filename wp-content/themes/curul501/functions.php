@@ -59,7 +59,6 @@ function create_post_type_iniciativas() {
     
 }
 add_action( 'init', 'create_post_type_iniciativas' );
-apply_filters( 'wp_unique_post_slug_is_bad_hierarchical_slug', false, 'iniciativas', 'iniciativa', '' )
 
 /**
  * Custom Post Type "representante"
