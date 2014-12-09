@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         initialWidth:450, 
         initialHeight: 90, 
         height: 90, 
-        html: "<h3 style='text-align: center;'> Para votar necesitas ingresar al sistema </h3>",
+        html: "<h3 style='text-align: center;'> Para votar necesitas entrar al sistema </h3>",
         transition: "none",
         closeButton: false,
         scrolling: false
