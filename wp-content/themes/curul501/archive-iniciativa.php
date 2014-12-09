@@ -5,9 +5,6 @@
 	$selectedPolitical = getParameterValueGET('partido-politico');
 	$selectedCommission = getParameterValueGET('comision');
 	$selectedTema = getParameterValueGET('tema');
-	$selectedStatus = getParameterValueGET('status');
-
-	
 
 
 
@@ -73,7 +70,7 @@
 							   <option value="">Status</option>
 							   <?php $statusArray = getStatus(); ?>
 							   <?php foreach($statusArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedStatus == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -414,9 +411,6 @@
 			
 			if(jQuery("#tema-filter option:selected").val() == "") {
 				jQuery("#tema-filter").remove();
-			}
-			if(jQuery("#status-filter option:selected").val() == "") {
-				jQuery("#status-filter").remove();
 			}
 			
 			
