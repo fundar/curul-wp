@@ -203,7 +203,7 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
 														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
-														<?php echo $htmlpresentadas; ?>
+														 echo $htmlpresentadas; ?>
 														
 													</p>
 													
@@ -343,7 +343,7 @@
 													<p class="estiloEstatusP">	<?php
 														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
 														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
-														<?php echo $htmlpresentadas; ?>
+														echo $htmlpresentadas; ?>
 														
 													</p>
 													
