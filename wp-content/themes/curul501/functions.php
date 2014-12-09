@@ -207,7 +207,7 @@ function getDataRepresentatives() {
 /*********** Iniciativas 2 *************/
 
 /*get data by parameter $_GET */
-function getDataRepresentatives() {
+function getDataIniciativas() {
 	$meta_query = false;
 	
 	if(isset($_GET["partido-politico"]) and $_GET["partido-politico"] != "") {
@@ -583,7 +583,7 @@ function getStatus() {
 	return $status;
 }
 
-/*get data by parameter $_GET */
+/*get data by parameter $_GET 
 function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
@@ -606,6 +606,8 @@ function getDataIniciativas() {
 	
 	return $data;
 }
+*/
+
 
 /*get data by parameter $_GET */
 function getParameterValueGET($var = "") {
