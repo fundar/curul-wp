@@ -3,6 +3,8 @@
 	//$selectedOption = getParameterValueGET();
 	$data = getDataIniciativas();
 	$selectedPolitical = getParameterValueGET('partido-politico');
+	$selectedCommission = getParameterValueGET('comision');
+
 
 
 	/*
@@ -44,7 +46,7 @@
 							   <option value="">Comisiones</option>
 							    <?php $commissionsArray = getCommissions(); ?>
 								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
