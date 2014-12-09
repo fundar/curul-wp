@@ -3,12 +3,13 @@ jQuery(document).ready(function ($) {
    $(".logged-in-only").bind("click", function () { 
 	   //alert('You must be logged in to vote');
       $.colorbox({
-        width:500, 
-        initialWidth:500, 
+        width:450, 
+        initialWidth:450, 
         initialHeight: 90, 
         height: 90, 
         html: "<h3> Para votar necesitas ingresar al sistema </h3>",
-        transition: "none" 
+        transition: "none",
+        closeButton: false
       });
 	});
 	      
