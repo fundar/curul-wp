@@ -17,7 +17,7 @@ p {
     font-size: 15px;
 }
 li{
-    color: rgba(68, 68, 68, 0.7);
+    color: rgba(68, 68, 68, 0.9);
     }
 .main_color .meta-color, .main_color .sidebar, .main_color .sidebar a, .main_color .minor-meta, .main_color .minor-meta a, .main_color .text-sep, .main_color blockquote, .main_color .post_nav a, .main_color .comment-text, .main_color .side-container-inner, .main_color .news-time, .main_color .pagination a, .main_color .pagination span, .main_color .tweet-text.avatar_no .tweet-time, #top .main_color .extra-mini-title, .main_color .team-member-job-title, .main_color .team-social a, .main_color #js_sort_items a, .grid-entry-excerpt, .main_color .avia-testimonial-subtitle, .main_color .commentmetadata a, .main_color .social_bookmarks a, .main_color .meta-heading > *, .main_color .slide-meta, .main_color .slide-meta a, .main_color .taglist, .main_color .taglist a, .main_color .phone-info, .main_color .phone-info a, .main_color .av-sort-by-term a, .main_color .av-magazine-time, .main_color .av-magazine .av-magazine-entry-icon, .main_color .av-catalogue-content, .main_color .wp-playlist-item-length {
     color: rgba(68, 68, 68, 0.7);
@@ -196,8 +196,9 @@ h3.widgettitle{
     letter-spacing: 0.06em;
     padding: 10px;
 }
-#text-5 > .textwidget > h3.widgettitle > a{
-     color:#fff;
+#text-5 > .textwidget > .widgettitle > a {
+    color: #fff !important;
+    font: 400 18px 'Oswald' !important;
 }
 
 img.bullet-sb{
@@ -257,7 +258,7 @@ div.post-entry-25 {
     padding-right: 0;
 }
 #header_main {
-    background: none rgba(0, 0, 0, 0);
+    background:rgba(250, 250, 250, 0.9);
     border-bottom-style: solid;
     border-bottom-width: 0;
     z-index: 1;
@@ -266,13 +267,15 @@ div.post-entry-25 {
     background:url("images/background.png") repeat-x scroll 0 -32px rgba(0, 0, 0, 0);
     position: fixed;
 }
+#top .av_header_transparency.av_alternate_logo_active .logo a > img {
+    opacity: 1;
+}
 .av_header_transparency > #header_main {
     background-image: none;
     background-color:rgba(0, 0, 0, 0);
 }
     .main_menu {
     background: url("images/bg-left-nav.png") no-repeat bottom left;       
-    box-shadow: 58px 0 2px rgba(0, 0, 0, 0.1);
     }
     .av-main-nav-wrap ul {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -346,7 +349,6 @@ div.post-entry-25 {
     #top #wrap_all .av-social-link-comment:hover  a{color:#624070 !important; background-color:#fff; }
     
     /** iniciativas **/
-
 a.iniciativas-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
     color: #512b60;
@@ -359,7 +361,6 @@ a.iniciativas-home {
     padding-bottom: 12px;
     text-rendering: optimizelegibility;
 }
-
 a.representantes-home {
     border-bottom: 1px solid rgba(153, 145, 168, 0.3);
     color: #512b60;
@@ -395,7 +396,7 @@ a.representantes-home:hover{color:#724b83;}
     display: block;
     font-family: oswald;
     font-size: 41px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 25px;
     margin-bottom: 8px;
 }
@@ -528,8 +529,7 @@ p.estiloEstatusP {
     background:#988fa7;
     height:100%;
     width:1px;
-}
-    
+}   
 .entry-content {
     min-height: 52px;
     overflow: hidden;
@@ -557,8 +557,9 @@ p.resemen-recientes-iniciativas {
 }
 
 .hands-vote ul {
+    display: block;
     list-style: none outside none;
-    margin: 0;
+    margin: 49px 0 0;
     padding: 0;
 }
 .hands-vote li {
@@ -568,19 +569,30 @@ p.resemen-recientes-iniciativas {
     margin-top: 5px;
     vertical-align: middle;
 }
+.hands-vote-inic ul {
+    display: block;
+    list-style: none outside none;
+    margin: 30px 16px 0;
+    padding: 0;
+}
+.hands-vote-inic li {
+    font: 12px 'colaborate-regular';
+    height: 18px;
+    margin-left: 14px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
 
 li.hand-up {
-    background: url("images/hand-up.png") no-repeat scroll 19px 0 rgba(0, 0, 0, 0);
+    background: url("images/hand-up.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding-top: 4px;
 }
 
 li.hand-down {
-    background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
+    background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
-
-
-    /**silder home **/   
+/**silder home **/   
    .parrafo-sl1 > p{
         color:#676767;
         font-family:'colaborate-thinregular';
@@ -1181,6 +1193,10 @@ p.cpt-repre {
     padding-left: 0 !important;
     width: 22.8% !important;
 }
+.main_color h3 > a {
+    color: #666 !important;
+    font: 19px 'colaborate-regular' !important;
+}
 .no-padding-rep{padding:0;}
 .post_foto {
     border: 1px solid #f4f4f4;
@@ -1438,7 +1454,7 @@ Mobile Styles
     Estilos de gráficas por iniciativa
 */    
 
-    .partidos path{ fill: none; }
+.partidos path{ fill: none; }
 
     .axis path { fill: none; }
 
@@ -1506,7 +1522,7 @@ Mobile Styles
     #bartitle #bartitle_text{
     }
     
-    #bartitle #bartitle_count{
+    #bartitle #bartitle_text{
     }
 
     a.representante_lnk:hover{

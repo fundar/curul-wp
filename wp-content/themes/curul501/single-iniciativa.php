@@ -1,9 +1,12 @@
 <?php get_header(); 
 	
 	global $avia_config, $more;
-	$selectedOption = getParameterValueGET();
-	$data = getDataRepresentatives();
-
+	$data = getDataIniciativas();
+	$selectedPolitical = getParameterValueGET('partido-politico');
+	$selectedCommission = getParameterValueGET('comision');
+	$selectedTema = getParameterValueGET('tema');
+	$selectedStatus = getParameterValueGET('status');
+	$selectedPostulante = getParameterValueGET('postulante');
 
 ?>
  	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
@@ -20,7 +23,6 @@
 						<div class="line-amarilla"> </div>
 		</div>
 
-<!--Inicio filtros iniciativas -->
 		<!--Inicio filtros iniciativas -->
 		<div class="container box-menu">
 			<div class="search-table">
@@ -30,7 +32,7 @@
 							   <option value="">Partidos pol&iacute;ticos</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
 							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedOption == $value["slug"]) echo 'selected="selected"'?>>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -42,7 +44,7 @@
 							   <option value="">Comisiones</option>
 							    <?php $commissionsArray = getCommissions(); ?>
 								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->name;?>
 									</option>
 								<?php } ?>
@@ -53,7 +55,7 @@
 							   <option value="">Temas</option>
 							   <?php $temasArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedTema == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -65,7 +67,7 @@
 							   <option value="">Status</option>
 							   <?php $statusArray = getStatus(); ?>
 							   <?php foreach($statusArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedOption == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedStatus == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -77,27 +79,27 @@
 							   <option value="">Representante</option>
 							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
 								<?php foreach($RepresentanteArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedOption == $value->slug) echo 'selected="selected"'?>>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedPostulante == $value->slug) echo 'selected="selected"'?>>
 										<?php echo $value->full_name;?>
 									</option>
 								<?php } ?>
 						   </select>
 					   </div>
 					   
-					   		   
+					   	<div>				
+						   <input type="submit" value="Filtrar" id="submit-filter"/>
+					   </div>   
 			       		
 					</form>				
 				   
 			</div>
 		</div>
-<!-- Fin filtros iniciativas -->		
 
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 						<?php
-							$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
 							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
 							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
 							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
@@ -121,7 +123,6 @@
 							$ano = $explode2[0];
 							$mes = $explode2[1];
 							$dia = $explode2[2];
-							$presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
 							$htmlcommis = "";
@@ -134,7 +135,22 @@
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
-														
+						$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
+						
+								$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
+							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
+							$htmlpresentadas = "";
+							$link_representante = get_site_url() . "/representantes/";
+							
+							if($presentadas) {
+								foreach($presentadas as $key => $presentada) {
+									$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+								}
+							} else {
+								$htmlpresentadas = "<p>No se encuentran representantes</p>";
+							}
+
+					
 							
 
 
@@ -160,12 +176,9 @@
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							<li class="bullet-arrow">Propuesta por
-							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia.", ";} ?>
-							<?php if($presentada_partido != "") { echo $presentada_partido.", ";} ?>
-							<?php if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', ", ", $presentada_representante);} ?> </a></p></li>
-							
-							
-							
+							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
+							<?php if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } ?>
+							<p><?php echo $htmlpresentadas; ?></p> </li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
@@ -453,62 +466,36 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#loading-gif").hide();
-		
-		jQuery("#partido-politico-filter").change( function() {
-			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		jQuery("#tema-filter").change( function() {
-			if(jQuery("#tema-filter option:selected").val() != "") {
+		jQuery("#submit-filter").click( function(event) {
+			event.preventDefault();
+			
+			if(jQuery("#partido-politico-filter option:selected").val() == "") {
 				jQuery("#partido-politico-filter").remove();
+			}
+			
+			if(jQuery("#estado-filter option:selected").val() == "") {
+				jQuery("#estado-filter").remove();
+			}
+			
+			if(jQuery("#comision-filter option:selected").val() == "") {
 				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
 			}
-		});
-		
-		jQuery("#comision-filter").change( function() {
-			if(jQuery("#comision-filter option:selected").val() != "") {
+			
+			if(jQuery("#tema-filter option:selected").val() == "") {
 				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
+			}
+			
+			if(jQuery("#status-filter option:selected").val() == "") {
 				jQuery("#status-filter").remove();
+			}
+			
+			if(jQuery("#postulante-filter option:selected").val() == "") {
 				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
 			}
+			
+			
+			
+			jQuery("#filter-iniciativas").submit();
 		});
-				
-		jQuery("#status-filter").change( function() {
-			if(jQuery("#status-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		jQuery("#postulante-filter").change( function() {
-			if(jQuery("#postulante-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		
-		setMap();
 	});
-	
 </script>

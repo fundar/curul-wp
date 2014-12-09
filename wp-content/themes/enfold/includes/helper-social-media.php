@@ -149,7 +149,6 @@ if(!class_exists('avia_social_share_links'))
 				'gplus' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "https://plus.google.com/share?url=[permalink]" , 'label' => __("Share on Google+",'avia_framework')),
 				'linkedin' 	=> array("encode"=>true, "encode_urls"=>false, "pattern" => "http://linkedin.com/shareArticle?mini=true&amp;title=[title]&amp;url=[permalink]"),
 				'mail' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "mailto:?subject=[title]&amp;body=[permalink]", 'label' => __("Share by Mail",'avia_framework') ),
-				'comment' 		=> array("encode"=>true, "encode_urls"=>false, "pattern" => "mailto:?subject=[title]&amp;body=[permalink]", 'label' => __("Share by Mail",'avia_framework') ),
 			);
 			
 			$this->args = array_merge($default_arguments, apply_filters( 'avia_social_share_link_arguments', $args));

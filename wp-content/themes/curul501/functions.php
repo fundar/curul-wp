@@ -111,86 +111,20 @@ add_filter('wp_insert_post_data', 'redirect_xmlrpc_to_custom_post_type', 99, 2);
 /*Get representatives by commission*/
 function getRepresentativesByCommission($commission) {
 	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_commissions_slug',
-				'value'   => $commission,
-				'compare' => 'LIKE' 
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by state*/
 function getRepresentativesByState($state) {
 	return array('key' => 'wp_zone_state', 'value' => $state);
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_zone_state',
-				'value'   => $state
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by political party*/
 function getRepresentativesByPoliticalParty($slug) {
 	return array('key' => 'wp_political_party_slug', 'value' => $slug);
-	
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
-	
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_political_party_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives by election type*/
 function getRepresentativesByTypeElection($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
 	if($slug == "representacion-proporcional") {
 		$slug = utf8_encode("Representación Proporcional");
 	} else {
@@ -198,28 +132,6 @@ function getRepresentativesByTypeElection($slug) {
 	}
 	
 	return array('key' => 'wp_election_type', 'value' => $slug);
-	
-	$args  = array(
-		'post_type' => 'representante',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'orderby' => 'title', 'order' => 'ASC',
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_election_type',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
 }
 
 /*Get representatives*/
@@ -278,18 +190,11 @@ function getDataRepresentatives() {
 			'posts_per_page' => 10,
 			'paged' => $paged,
 			'orderby' => 'title', 'order' => 'ASC',
-			'meta_query' => array($meta_query)
+			'meta_query' => $meta_query
 		);
+		$loop = new WP_Query($args);
 		
-		var_dump($args);
-		
-		$loop  = new WP_Query($args);
-		$count = $loop->post_count;
-		
-		$wp_query = NULL;
-		$wp_query = $temp_query;
-		
-		return array("loop" => $loop, "count" => $count);
+		return $loop;
 	} else {
 		return false;
 	}
@@ -299,8 +204,81 @@ function getDataRepresentatives() {
 
 
 
+/*********** Iniciativas 2 *************/
+
+/*get data by parameter $_GET */
+function getDataIniciativas() {
+	$meta_query = false;
+	
+	if(isset($_GET["partido-politico"]) and $_GET["partido-politico"] != "") {
+		$meta_query[] = getIniciativasByPoliticalParty($_GET["partido-politico"]);
+	}
+	
+	if(isset($_GET["comision"]) and $_GET["comision"] != "") {
+		$meta_query[] = getIniciativasByCommission($_GET["comision"]);
+	}
+	
+	
+	if(isset($_GET["tema"]) and $_GET["tema"] != "") {
+		$meta_query[] = getIniciativasByTema($_GET["tema"]);
+	}
+		
+	if(isset($_GET["status"]) and $_GET["status"] != "") {
+		$meta_query[] = getIniciativasByStatus($_GET["status"]);
+	}
+	
+	if(isset($_GET["postulante"]) and $_GET["postulante"] != "") {
+		$meta_query[] = getIniciativasByPostulante($_GET["postulante"]);
+	}
+	
+	if($meta_query) {
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$args  = array(
+			'post_type' => 'iniciativa',
+			'posts_per_page' => 10,
+			'paged' => $paged,
+			'orderby' => 'title', 'order' => 'ASC',
+			'meta_query' => $meta_query
+		);
+		$loop = new WP_Query($args);
+		
+		return $loop;
+	} else {
+		return false;
+	}
+}
+
+
+
+
+/*Get iniciativas  by political party*/
+
+function getIniciativasByPoliticalParty($slug) {
+	return array('key' => 'wp_presentada_partidos_slug', 'value' => $slug);
+}
+
+function getIniciativasByCommission($commission) {
+	return array('key' => 'wp_commissions_slug', 'value' => $commission, 'compare' => 'LIKE' );
+}
+
+function getIniciativasByTema($tema) {
+	return array('key' => 'wp_topics_slug', 'value' => $tema, 'compare' => 'LIKE' );
+}
+
+function getIniciativasByStatus($status) {
+	return array('key' => 'wp_last_status_slug', 'value' => $status, 'compare' => 'LIKE' );
+}
+function getIniciativasByPostulante($postulante) {
+	return array('key' => 'wp_presentada_slug', 'value' => $postulante, 'compare' => 'LIKE' );
+}
+
+
 /*********** Iniciativas ***************/
-/*Get iniciativas by commission*/
+
+
+
+
+/*Get iniciativas by commission
 function getIniciativasByCommission($commission) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -321,8 +299,8 @@ function getIniciativasByCommission($commission) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
-
-/*Get iniciativas by political party*/
+*/
+/*Get iniciativas by political party
 function getIniciativasByPoliticalParty($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -346,8 +324,9 @@ function getIniciativasByPoliticalParty($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
+*/
 
-/*Get iniciativas by temas party*/
+/*Get iniciativas by temas party
 function getIniciativasByTemas($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -371,8 +350,8 @@ function getIniciativasByTemas($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
-
-/*Get iniciativas by status party*/
+*/
+/*Get iniciativas by status party
 function getIniciativasByStatus($slug) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args  = array(
@@ -397,7 +376,7 @@ function getIniciativasByStatus($slug) {
 	return array("loop" => $loop, "count" => $count);
 }
 
-
+*/
 
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
@@ -636,7 +615,7 @@ function getStatus() {
 	return $status;
 }
 
-/*get data by parameter $_GET */
+/*get data by parameter $_GET 
 function getDataIniciativas() {
 	if(isset($_GET["partido-politico"])) {
 		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
@@ -659,27 +638,18 @@ function getDataIniciativas() {
 	
 	return $data;
 }
+*/
+
 
 /*get data by parameter $_GET */
-function getParameterValueGET() {
-	if(isset($_GET["partido-politico"])) {
-		return $_GET["partido-politico"];
-	} elseif(isset($_GET["estado"])) {
-		return $_GET["estado"];
-	} elseif(isset($_GET["comision"])) {
-		return $_GET["comision"];
-	} elseif(isset($_GET["tema"])) {
-		return $_GET["tema"];
-	} elseif(isset($_GET["status"])) {
-		return $_GET["status"];
-	} elseif(isset($_GET["postulante"])) {
-		return $_GET["postulante"];
-	} elseif(isset($_GET["tipo-eleccion"])) {
-		return $_GET["tipo-eleccion"];
+function getParameterValueGET($var = "") {
+	if(isset($_GET[$var])) {
+		return $_GET[$var];
 	} else {
-		return "";
-	}
-}
+			return "";
+		}
+	}	
+
 
 add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
 function add_login_logout_link($items, $args) {
@@ -687,7 +657,12 @@ function add_login_logout_link($items, $args) {
         wp_loginout('index.php');
         $loginoutlink = ob_get_contents();
         ob_end_clean();
-        $items .= '<li>'. $loginoutlink .'</li>';
+        
+        if($loginoutlink == '<a href="http://curul501.org/wp-login.php?redirect_to=index.php">Acceder</a>') {
+			$items .= '<li><a href="#modal" style="cursor:pointer;" id="modal_trigger_login">Acceder</a></li>';
+		} else {
+			$items .= '<li>'. $loginoutlink .'</li>';
+		}
     return $items;
 }
 
