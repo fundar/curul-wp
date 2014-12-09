@@ -174,7 +174,7 @@
 													</div>
 													<div class="votos-oficiles">
 													</div>
-													<div class="hands-vote">
+													<div class="hands-vote-inic">
 									                                <ul>
 													        <li class="hand-up"><?php echo $decode[8]['favor']; ?></li>
 													        <li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
