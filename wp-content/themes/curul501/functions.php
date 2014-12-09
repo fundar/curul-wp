@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
-	$p2_custom_post_type = "representante"; //iniciativa|representante
+	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
     
     if (defined('XMLRPC_REQUEST') || defined('APP_REQUEST')) {
         $data['post_type'] = $p2_custom_post_type;
@@ -271,6 +271,135 @@ function getIniciativasByStatus($status) {
 function getIniciativasByPostulante($postulante) {
 	return array('key' => 'wp_presentada_slug', 'value' => $postulante, 'compare' => 'LIKE' );
 }
+
+
+/*********** Iniciativas ***************/
+
+
+
+
+/*Get iniciativas by commission
+function getIniciativasByCommission($commission) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_commissions_slug',
+				'value'   => $commission,
+				'compare' => 'LIKE' 
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+*/
+/*Get iniciativas by political party
+function getIniciativasByPoliticalParty($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_partidos_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+*/
+
+/*Get iniciativas by temas party
+function getIniciativasByTemas($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_topics_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+*/
+/*Get iniciativas by status party
+function getIniciativasByStatus($slug) {
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args  = array(
+		'post_type' => 'iniciativa',
+		'posts_per_page' => 10,
+		'paged' => $paged,
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_last_status_slug',
+				'value'   => $slug
+			)
+		)
+	);
+	
+	
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	$wp_query = NULL;
+	$wp_query = $temp_query;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+*/
+
+/*Get initiatives by representative (wp_slug) */
+function getInitativesByRepresentative($slug) {
+	$args = array('post_type' => 'iniciativa',
+		'meta_query' => array(
+			array (
+				'key'     => 'wp_presentada_slug',
+				'value'   => $slug,
+				'compare' => 'LIKE'
+			)
+		)
+	);
+
+	$loop  = new WP_Query($args);
+	$count = $loop->post_count;
+	
+	return array("loop" => $loop, "count" => $count);
+}
+
+
+
+
+
 
 
 /*********** Iniciativas ***************/
