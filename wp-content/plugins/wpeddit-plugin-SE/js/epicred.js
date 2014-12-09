@@ -2,9 +2,10 @@ jQuery(document).ready(function ($) {
 	
    $(".logged-in-only").bind("click", function () { 
 
-	alert('You must be logged in to vote');
-	
-
+	   //alert('You must be logged in to vote');
+     var msg = "<h1> Para votar necesitas ingresar al sistema </h1>";
+	   console.log( msg )
+    $.colorbox({html: msg });
 	});
 	      
    $(".arrow").bind("click", function () { 
