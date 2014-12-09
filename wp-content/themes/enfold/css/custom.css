@@ -17,7 +17,7 @@ p {
     font-size: 15px;
 }
 li{
-    color: rgba(68, 68, 68, 0.7);
+    color: rgba(68, 68, 68, 0.9);
     }
 .main_color .meta-color, .main_color .sidebar, .main_color .sidebar a, .main_color .minor-meta, .main_color .minor-meta a, .main_color .text-sep, .main_color blockquote, .main_color .post_nav a, .main_color .comment-text, .main_color .side-container-inner, .main_color .news-time, .main_color .pagination a, .main_color .pagination span, .main_color .tweet-text.avatar_no .tweet-time, #top .main_color .extra-mini-title, .main_color .team-member-job-title, .main_color .team-social a, .main_color #js_sort_items a, .grid-entry-excerpt, .main_color .avia-testimonial-subtitle, .main_color .commentmetadata a, .main_color .social_bookmarks a, .main_color .meta-heading > *, .main_color .slide-meta, .main_color .slide-meta a, .main_color .taglist, .main_color .taglist a, .main_color .phone-info, .main_color .phone-info a, .main_color .av-sort-by-term a, .main_color .av-magazine-time, .main_color .av-magazine .av-magazine-entry-icon, .main_color .av-catalogue-content, .main_color .wp-playlist-item-length {
     color: rgba(68, 68, 68, 0.7);
@@ -396,7 +396,7 @@ a.representantes-home:hover{color:#724b83;}
     display: block;
     font-family: oswald;
     font-size: 41px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 25px;
     margin-bottom: 8px;
 }
@@ -558,8 +558,9 @@ p.resemen-recientes-iniciativas {
 }
 
 .hands-vote ul {
+    display: block;
     list-style: none outside none;
-    margin: 0;
+    margin: 49px 0 0;
     padding: 0;
 }
 .hands-vote li {
@@ -571,12 +572,12 @@ p.resemen-recientes-iniciativas {
 }
 
 li.hand-up {
-    background: url("images/hand-up.png") no-repeat scroll 19px 0 rgba(0, 0, 0, 0);
+    background: url("images/hand-up.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     padding-top: 4px;
 }
 
 li.hand-down {
-    background: url("images/hand-down.png") no-repeat scroll 19px 2px rgba(0, 0, 0, 0);
+    background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
 
@@ -1040,6 +1041,9 @@ a.grafikas:hover{
 
 }
 /** wpeddit custom style**/
+.no-voto{
+    display:none;
+}
 .no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
