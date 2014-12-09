@@ -173,7 +173,7 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<?php do_action( 'wordpress_social_login' ); ?>
+				<?php echo do_action( 'wordpress_social_login' ); ?>
 				<div class="wp-social-login-widget">
 					<div class="wp-social-login-connect-with">{connect_with_caption}</div>
 					<div class="wp-social-login-provider-list">
