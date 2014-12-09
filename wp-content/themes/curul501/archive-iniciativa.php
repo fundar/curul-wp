@@ -387,63 +387,27 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#loading-gif").hide();
-		
-		jQuery("#partido-politico-filter").change( function() {
-			if(jQuery("#partido-politico-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		jQuery("#tema-filter").change( function() {
-			if(jQuery("#tema-filter option:selected").val() != "") {
+		jQuery("#submit-filter").click( function(event) {
+			event.preventDefault();
+			
+			if(jQuery("#partido-politico-filter option:selected").val() == "") {
 				jQuery("#partido-politico-filter").remove();
+			}
+			
+			if(jQuery("#estado-filter option:selected").val() == "") {
+				jQuery("#estado-filter").remove();
+			}
+			
+			if(jQuery("#comision-filter option:selected").val() == "") {
 				jQuery("#comision-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
 			}
-		});
-		
-		jQuery("#comision-filter").change( function() {
-			if(jQuery("#comision-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
+			
+			if(jQuery("#tipo-eleccion-filter option:selected").val() == "") {
+				jQuery("#tipo-eleccion-filter").remove();
 			}
+			
+			jQuery("#filter-representanes").submit();
 		});
-				
-		jQuery("#status-filter").change( function() {
-			if(jQuery("#status-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#postulante-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		jQuery("#postulante-filter").change( function() {
-			if(jQuery("#postulante-filter option:selected").val() != "") {
-				jQuery("#tema-filter").remove();
-				jQuery("#status-filter").remove();
-				jQuery("#partido-politico-filter").remove();
-				jQuery("#comision-filter").remove();
-				jQuery("#filter-iniciativas").submit();
-			}
-		});
-		
-		
-		
-		
 	});
-	
 </script>
 
