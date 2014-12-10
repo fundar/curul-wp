@@ -698,6 +698,7 @@ function wpeddit_hot($posts){
     $args = array(
         'meta_key' => 'epicredrank',
         'orderby' => 'meta_value_num',
+        'post_type' => 'iniciativa'
         'order' => 'DESC',
         'posts_per_page' => $posts
     );
@@ -720,6 +721,7 @@ function wpeddit_hot_comments($posts){
 	global $wp, $wp_query,$post,$wpdb, $current_user,$query_string;
     $args = array(
         'meta_key' => 'wpeddit_comment_rank',
+        'post_type' => 'iniciativa'
         'orderby' => 'meta_value_num',
         'order' => 'DESC',
         'number' => $posts
