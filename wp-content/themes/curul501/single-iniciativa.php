@@ -368,7 +368,7 @@
 			      <tbody>
 			         
 			      </tbody>
-			  </table>
+			</table>
 
 			  <script type="text/javascript">
 
@@ -416,7 +416,7 @@
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
 			var last_status_slug =  "<?php echo $last_status_slug ; ?>;"
-
+			console.log(last_status_slug)
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
 
@@ -425,13 +425,12 @@
 				return false;		    	
 		    })
 
-
-		    jQuery("#proceso_legislativo img").attr("src", "<?php echo get_template_directory_uri(); ?>/images/" + last_status_slug + ".jpg" )
-
 		    jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
 	  	</script>	
 
-	  	<div id="proceso_legislativo"> <img src=""> </div>
+	  	<div id="proceso_legislativo" style="display:none;"> 
+	  		<img src="<?php echo get_template_directory_uri() . '/images/' . $last_status_slug . '.jpg'; ?>" >
+	  	</div>
 
 		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
