@@ -1,6 +1,6 @@
 #lean_overlay {
     position: fixed;
-    z-index:100;
+    z-index:101;
     top: 0px;
     left: 0px;
     height:100%;
@@ -19,18 +19,6 @@
 }
 
 #modal_trigger {margin:100px auto; width:100px; display:block;}
-
-.btn {padding:10px 20px; background: #F4F4F2;}
-.btn_red {background: #ED6347; color: #FFF;}
-
-.btn:hover {background: #E4E4E2;}
-.btn_red:hover {background: #C12B05;}
-
-a.btn {color:#666; text-align: center; text-decoration: none;}
-a.btn_red {color: #FFF;}
-
-.one_half {width:50%; display: block; float:left;}
-.one_half.last {width:45%; margin-left:5%;}
 
 /* Popup Styles*/
 .popupHeader {font-size:16px; text-transform: uppercase;}

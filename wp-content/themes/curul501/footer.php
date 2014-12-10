@@ -162,9 +162,6 @@
 <div id="fb-root"></div>
 
 	<!-- Login -->
-		<style>
-			.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{} 
-		</style>
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 		<div id="modal" class="popupContainer" style="display:none;">

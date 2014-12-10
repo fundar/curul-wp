@@ -317,108 +317,6 @@ function getIniciativasByPostulante($postulante) {
 /*********** Iniciativas ***************/
 
 
-
-
-/*Get iniciativas by commission
-function getIniciativasByCommission($commission) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'iniciativa',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_commissions_slug',
-				'value'   => $commission,
-				'compare' => 'LIKE' 
-			)
-		)
-	);
-
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-*/
-/*Get iniciativas by political party
-function getIniciativasByPoliticalParty($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'iniciativa',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_presentada_partidos_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-*/
-
-/*Get iniciativas by temas party
-function getIniciativasByTemas($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'iniciativa',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_topics_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-*/
-/*Get iniciativas by status party
-function getIniciativasByStatus($slug) {
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args  = array(
-		'post_type' => 'iniciativa',
-		'posts_per_page' => 10,
-		'paged' => $paged,
-		'meta_query' => array(
-			array (
-				'key'     => 'wp_last_status_slug',
-				'value'   => $slug
-			)
-		)
-	);
-	
-	
-	$loop  = new WP_Query($args);
-	$count = $loop->post_count;
-	
-	$wp_query = NULL;
-	$wp_query = $temp_query;
-	
-	return array("loop" => $loop, "count" => $count);
-}
-
-*/
-
 /*Get initiatives by representative (wp_slug) */
 function getInitativesByRepresentative($slug) {
 	$args = array('post_type' => 'iniciativa',
@@ -436,12 +334,6 @@ function getInitativesByRepresentative($slug) {
 	
 	return array("loop" => $loop, "count" => $count);
 }
-
-
-
-
-
-
 
 /*********** Iniciativas ***************/
 
@@ -606,7 +498,7 @@ function getIniciativasbyRepresentantes() {
 return json_decode ('[{"full_name":"Botello Montes Jos\u00e9 Alfredo","slug":"botello-montes-jose-alfredo"},{"full_name":"P\u00e9rez de Alba Jos\u00e9 Noel","slug":"perez-de-alba-jose-noel"},{"full_name":"Villalobos Sea\u00f1ez Jorge Iv\u00e1n","slug":"villalobos-seanez-jorge-ivan"},{"full_name":"Anaya Llamas Jos\u00e9 Guillermo","slug":"anaya-llamas-jose-guillermo"},{"full_name":"\u00c1vila P\u00e9rez Jos\u00e9 Angel","slug":"avila-perez-jose-angel"},{"full_name":"Benavides Casta\u00f1eda Jos\u00e9 Alberto","slug":"benavides-castaneda-jose-alberto"},{"full_name":"Doger Guerrero Jos\u00e9 Enrique","slug":"doger-guerrero-jose-enrique"},{"full_name":"Caamal Mena Jos\u00e9 Angelino","slug":"caamal-mena-jose-angelino"},{"full_name":"Coronato Rodr\u00edguez Jos\u00e9 Francisco","slug":"coronato-rodriguez-jose-francisco"},{"full_name":"Gast\u00e9lum Buenrostro Juan Manuel","slug":"gastelum-buenrostro-juan-manuel"},{"full_name":"Escajeda Jim\u00e9nez Jos\u00e9 Rub\u00e9n","slug":"escajeda-jimenez-jose-ruben"},{"full_name":"L\u00f3pez Cisneros Jos\u00e9 Mart\u00edn","slug":"lopez-cisneros-jose-martin"},{"full_name":"Esquivel Zalpa Jos\u00e9 Luis","slug":"esquivel-zalpa-jose-luis"},{"full_name":"Llanas Alba Jos\u00e9 Alejandro","slug":"llanas-alba-jose-alejandro"},{"full_name":"Hurtado Gallegos Jos\u00e9 Antonio","slug":"hurtado-gallegos-jose-antonio"},{"full_name":"Moreno \u00c1rcega Jos\u00e9 Isidro","slug":"moreno-arcega-jose-isidro"},{"full_name":"Oliveros Usabiaga Jos\u00e9 Luis","slug":"oliveros-usabiaga-jose-luis"},{"full_name":"Maldonado Salgado Jos\u00e9 Valent\u00edn","slug":"maldonado-salgado-jose-valentin"},{"full_name":"Mu\u00f1oz Soria Jos\u00e9 Luis","slug":"munoz-soria-jose-luis"},{"full_name":"P\u00e9rez de Alba Jos\u00e9 Noel","slug":"perez-de-alba-jose-noel"},{"full_name":"Rangel Espinosa Jos\u00e9","slug":"rangel-espinosa-jose"},{"full_name":"Reina Liz\u00e1rraga Jos\u00e9 Enrique","slug":"reina-lizarraga-jose-enrique"},{"full_name":"Rojo Garc\u00eda de Alba Jos\u00e9 Antonio","slug":"rojo-garcia-de-alba-jose-antonio"},{"full_name":"Salinas Garza Jos\u00e9 Arturo","slug":"salinas-garza-jose-arturo"},{"full_name":"Mej\u00eda Guardado Julisa","slug":"mejia-guardado-julisa"},{"full_name":"Moreno Rivera Julio C\u00e9sar","slug":"moreno-rivera-julio-cesar"},{"full_name":"Samperio Monta\u00f1o Juan Ignacio","slug":"samperio-montano-juan-ignacio"},{"full_name":"Bonilla Jaime Juana","slug":"bonilla-jaime-juana"},{"full_name":"Uribe Padilla Juan Carlos","slug":"uribe-padilla-juan-carlos"},{"full_name":"Lorenzini Rangel Julio C\u00e9sar","slug":"lorenzini-rangel-julio-cesar"},{"full_name":"Flemate Ram\u00edrez Julio C\u00e9sar","slug":"flemate-ramirez-julio-cesar"},{"full_name":"F\u00f3cil P\u00e9rez Juan Manuel","slug":"focil-perez-juan-manuel"},{"full_name":"Guerrero L\u00f3pez Judit Magdalena","slug":"guerrero-lopez-judit-magdalena"},{"full_name":"Del Bosque M\u00e1rquez Juan Isidro","slug":"del-bosque-marquez-juan-isidro"},{"full_name":"Rocha Piedra Juan Manuel","slug":"rocha-piedra-juan-manuel"},{"full_name":"Mu\u00f1oz M\u00e1rquez Juan Carlos","slug":"munoz-marquez-juan-carlos"},{"full_name":"Flores G\u00f3mez Jos\u00e9 Luis Cruz","slug":"flores-gomez-jose-luis-cruz"},{"full_name":"C\u00e1ceres de la Fuente Juan Francisco","slug":"caceres-de-la-fuente-juan-francisco"},{"full_name":"Mart\u00ednez Mart\u00ednez Juan Luis","slug":"martinez-martinez-juan-luis"},{"full_name":"Bueno Torio Juan","slug":"bueno-torio-juan"},{"full_name":"Carbajal Hern\u00e1ndez Juan Manuel","slug":"carbajal-hernandez-juan-manuel"},{"full_name":"Adame Alem\u00e1n Juan Pablo","slug":"adame-aleman-juan-pablo"},{"full_name":"Soto Mart\u00ednez Jos\u00e9","slug":"soto-martinez-jose"},{"full_name":"Aquino Calvo Juan Jes\u00fas","slug":"aquino-calvo-juan-jesus"},{"full_name":"Salinas P\u00e9rez Josefina","slug":"salinas-perez-josefina"},{"full_name":"Labastida Sotelo Karina","slug":"labastida-sotelo-karina"},{"full_name":"Aguilar Gil Lilia","slug":"aguilar-gil-lilia"},{"full_name":"Garc\u00eda Hern\u00e1ndez Josefina","slug":"garcia-hernandez-josefina"},{"full_name":"Vega V\u00e1zquez Jos\u00e9 Humberto","slug":"vega-vazquez-jose-humberto"},{"full_name":"Valle Maga\u00f1a Jos\u00e9 Luis","slug":"valle-magana-jose-luis"},{"full_name":"Trejo Reyes Jos\u00e9 Isabel","slug":"trejo-reyes-jose-isabel"},{"full_name":"Athie Flores Kamel","slug":"athie-flores-kamel"},{"full_name":"Alcal\u00e1 Padilla Leobardo","slug":"alcala-padilla-leobardo"},{"full_name":"Quiroga Anguiano Karen","slug":"quiroga-anguiano-karen"},{"full_name":"Calder\u00f3n Ram\u00edrez Leticia","slug":"calderon-ramirez-leticia"},{"full_name":"Berzunza Novelo Landy Margarita","slug":"berzunza-novelo-landy-margarita"},{"full_name":"Barrera Fortoul Laura","slug":"barrera-fortoul-laura"},{"full_name":"Martel Cant\u00fa Laura Ximena","slug":"martel-cantu-laura-ximena"},{"full_name":"Vargas Vargas Laura Guadalupe","slug":"vargas-vargas-laura-guadalupe"},{"full_name":"Pantoja Hern\u00e1ndez Leslie","slug":"pantoja-hernandez-leslie"},{"full_name":"G\u00f3mez G\u00f3mez Luis","slug":"gomez-gomez-luis"},{"full_name":"Romero Sevilla Leonor","slug":"romero-sevilla-leonor"},{"full_name":"S\u00e1nchez Cruz Leopoldo","slug":"sanchez-cruz-leopoldo"},{"full_name":"Rosas Montero Lizbeth Eugenia","slug":"rosas-montero-lizbeth-eugenia"},{"full_name":"Mendoza Curiel Mar\u00eda Leticia","slug":"mendoza-curiel-maria-leticia"},{"full_name":"Gamboa Song Lizbeth Loy","slug":"gamboa-song-lizbeth-loy"},{"full_name":"Campos C\u00f3rdova Lisandro Ar\u00edstides","slug":"campos-cordova-lisandro-aristides"},{"full_name":"L\u00f3pez Landero Leticia","slug":"lopez-landero-leticia"},{"full_name":"M\u00e9ndez Denis Lorena","slug":"mendez-denis-lorena"},{"full_name":"Valles Sampedro Lorenia Iveth","slug":"valles-sampedro-lorenia-iveth"},{"full_name":"Ort\u00edz Ahlf Loretta","slug":"ortiz-ahlf-loretta"},{"full_name":"Ram\u00edrez Romero Luis Miguel","slug":"ramirez-romero-luis-miguel"},{"full_name":"Villarreal Garc\u00eda Luis Alberto","slug":"villarreal-garcia-luis-alberto"},{"full_name":"Qui\u00f1ones Canales Lourdes Eulalia","slug":"quinones-canales-lourdes-eulalia"},{"full_name":"Garfias Guti\u00e9rrez Lucila","slug":"garfias-gutierrez-lucila"},{"full_name":"Aldana Prieto Luis Ricardo","slug":"aldana-prieto-luis-ricardo"},{"full_name":"Arias Pallares Luis Manuel","slug":"arias-pallares-luis-manuel"},{"full_name":"Murgu\u00eda Lardizabal Luis Alfredo","slug":"murguia-lardizabal-luis-alfredo"},{"full_name":"C\u00f3rdova D\u00edaz Luis Armando","slug":"cordova-diaz-luis-armando"},{"full_name":"Bernal Guti\u00e9rrez Andr\u00e9s Marco Antonio","slug":"bernal-gutierrez-andres-marco-antonio"},{"full_name":"Espinosa Ch\u00e1zaro Luis \u00c1ngel Xariel","slug":"espinosa-chazaro-luis-angel-xariel"},{"full_name":"Olvera Correa Luis","slug":"olvera-correa-luis"},{"full_name":"Garza Ruvalcaba Marcelo","slug":"garza-ruvalcaba-marcelo"},{"full_name":"Alcalde Luj\u00e1n Luisa Mar\u00eda","slug":"alcalde-lujan-luisa-maria"},{"full_name":"Gonz\u00e1lez Rold\u00e1n Luis Antonio","slug":"gonzalez-roldan-luis-antonio"},{"full_name":"N\u00fa\u00f1ez Monreal Magdalena del Socorro","slug":"nunez-monreal-magdalena-del-socorro"},{"full_name":"M\u00edcher Camarena Martha Luc\u00eda","slug":"micher-camarena-martha-lucia"},{"full_name":"A\u00f1orve Ba\u00f1os Manuel","slug":"anorve-banos-manuel"},{"full_name":"Orta Coronado Marcelina","slug":"orta-coronado-marcelina"},{"full_name":"Beltrones Rivera Manlio Fabio","slug":"beltrones-rivera-manlio-fabio"},{"full_name":"Torres Cofi\u00f1o Marcelo de Jes\u00fas","slug":"torres-cofino-marcelo-de-jesus"},{"full_name":"Huerta Ladr\u00f3n de Guevara Manuel Rafael","slug":"huerta-ladron-de-guevara-manuel-rafael"},{"full_name":"Calzada Arroyo Marco Antonio","slug":"calzada-arroyo-marco-antonio"},{"full_name":"Licea Gonz\u00e1lez Margarita","slug":"licea-gonzalez-margarita"},{"full_name":"Gonz\u00e1lez Valdez Marco Antonio","slug":"gonzalez-valdez-marco-antonio"},{"full_name":"Barba Mariscal Marco Antonio","slug":"barba-mariscal-marco-antonio"},{"full_name":"Aguilar Vega Marcos","slug":"aguilar-vega-marcos"},{"full_name":"Vela Reyes Marco Alonso","slug":"vela-reyes-marco-alonso"},{"full_name":"Vel\u00e1zquez D\u00edaz Mar\u00eda Guadalupe","slug":"velazquez-diaz-maria-guadalupe"},{"full_name":"Medina Filigrana Marcos Rosendo","slug":"medina-filigrana-marcos-rosendo"},{"full_name":"Romero Lozano Mar\u00eda Fernanda","slug":"romero-lozano-maria-fernanda"},{"full_name":"Ortiz Mantilla Mar\u00eda Isabel","slug":"ortiz-mantilla-maria-isabel"},{"full_name":"Pariente Gavito Mar\u00eda del Rosario de F\u00e1tima","slug":"pariente-gavito-maria-del-rosario-de-fatima"},{"full_name":"Schroeder Verdugo Mar\u00eda Fernanda","slug":"schroeder-verdugo-maria-fernanda"},{"full_name":"Urciel Casta\u00f1eda Mar\u00eda Celia","slug":"urciel-castaneda-maria-celia"},{"full_name":"Corona Nakamura Mar\u00eda del Roc\u00edo","slug":"corona-nakamura-maria-del-rocio"},{"full_name":"S\u00e1nchez Santiago Mar\u00eda Guadalupe","slug":"sanchez-santiago-maria-guadalupe"},{"full_name":"Villase\u00f1or Vargas Mar\u00eda de la Paloma","slug":"villasenor-vargas-maria-de-la-paloma"},{"full_name":"Zavala Peniche Mar\u00eda Beatriz","slug":"zavala-peniche-maria-beatriz"},{"full_name":"Garc\u00eda Fern\u00e1ndez Mar\u00eda de las Nieves","slug":"garcia-fernandez-maria-de-las-nieves"},{"full_name":"Garc\u00eda Olmedo Mar\u00eda del Roc\u00edo","slug":"garcia-olmedo-maria-del-rocio"},{"full_name":"Maga\u00f1a Zepeda Mar\u00eda Ang\u00e9lica","slug":"magana-zepeda-maria-angelica"},{"full_name":"Moctezuma Oviedo Mar\u00eda Guadalupe","slug":"moctezuma-oviedo-maria-guadalupe"},{"full_name":"Ordaz Mart\u00ednez Mar\u00eda del Carmen","slug":"ordaz-martinez-maria-del-carmen"},{"full_name":"Garc\u00eda de la Cadena Romero Mar\u00eda del Carmen","slug":"garcia-de-la-cadena-romero-maria-del-carmen"},{"full_name":"Merl\u00edn Garc\u00eda Mar\u00eda del Rosario","slug":"merlin-garcia-maria-del-rosario"},{"full_name":"Huerta Rea Mar\u00eda de Jes\u00fas","slug":"huerta-rea-maria-de-jesus"},{"full_name":"Cese\u00f1as Chapa Mar\u00eda del Socorro","slug":"cesenas-chapa-maria-del-socorro"},{"full_name":"Garza Moreno Mar\u00eda Esther","slug":"garza-moreno-maria-esther"},{"full_name":"Cerda Franco Mar\u00eda Sanjuana","slug":"cerda-franco-maria-sanjuana"},{"full_name":"Caba\u00f1as Aparicio Mar\u00eda Elia","slug":"cabanas-aparicio-maria-elia"},{"full_name":"Amaya Reyes Mar\u00eda de Lourdes","slug":"amaya-reyes-maria-de-lourdes"},{"full_name":"Tapia Fonllem Margarita Elena","slug":"tapia-fonllem-margarita-elena"},{"full_name":"Salda\u00f1a Hern\u00e1ndez Margarita","slug":"saldana-hernandez-margarita"},{"full_name":"Mej\u00eda Garc\u00eda Leticia","slug":"mejia-garcia-leticia"},{"full_name":"Bautista Villegas \u00d3scar","slug":"bautista-villegas-oscar"},{"full_name":"De Le\u00f3n P\u00e9rez Mar\u00eda Eugenia","slug":"de-leon-perez-maria-eugenia"},{"full_name":"Araujo de la Torre Elsa Patricia","slug":"araujo-de-la-torre-elsa-patricia"},{"full_name":"Pe\u00f1a Recio Patricia Guadalupe","slug":"pena-recio-patricia-guadalupe"},{"full_name":"Niaves L\u00f3pez Ossiel Omar","slug":"niaves-lopez-ossiel-omar"},{"full_name":"Lugo Barriga Patricia","slug":"lugo-barriga-patricia"},{"full_name":"Retamoza Vega Patricia Elena","slug":"retamoza-vega-patricia-elena"},{"full_name":"Guzm\u00e1n Cervantes Carlos Bernardo","slug":"guzman-cervantes-carlos-bernardo"},{"full_name":"Gonz\u00e1lez Dom\u00ednguez Isela","slug":"gonzalez-dominguez-isela"},{"full_name":"Correa Acevedo Abraham","slug":"correa-acevedo-abraham"},{"full_name":"Flores Trevi\u00f1o Mar\u00eda de Lourdes","slug":"flores-trevino-maria-de-lourdes"},{"full_name":"Vel\u00e1zquez L\u00f3pez Mirna","slug":"velazquez-lopez-mirna"},{"full_name":"L\u00f3pez Birlain Ana Paola","slug":"lopez-birlain-ana-paola"},{"full_name":"Ponce Orozco Norma","slug":"ponce-orozco-norma"},{"full_name":"Jim\u00e9nez Esquivel Mar\u00eda Teresa","slug":"jimenez-esquivel-maria-teresa"},{"full_name":"Barrueta Bar\u00f3n No\u00e9","slug":"barrueta-baron-noe"},{"full_name":"Fujiwara Montelongo Ren\u00e9 Ricardo","slug":"fujiwara-montelongo-rene-ricardo"},{"full_name":"Hern\u00e1ndez Gonz\u00e1lez No\u00e9","slug":"hernandez-gonzalez-noe"},{"full_name":"Gordillo Castillo N\u00e9stor Octavio","slug":"gordillo-castillo-nestor-octavio"},{"full_name":"Moreno C\u00e1rdenas Rafael Alejandro","slug":"moreno-cardenas-rafael-alejandro"},{"full_name":"Ochoa L\u00f3pez Nabor","slug":"ochoa-lopez-nabor"},{"full_name":"Vargas P\u00e9rez Nelly del Carmen","slug":"vargas-perez-nelly-del-carmen"},{"full_name":"V\u00e1zquez Saut Regina","slug":"vazquez-saut-regina"},{"full_name":"Monreal \u00c1vila Ricardo","slug":"monreal-avila-ricardo"},{"full_name":"Garc\u00eda de la Fuente M\u00f3nica","slug":"garcia-de-la-fuente-monica"},{"full_name":"Astudillo Su\u00e1rez Ricardo","slug":"astudillo-suarez-ricardo"},{"full_name":"King de la Rosa Raymundo","slug":"king-de-la-rosa-raymundo"},{"full_name":"Ter\u00e1n Guevara Mar\u00eda Rebeca","slug":"teran-guevara-maria-rebeca"},{"full_name":"Paz Alonzo Ra\u00fal","slug":"paz-alonzo-raul"},{"full_name":"Mac\u00edas Sandoval Ra\u00fal","slug":"macias-sandoval-raul"},{"full_name":"L\u00f3pez L\u00f3pez Raudel","slug":"lopez-lopez-raudel"},{"full_name":"G\u00f3mez Ram\u00edrez Ra\u00fal","slug":"gomez-ramirez-raul"},{"full_name":"Galv\u00e1n Villanueva Ra\u00fal Santos","slug":"galvan-villanueva-raul-santos"},{"full_name":"Micalco M\u00e9ndez Rafael Alejandro","slug":"micalco-mendez-rafael-alejandro"},{"full_name":"Sampayo Ortiz Ram\u00f3n Antonio","slug":"sampayo-ortiz-ramon-antonio"},{"full_name":"Carpinteyro Calder\u00f3n Purificaci\u00f3n","slug":"carpinteyro-calderon-purificacion"},{"full_name":"F\u00e9lix Hays Rub\u00e9n Benjam\u00edn","slug":"felix-hays-ruben-benjamin"},{"full_name":"Montalvo Hern\u00e1ndez Ram\u00f3n","slug":"montalvo-hernandez-ramon"},{"full_name":"Acosta Montoya Rub\u00e9n","slug":"acosta-montoya-ruben"},{"full_name":"Gonz\u00e1lez Res\u00e9ndiz Rafael","slug":"gonzalez-resendiz-rafael"},{"full_name":"Barrera Barrera Petra","slug":"barrera-barrera-petra"},{"full_name":"Acosta Croda Rafael","slug":"acosta-croda-rafael"},{"full_name":"Moreno Montoya Jos\u00e9 Pilar","slug":"moreno-montoya-jose-pilar"},{"full_name":"Porras P\u00e9rez Pedro","slug":"porras-perez-pedro"},{"full_name":"Trevi\u00f1o Villarreal Pedro Pablo","slug":"trevino-villarreal-pedro-pablo"},{"full_name":"Camarillo Ortega Rub\u00e9n","slug":"camarillo-ortega-ruben"},{"full_name":"Flores Sandoval Patricio","slug":"flores-sandoval-patricio"},{"full_name":"G\u00f3mez G\u00f3mez Pedro","slug":"gomez-gomez-pedro"},{"full_name":"Dom\u00ednguez Zepeda Pedro Ignacio","slug":"dominguez-zepeda-pedro-ignacio"},{"full_name":"Luna Porquillo Roxana","slug":"luna-porquillo-roxana"},{"full_name":"Ch\u00e1vez Contreras Rodrigo","slug":"chavez-contreras-rodrigo"},{"full_name":"Ru\u00edz Moronatti Roberto","slug":"ruiz-moronatti-roberto"},{"full_name":"Reyes G\u00e1miz Roberto Carlos","slug":"reyes-gamiz-roberto-carlos"},{"full_name":"G\u00f3mez Olgu\u00edn Roy Argel","slug":"gomez-olguin-roy-argel"},{"full_name":"Gualito Casta\u00f1eda Rosalba","slug":"gualito-castaneda-rosalba"},{"full_name":"Serrano Toledo Rosendo","slug":"serrano-toledo-rosendo"},{"full_name":"De la Cruz Requena Rosalba","slug":"de-la-cruz-requena-rosalba"},{"full_name":"P\u00e9rez Hern\u00e1ndez Rosa Elba","slug":"perez-hernandez-rosa-elba"},{"full_name":"Romero Guzm\u00e1n Rosa Elia","slug":"romero-guzman-rosa-elia"},{"full_name":"Padilla Fierro Rom\u00e1n Alfredo","slug":"padilla-fierro-roman-alfredo"},{"full_name":"Dorador P\u00e9rez Gavil\u00e1n Rodolfo","slug":"dorador-perez-gavilan-rodolfo"},{"full_name":"Mej\u00eda Berdeja Ricardo S\u00f3stenes","slug":"mejia-berdeja-ricardo-sostenes"},{"full_name":"Barrera Estrada Rodimiro","slug":"barrera-estrada-rodimiro"},{"full_name":"Reza Gallegos Roc\u00edo Esmeralda","slug":"reza-gallegos-rocio-esmeralda"},{"full_name":"Abreu Arti\u00f1ano Roc\u00edo Adriana","slug":"abreu-artinano-rocio-adriana"},{"full_name":"L\u00f3pez Su\u00e1rez Roberto","slug":"lopez-suarez-roberto"},{"full_name":"L\u00f3pez Gonz\u00e1lez Roberto","slug":"lopez-gonzalez-roberto"},{"full_name":"Brito Lara Tom\u00e1s","slug":"brito-lara-tomas"},{"full_name":"Pacheco Rodr\u00edguez Ricardo Fidel","slug":"pacheco-rodriguez-ricardo-fidel"},{"full_name":"Villarreal Garc\u00eda Ricardo","slug":"villarreal-garcia-ricardo"},{"full_name":"L\u00f3pez Landero Tom\u00e1s","slug":"lopez-landero-tomas"},{"full_name":"Medina Fierro Ricardo","slug":"medina-fierro-ricardo"},{"full_name":"Cant\u00fa Garza Ricardo","slug":"cantu-garza-ricardo"},{"full_name":"Torres Mercado Tom\u00e1s","slug":"torres-mercado-tomas"},{"full_name":"Morgan Navarrete Tania Margarita","slug":"morgan-navarrete-tania-margarita"},{"full_name":"Rinc\u00f3n Chanona Sonia","slug":"rincon-chanona-sonia"},{"full_name":"Borges Pasos Teresita de Jes\u00fas","slug":"borges-pasos-teresita-de-jesus"},{"full_name":"Mojica Morga Teresa de Jes\u00fas","slug":"mojica-morga-teresa-de-jesus"},{"full_name":"Rellstab Carreto Tanya","slug":"rellstab-carreto-tanya"},{"full_name":"Bernal Bolnik Sue Ellen","slug":"bernal-bolnik-sue-ellen"},{"full_name":"Mercado Gallegos Sonia Catalina","slug":"mercado-gallegos-sonia-catalina"},{"full_name":"Quintana Le\u00f3n Socorro de la Luz","slug":"quintana-leon-socorro-de-la-luz"},{"full_name":"Aureoles Conejo Silvano","slug":"aureoles-conejo-silvano"},{"full_name":"M\u00e1rquez Velasco Silvia","slug":"marquez-velasco-silvia"},{"full_name":"Valanci Buzali Sim\u00f3n","slug":"valanci-buzali-simon"},{"full_name":"Ch\u00e1vez D\u00e1valos Sergio Armando","slug":"chavez-davalos-sergio-armando"},{"full_name":"Blanco Deaquino Silvano","slug":"blanco-deaquino-silvano"},{"full_name":"De la Rosa Pel\u00e1ez Sebasti\u00e1n Alfonso","slug":"de-la-rosa-pelaez-sebastian-alfonso"},{"full_name":"Ortiz Garc\u00eda Salvador","slug":"ortiz-garcia-salvador"},{"full_name":"Chan Lugo Sergio Augusto","slug":"chan-lugo-sergio-augusto"},{"full_name":"Arellano Guzm\u00e1n Salvador","slug":"arellano-guzman-salvador"},{"full_name":"Juan Marcos Issa Salom\u00f3n","slug":"juan-marcos-issa-salomon"},{"full_name":"Gurri\u00f3n Mat\u00edas Samuel","slug":"gurrion-matias-samuel"},{"full_name":"Barajas Del Toro Salvador","slug":"barajas-del-toro-salvador"},{"full_name":"Romero Valencia Salvador","slug":"romero-valencia-salvador"},{"full_name":"Carre\u00f3n Cervantes Ver\u00f3nica","slug":"carreon-cervantes-veronica"},{"full_name":"Zavaleta Salgado Ruth","slug":"zavaleta-salgado-ruth"},{"full_name":"Ju\u00e1rez Pi\u00f1a Ver\u00f3nica Beatriz","slug":"juarez-pina-veronica-beatriz"},{"full_name":"Gonz\u00e1lez Bautista Valent\u00edn","slug":"gonzalez-bautista-valentin"},{"full_name":"Flores Aguayo Uriel","slug":"flores-aguayo-uriel"},{"full_name":"Morales Vargas Trinidad Secundino","slug":"morales-vargas-trinidad-secundino"},{"full_name":"Garc\u00eda Reyes Ver\u00f3nica","slug":"garcia-reyes-veronica"},{"full_name":"D\u00edaz Palacios V\u00edctor Emanuel","slug":"diaz-palacios-victor-emanuel"},{"full_name":"Portillo Mart\u00ednez Vicario","slug":"portillo-martinez-vicario"},{"full_name":"Sada P\u00e9rez Ver\u00f3nica","slug":"sada-perez-veronica"},{"full_name":"Fuentes Sol\u00eds V\u00edctor Oswaldo","slug":"fuentes-solis-victor-oswaldo"},{"full_name":"Bautista L\u00f3pez V\u00edctor Manuel","slug":"bautista-lopez-victor-manuel"},{"full_name":"Gonz\u00e1lez Manr\u00edquez V\u00edctor Rafael","slug":"gonzalez-manriquez-victor-rafael"},{"full_name":"Jorr\u00edn Lozano V\u00edctor Manuel","slug":"jorrin-lozano-victor-manuel"},{"full_name":"Manr\u00edquez Gonz\u00e1lez V\u00edctor Manuel","slug":"manriquez-gonzalez-victor-manuel"},{"full_name":"N\u00e1jera Medina V\u00edctor Reymundo","slug":"najera-medina-victor-reymundo"},{"full_name":"Serralde Mart\u00ednez V\u00edctor","slug":"serralde-martinez-victor"},{"full_name":"Velasco Orozco V\u00edctor Hugo","slug":"velasco-orozco-victor-hugo"},{"full_name":"Sosa Altamira William Renan","slug":"sosa-altamira-william-renan"},{"full_name":"Ochoa Gallegos Williams Oswaldo","slug":"ochoa-gallegos-williams-oswaldo"},{"full_name":"Azuara Z\u00fa\u00f1iga Xavier","slug":"azuara-zuniga-xavier"},{"full_name":"Hern\u00e1ndez Tapia Gerardo Xavier","slug":"hernandez-tapia-gerardo-xavier"},{"full_name":"Copete Zapot Yazmin de los \u00c1ngeles","slug":"copete-zapot-yazmin-de-los-angeles"},{"full_name":"Nolasco Ram\u00edrez Yesenia","slug":"nolasco-ramirez-yesenia"},{"full_name":"Pazzi Maza Zita Beatriz","slug":"pazzi-maza-zita-beatriz"},{"full_name":"Huidobro Gonz\u00e1lez Zuleyma","slug":"huidobro-gonzalez-zuleyma"}]');
 }
 
-	   /*Get temas array*/
+/*Get temas array*/
 function getTemas() {
 	$temas = array(
 		array("name" => "transparencia", "slug" => "transparencia"),
@@ -630,9 +522,6 @@ function getTemas() {
 	return $temas;
 }
 
-
- 
-
  /*Get STATUS array*/
 function getStatus() {
 	$status = array(
@@ -655,32 +544,6 @@ function getStatus() {
 	
 	return $status;
 }
-
-/*get data by parameter $_GET 
-function getDataIniciativas() {
-	if(isset($_GET["partido-politico"])) {
-		$result = getIniciativasByPoliticalParty($_GET["partido-politico"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["comision"])) {
-		$result = getIniciativasByCommission($_GET["comision"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["tema"])) {
-		$result = getIniciativasByTemas($_GET["tema"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["status"])) {
-		$result = getIniciativasByStatus($_GET["status"]);
-		$data = $result["loop"];
-	} elseif(isset($_GET["postulante"])) {
-		$result = getInitativesByRepresentative($_GET["postulante"]);
-		$data = $result["loop"];
-	} else {
-		return false;
-	}
-	
-	return $data;
-}
-*/
-
 
 /*get data by parameter $_GET */
 function getParameterValueGET($var = "") {
