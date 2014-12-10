@@ -721,7 +721,7 @@ function wpeddit_hot_comments($posts){
 	global $wp, $wp_query,$post,$wpdb, $current_user,$query_string;
     $args = array(
         'meta_key' => 'wpeddit_comment_rank',
-        'post_type' => 'iniciativa'
+        'post_type' => 'iniciativa',
         'orderby' => 'meta_value_num',
         'order' => 'DESC',
         'number' => $posts
