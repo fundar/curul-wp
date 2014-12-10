@@ -125,6 +125,7 @@
 							$dia = $explode2[2];
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
+							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
 							$htmlcommis = "";
 							$link = get_site_url() . "/iniciativas/?comision=";
 							
@@ -414,6 +415,7 @@
 		<script>
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
+			var last_status_slug =  "<?php echo $last_status_slug ; ?>;"
 
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
@@ -422,7 +424,14 @@
 		    	jQuery("#graficas_content").slideToggle();
 				return false;		    	
 		    })
+
+
+		    jQuery("#proceso_legislativo img").attr("src", "<?php echo get_template_directory_uri(); ?>/images/" + last_status_slug + ".jpg" )
+
+		    jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
 	  	</script>	
+
+	  	<div id="proceso_legislativo"> <img src=""> </div>
 
 		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
@@ -445,7 +454,7 @@
 		
 		        <div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<div  itemprop="text">
-				<a class="avia_textblock boton-proceso" href="">Clic para ver proceso legislativo</a>
+				<a class="avia_textblock boton-proceso" href="#proceso_legislativo" name="proceso_legislativo" id="ver_proceso_legislativo">Clic para ver proceso legislativo</a>
 				</div>
                          </div>
 
