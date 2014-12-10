@@ -196,6 +196,7 @@
 			</section>
 		</div>
 		<script type='text/javascript' src='http://curul501.org/wp-content/plugins/wordpress-social-login/assets/js/script.js?ver=4.0.1'></script>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			jQuery("#modal_trigger_login").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
 
@@ -209,6 +210,5 @@
 			})
 		</script>
 	<!-- Login -->
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 </body>
 </html>
