@@ -163,7 +163,6 @@
 
 	<!-- Login -->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/style-modal.css" />
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 		<div id="modal" class="popupContainer" style="display:none;">
 			<header class="popupHeader">
 				<span class="header_title">Acceder</span>
@@ -210,5 +209,6 @@
 			})
 		</script>
 	<!-- Login -->
+	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.leanModal.min.js" type="text/javascript"></script>
 </body>
 </html>
