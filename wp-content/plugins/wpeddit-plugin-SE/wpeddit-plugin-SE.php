@@ -698,7 +698,7 @@ function wpeddit_hot($posts){
     $args = array(
         'meta_key' => 'epicredrank',
         'orderby' => 'meta_value_num',
-        'post_type' => 'iniciativa'
+        'post_type' => 'iniciativa',
         'order' => 'DESC',
         'posts_per_page' => $posts
     );
