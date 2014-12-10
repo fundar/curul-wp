@@ -427,12 +427,11 @@
 
 		    jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
 	  	</script>	
-
+		<?php } ?>
+	  	
 	  	<div id="proceso_legislativo" style="display:none;"> 
 	  		<img src="<?php echo get_template_directory_uri() . '/images/' . $last_status_slug . '.jpg'; ?>" >
 	  	</div>
-
-		<?php } ?>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
