@@ -1334,6 +1334,35 @@ div.tituloBlog {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
+/** sidebar inicio**/
+#wpp-2 > h3.widgettitle {
+    background: url("images/bullet-vistas.png") no-repeat scroll 10px 17px #3e2f52;
+    padding-left: 35px;
+}
+#wpp-5 > h3.widgettitle {
+    background: url("images/bullet-vistas.png") no-repeat scroll 10px 17px #3e2f52;
+    padding-left: 35px;
+}
+#weddit_hot_widget-2 > h3.widget-title {
+    background: url("images/bullet-votado.png") no-repeat scroll 10px 17px #3e2f52;
+    color: #fff;
+    font: 400 18px oswald;
+    letter-spacing: 0.06em;
+    padding: 10px 10px 10px 35px;
+    text-transform: uppercase;
+}
+#weddit_hot_widget-3 > h3.widget-title {
+    background: url("images/bullet-votado.png") no-repeat scroll 10px 17px #3e2f52;
+    color: #fff;
+    font: 400 18px oswald;
+    letter-spacing: 0.06em;
+    padding: 10px 10px 10px 35px;
+    text-transform: uppercase;
+}
+.wpp-post-title a{
+      color: rgba(68, 68, 68, 1);
+}
+
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
