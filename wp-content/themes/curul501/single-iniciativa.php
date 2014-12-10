@@ -415,7 +415,7 @@
 		<script>
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
-			var last_status_slug =  "<?php echo $last_status_slug ; ?>;"
+			var last_status_slug =  <?php echo $last_status_slug ; ?>;
 			console.log(last_status_slug)
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
