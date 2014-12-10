@@ -429,7 +429,7 @@ turnada.jpg
 	  	</script>	
 		<?php } ?>
 	  	
-	  	<div id="proceso_legislativo" style="display:none;"> 
+	  	<div id="proceso_legislativo" style="display:block;"> 
 	  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
 	  	</div>
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
