@@ -322,7 +322,7 @@ function epicred_menu() {
                     <p style="text-align:center"><strong>Welcome to WPeddit</strong>: the Ultimate WordPress Post Ranking Plugin If you want to vote on future features or discover more cool plugins, check out the <br/><a href="http://epicplugins.com" target="_blank">epic plugins site</a>!</p>
                     <div id="SocialGalleryOptions">
                         <div><a href="admin.php?page=<?php echo $epicred_slugs['settings']; ?>" class="SocialGalleryOB">Settings</a></div>
-                        <div><a href="edit.php?post_type=post" class="SocialGalleryOB">Check out rankings</a></div>
+                        <div><a href="edit.php?post_type=iniciativa" class="SocialGalleryOB">Check out rankings</a></div>
                         <div><a href="<?php echo $epicred_urls['home']; ?>" class="SocialGalleryOB">Demo Site</a></div>
                     </div>
                     <div style="clear:both"></div>
@@ -919,7 +919,7 @@ function wpeddit_post_load() {
 /* Sorts the pics. */
 function wpeddit_sort_post( $vars ) {
 
-    if ( isset( $vars['post_type'] ) && 'post' == $vars['post_type'] ) {
+    if ( isset( $vars['post_type'] ) && 'iniciativa' == $vars['post_type'] ) {
 
         /* Check if 'orderby' is set to 'rating'. */
         if ( isset( $vars['orderby'] ) && 'rating' == $vars['orderby'] ) {
