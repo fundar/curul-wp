@@ -476,7 +476,7 @@
 <script type="text/javascript">
 	jQuery(document).ready( function () {
 
-		jQuery("#ver_proceso_legislativo")..on("click", function(e){
+		jQuery("#ver_proceso_legislativo").on("click", function(e){
 		    	jQuery("#proceso_legislativo").slideToggle();
 				return false;		    	
 		    })
