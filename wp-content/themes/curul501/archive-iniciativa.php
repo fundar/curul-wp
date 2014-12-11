@@ -225,9 +225,9 @@
 												<?php avia_social_share_links(); ?>
 												</div>
 											</div>
-											<div class="vta-curul">
+											<div class="vta-curul-iniciativas">
 												<span>Votaci&oacute;n en Curul 501</span>
-												<div class="in-box-share"></div>
+												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
 												
@@ -366,8 +366,9 @@
 												<?php avia_social_share_links(); ?>
 												</div>
 											</div>
-											<div class="vta-curul">
+											<div class="vta-curul-iniciativas">
 												<span>Votaci&oacute;n en Curul 501</span>
+												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
 												

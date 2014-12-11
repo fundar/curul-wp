@@ -496,6 +496,35 @@ p.estiloEstatusP {
     padding-top: 4px;
     vertical-align: middle;
 }
+.vta-curul-iniciativas {
+    background: url("images/bg-vta-recientes.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+    bottom: 0;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 34.99%;
+}
+.box > .av-share-box{
+     display:none;
+}
+.box {
+    display: block;
+    float: left;
+    padding: 9px 16px 0;
+    width: 30%;
+}
+.vta-curul-iniciativas span {
+    color: #512b60;
+    display: inline-block;
+    float: left;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding-top: 4px;
+    vertical-align: middle;
+    width: 70%;
+}
 .votos-oficiles {
     color: #9991a8;
     display: block;
@@ -1046,6 +1075,11 @@ a.grafikas:hover{
 
 }
 /** wpeddit custom style**/
+.reddit-voting {
+    float: left;
+    text-align: center;
+    width: 82px;
+}
 .no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
