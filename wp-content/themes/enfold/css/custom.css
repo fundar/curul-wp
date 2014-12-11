@@ -338,6 +338,11 @@ div.post-entry-25 {
     width: 28px;
     z-index: 2;
     }
+    
+    #top #wrap_all .social_bookmarks, #top #wrap_all .social_bookmarks a, #top #wrap_all .social_bookmarks li {
+    background: none repeat scroll 0 0 transparent;
+    color: #342745;
+    }
     .team-social a{
         color: #34213D !important;
     }
@@ -496,6 +501,35 @@ p.estiloEstatusP {
     padding-top: 4px;
     vertical-align: middle;
 }
+.vta-curul-iniciativas {
+    background: url("images/bg-vta-recientes.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+    bottom: 0;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 34.99%;
+}
+.box > .av-share-box{
+     display:none;
+}
+.box {
+    display: block;
+    float: left;
+    padding: 9px 16px 0;
+    width: 30%;
+}
+.vta-curul-iniciativas span {
+    color: #512b60;
+    display: inline-block;
+    float: left;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding-top: 4px;
+    vertical-align: middle;
+    width: 70%;
+}
 .votos-oficiles {
     color: #9991a8;
     display: block;
@@ -547,9 +581,6 @@ p.estiloEstatusP {
     margin: 0;
     padding-left: 15px;
     padding-top: 5px;
-}
-#weddit_hot_widget-2{
-    margin-top:-64px;
 }
 p.resemen-recientes-iniciativas {
     margin: 0;
@@ -794,10 +825,6 @@ p.parrafo-temas {
     padding: 0 0 0 30px;
     width: 100%;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> implementacion
 .texto-img {
     background: url("images/texto-icono.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
     display: block;
@@ -1053,6 +1080,11 @@ a.grafikas:hover{
 
 }
 /** wpeddit custom style**/
+.reddit-voting {
+    float: left;
+    text-align: center;
+    width: 82px;
+}
 .no-voto > .logged-in-only > .reddit-voting{
      display:none;
 }
@@ -1333,6 +1365,63 @@ div.tituloBlog {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
+}
+/** sidebar inicio**/
+#wpp-2 > h3.widgettitle {
+    background: url("images/bullet-vistas.png") no-repeat scroll 10px 17px #3e2f52;
+    padding-left: 35px;
+}
+#wpp-5 > h3.widgettitle {
+    background: url("images/bullet-vistas.png") no-repeat scroll 10px 17px #3e2f52;
+    padding-left: 35px;
+}
+#wpp-2, #wpp-5 {
+    min-height: 250px;
+}
+#weddit_hot_widget-2 > h3.widget-title {
+    background: url("images/bullet-votado.png") no-repeat scroll 10px 15px #3e2f52;
+    color: #fff;
+    font: 400 18px oswald;
+    letter-spacing: 0.06em;
+    padding: 10px 10px 10px 35px;
+    text-transform: uppercase;
+}
+#weddit_hot_widget-3 > h3.widget-title {
+    background: url("images/bullet-votado.png") no-repeat scroll 10px 15px #3e2f52;
+    color: #fff;
+    font: 400 18px oswald;
+    letter-spacing: 0.06em;
+    padding: 10px 10px 10px 35px;
+    text-transform: uppercase;
+}
+a.wpp-post-title {
+      color: rgba(68, 68, 68, 1) !important;
+}
+#weddit_hot_widget-2, #weddit_hot_widget-3{
+      margin-bottom: 60px !important;
+     
+}
+#weddit_hot_widget-2 ul > li > a {
+    color: rgba(68, 68, 68, 1) !important;
+    margin-bottom: 9px;
+    display: block;
+    border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
+    padding-bottom: 8px;
+    padding-top: 2px;
+}
+#weddit_hot_widget-3 ul > li > a {
+    color: rgba(68, 68, 68, 1) !important;
+    margin-bottom: 9px;
+    display: block;
+    border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
+    padding-bottom: 8px;
+}
+.wpp-list li {
+    border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
+    color: rgba(68, 68, 68, 1) !important;
+    display: block;
+    margin-bottom: 9px !important;
+    padding-bottom: 8px;
 }
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */

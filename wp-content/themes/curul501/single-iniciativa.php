@@ -125,6 +125,7 @@
 							$dia = $explode2[2];
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
+							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
 							$htmlcommis = "";
 							$link = get_site_url() . "/iniciativas/?comision=";
 							
@@ -367,7 +368,7 @@
 			      <tbody>
 			         
 			      </tbody>
-			  </table>
+			</table>
 
 			  <script type="text/javascript">
 
@@ -414,7 +415,8 @@
 		<script>
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
-
+			var last_status_slug =  <?php echo $last_status_slug ; ?>;
+			console.log(last_status_slug)
 		    run.pieChart(votos, "<?php echo get_stylesheet_directory_uri() ?>")
 		    run.representantes_load(representantes)
 
@@ -422,9 +424,14 @@
 		    	jQuery("#graficas_content").slideToggle();
 				return false;		    	
 		    })
-	  	</script>	
 
+		   
+
+		
+	  	</script>	
 		<?php } ?>
+	  	
+	  
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
@@ -444,13 +451,18 @@
 			</div>
 		
 		        <div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
-				<div  itemprop="text">
-				<a class="avia_textblock boton-proceso" href="">Clic para ver proceso legislativo</a>
-				</div>
-                         </div>
+					<div  itemprop="text">
+						<a class="avia_textblock boton-proceso" href="#proceso_legislativo" name="proceso_legislativo" id="ver_proceso_legislativo">Clic para ver proceso legislativo</a>
+					</div>
 
+                </div>
+
+
+			<div class="" id="proceso_legislativo" style="display:none; width: 100%;" > 
+		  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
+		  	</div>
+	                
 		</div>
-                
 
 		</div><!--end container fin de iniciativa-->
 		<!--div class="container tabla">
@@ -466,6 +478,12 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+
+		jQuery("#ver_proceso_legislativo").on("click", function(e){
+		    	jQuery("#proceso_legislativo").slideToggle();
+				return false;		    	
+		    })
+
 		jQuery("#submit-filter").click( function(event) {
 			event.preventDefault();
 			
