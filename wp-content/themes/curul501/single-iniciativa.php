@@ -476,7 +476,10 @@
 <script type="text/javascript">
 	jQuery(document).ready( function () {
 
-		jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
+		jQuery("#ver_proceso_legislativo")..on("click", function(e){
+		    	jQuery("#proceso_legislativo").slideToggle();
+				return false;		    	
+		    })
 
 		jQuery("#submit-filter").click( function(event) {
 			event.preventDefault();
