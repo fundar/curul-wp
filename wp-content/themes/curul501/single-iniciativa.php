@@ -455,10 +455,11 @@
 						<a class="avia_textblock boton-proceso" href="#proceso_legislativo" name="proceso_legislativo" id="ver_proceso_legislativo">Clic para ver proceso legislativo</a>
 					</div>
 
-					<div id="proceso_legislativo" style="display:none;"> 
-				  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
-				  	</div>
                 </div>
+
+				<div id="proceso_legislativo" style="display:none;"> 
+			  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
+			  	</div>
 
 		</div>
                 
