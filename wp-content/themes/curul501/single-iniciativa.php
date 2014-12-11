@@ -458,11 +458,11 @@
                 </div>
 
 
+			<div id="proceso_legislativo" style="display:none;"> 
+		  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
+		  	</div>
+	                
 		</div>
-		<div id="proceso_legislativo" style="display:none;"> 
-	  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
-	  	</div>
-                
 
 		</div><!--end container fin de iniciativa-->
 		<!--div class="container tabla">
