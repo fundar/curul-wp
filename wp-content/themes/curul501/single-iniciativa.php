@@ -424,8 +424,10 @@
 		    	jQuery("#graficas_content").slideToggle();
 				return false;		    	
 		    })
-turnada.jpg
-		    jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
+
+		   
+
+		
 	  	</script>	
 		<?php } ?>
 	  	
@@ -473,6 +475,9 @@ turnada.jpg
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+
+		jQuery("#ver_proceso_legislativo").leanModal({top : 200, overlay : 0.6 });
+		
 		jQuery("#submit-filter").click( function(event) {
 			event.preventDefault();
 			
