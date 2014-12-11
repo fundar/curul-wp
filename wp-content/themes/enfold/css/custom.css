@@ -337,8 +337,7 @@ div.post-entry-25 {
     text-align: center;
     width: 28px;
     z-index: 2;
-    }
-    
+    }    
     #top #wrap_all .social_bookmarks, #top #wrap_all .social_bookmarks a, #top #wrap_all .social_bookmarks li {
     background: none repeat scroll 0 0 transparent;
     color: #342745;
@@ -1402,19 +1401,31 @@ a.wpp-post-title {
      
 }
 #weddit_hot_widget-2 ul > li > a {
-    color: rgba(68, 68, 68, 1) !important;
-    margin-bottom: 9px;
-    display: block;
     border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
+    color: rgba(68, 68, 68, 1) !important;
+    display: block;
+    margin-bottom: 9px;
     padding-bottom: 8px;
     padding-top: 2px;
+    padding-left: 15px;
+}
+#weddit_hot_widget-2 ul > li{
+   padding-left: 0 !important;
+   background: url("images/bullet-arrow.png") no-repeat scroll 2px 9px rgba(0, 0, 0, 0) !important;
+}
+#weddit_hot_widget-3 ul > li{
+   padding-left: 0 !important;
+   background: url("images/bullet-arrow.png") no-repeat scroll 2px 9px rgba(0, 0, 0, 0) !important;
+   
 }
 #weddit_hot_widget-3 ul > li > a {
-    color: rgba(68, 68, 68, 1) !important;
-    margin-bottom: 9px;
-    display: block;
     border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
+    color: rgba(68, 68, 68, 1) !important;
+    display: block;
+    margin-bottom: 9px;
     padding-bottom: 8px;
+    padding-top: 2px;
+    padding-left: 15px;
 }
 .wpp-list li {
     border-bottom: 1px solid rgba(68, 68, 68, 0.2) !important;
@@ -1422,6 +1433,12 @@ a.wpp-post-title {
     display: block;
     margin-bottom: 9px !important;
     padding-bottom: 8px;
+}
+.post-stats {
+    font-size: 11px !important;
+    font-weight: bold;
+    color: #80648B;
+    margin-top:1px;
 }
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
