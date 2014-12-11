@@ -481,6 +481,8 @@
 
 		jQuery("#ver_proceso_legislativo").on("click", function(e){
 		    	jQuery("#proceso_legislativo").slideToggle();
+		    	var s = $('body').scrollTop();
+		    	$('body').scrollTop(s + 200)
 				return false;		    	
 		    })
 
