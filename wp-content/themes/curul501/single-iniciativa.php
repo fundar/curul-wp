@@ -458,7 +458,7 @@
                 </div>
 
 
-			<div id="proceso_legislativo" style="display:none;"> 
+			<div id="proceso_legislativo" style="display:none; width: 100%;"> 
 		  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
 		  	</div>
 	                
