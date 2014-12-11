@@ -458,7 +458,7 @@
                 </div>
 
 
-			<div id="proceso_legislativo" style="display:none; width: 100%;"> 
+			<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last " id="proceso_legislativo" style="display:none;" > 
 		  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
 		  	</div>
 	                
@@ -481,8 +481,6 @@
 
 		jQuery("#ver_proceso_legislativo").on("click", function(e){
 		    	jQuery("#proceso_legislativo").slideToggle();
-		    	var s = $('body').scrollTop();
-		    	$('body').scrollTop(s + 500)
 				return false;		    	
 		    })
 
