@@ -431,9 +431,7 @@
 	  	</script>	
 		<?php } ?>
 	  	
-	  	<div id="proceso_legislativo" style="display:none;"> 
-	  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
-	  	</div>
+	  
 			<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first">
 				<div class="flex_column av_one_half first avia-builder-el-0 el_before_av_one_half avia-builder-el-first status-i">				
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
@@ -453,10 +451,14 @@
 			</div>
 		
 		        <div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
-				<div  itemprop="text">
-				<a class="avia_textblock boton-proceso" href="#proceso_legislativo" name="proceso_legislativo" id="ver_proceso_legislativo">Clic para ver proceso legislativo</a>
-				</div>
-                         </div>
+					<div  itemprop="text">
+						<a class="avia_textblock boton-proceso" href="#proceso_legislativo" name="proceso_legislativo" id="ver_proceso_legislativo">Clic para ver proceso legislativo</a>
+					</div>
+
+					<div id="proceso_legislativo" style="display:none;"> 
+				  		<img src="<?php echo 'http://curul501.org/wp-content/themes/curul501/images/' . $last_status_slug[0] . '.jpg'; ?>" >
+				  	</div>
+                </div>
 
 		</div>
                 
