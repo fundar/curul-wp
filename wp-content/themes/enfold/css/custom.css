@@ -1503,7 +1503,7 @@ input#mc4wp_email-2 {
     float: left;
 }
 #mc4wp_email::-moz-placeholder {
-    color: #000000;
+    color: rgba(68, 68, 68, 1);
     opacity: 1;
 }
 
