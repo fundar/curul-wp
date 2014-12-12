@@ -1479,9 +1479,15 @@ a.wpp-post-title {
 }
 /** MailChimp **/
 input#mc4wp_email {
-    background: #D1D1D1 !important;
-    width: 75% !important;
+    background: none repeat scroll 0 0 #d1d1d1 !important;
     float: left;
+    width: 71% !important;
+    margin-right: 4px !important;
+    display: block !important;
+    color : rgba (0, 0, 0, 1) !important;
+    padding: 5px !important;
+    height: 32px !important;
+    border: 1px solid #d1d1d1 !important;
 }
 input#mc4wp_email-2 {
     background: #F7941E !important;
