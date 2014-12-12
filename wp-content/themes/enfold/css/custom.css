@@ -1477,6 +1477,15 @@ a.wpp-post-title {
   /* Add your Desktop Styles here */
 
 }
+/** MailChimp **/
+input.mc4wp_email {
+    background: #D1D1D1;
+    width: 75%;
+}
+
+
+
+
 
 
 
