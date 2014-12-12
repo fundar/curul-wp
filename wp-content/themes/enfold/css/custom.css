@@ -1479,12 +1479,17 @@ a.wpp-post-title {
 }
 /** MailChimp **/
 input#mc4wp_email {
-    background: #D1D1D1;
-    width: 75%;
+    background: #D1D1D1 !important;
+    width: 75% !important;
+    float: left;
 }
-#mc4wp_email {
-    background: #D1D1D1;
-    width: 75%;
+input#mc4wp_email-2 {
+    background: #F7941E !important;
+    text-transform: uppercase;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding: 8px;
+    float: left;
 }
 
 
