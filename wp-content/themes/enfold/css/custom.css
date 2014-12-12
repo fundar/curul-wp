@@ -761,12 +761,18 @@ li.hand-down {
     div.wpcf7-validation-errors {
     border:0px solid #f7e700;
     color: #a59aaa;
+    font-family: 'colaborate-regular';
+    }
+    #wpcf7-f542-o1 {
+    margin-top: 16px;
     }
     div.wpcf7-response-output {
-    margin: 0;
-    padding:0;
     color: #a59aaa;
     display: -moz-inline-stack;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'colaborate-regular';
     }
    .wpcf7-response-output .wpcf7-display-none .wpcf7-mail-sent-ok{
     display: block;
