@@ -765,6 +765,10 @@ li.hand-down {
     padding: 0;
     margin: 0;
     }
+    .wpcf7-not-valid-tip span{
+    color: #a59aaa;
+    display: none;
+}
      /** cpt single iniciativas**/
     .iniciativa {
     padding: 30px 30px 30px 0;
