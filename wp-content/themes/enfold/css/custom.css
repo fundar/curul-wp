@@ -1490,7 +1490,7 @@ input#mc4wp_email {
     margin-right: 4px !important;
     display: block !important;
     color : rgba (0, 0, 0, 1) !important;
-    padding: 5px !important;
+    padding: 2px 5px 0 5px !important!important;
     height: 32px !important;
     border: 1px solid #E5E5E5 !important;
 }
