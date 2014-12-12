@@ -1412,7 +1412,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 35px;
 }
 #wpp-2, #wpp-5 {
-    min-height: 250px;
+    min-height: 150px;
 }
 #weddit_hot_widget-2 > h3.widget-title {
     background: url("images/bullet-votado.png") no-repeat scroll 10px 15px #3e2f52;
