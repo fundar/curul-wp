@@ -1478,11 +1478,14 @@ a.wpp-post-title {
 
 }
 /** MailChimp **/
-input.mc4wp_email {
+input#mc4wp_email {
     background: #D1D1D1;
     width: 75%;
 }
-
+#mc4wp_email {
+    background: #D1D1D1;
+    width: 75%;
+}
 
 
 
