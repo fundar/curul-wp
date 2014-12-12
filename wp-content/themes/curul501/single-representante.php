@@ -286,7 +286,9 @@
 					<li class="bullet-arrow no-borde ir-sb">Website
 						<p>
 							<a href="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>">
-								<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
+								<a href="?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="website">
+									<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
+								</a>
 							</a>
 						</p>
 					</li>
