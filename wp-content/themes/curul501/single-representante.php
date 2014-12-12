@@ -276,7 +276,7 @@
 					<li class="bullet-arrow twitter-sb">Twitter
 						<p>
 							<a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>">
-								<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
+								@<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
 							</a>
 						</p>
 					</li>
