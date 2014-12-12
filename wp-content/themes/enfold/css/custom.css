@@ -667,36 +667,35 @@ li.hand-down {
      text-transform: uppercase;
      }
      #text-3 > .widgettitle {
-         background: none repeat scroll 0 0 transparent;
-         color: #A59AAA;
-         margin-left: 0;
-         padding-left: 0;
+     background: none repeat scroll 0 0 transparent;
+     color: #A59AAA;
+     margin-left: 0;
+     padding-left: 0;
      }
      #text-8 > .widgettitle {
-         background: none repeat scroll 0 0 transparent;
-         color: #A59AAA;
-         margin-left: 0;
-         padding-left: 0;
+     background: none repeat scroll 0 0 transparent;
+     color: #A59AAA;
+     margin-left: 0;
+     padding-left: 0;
      }
      #text-8 > h3.textwidget{
-         color: #A59AAA;
-         font:400 15px/14px oswald;
-         text-transform: uppercase;
-         background:transparent;
-          
+     color: #A59AAA;
+     font:400 15px/14px oswald;
+     text-transform: uppercase;
+     background:transparent;         
      }
      #text-3 > h3.textwidget{
-         color: #A59AAA;
-         font:400 15px/14px oswald;
-         text-transform: uppercase;
-         background:transparent;
-          
+     color: #A59AAA;
+     font:400 15px/14px oswald;
+     text-transform: uppercase;
+     background:transparent;
+      
      }
      #text-10 {
          margin-bottom: 0 !important;
      }
      #nav_menu-2 {
-         margin-top: 24px !important;
+     margin-top: 24px !important;
      }
      p.paraffo-contacto {
      color: #A59AAA;
@@ -704,53 +703,61 @@ li.hand-down {
      margin-top: -3px;
      }
      #contacto {
-          background: none repeat scroll 0 0 rgba(41, 23, 50, 1) !important;
-          border: medium none !important;
-          height: 30px !important;
-          margin: 0 0 17px !important;
-          width: 100% !important;
+     background: none repeat scroll 0 0 rgba(41, 23, 50, 1) !important;
+     border: medium none !important;
+     height: 31px !important;
+     margin: 0 0 17px !important;
+     width: 100% !important;
      }
-     .enviar-3212 {
-          background: none repeat scroll 0 0 #a59aaa !important;
-          color: rgba(41, 23, 50, 1) !important;
-          font: 14px 'colaborate-regular';
-          padding: 5px 0 6px !important;
-          text-transform: uppercase;
-          width: 100%;
+    .enviar-3212 {
+     background: none repeat scroll 0 0 #a59aaa !important;
+     color: rgba(41, 23, 50, 1) !important;
+     font: 14px 'colaborate-regular';
+     padding: 8px 0 4px !important;
+     text-transform: uppercase;
+     width: 100%;
+     margin-top: 3px;
      }
      .enviar-3212:hover{
-          background: none repeat scroll 0 0 #978a9d !important;
-          color: rgba(41, 23, 50, .8) !important;
+     background: none repeat scroll 0 0 #978a9d !important;
+     color: rgba(41, 23, 50, .8) !important;
      }     
      .alto-p{
-          min-height: 103px !important;
+     min-height: 103px !important;
 
      }
      #buscador.desktop {
-        width: 100%;
+     width: 100%;
      }
      #buscador {
-        background: none repeat scroll 0 0 #291732;
-        bottom: 0;
-        height: 55px;
-        left: 0;
-        position: fixed;
-        transition: width 500ms cubic-bezier(0.19, 1, 0.22, 1) 300ms;
-        width: 100%;
-        z-index: 10;
+     background: none repeat scroll 0 0 #291732;
+     bottom: 0;
+     height: 55px;
+     left: 0;
+     position: fixed;
+     transition: width 500ms cubic-bezier(0.19, 1, 0.22, 1) 300ms;
+     width: 100%;
+     z-index: 10;
     }
     .desktop {
-        display: block !important;
+     display: block !important;
     }
     #menu-footer-container  > li.current-menu-item, .current_page_item{
-      background:transparent !important;
-      box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0) !important;
-    }
-    
-#socket {
+     background:transparent !important;
+     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0) !important;
+    }  
+    #socket {
     font-size: 11px;
     z-index: 1;
-}
+    }
+    .contacto-obligatorios {
+    margin-top: -22px;
+    }
+    p.paraffo-contacto2 {
+    color: #a59aaa;
+    font: 12px 'colaborate-regular';
+    margin-top: -25px;
+    }
      /** cpt single iniciativas**/
     .iniciativa {
     padding: 30px 30px 30px 0;
