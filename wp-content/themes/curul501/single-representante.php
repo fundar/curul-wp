@@ -273,18 +273,22 @@
 				</li>
 				
 				<?php if(get_post_meta($post->ID, 'wp_twitter', true) != "") { ?>
-					<li class="twitter-sb">
-						<a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>">
-							<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
-						</a>
+					<li class="bullet-arrow twitter-sb">Twitter
+						<p>
+							<a href="https://twitter.com/<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>">
+								<?php echo get_post_meta($post->ID, 'wp_twitter', true); ?>
+							</a>
+						</p>
 					</li>
 				<?php } ?>
 				
 				<?php if(get_post_meta($post->ID, 'wp_website', true) != "") { ?>
-					<li class="no-borde ir-sb">
-						<a href="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>">
-							<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
-						</a>
+					<li class="bullet-arrow no-borde ir-sb">Website
+						<p>
+							<a href="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>" title="<?php echo get_post_meta($post->ID, 'wp_website', true); ?>">
+								<?php echo get_post_meta($post->ID, 'wp_website', true); ?>
+							</a>
+						</p>
 					</li>
 				<?php } ?>
 			</ul>
