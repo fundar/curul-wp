@@ -16,6 +16,10 @@ p {
     font-family: 'colaborate-regular';
     font-size: 16px;
 }
+p a, p a:visited {
+    font-family: 'colaborate-regular';
+    line-height: inherit;
+}
 li{
     color: rgba(68, 68, 68, 0.9);
     }
@@ -877,7 +881,7 @@ ul.lista-iniciativas {
 li.bullet-arrow {
     background: url("images/bullet-arrow.png") no-repeat scroll 14px 9px rgba(0, 0, 0, 0);
     color: #512b60;
-    font: 15px 'colaborate-regular';
+    font: 16px 'colaborate-regular';
     margin: 0 0 0 -14px;
     padding: 5px 0 8px 26px;
 }
