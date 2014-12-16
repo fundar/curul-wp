@@ -699,7 +699,7 @@ function wpeddit_hot($posts){
         'meta_key' => 'epicredrank',
         'orderby' => 'meta_value_num',
         'post_type' => 'iniciativa',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'posts_per_page' => $posts
     );
 	
@@ -715,6 +715,33 @@ function wpeddit_hot($posts){
 	<?php else: ?> 
 
 	<?php endif; 
+}
+
+
+function wpeddit_hot($posts){
+    global $wp, $wp_query,$post,$wpdb, $current_user,$query_string;
+    wp_reset_query();
+    
+    $args = array(
+        'meta_key' => 'epicredrank',
+        'orderby' => 'meta_value_num',
+        'post_type' => 'iniciativa',
+        'order' => 'DESC',
+        'posts_per_page' => $posts
+    );
+    
+    query_posts($args);
+    
+    if ( have_posts() ) : ?>
+        <ul>    
+        <?php while ( have_posts() ) : the_post(); ?> 
+            
+        <li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+        <?php endwhile; ?>
+        </ul>
+    <?php else: ?> 
+
+    <?php endif; 
 }
 
 function wpeddit_hot_comments($posts){
