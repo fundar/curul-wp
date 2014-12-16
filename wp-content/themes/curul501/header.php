@@ -64,7 +64,6 @@ wp_head();
 <body id="top" <?php body_class($style." ".$avia_config['font_stack']." ".$blank); avia_markup_helper(array('context' => 'body')); ?>>
 
 	<div id='wrap_all'>
-		<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} ?>
 
 	<?php 
 	if(!$blank) //blank templates dont display header nor footer
