@@ -27,6 +27,8 @@ if($headerS['header_topbar'] == true)
 		<div id='header_meta' class='container_wrap container_wrap_meta <?php echo avia_header_class_string(array('header_social', 'header_secondary_menu', 'header_phone_active'), 'av_'); ?>'>
 		
 			      <div class='container'>
+				  		<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} ?>
+
 			      <?php
 			            /*
 			            *	display the themes social media icons, defined in the wordpress backend
