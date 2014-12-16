@@ -16,6 +16,8 @@
 
 <!-- page title, displayed in your browser bar -->
 <title><?php if(function_exists('avia_set_title_tag')) { echo avia_set_title_tag(); } ?></title>
+<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} ?>
+
 
 <?php
 /*
