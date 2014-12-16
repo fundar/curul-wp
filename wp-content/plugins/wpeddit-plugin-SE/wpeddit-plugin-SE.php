@@ -699,7 +699,7 @@ function wpeddit_hot($posts){
         'meta_key' => 'epicredrank',
         'orderby' => 'meta_value_num',
         'post_type' => 'iniciativa',
-        'order' => 'DESC',
+        'order' => 'ASC',
         'posts_per_page' => $posts
     );
 	
