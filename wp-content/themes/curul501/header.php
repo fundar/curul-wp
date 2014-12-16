@@ -64,6 +64,7 @@ wp_head();
 <body id="top" <?php body_class($style." ".$avia_config['font_stack']." ".$blank); avia_markup_helper(array('context' => 'body')); ?>>
 
 	<div id='wrap_all'>
+		<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} ?>
 
 	<?php 
 	if(!$blank) //blank templates dont display header nor footer
@@ -76,4 +77,4 @@ wp_head();
 	<div id='main' data-scroll-offset='<?php echo avia_header_setting('header_scroll_offset'); ?>'>
 
 	<?php do_action('ava_after_main_container'); ?>
-	<?php if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} ?>
+	
