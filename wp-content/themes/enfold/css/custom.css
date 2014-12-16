@@ -14,7 +14,11 @@ body {
 p {
     color: rgba(68, 68, 68, 0.9);
     font-family: 'colaborate-regular';
-    font-size: 15px;
+    font-size: 16px;
+}
+p a, p a:visited {
+    font-family: 'colaborate-regular';
+    line-height: inherit;
 }
 li{
     color: rgba(68, 68, 68, 0.9);
@@ -761,12 +765,18 @@ li.hand-down {
     div.wpcf7-validation-errors {
     border:0px solid #f7e700;
     color: #a59aaa;
+    font-family: 'colaborate-regular';
+    }
+    #wpcf7-f542-o1 {
+    margin-top: 16px;
     }
     div.wpcf7-response-output {
-    margin: 0;
-    padding:0;
     color: #a59aaa;
     display: -moz-inline-stack;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'colaborate-regular';
     }
    .wpcf7-response-output .wpcf7-display-none .wpcf7-mail-sent-ok{
     display: block;
@@ -871,7 +881,7 @@ ul.lista-iniciativas {
 li.bullet-arrow {
     background: url("images/bullet-arrow.png") no-repeat scroll 14px 9px rgba(0, 0, 0, 0);
     color: #512b60;
-    font: 15px 'colaborate-regular';
+    font: 16px 'colaborate-regular';
     margin: 0 0 0 -14px;
     padding: 5px 0 8px 26px;
 }
@@ -1382,6 +1392,10 @@ div.tituloBlog {
 .bottom30{
      margin-bottom:30px;
 }
+.bottom20{
+     margin-bottom:20px;
+}
+
 
 .post-entry-7 {
     background:transparent !important;
@@ -1402,7 +1416,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 35px;
 }
 #wpp-2, #wpp-5 {
-    min-height: 250px;
+    min-height: 150px;
 }
 #weddit_hot_widget-2 > h3.widget-title {
     background: url("images/bullet-votado.png") no-repeat scroll 10px 15px #3e2f52;
@@ -1467,10 +1481,38 @@ a.wpp-post-title {
     color: #80648B;
     margin-top:1px;
 }
+
 @media only screen and (min-width: 768px) {
   /* Add your Desktop Styles here */
 
 }
+/** MailChimp **/
+input#mc4wp_email {
+    background: none repeat scroll 0 0 #E5E5E5 !important;
+    float: left;
+    width: 71% !important;
+    margin-right: 4px !important;
+    display: block !important;
+    color : rgba (0, 0, 0, 1) !important;
+    padding: 2px 5px 0 5px !important;
+    height: 32px !important;
+    border: 1px solid #E5E5E5 !important;
+}
+input#mc4wp_email-2 {
+    background: #F7941E !important;
+    text-transform: uppercase;
+    font-family: 'colaborate-regular';
+    font-size: 12px;
+    padding: 8px;
+    float: left;
+}
+#mc4wp_email::-moz-placeholder {
+    color: rgba(68, 68, 68, 1);
+    opacity: 1;
+    font-family: 'colaborate-regular';
+}
+
+
 
 
 

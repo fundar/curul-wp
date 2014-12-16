@@ -17,6 +17,7 @@
 <!-- page title, displayed in your browser bar -->
 <title><?php if(function_exists('avia_set_title_tag')) { echo avia_set_title_tag(); } ?></title>
 
+
 <?php
 /*
  * outputs a rel=follow or nofollow tag to circumvent google duplicate content for archives
@@ -75,3 +76,4 @@ wp_head();
 	<div id='main' data-scroll-offset='<?php echo avia_header_setting('header_scroll_offset'); ?>'>
 
 	<?php do_action('ava_after_main_container'); ?>
+	
