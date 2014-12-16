@@ -5,8 +5,7 @@ global $avia_config;
 							
 	 
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
-		 if(function_exists('ditty_news_ticker')){ditty_news_ticker(1282);} 
-
+		
 	?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 	<?php	 putRevSlider("carrusel-home","homepage") ?>
