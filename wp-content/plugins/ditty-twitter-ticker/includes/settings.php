@@ -14,12 +14,12 @@ if( !function_exists('mtphr_dnt_twitter_settings_defaults') ) {
 function mtphr_dnt_twitter_settings_defaults() {
 	$defaults = array(
 		'redirect_uri' => get_admin_url().'?ditty_twitter_authorize=true',
-		'key' => '',
-		'secret' => '',
-		'token' => '',
-		'token_secret' => '',
-		'access_token' => '',
-		'userid' => '',
+		'key' => 'WzSPXcJerVTkrYfdykZPc5c87',
+		'secret' => 'XqPPjyK0CyZEboxn3hmgYCKStm0HEyHypg2abGzAwyq3J42RnR',
+		'token' => '39937617-KgSbfzDJsUsZkwKdAS2emWMEoCB0aqlBwd7ogFdvV',
+		'token_secret' => 'ivmPX6cI1c22Nj21oicszcoA2Ae5r1t5IO00VDn86yZ0S',
+		'access_token' => '39937617-KgSbfzDJsUsZkwKdAS2emWMEoCB0aqlBwd7ogFdvV',
+		'userid' => '39937617',
 		'username' => '',
 		'fullname' => '',
 		'profile_picture' => '',
