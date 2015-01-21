@@ -25,7 +25,7 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 10 );
+									$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 5 );
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -138,7 +138,7 @@ global $avia_config;
 											</div>
 											<div class="vta-curul">
 												<span>Votaci&oacute;n en Curul 501</span>
-												
+												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
 												
