@@ -272,6 +272,11 @@ function getDataIniciativas() {
 		$meta_query[] = getIniciativasByPostulante($_GET["postulante"]);
 	}
 	
+	if(isset($_GET["camara"]) and $_GET["camara"] != "") {
+		$meta_query[] = getIniciativasByCamara($_GET["camara"]);
+	}
+	
+	
 	if($meta_query) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args  = array(
@@ -312,7 +317,9 @@ function getIniciativasByStatus($status) {
 function getIniciativasByPostulante($postulante) {
 	return array('key' => 'wp_presentada_slug', 'value' => $postulante, 'compare' => 'LIKE' );
 }
-
+function getIniciativasByCamara($camara) {
+	return array('key' => 'wp_tipo_camara', 'value' => $camara, 'compare' => 'LIKE' );
+}
 
 /*********** Iniciativas ***************/
 
@@ -521,6 +528,24 @@ function getTemas() {
 	
 	return $temas;
 }
+
+
+/*Get temas array*/
+function getCamara() {
+	$camara = array(
+		array("name" => "Diputados", "slug" => "1"),
+		array("name" => "Senadores",  "slug" => "2")		
+		
+	);
+	
+	return $camara;
+}
+
+
+
+
+
+
 
  /*Get STATUS array*/
 function getStatus() {
