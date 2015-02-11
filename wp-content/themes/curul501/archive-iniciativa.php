@@ -101,7 +101,7 @@
 							    <?php $CamaraArray = getCamara(); ?>
 								<?php foreach($CamaraArray as $value) { ?>
 									<option value="<?php echo $value->slug;?>" <?php if($selectedCamara == $value->slug) echo 'selected="selected"'?>>
-										<?php echo $value->name;?>
+										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
 						   </select>
