@@ -530,7 +530,7 @@ function getTemas() {
 }
 
 
-/*Get temas array*/
+/*Get camara array*/
 function getCamara() {
 	$camara = array(
 		array("name" => "Diputados", "slug" => "1"),
