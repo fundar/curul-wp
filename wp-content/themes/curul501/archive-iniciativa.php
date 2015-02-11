@@ -7,6 +7,8 @@
 	$selectedTema = getParameterValueGET('tema');
 	$selectedStatus = getParameterValueGET('status');
 	$selectedPostulante = getParameterValueGET('postulante');
+	$selectedCamara = getParameterValueGET('camara');
+
 
 
 
@@ -93,6 +95,21 @@
 						   </select>
 					   </div>
 					   
+					   <div id="filter">				
+						   <select class="sorter-rep sort" name="camara" id="camara-filter">
+							   <option value="">Camara</option>
+							    <?php $CamaraArray = getCamara(); ?>
+								<?php foreach($CamaraArray as $value) { ?>
+									<option value="<?php echo $value->slug;?>" <?php if($selectedCamara == $value->slug) echo 'selected="selected"'?>>
+										<?php echo $value->full_name;?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+					   
+					   				   
+					   
+					   
 					   	<div>				
 						   <input type="submit" value="Filtrar" id="submit-filter"/>
 					   </div>   
@@ -137,6 +154,8 @@
 														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
 														$htmlpresentadas = "";
 														$link_representante = get_site_url() . "/representantes/";
+														$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
+
 													
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
@@ -226,7 +245,7 @@
 												</div>
 											</div>
 											<div class="vta-curul-iniciativas">
-												<span>Votaci&oacute;n en Curul 501</span>
+												<span>Votaci&oacute;n en Curul 501 <?php echo $tipo_iniciativa; ?></span>
 												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
@@ -276,6 +295,8 @@
 														$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
 														$htmlpresentadas = "";
 														$link_representante = get_site_url() . "/representantes/";
+														$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
+
 													
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
@@ -367,7 +388,7 @@
 												</div>
 											</div>
 											<div class="vta-curul-iniciativas">
-												<span>Votaci&oacute;n en Curul 501</span>
+												<span>Votaci&oacute;n en Curul 501 Propuesta por: <?php echo $tipo_iniciativa; ?></span>
 												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
@@ -424,6 +445,10 @@
 			
 			if(jQuery("#postulante-filter option:selected").val() == "") {
 				jQuery("#postulante-filter").remove();
+			}
+			
+			if(jQuery("#camara-filter option:selected").val() == "") {
+				jQuery("#camara-filter").remove();
 			}
 			
 			
