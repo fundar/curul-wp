@@ -1372,6 +1372,12 @@ li.ir-sb {
 }
 
 /** loop-index.php blog **/
+.template-blog > .content > .reddit-voting{
+     display:none;
+}
+.template-blog > .content > .post {
+     margin-bottom:60px;
+}
 .container_wrap {
     border-top-width: 0;
 }
