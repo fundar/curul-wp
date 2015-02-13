@@ -195,7 +195,7 @@ run.pieChart = function(votos, urlBase){
       jQuery("#barchart").animate({ opacity: 0 }, 500)
       jQuery('#bartitle').fadeOut()
 
-      totalUpdate("500");
+      totalUpdate(total_inicial);
 
     }
 
