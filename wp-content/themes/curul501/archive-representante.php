@@ -4,6 +4,8 @@
 	$selectedType = getParameterValueGET('tipo-eleccion');
 	$selectedPolitical = getParameterValueGET('partido-politico');
 	$selectedState = getParameterValueGET('estado');
+	$selectedTipo = getParameterValueGET('tipo');
+
 	$data = getDataRepresentatives();
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
@@ -76,6 +78,19 @@
 								</option>
 						   </select>
 						</div>
+						
+						<div id="filter">				
+						   <select class="sorter-rep sort" name="tipo-representante" id="tipo-representante-filter">
+							 <option value="">Tipos de representante</option>
+							   <?php $TiposArray = getTipos(); ?>
+							   <?php foreach($TiposArray as $value) { ?>
+									<option value="<?php echo $value["slug"];?>" <?php if($selectedTipo == $value["slug"]) echo 'selected="selected"'?>>
+										<?php echo utf8_encode($value["slug"]);?>
+									</option>
+								<?php } ?>
+						   </select>
+					   </div>
+						
 						
 						<div>				
 						   <input type="submit" value="Filtrar" id="submit-filter"/>
@@ -221,6 +236,10 @@
 			
 			if(jQuery("#tipo-eleccion-filter option:selected").val() == "") {
 				jQuery("#tipo-eleccion-filter").remove();
+			}
+			
+			if(jQuery("#tipo-representante-filter option:selected").val() == "") {
+				jQuery("#tipo-representante-filter").remove();
 			}
 			
 			jQuery("#filter-representanes").submit();

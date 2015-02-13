@@ -174,6 +174,10 @@ function getRepresentativesByTypeElection($slug) {
 	
 	return array('key' => 'wp_election_type', 'value' => $slug);
 }
+/*Get representatives by tipo de camara*/
+function getRepresentativesByTypeRepresentante($slug) {
+	return array('key' => 'wp_id_representative_type', 'value' => $slug);
+}
 
 /*Get representatives*/
 function getRepresentatives($json = false) {
@@ -222,6 +226,10 @@ function getDataRepresentatives() {
 	
 	if(isset($_GET["tipo-eleccion"]) and $_GET["tipo-eleccion"] != "") {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
+	}
+	
+	if(isset($_GET["tipo"]) and $_GET["tipo"] != "") {
+		$meta_query[] = getRepresentativesByTypeRepresentante($_GET["tipo"]);
 	}
 	
 	if($meta_query) {
