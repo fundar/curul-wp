@@ -738,11 +738,11 @@ add_action('wp_ajax_nopriv_buscar_representantes_por_nombre', 'buscar_representa
  
 function buscar_representantes_por_nombre_callback() {
     global $post;
-    $args = array(  'post_type'=> 'representante', 'slug' => $_POST['nombre'] );
+    $args = array(  'post_type'=> 'representante' );
 
     $args['meta_query'][] = array(
         'key' => 'wp_presentada_slug',
-        'value' =>  $_POST['nombre'],
+        'value' =>  $_POST['nombre-representante'],
         'compare' => 'LIKE',
         'posts_per_page' => -1
     );
