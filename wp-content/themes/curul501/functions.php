@@ -720,7 +720,7 @@ function posts_custom_column_views($column_name, $id){
 
 /* Busqueda de representantes por nombre */
 
-wp_enqueue_script( 'mi-script-ajax', get_stylesheet_directory_uri() . 'js/script/representantes_por_nombre.js', array( 'jquery' ) );
+wp_enqueue_script( 'mi-script-ajax', get_stylesheet_directory_uri() . '/js/script/representantes_por_nombre.js', array( 'jquery' ) );
 wp_localize_script( 'mi-script-ajax', 'MyAjax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
  
 add_action('wp_ajax_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
