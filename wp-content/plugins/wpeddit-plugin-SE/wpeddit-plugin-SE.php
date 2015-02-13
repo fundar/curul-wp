@@ -751,10 +751,15 @@ function wpeddit_hot_comments($posts){
 add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
-    if(  is_singular('iniciativa') || is_post_type('iniciativa')) {
-        $newcontent = epic_reddit_voting();
+    if( is_singular('iniciativa') || is_post_type('iniciativa')) {
+		$newcontent = epic_reddit_voting();
     	$content = $newcontent . $content;
+	}elseif(is_front_page() || is_home()) { 
+		$newcontent = epic_reddit_voting();
+    	$content = $newcontent . $content; 
 	}
+	
+	
     // Returns the content.
     return $content;
 }

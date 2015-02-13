@@ -1,3 +1,15 @@
+
+/**  Login style     **/
+==================================================
+.header_title span{
+    font-family: oswald;
+    text-transform: unset;
+    font-size: 19px;
+    font-weight: 300;
+    color: #201126;
+    letter-spacing: 1px;
+}
+
 /* Table of Content
 ==================================================
 	#Reset & Basics

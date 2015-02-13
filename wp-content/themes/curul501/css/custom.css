@@ -491,10 +491,12 @@ p.estiloEstatusP {
 .vta-curul span {
     color: #512b60;
     display: inline-block;
-    font-family: 'colaborate-regular';
+    float: left;
+    font-family: "colaborate-regular";
     font-size: 12px;
     padding-top: 4px;
     vertical-align: middle;
+    width: 70%;
 }
 .votos-oficiles {
     color: #9991a8;
