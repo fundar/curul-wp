@@ -548,6 +548,16 @@ function getCamara() {
 	return $camara;
 }
 
+function getTipos() {
+	$tipo = array(
+		array("name" => "Diputados", "slug" => "1"),
+		array("name" => "Senadores",  "slug" => "2")		
+		
+	);
+	
+	return $tipo;
+}
+
 
 
 
