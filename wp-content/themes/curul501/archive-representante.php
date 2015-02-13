@@ -15,7 +15,7 @@
 	
 	?>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/representantes_por_nombre.js" type="text/javascript"></script>
+		<!--script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/representantes_por_nombre.js" type="text/javascript"></script-->
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
