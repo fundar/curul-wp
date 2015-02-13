@@ -17,7 +17,7 @@
 	 	{
 			echo avia_title(array('title' => avia_which_archive()));
 		}
-	?>
+	?> 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<div class='container'>
 
