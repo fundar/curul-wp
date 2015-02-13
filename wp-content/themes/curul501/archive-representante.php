@@ -14,6 +14,8 @@
 	
 	
 	?>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>js/script/representantes_por_nombre.js" type="text/javascript"></script>
+
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
 			<div class="container top60">
