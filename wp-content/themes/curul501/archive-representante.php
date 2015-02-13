@@ -29,9 +29,9 @@
 			<div class="container box-menu">
 				<div class="search-table">
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
-						<div id="filter">
+						<!--div id="filter">
 						   <input type="text" class="sorter-rep sort" name="nombre-representante" id="nombre-representante-filter">
-					   </div>
+					   </div-->
 
 						
 						<div id="filter">
