@@ -1391,6 +1391,17 @@ li.ir-sb {
 .post-entry-9 > .entry-content-wrapper > .template-blog > .post {
     margin-bottom: 60px;
 }
+
+.single-big  > .entry-content-wrapper {
+    padding: 10px 32px;
+}
+.big-preview.single-big {
+    padding: 0;
+}
+
+.single-big  {
+    margin-bottom: 50px;
+}
 div.tituloBlog {
     border-bottom: 2px solid #ccc;
     display: table;
