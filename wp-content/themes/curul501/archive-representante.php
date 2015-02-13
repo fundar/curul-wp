@@ -25,6 +25,11 @@
 				<div class="search-table">
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
 						<div id="filter">
+						   <input type="text" class="sorter-rep sort" name="nombre-representante" id="nombre-representante-filter">
+					   </div>
+
+						
+						<div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
 							   <option value="">Grupos parlamentarios</option>
 							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
