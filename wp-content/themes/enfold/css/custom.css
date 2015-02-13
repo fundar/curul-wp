@@ -1381,6 +1381,16 @@ li.ir-sb {
 .container_wrap {
     border-top-width: 0;
 }
+.post-entry-9 {
+    background: none repeat scroll 0 0 transparent !important;
+    box-shadow: none !important;
+}
+.template-blog  > .reddit-voting {
+    display: none;
+}
+.post-entry-9 > .entry-content-wrapper > .template-blog > .post {
+    margin-bottom: 60px;
+}
 div.tituloBlog {
     border-bottom: 2px solid #ccc;
     display: table;
