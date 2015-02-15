@@ -1389,9 +1389,16 @@ li.ir-sb {
     display: none;
 }
 .post-entry-9 > .entry-content-wrapper > .template-blog > .post {
+    border-radius: 8px;
     margin-bottom: 60px;
+    margin-top: -11px;
+    padding: 14px;
 }
-
+.post-entry-9 > .entry-content-wrapper > .template-blog > .post > .standard-content > .post_delimiter {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
 .single-big  > .entry-content-wrapper {
     padding: 10px 32px;
 }
