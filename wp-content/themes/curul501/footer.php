@@ -152,9 +152,9 @@
 			echo "<div class='bg_container' style='background-image:url(".$avia_config['fullscreen_image'].");'></div>";
 		}
 	?>
-<aside id="buscador" class="desktop" data-no-touch="" data-track-id="" style="">
+<!-- <aside id="buscador" class="desktop" data-no-touch="" data-track-id="" style="">
 	ijij
-</aside>
+</aside>-->
 
 <?php wp_footer(); ?>
 
