@@ -1399,6 +1399,13 @@ li.ir-sb {
     margin: 0;
     padding: 0;
 }
+.small-preview img, .big-preview img {
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
 .single-big  > .entry-content-wrapper {
     padding: 10px 32px;
 }
@@ -1407,7 +1414,7 @@ li.ir-sb {
 }
 
 .single-big  {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 div.tituloBlog {
     border-bottom: 2px solid #ccc;
