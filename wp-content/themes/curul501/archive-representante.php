@@ -13,18 +13,60 @@
 	
 	
 	?>
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-  
+  	<style type="text/css">
+
+  		#map{
+  			width: 100%; 
+  			height:500px;
+  		}
+  		#map-info{
+			background: #fff;
+  			display: none;
+  			height:500px;
+  			min-height:500px;
+  			min-width:30%;
+  			overflow-y: visible;
+			padding: 20px;
+			position: absolute;
+			right:0;
+  			width:30%;
+			z-index: 100;
+  		}
+  		
+  		.map-info-representante-mayoria, .map-info-representante-proporcional{
+  			max-height:48%;
+  			overflow-y: visible;
+
+  		}
+
+  		.close-map-info{
+  			cursor: pointer;
+  			float:right;
+  			font-size: 1.3em;
+  		}
+
+  	</style>
+  	<script type="text/javascript">
+  		jQuery(document).ready(function(){
+  			jQuery(".close-map-info").on("click", function(){
+				jQuery("#map-info").toggle( "slide", { "direction": "right" });
+			})
+  		})
+  	</script>
 
 		<div id="" class="avia-fullscreen-slider main_color avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize">
 		<!-- inicio mapa de representantes-->
 		<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
-		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
-				<div id="map" style="width: 100%; height:500px;"></div>
-				<div class="map-info-representante-mayoria"></div>
-				<div class="map-info-representante-proporcional"></div>
+		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll 
+		   		avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
+				<div id="map-info">
+					<div class="close-map-info"> X </div>
+					<div class="map-info-representante-mayoria"></div>
+					<div class="map-info-representante-proporcional"></div>
+				</div>
+				<div id="map"></div>
 			</div>
 		</div>
 		<!-- fin mapa de representantes-->
