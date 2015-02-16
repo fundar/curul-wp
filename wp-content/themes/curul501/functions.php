@@ -728,40 +728,40 @@ function posts_custom_column_views($column_name, $id){
 }
 
 /* Codigo de prueba para hacer búsquedas de diputados
-wp_enqueue_script( 'jquery' );
-wp_enqueue_script( 'jquery-ui' );
-wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
-wp_localize_script( 'mi-script-ajax', 'MyAjax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-ui' );
+	wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
+	wp_localize_script( 'mi-script-ajax', 'MyAjax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 
-add_action('wp_ajax_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
-add_action('wp_ajax_nopriv_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
- 
-function buscar_representantes_por_nombre_callback() {
-     
-    global $post;
-   
-    $args['meta_query'][] = array(
-        'key' => 'wp_presentada_slug',
-        'value' =>  $_POST['nombre'],
-        'compare' => 'LIKE',
-        'posts_per_page' => -1
-    );
-   $args = array( 'numberposts' => 10, 'post_type'=> 'representante');
-   $args['meta_query'][] = array(
-        'key' => 'wp_full_name',
-        'value' =>  $_GET['nombre'],
-        'compare' => 'LIKE',
-        'posts_per_page' => -1
-    );
-     
-    $myposts = get_posts( $args );
+	add_action('wp_ajax_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
+	add_action('wp_ajax_nopriv_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
+	 
+	function buscar_representantes_por_nombre_callback() {
+	     
+	    global $post;
+	   
+	    $args['meta_query'][] = array(
+	        'key' => 'wp_presentada_slug',
+	        'value' =>  $_POST['nombre'],
+	        'compare' => 'LIKE',
+	        'posts_per_page' => -1
+	    );
+	   $args = array( 'numberposts' => 10, 'post_type'=> 'representante');
+	   $args['meta_query'][] = array(
+	        'key' => 'wp_full_name',
+	        'value' =>  $_GET['nombre'],
+	        'compare' => 'LIKE',
+	        'posts_per_page' => -1
+	    );
+	     
+	    $myposts = get_posts( $args );
 
-    $nombres =  array();
-    foreach( $myposts as $post ) :  setup_postdata($post); 
-	$nombres[] = get_the_title();
-    endforeach;
-    echo json_encode($nombres);
-    die();
+	    $nombres =  array();
+	    foreach( $myposts as $post ) :  setup_postdata($post); 
+		$nombres[] = get_the_title();
+	    endforeach;
+	    echo json_encode($nombres);
+	    die();
 }
 */
 ?>
