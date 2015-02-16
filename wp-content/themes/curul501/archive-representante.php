@@ -276,9 +276,11 @@
 
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		jQuery("#submit-filter").submit( function(event) {
+		jQuery("#submit-filter").click( function(event) {
 			event.preventDefault();
 			
+			jQuery("#nombre-representante-filter").remove();
+
 			if(jQuery("#partido-politico-filter option:selected").val() == "") {
 				jQuery("#partido-politico-filter").remove();
 			}
