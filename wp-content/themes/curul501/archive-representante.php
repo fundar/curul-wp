@@ -104,7 +104,7 @@
 							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option ?full_name=Pérez+de+Alba+José+Noel&partido-politico=&estado=&comision=&tipo-eleccion=&tipo-representante=value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedState == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedState == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -242,7 +242,14 @@
 													</li>
 													
 													<li class="navrepr-left">
-														Cargo: Diputado
+												
+															<?php 
+																$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
+																if($puesto==1)
+																	echo "Cargo: Diputado";
+																else
+																	echo "Cargo: Senador";
+															?>
 													</li>
 													
 													<li class="navrepr-left">
