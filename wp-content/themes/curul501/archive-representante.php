@@ -17,17 +17,18 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
   	<style type="text/css">
 
+
   		#map{
   			width: 100%; 
   			height:500px;
   		}
   		#map-info{
-			background: #fff;
+			background: #F4F4F4;
   			display: none;
   			height:500px;
   			min-height:500px;
   			min-width:30%;
-  			overflow-y: visible;
+  			overflow-y: scroll;
 			padding: 20px;
 			position: absolute;
 			right:0;
@@ -35,16 +36,67 @@
 			z-index: 100;
   		}
   		
-  		.map-info-representante-mayoria, .map-info-representante-proporcional{
-  			max-height:48%;
-  			overflow-y: visible;
-
+  		#map-info h2{
+   			color:#46354f;
+   			font-family: oswald;
+   			font-size: 1.4em;
+   			font-weight: lighter;
   		}
 
-  		.close-map-info{
+  		.map-info-representante-mayoria, .map-info-representante-proporcional{
+  			max-height:48%;
+  			margin-bottom: 35px;
+  		}
+
+  		#map-info .close-map-info{
   			cursor: pointer;
-  			float:right;
-  			font-size: 1.3em;
+			float: right;
+			margin-top: -25px;
+			font-size: 1.8em;
+			border: 0.3px solid #aaa;
+			font-family: oswald;
+			font-weight: lighter;
+  		}
+
+  		.representante-mapa{
+  			margin-bottom:25px;
+  		}
+  		.representante-mapa .rep-data{
+  			display: block;
+			padding-bottom: 15px;
+			border-bottom: dotted 2px #ccc;
+			margin-bottom: 10px;
+		}
+
+  		.rep-data img.img-rep{
+			width: 70px;
+			height: 90px;
+			float: left;
+			margin: 0px 20px 5px 0px;
+  		}
+
+  		.rep-data a.name-rep{
+  			color: #512a7b;
+  			cursor: pointer;
+   			font-family: oswald;
+   			font-size: 1.4em;
+   			font-weight: lighter;
+  		}
+
+  		.rep-data span{
+  			color: #888a8a;
+			display: block;
+  		}
+
+  		.representante-mapa .part-data{
+  			display: block;
+			padding-bottom: 15px;
+			border-bottom: solid 1px #eee;
+		}
+
+  		.part-data .img-partido{
+  			float:left;
+			margin-right: 15px;
   		}
 
   	</style>
@@ -62,7 +114,7 @@
 		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll 
 		   		avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
 				<div id="map-info">
-					<div class="close-map-info"> X </div>
+					<div class="close-map-info"> x </div>
 					<div class="map-info-representante-mayoria"></div>
 					<div class="map-info-representante-proporcional"></div>
 				</div>

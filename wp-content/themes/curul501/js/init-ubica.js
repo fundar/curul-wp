@@ -53,7 +53,10 @@ function getPip(lat, lng) {
 				// si el map-info ya tiene informacion lo escondo y lo vuelvo a mostrar
 
 				var info_filling = function(){
-
+					// si hay datos los limpia
+					jQuery(".map-info-representante-proporcional").html("")
+					jQuery(".map-info-representante-mayoria").html("")
+					
 					if(primera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
 						var circum = "Primera";
 					} else if(segunda.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
@@ -72,43 +75,47 @@ function getPip(lat, lng) {
 						return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
 					});
 					
-					var html  = "<p>Representación proporcional</p>";
-					var html2 = "<p>Mayoria relativa</p>";
+					var html  = "<h2> REPRESENTACIÓN PROPORCIONAL </h2>";
+					var html2 = "<h2> MAYORÍA RELATIVA </h2>";
 					
 					jQuery.each(results, function( index, value ) {
 						if(value.circum == "") {
 							html2 += "<div class='representante-mapa'>";
-							html2 += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
-							html2 += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
-							html2 += "Tipo de elección: " + value.election_type + "<br/>";
-							html2 += "Distrito: " + value.district + "<br/>";
-							html2 += "Estado: " + value.zone_state + "<br/>";
-							html2 += "Partido politico: " + value.politicalParty.name + "<br/>";
-							html2 += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
+							html2 += "	<div class='rep-data'>";
+							html2 += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
+							html2 += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
+							html2 += "		<span class='tipo-ele'> Tipo de elección: " + value.election_type + " </span>";
+							html2 += "		<span class='zona'> Distrito: " + value.district + " </span>";
+							html2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>";
+							html2 += "	</div>";
+							html2 += "	<div class='part-data'>";
+							html2 += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+							html2 += "		<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
+							html2 += "	</div>";
 							html2 += "</div>";
 						} else {
 							html += "<div class='representante-mapa'>";
-							html += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
-							html += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
-							html += "Tipo de elección: " + value.election_type + "<br/>";
-							html += "Circunscripción: " + value.circum + "<br/>";
-							html += "Estado: " + value.zone_state + "<br/>";
-							html += "Partido politico: " + value.politicalParty.name + "<br/>";
-							html += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
+							html += "	<div class='rep-data'>";
+							html += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
+							html += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
+							html += "		<span class='tipo-ele'> Tipo de elección: " + value.election_type + "</span>";
+							html += "		<span class='zona'> Circunscripción: " + value.circum + "</span>";
+							html += "		<span class'estado'> Estado: " + value.zone_state + "</span>";
+							html += "	</div>";
+							html += "	<div class='part-data'>";
+							html += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+							html += "		<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
+							html += "	</div'>";
 							html += "</div>";
 						}
 					});
 					
-					jQuery(".map-info-representante-mayoria").html(html2);
 					jQuery(".map-info-representante-proporcional").html(html);
+					jQuery(".map-info-representante-mayoria").html(html2);
 				}
 
 				if( jQuery("#map-info").css("display") == "block"){
-					
-
 					jQuery("#map-info").toggle( "slide", { "direction": "right" }, function(){
-						jQuery(".map-info-representante-mayoria").empty()
-						jQuery(".map-info-representante-proporcional").empty()
 						info_filling()
 						jQuery("#map-info").toggle( "slide", { "direction": "right", "duration": 800  });
 					});
