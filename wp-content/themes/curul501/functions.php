@@ -726,6 +726,8 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews($id);
     }
 }
+
+/* Codigo de prueba para hacer búsquedas de diputados
 wp_enqueue_script( 'jquery' );
 wp_enqueue_script( 'jquery-ui' );
 wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
@@ -738,14 +740,12 @@ function buscar_representantes_por_nombre_callback() {
      
     global $post;
    
-/*
     $args['meta_query'][] = array(
         'key' => 'wp_presentada_slug',
         'value' =>  $_POST['nombre'],
         'compare' => 'LIKE',
         'posts_per_page' => -1
     );
-  /**/
    $args = array( 'numberposts' => 10, 'post_type'=> 'representante');
    $args['meta_query'][] = array(
         'key' => 'wp_full_name',
@@ -763,4 +763,5 @@ function buscar_representantes_por_nombre_callback() {
     echo json_encode($nombres);
     die();
 }
+*/
 ?>
