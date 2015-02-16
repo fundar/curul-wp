@@ -40,61 +40,86 @@ function getPip(lat, lng) {
     var resultPip 	 = leafletPip.pointInLayer([lng, lat], estadosLayer);
     
     if(resultPip.length) {
-		jQuery.getJSON("/wp-content/themes/curul501/js/geojson/estado-" + resultPip[0].feature.properties.CVE_ENT + ".geojson")
+		jQuery.getJSON("../wp-content/themes/curul501/js/geojson/estado-" + resultPip[0].feature.properties.CVE_ENT + ".geojson")
 		.success(function (distritosGeoJson) {
+			
+
 			var distritosLayer = L.geoJson(distritosGeoJson);
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
 			var district = resultDisrtPip[0].feature.properties.DISTRITO;
 			var state = parseInt(resultPip[0].feature.properties.CVE_ENT);
 			
 			if(resultDisrtPip.length) {
-				if(primera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
-					var circum = "Primera";
-				} else if(segunda.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
-					var circum = "Segunda";
-				} else if(tercera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
-					var circum = "Tercera";
-				} else if(cuarta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
-					var circum = "Cuarta";
-				} else if(quinta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
-					var circum = "Quinta";
-				} else {
-					var circum = "";
-				}
-				
-				var results = jQuery(representatives).filter(function (i, value) {
-					return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
-				});
-				
-				var html  = "<p>Representación proporcional</p>";
-				var html2 = "<p>Mayoria relativa</p>";
-				
-				jQuery.each(results, function( index, value ) {
-					if(value.circum == "") {
-						html2 += "<div class='representante-mapa'>";
-						html2 += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
-						html2 += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
-						html2 += "Tipo de elección: " + value.election_type + "<br/>";
-						html2 += "Distrito: " + value.district + "<br/>";
-						html2 += "Estado: " + value.zone_state + "<br/>";
-						html2 += "Partido politico: " + value.politicalParty.name + "<br/>";
-						html2 += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
-						html2 += "</div>";
+				// si el map-info ya tiene informacion lo escondo y lo vuelvo a mostrar
+
+				var info_filling = function(){
+
+					if(primera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+						var circum = "Primera";
+					} else if(segunda.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+						var circum = "Segunda";
+					} else if(tercera.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+						var circum = "Tercera";
+					} else if(cuarta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+						var circum = "Cuarta";
+					} else if(quinta.indexOf(parseInt(resultPip[0].feature.properties.CVE_ENT)) != -1) {
+						var circum = "Quinta";
 					} else {
-						html += "<div class='representante-mapa'>";
-						html += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
-						html += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
-						html += "Tipo de elección: " + value.election_type + "<br/>";
-						html += "Circunscripción: " + value.circum + "<br/>";
-						html += "Estado: " + value.zone_state + "<br/>";
-						html += "Partido politico: " + value.politicalParty.name + "<br/>";
-						html += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
-						html += "</div>";
+						var circum = "";
 					}
-				});
-				
-				jQuery(".map-info-representante-mayoria").html(html2);
-				jQuery(".map-info-representante-proporcional").html(html);
+					
+					var results = jQuery(representatives).filter(function (i, value) {
+						return (value.clave_estado == state && value.circum == circum) || (value.clave_estado == state && value.district == district);
+					});
+					
+					var html  = "<p>Representación proporcional</p>";
+					var html2 = "<p>Mayoria relativa</p>";
+					
+					jQuery.each(results, function( index, value ) {
+						if(value.circum == "") {
+							html2 += "<div class='representante-mapa'>";
+							html2 += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
+							html2 += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
+							html2 += "Tipo de elección: " + value.election_type + "<br/>";
+							html2 += "Distrito: " + value.district + "<br/>";
+							html2 += "Estado: " + value.zone_state + "<br/>";
+							html2 += "Partido politico: " + value.politicalParty.name + "<br/>";
+							html2 += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
+							html2 += "</div>";
+						} else {
+							html += "<div class='representante-mapa'>";
+							html += "<img style='width:50px; height:50px;' src='" + value.avatar_url + "' alt='" + value.name + "'/><br/>";
+							html += "<a href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a><br/>";
+							html += "Tipo de elección: " + value.election_type + "<br/>";
+							html += "Circunscripción: " + value.circum + "<br/>";
+							html += "Estado: " + value.zone_state + "<br/>";
+							html += "Partido politico: " + value.politicalParty.name + "<br/>";
+							html += "<img src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/><br/>";
+							html += "</div>";
+						}
+					});
+					
+					jQuery(".map-info-representante-mayoria").html(html2);
+					jQuery(".map-info-representante-proporcional").html(html);
+				}
+
+				if( jQuery("#map-info").css("display") == "block"){
+					
+
+					jQuery("#map-info").toggle( "slide", { "direction": "right" }, function(){
+						jQuery(".map-info-representante-mayoria").empty()
+						jQuery(".map-info-representante-proporcional").empty()
+						info_filling()
+						jQuery("#map-info").toggle( "slide", { "direction": "right", "duration": 800  });
+					});
+				}else{
+					info_filling()
+					jQuery("#map-info").toggle( "slide", { "direction": "right", "duration": 800  });
+
+				}
+
+
+
 			} else {
 				console.log("Asegurate de estar en territorio mexicano");
 			}
@@ -103,3 +128,5 @@ function getPip(lat, lng) {
 		console.log("Asegurate de estar en territorio mexicano");
 	}
 }
+
+
