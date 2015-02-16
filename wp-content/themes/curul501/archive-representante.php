@@ -126,7 +126,7 @@
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			<!-- titulo-->
 			<div class="container top60">
-				<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
+				<h1 class="entry-title-yellow topEspacio">Integrantes de la Camara</h1>
 				<div class="line-amarilla"> </div>
 		    </div>
 			<!-- fin de titulo-->
