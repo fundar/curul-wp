@@ -25,8 +25,8 @@
 			background: #fff;
   			display: none;
   			height:500px;
-  			min-height:500px;
   			min-width:30%;
+  			min-height:500px;
   			overflow-y: visible;
 			padding: 20px;
 			position: absolute;
