@@ -20,7 +20,7 @@ var rep_obj = {"Botello Montes José Alfredo": "botello-montes-jose-alfredo", "P
                               
 /**/
 	var act =  'buscar_representantes_por_nombre';
-	jQuery("input#nombre-representante-filter").autocomplete({
+//	jQuery("input#nombre-representante-filter").autocomplete({
 	   /*source: function(req, response){
       		jQuery.getJSON(MyAjax.url+'?callback=?&action='+act, req, response);
     	    }*/
