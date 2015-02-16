@@ -5,7 +5,7 @@
 	$selectedPolitical = getParameterValueGET('partido-politico');
 	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
-	$selectedTipo = getParameterValueGET('tipo');
+	$selectedTipo = getParameterValueGET('tipo-representante');
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
@@ -142,7 +142,7 @@
 							   <?php $TiposArray = getTipos(); ?>
 							   <?php foreach($TiposArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>" <?php if($selectedTipo == $value["slug"]) echo 'selected="selected"'?>>
-										<?php echo utf8_encode($value["slug"]);?>
+										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
 						   </select>
@@ -184,7 +184,13 @@
 													</li>
 													
 													<li class="navrepr-left">
-														Cargo: Diputado
+														<?php 
+																$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
+																if($puesto==1)
+																	echo "Cargo: Diputado";
+																else
+																	echo "Cargo: Senador";
+															?>
 													</li>
 													
 													<li class="navrepr-left">
