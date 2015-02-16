@@ -228,8 +228,8 @@ function getDataRepresentatives() {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
 	}
 	
-	if(isset($_GET["tipo"]) and $_GET["tipo"] != "") {
-		$meta_query[] = getRepresentativesByTypeRepresentante($_GET["tipo"]);
+	if(isset($_GET["tipo-representante"]) and $_GET["tipo-representante"] != "") {
+		$meta_query[] = getRepresentativesByTypeRepresentante($_GET["tipo-representante"]);
 	}
 	
 	if($meta_query) {
