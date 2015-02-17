@@ -6,12 +6,13 @@
 	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
 	$selectedTipo = getParameterValueGET('tipo');
+	// getRepresentatives(true);
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
 	get_header();
 	
-	
+
 	?>
 	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
