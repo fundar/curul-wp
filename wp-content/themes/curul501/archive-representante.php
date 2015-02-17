@@ -21,6 +21,28 @@
   		#map{
   			height:500px;
   		}
+
+  		#map-legend{
+			background: #271530;
+  			margin:10px 0px 0px 50px;
+  			padding: 0px 10px;
+			position: absolute;
+			left:0;
+			z-index: 100;
+			display:none;
+			-webkit-box-shadow: 0px 0px 42px 1px rgba(255,255,255,1);
+			-moz-box-shadow: 0px 0px 42px 1px rgba(255,255,255,1);
+			box-shadow: 0px 0px 42px 1px rgba(255,255,255,1);
+  		}
+
+  		#map-legend p{
+			color: #fff;
+   			font-family: oswald;
+   			font-weight: lighter;
+   			padding: 10px;
+   			font-size: 1.5em;
+		}
+
   		#map-info{
 			background: #F4F4F4;
   			display: none;
@@ -120,6 +142,11 @@
   	</style>
   	<script type="text/javascript">
   		jQuery(document).ready(function(){
+  			// aparecer legenda del mapa
+  			setTimeout(function(){ 
+  				jQuery("#map-legend").toggle( "slide", { "direction": "left" });
+  			}, 1500);
+
   			jQuery(".close-map-info").on("click", function(){
 				jQuery("#map-info").toggle( "slide", { "direction": "right" });
 			})
@@ -131,6 +158,10 @@
 		<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
 		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll 
 		   		avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right">
+				<div id="map-legend">
+					<p> Da click en el mapa para conocer a tus representantes </p>
+				</div>
+
 				<div id="map-info">
 					<div class="close-map-info"> x </div>
 					<div class="map-info-representante-mayoria"></div>
