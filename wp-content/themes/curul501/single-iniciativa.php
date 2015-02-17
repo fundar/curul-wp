@@ -16,6 +16,25 @@
 	
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
 
+	<style type="text/css">
+
+		.post-title{
+		}
+
+		#documento_lnk{
+			margin-top:10px;
+   			font-family: oswald;
+   			font-weight: lighter;
+   			font-size: 1.3em;
+   			float:right;
+   			color:#aaa;
+		}
+
+		#documento_lnk:hover{
+   			color:#512B60;
+			
+		}
+	</style>
   
  	
 		<div class="container top60">										     
@@ -152,17 +171,13 @@
 							}
 
 					
-							
-
-
-
-
 												
 						?>
 			<div class='container template-blog template-single-blog '>
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
 				        <header class="entry-content-header">
+						<a href="#" id="documento_lnk"> Ir a cuadro comparativo </a>
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
 						</h1>
@@ -478,6 +493,11 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
+
+		jQuery("#documento_lnk").on("click", function(e){
+			e.preventDefault()
+			jQuery("body").scrollTo("frame")
+		})
 
 		jQuery("#ver_proceso_legislativo").on("click", function(e){
 		    	jQuery("#proceso_legislativo").slideToggle();
