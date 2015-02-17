@@ -52,8 +52,8 @@
   		#map-info{
 			background: #F4F4F4;
   			display: none;
-  			height:500px;
-  			min-height:500px;
+  			height:498px;
+  			min-height:498px;
   			min-width:30%;
   			overflow-y: scroll;
 			padding: 20px;
