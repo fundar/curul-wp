@@ -21,7 +21,12 @@
   		#map{
   			height:500px;
   		}
-
+  		/*
+		#map .leaflet-overlay-pane path,
+		#map .leaflet-marker-icon {
+		  cursor: url("<?php echo get_stylesheet_directory_uri() ?>/images/marker-morado.png") crosshair;
+		}
+		*/
   		#map-legend{
 			background: #271530;
   			margin:10px 0px 0px 50px;
