@@ -5,7 +5,7 @@
 	$selectedPolitical = getParameterValueGET('partido-politico');
 	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
-	$selectedTipo = getParameterValueGET('tipo-representante');
+	$selectedTipo = getParameterValueGET('tipo');
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
@@ -19,7 +19,6 @@
 
 
   		#map{
-  			width: 100%; 
   			height:500px;
   		}
   		#map-info{
@@ -85,6 +84,7 @@
 
   		.rep-data span{
   			color: #888a8a;
+  			font-weight: bold;
 			display: block;
   		}
 
@@ -99,6 +99,24 @@
 			margin-right: 15px;
   		}
 
+  		.search-container{
+  			background: #271530;
+  			width: 100%;
+  			height: 150px;
+  			margin: 0px 0px 20px 0px;
+  			padding: 25px;
+  		}
+
+  		.buscador-principal h1, .buscador-principal #nombre-representante-filter{
+  			font-size:2.3em;
+  		}
+  		
+  		.buscador-principal h1{
+  			float:left; 
+  			margin-right: 10px;
+  			color:#fff;
+  		}
+
   	</style>
   	<script type="text/javascript">
   		jQuery(document).ready(function(){
@@ -108,11 +126,11 @@
   		})
   	</script>
 
-		<div id="" class="avia-fullscreen-slider main_color avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize">
+	<div id="" class="avia-fullscreen-slider main_color avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize">
 		<!-- inicio mapa de representantes-->
 		<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
 		   <div id="av_section_1" class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll 
-		   		avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right" style="background-color: #f4f4f4; ">
+		   		avia-builder-el-0 avia-builder-el-no-sibling av-minimum-height av-minimum-height-100 container_wrap sidebar_right">
 				<div id="map-info">
 					<div class="close-map-info"> x </div>
 					<div class="map-info-representante-mayoria"></div>
@@ -123,21 +141,17 @@
 		</div>
 		<!-- fin mapa de representantes-->
 	</div>
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-			<!-- titulo-->
-			<div class="container top60">
-				<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
-				<div class="line-amarilla"> </div>
-		    </div>
-			<!-- fin de titulo-->
-		
-			<!--Inicio filtros representantes -->
-			<div class="container box-menu">
+	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		<!-- titulo-->
+		<div class="container top60">
+			<div class="search-container container box-menu">
 				<div class="search-table">
+					<div class="buscador-principal">
+					   <h1> ¡BUSCA TU REPRESENTANTE! </h1> 
+					   <input type="text" name="slug" id="nombre-representante-filter" placeholder="Nombre del representante">  
+				   	</div>
+
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
-						<div style="float:left; margin-right: 10px;">
-						   <input type="text" name="slug" id="nombre-representante-filter" placeholder="Nombre del representante">  
-					   </div>
 
 					   <div id="filter">
 						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
@@ -156,7 +170,7 @@
 							   <option value="">Estados</option>
 							   <?php $statesArray = getStates(); ?>
 							   <?php foreach($statesArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedState == utf8_encode($value["name"])) echo 'selected="selected"'?>>
+									<option ?full_name=Pérez+de+Alba+José+Noel&partido-politico=&estado=&comision=&tipo-eleccion=&tipo-representante=value="<?php echo utf8_encode($value["name"]);?>" <?php if($selectedState == utf8_encode($value["name"])) echo 'selected="selected"'?>>
 										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
@@ -194,7 +208,7 @@
 							   <?php $TiposArray = getTipos(); ?>
 							   <?php foreach($TiposArray as $value) { ?>
 									<option value="<?php echo $value["slug"];?>" <?php if($selectedTipo == $value["slug"]) echo 'selected="selected"'?>>
-										<?php echo utf8_encode($value["name"]);?>
+										<?php echo utf8_encode($value["slug"]);?>
 									</option>
 								<?php } ?>
 						   </select>
@@ -205,138 +219,133 @@
 						   <input type="submit" value="Filtrar" id="submit-filter"/>
 					   </div>
 					</form>				
+
 				</div>
 			</div>
-			<!-- Fin filtros representantes -->				
-		<div class='container_wrap container_wrap_first main_color fullsize'>
-			<div class='container'>
-				<main class='template-page content  av-content-full alpha units'>
-					<?php if($data) { ?>
-						<?php if ($data->have_posts()) { ?>
-							<?php while ($data->have_posts()) : $data->the_post(); ?>
-								<!--Inicio representantes-->
-								<article class="post type-post post-archive">
-										<div class="post_foto">
-											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
-											<img src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
-										</div>										
-											<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
-												<?php the_title(); ?>
-											</a>
-											<div id="nav-representantes">
-												<ul>
-													<li>
-														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
-														<?php echo utf8_encode($politicalParty["name"]);?>
-													</li>
-													
-													<li class="navrepr-left">
-														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
-													</li>
-													
-													<li class="navrepr-left">
-														<?php 
-																$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
-																if($puesto==1)
-																	echo "Cargo: Diputado";
-																else
-																	echo "Cargo: Senador";
-															?>
-													</li>
-													
-													<li class="navrepr-left">
-														Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
-													</li>
-													
-													<li class="navrepr-left no-borde">
-														<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
-														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
-														<span><?php echo $initiatives["count"];?></span> Iniciativas
-													</li>
-												</ul>
-											</div>
-										
-									
-								</article><!--fin representantes-->								
-								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-									<div class="share-social-representante ">
-										<?php avia_social_share_links(); ?>
-									</div>
-								</div>
-							<?php endwhile; ?>
-						<?php } else { ?>
-							<p>No se encontraron representantes con esta busqueda</p>
-						<?php } ?>
-					<?php } else { ?>
-						<?php query_posts($query_string.'&orderby=title&order=ASC'); ?>
-						<?php if (have_posts()) { ?>
-							<?php while (have_posts()) : the_post(); ?>
-								<!--Inicio representantes-->
-								<article class="post type-post post-archive">
-										<div class="post_foto">
-											<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
-											<img src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
-										</div>										
-											<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
-												<?php the_title(); ?>
-											</a>
-											<div id="nav-representantes">
-												<ul>
-													<li>
-														<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
-														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
-														<?php echo utf8_encode($politicalParty["name"]);?>
-													</li>
-													
-													<li class="navrepr-left">
-														<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
-													</li>
-													
-													<li class="navrepr-left">
+
+			<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
+			<div class="line-amarilla"> </div>
+	    </div>
+		<!-- fin de titulo-->
+	
+		<!--Inicio filtros representantes -->
+		<!-- Fin filtros representantes -->				
+	<div class='container_wrap container_wrap_first main_color fullsize'>
+		<div class='container'>
+			<main class='template-page content  av-content-full alpha units'>
+				<?php if($data) { ?>
+					<?php if ($data->have_posts()) { ?>
+						<?php while ($data->have_posts()) : $data->the_post(); ?>
+							<!--Inicio representantes-->
+							<article class="post type-post post-archive">
+									<div class="post_foto">
+										<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
+										<img src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+									</div>										
+										<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+											<?php the_title(); ?>
+										</a>
+										<div id="nav-representantes">
+											<ul>
+												<li>
+													<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
+													<?php echo utf8_encode($politicalParty["name"]);?>
+												</li>
 												
-															<?php 
-																$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
-																if($puesto==1)
-																	echo "Cargo: Diputado";
-																else
-																	echo "Cargo: Senador";
-															?>
-													</li>
-													
-													<li class="navrepr-left">
-														Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
-													</li>
-													
-													<li class="navrepr-left no-borde">
-														<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
-														<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
-														<span><?php echo $initiatives["count"];?></span> Iniciativas
-													</li>
-												</ul>
-											</div>
-										
+												<li class="navrepr-left">
+													<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+												</li>
+												
+												<li class="navrepr-left">
+													Cargo: Diputado
+												</li>
+												
+												<li class="navrepr-left">
+													Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+												</li>
+												
+												<li class="navrepr-left no-borde">
+													<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
+													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
+													<span><?php echo $initiatives["count"];?></span> Iniciativas
+												</li>
+											</ul>
+										</div>
 									
-								</article><!--fin representantes-->								
-								<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-									<div class="share-social-representante ">
-										<?php avia_social_share_links(); ?>
-									</div>
+								
+							</article><!--fin representantes-->								
+							<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+								<div class="share-social-representante ">
+									<?php avia_social_share_links(); ?>
 								</div>
-							<?php endwhile; ?>
-						<?php } ?>
+							</div>
+						<?php endwhile; ?>
+					<?php } else { ?>
+						<p>No se encontraron representantes con esta busqueda</p>
 					<?php } ?>
-					
-					<?php
-						if($data) {
-							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav', $data) . "</div>";
-						} else {
-							echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
-						}
-					?>
-				</main>
-			</div><!--end container-->
-		</div><!-- close default .container_wrap element -->
+				<?php } else { ?>
+					<?php query_posts($query_string.'&orderby=title&order=ASC'); ?>
+					<?php if (have_posts()) { ?>
+						<?php while (have_posts()) : the_post(); ?>
+							<!--Inicio representantes-->
+							<article class="post type-post post-archive">
+									<div class="post_foto">
+										<?php $avatar_url = get_post_meta($post->ID, 'avatar_url', true); ?>
+										<img src="<?php echo $avatar_url;?>" class="attachment-post-thumbnail wp-post-image" alt="Avatar representante">
+									</div>										
+										<a class="representantes-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+											<?php the_title(); ?>
+										</a>
+										<div id="nav-representantes">
+											<ul>
+												<li>
+													<?php $politicalParty = getPoliticalParty(get_post_meta($post->ID, 'wp_id_political_party', true)); ?>
+													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/<?php echo $politicalParty["url_logo"];?>"> 
+													<?php echo utf8_encode($politicalParty["name"]);?>
+												</li>
+												
+												<li class="navrepr-left">
+													<?php echo get_post_meta($post->ID, 'wp_election_type', true); ?>
+												</li>
+												
+												<li class="navrepr-left">
+													Cargo: Diputado
+												</li>
+												
+												<li class="navrepr-left">
+													Entidad: <?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
+												</li>
+												
+												<li class="navrepr-left no-borde">
+													<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
+													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
+													<span><?php echo $initiatives["count"];?></span> Iniciativas
+												</li>
+											</ul>
+										</div>
+									
+								
+							</article><!--fin representantes-->								
+							<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
+								<div class="share-social-representante ">
+									<?php avia_social_share_links(); ?>
+								</div>
+							</div>
+						<?php endwhile; ?>
+					<?php } ?>
+				<?php } ?>
+				
+				<?php
+					if($data) {
+						echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav', $data) . "</div>";
+					} else {
+						echo "<div class='{$blog_style}'>" . avia_pagination2('', 'nav') . "</div>";
+					}
+				?>
+			</main>
+		</div><!--end container-->
+	</div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
 
 <script type="text/javascript">
