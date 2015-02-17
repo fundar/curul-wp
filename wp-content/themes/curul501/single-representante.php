@@ -97,6 +97,8 @@
 							$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
 							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
+							$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
+
 							
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
@@ -297,6 +299,8 @@
 		</div>
 		
 		<!-- Mapa representantes -->
+		<?php if($puesto==1) {           ?>
+		
 		<?php if($district == "") { ?>
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
@@ -306,7 +310,13 @@
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
 			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "<?php echo $district;?>"); }); </script>
 		<?php } ?>
-		
+		<?php }  else { ?>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
+		<?php } ?>
+
+				
+
 		<div id="map" style="width: 235px; height:323px;"></div>
 		<!-- Fin Mapa representantes -->
 		
