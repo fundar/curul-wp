@@ -141,16 +141,10 @@
 		</div>
 		<!-- fin mapa de representantes-->
 	</div>
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-			<!-- titulo-->
-			<div class="container top60">
-				<h1 class="entry-title-yellow topEspacio">Integrantes de la Camara</h1>
-				<div class="line-amarilla"> </div>
-		    </div>
-			<!-- fin de titulo-->
-		
-			<!--Inicio filtros representantes -->
-			<div class="container box-menu">
+	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		<!-- titulo-->
+		<div class="container top60">
+			<div class="search-container container box-menu">
 				<div class="search-table">
 					<div class="buscador-principal">
 					   <h1> ¡BUSCA TU REPRESENTANTE! </h1> 
