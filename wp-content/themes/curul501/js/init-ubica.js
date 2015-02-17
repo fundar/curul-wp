@@ -8,6 +8,14 @@ var quinta  = [6, 13, 15, 16];
 function setMap() {
 	var map = L.map('map').setView([22.674847351188536, -101.77734374999999], 5);
 	
+	// Disable drag and zoom handlers.
+	map.dragging.disable();
+	map.touchZoom.disable();
+	map.doubleClickZoom.disable();
+	map.scrollWheelZoom.disable();
+
+	if (map.tap) map.tap.disable();
+
 	L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 		maxZoom: 15,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
