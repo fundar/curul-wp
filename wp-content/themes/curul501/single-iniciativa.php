@@ -493,12 +493,6 @@
 <?php get_footer(); ?>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-
-		jQuery("#documento_lnk").on("click", function(e){
-			e.preventDefault()
-			jQuery("body").scrollTo("frame")
-		})
-
 		jQuery("#ver_proceso_legislativo").on("click", function(e){
 		    	jQuery("#proceso_legislativo").slideToggle();
 				return false;		    	
