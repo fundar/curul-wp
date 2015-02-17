@@ -31,11 +31,26 @@ function setMap() {
 		
 		layer.on('click', function(e) {
 			map.removeLayer(sMarker);
-			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { CVE_ENT : feature.properties.CVE_ENT, NOMBRE : feature.properties.NOMBRE }).addTo(map);
+			
+			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { 
+				icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
+				CVE_ENT : feature.properties.CVE_ENT, 
+				NOMBRE : feature.properties.NOMBRE
+			}).addTo(map);
+
 			getPip(e.latlng.lat, e.latlng.lng);
 			map.setView(new L.LatLng(e.latlng.lat, e.latlng.lng), map._zoom);
 		});
 	}
+
+	/*
+		myLayer.on('click', function(e) {
+		    resetColors();
+		    e.layer.feature.properties['old-color'] = e.layer.feature.properties['marker-color'];
+		    myLayer.setGeoJSON(geoJson);
+		});
+
+	*/
 	
 	var geojson = L.geoJson(GeoJson, {
 		onEachFeature: onEachFeature
