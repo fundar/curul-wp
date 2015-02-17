@@ -177,7 +177,7 @@
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
 				        <header class="entry-content-header">
-						<a href="#" id="documento_lnk"> Ir a cuadro comparativo </a>
+						<a href="#documento" id="documento_lnk"> Ir a cuadro comparativo </a>
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
 						</h1>
