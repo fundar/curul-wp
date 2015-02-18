@@ -163,7 +163,7 @@
 		    left: 0;		
 		    padding: 0 !important;
 		    text-transform: uppercase;
-		    width: 5%;
+		    width: 51px;
 		}
 
 }
