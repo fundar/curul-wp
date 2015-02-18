@@ -34,9 +34,26 @@
    			color:#512B60;
 			
 		}
+
+		<?php 
+			//if we are locked via IP set the fid variable to be the IP address, otherwise log the member ID
+			if(get_option('epicred_ip') == 'yes'){
+				$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
+				$fid = "'" . $ipAddr . "'";	
+			}else{
+				$fid = $current_user->ID;
+			}
+
+			$query = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid AND epicred_id = $post->ID";
+			$al = $wpdb->get_var($query);
+			if( is_null($al) ){
+		?>
+			.score.dislikes { display: none; }
+
+    	<?php } ?>
+
 	</style>
-  
- 	
+		
 		<div class="container top60">										     
 						<h1 class="entry-title-yellow">Iniciativas</h1>
 						<div class="line-amarilla"> </div>
@@ -213,9 +230,10 @@
 			<div class="sidebar-votos">
 				<p class="vota">Vota</p>
 				<p class="encurul"> en curul</p>
+				<p class="total-participaciones"> Total de participaciones <br> <?php echo get_post_meta($post->ID, 'wp_total_participaciones', true); ?> </p>
 			</div>
 			<div class="textwidget share-sidebar-vota">
-			         <?php avia_social_share_links(); ?>
+			    <?php avia_social_share_links(); ?>
 			</div>
 			<!-- empieza sidebar-->
 			<div class="textwidget sb">
@@ -384,6 +402,17 @@
 			         
 			      </tbody>
 			</table>
+
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				var id = <?php echo $post->ID;  ?>;
+				var favor =  <?php echo get_post_meta($post->ID, 'wp_total_a_favor', true); ?>;
+				var contra =  <?php echo get_post_meta($post->ID, 'wp_total_en_contra', true); ?>;
+
+				jQuery(".score-" + id ).html( favor + " - " + contra);
+			})
+		</script>  
+ 	
 
 			  <script type="text/javascript">
 

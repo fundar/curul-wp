@@ -50,6 +50,7 @@ jQuery(document).ready(function ($) {
             current: curr,
         };
         
+       
         var l = $.ajax({
             url: EpicAjax.ajaxurl,
             type: "POST",
@@ -59,7 +60,8 @@ jQuery(document).ready(function ($) {
         
         l.done(function (c) {
             var id = c.poll;
-			$(".score-" + id).html(c.vote);
+			      $(".score-" + id).html((c.favor || 0) + " - " + (c.contra || 0));
+            $(".score-" + id).fadeIn("slow")
         });
         
         l.fail(function (d, c) {
