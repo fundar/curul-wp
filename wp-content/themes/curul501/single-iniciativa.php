@@ -406,8 +406,16 @@
 		<script type="text/javascript">
 			jQuery(document).ready(function(){
 				var id = <?php echo $post->ID;  ?>;
-				var favor =  <?php echo get_post_meta($post->ID, 'wp_total_a_favor', true); ?>;
-				var contra =  <?php echo get_post_meta($post->ID, 'wp_total_en_contra', true); ?>;
+				var favor =  <?php 
+					if( get_post_meta($post->ID, 'wp_total_a_favor', true) ){
+						echo get_post_meta($post->ID, 'wp_total_a_favor', true); 
+					}else echo 0;
+				?>;
+				var contra = <?php 
+					if( get_post_meta($post->ID, 'wp_total_en_contra', true) ){
+						echo get_post_meta($post->ID, 'wp_total_en_contra', true); 
+					}else echo 0;
+				?>;
 
 				jQuery(".score-" + id ).html( favor + " - " + contra);
 			})
