@@ -238,6 +238,9 @@
 						}else echo 0;
 					?> 
 				</p>
+			</div>  
+			<div class="textwidget share-sidebar-vota">
+			    <?php avia_social_share_links(); ?>
 			</div>
 			<!-- empieza sidebar-->
 			<div class="textwidget sb">
