@@ -230,10 +230,14 @@
 			<div class="sidebar-votos">
 				<p class="vota">Vota</p>
 				<p class="encurul"> en curul</p>
-				<p class="total-participaciones"> Total de participaciones <br> <?php echo get_post_meta($post->ID, 'wp_total_participaciones', true); ?> </p>
-			</div>
-			<div class="textwidget share-sidebar-vota">
-			    <?php avia_social_share_links(); ?>
+				<p class="total-participaciones"> 
+					Total de participaciones <br> 
+					<?php 
+						if (get_post_meta($post->ID, 'wp_total_participaciones', true)){
+							echo get_post_meta($post->ID, 'wp_total_participaciones', true);
+						}else echo 0;
+					?> 
+				</p>
 			</div>
 			<!-- empieza sidebar-->
 			<div class="textwidget sb">
