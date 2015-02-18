@@ -85,6 +85,13 @@
 			font-weight: lighter;
   		}
 
+  		.sep{
+  			width: 100%;
+  			height:1px;
+  			background: #432B4D;
+  			margin: -20px 0px 25px 0px ;
+  		}
+
   		.representante-mapa{
   			margin-bottom:25px;
   		}
@@ -175,8 +182,17 @@
 
 				<div id="map-info">
 					<div class="close-map-info"> x </div>
-					<div class="map-info-representante-mayoria"></div>
-					<div class="map-info-representante-proporcional"></div>
+					<div class="diputados">
+						<h1> Diputados </h1>
+						<div class="map-info-representante-mayoria"></div>
+						<div class="map-info-representante-proporcional"></div>
+					</div>
+					<div class="sep"></div>
+					<div class="senadores">
+						<h1> Senadores </h1>
+						<div class="map-info-representante-mayoria"></div>
+						<div class="map-info-representante-proporcional"></div>
+					</div>
 				</div>
 				<div id="map"></div>
 			</div>
