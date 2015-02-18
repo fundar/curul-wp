@@ -1195,7 +1195,18 @@ ul.unstyled {
 .score2 {
      float: left;
 }
-
+input#enviar-representante{
+    background-image: url("images/lupa.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    height: 50px;
+    vertical-align: middle;
+    width: 50px;
+    text-indent: 10000px;
+    background-color: #a59aaa;
+    border: 1px solid #a59aaa; 
+}
 /** representantes **/
 .no-borde{
     border: 0px solid rgba(153, 145, 168, 0.3) !important; 
