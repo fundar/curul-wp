@@ -182,13 +182,12 @@
 		</div>
 		<!-- fin mapa de representantes-->
 	</div>
-	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		<!-- titulo-->
-		<div class="container top60">
-			<div class="search-container container box-menu">
+	<div id="after_layer_slider_1" class="main_color container_wrap fullsize" style="background: none repeat scroll 0% 0% rgb(39, 21, 48);">
+		<div class="container">
+					<div class="search-container container box-menu">
 				<div class="search-table">
 					<div class="buscador-principal">
-					   <h1> ¡BUSCA TU REPRESENTANTE! </h1> 
+					   <h1>¡Busca tu Representante!</h1> 
 					   <input type="text" name="slug" id="nombre-representante" placeholder="Nombre del representante">  
 				   	</div>
 
@@ -263,8 +262,12 @@
 
 				</div>
 			</div>
-
-			<h1 class="entry-title-yellow topEspacio">Integrantes de la Camara</h1>
+		</div>			
+	</div>
+	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+		<!-- titulo-->
+		<div class="container top60">
+			<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
 			<div class="line-amarilla"> </div>
 	    </div>
 		<!-- fin de titulo-->
