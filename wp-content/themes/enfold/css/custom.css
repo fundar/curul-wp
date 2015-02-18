@@ -633,7 +633,12 @@ li.hand-down {
     background: url("images/hand-down.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
     padding-top: 0;
     }
+div.enCamara_Iniciativas {
+    color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    font: 0.88em/1em colaborate-regular;
 
+}
 div.enCamara_Iniciativas span {
     background-color: #bdafc2;
     border-radius: 10px;
