@@ -289,7 +289,7 @@
 		</div>
 	 
 		<!-- titulo-->
-		<div class="container top60">
+		<div class="container top40">
 			<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
 			<div class="line-amarilla"> </div>
 	    </div>
