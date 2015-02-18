@@ -163,6 +163,7 @@
   		})
   	</script>
 
+	<?php if( empty($_GET) ) { ?>
 	<div id="" class="avia-fullscreen-slider main_color avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize">
 		<!-- inicio mapa de representantes-->
 		<div class="forcefullwidth_wrapper_tp_banner" style="position: relative; width: 100%; height: auto; margin-bottom: 0px;">
@@ -182,6 +183,7 @@
 		</div>
 		<!-- fin mapa de representantes-->
 	</div>
+	<?php } ?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		<!-- titulo-->
 		<div class="container top60">
