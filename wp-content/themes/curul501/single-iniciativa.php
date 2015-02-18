@@ -195,6 +195,7 @@
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
 							<?php if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } ?>
 							<p><?php echo $htmlpresentadas; ?></p> </li>
+							<li class="bullet-arrow">En la C&aacute;mara de: <span>Diputados</span></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
