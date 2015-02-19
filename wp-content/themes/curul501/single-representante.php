@@ -265,7 +265,7 @@
 					<?php } else { ?>
 						Distrito<p><?php echo $district;?></p>
 					<?php } ?>
-							<?php }else { if($state!=="N/A"){ ?>
+							<?php }else { if($state!==""){ ?>
 											Estado<p><?php echo get_post_meta($post->ID, 'wp_zone_state', true); }?></p>
 								<?php } ?>
 
