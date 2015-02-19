@@ -421,7 +421,7 @@
 			}
 
 		</style>
-		<div id="graficas_content" style="display:block">
+		<div id="graficas_content" >
 			<div id="pie_chart"></div>
 
 			<div id="bartitle">
@@ -508,6 +508,7 @@
 		
 		<script>
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
+			
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
 			var last_status_slug =  <?php echo $last_status_slug ; ?>;
 			console.log(last_status_slug)
