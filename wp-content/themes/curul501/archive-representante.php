@@ -137,12 +137,12 @@
   		.search-container{
   			background: #271530;
   			width: 100%;
-  			height: 150px;
-  			margin: 0px 0px 20px 0px;
-  			padding: 25px;
+  			height: auto;
+  			margin: 0;
+  			padding: 30px 0 10px;
   		}
 
-  		.buscador-principal h1, .buscador-principal input#nombre-representante{
+  		.buscador-principal h1{
   			font-size:2.3em;
   		}
   		
@@ -153,8 +153,28 @@
   		}
 
   		.buscador-principal input#nombre-representante{
-  			width: 65%;
+  			width: 69%;
+			font-size:1.5em;
+			float:left;
+			height:50px;
+			background: none repeat scroll 0 0 rgba(250, 250, 250, 0.8) !important;
+			border:0px solid;
   		}
+		.enviar-representante {
+		    background: none repeat scroll 0 0 #a59aaa !important;
+		    border: 0 solid;
+		    color: rgba(41, 23, 50, 1) !important;
+		    float: left;
+		    font: 14px "colaborate-regular";
+		    height: 50px;
+		    left: 0;		
+		    padding: 0 !important;
+		    text-transform: uppercase;
+		    width: 51px;
+		}
+
+}
+
 
   	</style>
   	<script type="text/javascript">
@@ -206,10 +226,17 @@
 			<div class="search-container container box-menu">
 				<div class="search-table">
 					<div class="buscador-principal">
-					   <h1> ¡BUSCA TU REPRESENTANTE! </h1> 
-					   <input type="text" name="slug" id="nombre-representante" placeholder="Nombre del representante">  
-				   	</div>
+					   <h1>¡Busca tu Representante!</h1> 
+					   <input type="text" name="slug" id="nombre-representante" placeholder="Nombre del representante">
+					   <input type="submit" id="enviar-representante" type="submit" value="Enviar"></input>
 
+				   	</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+	        <div class="container top60">
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
 
 					   <div id="filter">
@@ -278,11 +305,11 @@
 						   <input type="submit" value="Filtrar" id="submit-filter"/>
 					   </div>
 					</form>				
-
-				</div>
-			</div>
-
-			<h1 class="entry-title-yellow topEspacio">Integrantes de la Camara</h1>
+		</div>
+	 
+		<!-- titulo-->
+		<div class="container top40">
+			<h1 class="entry-title-yellow">Integrantes de la Camara</h1>
 			<div class="line-amarilla"> </div>
 	    </div>
 		<!-- fin de titulo-->

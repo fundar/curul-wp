@@ -180,7 +180,7 @@
 												<div class="entry-content no-voto">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
-												         </p>
+												         </p><div class="enCamara_Iniciativas">En la C&aacute;mara de: <span>Diputados</span></div><p>En la cámara de: Diputados</p>
 													 <?php the_excerpt(); ?> 
                           
 												</div>
@@ -323,6 +323,7 @@
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
+													 <div class="enCamara_Iniciativas">En la C&aacute;mara de: <span>Diputados</span></div>
 													 <?php the_excerpt(); ?> 
                           
 												</div>
