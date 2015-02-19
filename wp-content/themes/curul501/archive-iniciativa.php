@@ -388,13 +388,13 @@
 												</div>
 											</div>
 											<div class="vta-curul-iniciativas">
-												<span>Votaci&oacute;n en Curul 501 </span>
+												<span>
+													Votos en Curul 501:
+													<b style="font-size: 1.2em; font-family: oswald; font-weight: normal; margin-left: 5px ">
+														<?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?> 
+													</b>
+												</span>
 												<div class="box"><?php avia_social_share_links(); ?></div>
-												
-												
-												
-												
-												
 											</div>
 
 											
