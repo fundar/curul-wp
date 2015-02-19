@@ -270,14 +270,14 @@
 					</p>
 				</li>
 							
-				<li class="bullet-arrow">
 				<?php if($puesto == 1) { ?>
 					<?php if($district == "") { ?>
+								<li class="bullet-arrow">
 						Circunscripción<p><?php echo $circum;?></p>
+								</li>
 					<?php } else { ?>
-						Distrito<p><?php echo $district;?></p>
+								<li class="bullet-arrow">Distrito<p><?php echo $district;?></p></li>
 					<?php } ?>
-					</li>
 					<?php }else { if($state!==""){ ?>
 								<li class="bullet-arrow">
 											Estado<p><?php echo get_post_meta($post->ID, 'wp_zone_state', true); }?></p>
@@ -330,11 +330,12 @@
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
 			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "<?php echo $district;?>"); }); </script>
 		<?php } ?>
-		<?php }  else { ?>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
+		<?php }  else {  ?>
+		<?php if($state!==""){ ?>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
 		<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>"); }); </script>
-		<?php } ?>
+		<?php } }?>
 
 				
 
