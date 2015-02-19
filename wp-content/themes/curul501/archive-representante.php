@@ -171,18 +171,7 @@
 
 
   	</style>
-  	<script type="text/javascript">
-  		jQuery(document).ready(function(){
-  			// aparecer legenda del mapa
-  			setTimeout(function(){ 
-  				jQuery("#map-legend").toggle( "slide", { "direction": "left" });
-  			}, 1500);
-
-  			jQuery(".close-map-info").on("click", function(){
-				jQuery("#map-info").toggle( "slide", { "direction": "right" });
-			})
-  		})
-  	</script>
+  	
 
 	<?php if( empty($_GET) ) { ?>
 	<div id="" class="avia-fullscreen-slider main_color avia-builder-el-0 el_before_av_section avia-builder-el-first container_wrap fullsize">
@@ -492,6 +481,20 @@
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/representatives.js" type="text/javascript"></script>
 <script type="text/javascript">
 	jQuery(document).ready( function () {
-		setMap();
+		var map  = setMap();
+
+		// aparecer legenda del mapa
+		setTimeout(function(){ 
+			jQuery("#map-legend").toggle( "slide", { "direction": "left" });
+		}, 1500);
+
+		/*Hacer búsqueda en el mapa a partir del hash*/
+  		hash_to_search(map);
+		
+
+
+		jQuery(".close-map-info").on("click", function(){
+			jQuery("#map-info").toggle( "slide", { "direction": "right" });
+		})
 	});
 </script>

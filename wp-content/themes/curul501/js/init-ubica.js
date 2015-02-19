@@ -55,6 +55,7 @@ function setMap() {
 	var geojson = L.geoJson(GeoJson, {
 		onEachFeature: onEachFeature
 	}).addTo(map);
+	return map;
 }
 
 
@@ -65,8 +66,9 @@ function getPip(lat, lng) {
     if(resultPip.length) {
 		jQuery.getJSON("../wp-content/themes/curul501/js/geojson/estado-" + resultPip[0].feature.properties.CVE_ENT + ".geojson")
 		.success(function (distritosGeoJson) {
-			window.location.hash = 'something';
-			console.log("#/lat=" + lat + ",lng=" + lng)
+			// Agregar hash con las coordenadas para compartir
+			window.location.hash = lat + "," + lng
+			
 			var distritosLayer = L.geoJson(distritosGeoJson);
 			var resultDisrtPip = leafletPip.pointInLayer([lng, lat], distritosLayer);
 			var district = resultDisrtPip[0].feature.properties.DISTRITO;
@@ -108,8 +110,8 @@ function getPip(lat, lng) {
 									dip2 += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									dip2 += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									dip2 += "		<span class='zona'> Distrito: " + value.district + " </span>";
-									dip2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>";
-									dip2 += "	</div> <br>";
+									dip2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>  <br>";
+									dip2 += "	</div>";
 									dip2 += "	<div class='part-data'>";
 									dip2 += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
 									dip2 += "		<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
@@ -121,8 +123,8 @@ function getPip(lat, lng) {
 									dip += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									dip += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									dip += "		<span class='zona'> Circunscripción: " + value.circum + "</span>";
-									dip += "		<span class'estado'> Estado: " + value.zone_state + "</span>";
-									dip += "	</div> <br>";
+									dip += "		<span class'estado'> Estado: " + value.zone_state + "</span>  <br>";
+									dip += "	</div>";
 									dip += "	<div class='part-data'>";
 									dip += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
 									dip += "		<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
@@ -138,8 +140,8 @@ function getPip(lat, lng) {
 									sen += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									sen += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									sen += "		<span class='zona'> Circunscripción: " + value.circum + "</span>";
-									sen += "		<span class'estado'> Estado: " + value.zone_state + "</span>";
-									sen += "	</div> <br>";
+									sen += "		<span class'estado'> Estado: " + value.zone_state + "</span>  <br>";
+									sen += "	</div>";
 									sen += "	<div class='part-data'>";
 									sen += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
 									sen += "		<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
@@ -151,8 +153,8 @@ function getPip(lat, lng) {
 									sen2 += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									sen2 += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									sen2 += "		<span class='zona'> Distrito: " + value.district + " </span>";
-									sen2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>";
-									sen2 += "	</div> <br>";
+									sen2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>  <br>";
+									sen2 += "	</div>";
 									sen2 += "	<div class='part-data'>";
 									sen2 += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
 									sen2 += "		<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
@@ -194,3 +196,12 @@ function getPip(lat, lng) {
 }
 
 
+function hash_to_search(map){
+	var latlng = (window.location.hash).split("#")[1].split(",")
+
+	sMarker = L.marker( latlng,{ 
+		icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
+	}).addTo(map);
+
+	getPip(latlng[0], latlng[1])  	
+}
