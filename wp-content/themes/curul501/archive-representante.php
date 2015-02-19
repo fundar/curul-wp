@@ -341,7 +341,7 @@
 												<li class="navrepr-left no-borde">
 													<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
 													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
-													<span><?php echo $initiatives["count"];?></span> Iniciativas
+													<span><?php echo $initiatives["count"];?></span> Iniciativas en Curul501
 												</li>
 											</ul>
 										</div>
@@ -398,7 +398,7 @@
 												<li class="navrepr-left no-borde">
 													<?php $initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true)); ?>
 													<img class="icono-repre" src="<?php echo get_stylesheet_directory_uri() ?>/images/icono-iniciativas.png">
-													<span><?php echo $initiatives["count"];?></span> Iniciativas
+													<span><?php echo $initiatives["count"];?></span> Iniciativas en Curul501
 												</li>
 											</ul>
 										</div>
