@@ -35,22 +35,6 @@
 			
 		}
 
-		<?php /*
-			//if we are locked via IP set the fid variable to be the IP address, otherwise log the member ID
-			if(get_option('epicred_ip') == 'yes'){
-				$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
-				$fid = "'" . $ipAddr . "'";	
-			}else{
-				$fid = $current_user->ID;
-			}
-
-			$query = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid AND epicred_id = $post->ID";
-			$al = $wpdb->get_var($query);
-			if( is_null($al) ){
-		?>
-			.score { display: none; }
-
-    	<?php } */?>
 
 	</style>
 		
@@ -410,25 +394,6 @@
 			         
 			      </tbody>
 			</table>
-
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				var id = <?php echo $post->ID;  ?>;
-				var favor =  <?php 
-					if( get_post_meta($post->ID, 'wp_total_a_favor', true) ){
-						echo get_post_meta($post->ID, 'wp_total_a_favor', true); 
-					}else echo 0;
-				?>;
-				var contra = <?php 
-					if( get_post_meta($post->ID, 'wp_total_en_contra', true) ){
-						echo get_post_meta($post->ID, 'wp_total_en_contra', true); 
-					}else echo 0;
-				?>;
-
-				jQuery(".score-" + id ).html( favor + " - " + contra);
-			})
-		</script>  
- 	
 
 			  <script type="text/javascript">
 
