@@ -166,8 +166,14 @@
 								<?php if($resume != "") { ?>
 									<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
 										<?php 
+											function limpiar($string) {
+											$string = trim($string);
+											$string = str_replace('\n','', $string);
+											return $string;
+															}
+															limpiar($resume);
+											foreach($resume as $value) {
 										
-										foreach($resume as $value) {
 											$resArray = explode("_____", $value->trayectoria);
 											
 											if($resArray[0] == "Trayectoria administrativa") {
