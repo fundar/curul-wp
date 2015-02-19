@@ -259,11 +259,16 @@
 				</li>
 							
 				<li class="bullet-arrow">
+				<?php if($puesto == 1) { ?>
 					<?php if($district == "") { ?>
 						Circunscripción<p><?php echo $circum;?></p>
 					<?php } else { ?>
 						Distrito<p><?php echo $district;?></p>
 					<?php } ?>
+							<?php }else { if($state==""){ echo "Todo el pais";  } else { ?>
+											Estado<p><?php echo $state; }?></p>
+								<?php } ?>
+
 				</li>
 				
 				<li class="bullet-arrow">Correo
