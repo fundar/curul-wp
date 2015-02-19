@@ -191,7 +191,7 @@
 					<div class="senadores">
 						<h1> Senadores </h1>
 						<div class="map-info-representante-mayoria"></div>
-						<div class="map-info-representante-proporcional"></div>
+						<div class="map-info-representante-minoria"></div>
 					</div>
 				</div>
 				<div id="map"></div>

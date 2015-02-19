@@ -35,7 +35,7 @@
 			
 		}
 
-		<?php 
+		<?php /*
 			//if we are locked via IP set the fid variable to be the IP address, otherwise log the member ID
 			if(get_option('epicred_ip') == 'yes'){
 				$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
@@ -48,9 +48,9 @@
 			$al = $wpdb->get_var($query);
 			if( is_null($al) ){
 		?>
-			.score.dislikes { display: none; }
+			.score { display: none; }
 
-    	<?php } ?>
+    	<?php } */?>
 
 	</style>
 		
