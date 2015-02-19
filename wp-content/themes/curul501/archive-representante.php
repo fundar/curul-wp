@@ -72,7 +72,6 @@
 
   		.map-info-representante-mayoria, .map-info-representante-proporcional{
   			max-height:48%;
-  			margin-bottom: 35px;
   		}
 
   		#map-info .close-map-info{
@@ -85,16 +84,7 @@
 			font-weight: lighter;
   		}
 
-  		.sep{
-  			width: 100%;
-  			height:1px;
-  			background: #432B4D;
-  			margin: -20px 0px 25px 0px ;
-  		}
 
-  		.representante-mapa{
-  			margin-bottom:25px;
-  		}
   		.representante-mapa .rep-data{
   			display: block;
 			padding-bottom: 15px;
@@ -127,6 +117,10 @@
   			display: block;
 			padding-bottom: 15px;
 			border-bottom: solid 1px #eee;
+		}
+
+		.senadores{
+			margin-top: 20px;
 		}
 
   		.part-data .img-partido{
@@ -207,7 +201,6 @@
 						<div class="map-info-representante-mayoria"></div>
 						<div class="map-info-representante-proporcional"></div>
 					</div>
-					<div class="sep"></div>
 					<div class="senadores">
 						<h1> Senadores </h1>
 						<div class="map-info-representante-mayoria"></div>
