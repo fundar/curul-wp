@@ -155,6 +155,7 @@
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							
+									<?php if($puesto==1) {  ?>
 							<li class="bullet-arrow">Iniciativas propuestas
 								<?php if($initiatives["count"] == 0) { ?>
 									<p>No se encuentran iniciativas relacionadas</p>
@@ -173,6 +174,10 @@
 									<?php } ?>
 								<?php } ?>
 							</li>
+											<?php }         ?>
+
+							
+							
 							
 							<li class="bullet-arrow">Curriculum</li>
 								<?php if($resume != "") { ?>
@@ -330,17 +335,20 @@
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
 			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "<?php echo $district;?>"); }); </script>
 		<?php } ?>
+			<div id="map" style="width: 235px; height:323px;"></div>
+		<!-- Fin Mapa representantes -->
 		<?php }  else {  ?>
 		<?php if($state!==""){ ?>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estados.geojson.js" type="text/javascript"></script>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
-		<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>"); }); </script>
+		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
+			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "1"); }); </script>
+			<div id="map" style="width: 235px; height:323px;"></div>
+		<!-- Fin Mapa representantes -->
 		<?php } }?>
 
 				
 
-		<div id="map" style="width: 235px; height:323px;"></div>
-		<!-- Fin Mapa representantes -->
+	
 		
 		<div class="textwidget share-sidebar-vota">
 			 <?php avia_social_share_links(); ?>
