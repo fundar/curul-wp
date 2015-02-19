@@ -265,8 +265,8 @@
 					<?php } else { ?>
 						Distrito<p><?php echo $district;?></p>
 					<?php } ?>
-							<?php }else { if($state==""){ echo "Todo el pais";  } else { ?>
-											Estado<p><?php echo $state; }?></p>
+							<?php }else { if($state!=="N/A"){ ?>
+											Estado<p><?php echo get_post_meta($post->ID, 'wp_zone_state', true); }?></p>
 								<?php } ?>
 
 				</li>
