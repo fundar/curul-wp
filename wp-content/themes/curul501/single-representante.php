@@ -98,7 +98,7 @@
 							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
 							$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
-
+							$estado  =   get_post_meta($post->ID, 'wp_zone_state', true);
 							
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
@@ -129,12 +129,24 @@
 							</h1>
 						
 							<div class="linea-morado"></div>
+							
+							<?php  if($estado !== "N/A") { ?>
 							<h3 itemprop="headline" class="post-title entry-title">
 								Representante de 
 								<a class="entidad-del-representante" href="<?php echo get_site_url() . '/representantes/?estado=' . get_post_meta($post->ID, 'wp_zone_state', true); ?>" title="Filtro por estado">
 									<?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 								</a>
 							</h3>
+						<?php }else {     ?>
+						<h3 itemprop="headline" class="post-title entry-title">
+								Sin representación de estado								
+							</h3>
+						
+												<?php }?>
+
+						
+
+							
 						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
@@ -265,11 +277,14 @@
 					<?php } else { ?>
 						Distrito<p><?php echo $district;?></p>
 					<?php } ?>
-							<?php }else { if($state!==""){ ?>
+					</li>
+					<?php }else { if($state!==""){ ?>
+								<li class="bullet-arrow">
 											Estado<p><?php echo get_post_meta($post->ID, 'wp_zone_state', true); }?></p>
+								</li>
+
 								<?php } ?>
 
-				</li>
 				
 				<li class="bullet-arrow">Correo
 					<p>
