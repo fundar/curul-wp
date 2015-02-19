@@ -454,18 +454,57 @@ function epicred_vote(){
 
 	
 	$postid = (int)$_POST['poll'];	
-	
+    function guardar_paricipacion($previous_vote = NULL ){
+        /* Modificacion para guardar el conteo del total de participaciones en los posts de tipo iniciativas */
+        $val = get_post_meta($postid, 'wp_total_participaciones', true);
+        if( ! empty( $val ) ) add_post_meta($postid, 'wp_total_participaciones', 0, false ); 
+        else update_post_meta ($postid, 'wp_total_participaciones', $val + 1);
+    	
+        /* Modificacion para guardar el conteo del total de participaciones a favor y en contra en los posts de tipo iniciativas */
+        $fav = get_post_meta($postid, 'wp_total_a_favor', true);
+        $con = get_post_meta($postid, 'wp_total_en_contra', true);
+
+        if( is_null($previous_vote)) {
+            if($option == 1){
+                if( ! empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 0, false ); 
+                else update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
+            }else if($option == -1){
+                if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 0, false ); 
+                else update_post_meta ($postid, 'wp_total_en_contra', $con + 1);
+            }
+        }else{
+            $previous_vote = intval($previous_vote);
+            if($option == 1){
+                if( ! empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 0, false ); 
+                else{
+                    update_post_meta ($postid, 'wp_total_a_favor', $fav + $previous_vote);
+                    update_post_meta ($postid, 'wp_total_en_contra', $con + ($previous_vote * (-1) ) );
+                }
+
+            }else if($option == -1){
+                if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 0, false ); 
+                else {
+                    update_post_meta ($postid, 'wp_total_en_contra', $con + $previous_vote);
+                    update_post_meta ($postid, 'wp_total_a_favor', $con + ($previous_vote * (-1) ) );
+                }
+            }
+        }
+    }
+
 	$query = "SELECT epicred_option FROM $wpdb->myo_ip WHERE epicred_ip = $fid AND epicred_id = $postid";
 	
 	$al = $wpdb->get_var($query);
     
-	
-	if($al == NULL){
-		$query = "INSERT INTO $wpdb->myo_ip ( epicred_id , epicred_ip, epicred_option) VALUES ( $postid, $fid, $option)";
-		$wpdb->query($query);
-	}else{
-		$query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_ip = $fid AND epicred_id = $postid";
-		$wpdb->query($query);
+    guardar_paricipacion();
+    
+    if($al == NULL){
+        $query = "INSERT INTO $wpdb->myo_ip ( epicred_id , epicred_ip, epicred_option) VALUES ( $postid, $fid, $option)";
+        $wpdb->query($query);
+        guardar_paricipacion();
+    }else{
+        $query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_ip = $fid AND epicred_id = $postid";
+        $wpdb->query($query);
+        guardar_paricipacion($al);
 	}
 	
     $vote = get_post_meta($postid,'epicredvote',true);
@@ -495,7 +534,10 @@ function epicred_vote(){
 
 	
 		$response['poll'] = $postid;
-		$response['vote'] = $vote;
+        $response['vote'] = $vote;
+        /* Agregar los datos a favor y en contra totales*/
+        $response['favor'] =  get_post_meta($postid, 'wp_total_a_favor', true);
+		$response['contra'] = get_post_meta($postid, 'wp_total_en_contra', true);
     
     echo json_encode($response);
   

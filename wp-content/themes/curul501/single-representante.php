@@ -314,7 +314,6 @@
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
 		<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>"); }); </script>
-
 		<?php } ?>
 
 				

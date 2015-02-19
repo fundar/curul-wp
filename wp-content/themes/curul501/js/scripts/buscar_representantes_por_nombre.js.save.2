@@ -1,0 +1,14 @@
+jQuery(document).ready(function() {
+
+	jQuery("input#nombre-representante-filter").keypress(function(e) {
+		jQuery.post( 
+			MyAjax.url, 
+			{ action : 'buscar_representantes_por_nombre' , nombre : jQuery(this).val() }, 
+			function(response) {
+	      			//$('#posts_container').hide().html(response).fadeIn()
+				console.log(respon
+	    		}
+	    );
+	});
+
+})
