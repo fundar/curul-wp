@@ -33,7 +33,7 @@ function setMap() {
 			map.removeLayer(sMarker);
 			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { 
-				icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
+				//icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
 				CVE_ENT : feature.properties.CVE_ENT, 
 				NOMBRE : feature.properties.NOMBRE
 			}).addTo(map);
