@@ -27,10 +27,10 @@ try {
 /* * ***** facebook related activities start ** */
 require 'facebook_library/facebook.php';
 
-define("APP_ID", "318035678388710");
-define("APP_SECRET", "db8725cb3f2ab29432b8ec407ca7b4ee");
+define("APP_ID", "1559322730972585");
+define("APP_SECRET", "7686064e428b7f94140d25816af3cd8c");
 /* make sure the url end with a trailing slash */
-define("SITE_URL", "http://curul501.org/");
+define("SITE_URL", "http://curul501.org/login/");
 /* the page where you will be redirected after login */
 define("REDIRECT_URL", SITE_URL."facebook_login.php");
 /* Email permission for fetching emails. */
