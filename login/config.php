@@ -53,8 +53,8 @@ if ($userID) {
 
 
 //agregando twitter
-define("CLIENT_ID", "X8EMJCMSLynZVnOEsDkFbmvxw");
-define("SECRET_KEY", "jQNQYAcDcE5tc9z7QdWtS9yEv8oWDgrXc0o6MJhvZyHttWpTNv");
+define("CLIENT_ID", "cAJSBMdggqo6nkj1JoGvAnQ4B");
+define("SECRET_KEY", "5689rl32b9e8MM8Lk1FoxEbKoTtSACHXO0kuyH73tfELfnVP6w");
 /* make sure the url end with a trailing slash, give your site URL */
 /* the page where you will be redirected for authorization */
 define("REDIRECT_URLtwitter", SITE_URL."twitter_login.php");
