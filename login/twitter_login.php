@@ -9,7 +9,7 @@ require('config.php');
 $client = new oauth_client_class;
 $client->debug = 1;
 $client->debug_http = 1;
-$client->redirect_uri = REDIRECT_URL;
+$client->redirect_uri = REDIRECT_URLtwitter;
 //$client->redirect_uri = 'oob';
 
 $client->client_id = CLIENT_ID;
