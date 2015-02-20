@@ -14,4 +14,10 @@ include './header.php';
       <i class="fa fa-facebook"></i> Login con el facebook
     </a>
   </div>
+  
+   <div class="col-sm-3 col-sm-offset-4">
+    <a class="btn btn-block btn-social btn-twitter" href="twitter_login.php">
+            <i class="fa fa-twitter"></i> Login with twitter
+          </a>
+  </div>
 </div>
