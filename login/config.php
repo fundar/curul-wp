@@ -48,4 +48,17 @@ if ($userID) {
 } else {
   $loginURL = $facebook->getLoginUrl(array('scope' => PERMISSIONS, 'redirect_uri' => REDIRECT_URL));
 }
+
+
+
+
+//agregando twitter
+define("CLIENT_ID", "X8EMJCMSLynZVnOEsDkFbmvxw");
+define("SECRET_KEY", "jQNQYAcDcE5tc9z7QdWtS9yEv8oWDgrXc0o6MJhvZyHttWpTNv");
+/* make sure the url end with a trailing slash, give your site URL */
+/* the page where you will be redirected for authorization */
+define("REDIRECT_URLtwitter", SITE_URL."twitter_login.php");
+
+
+
 ?>
