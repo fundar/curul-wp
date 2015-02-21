@@ -418,43 +418,4 @@
 
 <?php get_footer(); ?>
 
-<script type="text/javascript">
-	jQuery(document).ready( function () {
-		jQuery("#submit-filter").click( function(event) {
-			event.preventDefault();
-			
-			if(jQuery("#partido-politico-filter option:selected").val() == "") {
-				jQuery("#partido-politico-filter").remove();
-			}
-			
-			if(jQuery("#estado-filter option:selected").val() == "") {
-				jQuery("#estado-filter").remove();
-			}
-			
-			if(jQuery("#comision-filter option:selected").val() == "") {
-				jQuery("#comision-filter").remove();
-			}
-			
-			if(jQuery("#tema-filter option:selected").val() == "") {
-				jQuery("#tema-filter").remove();
-			}
-			
-			if(jQuery("#status-filter option:selected").val() == "") {
-				jQuery("#status-filter").remove();
-			}
-			
-			if(jQuery("#postulante-filter option:selected").val() == "") {
-				jQuery("#postulante-filter").remove();
-			}
-			
-			if(jQuery("#camara-filter option:selected").val() == "") {
-				jQuery("#camara-filter").remove();
-			}
-			
-			
-			
-			jQuery("#filter-iniciativas").submit();
-		});
-	});
-</script>
 
