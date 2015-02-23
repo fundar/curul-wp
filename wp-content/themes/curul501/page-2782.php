@@ -29,6 +29,11 @@ global $avia_config;
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
+													                <?php
+
+																						$link	    = get_post_meta($post->ID, 'link', true);
+																						?>
+
 				 <!--Inicio iniciaiva-->
 				
 													
@@ -45,7 +50,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+			                                                                                 <a class="iniciativas-home" href="<?php echo $link ?>modificacion-1" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
 													 <?php the_excerpt(); ?> 
                           
