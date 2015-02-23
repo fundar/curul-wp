@@ -196,7 +196,9 @@ function getRepresentatives($json = false) {
 			"district" => get_post_meta($loop->post->ID, 'wp_district_clean', true),
 			"circum" => get_post_meta($loop->post->ID, 'wp_circumscription', true),
 			"election_type" => get_post_meta($loop->post->ID, 'wp_election_type', true),
-			"name" => get_the_title($loop->post->ID)
+			"name" => get_the_title($loop->post->ID),
+			"slug" =>  get_post_meta($loop->post->ID, 'wp_slug', true),
+			"tipo" => get_post_meta($loop->post->ID, 'wp_id_representative_type', true)
 		);
 	}
 	
