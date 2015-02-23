@@ -93,6 +93,61 @@ function create_post_type_representantes() {
 }
 add_action( 'init', 'create_post_type_representantes' );
 
+/* Custom Post Type "preocupaciones" */
+function my_taxonomies_preocupaciones() {
+  $labels = array(
+    'name'              => _x( 'Preocupaciones', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Preocupación', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Preocupaciones' ),
+    'all_items'         => __( 'All Preocupaciones' ),
+    'parent_item'       => __( 'Parent Preocupación' ),
+    'parent_item_colon' => __( 'Parent Preocupación:' ),
+    'edit_item'         => __( 'Edit Preocupación' ), 
+    'update_item'       => __( 'Update Preocupación' ),
+    'add_new_item'      => __( 'Add New Preocupación' ),
+    'new_item_name'     => __( 'New Preocupación' ),
+    'menu_name'         => __( 'Preocupaciones' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'preocupacion_category', 'modificacion', $args );
+}
+add_action( 'init', 'my_taxonomies_preocupaciones', 0 );
+
+function create_post_type_modificacion_iniciativa() {
+    register_post_type( 'modificacion',
+        array(
+            'labels' => array(
+                'name' => __( 'Modificaciones a la Iniciativa' ),
+                'singular_name' => __( 'Modificación a la Iniciativa' ),
+                'singular_label' => __( 'Modificación a la Iniciativa' ),		
+                'all_items' => __('Modificaciones a la Iniciativa'),
+                'add_new_item' => __('Añadir una Modificación a la Iniciativa nueva'),
+                'edit_item' => __('Editar una Modificación a la Iniciativa'),
+				'search_items'       => __( 'Buscar Modificaciones a la Iniciativa' ),
+				'not_found'          => __( 'Modificaciones a la Iniciativa no encontradas' ),
+				'not_found_in_trash' => __( 'Modificaciones a la Iniciativas no encontradas en basura' ),
+				'menu_name'          => 'Modificaciones a la Iniciativa'
+			),
+			'public' => true,
+			'has_archive' => true,
+			'capability_type' => 'post',
+			'hierarchical' => true,
+			'query_var' => true,
+			'menu_position' => 5,
+			'taxonomies' => array("preocupacion_category"),
+			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
+			'rewrite' => array('slug' => 'modificacion', 'with_front' => false),
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
+        )
+    );
+    
+}
+add_action( 'init', 'create_post_type_modificacion_iniciativa' );
+
+/*Crear custom fields por votaciones*/
 
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
