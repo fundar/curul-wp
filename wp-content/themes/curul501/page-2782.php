@@ -22,7 +22,7 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'category_name' => 'preocupaciones', 'posts_per_page' => 5 );
+									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 5 );
 									
 														
 
@@ -85,12 +85,7 @@ global $avia_config;
 		<!--end content-->			
 		</main>				    
                 <!--sidebar-->
-		<div class="sidebar sidebar_right smartphones_sidebar_active alpha units" itemtype="https://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
-                <div class="inner_sidebar">
-		<?php if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar('sidebar inicio') ) : ?>
-		<?php endif; ?>
-			
-                </div>
+	
 		</div><!--end sidebar-->
 				
 	   </div><!--end container-->
