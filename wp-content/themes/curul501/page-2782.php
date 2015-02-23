@@ -25,37 +25,16 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 5 );
+									$args = array( 'category_name' => 'preocupaciones', 'posts_per_page' => 5 );
+									
+														
+
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				 <!--Inicio iniciaiva-->
 				
-				
-				<?php										
-														$presentada_representante	    = get_post_meta($post->ID, 'wp_presentada', true);
-														$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
-														$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
-														$votos 	= get_post_meta($post->ID, 'wp_votos', true);
-													    $WorkingArray = json_decode(json_encode($votos),true);
-												        $decode = json_decode($WorkingArray, true);
-														$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
-														$elements = explode("|", $status_iniciativa);
-														$status_final=count($elements)-1;
-													    $presentada_representante_slug	    = get_post_meta($post->ID, 'wp_presentada_slug', true);
-														$presentada_representante_slug = str_replace('|', "-", $presentada_representante_slug);
-														$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
-														$explode_listado = explode(" ", $fecha_listado);
-														$fecha_sin_hora=$explode_listado[0];
-														$explode2 = explode("-", $fecha_sin_hora);
-														$ano = $explode2[0];
-														$mes = $explode2[1];
-														$dia = $explode2[2];
-													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
-
-
-														?>
-								
+													
 																
 				 <!--Inicio iniciaiva-->
 				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
