@@ -161,17 +161,20 @@ run.pieChart = function(votos, urlBase){
     //})
 
     function zoomIn(p) {
+      
       if ( total[0][0].innerHTML != total_inicial){
         zoomOut(p.parent); return 
       }
 
-      jQuery("#pie_chart").animate({ "left": "-=50px" }, "slow" );
+      jQuery("#pie_chart").animate({ "left": "-=50px" }, "slow");
 
 
       if (p.depth > 1) p = p.parent;
       totalUpdate( p.sum )
       processData(p, plot )
       zoom(p, p);
+
+      jQuery("#graficas_info").css("display", "none");
 
     } 
 
@@ -180,6 +183,7 @@ run.pieChart = function(votos, urlBase){
       if (!p.parent) return 
       zoom(p.parent, p);
       createHovers()
+     
     }
 
     function createHovers(){
@@ -192,11 +196,11 @@ run.pieChart = function(votos, urlBase){
 
     function clear(){
       //Velocity(document.querySelectorAll("#barchart")[0] , { opacity: 0 }, 500)
-      jQuery("#barchart").animate({ opacity: 0 }, 500)
-      jQuery('#bartitle').fadeOut()
-
-      totalUpdate(total_inicial);
-
+      jQuery('#bartitle').fadeOut("slow")
+      jQuery("#barchart").fadeOut("slow", function(){
+          jQuery("#graficas_info").fadeIn();
+          totalUpdate(total_inicial);
+      })
     }
 
     function totalUpdate(data){

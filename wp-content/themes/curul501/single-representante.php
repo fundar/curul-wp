@@ -98,14 +98,14 @@
 							$resume 	= json_decode(get_post_meta($post->ID, 'wp_resume', true));
 							$initiatives = getInitativesByRepresentative(get_post_meta($post->ID, 'wp_slug', true));
 							$puesto=get_post_meta($post->ID, 'wp_id_representative_type', true); 
-
+							$estado  =   get_post_meta($post->ID, 'wp_zone_state', true);
 							
 							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
 							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
 							$htmlcommis = "<p>";
 							$link = get_site_url() . "/representantes/?comision=";
 							
-							if($commissions) {
+							if($commissions!= "") {
 								foreach($commissions as $key => $commission) {
 									$htmlcommis .= "<a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a>, ";
 								}
@@ -129,12 +129,24 @@
 							</h1>
 						
 							<div class="linea-morado"></div>
+							
+							<?php  if($estado !== "N/A") { ?>
 							<h3 itemprop="headline" class="post-title entry-title">
 								Representante de 
 								<a class="entidad-del-representante" href="<?php echo get_site_url() . '/representantes/?estado=' . get_post_meta($post->ID, 'wp_zone_state', true); ?>" title="Filtro por estado">
 									<?php echo get_post_meta($post->ID, 'wp_zone_state', true); ?>
 								</a>
 							</h3>
+						<?php }else {     ?>
+						<h3 itemprop="headline" class="post-title entry-title">
+								Sin representación de estado								
+							</h3>
+						
+												<?php }?>
+
+						
+
+							
 						</div>
 					</header>
 					<div class="entry-content no-voto" itemprop="text">
@@ -143,6 +155,7 @@
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
 							
+									<?php if($puesto==1) {  ?>
 							<li class="bullet-arrow">Iniciativas propuestas
 								<?php if($initiatives["count"] == 0) { ?>
 									<p>No se encuentran iniciativas relacionadas</p>
@@ -161,13 +174,17 @@
 									<?php } ?>
 								<?php } ?>
 							</li>
+											<?php }         ?>
+
+							
+							
 							
 							<li class="bullet-arrow">Curriculum</li>
 								<?php if($resume != "") { ?>
 									<ul class="avia-icon-list avia-icon-list-left avia_animate_when_almost_visible avia_start_animation" style="margin-top: 22px;">
 										<?php 
+											foreach($resume as $value) {
 										
-										foreach($resume as $value) {
 											$resArray = explode("_____", $value->trayectoria);
 											
 											if($resArray[0] == "Trayectoria administrativa") {
@@ -258,13 +275,21 @@
 					</p>
 				</li>
 							
-				<li class="bullet-arrow">
+				<?php if($puesto == 1) { ?>
 					<?php if($district == "") { ?>
+								<li class="bullet-arrow">
 						Circunscripción<p><?php echo $circum;?></p>
+								</li>
 					<?php } else { ?>
-						Distrito<p><?php echo $district;?></p>
+								<li class="bullet-arrow">Distrito<p><?php echo $district;?></p></li>
 					<?php } ?>
-				</li>
+					<?php }else { if($state!==""){ ?>
+								<li class="bullet-arrow">
+											Estado<p><?php echo get_post_meta($post->ID, 'wp_zone_state', true); }?></p>
+								</li>
+
+								<?php } ?>
+
 				
 				<li class="bullet-arrow">Correo
 					<p>
@@ -310,16 +335,20 @@
 			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
 			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "<?php echo $district;?>"); }); </script>
 		<?php } ?>
-		<?php }  else { ?>
+			<div id="map" style="width: 235px; height:323px;"></div>
+		<!-- Fin Mapa representantes -->
+		<?php }  else {  ?>
+		<?php if($state!==""){ ?>
 		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/estado-<?php echo $state;?>.geojson.js" type="text/javascript"></script>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map.js" type="text/javascript"></script>
-		<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>"); }); </script>
-		<?php } ?>
+			<script src="<?php echo get_stylesheet_directory_uri() ?>/js/init-map-dist.js" type="text/javascript"></script>
+			<script type="text/javascript"> jQuery(document).ready( function () { setMap("<?php echo $state;?>", "1"); }); </script>
+			<div id="map" style="width: 235px; height:323px;"></div>
+		<!-- Fin Mapa representantes -->
+		<?php } }?>
 
 				
 
-		<div id="map" style="width: 235px; height:323px;"></div>
-		<!-- Fin Mapa representantes -->
+	
 		
 		<div class="textwidget share-sidebar-vota">
 			 <?php avia_social_share_links(); ?>

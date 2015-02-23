@@ -35,22 +35,6 @@
 			
 		}
 
-		<?php 
-			//if we are locked via IP set the fid variable to be the IP address, otherwise log the member ID
-			if(get_option('epicred_ip') == 'yes'){
-				$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
-				$fid = "'" . $ipAddr . "'";	
-			}else{
-				$fid = $current_user->ID;
-			}
-
-			$query = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid AND epicred_id = $post->ID";
-			$al = $wpdb->get_var($query);
-			if( is_null($al) ){
-		?>
-			.score.dislikes { display: none; }
-
-    	<?php } ?>
 
 	</style>
 		
@@ -369,7 +353,7 @@
 						<div class="flex_cell_inner">
 						<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 						<div class="avia_textblock " itemprop="text">
-						<p class="num-votos-pleno"><?php echo $decode[8]['total'];?></p>
+						<p class="num-votos-pleno"><?php echo $decode[8]['total'] - $decode[8]['ausente'] ;?></p>
 						<p class="total-votos-pleno">Votos totales</p>			
 						</div>
 						</section>
@@ -381,8 +365,63 @@
 			<a class="grafikas" href="">Ver gr&aacute;ficas de las votaciones en pleno</a>                         
 
 		</div>
-		
-		<div id="graficas_content">
+		<style type="text/css">
+			#bartitle{
+				display: block;
+				font-family: oswald;
+				font-weight: lighter;
+				font-size: 3em;
+				padding-top:50px;
+			}
+
+			#graficas_info{
+				padding-top:50px;
+	   			font-family: oswald;
+	   			font-weight: lighter;
+			}
+
+			#graficas_info h1{
+				margin-bottom: 25px;
+			}
+
+			#graficas_info span{
+				margin-right: 20px;
+			}
+
+
+			ul#acotaciones li{
+				font-size: 1.4em;
+				margin-bottom: 20px;
+			}
+
+			ul#acotaciones li span{
+				margin-left: 30px;
+				min-width: 30px;
+				min-height: 30px;
+			}
+
+			li#favor span{
+				background: #A264B9;
+				color: #A264B9;
+			}
+			
+			li#contra span{
+				background: #CCC1CE;
+				color: #CCC1CE; 
+			}
+
+			li#abstenciones span{
+				background: #F0D0B9;
+				color: #F0D0B9; 
+			}
+
+			li#inasistencias span{
+				background: #686F7F;
+				color: #686F7F; 
+			}
+
+		</style>
+		<div id="graficas_content" >
 			<div id="pie_chart"></div>
 
 			<div id="bartitle">
@@ -390,7 +429,21 @@
 			    <span id="bartitle_count"> </span> 
 			</div>
 
-			<div id="bar_chart"></div>
+			<div id="bar_chart">
+				<div id="graficas_info">
+					<h1> 
+						<span class="quorum"> Quorum: <?php echo $decode[8]['total'] - $decode[8]['ausente'] ;?> </span>
+						<span class="inasistencias"> Inasistencias: <?php echo $decode[8]['ausente'] ;?></span>
+					</h1>
+					<ul id="acotaciones">
+						<li id="favor"> <span>| | | | |</span> A favor </li>
+						<li id="contra"> <span>| | | | |</span> En contra </li>
+						<li id="abstenciones"> <span>| | | | |</span> Abstenciones </li>
+						<li id="inasistencias"> <span>| | | | |</span> Inasistencias </li>
+					</ul>
+				</div>
+			</div>
+
 
 			<div id="tooltip" class="hidden">
 			  <p><span id="value">100</span> </p>
@@ -410,25 +463,6 @@
 			         
 			      </tbody>
 			</table>
-
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				var id = <?php echo $post->ID;  ?>;
-				var favor =  <?php 
-					if( get_post_meta($post->ID, 'wp_total_a_favor', true) ){
-						echo get_post_meta($post->ID, 'wp_total_a_favor', true); 
-					}else echo 0;
-				?>;
-				var contra = <?php 
-					if( get_post_meta($post->ID, 'wp_total_en_contra', true) ){
-						echo get_post_meta($post->ID, 'wp_total_en_contra', true); 
-					}else echo 0;
-				?>;
-
-				jQuery(".score-" + id ).html( favor + " - " + contra);
-			})
-		</script>  
- 	
 
 			  <script type="text/javascript">
 
@@ -474,6 +508,7 @@
 		
 		<script>
 			var votos = <?php echo json_encode( array_values($voto) ); ?>;
+			
 			var representantes = <?php echo json_encode( array_values($representantes) ); ?>;
 			var last_status_slug =  <?php echo $last_status_slug ; ?>;
 			console.log(last_status_slug)

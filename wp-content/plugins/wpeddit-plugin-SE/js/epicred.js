@@ -16,31 +16,31 @@ jQuery(document).ready(function ($) {
 	      
    $(".arrow").bind("click", function () { 
    	
-   	var logged = window.loggedin;
+     	var logged = window.loggedin;
 
-   	if(logged == 'false'){
-   		return false;
-   	}
-   	
-   	var like = $(this).attr("data-red-like");
-   	var id = $(this).attr("data-red-id");
-   	var curr = $(this).attr("data-red-current");
-   	
-   	  	
-   	if(like == 'up'){
-   		$(this).removeClass("up").addClass("upmod");
-   		$(".arrow-down-" + id).removeClass("downmod").addClass("down");
-   		$(".score-" + id).removeClass("unvoted").addClass("likes");
-   		$(".score-" + id).removeClass("dislikes").addClass("likes");
-   		var vote = 1;
-   	}
-   	if(like == 'down'){
-   		$(this).removeClass("down").addClass("downmod");
-   		$(".arrow-up-" + id).removeClass("upmod").addClass("up");
-   		$(".score-" + id).removeClass("unvoted").addClass("dislikes");
-   		$(".score-" + id).removeClass("likes").addClass("dislikes");
-   		var vote = -1;
-   	}
+     	if(logged == 'false'){
+     		return false;
+     	}
+     	
+     	var like = $(this).attr("data-red-like");
+     	var id = $(this).attr("data-red-id");
+     	var curr = $(this).attr("data-red-current");
+     	
+     	  	
+     	if(like == 'up'){
+     		$(this).removeClass("up").addClass("upmod");
+     		$(".arrow-down-" + id).removeClass("downmod").addClass("down");
+     		$(".score-" + id).removeClass("unvoted").addClass("likes");
+     		$(".score-" + id).removeClass("dislikes").addClass("likes");
+     		var vote = 1;
+     	}
+     	if(like == 'down'){
+     		$(this).removeClass("down").addClass("downmod");
+     		$(".arrow-up-" + id).removeClass("upmod").addClass("up");
+     		$(".score-" + id).removeClass("unvoted").addClass("dislikes");
+     		$(".score-" + id).removeClass("likes").addClass("dislikes");
+     		var vote = -1;
+     	}
 
         
         var j = {
@@ -60,8 +60,9 @@ jQuery(document).ready(function ($) {
         
         l.done(function (c) {
             var id = c.poll;
-			      $(".score-" + id).html((c.favor || 0) + " - " + (c.contra || 0));
-            $(".score-" + id).fadeIn("slow")
+            $(".reddit-voting .score.score-" + id + "-favor").html( c.favor || 0 )
+            $(".reddit-voting .score.score-" + id + "-contra").html( c.contra || 0 )
+            console.log(c)
         });
         
         l.fail(function (d, c) {
@@ -74,31 +75,31 @@ jQuery(document).ready(function ($) {
     
    $(".arrowc").bind("click", function () { 
    	
-   	var logged = window.loggedin;
+     	var logged = window.loggedin;
 
-   	if(logged == 'false'){
-   		return false;
-   	}
-   	
-   	var like = $(this).attr("data-red-like");
-   	var id = $(this).attr("data-red-id");
-   	var curr = $(this).attr("data-red-current");
-   	
-   	  	
-   	if(like == 'up'){
-   		$(this).removeClass("up").addClass("upmod");
-   		$(".arrowc-down-" + id).removeClass("downmod").addClass("down");
-   		$(".scorec-" + id).removeClass("unvoted").addClass("likes");
-   		$(".scorec-" + id).removeClass("dislikes").addClass("likes");
-   		var vote = 1;
-   	}
-   	if(like == 'down'){
-   		$(this).removeClass("down").addClass("downmod");
-   		$(".arrowc-up-" + id).removeClass("upmod").addClass("up");
-   		$(".scorec-" + id).removeClass("unvoted").addClass("dislikes");
-   		$(".scorec-" + id).removeClass("likes").addClass("dislikes");
-   		var vote = -1;
-   	}
+     	if(logged == 'false'){
+     		return false;
+     	}
+     	
+     	var like = $(this).attr("data-red-like");
+     	var id = $(this).attr("data-red-id");
+     	var curr = $(this).attr("data-red-current");
+     	
+     	  	
+     	if(like == 'up'){
+     		$(this).removeClass("up").addClass("upmod");
+     		$(".arrowc-down-" + id).removeClass("downmod").addClass("down");
+     		$(".scorec-" + id).removeClass("unvoted").addClass("likes");
+     		$(".scorec-" + id).removeClass("dislikes").addClass("likes");
+     		var vote = 1;
+     	}
+     	if(like == 'down'){
+     		$(this).removeClass("down").addClass("downmod");
+     		$(".arrowc-up-" + id).removeClass("upmod").addClass("up");
+     		$(".scorec-" + id).removeClass("unvoted").addClass("dislikes");
+     		$(".scorec-" + id).removeClass("likes").addClass("dislikes");
+     		var vote = -1;
+     	}
 
         
         var j = {
