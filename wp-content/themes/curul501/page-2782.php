@@ -17,10 +17,7 @@ global $avia_config;
 			
 				<div class="container_wrap container_wrap_first main_color sidebar_right">
 					<div class="content  nine alpha units">
-						<div class="post-entry-25">
-						<h1 class="entry-title-yellow">Iniciativas <?php echo $tipo; ?></h1>
-						<div class="line-amarilla"> </div>
-						</div>
+						
 						<div class="post-entry post-entry-type-page post-entry-25">
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
@@ -54,62 +51,7 @@ global $avia_config;
                           
 												</div>
 											</div><!--fin fecha y resumen-->
-											<div class="flex_column av_one_third avia-builder-el-2 el_after_av_two_third avia-builder-el-last topTop leftRI top12">
-												<div class="col-status">
-													<div class="datos">
-													Status													
-													<div class="temporizador"> 
-													<p><?php echo $elements[$status_final]; ?></p>
-													</div>
-													</div>													
-												</div> 
-												<?php
-																								
-												  if($votos != "") { ?>
-												
-												<div class="col-status-1">
-													<div class="datos">
-													Votaci&oacute;n final													
-													</div>
-													<div class="votos-oficiles">
-														
-													</div>
-													<div class="hands-vote">
-									                                <ul>
-													        <li class="hand-up"><?php echo $decode[8]['favor']; ?></li>
-													        <li class="hand-down"><?php echo $decode[8]['contra']; ?></li>
-													</ul>
-									
-													</div>
-												</div>
-																					<?php } else {  ?>
-
-																					<div class="col-status-1">
-													<div class="datos">
-													Votaci&oacute;n final													
-													</div>
-													<div class="votos-oficiles">
-													<p class="estiloEstatusP">Sin Votaci&oacute;n</p>													
-													</div>
-													
-												</div>											
-																					<?php } ?>
-
-																					
-
-												
-												<div class="col-status-2">
-													<div class="datos">Propuesta por:</div>
-													<p class="estiloEstatusP">	<?php
-														if($presentada_dependencia != "") { echo $presentada_dependencia."";} 
-														if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido;}
-														if($presentada_representante != "") { ?> <a href="http://www.curul501.org/representantes/<?php echo $presentada_representante_slug ?>"> <?php echo  str_replace('|', " ", $presentada_representante);} ?> </a>
-
-													</p>
-													
-													
-												</div>													
-											</div>
+											
 											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
 												<div class="in-box-share">
 												<?php avia_social_share_links(); ?>
