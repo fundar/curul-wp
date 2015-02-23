@@ -201,7 +201,6 @@
 		</div>
 		<!-- fin mapa de representantes-->
 	</div>
-<<<<<<< HEAD
 
 	<div id="after_layer_slider_1" class="main_color container_wrap fullsize" style="background: none repeat scroll 0% 0% rgb(39, 21, 48);">
 		<div class="container">
@@ -209,13 +208,6 @@
 	<?php } ?>
 
 	
-		
-=======
-	<?php } ?>
-	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		<!-- titulo-->
-		<div class="container top60">
->>>>>>> 07c081ed658447c505d93f325dcd533f8ae9e86f
 			<div class="search-container container box-menu">
 				<div class="search-table">
 					<div class="buscador-principal">
