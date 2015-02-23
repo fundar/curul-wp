@@ -204,10 +204,6 @@
 
 	<div id="after_layer_slider_1" class="main_color container_wrap fullsize" style="background: none repeat scroll 0% 0% rgb(39, 21, 48);">
 		<div class="container">
-
-	<?php } ?>
-
-	
 			<div class="search-container container box-menu">
 				<div class="search-table">
 					<div class="buscador-principal">
@@ -220,6 +216,7 @@
 			</div>
 		</div>			
 	</div>
+	<?php } ?>
 	<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 	        <div class="container top60">
 					<form name="filter-representanes" id="filter-representanes" action="/representantes">
