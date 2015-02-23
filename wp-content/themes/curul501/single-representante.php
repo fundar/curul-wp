@@ -105,12 +105,12 @@
 							$htmlcommis = "<p>";
 							$link = get_site_url() . "/representantes/?comision=";
 							
-							if($commissions!= "") {
+							if($commissions == "") {
 								foreach($commissions as $key => $commission) {
 									$htmlcommis .= "<a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a>, ";
 								}
 							} else {
-								$htmlcommis .= "No se encuentran comisiones relacionadas";
+								 $htmlcommis .= "No se encuentran comisiones relacionadas";
 							}
 							
 							$htmlcommis = rtrim($htmlcommis, ", ");
