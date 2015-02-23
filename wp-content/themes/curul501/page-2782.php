@@ -25,7 +25,7 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 5 );
+									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 5 );
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
