@@ -47,7 +47,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                 <a class="iniciativas-home" href="<?php echo $link ?>/<?php the_slug();?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+			                                                                                 <a class="iniciativas-home" href="<?php echo $link ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
 													 <?php the_excerpt(); ?> 
                           
