@@ -120,7 +120,7 @@ function my_taxonomies_iniciativas() {
 add_action( 'init', 'my_taxonomies_iniciativas', 0 );
 /**/
 
-/CUSTOM POST "Preocupación" 
+// CUSTOM POST "Preocupación" 
 function create_post_type_preocupacion() {
     register_post_type( 'preocupacion',
         array(
