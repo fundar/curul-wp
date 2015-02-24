@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /* Creación de la taxonomia Iniciativas*/
 /*   la cual idealmente se llenará de forma automatica con los titulares de los custom-post Iniciativas*/
-/*    y que más de una podrá ser asociada a un custom-post Preocupación */
+/*    y que más de una podrá ser asociada a un custom-post Preocupación 
 function my_taxonomies_iniciativas() {
   $labels = array(
     'name'              => _x( 'Iniciativas', 'taxonomy general name' ),
@@ -120,7 +120,7 @@ function my_taxonomies_iniciativas() {
 add_action( 'init', 'my_taxonomies_iniciativas', 0 );
 /**/
 
-/* CUSTOM POST "Preocupación" */
+/* CUSTOM POST "Preocupación" 
 function create_post_type_preocupacion() {
     register_post_type( 'preocupacion',
         array(
@@ -174,7 +174,7 @@ function my_taxonomies_preocupaciones() {
     'labels' => $labels,
     'hierarchical' => true,
   );
-  register_taxonomy( 'preocupacion_category', 'modificacion', $args );
+  register_taxonomy( 'preocupacion', 'modificacion', $args );
 }
 add_action( 'init', 'my_taxonomies_preocupaciones', 0 );
 /**/
@@ -201,7 +201,7 @@ function create_post_type_modificacion_iniciativa() {
 			'hierarchical' => true,
 			'query_var' => true,
 			'menu_position' => 5,
-			'taxonomies' => array("preocupacion_category"),
+			'taxonomies' => array("preocupacion"),
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
 			'rewrite' => array('slug' => 'modificacion', 'with_front' => false),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'post-formats', 'page-attributes' )	
