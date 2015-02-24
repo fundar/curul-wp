@@ -1,5 +1,8 @@
-<?php get_header(); ?>
-
+<?php 
+get_header(); 
+global $dposttitle;
+$dposttitle = wp_title( '', false);
+?>
 <style type="text/css">
 		#wrap_all #header{
 			display:none;
@@ -191,7 +194,8 @@
 		<div class="container top60">
 					<?php wp_reset_query(); ?>
 			        <?php comments_template( '/includes/comments.php'); ?>
-		        
+		        <?php get_footer(); ?>
+
 			</div>
 	</section>
 
