@@ -95,7 +95,27 @@
  			font-family: "colaborate-thinregular";
  			color:#000;
  			font-size: 1.6em;
+		}
 
+		#modificaciones article span {
+ 			font-size: 1.3em;
+		}
+		#modificaciones article span strong {
+			color: #502760;
+ 			font-size: 1.2em;
+		}
+
+		.sep{
+			border-bottom: 1px solid #502760;
+			margin-top: 40px;
+		}
+
+		.reddit-voting{
+	    background-color: #502760;
+	    float: right;
+			width: 130px;
+			height: 45px;
+	    padding: 10px 20px ;
 		}
 </style>
 
@@ -147,14 +167,14 @@
 
 	<section id="modificaciones">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		<article>
-			<h3 class="responsable"> <?php the_title(); ?> </h3>
-			<div class="texto"> <?php the_content(); ?>	</div>
-			<span> Votos en curul501.org: <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </span>
-		</article>
+			<?php $total = get_post_meta($post->ID, 'wp_total_participaciones', true); ?>
+			<article>
+				<h3 class="responsable"> <?php the_title(); ?> </h3>
+				<div class="texto"> <?php the_content(); ?>	</div>
+				<div class="sep"></div>
+				<span>  Total de Participaciones: <strong> <?php echo ($total || $total != '')? $total : 0; ?> </strong> </span>
+			</article>
 				
-
 		<?php endwhile; endif; ?>
 	</section>
 
@@ -162,5 +182,13 @@
 		
 	</section>
 
-
+	<script type="text/javascript">
+		jQuery("document").ready(function(){
+			
+			/* Cambiar de pocisión el área de votos*/
+			var redits = jQuery(".reddit-voting")
+			redits.each( function(index){ jQuery(this).parents("article").append(this) })
+		
+		})
+	</script>
 </body>
