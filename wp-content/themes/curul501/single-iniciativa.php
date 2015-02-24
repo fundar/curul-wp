@@ -539,7 +539,36 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado"><?php echo $elements[$status_final]; ?></p>
+				<p class="resultado">
+				<?php 
+													if($elements[$status_final]=="Presentada"){
+													   $status_final="Pleno";
+													 }elseif($elements[$status_final]=="Turnada") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Prórroga") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Publicado") {
+													   $status_final="Publicación";
+													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] == "Aprobada") {
+													   $status_final="Minuta";
+													} elseif($elements[$status_final] == "Dictaminada") {
+													   $status_final="Comisiones";
+													} else {
+														$status_final="Otro";
+													}
+														
+				
+																echo $status_final; 
+				
+				?>
+				
+				</p>
 				</div>
 				</section>
                          </div>
