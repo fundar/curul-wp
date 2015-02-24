@@ -148,7 +148,6 @@
 							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
 							$htmlcommis = "";
 							$link = get_site_url() . "/iniciativas/?comision=";
-							
 							$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
 							$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
 							$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
@@ -166,46 +165,36 @@
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
-									}
-									
-									if($presentadas) {
-								foreach($presentadas as $key => $presentada) {
-									$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
-								}
-							} else {
-								$htmlpresentadas = "<p>No se encuentran representantes</p>";
-							}
-									
-									
-									
-									else{
+									}else{
 									if($commissions) {
 								foreach($commissions as $key => $commission) {
-									$htmlcommis .= "<p>$commission</p>";
+									$htmlcommis .= "<p>".$commission."</p>";
 								}
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
+								}
 							
-							if($presentadas) {
+						if($tipo_iniciativa==1){
+									if($presentadas) {
+										foreach($presentadas as $key => $presentada) {
+											$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+													}
+							} else {
+								$htmlpresentadas = "<p>No se encuentran representantes</p>";
+							}
+
+											}else{
+												if($presentadas) {
 								foreach($presentadas as $key => $presentada) {
-									$htmlpresentadas .="<p>$presentada</p>";
+									$htmlpresentadas .= "<p>".$presentada."</p>";
 								}
 							} else {
 								$htmlpresentadas = "<p>No se encuentran representantes</p>";
 							}
-							
-							
-								}
-							
-							
-							
-							
-							
-							
-							
-
-					
+											
+											
+											}
 												
 						?>
 			<div class='container template-blog template-single-blog '>
