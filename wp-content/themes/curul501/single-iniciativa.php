@@ -148,8 +148,15 @@
 							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
 							$htmlcommis = "";
 							$link = get_site_url() . "/iniciativas/?comision=";
+							
 							$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
-
+							$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
+							$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
+							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
+							$htmlpresentadas = "";
+							$link_representante = get_site_url() . "/representantes/";
+							
+							
 							if($tipo_iniciativa==1)
 							{
 							if($commissions) {
@@ -159,7 +166,19 @@
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
-									}else{
+									}
+									
+									if($presentadas) {
+								foreach($presentadas as $key => $presentada) {
+									$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+								}
+							} else {
+								$htmlpresentadas = "<p>No se encuentran representantes</p>";
+							}
+									
+									
+									
+									else{
 									if($commissions) {
 								foreach($commissions as $key => $commission) {
 									$htmlcommis .= "<p>$commission</p>";
@@ -167,25 +186,24 @@
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
-								}
-							
-							
-							
-							
-						$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
-						
-								$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
-							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
-							$htmlpresentadas = "";
-							$link_representante = get_site_url() . "/representantes/";
 							
 							if($presentadas) {
 								foreach($presentadas as $key => $presentada) {
-									$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+									$htmlpresentadas .="<p>$presentada</p>";
 								}
 							} else {
 								$htmlpresentadas = "<p>No se encuentran representantes</p>";
 							}
+							
+							
+								}
+							
+							
+							
+							
+							
+							
+							
 
 					
 												
