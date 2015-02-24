@@ -77,7 +77,7 @@
 
 								
 						        $loop = new WP_Query( $args );
-						        while ( $loop->have_posts() ) : $loop->the_post();
+						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 							<?php the_title(); ?>
 
