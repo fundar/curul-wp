@@ -96,7 +96,7 @@ add_action( 'init', 'create_post_type_representantes' );
 
 /* Creación de la taxonomia Iniciativas*/
 /*   la cual idealmente se llenará de forma automatica con los titulares de los custom-post Iniciativas*/
-/*    y que más de una podrá ser asociada a un custom-post Preocupación 
+/*    y que más de una podrá ser asociada a un custom-post Preocupación */
 function my_taxonomies_iniciativas() {
   $labels = array(
     'name'              => _x( 'Iniciativas', 'taxonomy general name' ),
