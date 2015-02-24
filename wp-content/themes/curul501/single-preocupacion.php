@@ -189,8 +189,10 @@
 
 	<section id="comentarios">
 		<div class="container top60">
-					<?php wp_reset_query();   comments_template( '/includes/comments.php');  ?>
-		        ?>
+			<?php	
+					<?php wp_reset_query(); ?>
+			        <?php comments_template( '/includes/comments.php'); ?>
+		        
 			</div>
 	</section>
 
