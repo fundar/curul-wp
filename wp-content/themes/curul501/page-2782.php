@@ -32,6 +32,16 @@ global $avia_config;
 													                <?php
 
 																						$link	    = get_post_meta($post->ID, 'link', true);
+																						function the_slug($echo=true)
+																						{
+																						  $slug = basename(get_permalink());
+																						  do_action('before_slug', $slug);
+																						  $slug = apply_filters('slug_filter', $slug);
+																						  if( $echo ) echo $slug;
+																						  do_action('after_slug', $slug);
+																						  return $slug;
+																										 }
+																						
 																						?>
 
 				 <!--Inicio iniciaiva-->
@@ -50,7 +60,7 @@ global $avia_config;
 												</div>
 												<div class="entry-content">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                 <a class="iniciativas-home" href="<?php echo $link ?>modificacion-1" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+			                                                                                 <a class="iniciativas-home" href="<?php echo $link ?>/<?php the_slug();?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
 													 <?php the_excerpt(); ?> 
                           
