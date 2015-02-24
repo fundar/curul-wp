@@ -860,10 +860,8 @@ function epic_reddit_voting(){
                     $q = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid_ AND epicred_id = $post->ID";
                     $al_ = $wpdb->get_var($q);
             ?>
-                    <div class="score score-<?php echo $post->ID;?>-favor"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_a_favor', true) : '' ; ?> </div>
                     <div class="arrow <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
                     <div class="arrow <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>    
-                    <div class="score score-<?php echo $post->ID;?>-contra"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_en_contra', true) : '' ; ?> </div>
             <?php }else{ 
                     $fid_ = "'" . isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'] . "'"; 
                     $q = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid_ AND epicred_id = $post->ID";
@@ -1303,10 +1301,10 @@ function epic_reddit_voting_comment($ID){
 			<div class = 'reddit-voting'>
 				<ul class="unstyled">
 			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-					<!--div class="arrowc2 <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score2 <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrowc2 <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div-->
-					<?php }else{ ?>
+					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
+					<div class="arrowc <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+			<?php }else{ ?>
 					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
 					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
 					<div class="arrowc <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>	
