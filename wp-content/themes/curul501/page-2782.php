@@ -195,19 +195,27 @@
 		</h2>
 	</header>
 
-									<?php if ( have_posts() ) : ?>
-					                <?php
-									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 9 );
+									<?php if ( have_posts() ) : 
+					              
+									$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
 									$loop = new WP_Query( $args );
-									while ( $loop->have_posts() ) : $loop->the_post(); ?>
+									while ( $loop->have_posts() ) : $loop->the_post(); 
+									
+									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
+
+									
+									
+									
+									?>
+									
 								
 	<section id="preocupaciones">
 		<ul>
 			<li class="preocupacion">
-				<span class="num"> 1 </span>
+				<span class="num"> <?php echo $numero_preocupacion; ?></span>
 				<div class="sep"></div>
 
-				<a class="click_area" href="#">
+				<a class="click_area" href="<?php the_permalink() ?>">
 					<div class="textos">
 						<p class="titulo_ninja"> <?php the_title(); ?> </p>
 						<h1 class="titulo"></h1> 
