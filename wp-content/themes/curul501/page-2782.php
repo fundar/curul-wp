@@ -225,7 +225,8 @@
 		</ul>
 													<?php endwhile; ?>
 
-		
+		<?php endif; ?>	
+
 			
 
 			
