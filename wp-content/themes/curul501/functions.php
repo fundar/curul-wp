@@ -156,7 +156,27 @@ add_action( 'init', 'create_post_type_preocupacion' );
 
 /* Creación de la taxonomia Preocupaciones*/
 /*   la cual idealmente se llenará automaticamente con los titulares de los custom-post Preocupaciones*/
-
+function my_taxonomies_preocupaciones() {
+  $labels = array(
+    'name'              => _x( 'Preocupaciones', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Preocupación', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Preocupaciones' ),
+    'all_items'         => __( 'All Preocupaciones' ),
+    'parent_item'       => __( 'Parent Preocupación' ),
+    'parent_item_colon' => __( 'Parent Preocupación:' ),
+    'edit_item'         => __( 'Edit Preocupación' ), 
+    'update_item'       => __( 'Update Preocupación' ),
+    'add_new_item'      => __( 'Add New Preocupación' ),
+    'new_item_name'     => __( 'New Preocupación' ),
+    'menu_name'         => __( 'Preocupaciones' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'preocupacion_category', 'modificacion', $args );
+}
+add_action( 'init', 'my_taxonomies_preocupaciones', 0 );
 /**/
 
 /* CUSTOM POST "Modificaciones a la Iniciativa" */
@@ -181,7 +201,7 @@ function create_post_type_modificacion_iniciativa() {
 			'hierarchical' => true,
 			'query_var' => true,
 			'menu_position' => 5,
-			'taxonomies' => array("modificacion_category"),
+			'taxonomies' => array("preocupacion_category"),
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
 			'rewrite' => array('slug' => 'modificacion', 'with_front' => false),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'post-formats', 'page-attributes' )	
