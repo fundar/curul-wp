@@ -29,20 +29,7 @@ global $avia_config;
 								
 						        $loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-													                <?php
-
-																						$link	    = get_post_meta($post->ID, 'link', true);
-																						function the_slug($echo=true)
-																						{
-																						  $slug = basename(get_permalink());
-																						  do_action('before_slug', $slug);
-																						  $slug = apply_filters('slug_filter', $slug);
-																						  if( $echo ) echo $slug;
-																						  do_action('after_slug', $slug);
-																						  return $slug;
-																										 }
-																						
-																						?>
+													               
 
 				 <!--Inicio iniciaiva-->
 				
