@@ -51,6 +51,9 @@
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 						
+						
+					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
+
 			<div class='container template-blog template-single-blog '>
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
@@ -81,9 +84,24 @@
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'modificacion', 'posts_per_page' => 5 );
-								   $loop = new WP_Query( $args );
-						           while ( $loop->have_posts() ) : $loop->the_post(); ?>
+									//$args = array( 'post_type' => 'modificacion', 'posts_per_page' => 8 );
+								    //$loop = new WP_Query( $args );
+						           
+								   $args = array('post_type' => 'modificacion',
+								'meta_query' => array(
+									array (
+										'key'     => 'id_preocupacion',
+										'value'   => $id_preocupacion,
+										'compare' => 'LIKE'
+															)
+														)
+													);
+
+													$loop  = new WP_Query($args);
+																			   
+								   
+								   
+								   while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
 									<div class="entry-content-wrapper clearfix">
 										<div class="entry-content-wrapper clearfix">
