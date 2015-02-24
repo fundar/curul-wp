@@ -22,7 +22,7 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 5 );
+									$args = array( 'post_type' => 'preocupacion', 'posts_per_page' => 9 );
 									
 														
 
