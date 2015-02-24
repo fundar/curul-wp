@@ -97,6 +97,30 @@
  			font-size: 1.6em;
 
 		}
+		
+		#modificaciones article span {
+ 			font-size: 1.3em;
+		}
+		#modificaciones article span strong {
+			color: #502760;
+ 			font-size: 1.2em;
+		}
+
+		.sep{
+			border-bottom: 1px solid #502760;
+			margin-top: 40px;
+		}
+
+		.reddit-voting{
+	    background-color: #502760;
+	    float: right;
+			width: 130px;
+			height: 45px;
+	    padding: 10px 20px ;
+		}
+		
+		
+		
 </style>
 
 <?php if (have_posts()) : ?>
