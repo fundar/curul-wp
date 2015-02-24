@@ -1,178 +1,203 @@
-<?php get_header(); 
-	
-	global $avia_config, $more;
-	$data = getDataIniciativas();
-	$selectedPolitical = getParameterValueGET('partido-politico');
-	$selectedCommission = getParameterValueGET('comision');
-	$selectedTema = getParameterValueGET('tema');
-	$selectedStatus = getParameterValueGET('status');
-	$selectedPostulante = getParameterValueGET('postulante');
-
+<?php 
+get_header(); 
+global $dposttitle;
+$dposttitle = wp_title( '', false);
 ?>
- 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
-	
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/libs/d3.v3.min.js" type="text/javascript"></script>
-	<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js">  </script>
-	
-	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/scripts/app.js" type="text/javascript"></script>
+<style type="text/css">
+		#wrap_all #header{
+			display:none;
+		}
+		.titulo h2{
+			color: #000;
+ 			font-family: oswald;
 
-	<style type="text/css">
-
-		.post-title{
+ 			font-weight: normal;
+ 			padding: 10px;
+ 			font-size: 4em;
 		}
 
-		#documento_lnk{
-			margin-top:10px;
-   			font-family: oswald;
-   			font-weight: lighter;
-   			font-size: 1.3em;
-   			float:right;
-   			color:#aaa;
+		.titulo h2 #general{
+			color: #502760;
 		}
 
-		#documento_lnk:hover{
-   			color:#512B60;
-			
+		.titulo h2 #general small{
+			color: #60466B;
+ 			padding: 10px;
+ 			font-size: 1em;
 		}
 
+		.titulo h2 #general small b{
+ 			font-size: 1.5em;
+		}
 
-	</style>
+		#original{
+			height: 600px;
+			min-height: 600px;
+			background: #fff;
+		}
+
+		#banner{
+			min-height: 300px;
+			height: 300px;
+			background: none repeat scroll 0 0 rgba(250, 124, 0, 1) !important;
+			width: 100%;
+		}
+
+		#banner .num{
+			background: #ccc;
+ 			font-family: oswald;
+			min-height: 340px;
+			max-width: 340px;
+			font-size: 15em;
+			padding: 130px;
+			margin-left: 20px;
+			float:left;
+
+		}
+
+		.iniciativa-original{
+			background: #fff;
+			padding: 40px 20px 20px 20px;
+			float:left;
+			max-width: 66%;
+			margin-top: 140px;
+
+		}
 		
-		<div class="container top60">										     
-						<h1 class="entry-title-yellow">Preocupaciones </h1>
-						<div class="line-amarilla"> </div>
-		</div>
+		.iniciativa-original h3{
+ 			font-size: 2.5em;
+ 			color:#502760;
+		}
+		.iniciativa-original .texto p{
+ 			font-weight: lighter;
+ 			font-size: 1.6em;
+ 			font-family: "colaborate-thinregular";
+ 			color:#000;
+		}
 
-		<!--Inicio filtros iniciativas -->
+		section#modificaciones{
+			margin: 30px;
+			padding-top:40px; 
+
+		}
+
+		#modificaciones article{
+			max-width: 30%;
+			float:left;
+			margin-right: 40px;
+		}
+
+		#modificaciones article h3{
+			color:#593A57;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #593A57;
+			font-size: 1.9em;
+		}
+
+		#modificaciones article .texto p{
+ 			font-family: "colaborate-thinregular";
+ 			color:#000;
+ 			font-size: 1.6em;
+
+		}
 		
+		#modificaciones article span {
+ 			font-size: 1.3em;
+		}
+		#modificaciones article span strong {
+			color: #502760;
+ 			font-size: 1.2em;
+		}
 
-<!-- Fin filtros iniciativas -->		
-		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
-		        <?php if (have_posts()) : ?>
+		.sep{
+			border-bottom: 1px solid #502760;
+			margin-top: 40px;
+		}
+
+		.reddit-voting{
+	    background-color: #502760;
+	    float: right;
+			width: 130px;
+			height: 45px;
+	    padding: 10px 20px ;
+		}
+		
+		
+		
+</style>
+
+<?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
 						
 						
 					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
 
-			<div class='container template-blog template-single-blog '>
+<body>
+	<header class="titulo">
+		<h2> 
+			<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+			CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+			APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+		</h2>
+	</header>
 
-				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
-				        <header class="entry-content-header">
-						<a href="#documento" id="documento_lnk"> Ir a cuadro comparativo </a>
-						<h1 itemprop="headline" class="post-title entry-title">
+	<div id="original">
+		<div id="banner">
+			<div class="num"> 1 </div>
+			<section class="iniciativa-original">
+				<h3 id="titulo">  
 							<?php the_title(); ?>
-						</h1>
-						<div class="linea-morado"></div>
-						<h3 itemprop="headline" class="post-title entry-title">
-													<? the_content(); ?>					
+				</h3>
 
-						</h3>
-					</header>
-					
-                                         <?php endwhile; endif; ?>
-				</main>
-					
+				<div class="texto">
+																	<? the_content(); ?>					
+
 				
-										
-	
-
 				</div>
+			</section>
+		</div>
+	</div>
+					                                    <?php endwhile; endif; ?>
+
+	<div class="compartir">
+		<!--div class="box"><?php avia_social_share_links(); ?></div-->
+	</div>
+
+																	<?php 	if ( have_posts() ) : 
+																		   $args = array('post_type' => 'modificacion',
+																						'meta_query' => array(
+																			array (
+																						'key'     => 'id_preocupacion',
+																						'value'   => $id_preocupacion,
+																						'compare' => 'LIKE'
+																									)
+																								)
+																							);
+
+																			$loop  = new WP_Query($args);
+																		   while ( $loop->have_posts() ) : $loop->the_post(); ?>
+	
+	
+	<section id="modificaciones">
 		
+		<article>
+			<h3 class="responsable"> <?php the_title(); ?> </h3>
+			<div class="texto"> <?php the_content(); ?>	</div>
+			<span> Votos en curul501.org: <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </span>
+		</article>
 				
-				
-				<div class="post-entry post-entry-type-page post-entry-25">
-						    <div class="entry-content-wrapper clearfix">
-					                <?php if ( have_posts() ) : ?>
-					                <?php
-									//$args = array( 'post_type' => 'modificacion', 'posts_per_page' => 8 );
-								    //$loop = new WP_Query( $args );
-						           
-								   $args = array('post_type' => 'modificacion',
-								'meta_query' => array(
-									array (
-										'key'     => 'id_preocupacion',
-										'value'   => $id_preocupacion,
-										'compare' => 'LIKE'
-															)
-														)
-													);
-
-													$loop  = new WP_Query($args);
-																			   
-								   
-								   
-								   while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				 <article class="post type-post status-publish format-standard hentry post-entry post-entry-type-standard post-parity-odd single-small pleca-624070">
-									<div class="entry-content-wrapper clearfix">
-										<div class="entry-content-wrapper clearfix">
-											<!--Inicio fecga y resumen-->
-											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first topTop">
-												<div class="post_date">
-													<span><?php echo $dia; ?></span>
-													<?php echo $meses[$mes]; ?>, <?php echo $ano; ?>
-												</div>
-												<div class="entry-content">
-													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
-			                                                                                 <a class="iniciativas-home" href= "<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
-												         </p>
-													 <?php the_excerpt(); ?> 
-                          
-												</div>
-											</div><!--fin fecha y resumen-->
-											
-											<div class="flex_column av_two_third first avia-builder-el-0 el_before_av_one_third avia-builder-el-first">
-												<div class="in-box-share">
-												<?php avia_social_share_links(); ?>
-												</div>
-											</div>
-											<div class="vta-curul">
-												<span>
-													Votos en Curul 501: 
-													<b style="font-size: 1.2em; font-family: oswald; font-weight: normal; margin-left: 5px ">
-														<?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?> 
-													</b>
-												</span>
-												<div class="box"><?php avia_social_share_links(); ?></div>
-												
-												
-												
-												
-											</div>
-
-											
-										</div>
-									</div>
-							</article>
-							<!--fin iniciativas-->
-											<?php endwhile; ?>
+						<?php endwhile; ?>
 							<?php endif; ?>	
+	</section>
 
-						    </div>
-					</div>
-
-				
-				
-				
-				
-		
-		
-		
-		
-
-
-        
-		
-		
-		
-		
-		
-		
-		
+	<section id="comentarios">
 		<div class="container top60">
-			<?php			    		    
-		        comments_template( '/includes/comments.php');
-		        ?>
-			</div>
-		</div><!-- close default .container_wrap element -->
+					<?php wp_reset_query(); ?>
+			        <?php comments_template( '/includes/comments.php'); ?>
+		        <?php get_footer(); ?>
 
-<?php get_footer(); ?>
+			</div>
+	</section>
+
+
+</body>

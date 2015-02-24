@@ -148,7 +148,16 @@
 							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
 							$htmlcommis = "";
 							$link = get_site_url() . "/iniciativas/?comision=";
+							$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
+							$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
+							$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
+							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
+							$htmlpresentadas = "";
+							$link_representante = get_site_url() . "/representantes/";
 							
+							
+							if($tipo_iniciativa==1)
+							{
 							if($commissions) {
 								foreach($commissions as $key => $commission) {
 									$htmlcommis .= "<p><a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a></p>";
@@ -156,22 +165,36 @@
 							} else {
 								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
 							}
-						$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
-						
-								$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
-							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
-							$htmlpresentadas = "";
-							$link_representante = get_site_url() . "/representantes/";
-							
-							if($presentadas) {
-								foreach($presentadas as $key => $presentada) {
-									$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+									}else{
+									if($commissions) {
+								foreach($commissions as $key => $commission) {
+									$htmlcommis .= "<p>".$commission."</p>";
 								}
+							} else {
+								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
+							}
+								}
+							
+						if($tipo_iniciativa==1){
+									if($presentadas) {
+										foreach($presentadas as $key => $presentada) {
+											$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
+													}
 							} else {
 								$htmlpresentadas = "<p>No se encuentran representantes</p>";
 							}
 
-					
+											}else{
+												if($presentadas) {
+								foreach($presentadas as $key => $presentada) {
+									$htmlpresentadas .= "<p>".$presentada."</p>";
+								}
+							} else {
+								$htmlpresentadas = "<p>No se encuentran representantes</p>";
+							}
+											
+											
+											}
 												
 						?>
 			<div class='container template-blog template-single-blog '>
@@ -194,9 +217,9 @@
 							</li>
 							<li class="bullet-arrow">Propuesta por
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
-							<?php if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } ?>
+							<?php if($tipo_iniciativa==1){  if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } } else{ if($presentada_partido != "") { ?> <?php echo  $presentada_partido."</br></br>"; }    } ?>
 							<p><?php echo $htmlpresentadas; ?></p> </li>
-							<li class="bullet-arrow">En la C&aacute;mara de: <span>Diputados</span></li>
+							<li class="bullet-arrow">En la C&aacute;mara de: <span><?php  if($tipo_iniciativa==1) echo "Diputados"; else	echo "Senadores";?></span></li>
 						</ul>
 						<? the_content(); ?>					
 						<div class="pleca-sub-info"></div>
