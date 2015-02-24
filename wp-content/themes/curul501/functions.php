@@ -142,7 +142,7 @@ function create_post_type_preocupacion() {
 			'hierarchical' => true,
 			'query_var' => true,
 			'menu_position' => 5,
-			//'taxonomies' => array("iniciativa_category"),
+			'taxonomies' => array("category"),
 			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
 			'rewrite' => array('slug' => 'preocupacion', 'with_front' => false),
 			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
