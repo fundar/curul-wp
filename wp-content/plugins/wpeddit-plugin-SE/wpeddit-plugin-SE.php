@@ -1303,9 +1303,9 @@ function epic_reddit_voting_comment($ID){
 			<div class = 'reddit-voting'>
 				<ul class="unstyled">
 			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-					<div class="arrowc2 <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+					<!--div class="arrowc2 <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
 					<div class="score2 <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrowc2 <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+					<div class="arrowc2 <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div-->
 					<?php }else{ ?>
 					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
 					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
