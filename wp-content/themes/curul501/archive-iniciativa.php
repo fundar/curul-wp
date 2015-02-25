@@ -164,10 +164,10 @@
 													   $status_final="Pleno";
 													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
 													   $status_final="Comisiones";
-													} elseif($elements[$status_final] == "Prórroga") {
+													} elseif($elements[$status_final] == "PrÃ³rroga") {
 													   $status_final="Comisiones";
 													} elseif($elements[$status_final] == "Publicado") {
-													   $status_final="Publicación";
+													   $status_final="PublicaciÃ³n";
 													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
 													   $status_final="Pleno";
 													} elseif($elements[$status_final] == "Aprobada") {
