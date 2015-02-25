@@ -51,7 +51,29 @@ global $avia_config;
 														$mes = $explode2[1];
 														$dia = $explode2[2];
 													    $meses=array('01'=>'En','02'=>'Febr','03'=>'Mzo','04'=>'Abr','05'=>'My','06'=>'Jun','07'=>'Jul','08'=>'Agt','09'=>'Sept','10'=>'Oct','11'=>'Nov','12'=>'Dic');
-
+														
+														
+													if($elements[$status_final]=="Presentada"){
+													   $status_final="Pleno";
+													 }elseif($elements[$status_final]=="Turnada") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Prórroga") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Publicado") {
+													   $status_final="Publicación";
+													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] == "Aprobada") {
+													   $status_final="Minuta";
+													} elseif($elements[$status_final] == "Dictaminada") {
+													   $status_final="Comisiones";
+													} else {
+														$status_final="Otro";
+													}
 
 														?>
 								
@@ -79,7 +101,7 @@ global $avia_config;
 													<div class="datos">
 													Status													
 													<div class="temporizador"> 
-													<p><?php echo $elements[$status_final]; ?></p>
+													<p><?php echo $status_final; ?></p>
 													</div>
 													</div>													
 												</div> 
