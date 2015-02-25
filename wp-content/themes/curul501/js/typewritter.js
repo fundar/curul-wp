@@ -78,16 +78,19 @@
 
 
           typeString($tar, settings.text[idx], 0, settings.delay,  function(){
-            $tar.empty();
-            $tar.parents(".textos").toggle()
             var ilustracion = $tar.parents(".textos").next(".ilustracion")
 
 
             if(ilustracion.css("display") == "none" ){
-              ilustracion.slideDown();
+              $tar.parents(".textos").toggle()
+              ilustracion.fadeIn("slow");
             }else{
-              ilustracion.slideUp();
+              ilustracion.fadeOut("slow", function(){
+                $tar.parents(".textos").fadeIn("slow");
+              });
             }
+            
+            $tar.empty();
           });
 
         }($(this), 0));
