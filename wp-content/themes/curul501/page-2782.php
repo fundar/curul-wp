@@ -1,4 +1,3 @@
- 			font-size: 1em;
 <?php 
 
 get_header();
@@ -8,10 +7,56 @@ global $avia_config, $more;
  ?>
 
 <style type="text/css">
-		#wrap_all #header{
-			display:none;
+		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
+		    color: #f4f4f4;
 		}
+		.responsive .container {
+		    max-width: 1310px !important;
+		}
+		.av_header_transparency > #header_main {
+		    background-color: #f4f4f4 !
+		;
+		    background-image: none !important;
+		}
+		.html_header_top.html_header_sticky #header {
+		    background-image:none !important;
+		    background-color:#f4f4f4;
+		    position: relative;
+		}
+		.main_menu {
+		    background-image:none;
+		    background-color: #f4f4f4;
+		}
+		
+		#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, #top #wrap_all .av_header_transparency .sub_menu > ul > li > a, #top .av_header_transparency #header_main_alternate, .av_header_transparency #header_main .social_bookmarks li a {
+		    background: #f4f4f4;
+		}
+		#header_main nav .social_bookmarks {
+		    background: none repeat scroll 0 0 #f4f4f4 !important;
+		}
+		#header_meta{
+		  display:none;
+		}
+		strong.logo {
+                margin-left: 10px;
+                }
+		.titulo h2 {
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 4em;
+		    font-weight: normal;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		}
+
 		.titulo h2{
+			color: #000;
+ 			font-family: oswald;
+
+ 			font-weight: normal;
+ 			padding: 10px;
+ 			font-size: 4em;
+		}
 			color: #000;
  			font-family: oswald;
 
@@ -52,13 +97,14 @@ global $avia_config, $more;
 			height: 420px;
 		}
 
-		.num{
-			background: #ccc;
-			padding: 0px 25px;
- 			font-family: oswald;
-			max-height: 60px;
-			width: 100px;
-			font-size: 3em;
+		.num {
+		    background: none repeat scroll 0 0 #502B60;
+		    font-family: oswald;
+		    font-size: 3em;
+		    max-height: 60px;
+		    padding: 0 25px;
+		    width: 100px;
+		    color: #fff;
 		}
 
 		.sep{
@@ -77,12 +123,12 @@ global $avia_config, $more;
 
 		.click_area .textos{
 			margin-top: 20px;
-			min-height: 380px;
+			min-height: 297px;
 			color: #60466B;
 		}
 		
 		.click_area .titulo, .titulo_ninja{
-			font-size: 3.5em;
+			font-size: 30px;
 			margin-top: 0px;
 		}
 
@@ -101,7 +147,7 @@ global $avia_config, $more;
 
 		.ilustracion{
 			display: none;
-			height: 380px;
+			height: auto;
 			margin-bottom: 14px;
 			width: 100%;
 		}
@@ -146,13 +192,14 @@ global $avia_config, $more;
 			float: left;
 		}
 
-		.preocupacion-8mas1 .num{
-			background: #fff;
-			font-size: 24em;
-			width: auto;
-			color: #60466B;
-			margin-top:150px; 
-			min-height: 250px;
+
+		.preocupacion-8mas1 .num {
+		    background: none repeat scroll 0 0 #fff;
+		    color: #60466b;
+		    font-size: 26.5em;
+		    margin-top: 137px;
+		    min-height: 250px;
+		    width: auto;
 		}
 
 		.preocupacion-8mas1 .num strong{
@@ -172,12 +219,12 @@ global $avia_config, $more;
 
 		.preocupacion-8mas1 .textos{
 			margin-top: 20px;
-			min-height: 250px;
+			min-height: 297px;
 			color: #60466B;
 		}
 
 		.preocupacion-8mas1 .titulo, .preocupacion-8mas1 .cursor{
-			font-size: 3.5em;
+			font-size: 30px;
 			margin-top: 0px;
 		}
 
@@ -187,25 +234,41 @@ global $avia_config, $more;
 
 		.preocupacion-8mas1 .ilustracion{
 			display: none;
-			height: 380px;
+			min-height: 297px;
 			margin-bottom: 14px;
 			width: 800px;
 		}
-
+		#av_section_a{
+				background:#f4f4f4;
+		}
+		#av_section_2{
+				background:#fff;
+		}
+		#pad60{
+				padding:60px 0;
+		}
+ 
 
 
 
 </style>
 
 
-<body>
-	<header class="titulo">
-		<h2> 
-			<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-			CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-			APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
-		</h2>
-	</header>
+<body>	
+		<div class="container">
+				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
+						<header class="titulo">
+							<h2> 
+								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+							</h2>
+						</header>
+				</main>
+                </div>
+
+<div class="container_wrap fullsize" id="av_section_2">		
+		<div class="container">
 		<section id="preocupaciones">
 			<ul>
 
@@ -235,7 +298,7 @@ global $avia_config, $more;
 			<li class="<?php echo $class; ?>">
 		<?php if($numero_preocupacion==9){ ?> <span class="num">8+<strong>1</strong> </span> <?php } else { ?> <span class="num"> <?php echo $numero_preocupacion; }?> </span>
 			
-			<div class="sep"></div>
+			
 
 				<a class="click_area" href="<?php the_permalink() ?>">
 					<div class="textos">
@@ -245,7 +308,7 @@ global $avia_config, $more;
 					<img class="ilustracion" src="<?php echo $avatar_url;?>">
 				</a>
 
-				<div class="votos"> 
+				<div class="votos" style="margin-top: 9px;">
 					<label> Total de participaciones: </label>
 					<strong> <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </strong> 
 				</div>
@@ -262,13 +325,15 @@ global $avia_config, $more;
 			
 	</section>
 	<br> <br> <br> <br>
-
+		</div></div>
 	<section id="comentarios">
-		
+		<div class="container" id="pad60">
+		  <?php comments_template( '/includes/comments.php'); ?>
+		</div>
 	</section>
 
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
-  <?php comments_template( '/includes/comments.php'); ?>
+
 	<?php get_footer(); ?>
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
