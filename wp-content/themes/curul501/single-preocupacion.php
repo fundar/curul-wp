@@ -219,120 +219,175 @@ h3.iconbox_content_title {
 }
 </style>
 
+<?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : the_post(); ?>
+						
+						
+					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
+<style type="text/css">
+	
+	#banner{
+			min-height: 370px;
+			height: 300px;
+			background: url("http://curul501.org/wp-content/uploads/preocupaciones/pattern-<?php echo $id_preocupacion ?>.png");
+			width: 100%;
+		}
+
+</style>
+
 <body>
-<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
-<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
-	<style type="text/css">
-		#banner{
-				min-height: 370px;
-				height: 300px;
-				background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
-				width: 100%;
-			}
-	</style>
-
-	<!-- cabecera micrositio -->
-	<div class="container">
-		<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
-			<header class="titulo">
-				<h2> 
-					<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-					CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-					APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
-				</h2>
-			</header>
-		</main>
-    </div>
-	<!-- /cabecera micrositio -->
-
-	<!-- comienza banner -->
-	<div id="original">
-		<div id="banner">
-            <div class="container">
-				<!-- columna numero -->		
-                <div class="flex_column av_one_third first avia-builder-el-16 el_after_av_section el_before_av_two_third avia-builder-el-first">	
-                    <div class="num">
-                    <?php if($id_preocupacion==9){ ?> 8+1 <?php } else { ?> <?php echo $id_preocupacion; }?>
-                    </div>
+		<!-- cabecera micrositio -->
+		<div class="container">
+				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
+						<header class="titulo">
+							<h2> 
+								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+							</h2>
+						</header>
+				</main>
                 </div>
+		<!-- /cabecera micrositio -->
+<!-- comienza banner -->
+<div id="original">
+		<div id="banner">
+		                <div class="container">
+				<!-- columna numero -->		
+                                <div class="flex_column av_one_third first avia-builder-el-16 el_after_av_section el_before_av_two_third avia-builder-el-first">	
+			                        <div class="num">
+			                        <?php if($id_preocupacion==9){ ?> 8+1 <?php } else { ?> <?php echo $id_preocupacion; }?>
+			                        </div>
+                                </div>
 				<!-- columna titulo -->	
-                <div class="flex_column av_two_third avia-builder-el-18 el_after_av_one_third el_before_av_one_fourth ">
-					<div class="fijo"></div>						
-                        <section class="iniciativa-original">
-                            <h3 id="titulo">  <?php the_title(); ?></h3>
+                                <div class="flex_column av_two_third avia-builder-el-18 el_after_av_one_third el_before_av_one_fourth ">
+						<div class="fijo"></div>						
+			                        <section class="iniciativa-original">
+				                            <h3 id="titulo">  <?php the_title(); ?></h3>
+                                                           
 						</section>
 				</div>
-			</div><!--/container -->
+				  
+							    
+				</div><!--/container -->
+						
 		</div><!--/#banner-->
-	</div>
-	<!-- final banner -->
+</div>
+<!-- final banner -->
+<!-- contenido textos resumen-->
+<div id="av_section" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">
+		                <div class="container">
+				<!-- columna numero -->		
+                                <div class="flex_column av_one_third first avia-builder-el-16 el_after_av_section el_before_av_two_third avia-builder-el-first ">	
+			        <div class="textwidget" id="bajonum"><?php avia_social_share_links(); ?></div>
+                                </div>
+				<!-- columna titulo -->	
+                                <div class="flex_column av_two_third avia-builder-el-18 el_after_av_one_third el_before_av_one_fourth ">
+			                        <section class="iniciativa-original">
+				                            
+                                                            <div class="texto"><? the_content(); ?></div>
+						</section>
+				</div>
+				  
+							    
+				</div><!--/container -->
+</div>
 
-	<!-- contenido textos resumen-->
-	<div id="av_section" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">
-        <div class="container">
-			<!-- columna numero -->		
-            <div class="flex_column av_one_third first avia-builder-el-16 el_after_av_section el_before_av_two_third avia-builder-el-first ">	
-		        <div class="textwidget" id="bajonum"><?php avia_social_share_links(); ?></div>
-            </div>
-			<!-- columna titulo -->	
-            <div class="flex_column av_two_third avia-builder-el-18 el_after_av_one_third el_before_av_one_fourth ">
-                <section class="iniciativa-original">
-                    <div class="texto"><? the_content(); ?></div>
-				</section>
-			</div>
-		</div><!--/container -->
-	</div>
-	<!-- /contenido textos resumen-->
-<?php endwhile; endif; ?>
+<!-- /contenido textos resumen-->
 
-
-<?php 	
-	if ( have_posts() ) : 
-		$args = array('post_type' => 'modificacion', 
-			'meta_query' => array(
-			array (
-				'key'     => 'id_preocupacion',
-				'value'   => $id_preocupacion,
-				'compare' => 'LIKE'
-			)
-		)
-	);
-	?>
-	<!-- inicio iniciativas comparación -->
-	<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
+<!-- inicio iniciativas comparación -->
+<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
 		<div class="container top40">
-			
-			<?php $loop  = new WP_Query($args);
-				while ( $loop->have_posts() ) : $loop->the_post(); 
-				$participaciones_totales = get_post_meta($post->ID, 'wp_total_participaciones', true); ?>
-				<div class="flex_column av_one_third first  avia-builder-el-9  el_after_av_hr  el_before_av_one_third  ">
+			<div class="flex_column av_one_third first  avia-builder-el-9  el_after_av_hr  el_before_av_one_third  ">
 				<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-10  avia-builder-el-no-sibling  elbloque">
 					<header class="entry-content-header">
-						<h3 itemprop="headline" class="iconbox_content_title" id="sin-votos"> <?php the_title(); ?> </h3>
-					</header>
-					<div itemprop="text" class="iconbox_content_container">
-						<? the_content(); ?>
-						<div class="votos"> 
-							<label> <p>Total de participaciones: </label> <strong>  <?php echo ($participaciones_totales)? $participaciones_totales : 0 ?> </strong></p> 
-						</div>								
-                    </div>
-					<footer class="entry-footer"></footer>
+						<h3 itemprop="headline" class="iconbox_content_title" id="sin-votos">IconBox Title</h3>
+						</header>
+						<div itemprop="text" class="iconbox_content_container">
+								
+										<? the_content(); ?>
+								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>								
+                                                </div>
+						</div><footer class="entry-footer"></footer>
 				</article>
-				</div>
+<!--- caja 2 -->
+<div class="flex_column av_one_third   avia-builder-el-11  el_after_av_one_third  el_before_av_one_third  ">
+		<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-12  avia-builder-el-no-sibling elbloque">
 				
-			<?php endwhile; ?>
+				<div class="iconbox_content">
+						<header class="entry-content-header">
+								<h3 itemprop="headline" class="iconbox_content_title">IconBox Title</h3>
+						</header>
+						<div itemprop="text" class="iconbox_content_container sin-votos">
+								<? the_content(); ?>
+								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>
+						</div>
+				</div>
+				<footer class="entry-footer"></footer>
+		</article>
+</div>
 
+<!-- fin caja 2 -->
+				
+<!--- caja 3-->
+<div class="flex_column av_one_third   avia-builder-el-13  el_after_av_one_third  avia-builder-el-last  ">
+		<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-14  avia-builder-el-no-sibling elbloque">
+				<div class="iconbox_content">
+						<header class="entry-content-header">
+								<h3 itemprop="headline" class="iconbox_content_title">IconBox Title</h3>
+						</header>
+						<div itemprop="text" class="iconbox_content_container sin-votos">
+								<? the_content(); ?>
+								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>								
+                                                </div>
+				</div>
+				<footer class="entry-footer"></footer>
+		</article>
+</div>
+<!-- fin caja 3 -->
+					
+				</div>				
 		</div>
-	</div>	
 
-	<?php endif; ?>	
-	<!-- fin iniciativas comparación-->	
+</div>	
+<!-- fin iniciativas comparación-->	
 
-<section id="comentarios">
-	<div class="container top60">
-        <?php comments_template( '/includes/comments.php'); ?>
-	</div>
-</section>
-<?php get_footer(); ?>
+					                                    <?php endwhile; endif; ?>
+
+	
+
+																	<?php 	if ( have_posts() ) : 
+																		   $args = array('post_type' => 'modificacion',
+																						'meta_query' => array(
+																			array (
+																						'key'     => 'id_preocupacion',
+																						'value'   => $id_preocupacion,
+																						'compare' => 'LIKE'
+																									)
+																								)
+																							);
+
+																			$loop  = new WP_Query($args);
+																		   while ( $loop->have_posts() ) : $loop->the_post(); ?>
+	
+	
+		
+		<article>
+			<h3 class="responsable"> <?php the_title(); ?> </h3>
+			<div class="texto"> <?php the_content(); ?>	</div>
+			<span> Votos en curul501.org: <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </span>
+		</article>
+				
+						<?php endwhile; ?>
+							<?php endif; ?>	
+	</section>
+
+	<section id="comentarios">
+		<div class="container top60">
+					<?php wp_reset_query(); ?>
+			        <?php comments_template( '/includes/comments.php'); ?>
+		</div>
+	</section>
+   <?php get_footer(); ?>
 
 </body>
