@@ -634,6 +634,7 @@ function getIniciativasbyRepresentantes() {
 
 /*Get temas array*/
 function getTemas() {
+
 	$temas = array(
 		array("name" => "transparencia", "slug" => "transparencia"),
 		array("name" => "rendición de cuentas",  "slug" => "rendicion-de-cuentas"),
