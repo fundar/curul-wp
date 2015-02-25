@@ -145,7 +145,8 @@ $dposttitle = wp_title( '', false);
 
 	<div id="original">
 		<div id="banner">
-			<div class="num"> <?php echo $id_preocupacion; ?> </div>
+			<div class="num"> <?php if($id_preocupacion==9){ ?> 8+1 <?php } else { ?> <?php echo $id_preocupacion; }?>  </div>
+			
 			<section class="iniciativa-original">
 				<h3 id="titulo">  
 							<?php the_title(); ?>
@@ -158,14 +159,13 @@ $dposttitle = wp_title( '', false);
 				</div>
 			</section>
 		</div>
+		<div class="compartir">
+	<?php avia_social_share_links(); ?>	
+	</div>
 	</div>
 					                                    <?php endwhile; endif; ?>
 
-	<div class="compartir">
-	<?php avia_social_share_links(); ?>
-			    
-		<!--div class="box"></div-->
-	</div>
+	
 
 																	<?php 	if ( have_posts() ) : 
 																		   $args = array('post_type' => 'modificacion',
