@@ -11,6 +11,10 @@ global $avia_config;
 	
 	?>
 
+	<style type="text/css">
+		.404_recommendation{ display: none; }
+	</style>
+
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 			
