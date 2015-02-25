@@ -298,8 +298,10 @@ global $avia_config, $more;
 			 		jQuery(this).children(".ilustracion").css("display", "none")
 			 		jQuery(this).children(".textos").css("display", "inline-block")
 			 	}
-
+			 	
 			 	jQuery(this).children(".textos").children(".titulo").remove()
+			 	jQuery(this).removeClass("ilustracion")
+			 	jQuery(this).children("img").addClass("ilustracion")
 			 })
 			 .on("mouseleave", function(){
 			 	var textos = jQuery(this).children(".textos")
