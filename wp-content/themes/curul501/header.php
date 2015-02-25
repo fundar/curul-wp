@@ -18,6 +18,7 @@
 <title><?php if(function_exists('avia_set_title_tag')) { echo avia_set_title_tag(); } ?></title>
 
 
+
 <?php
 /*
  * outputs a rel=follow or nofollow tag to circumvent google duplicate content for archives
