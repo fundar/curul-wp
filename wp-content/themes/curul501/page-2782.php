@@ -235,7 +235,7 @@
 
 				<div class="votos"> 
 					<label> Total de participaciones: </label>
-					<strong> 49 </strong> 
+					<strong> <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </strong> 
 				</div>
 				<div class="box"><?php avia_social_share_links(); ?> </div>
 			</li>
