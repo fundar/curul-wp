@@ -222,8 +222,9 @@
 		
 		
 			<li class="<?php echo $class; ?>">
-				<span class="num"> <?php echo $numero_preocupacion; ?></span>
-				<div class="sep"></div>
+		<?php if($numero_preocupacion2==9){ <span class="num"> 8+<strong>1</strong> </span> } else { <span class="num"> echo $numero_preocupacion; ?></span>
+			
+			<div class="sep"></div>
 
 				<a class="click_area" href="<?php the_permalink() ?>">
 					<div class="textos">
