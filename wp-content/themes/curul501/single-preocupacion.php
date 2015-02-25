@@ -162,9 +162,9 @@ $dposttitle = wp_title( '', false);
 					                                    <?php endwhile; endif; ?>
 
 	<div class="compartir">
-	
+	<?php avia_social_share_links(); ?>
 			    
-		<!--div class="box"><?php avia_social_share_links(); ?></div-->
+		<!--div class="box"></div-->
 	</div>
 
 																	<?php 	if ( have_posts() ) : 
