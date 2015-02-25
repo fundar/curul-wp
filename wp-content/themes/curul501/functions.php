@@ -411,7 +411,7 @@ function getDataIniciativas() {
 			'post_type' => 'iniciativa',
 			'posts_per_page' => 10,
 			'paged' => $paged,
-			'orderby' => 'title', 'order' => 'ASC',
+			'orderby' => 'title', 'order' => 'DESC',
 			'meta_query' => $meta_query
 		);
 		$loop = new WP_Query($args);
