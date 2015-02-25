@@ -356,6 +356,13 @@
 	</div><!--end sidebar-->
 				
    </div><!--end container-->
+   
+			<div class="container top60">
+			<?php			    		    
+		        comments_template( '/includes/comments.php');
+		        ?>
+			</div>
+   
 </div><!-- close default .container_wrap element -->
 <?php get_footer(); ?>
 
