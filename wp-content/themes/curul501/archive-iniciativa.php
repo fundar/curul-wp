@@ -65,7 +65,7 @@
 							   <?php $temasArray = getTemas(); ?>
 							   <?php foreach($temasArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedTema == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
-										<?php echo utf8_decode($value["name"]);?>
+										<?php echo utf8_encode($value["name"]);?>
 									</option>
 								<?php } ?>
 						   </select>
