@@ -298,14 +298,14 @@ h3.iconbox_content_title {
 
 <?php 	
 	if ( have_posts() ) : 
-		$args = array('post_type' => 'modificacion', 
+		$args = array('post_type' => 'modificacion',
+				'orderby' => 'title',
+				'order' => 'ASC', 
 			'meta_query' => array(
 			array (
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
-				'compare' => 'LIKE',
-				'orderby' => 'title',
-				'order' => 'ASC'
+				'compare' => 'LIKE'
 			)
 		)
 	);
