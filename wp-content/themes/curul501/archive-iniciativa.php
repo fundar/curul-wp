@@ -326,7 +326,27 @@
 														$link_representante = get_site_url() . "/representantes/";
 														$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
 
-													
+														if($elements[$status_final]=="Presentada"){
+													   $status_final="Pleno";
+													 }elseif($elements[$status_final]=="Turnada") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Prórroga") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Publicado") {
+													   $status_final="Publicación";
+													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] == "Aprobada") {
+													   $status_final="Minuta";
+													} elseif($elements[$status_final] == "Dictaminada") {
+													   $status_final="Comisiones";
+													} else {
+														$status_final="Otro";
+													}
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
 																$htmlpresentadas .= "<a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></br>";
