@@ -42,13 +42,13 @@ global $avia_config, $more;
 		strong.logo {
                 margin-left: 10px;
                 }
-		.titulo h2{
-			color: #000;
- 			font-family: oswald;
-
- 			font-weight: normal;
- 			padding: 10px;
- 			font-size: 4em;
+		.titulo h2 {
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 4em;
+		    font-weight: normal;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
 		}
 
 		.titulo h2 #general{
