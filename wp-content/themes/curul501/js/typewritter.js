@@ -84,6 +84,8 @@
             if(ilustracion.css("display") == "none" ){
               $tar.parents(".textos").toggle()
               ilustracion.fadeIn("slow");
+
+              
             }else{
               ilustracion.fadeOut("slow", function(){
                 $tar.parents(".textos").fadeIn("slow");
