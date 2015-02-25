@@ -74,23 +74,27 @@ global $avia_config, $more;
 			cursor: pointer;
 		}
 
-
-		.titulo_ninja{
-			display: none;
-		}
-
 		.click_area .textos{
 			margin-top: 20px;
 			min-height: 380px;
 			color: #60466B;
 		}
-
-		.click_area .titulo, .click_area .cursor{
+		
+		.click_area .titulo, .titulo_ninja{
 			font-size: 3.5em;
 			margin-top: 0px;
 		}
 
-		.click_area .titulo,{
+		.click_area .titulo, .ilustracion{
+			z-index: -1;
+		}
+
+		.titulo_ninja{
+			display: none;
+			z-index: 3;
+		}
+
+		.click_area .titulo, .click_area .titulo-ninja{
 			float: left;
 		}
 
@@ -192,6 +196,7 @@ global $avia_config, $more;
 
 </style>
 
+
 <body>
 	<header class="titulo">
 		<h2> 
@@ -233,7 +238,7 @@ global $avia_config, $more;
 
 				<a class="click_area" href="<?php the_permalink() ?>">
 					<div class="textos">
-						<p class="titulo_ninja"> <?php the_title(); ?> </p>
+						<h1 class="titulo_ninja"> <?php the_title(); ?> </h1>
 						<h1 class="titulo"></h1> 
 					</div>
 					<img class="ilustracion" src="<?php echo $avatar_url;?>">
