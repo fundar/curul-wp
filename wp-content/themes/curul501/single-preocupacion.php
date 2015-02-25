@@ -70,6 +70,11 @@ $dposttitle = wp_title( '', false);
 			padding-bottom: 30px;
 		}
 
+		.reddit-voting{
+			margin-top: -15px;
+			
+		}
+
 body {
     background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
     color: #eee;
@@ -337,6 +342,8 @@ h3.iconbox_content_title {
 		</div>
 	</div>	
 
+
+
 	<?php endif; ?>	
 	<section id="comentarios">
 		<div class="container top60">
@@ -344,6 +351,17 @@ h3.iconbox_content_title {
 			        <?php comments_template( '/includes/comments.php'); ?>
 		</div>
 	</section>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+
+			/* Mover de lugar los votos */
+			jQuery(".votos").each(function(){
+			  var redit = jQuery(this).siblings(".reddit-voting")
+			  jQuery(this).prepend(redit)
+			})
+		})
+	</script>
    <?php get_footer(); ?>
 
 </body>
