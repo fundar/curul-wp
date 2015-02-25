@@ -316,7 +316,7 @@ h3.iconbox_content_title {
 							<label> <p>Total de participaciones: </label> <strong>  <?php echo ($participaciones_totales)? $participaciones_totales : 0 ?> </strong></p> 
 						</div>								
                     </div>
-					</div><footer class="entry-footer"></footer>
+					<footer class="entry-footer"></footer>
 				</article>
 				</div>
 				
