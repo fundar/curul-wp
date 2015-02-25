@@ -382,7 +382,7 @@
 													<div class="datos">
 													Status													
 													<div class="temporizador"> 
-													<p><?php echo $elements[$status_final]; ?></p>
+													<p><?php echo $status_final; ?></p>
 													</div>
 													</div>													
 												</div> 
