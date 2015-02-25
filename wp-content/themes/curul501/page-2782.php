@@ -256,7 +256,8 @@
 	</section>
 
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
-
+  <?php comments_template( '/includes/comments.php'); ?>
+	<?php get_footer(); ?>
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
 			
