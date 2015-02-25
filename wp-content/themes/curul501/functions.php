@@ -682,26 +682,18 @@ function getTipos() {
 
 
 
-
-
-
  /*Get STATUS array*/
 function getStatus() {
 	$status = array(
 		array("name" => "Turnada", "slug" => "turnada"),
-		array("name" => "Dictaminada en sentido negativo",  "slug" => "dictaminada-en-sentido-negativo"),
-		array("name" => "Enviada", "slug" => "enviada"),
-		array("name" => "Turnada", "slug" => "turnada"),
+		array("name" => "Dicataminada en sentido negativo",  "slug" => "dictaminada-en-sentido-negativo"),
 		array("name" => "Prórroga", "slug" => "prorroga"),
-		array("name" => "Devuelta", "slug" => "devuelta"),
-		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada"),
-		array("name" => "Aprobada", "slug" => "aprobada"),
-		array("name" => "Desechada", "slug" => "desechada"),
+		array("name" => "Dictaminada y  Aprobada", "slug" => "dictaminada-y-aprobada"),
+		array("name" => "Minuta", "slug" => "aprobada"),
 		array("name" => "Dictaminada", "slug" => "dictaminada"),
-		array("name" => "Precluida", "slug" => "precluida"),
-		array("name" => "Presentada", "slug" => "presentada"),
-		array("name" => "Publicado", "slug" => "publicado"),
-		array("name" => "Se le dispensaron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites")
+		array("name" => "Pleno", "slug" => "presentada"),
+		array("name" => "Publicacion", "slug" => "publicado"),
+		array("name" => "Se le dispensaron todos los tramites", "slug" => "se-le-dispensaron-todos-los-tramites")
 		
 	);
 	
