@@ -568,7 +568,7 @@
 													   $status_final="Pleno";
 													 }elseif($elements[$status_final]=="Turnada") {
 													   $status_final="Comisiones";
-													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
+													} elseif($elements[$status_final]=="Dictaminada y aprobada") {
 													   $status_final="Pleno";
 													} elseif($elements[$status_final] =="Dictaminada en sentido negativo") {
 													   $status_final="Comisiones";
