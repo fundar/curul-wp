@@ -202,9 +202,8 @@
 									while ( $loop->have_posts() ) : $loop->the_post(); 
 									
 									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
-									$numero_preocupacion2=get_post_meta($post->ID, 'id_preocupacion', true);
 
-												if($numero_preocupacion2==9){
+												if($numero_preocupacion==9){
 													$class="preocupacion-8mas1";
 												} else {
 														$class="preocupacion";
@@ -212,17 +211,17 @@
 														
 												
 												
-												
 									?>
 									
 								
-		
+											<div class="entry-content-wrapper clearfix">
+
 	<section id="preocupaciones">
 		<ul>
 		
 		
 			<li class="<?php echo $class; ?>">
-		<?php if($numero_preocupacion2==9){ ?> <span class="num"> 8+<strong>1</strong> </span> <?php } else { ?> <span class="num"> <?php echo $numero_preocupacion; }?> </span>
+		<?php if($numero_preocupacion==9){ ?> <span class="num">8+<strong>1</strong> </span> <?php } else { ?> <span class="num"> <?php echo $numero_preocupacion; }?> </span>
 			
 			<div class="sep"></div>
 
@@ -252,7 +251,7 @@
 	</section>
 	<br> <br> <br> <br>
 
-
+		</div>
 	<section id="comentarios">
 		
 	</section>
