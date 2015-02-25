@@ -229,7 +229,7 @@ h3.iconbox_content_title {
 	#banner{
 			min-height: 370px;
 			height: 300px;
-			background: url("http://curul501.org/wp-content/uploads/preocupaciones/pattern-<?php echo $id_preocupacion ?>.png");
+			background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
 			width: 100%;
 		}
 
@@ -286,102 +286,56 @@ h3.iconbox_content_title {
 			                        <section class="iniciativa-original">
 				                            
                                                             <div class="texto"><? the_content(); ?></div>
-						</section>
+</section>
 				</div>
 				  
 							    
 				</div><!--/container -->
 </div>
+<?php endwhile; endif; ?>
 
 <!-- /contenido textos resumen-->
 
-<!-- inicio iniciativas comparación -->
-<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
+<?php 	
+	if ( have_posts() ) : 
+		$args = array('post_type' => 'modificacion', 
+			'meta_query' => array(
+			array (
+				'key'     => 'id_preocupacion',
+				'value'   => $id_preocupacion,
+				'compare' => 'LIKE'
+			)
+		)
+	);
+	?>
+	<!-- inicio iniciativas comparación -->
+	<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
 		<div class="container top40">
-			<div class="flex_column av_one_third first  avia-builder-el-9  el_after_av_hr  el_before_av_one_third  ">
-				<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-10  avia-builder-el-no-sibling  elbloque">
-					<header class="entry-content-header">
-						<h3 itemprop="headline" class="iconbox_content_title" id="sin-votos">IconBox Title</h3>
+			
+			<?php $loop  = new WP_Query($args);
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+				$participaciones_totales = get_post_meta($post->ID, 'wp_total_participaciones', true); ?>
+				<div class="flex_column av_one_third">
+					<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-10  avia-builder-el-no-sibling  elbloque">
+						<header class="entry-content-header">
+							<h3 itemprop="headline" class="iconbox_content_title" id="sin-votos"> <?php the_title(); ?> </h3>
 						</header>
 						<div itemprop="text" class="iconbox_content_container">
-								
-										<? the_content(); ?>
-								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>								
-                                                </div>
-						</div><footer class="entry-footer"></footer>
-				</article>
-<!--- caja 2 -->
-<div class="flex_column av_one_third   avia-builder-el-11  el_after_av_one_third  el_before_av_one_third  ">
-		<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-12  avia-builder-el-no-sibling elbloque">
-				
-				<div class="iconbox_content">
-						<header class="entry-content-header">
-								<h3 itemprop="headline" class="iconbox_content_title">IconBox Title</h3>
-						</header>
-						<div itemprop="text" class="iconbox_content_container sin-votos">
-								<? the_content(); ?>
-								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>
-						</div>
+							<? the_content(); ?>
+							<div class="votos"> 
+								<label> <p>Total de participaciones: </label> <strong>  <?php echo ($participaciones_totales)? $participaciones_totales : 0 ?> </strong></p> 
+							</div>								
+	                    </div>
+						<footer class="entry-footer"></footer>
+					</article>
 				</div>
-				<footer class="entry-footer"></footer>
-		</article>
-</div>
+				
+			<?php endwhile; ?>
 
-<!-- fin caja 2 -->
-				
-<!--- caja 3-->
-<div class="flex_column av_one_third   avia-builder-el-13  el_after_av_one_third  avia-builder-el-last  ">
-		<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-14  avia-builder-el-no-sibling elbloque">
-				<div class="iconbox_content">
-						<header class="entry-content-header">
-								<h3 itemprop="headline" class="iconbox_content_title">IconBox Title</h3>
-						</header>
-						<div itemprop="text" class="iconbox_content_container sin-votos">
-								<? the_content(); ?>
-								<div class="votos"> <label> <p>Total de participaciones: </label><strong> 0</strong></p> </div>								
-                                                </div>
-				</div>
-				<footer class="entry-footer"></footer>
-		</article>
-</div>
-<!-- fin caja 3 -->
-					
-				</div>				
 		</div>
+	</div>	
 
-</div>	
-<!-- fin iniciativas comparación-->	
-
-					                                    <?php endwhile; endif; ?>
-
-	
-
-																	<?php 	if ( have_posts() ) : 
-																		   $args = array('post_type' => 'modificacion',
-																						'meta_query' => array(
-																			array (
-																						'key'     => 'id_preocupacion',
-																						'value'   => $id_preocupacion,
-																						'compare' => 'LIKE'
-																									)
-																								)
-																							);
-
-																			$loop  = new WP_Query($args);
-																		   while ( $loop->have_posts() ) : $loop->the_post(); ?>
-	
-	
-		
-		<article>
-			<h3 class="responsable"> <?php the_title(); ?> </h3>
-			<div class="texto"> <?php the_content(); ?>	</div>
-			<span> Votos en curul501.org: <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </span>
-		</article>
-				
-						<?php endwhile; ?>
-							<?php endif; ?>	
-	</section>
-
+	<?php endif; ?>	
 	<section id="comentarios">
 		<div class="container top60">
 					<?php wp_reset_query(); ?>
