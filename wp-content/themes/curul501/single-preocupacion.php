@@ -2,6 +2,8 @@
 get_header(); 
 global $dposttitle;
 $dposttitle = wp_title( '', false);
+	global $avia_config, $more;
+
 ?>
 <style type="text/css">
 		#wrap_all #header{
@@ -36,12 +38,7 @@ $dposttitle = wp_title( '', false);
 			background: #fff;
 		}
 
-		#banner{
-			min-height: 300px;
-			height: 300px;
-			background: none repeat scroll 0 0 rgba(250, 124, 0, 1) !important;
-			width: 100%;
-		}
+		
 
 		#banner .num{
 			background: #ccc;
@@ -131,6 +128,16 @@ $dposttitle = wp_title( '', false);
 						
 						
 					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
+<style type="text/css">
+	
+	#banner{
+			min-height: 300px;
+			height: 300px;
+			background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
+			width: 100%;
+		}
+
+</style>
 
 <body>
 	<header class="titulo">
@@ -143,7 +150,8 @@ $dposttitle = wp_title( '', false);
 
 	<div id="original">
 		<div id="banner">
-			<div class="num"> <?php echo $id_preocupacion; ?> </div>
+			<div class="num"> <?php if($id_preocupacion==9){ ?> 8+1 <?php } else { ?> <?php echo $id_preocupacion; }?>  </div>
+			
 			<section class="iniciativa-original">
 				<h3 id="titulo">  
 							<?php the_title(); ?>
@@ -156,12 +164,13 @@ $dposttitle = wp_title( '', false);
 				</div>
 			</section>
 		</div>
+		<div class="compartir">
+	<?php avia_social_share_links(); ?>	
+	</div>
 	</div>
 					                                    <?php endwhile; endif; ?>
 
-	<div class="compartir">
-		<!--div class="box"><?php avia_social_share_links(); ?></div-->
-	</div>
+	
 
 																	<?php 	if ( have_posts() ) : 
 																		   $args = array('post_type' => 'modificacion',
