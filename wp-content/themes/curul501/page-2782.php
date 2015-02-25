@@ -202,16 +202,26 @@
 									while ( $loop->have_posts() ) : $loop->the_post(); 
 									
 									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
+									$numero_preocupacion2=get_post_meta($post->ID, 'id_preocupacion', true);
 
-									
-									
-									
+												if($numero_preocupacion2==9){
+													$class="preocupacion-8mas1";
+												} else {
+														$class="preocupacion";
+													}
+														
+												
+												
+												
 									?>
 									
 								
+		
 	<section id="preocupaciones">
 		<ul>
-			<li class="preocupacion">
+		
+		
+			<li class="<?php echo $class; ?>">
 				<span class="num"> <?php echo $numero_preocupacion; ?></span>
 				<div class="sep"></div>
 
