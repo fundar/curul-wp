@@ -168,6 +168,7 @@ $dposttitle = wp_title( '', false);
 	<?php avia_social_share_links(); ?>	
 	</div>
 	</div>
+	<section id="modificaciones">
 					                                    <?php endwhile; endif; ?>
 
 	
@@ -187,7 +188,6 @@ $dposttitle = wp_title( '', false);
 																		   while ( $loop->have_posts() ) : $loop->the_post(); ?>
 	
 	
-	<section id="modificaciones">
 		
 		<article>
 			<h3 class="responsable"> <?php the_title(); ?> </h3>
