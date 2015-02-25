@@ -452,23 +452,58 @@ function epicred_vote(){
 		$fid = $current_user->ID;
 	}
 
-	
 	$postid = (int)$_POST['poll'];	
-	
-	$query = "SELECT epicred_option FROM $wpdb->myo_ip WHERE epicred_ip = $fid AND epicred_id = $postid";
-	
-	$al = $wpdb->get_var($query);
+
+    $query = "SELECT epicred_option FROM $wpdb->myo_ip WHERE epicred_ip = $fid AND epicred_id = $postid";
     
-	
-	if($al == NULL){
-		$query = "INSERT INTO $wpdb->myo_ip ( epicred_id , epicred_ip, epicred_option) VALUES ( $postid, $fid, $option)";
-		$wpdb->query($query);
-	}else{
-		$query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_ip = $fid AND epicred_id = $postid";
-		$wpdb->query($query);
+    $al = $wpdb->get_var($query);
+    
+    //function guardar_participacion($previous_vote = NULL ){
+        /* Modificacion para guardar el conteo del total de participaciones en los posts de tipo iniciativas */
+    $val = intval( get_post_meta($postid, 'wp_total_participaciones', true) );
+    $fav = intval( get_post_meta($postid, 'wp_total_a_favor', true) );
+    $con = intval( get_post_meta($postid, 'wp_total_en_contra', true) );
+
+    if( is_null($al)) {
+        if( empty( $val ) ) add_post_meta($postid, 'wp_total_participaciones', 1, true ); 
+        else update_post_meta ($postid, 'wp_total_participaciones', $val + 1);
+
+        if($option == 1){
+            if( empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
+            else update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
+        }else if($option == -1){
+            if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
+            else update_post_meta ($postid, 'wp_total_en_contra', $con + 1);
+        }
+    }else{
+        $previous_vote = intval($al);
+        if($option == 1){
+            if( ! empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
+            else{
+                update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
+                if($con > 0 ) update_post_meta ($postid, 'wp_total_en_contra', $con - 1 );
+            }
+
+        }else if($option == -1){
+            if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
+            else {
+                update_post_meta ($postid, 'wp_total_en_contra', $con + 1 );
+                if($fav > 0 ) update_post_meta ($postid, 'wp_total_a_favor', $fav - 1 );
+            }
+        }
+    
+    }
+    
+    if($al == NULL){
+        $query = "INSERT INTO $wpdb->myo_ip ( epicred_id , epicred_ip, epicred_option) VALUES ( $postid, $fid, $option)";
+        $wpdb->query($query);
+    }else{
+        $query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_ip = $fid AND epicred_id = $postid";
+        $wpdb->query($query);
+        //guardar_participacion($al);
 	}
 	
-    $vote = get_post_meta($postid,'epicredvote',true);
+    $vote = intval( get_post_meta($postid,'epicredvote',true) );
 	
 		if($option == 1){
 			if($al != 1){
@@ -494,8 +529,11 @@ function epicred_vote(){
 		update_post_meta($postid,'epicredvote',$vote);
 
 	
-		$response['poll'] = $postid;
-		$response['vote'] = $vote;
+	$response['poll'] = $postid;
+    $response['vote'] = $vote;
+    /* Agregar los datos a favor y en contra totales*/
+    $response['favor'] =  intval( get_post_meta($postid, 'wp_total_a_favor', true) );
+	$response['contra'] = intval( get_post_meta($postid, 'wp_total_en_contra', true) );
     
     echo json_encode($response);
   
@@ -751,7 +789,7 @@ function wpeddit_hot_comments($posts){
 add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
-    if( is_singular('iniciativa') || is_post_type('iniciativa')) {
+    if( is_singular('iniciativa') || is_post_type('iniciativa') || is_singular('modificacion') || is_post_type('modificacion')) {
 		$newcontent = epic_reddit_voting();
     	$content = $newcontent . $content;
 	}elseif(is_front_page() || is_home()) { 
@@ -817,15 +855,23 @@ function epic_reddit_voting(){
 
 			<div class = 'reddit-voting'>
 				<ul class="unstyled">
-			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-					<div class="arrow2 <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score2 <?php echo $redscore;?> score-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrow2 <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<?php }else{ ?>
-					<div class="arrow <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score <?php echo $redscore;?> score-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrow <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>	
-					<?php }  ?>
+			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no')  { 
+                    $fid_ = $current_user->ID;
+                    $q = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid_ AND epicred_id = $post->ID";
+                    $al_ = $wpdb->get_var($q);
+            ?>
+                    <div class="arrow <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+                    <div class="arrow <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>    
+            <?php }else{ 
+                    $fid_ = "'" . isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'] . "'"; 
+                    $q = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid_ AND epicred_id = $post->ID";
+                    $al_ = $wpdb->get_var($q);
+            ?>
+                    <div class="score score-<?php echo $post->ID;?>-favor"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_a_favor', true) : '' ; ?> </div>
+                    <div class="arrow <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+                    <div class="arrow <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>    
+					<div class="score score-<?php echo $post->ID;?>-contra"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_en_contra', true) : '' ; ?> </div>
+			<?php }  ?>
 				</ul>
 			</div>	
 			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
@@ -1255,10 +1301,10 @@ function epic_reddit_voting_comment($ID){
 			<div class = 'reddit-voting'>
 				<ul class="unstyled">
 			<?php  if(!is_user_logged_in() && get_option('epicred_ip') == 'no') { ?>
-					<div class="arrowc2 <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<div class="score2 <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
-					<div class="arrowc2 <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
-					<?php }else{ ?>
+					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
+					<div class="arrowc <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
+			<?php }else{ ?>
 					<div class="arrowc <?php echo $redclassu;?> arrowc-up-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
 					<div class="score <?php echo $redscore;?> scorec-<?php echo $ID;?>" data-red-current = <?php echo $al;?>><?php echo $postvote; ?></div>
 					<div class="arrowc <?php echo $redclassd;?> arrowc-down-<?php echo $ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $ID;?>" role="button" aria-label="upvote" tabindex="0"></div>	

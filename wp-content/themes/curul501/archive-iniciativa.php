@@ -155,8 +155,37 @@
 														$htmlpresentadas = "";
 														$link_representante = get_site_url() . "/representantes/";
 														$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
+															
+													if($elements[$status_final]=="Presentada"){
+													   $status_final="Pleno";
+													 }elseif($elements[$status_final]=="Turnada") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Prórroga") {
+													   $status_final="Comisiones";
+													} elseif($elements[$status_final] == "Publicado") {
+													   $status_final="Publicación";
+													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
+													   $status_final="Pleno";
+													} elseif($elements[$status_final] == "Aprobada") {
+													   $status_final="Minuta";
+													} elseif($elements[$status_final] == "Dictaminada") {
+													   $status_final="Comisiones";
+													} else {
+														$status_final="Otro";
+													}
+														
+				
+				
+				
 
-													
+
+
+
+															
 														if($presentadas) {
 															foreach($presentadas as $key => $presentada) {
 																$htmlpresentadas .= "<a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></br>";
@@ -180,7 +209,7 @@
 												<div class="entry-content no-voto">
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
-												         </p><div class="enCamara_Iniciativas">En la C&aacute;mara de: <span>Diputados</span></div><p>En la cámara de: Diputados</p>
+								</p><div class="enCamara_Iniciativas">En la C&aacute;mara de: <span><?php  if($tipo_iniciativa==1) echo "Diputados"; else	echo "Senadores";?></span></div>
 													 <?php the_excerpt(); ?> 
                           
 												</div>
@@ -190,7 +219,7 @@
 													<div class="datos">
 													Status													
 													<div class="temporizador"> 
-													<p><?php echo $elements[$status_final]; ?></p>
+													<p><?php echo $status_final;?> </p>
 													</div>
 													</div>													
 												</div> 
@@ -245,7 +274,7 @@
 												</div>
 											</div>
 											<div class="vta-curul-iniciativas">
-												<span>Votaci&oacute;n en Curul 501 <?php echo $tipo_iniciativa; ?></span>
+												<span>Votaci&oacute;n en Curul 501</span>
 												<div class="box"><?php avia_social_share_links(); ?></div>
 												
 												
@@ -323,7 +352,7 @@
 													 <p class="resemen-recientes-iniciativas titulo-<?php the_ID(); ?>">
 			                                                                                 <a class="iniciativas-home" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 												         </p>
-													 <div class="enCamara_Iniciativas">En la C&aacute;mara de: <span>Diputados</span></div>
+													 <div class="enCamara_Iniciativas">En la C&aacute;mara de: <span><?php  if($tipo_iniciativa==1) echo "Diputados"; else	echo "Senadores";?></span></div>
 													 <?php the_excerpt(); ?> 
                           
 												</div>
@@ -389,13 +418,13 @@
 												</div>
 											</div>
 											<div class="vta-curul-iniciativas">
-												<span>Votaci&oacute;n en Curul 501 Propuesta por: <?php echo $tipo_iniciativa; ?></span>
+												<span>
+													Votos en Curul 501:
+													<b style="font-size: 1.2em; font-family: oswald; font-weight: normal; margin-left: 5px ">
+														<?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?> 
+													</b>
+												</span>
 												<div class="box"><?php avia_social_share_links(); ?></div>
-												
-												
-												
-												
-												
 											</div>
 
 											
@@ -419,43 +448,4 @@
 
 <?php get_footer(); ?>
 
-<script type="text/javascript">
-	jQuery(document).ready( function () {
-		jQuery("#submit-filter").click( function(event) {
-			event.preventDefault();
-			
-			if(jQuery("#partido-politico-filter option:selected").val() == "") {
-				jQuery("#partido-politico-filter").remove();
-			}
-			
-			if(jQuery("#estado-filter option:selected").val() == "") {
-				jQuery("#estado-filter").remove();
-			}
-			
-			if(jQuery("#comision-filter option:selected").val() == "") {
-				jQuery("#comision-filter").remove();
-			}
-			
-			if(jQuery("#tema-filter option:selected").val() == "") {
-				jQuery("#tema-filter").remove();
-			}
-			
-			if(jQuery("#status-filter option:selected").val() == "") {
-				jQuery("#status-filter").remove();
-			}
-			
-			if(jQuery("#postulante-filter option:selected").val() == "") {
-				jQuery("#postulante-filter").remove();
-			}
-			
-			if(jQuery("#camara-filter option:selected").val() == "") {
-				jQuery("#camara-filter").remove();
-			}
-			
-			
-			
-			jQuery("#filter-iniciativas").submit();
-		});
-	});
-</script>
 

@@ -94,124 +94,6 @@ function create_post_type_representantes() {
 add_action( 'init', 'create_post_type_representantes' );
 
 
-/* Creación de la taxonomia Iniciativas*/
-/*   la cual idealmente se llenará de forma automatica con los titulares de los custom-post Iniciativas*/
-/*    y que más de una podrá ser asociada a un custom-post Preocupación */
-function my_taxonomies_iniciativas() {
-  $labels = array(
-    'name'              => _x( 'Iniciativas', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Iniciativa', 'taxonomy singular name' ),
-    'search_items'      => __( 'Search Iniciativas' ),
-    'all_items'         => __( 'All Iniciativas' ),
-    'parent_item'       => __( 'Parent Iniciativa' ),
-    'parent_item_colon' => __( 'Parent Iniciativa:' ),
-    'edit_item'         => __( 'Edit Iniciativa' ), 
-    'update_item'       => __( 'Update Iniciativa' ),
-    'add_new_item'      => __( 'Add New Iniciativa' ),
-    'new_item_name'     => __( 'New Iniciativa' ),
-    'menu_name'         => __( 'Iniciativas' ),
-  );
-  $args = array(
-    'labels' => $labels,
-    'hierarchical' => true,
-  );
-  register_taxonomy( 'iniciativa_category', 'preocupacion', $args );
-}
-add_action( 'init', 'my_taxonomies_iniciativas', 0 );
-/**/
-
-/* CUSTOM POST "Preocupación" */
-function create_post_type_preocupacion() {
-    register_post_type( 'preocupacion',
-        array(
-            'labels' => array(
-                'name' => __( 'Preocupación' ),
-                'singular_name' => __( 'Preocupación' ),
-                'singular_label' => __( 'Preocupación' ),		
-                'all_items' => __('Preocupaciones'),
-                'add_new_item' => __('Añadir una Preocupación nueva'),
-                'edit_item' => __('Editar una Preocupación'),
-				'search_items'       => __( 'Buscar Preocupaciones' ),
-				'not_found'          => __( 'Preocupaciones no encontradas' ),
-				'not_found_in_trash' => __( 'Preocupaciones no encontradas en basura' ),
-				'menu_name'          => 'Preocupaciones'
-			),
-			'public' => true,
-			'has_archive' => true,
-			'capability_type' => 'post',
-			'hierarchical' => true,
-			'query_var' => true,
-			'menu_position' => 5,
-			'taxonomies' => array("category"),
-			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
-			'rewrite' => array('slug' => 'preocupacion', 'with_front' => false),
-			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'post-formats', 'page-attributes' )	
-        )
-    );
-    
-}
-add_action( 'init', 'create_post_type_preocupacion' );
-/**/
-
-
-/* Creación de la taxonomia Preocupaciones*/
-/*   la cual idealmente se llenará automaticamente con los titulares de los custom-post Preocupaciones*/
-function my_taxonomies_preocupaciones() {
-  $labels = array(
-    'name'              => _x( 'Preocupaciones', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Preocupación', 'taxonomy singular name' ),
-    'search_items'      => __( 'Search Preocupaciones' ),
-    'all_items'         => __( 'All Preocupaciones' ),
-    'parent_item'       => __( 'Parent Preocupación' ),
-    'parent_item_colon' => __( 'Parent Preocupación:' ),
-    'edit_item'         => __( 'Edit Preocupación' ), 
-    'update_item'       => __( 'Update Preocupación' ),
-    'add_new_item'      => __( 'Add New Preocupación' ),
-    'new_item_name'     => __( 'New Preocupación' ),
-    'menu_name'         => __( 'Preocupaciones' ),
-  );
-  $args = array(
-    'labels' => $labels,
-    'hierarchical' => true,
-  );
-  register_taxonomy( 'preocupacion', 'modificacion', $args );
-}
-add_action( 'init', 'my_taxonomies_preocupaciones', 0 );
-/**/
-
-/* CUSTOM POST "Modificaciones a la Iniciativa" */
-function create_post_type_modificacion_iniciativa() {
-    register_post_type( 'modificacion',
-        array(
-            'labels' => array(
-                'name' => __( 'Modificaciones a la Iniciativa' ),
-                'singular_name' => __( 'Modificación a la Iniciativa' ),
-                'singular_label' => __( 'Modificación a la Iniciativa' ),		
-                'all_items' => __('Modificaciones a la Iniciativa'),
-                'add_new_item' => __('Añadir una Modificación a la Iniciativa nueva'),
-                'edit_item' => __('Editar una Modificación a la Iniciativa'),
-				'search_items'       => __( 'Buscar Modificaciones a la Iniciativa' ),
-				'not_found'          => __( 'Modificaciones a la Iniciativa no encontradas' ),
-				'not_found_in_trash' => __( 'Modificaciones a la Iniciativa no encontradas en basura' ),
-				'menu_name'          => 'Modificaciones a la Iniciativa'
-			),
-			'public' => true,
-			'has_archive' => true,
-			'capability_type' => 'post',
-			'hierarchical' => true,
-			'query_var' => true,
-			'menu_position' => 5,
-			'taxonomies' => array("preocupacion"),
-			'menu_icon' => get_stylesheet_directory_uri() . '/images/iniciativa_icon.png',
-			'rewrite' => array('slug' => 'modificacion', 'with_front' => false),
-			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'post-formats', 'page-attributes' )	
-        )
-    );
-    
-}
-add_action( 'init', 'create_post_type_modificacion_iniciativa' );
-
-
 /*Custom type post xmlrpc  API*/
 function redirect_xmlrpc_to_custom_post_type ($data, $postarr) {
 	$p2_custom_post_type = "iniciativa"; //iniciativa|representante
@@ -314,9 +196,7 @@ function getRepresentatives($json = false) {
 			"district" => get_post_meta($loop->post->ID, 'wp_district_clean', true),
 			"circum" => get_post_meta($loop->post->ID, 'wp_circumscription', true),
 			"election_type" => get_post_meta($loop->post->ID, 'wp_election_type', true),
-			"name" => get_the_title($loop->post->ID),
-			"slug" =>  get_post_meta($loop->post->ID, 'wp_slug', true),
-			"tipo" => get_post_meta($loop->post->ID, 'wp_id_representative_type', true)
+			"name" => get_the_title($loop->post->ID)
 		);
 	}
 	
@@ -348,8 +228,8 @@ function getDataRepresentatives() {
 		$meta_query[] = getRepresentativesByTypeElection($_GET["tipo-eleccion"]);
 	}
 	
-	if(isset($_GET["tipo-representante"]) and $_GET["tipo-representante"] != "") {
-		$meta_query[] = getRepresentativesByTypeRepresentante($_GET["tipo-representante"]);
+	if(isset($_GET["tipo"]) and $_GET["tipo"] != "") {
+		$meta_query[] = getRepresentativesByTypeRepresentante($_GET["tipo"]);
 	}
 	
 	if($meta_query) {
@@ -846,42 +726,34 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews($id);
     }
 }
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
+wp_localize_script( 'mi-script-ajax', 'MyAjax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 
-/* Codigo de prueba para hacer búsquedas de diputados
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'jquery-ui' );
-	wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
-	wp_localize_script( 'mi-script-ajax', 'MyAjax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
-
-	add_action('wp_ajax_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
-	add_action('wp_ajax_nopriv_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
-	 
-	function buscar_representantes_por_nombre_callback() {
-	     
-	    global $post;
-	   
-	    $args['meta_query'][] = array(
-	        'key' => 'wp_presentada_slug',
-	        'value' =>  $_POST['nombre'],
-	        'compare' => 'LIKE',
-	        'posts_per_page' => -1
-	    );
-	   $args = array( 'numberposts' => 10, 'post_type'=> 'representante');
-	   $args['meta_query'][] = array(
-	        'key' => 'wp_full_name',
-	        'value' =>  $_GET['nombre'],
-	        'compare' => 'LIKE',
-	        'posts_per_page' => -1
-	    );
-	     
-	    $myposts = get_posts( $args );
-
-	    $nombres =  array();
-	    foreach( $myposts as $post ) :  setup_postdata($post); 
-		$nombres[] = get_the_title();
-	    endforeach;
-	    echo json_encode($nombres);
-	    die();
+add_action('wp_ajax_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
+add_action('wp_ajax_nopriv_buscar_representantes_por_nombre', 'buscar_representantes_por_nombre_callback');
+ 
+function buscar_representantes_por_nombre_callback() {
+     
+    global $post;
+    $args = array(  'post_type'=> 'post' );
+/*
+    $args['meta_query'][] = array(
+        'key' => 'wp_presentada_slug',
+        'value' =>  $_POST['nombre'],
+        'compare' => 'LIKE',
+        'posts_per_page' => -1
+    );
+  /**/
+   $args = array(die() 'numberposts' => 10, 's' => $_POST['cadena']);
+     
+    $myposts = get_posts( $args );
+        echo '<ul>';
+    foreach( $myposts as $post ) :  setup_postdata($post); ?>
+        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+           
+        <?php endforeach; 
+        echo '</ul>';
+	die();
 }
-*/
 ?>

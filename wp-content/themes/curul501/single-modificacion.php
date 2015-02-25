@@ -39,164 +39,18 @@
 	</style>
 		
 		<div class="container top60">										     
-						<h1 class="entry-title-yellow">Iniciativas</h1>
+						<h1 class="entry-title-yellow">Modificaciones</h1>
 						<div class="line-amarilla"> </div>
 		</div>
 
 		<!--Inicio filtros iniciativas -->
-		<div class="container box-menu">
-			<div class="search-table">
-								<form name="filter-iniciativas" id="filter-iniciativas" action="/iniciativas">
-				   <div id="filter">
-						   <select class="sorter-rep sort" name="partido-politico" id="partido-politico-filter">
-							   <option value="">Partidos pol&iacute;ticos</option>
-							   <?php $politicalPartiesArray = getPoliticalParties(); ?>
-							   <?php foreach($politicalPartiesArray as $value) { ?>
-									<option value="<?php echo $value["slug"];?>" <?php if($selectedPolitical == $value["slug"]) echo 'selected="selected"'?>>
-										<?php echo utf8_encode($value["name"]);?>
-									</option>
-								<?php } ?>
-						   </select>
-					   </div>	
-
-					<div id="filter">				
-						   <select class="sorter-rep sort" name="comision" id="comision-filter">
-							   <option value="">Comisiones</option>
-							    <?php $commissionsArray = getCommissions(); ?>
-								<?php foreach($commissionsArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedCommission == $value->slug) echo 'selected="selected"'?>>
-										<?php echo $value->name;?>
-									</option>
-								<?php } ?>
-						   </select>
-					   </div>
-					   <div id="filter">				
-						   <select class="sorter-rep sort" name="tema" id="tema-filter">
-							   <option value="">Temas</option>
-							   <?php $temasArray = getTemas(); ?>
-							   <?php foreach($temasArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedTema == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
-										<?php echo utf8_encode($value["name"]);?>
-									</option>
-								<?php } ?>
-						   </select>
-					   </div>
-					   
-					 	<div id="filter">				
-						   <select class="sorter-rep sort" name="status" id="status-filter">
-							   <option value="">Status</option>
-							   <?php $statusArray = getStatus(); ?>
-							   <?php foreach($statusArray as $value) { ?>
-									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedStatus == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
-										<?php echo utf8_encode($value["name"]);?>
-									</option>
-								<?php } ?>
-						   </select>
-					   </div>  
-					   
-					   <div id="filter">				
-						   <select class="sorter-rep sort" name="postulante" id="postulante-filter">
-							   <option value="">Representante</option>
-							    <?php $RepresentanteArray = getIniciativasbyRepresentantes(); ?>
-								<?php foreach($RepresentanteArray as $value) { ?>
-									<option value="<?php echo $value->slug;?>" <?php if($selectedPostulante == $value->slug) echo 'selected="selected"'?>>
-										<?php echo $value->full_name;?>
-									</option>
-								<?php } ?>
-						   </select>
-					   </div>
-					   
-					   	<div>				
-						   <input type="submit" value="Filtrar" id="submit-filter"/>
-					   </div>   
-			       		
-					</form>				
-				   
-			</div>
-		</div>
+		
 
 <!-- Fin filtros iniciativas -->		
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
 		        <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
-						<?php
-							$presentada_partido	            = get_post_meta($post->ID, 'wp_presentada_partidos', true);
-							$presentada_dependencia	        = get_post_meta($post->ID, 'wp_presentada_dependencias', true);
-							$status_iniciativa             	        = get_post_meta($post->ID, 'wp_status', true);
-							$elements = explode("|", $status_iniciativa);
-   						    $status_final=count($elements)-1;
-							$voto 	= json_decode(get_post_meta($post->ID, 'wp_votos', true));
-							$representantes 	= json_decode(get_post_meta($post->ID, 'wp_votos_representantes', true));
-							$votos 	= get_post_meta($post->ID, 'wp_votos', true);
-							//$votos_decode =	json_decode($votos,true);
-							$WorkingArray = json_decode(json_encode($votos),true);
-							$decode = json_decode($WorkingArray, true);
-							$fecha_votacion=get_post_meta($post->ID, 'wp_fecha_votacion_tm', true);
-							$explode = explode(" ", $fecha_votacion);
-							$fecha = $explode[0];
-							$id=$wp_query->post->ID;
-							setPostViews($id); 
-							$fecha_listado=get_post_meta($post->ID, 'wp_fecha_listado_tm', true);
-							$explode_listado = explode(" ", $fecha_listado);
-							$fecha_sin_hora=$explode_listado[0];
-							$explode2 = explode("-", $fecha_sin_hora);
-							$ano = $explode2[0];
-							$mes = $explode2[1];
-							$dia = $explode2[2];
-							$commissions = explode('|', get_post_meta($post->ID, 'wp_commissions', true));
-							$commissions_slug = explode('|', get_post_meta($post->ID, 'wp_commissions_slug', true));
-							$last_status_slug = explode('|', get_post_meta($post->ID, 'wp_last_status_slug', true));
-							$htmlcommis = "";
-							$link = get_site_url() . "/iniciativas/?comision=";
-							$tipo_iniciativa = get_post_meta($post->ID, 'wp_tipo_camara', true);
-							$partido_politico_slug	    = get_post_meta($post->ID, 'wp_presentada_partidos_slug', true);
-							$presentadas = explode('|', get_post_meta($post->ID, 'wp_presentada', true));
-							$presentadas_slug = explode('|', get_post_meta($post->ID, 'wp_presentada_slug', true));
-							$htmlpresentadas = "";
-							$link_representante = get_site_url() . "/representantes/";
-							
-							
-							if($tipo_iniciativa==1)
-							{
-							if($commissions) {
-								foreach($commissions as $key => $commission) {
-									$htmlcommis .= "<p><a href='" . $link . $commissions_slug[$key] . "' title='" . $commission . "'>" . $commission . "</a></p>";
-								}
-							} else {
-								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
-							}
-									}else{
-									if($commissions) {
-								foreach($commissions as $key => $commission) {
-									$htmlcommis .= "<p>".$commission."</p>";
-								}
-							} else {
-								$htmlcommis = "<p>No se encuentran comisiones relacionadas</p>";
-							}
-								}
-							
-						if($tipo_iniciativa==1){
-									if($presentadas) {
-										foreach($presentadas as $key => $presentada) {
-											$htmlpresentadas .= "<p><a href='" . $link_representante . $presentadas_slug[$key] . "' title='" . $presentada . "'>" . $presentada . "</a></p>";
-													}
-							} else {
-								$htmlpresentadas = "<p>No se encuentran representantes</p>";
-							}
-
-											}else{
-												if($presentadas) {
-								foreach($presentadas as $key => $presentada) {
-									$htmlpresentadas .= "<p>".$presentada."</p>";
-								}
-							} else {
-								$htmlpresentadas = "<p>No se encuentran representantes</p>";
-							}
-											
-											
-											}
-												
-						?>
+						
 			<div class='container template-blog template-single-blog '>
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
@@ -210,24 +64,7 @@
 							<?php echo get_post_meta($post->ID, 'wp_titulo_listado', true); ?>
 						</h3>
 					</header>
-					<div class="entry-content no-voto" itemprop="text">
-						<ul class="lista-iniciativas">
-							<li class="bullet-arrow">Comisiones
-								<p><?php echo $htmlcommis; ?></p>
-							</li>
-							<li class="bullet-arrow">Propuesta por
-							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
-							<?php if($tipo_iniciativa==1){  if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } } else{ if($presentada_partido != "") { ?> <?php echo  $presentada_partido."</br></br>"; }    } ?>
-							<p><?php echo $htmlpresentadas; ?></p> </li>
-							<li class="bullet-arrow">En la C&aacute;mara de: <span><?php  if($tipo_iniciativa==1) echo "Diputados"; else	echo "Senadores";?></span></li>
-						</ul>
-						<? the_content(); ?>					
-						<div class="pleca-sub-info"></div>
-						<ul class="sub-info">
-							<li class="sub-info-li">Fecha de Votaci&oacute;n:<?php echo $dia."-".$mes."-".$ano; ?></li>
-							<li class="sub-info-li">LXII Legislatura</li>
-						</ul>
-					</div>
+					
                                          <?php endwhile; endif; ?>
 				</main>
 					
@@ -562,36 +399,7 @@
 				<div class="flex_column av_one_half avia-builder-el-2 el_after_av_one_half avia-builder-el-last ">
 				<section class="av_textblock_section" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 				<div class="avia_textblock " itemprop="text">
-				<p class="resultado">
-				<?php 
-													if($elements[$status_final]=="Presentada"){
-													   $status_final="Pleno";
-													 }elseif($elements[$status_final]=="Turnada") {
-													   $status_final="Comisiones";
-													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
-													   $status_final="Pleno";
-													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
-													   $status_final="Comisiones";
-													} elseif($elements[$status_final] == "Prórroga") {
-													   $status_final="Comisiones";
-													} elseif($elements[$status_final] == "Publicado") {
-													   $status_final="Publicación";
-													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
-													   $status_final="Pleno";
-													} elseif($elements[$status_final] == "Aprobada") {
-													   $status_final="Minuta";
-													} elseif($elements[$status_final] == "Dictaminada") {
-													   $status_final="Comisiones";
-													} else {
-														$status_final="Otro";
-													}
-														
-				
-																echo $status_final; 
-				
-				?>
-				
-				</p>
+				<p class="resultado"><?php echo $elements[$status_final]; ?></p>
 				</div>
 				</section>
                          </div>

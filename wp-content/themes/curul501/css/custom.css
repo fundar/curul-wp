@@ -772,6 +772,14 @@ li.hand-down {
         text-align:center;
         
     }
+
+    .total-participaciones {
+        font-family: 'Oswald';
+        font-weight: 300;
+        color: #fff;
+        font-size: 17px;
+        text-align: center;
+    }
 .sb {
     display: block;
     padding-top: 59px;
