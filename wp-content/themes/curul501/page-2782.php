@@ -202,6 +202,7 @@
 									while ( $loop->have_posts() ) : $loop->the_post(); 
 									
 									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
+									$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
 
 												if($numero_preocupacion==9){
 													$class="preocupacion-8mas1";
@@ -214,7 +215,6 @@
 									?>
 									
 								
-											<div class="entry-content-wrapper clearfix">
 
 	<section id="preocupaciones">
 		<ul>
@@ -230,7 +230,7 @@
 						<p class="titulo_ninja"> <?php the_title(); ?> </p>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="<?php echo $avatar_url;?>">
 				</a>
 
 				<div class="votos"> 
@@ -251,7 +251,6 @@
 	</section>
 	<br> <br> <br> <br>
 
-		</div>
 	<section id="comentarios">
 		
 	</section>
