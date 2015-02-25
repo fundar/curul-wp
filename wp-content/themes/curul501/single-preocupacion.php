@@ -163,10 +163,11 @@ body {
 		}
 		
 		h3.iconbox_content_title {
-		   color: rgba(81, 39, 12, 1);
-		   font: 19px "colaborate-regular";
-		   text-rendering: optimizelegibility;
-	       }		
+			color: rgba(89, 39, 95, 1);
+			font: 19px "colaborate-regular" !important;
+			text-rendering: optimizelegibility;
+			text-transform: none;
+		}		
 	       
 	       .texto > .reddit-voting {
 		   display: none;
@@ -228,7 +229,7 @@ h3.iconbox_content_title {
 	#banner{
 			min-height: 370px;
 			height: 300px;
-			background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
+			background: url("http://curul501.org/wp-content/uploads/preocupaciones/pattern-<?php echo $id_preocupacion ?>.png");
 			width: 100%;
 		}
 
