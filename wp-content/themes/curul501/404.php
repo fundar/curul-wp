@@ -11,9 +11,6 @@ global $avia_config;
 	
 	?>
 
-	<style type="text/css">
-		.404_recommendation{ display: none; }
-	</style>
 
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
@@ -22,8 +19,8 @@ global $avia_config;
 				do_action('avia_404_extra'); // allows user to hook into 404 page fr extra functionallity. eg: send mail that page is missing, output additional information
 			?>
 			
-			<div class='container'>
 
+			<div class='container'>
 				<main class='template-page content <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
 
 
