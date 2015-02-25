@@ -70,7 +70,7 @@ $dposttitle = wp_title( '', false);
 			padding-bottom: 30px;
 		}
 
-		.reddit-voting{
+		.reddit-voting, .logged-in-only{
 			margin-top: -15px;
 			
 		}
@@ -358,7 +358,10 @@ h3.iconbox_content_title {
 			/* Mover de lugar los votos */
 			jQuery(".votos").each(function(){
 			  var redit = jQuery(this).siblings(".reddit-voting")
+			  var login = jQuery(this).siblings(".logged-in-only")
+
 			  jQuery(this).prepend(redit)
+			  jQuery(this).prepend(login)
 			})
 		})
 	</script>
