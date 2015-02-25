@@ -202,7 +202,7 @@
 									while ( $loop->have_posts() ) : $loop->the_post(); 
 									
 									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
-									$avatar_url = $numero_preocupacion.".png";
+									$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'png';
 
 												if($numero_preocupacion==9){
 													$class="preocupacion-8mas1";
