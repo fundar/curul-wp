@@ -143,7 +143,7 @@ $dposttitle = wp_title( '', false);
 
 	<div id="original">
 		<div id="banner">
-			<div class="num"> <?php $id_preocupacion; ?> </div>
+			<div class="num"> <?php echo $id_preocupacion; ?> </div>
 			<section class="iniciativa-original">
 				<h3 id="titulo">  
 							<?php the_title(); ?>
