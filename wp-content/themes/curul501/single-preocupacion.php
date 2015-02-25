@@ -302,7 +302,7 @@ if ( have_posts() ) :
 	<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
 		<div class="container top40">
 <?php $loop  = new WP_Query($args);
-while ( $loop->have_posts() ) : $loop->the_post(); ?>
+while ( $loop->have_posts() ) : $loop->the_post(); 
 	$participaciones_totales = get_post_meta($post->ID, 'wp_total_participaciones', true); ?>
 			<div class="flex_column av_one_third first  avia-builder-el-9  el_after_av_hr  el_before_av_one_third  ">
 				<article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="iconbox iconbox_left_content   avia-builder-el-10  avia-builder-el-no-sibling  elbloque">
