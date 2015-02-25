@@ -304,7 +304,8 @@ h3.iconbox_content_title {
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
 				'compare' => 'LIKE',
-				'orderby' => 'title'
+				'orderby' => 'title',
+				'order' => 'DESC'
 			)
 		)
 	);
