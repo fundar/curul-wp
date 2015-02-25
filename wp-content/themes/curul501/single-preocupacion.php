@@ -75,22 +75,22 @@ $dposttitle = wp_title( '', false);
 			
 		}
 
-body {
-    background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
-    color: #eee;
-}
-#banner .num {
-    background: none repeat scroll 0 0 #50275f;
-    color: #fff;
-    display: block;
-    float: left;
-    font-family: oswald;
-    font-size: 15em;
-    line-height: 0.2em;
-    padding: 165px 98px 166px;
-    vertical-align: middle;
-    width: 100%;
-}
+		body {
+		    background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
+		    color: #eee;
+		}
+		#banner .num {
+		    background: none repeat scroll 0 0 #50275f;
+		    color: #fff;
+		    display: block;
+		    float: left;
+		    font-family: oswald;
+		    font-size: 15em;
+		    line-height: 0.2em;
+		    padding: 165px 98px 166px;
+		    vertical-align: middle;
+		    width: 100%;
+		}
 
 		.iniciativa-original {
 		    background: none repeat scroll 0 0 #fff;
@@ -101,20 +101,20 @@ body {
 		    min-height: 123px;
 		   width: 100%;
 		}		
-.iniciativa-original h3 {
-    color: #502760;
-    display: block;
-    font-size: 2.1em;
-    line-height: 1.06em;
-    margin-bottom: 21px;
-}
-		.iniciativa-original .texto p{
+		.iniciativa-original h3 {
+		    color: #502760;
+		    display: block;
+		    font-size: 2.1em;
+		    line-height: 1.06em;
+		    margin-bottom: 21px;
+		}
+				.iniciativa-original .texto p{
  			font-weight: lighter;
  			font-size: 1.4em;
  			font-family: "colaborate-thinregular";
  			color:#000;
 		}
- p{
+                p{
  			font-weight: lighter;
  			font-size: 1.4em;
  			font-family: "colaborate-thinregular";
@@ -192,36 +192,40 @@ body {
 		height:247px;
 		}
 
-.texto {
-    margin-bottom: 70px;
-    margin-top: -102px;
-}
-#sin-votos > .reddit-voting {
-    bottom: 0;
-    margin-top: -29px;
-    position: absolute;
-    right: 0;
-}
-h3.iconbox_content_title {
-    color: rgba(89, 39, 95, 1);
-    font: 19px "colaborate-regular";
-    text-rendering: optimizelegibility;
-    text-transform: none;
-}
-.iconbox_content_title {
-		text-transform:none !important;}
-.elbloque {
-    padding-bottom: 80px;
-    width: 100%;
-}
-#bajonum { margin-top: -36px;}
-#bajonum > .reddit-voting{
-      display: none;
-}
-.votos {
-    border-bottom: 1px solid #999 !important;
-    height: 30px;
-}
+		.texto {
+		    margin-bottom: 70px;
+		    margin-top: -102px;
+		}
+		#sin-votos > .reddit-voting {
+		    bottom: 0;
+		    margin-top: -29px;
+		    position: absolute;
+		    right: 0;
+		}
+		h3.iconbox_content_title {
+		    color: rgba(89, 39, 95, 1);
+		    font: 19px "colaborate-regular";
+		    text-rendering: optimizelegibility;
+		    text-transform: none;
+		}
+		.iconbox_content_title {
+				text-transform:none !important;}
+		.elbloque {
+		    padding-bottom: 80px;
+		    width: 100%;
+		}
+		#bajonum { margin-top: -36px;}
+		#bajonum > .reddit-voting{
+		      display: none;
+		}
+		.votos {
+		    border-bottom: 1px solid #999 !important;
+		    height: 30px;
+		}
+		/** footer **/
+		#footer {
+				display:none !important;
+		}
 </style>
 
 <?php if (have_posts()) : ?>
@@ -362,6 +366,7 @@ h3.iconbox_content_title {
 			})
 		})
 	</script>
-   <?php get_footer(); ?>
+
+<?php get_footer(); ?>
 
 </body>
