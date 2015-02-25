@@ -205,30 +205,30 @@ global $avia_config, $more;
 			APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
 		</h2>
 	</header>
+		<section id="preocupaciones">
+			<ul>
 
-									<?php if ( have_posts() ) : 
-					              
-									$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
-									$loop = new WP_Query( $args );
-									while ( $loop->have_posts() ) : $loop->the_post(); 
+				<?php if ( have_posts() ) : 
+              
+				$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+				
+				$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
+				$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
+
+							if($numero_preocupacion==9){
+								$class="preocupacion-8mas1";
+							} else {
+									$class="preocupacion";
+								}
 									
-									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
-									$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
-
-												if($numero_preocupacion==9){
-													$class="preocupacion-8mas1";
-												} else {
-														$class="preocupacion";
-													}
-														
-												
-												
-									?>
+							
+							
+				?>
 									
 								
 
-	<section id="preocupaciones">
-		<ul>
 		
 		
 			<li class="<?php echo $class; ?>">
@@ -251,11 +251,11 @@ global $avia_config, $more;
 				<div class="box"><?php avia_social_share_links(); ?> </div>
 			</li>
 
-		</ul>
 													<?php endwhile; ?>
 
 		<?php endif; ?>	
 
+		</ul>
 			
 
 			
