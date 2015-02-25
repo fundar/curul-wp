@@ -25,9 +25,8 @@ global $avia_config;
 						    <div class="entry-content-wrapper clearfix">
 					                <?php if ( have_posts() ) : ?>
 					                <?php
-									$args = array( 'post_type' => 'iniciativa', 'posts_per_page' => 5 );
-								
-						        $loop = new WP_Query( $args );
+							$args = array('post_type' => 'iniciativa', 'posts_per_page' => 5, 'meta_query' => array(	array ( 'key'     => 'wp_elegidas', 'value'   => '1', 'compare' => 'LIKE' )	));
+							$loop = new WP_Query( $args );
 						        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				 <!--Inicio iniciaiva-->
 				
