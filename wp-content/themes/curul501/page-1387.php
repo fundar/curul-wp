@@ -463,6 +463,7 @@
 			})
 			/**/
 		
+		
 			/* Cambiar el título por la ilustracion en cada preocupación*/
 			 jQuery(".click_area")
 			 .on("mouseenter", function(){
