@@ -68,23 +68,22 @@
 			cursor: pointer;
 		}
 
-
-		.titulo_ninja{
-			display: none;
-		}
-
 		.click_area .textos{
 			margin-top: 20px;
 			min-height: 380px;
 			color: #60466B;
 		}
-
-		.click_area .titulo, .click_area .cursor{
+		
+		.click_area .titulo, .titulo_ninja{
 			font-size: 3.5em;
 			margin-top: 0px;
 		}
 
-		.click_area .titulo,{
+		.titulo_ninja{
+			display: none;
+		}
+
+		.click_area .titulo, .click_area .titulo-ninja{
 			float: left;
 		}
 
@@ -203,10 +202,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+						<h1 class="titulo_ninja"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -222,10 +221,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Información sobre violaciones graves a derechos humanos y delitos de lesa humanidad </p>
+						<h1 class="titulo_ninja"> Información sobre violaciones graves a derechos humanos y delitos de lesa humanidad </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -241,10 +240,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Sanciones que limitan el DAI </p>
+						<h1 class="titulo_ninja"> Sanciones que limitan el DAI </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -260,10 +259,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Reserva de información </p>
+						<h1 class="titulo_ninja"> Reserva de información </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -279,10 +278,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Intervención de la Presidencia de la República </p>
+						<h1 class="titulo_ninja"> Intervención de la Presidencia de la República </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -298,10 +297,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Desaparecen las obligaciones de transparencia sobre hidrocarburos. </p>
+						<h1 class="titulo_ninja"> Desaparecen las obligaciones de transparencia sobre hidrocarburos. </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -317,10 +316,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Cancelaciones y condonaciones de impuestos </p>
+						<h1 class="titulo_ninja"> Cancelaciones y condonaciones de impuestos </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -336,10 +335,10 @@
 
 				<a class="click_area" href="#">
 					<div class="textos">
-						<p class="titulo_ninja"> Información sobre violaciones graves a derechos humanos y delitos de lesa humanidad </p>
+						<h1 class="titulo_ninja"> Información sobre violaciones graves a derechos humanos y delitos de lesa humanidad </h1>
 						<h1 class="titulo"></h1> 
 					</div>
-					<img class="ilustracion" src="#">
+					<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 				</a>
 
 				<div class="votos"> 
@@ -356,10 +355,10 @@
 
 			<a class="click_area" href="#">
 				<div class="textos">
-					<p class="titulo_ninja"> Declaraciones patrimoniales </p>
+					<h1 class="titulo_ninja"> Declaraciones patrimoniales </h1>
 					<h1 class="titulo"></h1> 
 				</div>
-				<img class="ilustracion" src="#">
+				<img class="ilustracion" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 			</a>
 
 			<!--div class="votos"> 
@@ -431,13 +430,13 @@
 			</article>
 
 			<article id="logos">
-				<img src="#">
+				<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 			</article>
 		</section>
 
 		<section class="bottom">
 			<p id="derechos"> Curul 501 l Todos los derechos reservados l Power by FundarLab </p>
-			<img id="logo-fundar" alt="Fundar, Centro de Análisis e INvestigación A.C." src="#">
+			<img id="logo-fundar" alt="Fundar, Centro de Análisis e INvestigación A.C." src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
 		</section>
 	</footer>
 
@@ -448,8 +447,13 @@
 			
 			/* Cambiar el título por la ilustracion en cada preocupación*/
 			 jQuery(".click_area").on("hover", function(){
-			 	jQuery(this).children(".textos").toggle()
-			 	jQuery(this).children(".ilustracion").toggle()
+			 	jQuery(this).children(".textos").children(".titulo_ninja").toggle()
+			 	jQuery(this).children(".textos").children(".titulo").toggle()
+
+			 	if( jQuery(this).children(".ilustracion").css("display") == "inline-block" ){
+			 		jQuery(this).children(".ilustracion").toggle()
+			 		jQuery(this).children(".textos").toggle()
+			 	}
 			 })
 			/**/
 
@@ -461,7 +465,12 @@
 			/* Efecto de máquina de escribir */
 			jQuery(".click_area .titulo").each(function(){
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
-				jQuery(this).teletype({ text: [ texto ] });
+				jQuery(this).teletype({ 
+					text: [ texto ]/*, 
+					cb: function(){
+						jQuery(this).text("")
+					}*/
+				});
 			})
 			/**/
 		

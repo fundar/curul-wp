@@ -19,6 +19,9 @@
     }
     else {
       cb();
+      setTimeout(function () {
+        typeString($target, str, 0, delay, cb);
+      }, delay);
     }
   }
 
@@ -54,14 +57,25 @@
       return $(this).each(function () {
         (function loop($tar, idx) {
           // type
-          typeString($tar, settings.text[idx], 0, settings.delay, function () {
-            /* delete
-            setTimeout(function () {
-              deleteString($tar, settings.delay, function () {
-                loop($tar, (idx + 1) % settings.text.length);
-              });
-            }, settings.pause);
-            /**/  
+
+          /* delete 
+          if(settings.cb == null){
+            settings.cb = function () {
+              setTimeout(function () {
+                  deleteString($tar, settings.delay, function () {
+                    loop($tar, (idx + 1) % settings.text.length);
+                  });
+                }, settings.pause);
+            }
+          }
+          /**/  
+
+
+
+          typeString($tar, settings.text[idx], 0, settings.delay,  function(){
+            $tar.empty();
+            $tar.parents(".textos").toggle()
+            $tar.parents(".textos").next(".ilustracion").toggle()
           });
 
         }($(this), 0));
@@ -74,8 +88,9 @@
     teletype: {
       defaults: {
         delay: 100,
-        pause: 5000,
-        text: []
+        pause: 0,
+        text: [],
+        cb: null
       }
     }
   });
