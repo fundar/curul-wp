@@ -37,7 +37,7 @@ function create_post_type_iniciativas() {
                 'singular_name' => __( 'Iniciativa' ),
                 'singular_label' => __( 'Iniciativa' ),		
                 'all_items' => __('Iniciativas'),
-                'add_new_item' => __('Añadir una iniciativa nueva'),
+                'add_new_item' => __('AÃ±adir una iniciativa nueva'),
                 'edit_item' => __('Editar iniciativa'),
 				'search_items'       => __( 'Buscar Iniciativas' ),
 				'not_found'          => __( 'No iniciativas encontradas' ),
@@ -71,7 +71,7 @@ function create_post_type_representantes() {
                 'singular_name' => __( 'Representante' ),
                 'singular_label' => __( 'Representante' ),		
                 'all_items' => __('Representantes'),
-                'add_new_item' => __('Añadir un Representante'),
+                'add_new_item' => __('AÃ±adir un Representante'),
                 'edit_item' => __('Editar Representante'),
 				'search_items'       => __( 'Buscar Representantes' ),
 				'not_found'          => __( 'No representantes encontradas' ),
@@ -94,9 +94,9 @@ function create_post_type_representantes() {
 add_action( 'init', 'create_post_type_representantes' );
 
 
-/* Creación de la taxonomia Iniciativas*/
-/*   la cual idealmente se llenará de forma automatica con los titulares de los custom-post Iniciativas*/
-/*    y que más de una podrá ser asociada a un custom-post Preocupación */
+/* CreaciÃ³n de la taxonomia Iniciativas*/
+/*   la cual idealmente se llenarÃ¡ de forma automatica con los titulares de los custom-post Iniciativas*/
+/*    y que mÃ¡s de una podrÃ¡ ser asociada a un custom-post PreocupaciÃ³n */
 function my_taxonomies_iniciativas() {
   $labels = array(
     'name'              => _x( 'Iniciativas', 'taxonomy general name' ),
@@ -120,17 +120,17 @@ function my_taxonomies_iniciativas() {
 add_action( 'init', 'my_taxonomies_iniciativas', 0 );
 /**/
 
-/* CUSTOM POST "Preocupación" */
+/* CUSTOM POST "PreocupaciÃ³n" */
 function create_post_type_preocupacion() {
     register_post_type( 'preocupacion',
         array(
             'labels' => array(
-                'name' => __( 'Preocupación' ),
-                'singular_name' => __( 'Preocupación' ),
-                'singular_label' => __( 'Preocupación' ),		
+                'name' => __( 'PreocupaciÃ³n' ),
+                'singular_name' => __( 'PreocupaciÃ³n' ),
+                'singular_label' => __( 'PreocupaciÃ³n' ),		
                 'all_items' => __('Preocupaciones'),
-                'add_new_item' => __('Añadir una Preocupación nueva'),
-                'edit_item' => __('Editar una Preocupación'),
+                'add_new_item' => __('AÃ±adir una PreocupaciÃ³n nueva'),
+                'edit_item' => __('Editar una PreocupaciÃ³n'),
 				'search_items'       => __( 'Buscar Preocupaciones' ),
 				'not_found'          => __( 'Preocupaciones no encontradas' ),
 				'not_found_in_trash' => __( 'Preocupaciones no encontradas en basura' ),
@@ -154,20 +154,20 @@ add_action( 'init', 'create_post_type_preocupacion' );
 /**/
 
 
-/* Creación de la taxonomia Preocupaciones*/
-/*   la cual idealmente se llenará automaticamente con los titulares de los custom-post Preocupaciones
+/* CreaciÃ³n de la taxonomia Preocupaciones*/
+/*   la cual idealmente se llenarÃ¡ automaticamente con los titulares de los custom-post Preocupaciones
 function my_taxonomies_preocupaciones() {
   $labels = array(
     'name'              => _x( 'Preocupaciones', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Preocupación', 'taxonomy singular name' ),
+    'singular_name'     => _x( 'PreocupaciÃ³n', 'taxonomy singular name' ),
     'search_items'      => __( 'Search Preocupaciones' ),
     'all_items'         => __( 'All Preocupaciones' ),
-    'parent_item'       => __( 'Parent Preocupación' ),
-    'parent_item_colon' => __( 'Parent Preocupación:' ),
-    'edit_item'         => __( 'Edit Preocupación' ), 
-    'update_item'       => __( 'Update Preocupación' ),
-    'add_new_item'      => __( 'Add New Preocupación' ),
-    'new_item_name'     => __( 'New Preocupación' ),
+    'parent_item'       => __( 'Parent PreocupaciÃ³n' ),
+    'parent_item_colon' => __( 'Parent PreocupaciÃ³n:' ),
+    'edit_item'         => __( 'Edit PreocupaciÃ³n' ), 
+    'update_item'       => __( 'Update PreocupaciÃ³n' ),
+    'add_new_item'      => __( 'Add New PreocupaciÃ³n' ),
+    'new_item_name'     => __( 'New PreocupaciÃ³n' ),
     'menu_name'         => __( 'Preocupaciones' ),
   );
   $args = array(
@@ -185,11 +185,11 @@ function create_post_type_modificacion_iniciativa() {
         array(
             'labels' => array(
                 'name' => __( 'Modificaciones a la Iniciativa' ),
-                'singular_name' => __( 'Modificación a la Iniciativa' ),
-                'singular_label' => __( 'Modificación a la Iniciativa' ),		
+                'singular_name' => __( 'ModificaciÃ³n a la Iniciativa' ),
+                'singular_label' => __( 'ModificaciÃ³n a la Iniciativa' ),		
                 'all_items' => __('Modificaciones a la Iniciativa'),
-                'add_new_item' => __('Añadir una Modificación a la Iniciativa nueva'),
-                'edit_item' => __('Editar una Modificación a la Iniciativa'),
+                'add_new_item' => __('AÃ±adir una ModificaciÃ³n a la Iniciativa nueva'),
+                'edit_item' => __('Editar una ModificaciÃ³n a la Iniciativa'),
 				'search_items'       => __( 'Buscar Modificaciones a la Iniciativa' ),
 				'not_found'          => __( 'Modificaciones a la Iniciativa no encontradas' ),
 				'not_found_in_trash' => __( 'Modificaciones a la Iniciativa no encontradas en basura' ),
@@ -285,9 +285,9 @@ function getRepresentativesByPoliticalParty($slug) {
 /*Get representatives by election type*/
 function getRepresentativesByTypeElection($slug) {
 	if($slug == "representacion-proporcional") {
-		$slug = utf8_encode("Representación Proporcional");
+		$slug = utf8_encode("RepresentaciÃ³n Proporcional");
 	} else {
-		$slug = utf8_encode("Mayoría Relativa");
+		$slug = utf8_encode("MayorÃ­a Relativa");
 	}
 	
 	return array('key' => 'wp_election_type', 'value' => $slug);
@@ -482,19 +482,19 @@ function getPoliticalParty($idPoliticalParty) {
 		$array["url_logo"]   = "18px-PRI.png";
 	} elseif($idPoliticalParty == 2) {
 		$array["id_political_party"] = 2;
-		$array["name"]       = "Partido de la Revolución Democrática";
+		$array["name"]       = "Partido de la RevoluciÃ³n DemocrÃ¡tica";
 		$array["slug"]		 = "partido-de-la-revolucion-democratica";
 		$array["short_name"] = "PRD";
 		$array["url_logo"]   = "18px-PRD.png";
 	} elseif($idPoliticalParty == 3) {
 		$array["id_political_party"] = 3;
-		$array["name"]       = "Partido Verde Ecologista de México";
+		$array["name"]       = "Partido Verde Ecologista de MÃ©xico";
 		$array["slug"]		 = "partido-verde-ecologista-de-mexico";
 		$array["short_name"] = "PVEM";
 		$array["url_logo"]   = "18px-PVE.png";
 	} elseif($idPoliticalParty == 4) {
 		$array["id_political_party"] = 4;
-		$array["name"]       = "Partido Acción Nacional";
+		$array["name"]       = "Partido AcciÃ³n Nacional";
 		$array["slug"]		 = "partido-accion-nacional";
 		$array["short_name"] = "PAN";
 		$array["url_logo"]   = "18px-PAN.png";
@@ -538,21 +538,21 @@ function getPoliticalParties() {
 	array_push($politicalParties, $array);
 	
 	$array["id_political_party"] = 2;
-	$array["name"]       = "Partido de la Revolución Democrática";
+	$array["name"]       = "Partido de la RevoluciÃ³n DemocrÃ¡tica";
 	$array["short_name"] = "PRD";
 	$array["slug"]		 = "partido-de-la-revolucion-democratica";
 	$array["url_logo"]   = "18px-PRD.png";
 	array_push($politicalParties, $array);
 	
 	$array["id_political_party"] = 3;
-	$array["name"]       = "Partido Verde Ecologista de México";
+	$array["name"]       = "Partido Verde Ecologista de MÃ©xico";
 	$array["short_name"] = "PVEM";
 	$array["slug"]		 = "partido-verde-ecologista-de-mexico";
 	$array["url_logo"]   = "18px-PVE.png";
 	array_push($politicalParties, $array);
 
 	$array["id_political_party"] = 4;
-	$array["name"]       = "Partido Acción Nacional";
+	$array["name"]       = "Partido AcciÃ³n Nacional";
 	$array["short_name"] = "PAN";
 	$array["slug"]		 = "partido-accion-nacional";
 	$array["url_logo"]   = "18px-PAN.png";
@@ -599,23 +599,23 @@ function getStates() {
 		array("name" => "Guerrero", "cve" => "12", "slug" => "slug"),
 		array("name" => "Hidalgo", "cve" => "13", "slug" => "slug"),
 		array("name" => "Jalisco", "cve" => "14", "slug" => "slug"),
-		array("name" => "México", "cve" => "15", "slug" => "slug"),
-		array("name" => "Michoacán", "cve" => "16", "slug" => "slug"),
+		array("name" => "MÃ©xico", "cve" => "15", "slug" => "slug"),
+		array("name" => "MichoacÃ¡n", "cve" => "16", "slug" => "slug"),
 		array("name" => "Morelos", "cve" => "17", "slug" => "slug"),
 		array("name" => "Nayarit", "cve" => "18", "slug" => "slug"),
-		array("name" => "Nuevo León", "cve" => "19", "slug" => "slug"),
+		array("name" => "Nuevo LeÃ³n", "cve" => "19", "slug" => "slug"),
 		array("name" => "Oaxaca", "cve" => "20", "slug" => "slug"),
 		array("name" => "Puebla", "cve" => "21", "slug" => "slug"),
-		array("name" => "Querétaro", "cve" => "22", "slug" => "slug"),
+		array("name" => "QuerÃ©taro", "cve" => "22", "slug" => "slug"),
 		array("name" => "Quintana Roo", "cve" => "23", "slug" => "slug"),
-		array("name" => "San Luis Potosí", "cve" => "24", "slug" => "slug"),
+		array("name" => "San Luis PotosÃ­", "cve" => "24", "slug" => "slug"),
 		array("name" => "Sinaloa", "cve" => "25", "slug" => "slug"),
 		array("name" => "Sonora", "cve" => "26", "slug" => "slug"),
 		array("name" => "Tabasco", "cve" => "27", "slug" => "slug"),
 		array("name" => "Tamaulipas", "cve" => "28", "slug" => "slug"),
 		array("name" => "Tlaxcala", "cve" => "29", "slug" => "slug"),
 		array("name" => "Veracruz", "cve" => "30", "slug" => "slug"),
-		array("name" => "Yucatán", "cve" => "31", "slug" => "slug"),
+		array("name" => "YucatÃ¡n", "cve" => "31", "slug" => "slug"),
 		array("name" => "Zacatecas", "cve" => "32", "slug" => "slug")
 	);
 	
@@ -636,19 +636,19 @@ function getIniciativasbyRepresentantes() {
 function getTemas() {
 	$temas = array(
 		array("name" => "transparencia", "slug" => "transparencia"),
-		array("name" => "rendición de cuentas",  "slug" => "rendicion-de-cuentas"),
-		array("name" => "anticorrupción", "slug" => "anticorrupcion"),
+		array("name" => "rendiciÃ³n de cuentas",  "slug" => "rendicion-de-cuentas"),
+		array("name" => "anticorrupciÃ³n", "slug" => "anticorrupcion"),
 		array("name" => "publicidad oficial", "slug" => "publicidad-oficial"),
 		array("name" => "parlamento abierto", "slug" => "parlamento-abierto"),
-		array("name" => "participación ciudadana", "slug" => "participacion-ciudadana"),
+		array("name" => "participaciÃ³n ciudadana", "slug" => "participacion-ciudadana"),
 		array("name" => "presupuesto",  "slug" => "presupuesto"),
-		array("name" => "migración", "slug" => "migracion"),
+		array("name" => "migraciÃ³n", "slug" => "migracion"),
 		array("name" => "salud",  "slug" => "salud"),
 		array("name" => "industrias extractivas", "slug" => "industrias-extractivas"),
-		array("name" => "minería",  "slug" => "mineria"),
+		array("name" => "minerÃ­a",  "slug" => "mineria"),
 		array("name" => "derechos humanos",  "slug" => "derechos-humanos"),
 		array("name" => "seguridad ciudadana",  "slug" => "seguridad-ciudadana"),
-		array("name" => "derechos de las víctimas", "slug" => "derechos-de-las-victimas"),
+		array("name" => "derechos de las vÃ­ctimas", "slug" => "derechos-de-las-victimas"),
 		array("name" => "derecho a la consulta", "slug" => " derecho-a-la-consulta")
 		
 	);
@@ -691,7 +691,7 @@ function getStatus() {
 		array("name" => "Dictaminada en sentido negativo",  "slug" => "dictaminada-en-sentido-negativo"),
 		array("name" => "Enviada", "slug" => "enviada"),
 		array("name" => "Turnada", "slug" => "turnada"),
-		array("name" => "Prórroga", "slug" => "prorroga"),
+		array("name" => "PrÃ³rroga", "slug" => "prorroga"),
 		array("name" => "Devuelta", "slug" => "devuelta"),
 		array("name" => "Dictaminada y aprobada", "slug" => "dictaminada-y-aprobada"),
 		array("name" => "Aprobada", "slug" => "aprobada"),
@@ -700,7 +700,7 @@ function getStatus() {
 		array("name" => "Precluida", "slug" => "precluida"),
 		array("name" => "Presentada", "slug" => "presentada"),
 		array("name" => "Publicado", "slug" => "publicado"),
-		array("name" => "Se le dispensaron todos los trámites", "slug" => "se-le-dispensaron-todos-los-tramites")
+		array("name" => "Se le dispensaron todos los trÃ¡mites", "slug" => "se-le-dispensaron-todos-los-tramites")
 		
 	);
 	
@@ -847,7 +847,7 @@ function posts_custom_column_views($column_name, $id){
     }
 }
 
-/* Codigo de prueba para hacer búsquedas de diputados
+/* Codigo de prueba para hacer bÃºsquedas de diputados
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'jquery-ui' );
 	wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/js/scripts/buscar_representantes_por_nombre.js', array( 'jquery' ) ); 
