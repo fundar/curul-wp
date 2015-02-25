@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	global $avia_config, $more;
 	//$selectedOption = getParameterValueGET();
 	$data = getDataIniciativas();
@@ -97,7 +97,7 @@
 					   
 					   <div id="filter">				
 						   <select class="sorter-rep sort" name="camara" id="camara-filter">
-							   <option value="">Camara</option>
+							   <option value="">Cámara</option>
 							    <?php $CamaraArray = getCamara(); ?>
 								<?php foreach($CamaraArray as $value) { ?>
 									<option value="<?php echo utf8_encode($value["slug"]);?>" <?php if($selectedCamara == utf8_encode($value["slug"])) echo 'selected="selected"'?>>
@@ -164,10 +164,10 @@
 													   $status_final="Pleno";
 													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
 													   $status_final="Comisiones";
-													} elseif($elements[$status_final] == "Pr�rroga") {
+													} elseif($elements[$status_final] == "Prórroga") {
 													   $status_final="Comisiones";
 													} elseif($elements[$status_final] == "Publicado") {
-													   $status_final="Publicaci�n";
+													   $status_final="Publicación";
 													} elseif($elements[$status_final] == "Se le dispensaron todos los tramites") {
 													   $status_final="Pleno";
 													} elseif($elements[$status_final] == "Aprobada") {
