@@ -5,11 +5,43 @@ global $avia_config, $more;
 
 
  ?>
-
+ 
+<LINK rel="stylesheet" href="/enfold/css/fonts.css" type="text/css">
 <style type="text/css">
-		#wrap_all #header{
-			display:none;
+		
+		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
+		    color: #f4f4f4;
 		}
+		.responsive .container {
+		    max-width: 1310px !important;
+		}
+		.av_header_transparency > #header_main {
+		    background-color: #f4f4f4 !
+		;
+		    background-image: none !important;
+		}
+		.html_header_top.html_header_sticky #header {
+		    background-image:none !important;
+		    background-color:#f4f4f4;
+		    position: relative;
+		}
+		.main_menu {
+		    background-image:none;
+		    background-color: #f4f4f4;
+		}
+		
+		#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, #top #wrap_all .av_header_transparency .sub_menu > ul > li > a, #top .av_header_transparency #header_main_alternate, .av_header_transparency #header_main .social_bookmarks li a {
+		    background: #f4f4f4;
+		}
+		#header_main nav .social_bookmarks {
+		    background: none repeat scroll 0 0 #f4f4f4 !important;
+		}
+		#header_meta{
+		  display:none;
+		}
+		strong.logo {
+                margin-left: 10px;
+                }
 		.titulo h2{
 			color: #000;
  			font-family: oswald;
@@ -32,7 +64,9 @@ global $avia_config, $more;
 		.titulo h2 #general small b{
  			font-size: 1.5em;
 		}
-
+                #av_section_2{
+    background: #fff;
+}
 		section#preocupaciones{
 			padding-top: 60px;
 			background: #fff;
@@ -184,23 +218,29 @@ global $avia_config, $more;
 			display: none;
 			height: 380px;
 			margin-bottom: 14px;
-			width: 800px;
-		}
-
-
-
-
+			width: 800px;		}
 </style>
 
 <body>
-	<header class="titulo">
-		<h2> 
-			<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-			CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-			APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
-		</h2>
-	</header>
+		<!-- cabecera micrositio -->
 
+		<div class="container">
+				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
+						<header class="titulo">
+							<h2> 
+								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+							</h2>
+						</header>
+				</main>
+                </div>
+		<!-- /cabecera micrositio -->
+		
+		<!-- cabecera contenido -->
+		
+		<div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-2  el_after_av_section  el_before_av_section   container_wrap fullsize" id="av_section_2">
+		<div class="container">
 									<?php if ( have_posts() ) : 
 					              
 									$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
@@ -221,8 +261,8 @@ global $avia_config, $more;
 									?>
 									
 								
-
-	<section id="preocupaciones">
+               
+	        <section id="preocupaciones">
 		<ul>
 		
 		
@@ -260,7 +300,7 @@ global $avia_config, $more;
 	<section id="comentarios">
 		
 	</section>
-
+	</div></div><!-- /fin contenido -->
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
   <?php comments_template( '/includes/comments.php'); ?>
 	<?php get_footer(); ?>
