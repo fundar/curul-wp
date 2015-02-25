@@ -215,10 +215,10 @@
 							<li class="bullet-arrow">Comisiones
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
-							<li class="bullet-arrow">Propuesta por
+							<li class="bullet-arrow">Propuesta por <?php   if($id==1295){ echo "no";} else{?>  
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
-							<?php if($tipo_iniciativa==1){  if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } } else{ if($presentada_partido != "") { ?> <?php echo  $presentada_partido."</br></br>"; }    } ?>
-							<p><?php echo $htmlpresentadas; ?></p> </li>
+							<?php if($tipo_iniciativa==1){  if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } } else{  if($presentada_partido != "") { ?> <?php echo  $presentada_partido."</br></br>"; }    } ?>
+							<p><?php echo $htmlpresentadas; ?></p> </li>  <?php } ?>
 							<li class="bullet-arrow">En la C&aacute;mara de: <span><?php  if($tipo_iniciativa==1) echo "Diputados"; else	echo "Senadores";?></span></li>
 						</ul>
 						<? the_content(); ?>					
