@@ -53,7 +53,12 @@
   $.fn.extend({
     teletype: function (opts) {
       var settings = $.extend({}, $.teletype.defaults, opts);
+      if (opts.text == ''){
+        console.log("stop")
+        return false
 
+      }
+      
       return $(this).each(function () {
         (function loop($tar, idx) {
           // type
@@ -75,7 +80,14 @@
           typeString($tar, settings.text[idx], 0, settings.delay,  function(){
             $tar.empty();
             $tar.parents(".textos").toggle()
-            $tar.parents(".textos").next(".ilustracion").toggle()
+            var ilustracion = $tar.parents(".textos").next(".ilustracion")
+
+
+            if(ilustracion.css("display") == "none" ){
+              ilustracion.slideDown();
+            }else{
+              ilustracion.slideUp();
+            }
           });
 
         }($(this), 0));
