@@ -222,7 +222,7 @@
 		
 		
 			<li class="<?php echo $class; ?>">
-		<?php if($numero_preocupacion2==9){ <span class="num"> 8+<strong>1</strong> </span> } else { <span class="num"> echo $numero_preocupacion; ?></span>
+		<?php if($numero_preocupacion2==9){ <span class="num"> 8+<strong>1</strong> </span> } else { <span class="num"> echo $numero_preocupacion; }?></span>
 			
 			<div class="sep"></div>
 
