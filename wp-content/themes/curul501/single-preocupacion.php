@@ -2,6 +2,8 @@
 get_header(); 
 global $dposttitle;
 $dposttitle = wp_title( '', false);
+	global $avia_config, $more;
+
 ?>
 <style type="text/css">
 		#wrap_all #header{
@@ -160,6 +162,8 @@ $dposttitle = wp_title( '', false);
 					                                    <?php endwhile; endif; ?>
 
 	<div class="compartir">
+	
+			    
 		<!--div class="box"><?php avia_social_share_links(); ?></div-->
 	</div>
 
