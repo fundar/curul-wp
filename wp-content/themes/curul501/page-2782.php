@@ -202,7 +202,7 @@
 									while ( $loop->have_posts() ) : $loop->the_post(); 
 									
 									$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
-									$avatar_url = get_post_meta($post->ID, 'avatar_url', true);
+									$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
 
 												if($numero_preocupacion==9){
 													$class="preocupacion-8mas1";
@@ -256,7 +256,8 @@
 	</section>
 
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
-
+  <?php comments_template( '/includes/comments.php'); ?>
+	<?php get_footer(); ?>
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
 			

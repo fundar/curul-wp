@@ -155,7 +155,7 @@ add_action( 'init', 'create_post_type_preocupacion' );
 
 
 /* Creación de la taxonomia Preocupaciones*/
-/*   la cual idealmente se llenará automaticamente con los titulares de los custom-post Preocupaciones*/
+/*   la cual idealmente se llenará automaticamente con los titulares de los custom-post Preocupaciones
 function my_taxonomies_preocupaciones() {
   $labels = array(
     'name'              => _x( 'Preocupaciones', 'taxonomy general name' ),
