@@ -38,12 +38,7 @@ $dposttitle = wp_title( '', false);
 			background: #fff;
 		}
 
-		#banner{
-			min-height: 300px;
-			height: 300px;
-			background: none repeat scroll 0 0 rgba(250, 124, 0, 1) !important;
-			width: 100%;
-		}
+		
 
 		#banner .num{
 			background: #ccc;
@@ -133,6 +128,16 @@ $dposttitle = wp_title( '', false);
 						
 						
 					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
+<style type="text/css">
+	
+	#banner{
+			min-height: 300px;
+			height: 300px;
+			background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
+			width: 100%;
+		}
+
+</style>
 
 <body>
 	<header class="titulo">
