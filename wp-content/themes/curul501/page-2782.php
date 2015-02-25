@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+
+get_header();
+global $avia_config, $more;
+
+
+ ?>
 
 <style type="text/css">
 		#wrap_all #header{
