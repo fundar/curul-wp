@@ -570,7 +570,7 @@
 													   $status_final="Comisiones";
 													} elseif($elements[$status_final]=="Dictaminada y Aprobada") {
 													   $status_final="Pleno";
-													} elseif($elements[$status_final] =="Dicataminada en sentido negativo") {
+													} elseif($elements[$status_final] =="Dictaminada en sentido negativo") {
 													   $status_final="Comisiones";
 													} elseif($elements[$status_final] == "Prórroga") {
 													   $status_final="Comisiones";
