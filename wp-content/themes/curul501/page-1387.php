@@ -478,6 +478,9 @@
 			 	}
 
 			 	jQuery(this).children(".textos").children(".titulo").remove()
+			 	jQuery(this).removeClass("ilustracion")
+			 	jQuery(this).children("img").addClass("ilustracion")
+
 			 })
 			 .on("mouseleave", function(){
 			 	var textos = jQuery(this).children(".textos")
