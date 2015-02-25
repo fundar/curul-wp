@@ -7,9 +7,48 @@ global $avia_config, $more;
  ?>
 
 <style type="text/css">
-		#wrap_all #header{
-			display:none;
+		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
+		    color: #f4f4f4;
 		}
+		.responsive .container {
+		    max-width: 1310px !important;
+		}
+		.av_header_transparency > #header_main {
+		    background-color: #f4f4f4 !
+		;
+		    background-image: none !important;
+		}
+		.html_header_top.html_header_sticky #header {
+		    background-image:none !important;
+		    background-color:#f4f4f4;
+		    position: relative;
+		}
+		.main_menu {
+		    background-image:none;
+		    background-color: #f4f4f4;
+		}
+		
+		#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, #top #wrap_all .av_header_transparency .sub_menu > ul > li > a, #top .av_header_transparency #header_main_alternate, .av_header_transparency #header_main .social_bookmarks li a {
+		    background: #f4f4f4;
+		}
+		#header_main nav .social_bookmarks {
+		    background: none repeat scroll 0 0 #f4f4f4 !important;
+		}
+		#header_meta{
+		  display:none;
+		}
+		strong.logo {
+                margin-left: 10px;
+                }
+		.titulo h2 {
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 4em;
+		    font-weight: normal;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		}
+
 		.titulo h2{
 			color: #000;
  			font-family: oswald;
@@ -81,7 +120,7 @@ global $avia_config, $more;
 		}
 		
 		.click_area .titulo, .titulo_ninja{
-			font-size: 3.5em;
+			font-size: 3.1em;
 			margin-top: 0px;
 		}
 
@@ -100,7 +139,7 @@ global $avia_config, $more;
 
 		.ilustracion{
 			display: none;
-			height: 380px;
+
 			margin-bottom: 14px;
 			width: 100%;
 		}
@@ -190,6 +229,17 @@ global $avia_config, $more;
 			margin-bottom: 14px;
 			width: 800px;
 		}
+		#av_section_2{
+			background:#fff;
+		}
+		#comentarios{
+				background:#f4f4f4;
+
+		}
+		.pad60{
+				padding-bottom:60px;
+				padding-top:60px;
+		}
 
 
 
@@ -198,13 +248,22 @@ global $avia_config, $more;
 
 
 <body>
-	<header class="titulo">
-		<h2> 
-			<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-			CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-			APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
-		</h2>
-	</header>
+		
+
+		<div class="container">
+				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
+						<header class="titulo">
+							<h2> 
+								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+							</h2>
+						</header>
+				</main>
+                </div>
+		
+<div class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-2  el_after_av_section  el_before_av_section   container_wrap fullsize" id="av_section_2">
+	<div class="container">		
 		<section id="preocupaciones">
 			<ul>
 
@@ -259,16 +318,22 @@ global $avia_config, $more;
 			
 
 			
-	</section>
-	<br> <br> <br> <br>
-
+	</section></div></div>
+	</div>
+	</div>
 	<section id="comentarios">
+		<div class="container pad60">
 		
-	</section>
+				<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
+				     <?php comments_template( '/includes/comments.php'); ?>	
+				
+		</div>
+       
+        </section>
 
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
-  <?php comments_template( '/includes/comments.php'); ?>
 	<?php get_footer(); ?>
+	
+	
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
 			
