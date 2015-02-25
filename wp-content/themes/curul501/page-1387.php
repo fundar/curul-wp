@@ -376,6 +376,71 @@
 		
 	</section>
 
+	<style type="text/css">
+
+
+		footer .three-columns {
+			min-width: 100%;
+			width: 100%;
+			display: block;
+		}
+
+		.three-columns #recursos ul li{
+			color: #60466B;
+			list-style: disc;
+		}
+
+		.three-columns article{
+			float:left;
+			padding: 20px;			
+			min-width: 33%;
+		}
+
+		footer .bottom{
+			width: 100%;
+			float: left;
+			padding: 0px 150px;
+		}
+
+		footer .bottom #derechos{
+			float:left;
+		}
+
+		footer .bottom #logo-fundar{
+			float:right;
+		}
+
+	</style>
+
+	<footer>
+		<section class="three-columns">
+			<article>
+				a
+			</article>
+
+			<article id="recursos">
+				<h1> RECURSOS ADICIONALES</h1>
+				<ul>
+					<li> <a href="#"> Lorem ipsum dolor sit amet consectetur adipiscing elit </a></li>
+					<li> <a href="#"> Sed egestas metus ac euismod congue </a></li>
+					<li> <a href="#"> Vestibulum pharetra ornare vestibulum </a></li>
+					<li> <a href="#"> Nunc ac nulla non enim faucibus lobortis id sit amet risus </a></li>
+					<li> <a href="#"> Etiam eget egestas felis </a></li>
+					<li> <a href="#"> Curabitur est turpis </a></li>
+				</ul>
+			</article>
+
+			<article id="logos">
+				<img src="#">
+			</article>
+		</section>
+
+		<section class="bottom">
+			<p id="derechos"> Curul 501 l Todos los derechos reservados l Power by FundarLab </p>
+			<img id="logo-fundar" alt="Fundar, Centro de Análisis e INvestigación A.C." src="#">
+		</section>
+	</footer>
+
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
