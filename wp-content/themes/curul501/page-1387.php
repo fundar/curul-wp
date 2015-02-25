@@ -79,8 +79,13 @@
 			margin-top: 0px;
 		}
 
+		.click_area .titulo, .ilustracion{
+			z-index: -1;
+		}
+
 		.titulo_ninja{
 			display: none;
+			z-index: 3;
 		}
 
 		.click_area .titulo, .click_area .titulo-ninja{
@@ -430,13 +435,13 @@
 			</article>
 
 			<article id="logos">
-				<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
+				<img src="#">
 			</article>
 		</section>
 
 		<section class="bottom">
 			<p id="derechos"> Curul 501 l Todos los derechos reservados l Power by FundarLab </p>
-			<img id="logo-fundar" alt="Fundar, Centro de Análisis e INvestigación A.C." src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/VST_images_the_Lagoon_Nebula.jpg/800px-VST_images_the_Lagoon_Nebula.jpg">
+			<img id="logo-fundar" alt="Fundar, Centro de Análisis e INvestigación A.C." src="#">
 		</section>
 	</footer>
 
@@ -445,17 +450,6 @@
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
 			
-			/* Cambiar el título por la ilustracion en cada preocupación*/
-			 jQuery(".click_area").on("hover", function(){
-			 	jQuery(this).children(".textos").children(".titulo_ninja").toggle()
-			 	jQuery(this).children(".textos").children(".titulo").toggle()
-
-			 	if( jQuery(this).children(".ilustracion").css("display") == "inline-block" ){
-			 		jQuery(this).children(".ilustracion").toggle()
-			 		jQuery(this).children(".textos").toggle()
-			 	}
-			 })
-			/**/
 
 			/* Cambiar de pocisión el área de votos*/
 			var redits = jQuery(".reddit-voting")
@@ -465,15 +459,37 @@
 			/* Efecto de máquina de escribir */
 			jQuery(".click_area .titulo").each(function(){
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
-				jQuery(this).teletype({ 
-					text: [ texto ]/*, 
-					cb: function(){
-						jQuery(this).text("")
-					}*/
-				});
+				jQuery(this).teletype({  text: [ texto ] });
 			})
 			/**/
 		
+			/* Cambiar el título por la ilustracion en cada preocupación*/
+			 jQuery(".click_area")
+			 .on("mouseenter", function(){
+			 	jQuery(this).children(".textos").children(".titulo_ninja").css("display", "inline-block")
+
+			 	jQuery(this).children(".textos").children(".titulo").css("display", "none")
+
+
+			 	if( jQuery(this).children(".ilustracion").css("display") == "inline-block" ){
+			 		jQuery(this).children(".ilustracion").css("display", "none")
+			 		jQuery(this).children(".textos").css("display", "inline-block")
+			 	}
+
+			 	jQuery(this).children(".textos").children(".titulo").remove()
+			 })
+			 .on("mouseleave", function(){
+			 	var textos = jQuery(this).children(".textos")
+			 	textos.append("<h1 class='titulo'></h1>")
+
+			 	var titulo = textos.children(".titulo")
+			 	var titulo_ninja = jQuery(this).children(".textos").children(".titulo_ninja")
+			 	var texto = titulo_ninja.text() 
+
+			 	titulo_ninja.css("display", "none")
+				titulo.teletype({  text: [ texto ] });
+
+			 })
 		})
 	</script>
 </body>
