@@ -790,8 +790,7 @@ add_filter( 'the_content', 'wpeddit_content_filter', 20 );
 function wpeddit_content_filter( $content ) {
     
     if( is_singular('iniciativa') || is_post_type('iniciativa') || 
-        is_post_type('modificacion') /*|| 
-        is_singular('preocupacion') || is_post_type('preocupacion') */) {
+        is_post_type('modificacion') ||  is_post_type('preocupacion') ) {
 		$newcontent = epic_reddit_voting();
     	$content = $newcontent . $content;
 	}elseif(is_front_page() || is_home()) { 
