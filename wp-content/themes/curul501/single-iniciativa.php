@@ -215,7 +215,7 @@
 							<li class="bullet-arrow">Comisiones
 								<p><?php echo $htmlcommis; ?></p>
 							</li>
-							<li class="bullet-arrow">Propuesta por <?php   if($id==1295)  { ?> <p> <?php   echo "Partido Revolucionario Institucional, Partido Acción Nacional,Partido de la Revolución Democrática"; } ?> </p></li> <?php else{ ?>  
+							<li class="bullet-arrow">Propuesta por <?php   if($id==1295) { echo "Partido Revolucionario Institucional, Partido Acción Nacional,Partido de la Revolución Democrática"; }  else { ?>  
 							<p><?php if($presentada_dependencia != "") { echo $presentada_dependencia."</br></br>";} ?>
 							<?php if($tipo_iniciativa==1){  if($presentada_partido != "") { ?> <a href="<?php echo get_site_url() . '/iniciativas/?partido-politico=' . $partido_politico_slug; ?>"> <?php echo  $presentada_partido."</br></br>"; } } else{  if($presentada_partido != "") { ?> <?php echo  $presentada_partido."</br></br>"; }    } ?>
 							<p><?php echo $htmlpresentadas; ?></p> </li>  <?php } ?>
