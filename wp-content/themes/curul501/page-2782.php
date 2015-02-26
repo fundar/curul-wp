@@ -259,9 +259,9 @@ global $avia_config, $more;
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo">
 							<h2> 
-								<span id="general"> Conoce los 8 <small><b>+</b>1</small> </span> <br>
-								temas más preocupantes de la nueva Ley General de Transparencia. <br>
-								
+								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
+								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
+								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
 							</h2>
 						</header>
 				</main>
