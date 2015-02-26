@@ -201,6 +201,9 @@
 
 				<main class="content units av-content-small alpha cpt-iniciativa" role="main">
 				        <header class="entry-content-header">
+						<?php if( get_post_meta($post->ID, 'wp_id_initiative', true) == 1){ ?>
+							<a href="http://curul501.org/leytransparencia/" id="documento_lnk"> Entra al sitio </a>
+						<?php }?>
 						<h1 itemprop="headline" class="post-title entry-title">
 							<?php the_title(); ?>
 						</h1>
