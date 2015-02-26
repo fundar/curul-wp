@@ -217,6 +217,10 @@ h3.iconbox_content_title {
 #bajonum > .reddit-voting{
       display: none;
 }
+#bajonum .reddit-voting, .iniciativa-original .reddit-voting{
+      display: none;
+}
+
 .votos {
     border-bottom: 1px solid #999 !important;
 	max-height: 0px;
