@@ -310,7 +310,12 @@ li.adicionales {
     font-family: 14px;
     text-shadow: 1px 1px 1px solid;
 }
-
+.logo-pie > a {
+    display: inline-block;
+    width: 173px;
+    height: 40px;
+    text-indent: -10000px;
+}
 
 </style>
 
@@ -411,7 +416,9 @@ li.adicionales {
 		                </div>
 				
 				<div class="flex_column av_one_third" id="trescol">
-						<div class="logo-pie"></div>
+						<div class="logo-pie">
+								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+						</div>
 						
 				</div>
 				
