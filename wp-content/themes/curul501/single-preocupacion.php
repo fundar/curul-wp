@@ -301,10 +301,10 @@ li.adicionales {
 		<div class="container">
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo">
-							<h2> 
+							<h2 style="text-transform: uppercase;">
 								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+								Conoce los temas más preocupantes<br>
+								de la nueva Ley General de Transparencia
 							</h2>
 						</header>
 				</main>
