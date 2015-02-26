@@ -3,7 +3,6 @@ get_header();
 global $dposttitle;
 $dposttitle = wp_title( '', false);
 	global $avia_config, $more;
-
 ?>
 <style type="text/css">		
 		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
@@ -45,35 +44,28 @@ $dposttitle = wp_title( '', false);
 		.titulo h2{
 			color: #000;
  			font-family: oswald;
-
  			font-weight: normal;
  			padding: 10px;
  			font-size: 4em;
 		}
-
 		.titulo h2 #general{
 			color: #502760;
 		}
-
 		.titulo h2 #general small{
 			color: #60466B;
  			padding: 10px;
  			font-size: 1em;
 		}
-
 		.titulo h2 #general small b{
  			font-size: 1.5em;
 		}
-
 		#original{
 			background: #fff;
 			padding-bottom: 30px;
 		}
-
 		.reddit-voting, .logged-in-only{
 			margin-top: 0px;
 		}
-
 body {
     background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
     color: #eee;
@@ -90,7 +82,6 @@ body {
     vertical-align: middle;
     width: 100%;
 }
-
 		.iniciativa-original {
 		    background: none repeat scroll 0 0 #fff;
 		    display: block;
@@ -122,27 +113,22 @@ body {
 		section#modificaciones{
 			margin: 30px;
 			padding-top:40px; 
-
 		}
-
 		#modificaciones article{
 			max-width: 30%;
 			float:left;
 			margin-right: 40px;
 		}
-
 		#modificaciones article h3{
 			color:#593A57;
 			padding-bottom: 10px;
 			border-bottom: 1px solid #593A57;
 			font-size: 1.9em;
 		}
-
 		#modificaciones article .texto p{
  			font-family: "colaborate-thinregular";
  			color:#000;
  			font-size: 1.6em;
-
 		}
 		
 		#modificaciones article span {
@@ -152,12 +138,10 @@ body {
 			color: #502760;
  			font-size: 1.2em;
 		}
-
 		.sep{
 			border-bottom: 1px solid #502760;
 			margin-top: 40px;
 		}
-
 		.reddit-voting{
 	               background-color: #502760;
 	                float: right;
@@ -190,7 +174,6 @@ body {
 		.fijo{
 		height:247px;
 		}
-
 .texto {
     margin-bottom: 70px;
     margin-top: -102px;
@@ -220,15 +203,81 @@ h3.iconbox_content_title {
 #bajonum .reddit-voting, .iniciativa-original .reddit-voting{
       display: none;
 }
-
 .votos {
     border-bottom: 1px solid #999 !important;
 	max-height: 0px;
 	padding-top: 0px;
 }
-
 .iconbox_content_container p{
 	margin-bottom: 40px;
+}
+		/** footer **/
+		#footer {
+		   display:none !important;
+		}
+		#av_section_morado{
+			background:#77607F;
+			min-height:auto;
+			padding:0;
+			margin:0;
+		}		
+		#socket {
+		display: none;
+		}
+		.morado_plus {
+		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
+		    height: 236px;
+		}
+.logo-pie {
+    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+    width: 180px;
+    height: 72px;
+    background-color: #d6d3d6;
+}
+		.E0E0E2color{
+			background: #E0E0E2;
+			height: 236px;
+			
+		}
+		div .av_two_third {
+		    margin: 0;
+		    width: 70.667%;
+		    padding: 0 ;
+		}
+		div .av_dos_third {
+		    margin: 0;
+                    width: 63.7%;
+                 padding: 42px 10px 0 50px;
+		}
+		h3.recursos {
+                   font-family: oswald;
+		   color: #77607F;
+	           font-size:28px;
+		   text-shadow: 1px 1px 1px #fff;
+    
+                    }
+		a.plus {
+				color:#62496E;
+		}
+#trescol {
+    padding: 42px 10px 40px 50px;
+    background: #d6d3d6;
+    margin: 0 ;
+    height: 236px;
+}
+		
+li.adicionales {
+    list-style: disc;
+    color: #77607f !important;
+    padding: 0px 2px 0 4px;
+    font-family: 14px;
+    text-shadow: 1px 1px 1px solid;
+}
+.logo-pie > a {
+    display: inline-block;
+    width: 173px;
+    height: 40px;
+    text-indent: -10000px;
 }
 </style>
 
@@ -245,7 +294,6 @@ h3.iconbox_content_title {
 			background: url("http://curul501.org/wp-content/uploads/preocupaciones/<?php echo $id_preocupacion ?>.png");
 			width: 100%;
 		}
-
 </style>
 
 <body>
@@ -253,10 +301,10 @@ h3.iconbox_content_title {
 		<div class="container">
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo">
-							<h2> 
+							<h2 style="text-transform: uppercase;">
 								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+								Conoce los temas más preocupantes<br>
+								de la nueva Ley General de Transparencia
 							</h2>
 						</header>
 				</main>
@@ -362,17 +410,42 @@ h3.iconbox_content_title {
 
 	<script type="text/javascript">
 		jQuery(document).ready(function(){
-
 			/* Mover de lugar los votos */
 			jQuery(".votos").each(function(){
 			  var redit = jQuery(this).siblings(".reddit-voting")
 			  var login = jQuery(this).siblings(".logged-in-only")
-
 			  jQuery(this).prepend(redit)
 			  jQuery(this).prepend(login)
 			})
 		})
 	</script>
+<div class="container_wrap fullsize" id="av_section_morado">
+		<div class="flex_column av_one_third first morado_plus">
+
+		</div>
+		<div class="flex_column av_two_third  E0E0E2color">
+				<div class="flex_column av_dos_third first">
+						<h3 class="recursos">Recursos adicionales</h3>
+					<ul style="margin-left: 13px; margin-top: 5px;">
+						<li class="adicionales"><a class="plus" target="blank_" href="http://colectivoporlatransparencia.org/blog/53/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia">Posicionamiento del Colectivo por la Transparencia y otras organizaciones</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="https://readymag.com/Articulo19/55041/">Traici&oacute;n en el Senado (Art&iacute;culo XIX) </a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://www.senado.gob.mx/comisiones/anticorrupcion/transparencia.php">Proceso legislativo en el Senado</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/wp-content/uploads/2015/02/CoalSTTFeb15.pdf">Comunicado de OSC al Secretariado T&eacute;cnico en la Alianza para el Gobierno Abierto en M&eacute;xico</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://www.explica.la/ley/ley-transparencia">Todos los art&iacute;culos de la Ley General de Transparencia </a></li>						
+					</ul>
+		                </div>
+				
+				<div class="flex_column av_one_third" id="trescol">
+						<div class="logo-pie">
+								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+						</div>
+						
+				</div>
+				
+		</div>
+
+		
+</div>	
    <?php get_footer(); ?>
 
 </body>
