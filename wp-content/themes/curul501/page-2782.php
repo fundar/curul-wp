@@ -245,11 +245,77 @@ global $avia_config, $more;
 				background:#fff;
 		}
 		#pad60{
-				padding:60px 0;
+		     padding:60px 0;
 		}
  
-
-
+		/** footer **/
+		#footer {
+		   display:none !important;
+		}
+		#av_section_morado{
+			background:#77607F;
+			min-height:auto;
+			padding:0;
+			margin:0;
+		}		
+		#socket {
+		display: none;
+		}
+		.morado_plus {
+		    background:url("/curul-wp/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
+		    height: 236px;
+		}
+.logo-pie {
+    background: url("/curul-wp/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+    width: 180px;
+    height: 72px;
+    background-color: #d6d3d6;
+}
+		.E0E0E2color{
+			background: #E0E0E2;
+			height: 236px;
+			
+		}
+		div .av_two_third {
+		    margin: 0;
+		    width: 70.667%;
+		    padding: 0 ;
+		}
+		div .av_dos_third {
+		    margin: 0;
+                    width: 63.7%;
+                 padding: 42px 10px 0 50px;
+		}
+		h3.recursos {
+                   font-family: oswald;
+		   color: #77607F;
+	           font-size:28px;
+		   text-shadow: 1px 1px 1px #fff;
+    
+                    }
+		a.plus {
+				color:#62496E;
+		}
+#trescol {
+    padding: 42px 10px 40px 50px;
+    background: #d6d3d6;
+    margin: 0 ;
+    height: 236px;
+}
+		
+li.adicionales {
+    list-style: disc;
+    color: #77607f !important;
+    padding: 0px 2px 0 4px;
+    font-family: 14px;
+    text-shadow: 1px 1px 1px solid;
+}
+.logo-pie > a {
+    display: inline-block;
+    width: 173px;
+    height: 40px;
+    text-indent: -10000px;
+}
 
 </style>
 
@@ -333,6 +399,34 @@ global $avia_config, $more;
 	</section>
 
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
+<div class="container_wrap fullsize" id="av_section_morado">
+		<div class="flex_column av_one_third first morado_plus">
+
+		</div>
+		<div class="flex_column av_two_third  E0E0E2color">
+				<div class="flex_column av_dos_third first">
+						<h3 class="recursos">Recursos adicionales</h3>
+					<ul style="margin-left: 13px; margin-top: 5px;">
+						<li class="adicionales"><a class="plus" href="http://colectivoporlatransparencia.org/blog/53/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia">Posicionamiento del Colectivo por la Transparencia y otras organizaciones</a></li>
+						<li class="adicionales"><a class="plus" href="https://readymag.com/Articulo19/55041/">Traici&oacute;n en el Senado (Art&iacute;culo XIX) </a></li>
+						<li class="adicionales"><a class="plus" href="http://www.senado.gob.mx/comisiones/anticorrupcion/transparencia.php">Proceso legislativo en el Senado</a></li>
+						<li class="adicionales"><a class="plus" href="http://fundar.org.mx/wp-content/uploads/2015/02/CoalSTTFeb15.pdf">Comunicado de OSC al Secretariado T&eacute;cnico en la Alianza para el Gobierno Abierto en M&eacute;xico</a></li>
+						<li class="adicionales"><a class="plus" href="http://www.explica.la/ley/ley-transparencia">Todos los art&iacute;culos de la Ley General de Transparencia </a></li>						
+					</ul>
+		                </div>
+				
+				<div class="flex_column av_one_third" id="trescol">
+						<div class="logo-pie">
+								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+						</div>
+						
+				</div>
+				
+		</div>
+
+		
+</div>
+
 
 	<?php get_footer(); ?>
 	<script type="text/javascript">
