@@ -262,11 +262,11 @@ global $avia_config, $more;
 		display: none;
 		}
 		.morado_plus {
-		    background:url("/curul-wp/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
+		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
 		    height: 236px;
 		}
 .logo-pie {
-    background: url("/curul-wp/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
     width: 180px;
     height: 72px;
     background-color: #d6d3d6;
@@ -324,10 +324,10 @@ li.adicionales {
 		<div class="container">
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo">
-							<h2> 
+							<h2 style="text-transform: uppercase;">
 								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-								CONOCE LOS RETROCESOS QUE PODRÍAN <br>
-								APROBARSE EN LA NUEVA LEY DE TRANSPARENCIA
+								Conoce los temas más preocupantes<br>
+								de la nueva Ley General de Transparencia
 							</h2>
 						</header>
 				</main>
@@ -407,11 +407,11 @@ li.adicionales {
 				<div class="flex_column av_dos_third first">
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
-						<li class="adicionales"><a class="plus" href="http://colectivoporlatransparencia.org/blog/53/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia">Posicionamiento del Colectivo por la Transparencia y otras organizaciones</a></li>
-						<li class="adicionales"><a class="plus" href="https://readymag.com/Articulo19/55041/">Traici&oacute;n en el Senado (Art&iacute;culo XIX) </a></li>
-						<li class="adicionales"><a class="plus" href="http://www.senado.gob.mx/comisiones/anticorrupcion/transparencia.php">Proceso legislativo en el Senado</a></li>
-						<li class="adicionales"><a class="plus" href="http://fundar.org.mx/wp-content/uploads/2015/02/CoalSTTFeb15.pdf">Comunicado de OSC al Secretariado T&eacute;cnico en la Alianza para el Gobierno Abierto en M&eacute;xico</a></li>
-						<li class="adicionales"><a class="plus" href="http://www.explica.la/ley/ley-transparencia">Todos los art&iacute;culos de la Ley General de Transparencia </a></li>						
+						<li class="adicionales"><a class="plus" target="blank_" href="http://colectivoporlatransparencia.org/blog/53/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia">Posicionamiento del Colectivo por la Transparencia y otras organizaciones</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="https://readymag.com/Articulo19/55041/">Traici&oacute;n en el Senado (Art&iacute;culo XIX) </a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://www.senado.gob.mx/comisiones/anticorrupcion/transparencia.php">Proceso legislativo en el Senado</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/wp-content/uploads/2015/02/CoalSTTFeb15.pdf">Comunicado de OSC al Secretariado T&eacute;cnico en la Alianza para el Gobierno Abierto en M&eacute;xico</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://www.explica.la/ley/ley-transparencia">Todos los art&iacute;culos de la Ley General de Transparencia </a></li>						
 					</ul>
 		                </div>
 				
