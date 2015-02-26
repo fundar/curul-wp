@@ -71,8 +71,7 @@ $dposttitle = wp_title( '', false);
 		}
 
 		.reddit-voting, .logged-in-only{
-			margin-top: -15px;
-			
+			margin-top: 0px;
 		}
 
 body {
@@ -220,7 +219,12 @@ h3.iconbox_content_title {
 }
 .votos {
     border-bottom: 1px solid #999 !important;
-    height: 30px;
+	max-height: 0px;
+	padding-top: 0px;
+}
+
+.iconbox_content_container p{
+	margin-bottom: 40px;
 }
 </style>
 
