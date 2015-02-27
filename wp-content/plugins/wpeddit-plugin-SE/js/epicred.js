@@ -2,19 +2,7 @@ jQuery(document).ready(function ($) {
 	
    $(".logged-in-only").bind("click", function () { 
 	   //alert('You must be logged in to vote');
-       
-        $.colorbox({
-            width:450, 
-            initialWidth:450, 
-            initialHeight: 90, 
-            height: 90, 
-            html: "<h3 style='text-align: center;'> Para votar necesitas entrar al sistema </h3>",
-            transition: "none",
-            closeButton: false,
-            scrolling: false
-        });
-        
-        
+      
         $("#modal_trigger_login").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
         $( "#modal_trigger_login" ).trigger( "click" );
 	});
