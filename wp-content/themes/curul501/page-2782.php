@@ -366,12 +366,12 @@ li.adicionales {
 					);
 
 					$total = 0;
-					/*
+					
 					$mod_loop  = new WP_Query($args);
 					while ( $mod_loop->have_posts() ) : $mod_loop->the_post(); 
 						$total += intval( get_post_meta($post->ID, 'wp_total_participaciones', true) );
-					endwhile;
-					*/
+					endwhile; $loop->reset_postdata();
+					
 				?>
 									
 								
