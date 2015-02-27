@@ -345,6 +345,13 @@ li.adicionales {
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 				
 				$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
+
+				$total = $wpdb->get_var($wpdb->prepare("
+					SELECT SUM(wp_total_participaciones)
+					FROM $wpdb->postmeta 
+					WHERE id_preocupacion = %s", $numero_preocupacion )
+				);
+
 				$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
 
 							if($numero_preocupacion==9){
@@ -376,7 +383,7 @@ li.adicionales {
 
 				<div class="votos" style="margin-top: 9px;">
 					<label> Total de participaciones: </label>
-					<strong> <?php echo ( get_post_meta($post->ID, 'wp_total_participaciones', true) )? get_post_meta($post->ID, 'wp_total_participaciones', true) : 0; ?>  </strong> 
+					<strong> <?php echo ( $total )? $total : 0; ?>  </strong> 
 				</div>
 				<div class="box"><?php avia_social_share_links(); ?> </div>
 			</li>
