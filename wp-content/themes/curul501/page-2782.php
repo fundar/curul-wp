@@ -360,15 +360,13 @@ li.adicionales {
 							} else {
 									$class="preocupacion";
 								}
-									
-							
-							
-				?>
-				<?php 
+					/* Obtener el total de los totales de las participaciones de las modificaciones*/		 
 					$args = array('post_type' => 'modificacion',
 						'meta_query' => array( array ( 'key' => 'id_preocupacion', 'value' => $numero_preocupacion, 'compare' => 'LIKE' ))
 					);
+
 					$total = 0;
+					
 					$mod_loop  = new WP_Query($args);
 					while ( $mod_loop->have_posts() ) : $mod_loop->the_post(); 
 						$total += intval( get_post_meta($post->ID, 'wp_total_participaciones', true) );
