@@ -364,7 +364,7 @@ li.adicionales {
 							
 							
 				?>
-				<?php echo $total?>
+				<?php echo $total;?>
 									
 								
 
