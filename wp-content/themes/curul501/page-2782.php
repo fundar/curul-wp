@@ -345,14 +345,14 @@ li.adicionales {
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 				
 				$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
-
+				/*
 				$total = $wpdb->get_var($wpdb->prepare("
 					SELECT SUM($wpdb->postmeta.wp_total_participaciones)
 					FROM $wpdb->postmeta, $wpdb->posts
 					WHERE $wpdb->postmeta.id_preocupacion = %s
 					AND $wpdb->postmeta.post_id = $wpdb->posts.id", $numero_preocupacion )
 				);
-
+				*/
 				$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
 
 							if($numero_preocupacion==9){
@@ -364,7 +364,18 @@ li.adicionales {
 							
 							
 				?>
-				<?php echo $total;?>
+				<?php 
+					$args = array('post_type' => 'modificacion',
+						'meta_query' => array( array ( 'key' => 'id_preocupacion', 'value' => $id_preocupacion, 'compare' => 'LIKE' ))
+					);
+					$total = 0;
+					$mod_loop  = new WP_Query($args);
+					while ( $mod_loop->have_posts() ) : $mod_loop->the_post(); 
+						$total += intval( get_post_meta($post->ID, 'wp_total_participaciones', true) );
+					endwhile;
+					echo $total;
+
+				?>
 									
 								
 
