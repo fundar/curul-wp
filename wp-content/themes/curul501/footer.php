@@ -188,7 +188,7 @@
 								<img alt="LinkedIn" title="Connect with LinkedIn" src="http://curul501.org/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/linkedin.png" />	
 							</a>
 							<input id="wsl_popup_base_url" type="hidden" value="http://curul501.org/wp-login.php?action=wordpress_social_authenticate&#038;" />
-							<input type="hidden" id="wsl_login_form_uri" value="http://curul501.org/wp-login.php" />
+							<input type="hidden" id="wsl_login_form_uri" value="http://curul501.org/wp-login.php?redirect_to=<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
 						</div> 
 						<div class="wp-social-login-widget-clearing"></div>
 					</div>
