@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 	
    $(".logged-in-only").bind("click", function () { 
 	   //alert('You must be logged in to vote');
-       /*
+       
         $.colorbox({
             width:450, 
             initialWidth:450, 
@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
             closeButton: false,
             scrolling: false
         });
-        /**/
+        
         $( "#modal_trigger_login" ).trigger( "click" );
 	});
 	      
