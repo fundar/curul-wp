@@ -66,6 +66,10 @@ $dposttitle = wp_title( '', false);
 		.reddit-voting, .logged-in-only{
 			margin-top: 0px;
 		}
+
+		.popupContainer {
+			color: #000 !important;
+		}
 body {
     background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
     color: #eee;
