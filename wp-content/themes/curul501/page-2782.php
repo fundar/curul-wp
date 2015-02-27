@@ -411,6 +411,8 @@ li.adicionales {
 		</div></div>
 	<section id="comentarios">
 		<div class="container" id="pad60">
+							<?php wp_reset_query(); ?>
+
 		  <?php comments_template( '/includes/comments.php'); ?>
 		</div>
 	</section>
@@ -424,7 +426,7 @@ li.adicionales {
 				<div class="flex_column av_dos_third first">
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
-						<li class="adicionales"><a class="plus" target="blank_" href="http://colectivoporlatransparencia.org/blog/53/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia">Posicionamiento del Colectivo por la Transparencia y otras organizaciones</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia/">M&aacute;s de 300 ONGs comparten ocho preocupaciones sobre la Ley General de Transparencia</a></li>
 						<li class="adicionales"><a class="plus" target="blank_" href="https://readymag.com/Articulo19/55041/">Traici&oacute;n en el Senado (Art&iacute;culo XIX) </a></li>
 						<li class="adicionales"><a class="plus" target="blank_" href="http://www.senado.gob.mx/comisiones/anticorrupcion/transparencia.php">Proceso legislativo en el Senado</a></li>
 						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/wp-content/uploads/2015/02/CoalSTTFeb15.pdf">Comunicado de OSC al Secretariado T&eacute;cnico en la Alianza para el Gobierno Abierto en M&eacute;xico</a></li>
@@ -494,4 +496,6 @@ li.adicionales {
 			 })
 		})
 	</script>
+	
+	
 </body>
