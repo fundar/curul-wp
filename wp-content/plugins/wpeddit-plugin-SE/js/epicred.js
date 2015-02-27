@@ -14,6 +14,8 @@ jQuery(document).ready(function ($) {
             scrolling: false
         });
         
+        
+        $("#modal_trigger_login").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
         $( "#modal_trigger_login" ).trigger( "click" );
 	});
 	      
