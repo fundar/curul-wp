@@ -347,9 +347,10 @@ li.adicionales {
 				$numero_preocupacion=get_post_meta($post->ID, 'id_preocupacion', true);
 
 				$total = $wpdb->get_var($wpdb->prepare("
-					SELECT SUM(wp_total_participaciones)
-					FROM $wpdb->postmeta 
-					WHERE id_preocupacion = %s", $numero_preocupacion )
+					SELECT SUM($wpdb->postmeta.wp_total_participaciones)
+					FROM $wpdb->postmeta, $wpdb->posts
+					WHERE $wpdb->postmeta.id_preocupacion = %s
+					AND $wpdb->postmeta.post_id = $wpdb->posts.id", $numero_preocupacion )
 				);
 
 				$avatar_url = 'http://curul501.org/wp-content/uploads/preocupaciones/'.$numero_preocupacion.'.png';
@@ -363,6 +364,7 @@ li.adicionales {
 							
 							
 				?>
+				<?php echo $total?>
 									
 								
 
