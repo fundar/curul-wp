@@ -279,7 +279,7 @@ global $avia_config, $more;
 	    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
 	    background-color: #d6d3d6;
 	    width: 128px;
-	    margin: 8px 0px;
+	    margin: 8px 0px 5px 0px ;
 	}
 
 
