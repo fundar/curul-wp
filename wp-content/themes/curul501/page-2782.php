@@ -265,58 +265,78 @@ global $avia_config, $more;
 		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
 		    height: 236px;
 		}
-.logo-pie {
-    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
-    width: 180px;
-    height: 72px;
-    background-color: #d6d3d6;
-}
-		.E0E0E2color{
-			background: #E0E0E2;
-			height: 236px;
-			
-		}
-		div .av_two_third {
-		    margin: 0;
-		    width: 70.667%;
-		    padding: 0 ;
-		}
-		div .av_dos_third {
-		    margin: 0;
-                    width: 63.7%;
-                 padding: 42px 10px 0 50px;
-		}
-		h3.recursos {
-                   font-family: oswald;
-		   color: #77607F;
-	           font-size:28px;
-		   text-shadow: 1px 1px 1px #fff;
-    
-                    }
-		a.plus {
-				color:#62496E;
-		}
-#trescol {
-    padding: 42px 10px 40px 50px;
-    background: #d6d3d6;
-    margin: 0 ;
-    height: 236px;
-}
-		
-li.adicionales {
-    list-style: disc;
-    color: #77607f !important;
-    padding: 0px 2px 0 4px;
-    font-family: 14px;
-    text-shadow: 1px 1px 1px solid;
-}
-.logo-pie > a {
-    display: inline-block;
-    width: 173px;
-    height: 40px;
-    text-indent: -10000px;
-}
+	
+	.logo-pie {
+	    width: 180px;
+	    height: 72px;
+	    background-color: #d6d3d6;
+	}
+	
+	#ft-fdr{
+	    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+	}
 
+	#ft-ct{
+	    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+	}
+
+	#ft-mi{
+	    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+	}
+
+	#ft-a19  {
+	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
+	}
+
+	.E0E0E2color{
+		background: #E0E0E2;
+		height: 236px;
+		
+	}
+
+	div .av_two_third {
+	    margin: 0;
+	    width: 70.667%;
+	    padding: 0 ;
+	}
+
+	div .av_dos_third {
+	    margin: 0;
+                width: 63.7%;
+             padding: 42px 10px 0 50px;
+	}
+
+	h3.recursos {
+               font-family: oswald;
+	   color: #77607F;
+           font-size:28px;
+	   text-shadow: 1px 1px 1px #fff;
+
+                }
+	a.plus {
+			color:#62496E;
+	}
+
+	#trescol {
+	    padding: 42px 10px 40px 50px;
+	    background: #d6d3d6;
+	    margin: 0 ;
+	    height: 236px;
+	}
+			
+	li.adicionales {
+	    list-style: disc;
+	    color: #77607f !important;
+	    padding: 0px 2px 0 4px;
+	    font-family: 14px;
+	    text-shadow: 1px 1px 1px solid;
+	}
+	.logo-pie > a {
+	    display: inline-block;
+	    width: 173px;
+	    height: 40px;
+	    text-indent: -10000px;
+	}
 </style>
 
 
@@ -435,8 +455,20 @@ li.adicionales {
 		                </div>
 				
 				<div class="flex_column av_one_third" id="trescol">
-						<div class="logo-pie">
+						<div class="logo-pie" id="ft-fdr">
 								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+						</div>
+
+						<div class="logo-pie" id="ft-ct">
+								<a href="http://fundar.org.mx/" target="blank_">colectivo por la transparencia</a>
+						</div>
+
+						<div class="logo-pie" id="ft-mi">
+								<a href="http://fundar.org.mx/" target="blank_">méxico informate</a>
+						</div>
+
+						<div class="logo-pie" id="ft-a19">
+								<a href="http://fundar.org.mx/" target="blank_">articulo 19</a>
 						</div>
 						
 				</div>
