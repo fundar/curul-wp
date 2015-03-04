@@ -335,7 +335,7 @@ li.adicionales {
     font-family: 14px;
     text-shadow: 1px 1px 1px solid;
 }
-.logo-pie > a {
+.logo-pie > a, .logo-pie-ct > a, .logo-pie-mi > a, .logo-pie-a19 > a{
     display: inline-block;
     width: 173px;
     height: 40px;
