@@ -57,13 +57,7 @@ global $avia_config, $more;
  			padding: 10px;
  			font-size: 4em;
 		}
-			color: #000;
- 			font-family: oswald;
-
- 			font-weight: normal;
- 			padding: 10px;
- 			font-size: 4em;
-		}
+			
 
 		.titulo h2 #general{
 			color: #502760;
@@ -192,7 +186,7 @@ global $avia_config, $more;
 			float: left;
 		}
 
-
+339px
 		.preocupacion-8mas1 .num {
 		    background: none repeat scroll 0 0 #fff;
 		    color: #60466b;
@@ -468,18 +462,16 @@ li.adicionales {
 						</div>
 
 						<div class="logo-pie-ct">
-								<a href="http://fundar.org.mx/" target="blank_">colectivo por la transparencia</a>
+								<a href="http://colectivoporlatransparencia.org/" target="blank_">colectivo por la transparencia</a>
 						</div>
 
 						<div class="logo-pie-mi">
-								<a href="http://fundar.org.mx/" target="blank_">méxico informate</a>
+								<a href="http://mexicoinformate.org/" target="blank_">méxico informate</a>
 						</div>
 
 						<div class="logo-pie-a19">
-								<a href="http://fundar.org.mx/" target="blank_">articulo 19</a>
+								<a href="http://www.articulo19.org/" target="blank_">articulo 19</a>
 						</div>
-
-						
 				</div>
 				
 		</div>
