@@ -261,7 +261,7 @@ global $avia_config, $more;
 		}
 
 		.logo-pie > a, .logo-pie-ct > a, 
-		.logo-pie-mi > a, .logo-pie-a19 > a,{
+		.logo-pie-mi > a, .logo-pie-a19 > a{
 		    display: inline-block;
 		    width: 173px;
 		    height: 40px;
