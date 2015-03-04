@@ -264,7 +264,7 @@ global $avia_config, $more;
 	    width: 180px;
 	    height: 72px;
 	    background-color: #d6d3d6;
-	    margin-top: -30px;
+	    margin-top: -5px;
 	}
 
 	.logo-pie-ct{
@@ -285,7 +285,7 @@ global $avia_config, $more;
 	.logo-pie-a19{
 	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
 	    background-color: #d6d3d6;
-	    width: 86;
+	    width: 86px;
 	}
 
 
