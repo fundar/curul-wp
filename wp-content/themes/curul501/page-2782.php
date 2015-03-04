@@ -56,8 +56,8 @@ global $avia_config, $more;
  			font-weight: normal;
  			padding: 10px;
  			font-size: 4em;
+		
 		}
-			
 
 		.titulo h2 #general{
 			color: #502760;
@@ -186,7 +186,7 @@ global $avia_config, $more;
 			float: left;
 		}
 
-339px
+
 		.preocupacion-8mas1 .num {
 		    background: none repeat scroll 0 0 #fff;
 		    color: #60466b;
@@ -259,6 +259,7 @@ global $avia_config, $more;
 		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
 		    height: 236px;
 		}
+		
 	.logo-pie {
 	    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
 	    width: 180px;
@@ -288,9 +289,6 @@ global $avia_config, $more;
 	    background-color: #d6d3d6;
 	    width: 86px;
 	}
-
-
-
 		.E0E0E2color{
 			background: #E0E0E2;
 			height: 236px;
@@ -330,7 +328,7 @@ li.adicionales {
     font-family: 14px;
     text-shadow: 1px 1px 1px solid;
 }
-.logo-pie > a, .logo-pie-ct > a, .logo-pie-mi > a, .logo-pie-a19 > a{
+.logo-pie > a {
     display: inline-block;
     width: 173px;
     height: 40px;
