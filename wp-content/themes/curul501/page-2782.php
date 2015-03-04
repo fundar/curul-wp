@@ -272,6 +272,7 @@ global $avia_config, $more;
 	    background-color: #d6d3d6;
 	    width: 140px;
 		margin-top: -15px;
+		height: 46px;
 	}
 
 	.logo-pie-mi{
