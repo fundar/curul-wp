@@ -468,13 +468,13 @@ li.adicionales {
 								<a href="http://fundar.org.mx/" target="blank_">colectivo por la transparencia</a>
 						</div>
 
-						<div class="logo-pie-mi">
+						<!--div class="logo-pie-mi">
 								<a href="http://fundar.org.mx/" target="blank_">méxico informate</a>
 						</div>
 
 						<div class="logo-pie-a19">
 								<a href="http://fundar.org.mx/" target="blank_">articulo 19</a>
-						</div>
+						</div-->
 
 						
 				</div>
