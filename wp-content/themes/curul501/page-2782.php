@@ -265,15 +265,37 @@ global $avia_config, $more;
 		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
 		    height: 236px;
 		}
-.logo-pie {
-    width: 180px;
-    height: 72px;
-    background-color: #d6d3d6;
-}
+	.logo-pie {
+	    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+	    width: 180px;
+	    height: 72px;
+	    background-color: #d6d3d6;
+	}
 
-#ft-fdr{
-    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
-}
+	.logo-pie-ct{
+	    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+	    width: 180px;
+	    height: 72px;
+	    background-color: #d6d3d6;
+	}
+
+	.logo-pie-mi{
+		    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+	    width: 180px;
+	    height: 72px;
+	    background-color: #d6d3d6;
+	}
+
+
+	.logo-pie-a19{
+	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
+	    width: 180px;
+	    height: 72px;
+	    background-color: #d6d3d6;
+	}
+
+
+
 		.E0E0E2color{
 			background: #E0E0E2;
 			height: 236px;
@@ -438,10 +460,21 @@ li.adicionales {
 		                </div>
 				
 				<div class="flex_column av_one_third" id="trescol">
-						<div class="logo-pie" id="ft-fdr">
+						<div class="logo-pie">
 								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
 						</div>
 
+						<div class="logo-pie-ct">
+								<a href="http://fundar.org.mx/" target="blank_">colectivo por la transparencia</a>
+						</div>
+
+						<div class="logo-pie-mi">
+								<a href="http://fundar.org.mx/" target="blank_">méxico informate</a>
+						</div>
+
+						<div class="logo-pie-a19">
+								<a href="http://fundar.org.mx/" target="blank_">articulo 19</a>
+						</div>
 
 						
 				</div>
