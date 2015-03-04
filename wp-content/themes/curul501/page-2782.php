@@ -459,7 +459,7 @@ global $avia_config, $more;
 								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
 						</div>
 
-						<div class="logo-pie" id="ft-ct">
+						<!--div class="logo-pie" id="ft-ct">
 								<a href="http://fundar.org.mx/" target="blank_">colectivo por la transparencia</a>
 						</div>
 
@@ -469,7 +469,7 @@ global $avia_config, $more;
 
 						<div class="logo-pie" id="ft-a19">
 								<a href="http://fundar.org.mx/" target="blank_">articulo 19</a>
-						</div>
+						</div-->
 						
 				</div>
 				
