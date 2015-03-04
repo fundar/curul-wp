@@ -268,27 +268,18 @@ global $avia_config, $more;
 
 	.logo-pie-ct{
 	    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    width: 180px;
-	    height: 72px;
 	    background-color: #d6d3d6;
-	    background-size: 180px 72px;
 	}
 
 	.logo-pie-mi{
 	    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    width: 180px;
-	    height: 72px;
 	    background-color: #d6d3d6;
-	    background-size: 180px 72px;
 	}
 
 
 	.logo-pie-a19{
 	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
-	    width: 180px;
-	    height: 72px;
 	    background-color: #d6d3d6;
-	    background-size: 180px 72px;
 	}
 
 
