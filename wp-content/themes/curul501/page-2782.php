@@ -266,10 +266,13 @@ global $avia_config, $more;
 		    height: 236px;
 		}
 .logo-pie {
-    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
     width: 180px;
     height: 72px;
     background-color: #d6d3d6;
+}
+
+#ft-fdr{
+    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
 }
 		.E0E0E2color{
 			background: #E0E0E2;
@@ -435,9 +438,11 @@ li.adicionales {
 		                </div>
 				
 				<div class="flex_column av_one_third" id="trescol">
-						<div class="logo-pie">
+						<div class="logo-pie" id="ft-fdr">
 								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
 						</div>
+
+
 						
 				</div>
 				
