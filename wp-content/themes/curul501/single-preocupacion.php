@@ -70,22 +70,22 @@ $dposttitle = wp_title( '', false);
 		.popupContainer {
 			color: #000 !important;
 		}
-body {
-    background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
-    color: #eee;
-}
-#banner .num {
-    background: none repeat scroll 0 0 #50275f;
-    color: #fff;
-    display: block;
-    float: left;
-    font-family: oswald;
-    font-size: 15em;
-    line-height: 0.2em;
-    padding: 165px 98px 166px;
-    vertical-align: middle;
-    width: 100%;
-}
+		body {
+		    background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
+		    color: #eee;
+		}
+		#banner .num {
+		    background: none repeat scroll 0 0 #50275f;
+		    color: #fff;
+		    display: block;
+		    float: left;
+		    font-family: oswald;
+		    font-size: 15em;
+		    line-height: 0.2em;
+		    padding: 165px 98px 166px;
+		    vertical-align: middle;
+		    width: 100%;
+		}
 		.iniciativa-original {
 		    background: none repeat scroll 0 0 #fff;
 		    display: block;
@@ -95,20 +95,20 @@ body {
 		    min-height: 123px;
 		   width: 100%;
 		}		
-.iniciativa-original h3 {
-    color: #502760;
-    display: block;
-    font-size: 2.1em;
-    line-height: 1.06em;
-    margin-bottom: 21px;
-}
+		.iniciativa-original h3 {
+		    color: #502760;
+		    display: block;
+		    font-size: 2.1em;
+		    line-height: 1.06em;
+		    margin-bottom: 21px;
+		}
 		.iniciativa-original .texto p{
  			font-weight: lighter;
  			font-size: 1.4em;
  			font-family: "colaborate-thinregular";
  			color:#000;
 		}
- p{
+                 p{
  			font-weight: lighter;
  			font-size: 1.4em;
  			font-family: "colaborate-thinregular";
@@ -178,43 +178,43 @@ body {
 		.fijo{
 		height:247px;
 		}
-.texto {
-    margin-bottom: 70px;
-    margin-top: -102px;
-}
-#sin-votos > .reddit-voting {
-    bottom: 0;
-    margin-top: -29px;
-    position: absolute;
-    right: 0;
-}
-h3.iconbox_content_title {
-    color: rgba(89, 39, 95, 1);
-    font: 19px "colaborate-regular";
-    text-rendering: optimizelegibility;
-    text-transform: none;
-}
-.iconbox_content_title {
-		text-transform:none !important;}
-.elbloque {
-    padding-bottom: 80px;
-    width: 100%;
-}
-#bajonum { margin-top: -36px;}
-#bajonum > .reddit-voting{
-      display: none;
-}
-#bajonum .reddit-voting, .iniciativa-original .reddit-voting{
-      display: none;
-}
-.votos {
-    border-bottom: 1px solid #999 !important;
-	max-height: 0px;
-	padding-top: 0px;
-}
-.iconbox_content_container p{
-	margin-bottom: 40px;
-}
+		.texto {
+		    margin-bottom: 70px;
+		    margin-top: -102px;
+		}
+		#sin-votos > .reddit-voting {
+		    bottom: 0;
+		    margin-top: -29px;
+		    position: absolute;
+		    right: 0;
+		}
+		h3.iconbox_content_title {
+		    color: rgba(89, 39, 95, 1);
+		    font: 19px "colaborate-regular";
+		    text-rendering: optimizelegibility;
+		    text-transform: none;
+		}
+		.iconbox_content_title {
+				text-transform:none !important;}
+		.elbloque {
+		    padding-bottom: 80px;
+		    width: 100%;
+		}
+		#bajonum { margin-top: -36px;}
+		#bajonum > .reddit-voting{
+		      display: none;
+		}
+		#bajonum .reddit-voting, .iniciativa-original .reddit-voting{
+		      display: none;
+		}
+		.votos {
+		    border-bottom: 1px solid #999 !important;
+			max-height: 0px;
+			padding-top: 0px;
+		}
+		.iconbox_content_container p{
+			margin-bottom: 40px;
+		}
 		/** footer **/
 		#footer {
 		   display:none !important;
@@ -232,12 +232,12 @@ h3.iconbox_content_title {
 		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
 		    height: 236px;
 		}
-.logo-pie {
-    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
-    width: 180px;
-    height: 72px;
-    background-color: #d6d3d6;
-}
+		.logo-pie {
+		    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    width: 180px;
+		    height: 72px;
+		    background-color: #d6d3d6;
+		}
 		.E0E0E2color{
 			background: #E0E0E2;
 			height: 236px;
@@ -263,26 +263,30 @@ h3.iconbox_content_title {
 		a.plus {
 				color:#62496E;
 		}
-#trescol {
-    padding: 42px 10px 40px 50px;
-    background: #d6d3d6;
-    margin: 0 ;
-    height: 236px;
-}
+		#trescol {
+		    padding: 42px 10px 40px 50px;
+		    background: #d6d3d6;
+		    margin: 0 ;
+		    height: 236px;
+		}
 		
-li.adicionales {
-    list-style: disc;
-    color: #77607f !important;
-    padding: 0px 2px 0 4px;
-    font-family: 14px;
-    text-shadow: 1px 1px 1px solid;
-}
-.logo-pie > a {
-    display: inline-block;
-    width: 173px;
-    height: 40px;
-    text-indent: -10000px;
-}
+		li.adicionales {
+		    list-style: disc;
+		    color: #77607f !important;
+		    padding: 0px 2px 0 4px;
+		    font-family: 14px;
+		    text-shadow: 1px 1px 1px solid;
+		}
+		.logo-pie > a {
+		    display: inline-block;
+		    width: 173px;
+		    height: 40px;
+		    text-indent: -10000px;
+		}
+		.lapreocupacion > div .av_one_third {
+                   margin-left: 6%;
+		   width: 27.333% !important;
+	        }
 </style>
 
 <?php if (have_posts()) : ?>
@@ -377,7 +381,7 @@ li.adicionales {
 	?>
 	<!-- inicio iniciativas comparación -->
 	<div id="av_section_2" class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll avia-builder-el-2 el_after_av_section el_before_av_section container_wrap fullsize">		
-		<div class="container top40">
+		<div class="container top40 lapreocupacion">
 			
 			<?php $loop  = new WP_Query($args);
 				while ( $loop->have_posts() ) : $loop->the_post(); 
