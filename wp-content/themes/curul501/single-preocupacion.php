@@ -283,7 +283,7 @@ $dposttitle = wp_title( '', false);
 		    height: 40px;
 		    text-indent: -10000px;
 		}
-		.lapreocupacion > div .av_one_third {
+		.lapreocupacion > .av_one_third {
                    margin-left: 6%;
 		   width: 27.333% !important;
 	        }
