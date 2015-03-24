@@ -373,9 +373,16 @@ $dposttitle = wp_title( '', false);
 				'orderby' => 'date',
 				'order' => 'ASC', 
 			'meta_query' => array(
+					'relation'=>'and',
+
 			array (
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
+				'compare' => 'LIKE'
+			),
+			array (
+				'key'     => 'id_tipo',
+				'value'   => $id_tipo,
 				'compare' => 'LIKE'
 			)
 			
