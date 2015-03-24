@@ -368,7 +368,7 @@ $dposttitle = wp_title( '', false);
 <?php 	
 	if ( have_posts() ) : 
 		$args = array('post_type' => 'modificacion',
-				'orderby' => 'title',
+				'orderby' => 'date',
 				'order' => 'ASC', 
 			'meta_query' => array(
 			array (
