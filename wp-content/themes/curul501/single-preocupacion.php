@@ -294,6 +294,8 @@ $dposttitle = wp_title( '', false);
 						
 						
 					<?php $id_preocupacion    = get_post_meta($post->ID, 'id_preocupacion', true);  ?>
+				   <?php $id_tipo    = get_post_meta($post->ID, 'id_tipo', true);  ?>
+
 <style type="text/css">
 	
 	#banner{
@@ -375,7 +377,14 @@ $dposttitle = wp_title( '', false);
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
 				'compare' => 'LIKE'
+			),
+					array (
+				'key'     => 'id_tipo',
+				'value'   => $id_tipo,
+				'compare' => 'LIKE'
 			)
+			
+			
 		)
 	);
 	?>
