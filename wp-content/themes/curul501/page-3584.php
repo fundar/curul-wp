@@ -364,10 +364,7 @@ li.adicionales {
 				
 				$args = array('post_type' => 'preocupacion','order' => 'ASC', 'posts_per_page' => 9 , 'meta_query' => array( array ( 'key' => 'id_tipo', 'value' => 2, 'compare' => 'LIKE' )));
 				
-				function getSentenciasByMateria($materia) {
-			return array('key' => 'wp_materia_slug', 'value' => $materia, 'compare' => 'LIKE' );
-				}
-				
+								
 				
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); 

@@ -361,7 +361,9 @@ li.adicionales {
 
 				<?php if ( have_posts() ) : 
               
-				$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
+				//$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
+				$args = array('post_type' => 'preocupacion','order' => 'ASC', 'posts_per_page' => 9 , 'meta_query' => array( array ( 'key' => 'id_tipo', 'value' => 1, 'compare' => 'LIKE' )));
+
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 				
