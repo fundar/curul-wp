@@ -370,20 +370,14 @@ $dposttitle = wp_title( '', false);
 <?php 	
 	if ( have_posts() ) : 
 		$args = array('post_type' => 'modificacion',
-				'orderby' => 'title',
+				'orderby' => 'date',
 				'order' => 'ASC', 
 			'meta_query' => array(
 			array (
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
 				'compare' => 'LIKE'
-			),
-					array (
-				'key'     => 'id_tipo',
-				'value'   => $id_tipo,
-				'compare' => 'LIKE'
 			)
-			
 			
 		)
 	);
