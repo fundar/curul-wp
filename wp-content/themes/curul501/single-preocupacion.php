@@ -377,13 +377,7 @@ $dposttitle = wp_title( '', false);
 				'key'     => 'id_preocupacion',
 				'value'   => $id_preocupacion,
 				'compare' => 'LIKE'
-			),
-					array (
-				'key'     => 'id_tipo',
-				'value'   => $id_tipo,
-				'compare' => 'LIKE'
 			)
-			
 			
 		)
 	);
