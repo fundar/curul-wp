@@ -3,7 +3,7 @@
 Plugin Name: Ditty Twitter Ticker
 Plugin URI: http://dittynewsticker.com/ditty-twitter-ticker/
 Description: Add a twitter ticker type to your <a href="http://wordpress.org/extend/plugins/ditty-news-ticker/">Ditty News Tickers</a>. Display twitter feeds in a ticker, rotator, or list.
-Version: 1.2.13
+Version: 1.2.16
 Author: Metaphor Creations
 Author URI: http://www.metaphorcreations.com
 License: GPL2
@@ -32,10 +32,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define constants
  *
- * @since 1.2.13
+ * @since 1.2.16
  */
 
-define ( 'MTPHR_DNT_TWITTER_VERSION', '1.2.13' );
+define ( 'MTPHR_DNT_TWITTER_VERSION', '1.2.16' );
 define ( 'MTPHR_DNT_TWITTER_DIR', plugin_dir_path(__FILE__) );
 define ( 'MTPHR_DNT_TWITTER_URL', plugins_url().'/ditty-twitter-ticker' );
 

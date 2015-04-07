@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Ditty Twitter Ticker v1.2.8\n"
+"Project-Id-Version: Ditty Twitter Ticker v1.2.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-10-21 12:59+0100\n"
+"PO-Revision-Date: 2015-02-27 22:10:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,435 +11,423 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Textdomain-Support: yes\n"
-"Language: en_US\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
 
-# @ ditty-twitter-ticker
 #: includes/filters.php:10
+#@ ditty-twitter-ticker
 msgid "Twitter"
 msgstr "Twitter"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:187 includes/functions.php:181
+#: includes/admin/meta-boxes.php:199
+#: includes/functions.php:192
+#@ ditty-twitter-ticker
 msgid "Reply"
 msgstr "Rispondi"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:188 includes/functions.php:184
+#: includes/admin/meta-boxes.php:200
+#: includes/functions.php:195
+#@ ditty-twitter-ticker
 msgid "Retweet"
 msgstr "Retweet"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:189 includes/functions.php:187
+#: includes/admin/meta-boxes.php:201
+#: includes/functions.php:198
+#@ ditty-twitter-ticker
 msgid "Favorite"
 msgstr "Favorito"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:70
+#: includes/admin/meta-boxes.php:72
+#@ ditty-twitter-ticker
 msgid "ago"
 msgstr "fa"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:230
+#: includes/admin/meta-boxes.php:242
+#@ ditty-twitter-ticker
 msgid "User timeline"
 msgstr "Timeline utente"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:231
+#: includes/admin/meta-boxes.php:243
+#@ ditty-twitter-ticker
 msgid "Keyword search"
 msgstr "Ricerca keyword"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:136
+#: includes/admin/meta-boxes.php:148
+#@ ditty-twitter-ticker
 msgid "User avatar"
 msgstr "Avatar utente"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:137
+#: includes/admin/meta-boxes.php:149
+#@ ditty-twitter-ticker
 msgid "Dimensions"
 msgstr "Dimensioni"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:138
+#: includes/admin/meta-boxes.php:150
+#@ ditty-twitter-ticker
 msgid "Lock Left"
 msgstr "Chiusura sinistra"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:139 includes/admin/meta-boxes.php:152
+#: includes/admin/meta-boxes.php:151
+#: includes/admin/meta-boxes.php:164
+#@ ditty-twitter-ticker
 msgid "Link"
 msgstr "Link"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:140 includes/admin/meta-boxes.php:153
-#: includes/admin/meta-boxes.php:164 includes/admin/meta-boxes.php:176
-#: includes/admin/meta-boxes.php:190
+#: includes/admin/meta-boxes.php:152
+#: includes/admin/meta-boxes.php:165
+#: includes/admin/meta-boxes.php:176
+#: includes/admin/meta-boxes.php:188
+#: includes/admin/meta-boxes.php:202
+#@ ditty-twitter-ticker
 msgid "Inline"
 msgstr "In riga"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:141 includes/admin/meta-boxes.php:154
-#: includes/admin/meta-boxes.php:165 includes/admin/meta-boxes.php:177
-#: includes/admin/meta-boxes.php:191
+#: includes/admin/meta-boxes.php:153
+#: includes/admin/meta-boxes.php:166
+#: includes/admin/meta-boxes.php:177
+#: includes/admin/meta-boxes.php:189
+#: includes/admin/meta-boxes.php:203
+#@ ditty-twitter-ticker
 msgid "Block"
 msgstr "Blocco"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:150
+#: includes/admin/meta-boxes.php:162
+#@ ditty-twitter-ticker
 msgid "User name"
 msgstr "Nome Utente"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:151
+#: includes/admin/meta-boxes.php:163
+#@ ditty-twitter-ticker
 msgid "Handle"
 msgstr "Maniglia (handle)"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:174
+#: includes/admin/meta-boxes.php:186
+#@ ditty-twitter-ticker
 msgid "Tweet time"
 msgstr "Tempo Tweet"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:175
+#: includes/admin/meta-boxes.php:187
+#@ ditty-twitter-ticker
 msgid "Format"
 msgstr "Formato"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:186
+#: includes/admin/meta-boxes.php:198
+#@ ditty-twitter-ticker
 msgid "Tweet links"
 msgstr "Links del Tweet"
 
-# @ ditty-twitter-ticker
 #: includes/admin/meta-boxes.php:9
+#@ ditty-twitter-ticker
 msgid "Twitter Ticker Data"
 msgstr "Dati Ticker Twitter"
 
-# @ ditty-twitter-ticker
-#: includes/functions.php:203
+#: includes/functions.php:214
+#@ ditty-twitter-ticker
 msgid "Twitter access not yet configured."
 msgstr "Accesso a Twitter non ancora configurato"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:111
+#: includes/admin/meta-boxes.php:113
+#@ ditty-twitter-ticker
 msgid "Feed options"
 msgstr "Opzioni feed"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:115
+#: includes/admin/meta-boxes.php:117
+#@ ditty-twitter-ticker
 msgid "Limit"
 msgstr "Limite"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:116
+#: includes/admin/meta-boxes.php:118
+#@ ditty-twitter-ticker
 msgid "Hide retweets"
 msgstr "Nascondi retweets"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:117
+#: includes/admin/meta-boxes.php:119
+#@ ditty-twitter-ticker
 msgid "Hide replies"
 msgstr "Nascondi risposte"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:118
+#: includes/admin/meta-boxes.php:120
+#@ ditty-twitter-ticker
 msgid "Even disbursement"
 msgstr "Piano pagamento"
 
-# @ ditty-twitter-ticker
 #: includes/admin/notices.php:53
-msgid ""
-"Please include at least one Twitter <strong>handle</strong> or "
-"<strong>keyword</strong> to display Tweets!"
-msgstr ""
-"Per favore includi almeno un Twitter <strong>handle</strong> o "
-"<strong>keyword</strong> per visualizzare i Tweets!"
+#@ ditty-twitter-ticker
+msgid "Please include at least one Twitter <strong>handle</strong> or <strong>keyword</strong> to display Tweets!"
+msgstr "Per favore includi almeno un Twitter <strong>handle</strong> o <strong>keyword</strong> per visualizzare i Tweets!"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:207 includes/admin/notices.php:14
-msgid ""
-"You must authorize <strong>Ditty Twitter Ticker</strong> access through "
-"Twitter before you can display any feeds."
-msgstr ""
-"Devi autorizzare l'accesso a <strong>Ditty Twitter Ticker</strong> "
-"attraverso Twitter prima di poter visualizzare qualsiasi feeds."
+#: includes/admin/meta-boxes.php:219
+#: includes/admin/notices.php:14
+#@ ditty-twitter-ticker
+msgid "You must authorize <strong>Ditty Twitter Ticker</strong> access through Twitter before you can display any feeds."
+msgstr "Devi autorizzare l'accesso a <strong>Ditty Twitter Ticker</strong> attraverso Twitter prima di poter visualizzare qualsiasi feeds."
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:115
+#@ ditty-twitter-ticker
 msgid "Cache Time"
 msgstr "Tempo Cache"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:408
+#: includes/settings.php:396
+#@ ditty-twitter-ticker
 msgid "Minutes"
 msgstr "Minuti"
 
-# @ ditty-twitter-ticker
 #: ditty-twitter-ticker.php:75
 #, php-format
-msgid ""
-"<a class=\"thickbox\" href=\"%s\"><strong>Ditty News Ticker</strong></a> "
-"must be installed and activated to use Ditty Twitter Ticker."
-msgstr ""
-"<a class=\"thickbox\" href=\"%s\"><strong>Ditty News Ticker</strong></a> "
-"deve essere installato per usare Ditty Twitter Ticker."
+#@ ditty-twitter-ticker
+msgid "<a class=\"thickbox\" href=\"%s\"><strong>Ditty News Ticker</strong></a> must be installed and activated to use Ditty Twitter Ticker."
+msgstr "<a class=\"thickbox\" href=\"%s\"><strong>Ditty News Ticker</strong></a> deve essere installato per usare Ditty Twitter Ticker."
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:90
+#: includes/admin/meta-boxes.php:92
+#@ ditty-twitter-ticker
 msgid "Handles"
 msgstr "Maniglie (handles)"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:91
+#: includes/admin/meta-boxes.php:93
+#@ ditty-twitter-ticker
 msgid "Add an unlimited number of ticks to your ticker"
 msgstr "Aggiungi un numero illimitato di ticks al tuo ticker"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:112
+#: includes/admin/meta-boxes.php:114
+#@ ditty-twitter-ticker
 msgid "Limit the number of tweets to show and set additional options"
 msgstr "Imposta il limite di Tweet da mostrare e imposta le opzioni avanzate"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:123
+#: includes/admin/meta-boxes.php:135
+#@ ditty-twitter-ticker
 msgid "Feed item arrangement"
 msgstr "Disposizione elementi Feed"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:124
+#: includes/admin/meta-boxes.php:136
+#@ ditty-twitter-ticker
 msgid "Set the tweet assets and order"
 msgstr "+Imposta l'ordinamento del Tweet"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:163
+#: includes/admin/meta-boxes.php:175
+#@ ditty-twitter-ticker
 msgid "Tweet Text"
 msgstr "Testi Tweet"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:232
+#: includes/admin/meta-boxes.php:244
+#@ ditty-twitter-ticker
 msgid "List (of registered user)"
 msgstr "Lista (utente registrato)"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:207 includes/admin/notices.php:14
+#: includes/admin/meta-boxes.php:219
+#: includes/admin/notices.php:14
 #, php-format
-msgid ""
-"<a href=\"%s\"><strong>Click here</strong></a> for instructions on creating "
-"an app and granting acces to <strong>Ditty Twitter Ticker</strong>."
-msgstr ""
-"<a href=\"%s\"><strong>Clicca qui</strong></a> for instructions on creating "
-"an app and granting acces to <strong>Ditty Twitter Ticker</strong>."
+#@ ditty-twitter-ticker
+msgid "<a href=\"%s\"><strong>Click here</strong></a> for instructions on creating an app and granting acces to <strong>Ditty Twitter Ticker</strong>."
+msgstr "<a href=\"%s\"><strong>Clicca qui</strong></a> for instructions on creating an app and granting acces to <strong>Ditty Twitter Ticker</strong>."
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:46
+#@ ditty-twitter-ticker
 msgid "Ditty Twitter Ticker settings"
 msgstr "Impostazioni di Ditty Twitter Ticker"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:50
+#@ ditty-twitter-ticker
 msgid "Reset Authorization"
 msgstr "Reset Autorizzazione"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:51
+#@ ditty-twitter-ticker
 msgid "Reset Information"
 msgstr "Reset Informazioni"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:60
+#@ ditty-twitter-ticker
 msgid "API Information"
 msgstr "Informazione API"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:60
-msgid ""
-"In order to connect to Twitter you must create a custom application with "
-"your account. Please follow the directions here to quickly get your "
-"application up and running!"
-msgstr ""
-"Per connetterti a Twitter devi creare una app personalizzata con il tuo "
-"account. Per favore segui le indicazioni qui per andare immediatamente alla "
-"tua app e farla partire!"
+#@ ditty-twitter-ticker
+msgid "In order to connect to Twitter you must create a custom application with your account. Please follow the directions here to quickly get your application up and running!"
+msgstr "Per connetterti a Twitter devi creare una app personalizzata con il tuo account. Per favore segui le indicazioni qui per andare immediatamente alla tua app e farla partire!"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:89 includes/settings.php:110
+#: includes/settings.php:89
+#: includes/settings.php:110
+#@ ditty-twitter-ticker
 msgid "Twitter User Info"
 msgstr "Informazioni dell'Utente Twitter"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:89 includes/settings.php:110
+#: includes/settings.php:89
+#: includes/settings.php:110
 #, php-format
+#@ ditty-twitter-ticker
 msgid "Congratulation! You are now connected to Twitter. %s"
 msgstr "Congratulazioni! Ora sei connesso a Twitter. %s"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:95
+#@ ditty-twitter-ticker
 msgid "Twitter Error"
 msgstr "Errore di Twitter"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:95
 #, php-format
+#@ ditty-twitter-ticker
 msgid "Whoops! There seems to have been an error connecting to Twitter. %s"
-msgstr ""
-"Ops! Pare che ci sia stato un errore durante il tentativo di connessione a "
-"Twitter. %s"
+msgstr "Ops! Pare che ci sia stato un errore durante il tentativo di connessione a Twitter. %s"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:103
+#@ ditty-twitter-ticker
 msgid "Authorization"
 msgstr "Autorizzazione"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:103
 #, php-format
-msgid ""
-"You must authorize your account with Twitter to use Ditty Twitter Ticker %s"
-msgstr ""
-"Devi autorizzare il tuo account di Twitter per usare Ditty Twitter Ticker %s"
+#@ ditty-twitter-ticker
+msgid "You must authorize your account with Twitter to use Ditty Twitter Ticker %s"
+msgstr "Devi autorizzare il tuo account di Twitter per usare Ditty Twitter Ticker %s"
 
-# @ ditty-twitter-ticker
 #: includes/settings.php:115
+#@ ditty-twitter-ticker
 msgid "Set the amount of time your feeds should stay cached"
 msgstr "Imposta quante volte i tuoi commenti devono essere caricati"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:155
-#, php-format
-msgid "Log in to your Twitter account at %s"
-msgstr "Fai il log in nel tuo account Twitter al %s"
-
-# @ ditty-twitter-ticker
-#: includes/settings.php:166
+#: includes/settings.php:154
+#@ ditty-twitter-ticker
 msgid "My applications"
 msgstr "Le mie applicazioni"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:167
-#, php-format
-msgid "Hover over your avatar and select %s"
-msgstr "Trova il tuo avatar e selezionalo %s"
-
-# @ ditty-twitter-ticker
-#: includes/settings.php:178
+#: includes/settings.php:166
+#@ ditty-twitter-ticker
 msgid "Create New App"
 msgstr "Crea una nuova App"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:179
+#: includes/settings.php:167
 #, php-format
+#@ ditty-twitter-ticker
 msgid "Select %s"
 msgstr "Seleziona %s"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:190
-msgid ""
-"Give your application an appropriate <strong>Name</strong> and "
-"<strong>Description</strong>"
-msgstr ""
-"Dai alla tua applicazione un <strong> Nome</strong> e una "
-"<strong>Descrizione</strong> appropriata."
+#: includes/settings.php:178
+#@ ditty-twitter-ticker
+msgid "Give your application an appropriate <strong>Name</strong> and <strong>Description</strong>"
+msgstr "Dai alla tua applicazione un <strong> Nome</strong> e una <strong>Descrizione</strong> appropriata."
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:201
-msgid ""
-"Copy and paste the following URL into the <strong>Website</strong> field"
+#: includes/settings.php:189
+#@ ditty-twitter-ticker
+msgid "Copy and paste the following URL into the <strong>Website</strong> field"
 msgstr "Copia e incolla la seguente URL nel campo <strong>Website</strong>"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:213
-msgid ""
-"Copy and paste the following URL into the <strong>Callback URL</strong> field"
-msgstr ""
-"Copia e incolla la seguente URL nel campo <strong>Richiama URL</strong>"
+#: includes/settings.php:201
+#@ ditty-twitter-ticker
+msgid "Copy and paste the following URL into the <strong>Callback URL</strong> field"
+msgstr "Copia e incolla la seguente URL nel campo <strong>Richiama URL</strong>"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:225
-msgid ""
-"Select the checkbox to agree to the <strong>Developer Rules of the Road</"
-"strong>"
-msgstr ""
-"Spunta la casella per accettare <strong>Codice per gli sviluppatori di "
-"Twitter</strong>"
+#: includes/settings.php:224
+#@ ditty-twitter-ticker
+msgid "Select <strong>Create your Twitter Application</strong> to register your new application"
+msgstr "Seleziona <strong>Crea la tua Applicazione di Twitter</strong> per registrare una nuova applicazione"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:236
-msgid ""
-"Select <strong>Create your Twitter Application</strong> to register your new "
-"application"
-msgstr ""
-"Seleziona <strong>Crea la tua Applicazione di Twitter</strong> per "
-"registrare una nuova applicazione"
-
-# @ ditty-twitter-ticker
 #: includes/settings.php:247
-msgid ""
-"Once your application is created select the <strong>API Keys</strong> tab on "
-"your application page"
-msgstr ""
-"Una volta creata la tua applicazione, seleziona l' <strong>API Keys</strong> "
-"tab sulla pagina applicazione"
-
-# @ ditty-twitter-ticker
-#: includes/settings.php:258
-msgid "Copy and paste the generated <strong>API key</strong> here"
-msgstr "Copia e incolla l'<strong>API key</strong> appena generata, qui"
-
-# @ ditty-twitter-ticker
-#: includes/settings.php:259
+#@ ditty-twitter-ticker
 msgid "API key"
 msgstr "API key"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:270
-msgid "Copy and paste the generated <strong>API secret</strong> here"
-msgstr "Copia e incolla l'<strong>API secret</strong> appena generata, qui"
-
-# @ ditty-twitter-ticker
-#: includes/settings.php:271
+#: includes/settings.php:259
+#@ ditty-twitter-ticker
 msgid "API secret"
 msgstr "API secret"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:282
+#: includes/settings.php:270
+#@ ditty-twitter-ticker
 msgid "Select <strong>Save Changes</strong> below"
 msgstr "Seleziona <strong>Salva modifiche</strong> qui sotto"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:334
+#: includes/settings.php:322
+#@ ditty-twitter-ticker
 msgid "Authorize Twitter"
 msgstr "Autorizza Twitter"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:359
+#: includes/settings.php:347
+#@ ditty-twitter-ticker
 msgid "Sorry, there was an issue authorizing Twitter."
 msgstr "Spiacenti, era presente un Twitter autorizzato"
 
-# @ ditty-twitter-ticker
-#: includes/settings.php:360
+#: includes/settings.php:348
 #, php-format
+#@ ditty-twitter-ticker
 msgid "Error %s:"
 msgstr "Errore %s:"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:233
+#: includes/admin/meta-boxes.php:245
+#@ ditty-twitter-ticker
 msgid "Mentions (of registered user)"
 msgstr "Cita (utente registrato)"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:234
+#: includes/admin/meta-boxes.php:246
+#@ ditty-twitter-ticker
 msgid "Home timeline (of registered user)"
 msgstr "Timeline Home (utente registrato)"
 
-# @ ditty-twitter-ticker
-#: includes/admin/meta-boxes.php:235
+#: includes/admin/meta-boxes.php:247
+#@ ditty-twitter-ticker
 msgid "Retweets (of registered user)"
 msgstr "Retweets (per utente registrato)"
 
-# @ ditty-twitter-ticker
-#: includes/helpers.php:61 includes/helpers.php:96 includes/helpers.php:129
-#: includes/helpers.php:162 includes/helpers.php:199 includes/helpers.php:237
-#: includes/settings.php:338
+#: includes/helpers.php:61
+#: includes/helpers.php:96
+#: includes/helpers.php:129
+#: includes/helpers.php:162
+#: includes/helpers.php:202
+#: includes/helpers.php:240
+#: includes/settings.php:326
 #, php-format
+#@ ditty-twitter-ticker
 msgid "Error: %s"
 msgstr "Errore:%s"
+
+#: includes/settings.php:155
+#, php-format
+#@ ditty-twitter-ticker
+msgid "Go to your Twitter Apps page %s and log into your account"
+msgstr "Vai alla tua pagina di Twitter Apps %s e accedi al tuo account"
+
+#: includes/settings.php:213
+#@ ditty-twitter-ticker
+msgid "Select the checkbox to agree to the <strong>Developer Agreement</strong>"
+msgstr "Selezionare la casella di controllo per accettare la <strong>Accordo Developer</strong>"
+
+#: includes/settings.php:235
+#@ ditty-twitter-ticker
+msgid "Once your application is created select the <strong>Keys and Access Tokens</strong> tab on your App page"
+msgstr "Una volta creata l'applicazione selezionare <strong>Tasti e accesso Gettoni</strong> nella pagina App"
+
+#: includes/settings.php:246
+#@ ditty-twitter-ticker
+msgid "Copy and paste the <strong>Consumer Key (API Key)</strong> here"
+msgstr "Copia e incolla il <strong>Consumer Key (API Key)</strong> qui"
+
+#: includes/settings.php:258
+#@ ditty-twitter-ticker
+msgid "Copy and paste the <strong>Consumer Secret (API Secret)</strong> here"
+msgstr "Copia e incolla il <strong>Consumer Secret (API Secret)</strong> qui"
+
+#: includes/admin/meta-boxes.php:125
+#@ ditty-twitter-ticker
+msgid "Direct link"
+msgstr "Link diretto"
+
+#: includes/admin/meta-boxes.php:126
+#@ ditty-twitter-ticker
+msgid "Convert the full tick into a direct link to the original tweet"
+msgstr "Convertire il pieno zecca in un collegamento diretto con il tweet originale"
+
+#: includes/admin/meta-boxes.php:129
+#@ ditty-twitter-ticker
+msgid "Link ticks to original tweet"
+msgstr "Collegamento zecche di tweet originale"
+
+#: includes/admin/meta-boxes.php:130
+#@ ditty-twitter-ticker
+msgid "Enabling this featured will disable all other links for the tick and hide the Tweet links"
+msgstr "L'attivazione di questa caratterizzato disattiverà tutti gli altri link per il segno di spunta e nascondere i link Tweet"
+

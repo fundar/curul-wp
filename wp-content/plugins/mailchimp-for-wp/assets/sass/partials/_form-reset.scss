@@ -59,13 +59,15 @@
     -webkit-appearance: radio;
   }
 
+  input[name="_mc4wp_required_but_not_really"] {
+    display: none !important;
+  }
 
   input[type="submit"],
   button,
   input[type="button"] {
     cursor: pointer;
     display: inline-block;
-    background-image: none;
   }
 
   /* Other elements */

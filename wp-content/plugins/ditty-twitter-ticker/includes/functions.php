@@ -11,7 +11,7 @@ add_filter( 'mtphr_dnt_tick_array', 'mtphr_dnt_twitter_ticks', 10, 3 );
 /**
  * Modify the ticker ticks
  *
- * @since 1.2.11
+ * @since 1.2.16
  */
 function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 
@@ -108,6 +108,8 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 				
 				// Set the time displays
 				$twitter_time = (isset($_mtphr_dnt_twitter_time) && $_mtphr_dnt_twitter_time != '') ? true : false;
+				
+				$direct_link = (isset($_mtphr_dnt_twitter_direct_link) && $_mtphr_dnt_twitter_direct_link != '') ? true : false;;
 
 				foreach( $tweets as $tweet ) {
 				
@@ -116,10 +118,15 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 					$user_name = $tweet['user']['name'];
 
 					$avatar_left = ( $twitter_avatar_left && $twitter_avatar ) ? '-avatar-left' : false;
-					$tw = '<div class="mtphr-dnt-twitter-tweet'.$avatar_left.' mtphr-dnt-clearfix">';
+					
+					if( $direct_link ) {
+						$tw = '<a href="http://twitter.com/'.$tweet['user']['id'].'/status/'.$tweet['id'].'" target="_blank" class="mtphr-dnt-twitter-tweet'.$avatar_left.' mtphr-dnt-clearfix">';
+					} else {
+						$tw = '<div class="mtphr-dnt-twitter-tweet'.$avatar_left.' mtphr-dnt-clearfix">';
+					}
 
 					$avatar_image = '<img src="'.$avatar.'" width="'.$_mtphr_dnt_twitter_avatar_dimensions.'" height="'.$_mtphr_dnt_twitter_avatar_dimensions.'" />';
-					if( $twitter_avatar_link ) {
+					if( $twitter_avatar_link && !$direct_link ) {
 						$avatar_image = '<a href="https://twitter.com/intent/user?screen_name='.$user.'" target="_blank">'.$avatar_image.'</a>';
 					}
 
@@ -152,7 +159,7 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 									if( $twitter_handle ) {
 										$name = $name.'<span class="mtphr-dnt-twitter-handle">@'.$user.'</span>';
 									}
-									if( $twitter_name_link ) {
+									if( $twitter_name_link && !$direct_link ) {
 										$name = '<a href="https://twitter.com/intent/user?screen_name='.$user.'" target="_blank">'.$name.'</a>';
 									}
 									if( $name != '' ) { 
@@ -162,7 +169,11 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 								break;
 
 							case 'text':
-								$tw .= '<span style="display:'.$_mtphr_dnt_twitter_text_display.'" class="mtphr-dnt-twitter-text">'.mtphr_dnt_twitter_links($tweet['text']).'</span>';
+								if( $direct_link ) {
+									$tw .= '<span style="display:'.$_mtphr_dnt_twitter_text_display.'" class="mtphr-dnt-twitter-text">'.$tweet['text'].'</span>';
+								} else {
+									$tw .= '<span style="display:'.$_mtphr_dnt_twitter_text_display.'" class="mtphr-dnt-twitter-text">'.mtphr_dnt_twitter_links($tweet['text']).'</span>';
+								}
 								break;
 
 							case 'time':
@@ -174,7 +185,7 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 								break;
 
 							case 'links':
-								if( $reply || $retweet || $favorite ) {
+								if( ($reply || $retweet || $favorite) && !$direct_link ) {
 
 									$links = '<span style="display:'.$_mtphr_dnt_twitter_links_display.'" class="mtphr-dnt-twitter-links">';
 									if( $reply ) {
@@ -193,8 +204,12 @@ function mtphr_dnt_twitter_ticks( $ticks, $id, $meta_data ) {
 								break;
 						}
 					}
-
-					$tw .= '</div></div>';
+					
+					if( $direct_link ) {
+						$tw .= '</div></a>';
+					} else {
+						$tw .= '</div></div>';
+					}
 
 					$new_ticks[] = $tw;
 				}

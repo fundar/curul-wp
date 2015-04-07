@@ -13,7 +13,7 @@ add_action( 'add_meta_boxes', 'mtphr_dnt_twitter_metabox', 1 );
 
 
 /* --------------------------------------------------------- */
-/* !Render the default type metabox - 1.2.8 */
+/* !Render the default type metabox - 1.2.15 */
 /* --------------------------------------------------------- */
 
 if( !function_exists('mtphr_dnt_twitter_render_metabox') ) {
@@ -38,6 +38,8 @@ function mtphr_dnt_twitter_render_metabox() {
 	$retweets = get_post_meta( $post->ID, '_mtphr_dnt_twitter_hide_retweets', true );
 	$replies = get_post_meta( $post->ID, '_mtphr_dnt_twitter_hide_replies', true );
 	$disbursement = get_post_meta( $post->ID, '_mtphr_dnt_twitter_disbursement', true );
+	
+	$direct_link = get_post_meta( $post->ID, '_mtphr_dnt_twitter_direct_link', true );
 	
 	$display_order = get_post_meta( $post->ID, '_mtphr_dnt_twitter_display_order', true );
 	if( !is_array($display_order) ) {
@@ -116,6 +118,16 @@ function mtphr_dnt_twitter_render_metabox() {
 					echo '<label style="margin-right:20px;"><input type="checkbox" name="_mtphr_dnt_twitter_hide_retweets" value="1" '.checked(1, $retweets, false).' /> '.__('Hide retweets', 'ditty-twitter-ticker').'</label>';
 					echo '<label style="margin-right:20px;"><input type="checkbox" name="_mtphr_dnt_twitter_hide_replies" value="1" '.checked(1, $replies, false).' /> '.__('Hide replies', 'ditty-twitter-ticker').'</label>';
 					echo '<label><input type="checkbox" name="_mtphr_dnt_twitter_disbursement" value="1" '.checked(1, $disbursement, false).' /> '.__('Even disbursement', 'ditty-twitter-ticker').'</label>';
+			echo '</tr>';
+			
+			echo '<tr>';
+				echo '<td class="mtphr-dnt-label">';
+					echo '<label>'.__('Direct link', 'ditty-twitter-ticker').'</label>';
+					echo '<small>'.__('Convert the full tick into a direct link to the original tweet', 'ditty-twitter-ticker').'</small>';
+				echo '</td>';
+				echo '<td>';
+					echo '<label style="margin-right:20px;margin-bottom:0;"><input type="checkbox" name="_mtphr_dnt_twitter_direct_link" value="1" '.checked(1, $direct_link, false).' /> '.__('Link ticks to original tweet', 'ditty-twitter-ticker').'</label>';
+					echo '<small style="display:block;font-style:italic;">*'.__('Enabling this featured will disable all other links for the tick and hide the Tweet links', 'ditty-twitter-ticker').'</small>';
 			echo '</tr>';
 			
 			echo '<tr>';
@@ -244,7 +256,7 @@ function mtphr_dnt_render_twitter_handle( $data=false ) {
 
 
 /* --------------------------------------------------------- */
-/* !Save the custom meta - 1.2.3 */
+/* !Save the custom meta - 1.2.15 */
 /* --------------------------------------------------------- */
 
 function mtphr_dnt_twitter_metabox_save( $post_id ) {
@@ -278,6 +290,7 @@ function mtphr_dnt_twitter_metabox_save( $post_id ) {
 		$retweets = isset($_POST['_mtphr_dnt_twitter_hide_retweets']) ? $_POST['_mtphr_dnt_twitter_hide_retweets'] : '';
 		$replies = isset($_POST['_mtphr_dnt_twitter_hide_replies']) ? $_POST['_mtphr_dnt_twitter_hide_replies'] : '';
 		$disbursement = isset($_POST['_mtphr_dnt_twitter_disbursement']) ? $_POST['_mtphr_dnt_twitter_disbursement'] : '';
+		$direct_link = isset($_POST['_mtphr_dnt_twitter_direct_link']) ? $_POST['_mtphr_dnt_twitter_direct_link'] : '';
 		$display_order = isset($_POST['_mtphr_dnt_twitter_display_order']) ? $_POST['_mtphr_dnt_twitter_display_order'] : '';
 		$avatar = isset($_POST['_mtphr_dnt_twitter_avatar']) ? $_POST['_mtphr_dnt_twitter_avatar'] : '';
 		$avatar_dimensions = isset($_POST['_mtphr_dnt_twitter_avatar_dimensions']) ? intval($_POST['_mtphr_dnt_twitter_avatar_dimensions']) : '';
@@ -304,6 +317,7 @@ function mtphr_dnt_twitter_metabox_save( $post_id ) {
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_hide_retweets', $retweets );
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_hide_replies', $replies );
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_disbursement', $disbursement );
+		update_post_meta( $post_id, '_mtphr_dnt_twitter_direct_link', $direct_link );
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_display_order', $display_order );
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_avatar', $avatar );
 		update_post_meta( $post_id, '_mtphr_dnt_twitter_avatar_dimensions', $avatar_dimensions );

@@ -3,7 +3,7 @@ Contributors: metaphorcreations
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FUZKZGAJSBAE6
 Tags: twitter, ticker, twitter ticker, rotator, twitter rotator, list, twitter list, twitter widgets, ditty news ticker, ditty
 Requires at least: 3.2
-Tested up to: 4.0
+Tested up to: 4.1.1
 Stable tag: /trunk/
 License: GPL2
 
@@ -42,6 +42,17 @@ Each individual Ticker post has multiple settings to customize.
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.16 =
+* Bug fix from last update
+
+= 1.2.15 =
+* Added option to convert full tweet into a direct link to the original tweet
+
+= 1.2.14 =
+* Updated setup instructions
+* Added Hebrew language files
+* Updated Italian translation files
 
 = 1.2.13 =
 * Added Italian translation
@@ -143,4 +154,4 @@ Each individual Ticker post has multiple settings to customize.
 
 == Upgrade Notice ==
 
-Added Italian translation.
+Bug fix from last update.

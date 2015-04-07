@@ -151,8 +151,8 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						$url = '<a href="https://dev.twitter.com" target="_blank"><strong>https://dev.twitter.com</strong></a>';
-						echo sprintf(__( 'Log in to your Twitter account at %s', 'ditty-twitter-ticker' ), $url);
+						$url = '<a href="https://apps.twitter.com" target="_blank"><strong>'.__('My applications', 'ditty-twitter-ticker').'</strong></a>';
+						echo sprintf(__( 'Go to your Twitter Apps page %s and log into your account', 'ditty-twitter-ticker' ), $url);
 					echo '</div>';
 				echo '</td>';
 			echo '</tr>';
@@ -160,18 +160,6 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
 					echo '<span class="mtphr-dnt-instruction-number">2</span>';
-				echo '</td>';
-				echo '<td class="mtphr-dnt-instruction-info">';
-					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						$url = '<a href="https://apps.twitter.com" target="_blank"><strong>'.__('My applications', 'ditty-twitter-ticker').'</strong></a>';
-						echo sprintf(__( 'Hover over your avatar and select %s', 'ditty-twitter-ticker' ), $url);
-					echo '</div>';
-				echo '</td>';
-			echo '</tr>';
-			
-			echo '<tr class="mtphr-dnt-instruction">';
-				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">3</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
@@ -183,7 +171,7 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">4</span>';
+					echo '<span class="mtphr-dnt-instruction-number">3</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
@@ -194,7 +182,7 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">5</span>';
+					echo '<span class="mtphr-dnt-instruction-number">4</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
@@ -206,7 +194,7 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">6</span>';
+					echo '<span class="mtphr-dnt-instruction-number">5</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
@@ -218,18 +206,18 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">7</span>';
+					echo '<span class="mtphr-dnt-instruction-number">6</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						echo __( 'Select the checkbox to agree to the <strong>Developer Rules of the Road</strong>', 'ditty-twitter-ticker' ).' ';
+						echo __( 'Select the checkbox to agree to the <strong>Developer Agreement</strong>', 'ditty-twitter-ticker' ).' ';
 					echo '</div>';
 				echo '</td>';
 			echo '</tr>';
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">8</span>';
+					echo '<span class="mtphr-dnt-instruction-number">7</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
@@ -240,11 +228,23 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
+					echo '<span class="mtphr-dnt-instruction-number">8</span>';
+				echo '</td>';
+				echo '<td class="mtphr-dnt-instruction-info">';
+					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
+						echo __( 'Once your application is created select the <strong>Keys and Access Tokens</strong> tab on your App page', 'ditty-twitter-ticker' ).' ';
+					echo '</div>';
+				echo '</td>';
+			echo '</tr>';
+			
+			echo '<tr class="mtphr-dnt-instruction">';
+				echo '<td class="mtphr-dnt-instruction-label">';
 					echo '<span class="mtphr-dnt-instruction-number">9</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						echo __( 'Once your application is created select the <strong>API Keys</strong> tab on your application page', 'ditty-twitter-ticker' ).' ';
+						echo __( 'Copy and paste the <strong>Consumer Key (API Key)</strong> here', 'ditty-twitter-ticker' ).' ';
+						echo '<input style="width:auto;" type="text" name="mtphr_dnt_twitter_settings[key]" value="'.$settings['key'].'" placeholder="'.__('API key', 'ditty-twitter-ticker').'" size="30" />';
 					echo '</div>';
 				echo '</td>';
 			echo '</tr>';
@@ -255,19 +255,7 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						echo __( 'Copy and paste the generated <strong>API key</strong> here', 'ditty-twitter-ticker' ).' ';
-						echo '<input style="width:auto;" type="text" name="mtphr_dnt_twitter_settings[key]" value="'.$settings['key'].'" placeholder="'.__('API key', 'ditty-twitter-ticker').'" size="30" />';
-					echo '</div>';
-				echo '</td>';
-			echo '</tr>';
-			
-			echo '<tr class="mtphr-dnt-instruction">';
-				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">11</span>';
-				echo '</td>';
-				echo '<td class="mtphr-dnt-instruction-info">';
-					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
-						echo __( 'Copy and paste the generated <strong>API secret</strong> here', 'ditty-twitter-ticker' ).' ';
+						echo __( 'Copy and paste the <strong>Consumer Secret (API Secret)</strong> here', 'ditty-twitter-ticker' ).' ';
 						echo '<input style="width:auto;" type="text" name="mtphr_dnt_twitter_settings[secret]" value="'.$settings['secret'].'" placeholder="'.__('API secret', 'ditty-twitter-ticker').'" size="30" />';
 					echo '</div>';
 				echo '</td>';
@@ -275,7 +263,7 @@ function mtphr_dnt_twitter_settings_api_info( $args ) {
 			
 			echo '<tr class="mtphr-dnt-instruction">';
 				echo '<td class="mtphr-dnt-instruction-label">';
-					echo '<span class="mtphr-dnt-instruction-number">12</span>';
+					echo '<span class="mtphr-dnt-instruction-number">11</span>';
 				echo '</td>';
 				echo '<td class="mtphr-dnt-instruction-info">';
 					echo '<div class="mtphr-dnt-instruction-info-wrapper">';
