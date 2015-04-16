@@ -7,6 +7,18 @@ global $avia_config, $more;
  ?>
 
 <style type="text/css">
+		.main_color {
+		    background: none repeat scroll 0 0 #fff;
+		    border: 0 solid #f4f4f4;
+		}
+		.post-entry {
+		background: transparent !important;
+		box-shadow: none;
+		margin: 0 20px;
+	        }
+		.main_color2{
+		background:#ecebed;
+		}
 		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
 		    color: #f4f4f4;
 		}
@@ -47,22 +59,21 @@ global $avia_config, $more;
 		    font-weight: normal;
 		    padding: 10px;
 		    text-shadow: 2px 2px 1px #fff;
+		    line-height: 1.41em;
 		}
-
-		.titulo h2{
-			color: #000;
- 			font-family: oswald;
-
- 			font-weight: normal;
- 			padding: 10px;
- 			font-size: 4em;
-		
+		.titulo h2 #general {
+		    color: #502760;
+		    display: block;
 		}
-
-		.titulo h2 #general{
-			color: #502760;
+                #top h2 a{
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 1.2em;
+		    font-weight: normal;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height:1.03em;
 		}
-
 		.titulo h2 #general small{
 			color: #60466B;
  			padding: 10px;
@@ -77,7 +88,7 @@ global $avia_config, $more;
 			padding-top: 60px;
 			background: #fff;
 			width: 100%;
-			min-height: 1200px;
+			min-height: 800px;
 		}
 
 		section#preocupaciones ul{
@@ -85,7 +96,7 @@ global $avia_config, $more;
 		}
 
 		li.preocupacion{
-			width: 20%;
+			width: 28.7%;
 			margin: 30px 30px 140px 30px; 
 			float:left;
 			height: 420px;
@@ -216,7 +227,6 @@ global $avia_config, $more;
 			min-height: 297px;
 			color: #60466B;
 		}
-
 		.preocupacion-8mas1 .titulo, .preocupacion-8mas1 .cursor{
 			font-size: 30px;
 			margin-top: 0px;
@@ -268,35 +278,35 @@ global $avia_config, $more;
 		    text-indent: -10000px;
 		}
 		
-	.logo-pie {
-	    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
-	    width: 180px;
-	    height: 72px;
-	    background-color: #d6d3d6;
-	    margin-top: -5px;
-	}
-
-	.logo-pie-ct{
-	    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 140px;
-		margin-top: -15px;
-		height: 46px;
-	}
-
-	.logo-pie-mi{
-	    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 128px;
-	    margin: 8px 0px 5px 0px ;
-	}
-
-
-	.logo-pie-a19{
-	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 86px;
-	}
+		.logo-pie {
+		    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    width: 180px;
+		    height: 72px;
+		    background-color: #d6d3d6;
+		    margin-top: -5px;
+		}
+	
+		.logo-pie-ct{
+		    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 140px;
+			margin-top: -15px;
+			height: 46px;
+		}
+	
+		.logo-pie-mi{
+		    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 128px;
+		    margin: 8px 0px 5px 0px ;
+		}
+	
+	
+		.logo-pie-a19{
+		    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 86px;
+		}
 		.E0E0E2color{
 			background: #E0E0E2;
 			height: 236px;
@@ -344,15 +354,44 @@ li.adicionales {
 <body>	
 		<div class="container">
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
-						<header class="titulo">
+						<header class="titulo" style="margin: 0px 10px;">
 							<h2 style="text-transform: uppercase;">
-								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-								Conoce los temas más preocupantes<br>
-								de la nueva Ley General de Transparencia
+								<a><span id="general">Ley General</span>
+								de deaparación forzada</a>
 							</h2>
+								
 						</header>
 				</main>
                 </div>
+		<div class='container_wrap container_wrap_first main_color2'>
+			<div class='container'>
+
+				<main class='template-page content  <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content','post_type'=>'page'));?>>
+
+                    <?php
+                    /* Run the loop to output the posts.
+                    * If you want to overload this in a child theme then include a file
+                    * called loop-page.php and that will be used instead.
+                    */
+
+                    $avia_config['size'] = avia_layout_class( 'main' , false) == 'entry_without_sidebar' ? '' : 'entry_with_sidebar';
+                    get_template_part( 'includes/loop', 'page' );
+                    ?>
+
+				<!--end content-->
+				</main>
+
+				<?php
+
+				//get the sidebar
+				$avia_config['currently_viewing'] = 'page';
+				get_sidebar();
+
+				?>
+
+			</div><!--end container-->
+
+		</div><!-- close default .container_wrap element -->
 
 <div class="container_wrap fullsize" id="av_section_2">		
 		<div class="container">
@@ -362,7 +401,7 @@ li.adicionales {
 				<?php if ( have_posts() ) : 
               
 				//$args = array( 'post_type' => 'preocupacion', 'order' => 'ASC', 'posts_per_page' => 9 );
-				$args = array('post_type' => 'preocupacion','order' => 'ASC', 'posts_per_page' => 9 , 'meta_query' => array( array ( 'key' => 'id_tipo', 'value' => 1, 'compare' => 'LIKE' )));
+				$args = array('post_type' => 'modificacion','order' => 'ASC', 'posts_per_page' => 3 , 'meta_query' => array( array ( 'key' => 'id_tipo', 'value' => 1, 'compare' => 'LIKE' )));
 
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); 
