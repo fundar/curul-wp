@@ -386,7 +386,7 @@ li.adicionales {
 									$class="preocupacion";
 								}
 					/* Obtener el total de los totales de las participaciones de las modificaciones*/		 
-					$args = array('post_type' => 'preocupacion',
+					$args = array('post_type' => 'modificacion',
 						'meta_query' => array( array ( 'key' => 'id_preocupacion', 'value' => $numero_preocupacion, 'compare' => 'LIKE' ))
 					);
 
