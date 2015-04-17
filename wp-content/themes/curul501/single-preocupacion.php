@@ -312,10 +312,10 @@ $dposttitle = wp_title( '', false);
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo">
 							<h2 style="text-transform: uppercase;">
-								<span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>
-								Conoce los temas más preocupantes<br>
-								de la nueva Ley General de Transparencia
-							</h2>
+							
+<?php if($id_tipo==1) { ?>  <span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>Conoce los temas más preocupantes<br> de la nueva Ley General de Transparencia</h2><?php  }  else { ?> <span id="general"> Ya no son las 8 más <small><b>+</b>1</small> </span> <br>
+								asd<br>asd</h2>     <?php } ?>
+								
 						</header>
 				</main>
                 </div>
