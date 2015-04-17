@@ -313,8 +313,8 @@ $dposttitle = wp_title( '', false);
 						<header class="titulo">
 							<h2 style="text-transform: uppercase;">
 							
-<?php if($id_tipo==1) { ?>  <span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>Conoce los temas más preocupantes<br> de la nueva Ley General de Transparencia</h2><?php  }  else { ?> <span id="general"> Ya no son las 8 más <small><b>+</b>1</small> </span> <br>
-								asd<br>asd</h2>     <?php } ?>
+<?php if($id_tipo==1) { ?>  <span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>Conoce los temas más preocupantes<br> de la nueva Ley General de Transparencia</h2><?php  }  else { ?> <span id="general"> Ley General de  <small><b>+</b>Desaparicón</small> </span> <br>
+								<br>Forzada</h2>     <?php } ?>
 								
 						</header>
 				</main>
