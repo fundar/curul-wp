@@ -423,9 +423,15 @@ li.adicionales {
 									$class="preocupacion";
 								}
 					/* Obtener el total de los totales de las participaciones de las modificaciones*/		 
+					/*antigua consulta kevs
 					$args = array('post_type' => 'modificacion',
 						'meta_query' => array( array ( 'key' => 'id_preocupacion', 'value' => $numero_preocupacion, 'compare' => 'LIKE' ))
 					);
+					*/  
+					
+					
+				$args = array('post_type' => 'modificacion', 'meta_query' => array(	'relation'=>'and',array ('key' => 'id_preocupacion','value'   => $numero_preocupacion, 'compare' => 'LIKE'),array ('key'     => 'id_tipo',				'value'   => 2,	'compare' => 'LIKE'	)	) );
+					
 
 					$total = 0;
 					
