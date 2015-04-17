@@ -439,7 +439,7 @@ function epicred_vote(){
 	
     get_currentuserinfo();
 	
-	$wpdb->myo_ip   = $wpdb->prefix . 'epicred';
+	$wpdb->myo_ip  = $wpdb->prefix . 'epicred';
 		
     $option = (int)$_POST['option'];
 	$current = (int)$_POST['current'];
@@ -479,19 +479,13 @@ function epicred_vote(){
         $previous_vote = intval($al);
         if($option == 1){
             if( ! empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
-            else{
-                update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
-                if($con > 0 ) update_post_meta ($postid, 'wp_total_en_contra', $con - 1 );
-            }
-
+            else update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
+            if($con > 0 ) update_post_meta ($postid, 'wp_total_en_contra', $con - 1 );
         }else if($option == -1){
             if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
-            else {
-                update_post_meta ($postid, 'wp_total_en_contra', $con + 1 );
-                if($fav > 0 ) update_post_meta ($postid, 'wp_total_a_favor', $fav - 1 );
-            }
+            else update_post_meta ($postid, 'wp_total_en_contra', $con + 1 );
+            if($fav > 0 ) update_post_meta ($postid, 'wp_total_a_favor', $fav - 1 );
         }
-    
     }
     
     if($al == NULL){
