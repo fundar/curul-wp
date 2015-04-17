@@ -383,11 +383,16 @@ li.adicionales {
 							} else {
 									$class="preocupacion";
 								}
-					/* Obtener el total de los totales de las participaciones de las modificaciones*/		 
+					/* kevs obselto Obtener el total de los totales de las participaciones de las modificaciones		 
 					$args = array('post_type' => 'modificacion',
 						'meta_query' => array( array ( 'key' => 'id_preocupacion', 'value' => $numero_preocupacion, 'compare' => 'LIKE' ))
 					);
 
+					*/
+					
+					$args = array('post_type' => 'modificacion', 'meta_query' => array(	'relation'=>'and',array ('key' => 'id_preocupacion','value'   => $numero_preocupacion, 'compare' => 'LIKE'),array ('key'     => 'id_tipo',				'value'   => 1,	'compare' => 'LIKE'	)	) );
+					
+					
 					$total = 0;
 					
 					$mod_loop  = new WP_Query($args);
