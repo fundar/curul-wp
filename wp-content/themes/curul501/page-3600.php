@@ -70,7 +70,6 @@ global $avia_config, $more;
 		    font-family: oswald;
 		    font-size: 1.2em;
 		    font-weight: normal;
-		    padding: 10px;
 		    text-shadow: 2px 2px 1px #fff;
 		    line-height:1.03em;
 		}
@@ -357,7 +356,7 @@ li.adicionales {
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo" style="margin: 0px 10px;">
 							<h2 style="text-transform: uppercase;">
-								<a><span id="general">Ley General</span>
+								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Ley General</span>
 								de deaparación forzada</a>
 							</h2>
 								
