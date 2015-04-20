@@ -355,7 +355,7 @@ li.adicionales {
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo" style="margin: 0px 10px;">
 							<h2 style="text-transform: uppercase;">
-								<a><span id="general">Ley General</span>
+								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Ley General</span>
 								de deaparación forzada</a>
 							</h2>
 								
