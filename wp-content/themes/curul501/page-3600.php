@@ -120,6 +120,7 @@ global $avia_config, $more;
 
 		a.click_area{
 			text-decoration: none;
+			min-height: 444px;
 		}
 
 		.click_area:hover{
@@ -128,7 +129,7 @@ global $avia_config, $more;
 
 		.click_area .textos{
 			margin-top: 20px;
-			min-height: 297px;
+			min-height: 424px;
 			color: #60466B;
 		}
 		
