@@ -442,6 +442,9 @@ $dposttitle = wp_title( '', false);
 		</div>
 		<div class="flex_column av_two_third  E0E0E2color">
 				<div class="flex_column av_dos_third first">
+				
+				
+				<?php if($id_tipo==1) { ?>     
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
 						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia/">M&aacute;s de 300 ONGs comparten ocho preocupaciones sobre la Ley General de Transparencia</a></li>
@@ -455,6 +458,24 @@ $dposttitle = wp_title( '', false);
 				<div class="flex_column av_one_third" id="trescol">
 						<div class="logo-pie">
 								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+    <?php  }  else { ?> 
+						<h3 class="recursos">Recursos adicionales</h3>
+					<ul style="margin-left: 13px; margin-top: 5px;">
+						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia/">Propuesta Ciudadana</a></li>
+								
+					</ul>
+		                </div>
+				
+				<div class="flex_column av_one_third" id="trescol">
+						<div class="logo-pie">
+								<a href="http://fundar.org.mx/" target="blank_">fundar</a>
+   <?php } ?>
+				
+				
+										
+				
+				
+					
 						</div>
 						
 				</div>
