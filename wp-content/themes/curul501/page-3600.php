@@ -356,8 +356,8 @@ li.adicionales {
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo" style="margin: 0px 10px;">
 							<h2 style="text-transform: uppercase;">
-								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Ley General</span>
-								de deaparación forzada</a>
+								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Reforma constitucional</span>
+								 artículos 19, 29 y 73</a>
 							</h2>
 								
 						</header>
