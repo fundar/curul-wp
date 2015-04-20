@@ -70,7 +70,6 @@ global $avia_config, $more;
 		    font-family: oswald;
 		    font-size: 1.2em;
 		    font-weight: normal;
-		    padding: 10px;
 		    text-shadow: 2px 2px 1px #fff;
 		    line-height:1.03em;
 		}
