@@ -494,7 +494,7 @@ li.adicionales {
 				<div class="flex_column av_dos_third first">
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
-						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/propuesta/">Propuesta Ciudadana</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://curul501.org/wp-content/uploads/2015/04/OnePager-propuesta-ciudadana-3.pdf">Propuesta Ciudadana</a></li>
 												
 					</ul>
 		                </div>

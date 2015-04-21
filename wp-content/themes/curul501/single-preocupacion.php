@@ -461,7 +461,7 @@ $dposttitle = wp_title( '', false);
     <?php  }  else { ?> 
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
-						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/ocho-preocupaciones-fundamentales-de-la-ley-general-de-transparencia/">Propuesta Ciudadana</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://curul501.org/wp-content/uploads/2015/04/OnePager-propuesta-ciudadana-3.pdf">Propuesta Ciudadana</a></li>
 								
 					</ul>
 		                </div>
