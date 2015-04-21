@@ -356,8 +356,8 @@ li.adicionales {
 				<main class="template-page content  av-content-full alpha units" itemprop="mainContentOfPage" role="main">
 						<header class="titulo" style="margin: 0px 10px;">
 							<h2 style="text-transform: uppercase;">
-								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Reforma constitucional</span>
-								 artículos 19, 29 y 73</a>
+								<a href="http://curul501.org/modificaciones-a-la-iniciativa/"><span id="general">Reforma constitucional sobre desaparición forzada </span>
+								 y de personas, tortura, ejecuciones extrajudiciales y desplazamiento forzado</a>
 							</h2>
 								
 						</header>
@@ -494,7 +494,8 @@ li.adicionales {
 				<div class="flex_column av_dos_third first">
 						<h3 class="recursos">Recursos adicionales</h3>
 					<ul style="margin-left: 13px; margin-top: 5px;">
-						<li class="adicionales"><a class="plus" target="blank_" href="http://curul501.org/wp-content/uploads/2015/04/OnePager-propuesta-ciudadana-3.pdf">Propuesta Ciudadana</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://curul501.org/wp-content/uploads/2015/04/OnePager-propuesta-ciudadana-3.pdf">Ficha informativa de la propuesta ciudadana</a></li>
+						<li class="adicionales"><a class="plus" target="blank_" href="http://fundar.org.mx/wp-content/uploads/2015/04/Propuestaciudadanaart73vfinal140415.pdf">Análisis de la propuesta ciudadana</a></li>
 												
 					</ul>
 		                </div>
