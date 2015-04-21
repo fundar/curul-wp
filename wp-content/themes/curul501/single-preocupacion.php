@@ -313,7 +313,7 @@ $dposttitle = wp_title( '', false);
 						<header class="titulo">
 							<h2 style="text-transform: uppercase;">
 							
-<?php if($id_tipo==1) { ?>  <span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>Conoce los temas más preocupantes<br> de la nueva Ley General de Transparencia</h2><?php  }  else { ?> <span id="general"> Reforma constitucional </span> <br>artículos 19, 29 y 73</h2>     <?php } ?>
+<?php if($id_tipo==1) { ?>  <span id="general"> LAS 8<small><b>+</b>1</small> </span> <br>Conoce los temas más preocupantes<br> de la nueva Ley General de Transparencia</h2><?php  }  else { ?> <span id="general">Reforma constitucional sobre desaparición forzada y de personas, tortura, ejecuciones</span> <br>extrajudiciales y desplazamiento forzado</h2>     <?php } ?>
 								
 						</header>
 				</main>
