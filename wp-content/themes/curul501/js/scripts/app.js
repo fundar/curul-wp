@@ -133,10 +133,10 @@ run.pieChart = function(votos, urlBase){
       
       total = pie_chart.append("text")
           .text(function(d){return total_inicial })
-          .attr("font-family", "sans-serif")
+          .attr("font-family", "oswald")
           .attr("font-size", radius / 3)
           .attr("text-anchor", "middle")
-          .attr("dy", function(d){return 20});
+          .attr("dy", function(d){ return 23 });
 
       center = pie_chart.append("circle")
           .attr("r", radius / 3)

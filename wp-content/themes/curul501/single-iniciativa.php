@@ -400,27 +400,81 @@
 			}
 
 			#graficas_info{
-				padding-top:50px;
-	   			font-family: oswald;
-	   			font-weight: lighter;
+   			font-family: oswald;
+   			font-weight: lighter;
+   			margin-top: 50px;
+			}
+
+			.bubble {
+				position: relative;
+				height: 120px;
+				padding: 14px;
+				margin-left: -50px;
+				background: #FFFFFF;
+				-webkit-border-radius: 0px;
+				-moz-border-radius: 0px;
+				border-radius: 0px;
+				border: #80648C solid 5px !important;
+				margin-left: 28px;
+			}
+
+			.bubble:after {
+				content: '';
+				position: absolute;
+				border-style: solid;
+				border-width: 22px 24px 22px 0;
+				border-color: transparent #FFFFFF !important;
+				display: block;
+				width: 0;
+				z-index: 1;
+				margin-top: -22px;
+				left: -24px;
+				top: 50%;
+			}
+
+			.bubble:before {
+				content: '';
+				position: absolute;
+				border-style: solid;
+				border-width: 26px 28px 26px 0;
+				border-color: transparent #80648C !important;
+				display: block;
+				width: 0;
+				z-index: 0;
+				margin-top: -26px;
+				left: -33px;
+				top: 50%;
 			}
 
 			#graficas_info h1{
 				margin-bottom: 25px;
+				font-size: 2.8em;
+				font-weight: 370;
+				color: #000;
 			}
 
 			#graficas_info span{
-				margin-right: 20px;
+				margin-right: 5px;
 			}
 
+
+			#graficas_info h2{
+				  margin: 15px 0px 0px 28px ;
+			}
+
+			ul#acotaciones{
+			  margin: 15px 0px 0px 18px ;
+			}
 
 			ul#acotaciones li{
 				font-size: 1.4em;
-				margin-bottom: 20px;
+				margin-bottom: 15px;
+				margin-right: 0px;
+				float: left;
 			}
 
 			ul#acotaciones li span{
-				margin-left: 30px;
+				margin-left: 10px;
 				min-width: 30px;
 				min-height: 30px;
 			}
@@ -456,15 +510,18 @@
 
 			<div id="bar_chart">
 				<div id="graficas_info">
-					<h1> 
+					<div class="bubble">
+						<h1> Da click en la gráfica para saber como votó cada bancada </h1>
+					</div>
+					<h2> 
 						<span class="quorum"> Quorum: <?php echo $decode[8]['total'] - $decode[8]['ausente'] ;?> </span>
 						<span class="inasistencias"> Inasistencias: <?php echo $decode[8]['ausente'] ;?></span>
-					</h1>
+					</h2>
 					<ul id="acotaciones">
-						<li id="favor"> <span>| | | | |</span> A favor </li>
-						<li id="contra"> <span>| | | | |</span> En contra </li>
-						<li id="abstenciones"> <span>| | | | |</span> Abstenciones </li>
-						<li id="inasistencias"> <span>| | | | |</span> Inasistencias </li>
+						<li id="favor"> <span>| | |</span> A favor </li>
+						<li id="contra"> <span>| | |</span> En contra </li>
+						<li id="abstenciones"> <span>| | |</span> Abstenciones </li>
+						<li id="inasistencias"> <span>| | |</span> Inasistencias </li>
 					</ul>
 				</div>
 			</div>
