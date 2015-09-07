@@ -317,6 +317,7 @@ run.pieChart = function(votos, urlBase){
                 top: yPos + 'px'
             })
 
+
             jQuery("#tooltip p #value").text(d.x + " " + data.tag)
 
             d3.select('#tooltip').classed('hidden', false);

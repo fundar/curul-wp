@@ -508,6 +508,7 @@
 			    <span id="bartitle_count"> </span> 
 			</div>
 
+
 			<div id="bar_chart">
 				<div id="graficas_info">
 					<div class="bubble">
