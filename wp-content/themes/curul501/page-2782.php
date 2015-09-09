@@ -117,18 +117,37 @@ global $avia_config, $more;
 
 		.click_area .textos{
 			margin-top: 20px;
-			min-height: 297px;
+			min-height: 300px;
 			color: #60466B;
 		}
 		
 		.click_area .titulo, .titulo_ninja{
-			font-size: 30px;
+			/*font-size: 30px;*/
 			margin-top: 0px;
 		}
 
 		.click_area .titulo, .ilustracion{
 			z-index: -1;
 		}
+
+		.click_area .titulo::after { 
+			overflow: visible;
+		}
+
+		.click_area .titulo::after { 
+ 		  content: "";
+ 		  font-weight: bold;
+      animation: blink 0.9s steps(5, start) infinite;
+      -webkit-animation: blink 0.9s steps(5, start) infinite;
+		}
+
+    @keyframes blink {
+      to { visibility: hidden; }
+    }
+
+    @-webkit-keyframes blink {
+      to { visibility: hidden; }
+    }
 
 		.titulo_ninja{
 			display: none;
@@ -140,9 +159,9 @@ global $avia_config, $more;
 		}
 
 		.ilustracion{
-			display: none;
+			/*display: none;*/
 			height: auto;
-			margin-bottom: 14px;
+			margin: 5px 0px 14px 0px;
 			width: 100%;
 		}
 
@@ -268,35 +287,35 @@ global $avia_config, $more;
 		    text-indent: -10000px;
 		}
 		
-	.logo-pie {
-	    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
-	    width: 180px;
-	    height: 72px;
-	    background-color: #d6d3d6;
-	    margin-top: -5px;
-	}
+		.logo-pie {
+		    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    width: 180px;
+		    height: 72px;
+		    background-color: #d6d3d6;
+		    margin-top: -5px;
+		}
 
-	.logo-pie-ct{
-	    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 140px;
-		margin-top: -15px;
-		height: 46px;
-	}
+		.logo-pie-ct{
+		    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 140px;
+			margin-top: -15px;
+			height: 46px;
+		}
 
-	.logo-pie-mi{
-	    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 128px;
-	    margin: 8px 0px 5px 0px ;
-	}
+		.logo-pie-mi{
+		    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 128px;
+		    margin: 8px 0px 5px 0px ;
+		}
 
 
-	.logo-pie-a19{
-	    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
-	    background-color: #d6d3d6;
-	    width: 86px;
-	}
+		.logo-pie-a19{
+		    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 86px;
+		}
 		.E0E0E2color{
 			background: #E0E0E2;
 			height: 236px;
@@ -322,20 +341,20 @@ global $avia_config, $more;
 		a.plus {
 				color:#62496E;
 		}
-#trescol {
-    padding: 42px 10px 40px 50px;
-    background: #d6d3d6;
-    margin: 0 ;
-    height: 236px;
-}
-		
-li.adicionales {
-    list-style: disc;
-    color: #77607f !important;
-    padding: 0px 2px 0 4px;
-    font-family: 14px;
-    text-shadow: 1px 1px 1px solid;
-}
+		#trescol {
+		    padding: 42px 10px 40px 50px;
+		    background: #d6d3d6;
+		    margin: 0 ;
+		    height: 236px;
+		}
+				
+		li.adicionales {
+		    list-style: disc;
+		    color: #77607f !important;
+		    padding: 0px 2px 0 4px;
+		    font-family: 14px;
+		    text-shadow: 1px 1px 1px solid;
+		}
 
 
 </style>
@@ -445,7 +464,6 @@ li.adicionales {
 		</div>
 	</section>
 
-<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
 <div class="container_wrap fullsize" id="av_section_morado">
 		<div class="flex_column av_one_third first morado_plus">
 
@@ -485,43 +503,62 @@ li.adicionales {
 		
 </div>
 
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typed.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/js/t.js" type="text/javascript"></script>
+
 
 	<?php get_footer(); ?>
 	<script type="text/javascript">
-		jQuery("document").ready(function(){
-			
 
-			/* Cambiar de pocisión el área de votos*/
-			var redits = jQuery(".reddit-voting")
-			redits.each( function(index){ jQuery(this).parents("article").append(this) })
-			/**/
+		jQuery("document").ready(function(){
+			var h = jQuery(".ilustracion").height(), 
+					fsz =  parseInt(jQuery(".click_area .titulo").css("font-size").split("px")[0] );
+
+			console.log( h, fsz )
+			
+			jQuery(".ilustracion").css("display", "none")
+			jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
+
+			jQuery(".click_area .titulo, .click_area .titulo_ninja").css({
+				"font-size": 30 * ( (h / 9.833333333333334 ) / 30 ) + "px"
+			})
 
 			/* Efecto de máquina de escribir */
 			jQuery(".click_area .titulo").each(function(){
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
 				jQuery(this).teletype({  text: [ texto ] });
 			})
-			/**/
-		
-		
+			
+
+			/* Cambiar de pocisión el área de votos*/
+			var redits = jQuery(".reddit-voting")
+			redits.each( function(index){ jQuery(this).parents("article").append(this) })
+
+			
 			/* Cambiar el título por la ilustracion en cada preocupación*/
 			 jQuery(".click_area")
 			 .on("mouseenter", function(){
 			 	jQuery(this).children(".textos").children(".titulo_ninja").css("display", "inline-block")
-
 			 	jQuery(this).children(".textos").children(".titulo").css("display", "none")
+
+			 	//jQuery(this).children(".ilustracion").css("display", "inline-block")
+			 	//console.log( jQuery(this).children(".ilustracion").css("display") )
 
 
 			 	if( jQuery(this).children(".ilustracion").css("display") == "inline-block" ){
 			 		jQuery(this).children(".ilustracion").css("display", "none")
 			 		jQuery(this).children(".textos").css("display", "inline-block")
 			 	}
-			 	
+			 	/*
+			 	*/
 			 	jQuery(this).children(".textos").children(".titulo").remove()
 			 	jQuery(this).removeClass("ilustracion")
 			 	jQuery(this).children("img").addClass("ilustracion")
 			 })
 			 .on("mouseleave", function(){
+			 	
+
 			 	var textos = jQuery(this).children(".textos")
 			 	textos.append("<h1 class='titulo'></h1>")
 
@@ -530,6 +567,11 @@ li.adicionales {
 			 	var texto = titulo_ninja.text() 
 
 			 	titulo_ninja.css("display", "none")
+				 	/* Efecto de máquina de escribir */
+				jQuery(".click_area .titulo, .click_area .titulo_ninja").css({
+					"font-size": 30 * ( (h / 9.833333333333334 ) / 30 ) + "px"
+				})
+
 				titulo.teletype({  text: [ texto ] });
 
 			 })
