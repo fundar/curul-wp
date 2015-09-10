@@ -472,7 +472,7 @@
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
-			var h = jQuery(".ilustracion").height()
+			var h =  jQuery(".ilustracion").height() != 0 ? jQuery(".ilustracion").height() : 295
 			var scale = function(){
 				console.log(h)
 				jQuery(".ilustracion").css("display", "none")
