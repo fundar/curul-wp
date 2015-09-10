@@ -135,7 +135,7 @@ global $avia_config, $more;
 		}
 
 		.click_area .titulo::after { 
- 		  content: "";
+ 		  content: "|";
  		  font-weight: bold;
       animation: blink 0.9s steps(5, start) infinite;
       -webkit-animation: blink 0.9s steps(5, start) infinite;
