@@ -472,8 +472,8 @@
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		jQuery("document").ready(function(){
+			var h = jQuery(".ilustracion").height()
 			var scale = function(){
-				var h = jQuery(".ilustracion").height()
 				console.log(h)
 				jQuery(".ilustracion").css("display", "none")
 				jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
