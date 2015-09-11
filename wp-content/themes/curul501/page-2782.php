@@ -481,9 +481,8 @@
 
 			var h =  jQuery(".ilustracion").height() 
 			var scale = function(){
-				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" 
-			})
-				//jQuery(".ilustracion").css({ "opacity": 1 })
+				//jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
+				jQuery(".ilustracion").css({ "opacity": 1 })
 				
 				jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
 
@@ -512,7 +511,7 @@
 					"font-size": 344.5 * ( (h * 1.1677966101694914 ) / 344.5 ) + "px"
 				})
 
-				//jQuery(".ilustracion").css({ "display": "none" })
+				jQuery(".ilustracion").css({ "display": "none" })
 			}
 
 			scale()
