@@ -481,9 +481,6 @@
 
 			var h =  jQuery(".ilustracion").height() 
 			var scale = function(){
-				//jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
-				jQuery(".ilustracion").css({ "opacity": 1 })
-				
 				jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
 
 				if( jQuery(window).width() > 1000){
@@ -510,11 +507,13 @@
 				jQuery(".preocupacion-8mas1 .num").css({
 					"font-size": 344.5 * ( (h * 1.1677966101694914 ) / 344.5 ) + "px"
 				})
-
-				jQuery(".ilustracion").css({ "display": "none" })
 			}
 
 			scale()
+			jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
+			//jQuery(".ilustracion").css({ "opacity": 1 })
+			//jQuery(".ilustracion").css({ "display": "none" })
+			
 			// Efecto de máquina de escribir //
 			/**/
 			jQuery(".click_area .titulo").each(function(){
