@@ -510,13 +510,14 @@
 			}
 
 			scale()
-			jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
 			//jQuery(".ilustracion").css({ "opacity": 1 })
 			//jQuery(".ilustracion").css({ "display": "none" })
 			
 			// Efecto de máquina de escribir //
 			/**/
 			jQuery(".click_area .titulo").each(function(){
+				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
+				
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
 				jQuery(this).teletype({  text: [ texto ] });
 			})
