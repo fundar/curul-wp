@@ -507,6 +507,8 @@
 				jQuery(".preocupacion-8mas1 .num").css({
 					"font-size": 344.5 * ( (h * 1.1677966101694914 ) / 344.5 ) + "px"
 				})
+				
+				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
 			}
 
 			scale()
@@ -516,8 +518,7 @@
 			// Efecto de máquina de escribir //
 			/**/
 			jQuery(".click_area .titulo").each(function(){
-				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
-				
+
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
 				jQuery(this).teletype({  text: [ texto ] });
 			})
