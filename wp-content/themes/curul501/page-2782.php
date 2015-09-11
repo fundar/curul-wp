@@ -479,7 +479,7 @@
 			var redits = jQuery(".reddit-voting")
 			redits.each( function(index){ jQuery(this).parents("article").append(this) })
 
-			var h =  jQuery(".ilustracion").height() 
+			var h = jQuery(".ilustracion").height() 
 			var scale = function(){
 				jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
 
@@ -507,8 +507,10 @@
 				jQuery(".preocupacion-8mas1 .num").css({
 					"font-size": 344.5 * ( (h * 1.1677966101694914 ) / 344.5 ) + "px"
 				})
-				
-				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
+
+				if( h != undefined && h != 0 ){
+					jQuery(".ilustracion").css({ "opacity": 1, "display": "none" })
+				}
 			}
 
 			scale()
