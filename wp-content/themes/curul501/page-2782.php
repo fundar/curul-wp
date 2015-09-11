@@ -156,6 +156,7 @@
 
 	.ilustracion{
 		/*display: none;*/
+		opacity: 0;
 		height: auto;
 		margin: 5px 0px 14px 0px;
 		width: 100%;
@@ -250,7 +251,7 @@
 	}
 
 	.preocupacion-8mas1 .ilustracion{
-		display: none;
+		/*display: none;*/
 		min-height: 297px;
 		margin-bottom: 14px;
 		width: 800px;
@@ -471,11 +472,19 @@
 	<?php get_footer(); ?>
 	<script src="<?php echo get_stylesheet_directory_uri() ?>/js/typewritter.js" type="text/javascript"></script>
 	<script type="text/javascript">
+		/**/
+		//var h = document.getElementsByClassName('ilustracion').clientHeight
 		jQuery("document").ready(function(){
-			var h =  jQuery(".ilustracion").height() != 0 ? jQuery(".ilustracion").height() : 295
+			// Cambiar de pocisión el área de votos //
+			var redits = jQuery(".reddit-voting")
+			redits.each( function(index){ jQuery(this).parents("article").append(this) })
+
+			var h =  jQuery(".ilustracion").height() 
 			var scale = function(){
-				console.log(h)
-				jQuery(".ilustracion").css("display", "none")
+				jQuery(".ilustracion").css({ "opacity": 1, "display": "none" 
+			})
+				//jQuery(".ilustracion").css({ "opacity": 1 })
+				
 				jQuery(".click_area .textos").css( "min-height", (h + 5) + "px" )
 
 				if( jQuery(window).width() > 1000){
@@ -502,23 +511,20 @@
 				jQuery(".preocupacion-8mas1 .num").css({
 					"font-size": 344.5 * ( (h * 1.1677966101694914 ) / 344.5 ) + "px"
 				})
+
+				//jQuery(".ilustracion").css({ "display": "none" })
 			}
 
-
 			scale()
-			/* Efecto de máquina de escribir */
+			// Efecto de máquina de escribir //
+			/**/
 			jQuery(".click_area .titulo").each(function(){
 				var texto = jQuery(this).siblings(".titulo_ninja").text() 
 				jQuery(this).teletype({  text: [ texto ] });
 			})
-			
+			/**/
 
-			/* Cambiar de pocisión el área de votos*/
-			var redits = jQuery(".reddit-voting")
-			redits.each( function(index){ jQuery(this).parents("article").append(this) })
-
-			
-			/* Cambiar el título por la ilustracion en cada preocupación*/
+			// Cambiar el título por la ilustracion en cada preocupación
 			jQuery(".click_area")
 			.on("mouseenter", function(){
 			 	jQuery(this).children(".textos").children(".titulo_ninja").css("display", "inline-block")
@@ -534,8 +540,6 @@
 			 	jQuery(this).children("img").addClass("ilustracion")
 			})
 			.on("mouseleave", function(){
-			 	
-
 			 	var textos = jQuery(this).children(".textos")
 			 	textos.append("<h1 class='titulo'></h1>")
 
@@ -544,14 +548,14 @@
 			 	var texto = titulo_ninja.text() 
 
 			 	titulo_ninja.css("display", "none")
-				 	/* Efecto de máquina de escribir */
+				// Efecto de máquina de escribir 
 				jQuery(".click_area .titulo, .click_area .titulo_ninja").css({
 					"font-size": 30 * ( (h / 9.833333333333334 ) / 30 ) + "px"
 				})
-
 				titulo.teletype({  text: [ texto ] });
-
 			 })
+
 		})
+		/**/
 	</script>
 </body>
