@@ -8,11 +8,16 @@
   // @param Function cb
   // @return void
   function typeString($target, str, cursor, delay, cb) {
+  //typeString($tar, settings.text[idx], 0, settings.delay, settings.cb)
+    /*
     $target.html(function (_, html) {
       return html + str[cursor];
     });
+    */
 
-    if (cursor < str.length - 1) {
+    $target.text( $target.text() + str[cursor] )
+
+    if (cursor < str.length ) {
       setTimeout(function () {
         typeString($target, str, cursor + 1, delay, cb);
       }, delay);
