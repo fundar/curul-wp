@@ -52,6 +52,9 @@ jQuery(document).ready(function ($) {
             
             l.done(function (c) {
                 var id = c.poll;
+                var msg = "Total de participaciones <br>"
+
+                $(".sidebar-votos p.total-participaciones").html( msg + (c.total || 0) )
                 $(".reddit-voting .score.score-" + id + "-favor").html( c.favor || 0 )
                 $(".reddit-voting .score.score-" + id + "-contra").html( c.contra || 0 )
                 console.log(c)

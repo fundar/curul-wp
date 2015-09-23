@@ -443,91 +443,116 @@ function epicred_vote(){
 		
     $option = (int)$_POST['option'];
 	$current = (int)$_POST['current'];
+    $fid = "";
 	
 	//if we are locked via IP set the fid variable to be the IP address, otherwise log the member ID
-	if(get_option('epicred_ip') == 'yes'){
-		$ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
-		$fid = "'" . $ipAddr . "'";	
-	}else{
+    if( $current_user->ID ){
 		$fid = $current_user->ID;
-	}
+    }elseif(get_option('epicred_ip') == 'yes'){
+        $ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
+        $fid =  "'" . $ipAddr . "'" ; 
+    }else{
+        $ipAddr = isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) ? $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'] : $_SERVER['REMOTE_ADDR'];
+        $fid =  "'" . $ipAddr . "'" ; 
+    }
 
 	$postid = (int)$_POST['poll'];	
 
     $query = "SELECT epicred_option FROM $wpdb->myo_ip WHERE epicred_ip = $fid AND epicred_id = $postid";
     
     $al = $wpdb->get_var($query);
-    
+    $test = ""; $location = '';
+
     //function guardar_participacion($previous_vote = NULL ){
         /* Modificacion para guardar el conteo del total de participaciones en los posts de tipo iniciativas */
-    $val = intval( get_post_meta($postid, 'wp_total_participaciones', true) );
-    $fav = intval( get_post_meta($postid, 'wp_total_a_favor', true) );
-    $con = intval( get_post_meta($postid, 'wp_total_en_contra', true) );
+    $total = intval( get_post_meta($postid, 'wp_total_participaciones', true) );
+    $fav = get_post_meta($postid, 'wp_total_a_favor', true);
+    $con = get_post_meta($postid, 'wp_total_en_contra', true);
+    $vote = intval( get_post_meta($postid,'epicredvote',true) );
 
-    if( is_null($al)) {
-        if( empty( $val ) ) add_post_meta($postid, 'wp_total_participaciones', 1, true ); 
-        else update_post_meta ($postid, 'wp_total_participaciones', $val + 1);
+    if( empty($al) ) {
+        /* Definir total de votos*/
+        if( empty( $total ) ) add_post_meta($postid, 'wp_total_participaciones', 1, true ); 
+        else update_post_meta ($postid, 'wp_total_participaciones', $total + 1);
 
+        $test = "creando";
         if($option == 1){
-            if( empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
-            else update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
-        }else if($option == -1){
-            if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
-            else update_post_meta ($postid, 'wp_total_en_contra', $con + 1);
+            if( $fav && $fav == 0 ) update_post_meta($postid, 'wp_total_a_favor', 1 ); 
+            else if( $fav && $fav > 0 ) update_post_meta($postid, 'wp_total_a_favor', $fav + 1 );
+            else{
+                add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
+                update_post_meta($postid, 'wp_total_a_favor', 1 ); 
+            }
+
+        }else if($option == -1){            
+            if( $con && $con == 0 ) update_post_meta($postid, 'wp_total_en_contra', 1); 
+            else if( $con && $con > 0 ) update_post_meta($postid, 'wp_total_en_contra', $con + 1 );
+            else{
+                add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
+                update_post_meta($postid, 'wp_total_en_contra', 1 ); 
+            } 
         }
-    }else{
-        $previous_vote = intval($al);
-        if($option == 1){
-            if( ! empty( $fav ) ) add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
-            else update_post_meta ($postid, 'wp_total_a_favor', $fav + 1);
-            if($con > 0 ) update_post_meta ($postid, 'wp_total_en_contra', $con - 1 );
-        }else if($option == -1){
-            if( ! empty( $con ) ) add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
-            else update_post_meta ($postid, 'wp_total_en_contra', $con + 1 );
-            if($fav > 0 ) update_post_meta ($postid, 'wp_total_a_favor', $fav - 1 );
-        }
-    }
-    
-    if($al == NULL){
+
+        // crear voto del usuario en la BD
         $query = "INSERT INTO $wpdb->myo_ip ( epicred_id , epicred_ip, epicred_option) VALUES ( $postid, $fid, $option)";
         $wpdb->query($query);
     }else{
-        $query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_ip = $fid AND epicred_id = $postid";
-        $wpdb->query($query);
-        //guardar_participacion($al);
-	}
-	
-    $vote = intval( get_post_meta($postid,'epicredvote',true) );
-	
-		if($option == 1){
-			if($al != 1){
-				if($al == -1){
-				$vote = $vote+2;	
-				}else{
-				$vote = $vote+1;
-				}
-			}
-		}
-		
-		
-		if($option == -1){
-			
-			if($al != -1){
-				if($al == 1){
-					$vote = $vote-2;
-				}else{
-				$vote = $vote-1;
-				}	
-			}	
-		}
-		update_post_meta($postid,'epicredvote',$vote);
+        $previous_vote = intval($al);
+        if($option == 1 && $al == -1){
+            $test = "actualizando de negativo a positivo";
+            // actualizar el voto del usuario
+            $query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_id = $postid AND epicred_ip = $fid";
+            $wpdb->query($query);
+            
+            if( $fav && $fav == 0 ) update_post_meta($postid, 'wp_total_a_favor', 1 ); 
+            else if( $fav && $fav > 0 ) update_post_meta($postid, 'wp_total_a_favor', $fav + 1 );
+            else{
+                add_post_meta($postid, 'wp_total_a_favor', 1, true ); 
+                update_post_meta($postid, 'wp_total_a_favor', 1 ); 
+            }
+            // dado que ya existia un voto de este usuario se elimina, de existir, el voto opuesto
+            if( $con && $con > 0) update_post_meta ($postid, 'wp_total_en_contra', $con - 1 );
+        
+        }else if($option == -1 && $al == 1){
+            $test = "actualizando de positivo a negativo";
 
-	
+            // actualizar el voto del usuario
+            $query = "UPDATE $wpdb->myo_ip SET epicred_option = $option WHERE epicred_id = $postid AND epicred_ip = $fid";
+            $wpdb->query($query);
+
+            if( $con && $con == 0 ) update_post_meta($postid, 'wp_total_en_contra', 1); 
+            else if( $con && $con > 0 ) update_post_meta($postid, 'wp_total_en_contra', $con + 1 );
+            else{
+                add_post_meta($postid, 'wp_total_en_contra', 1, true ); 
+                update_post_meta($postid, 'wp_total_en_contra', 1 ); 
+            }
+
+            // dado que ya existia un voto de este usuario se elimina, de existir, el voto opuesto
+            if( $fav && $fav > 0 ) update_post_meta ($postid, 'wp_total_a_favor', $fav - 1 );
+        }
+
+    }
+ 
+    if($option == 1 && $al != 1){
+        if($al == -1) $vote = $vote+2;    
+        else $vote = $vote + 1;
+    }
+    
+    if($option == -1){
+        if($al == 1) $vote = $vote-2;
+        else $vote = $vote-1;
+    }
+
+	update_post_meta($postid,'epicredvote',$vote);
+
 	$response['poll'] = $postid;
     $response['vote'] = $vote;
+    $response['test'] = $test;
+    $response['fid'] = $fid;
     /* Agregar los datos a favor y en contra totales*/
     $response['favor'] =  intval( get_post_meta($postid, 'wp_total_a_favor', true) );
-	$response['contra'] = intval( get_post_meta($postid, 'wp_total_en_contra', true) );
+    $response['contra'] = intval( get_post_meta($postid, 'wp_total_en_contra', true) );
+	$response['total'] = intval( get_post_meta($postid, 'wp_total_participaciones', true) );
     
     echo json_encode($response);
   
@@ -862,10 +887,10 @@ function epic_reddit_voting(){
                     $q = "SELECT epicred_option FROM wp_epicred WHERE epicred_ip = $fid_ AND epicred_id = $post->ID";
                     $al_ = $wpdb->get_var($q);
             ?>
-                    <div class="score score-<?php echo $post->ID;?>-favor"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_a_favor', true) : '' ; ?> </div>
+                    <div class="score score-<?php echo $post->ID;?>-favor"> <?php echo ( is_null($al_) )? intval( get_post_meta($post->ID, 'wp_total_a_favor', true) ) : '0' ; ?> </div>
                     <div class="arrow <?php echo $redclassu;?> arrow-up-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "up" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>
                     <div class="arrow <?php echo $redclassd;?> arrow-down-<?php echo $post->ID;?>" data-red-current = <?php echo $al;?> data-red-like = "down" data-red-id = "<?php echo $post->ID;?>" role="button" aria-label="upvote" tabindex="0"></div>    
-					<div class="score score-<?php echo $post->ID;?>-contra"> <?php echo ( is_null($al_) )? get_post_meta($post->ID, 'wp_total_en_contra', true) : '' ; ?> </div>
+					<div class="score score-<?php echo $post->ID;?>-contra"> <?php echo ( is_null($al_) )? intval( get_post_meta($post->ID, 'wp_total_en_contra', true) ) : '0' ; ?> </div>
 			<?php }  ?>
 				</ul>
 			</div>	
