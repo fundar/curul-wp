@@ -1,5 +1,4 @@
 <?php
-getRepresentatives(true);
 
 	global $avia_config, $more;
 	$selectedCommission = getParameterValueGET('comision');
@@ -8,7 +7,7 @@ getRepresentatives(true);
 	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
 	$selectedTipo = getParameterValueGET('tipo-representante');	
-	// getRepresentatives(true);
+   getRepresentatives(true);
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
