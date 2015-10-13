@@ -1,4 +1,6 @@
 <?php
+getRepresentatives(true);
+
 	global $avia_config, $more;
 	$selectedCommission = getParameterValueGET('comision');
 	$selectedType = getParameterValueGET('tipo-eleccion');

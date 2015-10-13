@@ -2,7 +2,6 @@
 
 global $avia_config;
 
-
 /**
  * Custom Post Type "Iniciativas"
  */
