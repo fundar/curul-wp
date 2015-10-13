@@ -7,7 +7,11 @@
 	$selectedState = getParameterValueGET('estado');
 	$data = getDataRepresentatives();
 	$selectedTipo = getParameterValueGET('tipo-representante');	
-   getRepresentatives(true);
+  
+  /*** Descomentando la siguiente linea se imprime el json de los diputados actuales *///
+	// getRepresentatives(true); 
+	/*** Se opto por guardar la información generada en un archivo estatico: /js/representative.js  **/
+
 	/*
 	* get_header is a basic wordpress function, used to retrieve the header.php file in your theme directory.
 	*/
