@@ -13,6 +13,182 @@
 	 get_header();
 	 echo avia_title();
 	 ?>
+<style type="text/css">
+		.main_color {
+		    background: none repeat scroll 0 0 #fff;
+		    border: 0 solid #f4f4f4;
+		}
+		.post-entry {
+		background: transparent !important;
+		box-shadow: none;
+		margin: 0 20px;
+	        }
+		.main_color2{
+		background:#ecebed;
+		}
+		#top .header_color.av_header_transparency, #top .header_color.av_header_transparency .phone-info.with_nav span {
+		    color: #f4f4f4;
+		}
+		.responsive .container {
+		    max-width: 1310px !important;
+		}
+		.av_header_transparency > #header_main {
+		    background-color: #f4f4f4 !
+		;
+		    background-image: none !important;
+		}
+		.html_header_top.html_header_sticky #header {
+		    background-image:none !important;
+		    background-color:#f4f4f4;
+		    position: relative;
+		}
+		.main_menu {
+		    background-image:none;
+		    background-color: #f4f4f4;
+		}
+		
+		#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, #top #wrap_all .av_header_transparency .sub_menu > ul > li > a, #top .av_header_transparency #header_main_alternate, .av_header_transparency #header_main .social_bookmarks li a {
+		    background: #f4f4f4;
+		}
+		#header_main nav .social_bookmarks {
+		    background: none repeat scroll 0 0 #f4f4f4 !important;
+		}
+		#header_meta{
+		  display:none;
+		}
+		strong.logo {
+                margin-left: 10px;
+                }
+		.titulo h2 {
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 4em;
+		    font-weight: normal;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height: 1.41em;
+		}
+		.titulo h2 #general {
+		    color: #502760;
+		    display: block;
+		}
+                #top h2 a{
+		    color: #000;
+		    font-family: oswald;
+		    font-size: 1.2em;
+		    font-weight: normal;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height:1.03em;
+		}
+
+		.sep{
+			border-bottom: 1px solid #999;
+			margin: 5px 0px 0px 0px;
+		}
+		.click_area .titulo, .click_area .titulo-ninja{
+			float: left;
+		}
+		.ilustracion{
+			display: none;
+			height: auto;
+			margin-bottom: 14px;
+			width: 100%;
+		}
+
+		/** footer **/
+		#footer {
+		   display:none !important;
+		}
+		#av_section_morado{
+			background:#77607F;
+			min-height:auto;
+			padding:0;
+			margin:0;
+		}		
+		#socket {
+		display: none;
+		}
+		.morado_plus {
+		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
+		    height: 236px;
+		}
+
+		.logo-pie > a, .logo-pie-ct > a, 
+		.logo-pie-mi > a, .logo-pie-a19 > a{
+		    display: inline-block;
+		    width: 173px;
+		    height: 40px;
+		    text-indent: -10000px;
+		}
+		
+		.logo-pie {
+		    background: url("/wp-content/themes/curul501/images/fundar-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    width: 180px;
+		    height: 72px;
+		    background-color: #d6d3d6;
+		    margin-top: -5px;
+		}
+	
+		.logo-pie-ct{
+		    background: url("/wp-content/themes/curul501/images/colectivo-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 140px;
+			margin-top: -15px;
+			height: 46px;
+		}
+	
+		.logo-pie-mi{
+		    background: url("/wp-content/themes/curul501/images/mexicoinf-pie-micrositio.jpeg") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 128px;
+		    margin: 8px 0px 5px 0px ;
+		}
+	
+	
+		.logo-pie-a19{
+		    background: url("/wp-content/themes/curul501/images/article19-pie-micrositio.png") no-repeat scroll right top #77607f;
+		    background-color: #d6d3d6;
+		    width: 86px;
+		}
+		.E0E0E2color{
+			background: #E0E0E2;
+			height: 236px;
+			
+		}
+		div .av_two_third {
+		    margin: 0;
+		    width: 70.667%;
+		    padding: 0 ;
+		}
+		div .av_dos_third {
+		    margin: 0;
+                    width: 63.7%;
+                 padding: 42px 10px 0 50px;
+		}
+		h3.recursos {
+                   font-family: oswald;
+		   color: #77607F;
+	           font-size:28px;
+		   text-shadow: 1px 1px 1px #fff;
+    
+                    }
+		a.plus {
+				color:#62496E;
+		}
+#trescol {
+    padding: 42px 10px 40px 50px;
+    background: #d6d3d6;
+    margin: 0 ;
+    height: 236px;
+}
+		
+li.adicionales {
+    list-style: disc;
+    color: #77607f !important;
+    padding: 0px 2px 0 4px;
+    font-family: 14px;
+    text-shadow: 1px 1px 1px solid;
+}
 
 
 
