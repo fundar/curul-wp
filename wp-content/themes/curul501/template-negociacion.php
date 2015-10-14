@@ -137,6 +137,10 @@
 			
 		}
 
+		.twitter-share-button{
+			float:right;
+		}
+
 </style>
 
 <section id="cabecera-negociacion">
@@ -453,14 +457,13 @@
 			}
 
 			CreateTweet.prototype.run = function(){
-				var tweet_el = $('<a class="twitter-share-button"></a>')
-
 				this.diputados.comisiones = this.tema.comisiones
+				this.text = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
 
-				tweet_el.attr( "href", "https://twitter.com/intent/tweet?text=" + 
-											[ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ') )
+				this.el = $('<a class="twitter-share-button"></a>')
+				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.text )
 
-				return tweet_el;
+				return { 'el': this.el, 'text': this.text } ;
 			}
 
 			/* Aquí se selecciona las comisiones que serán incluidas en el tuit */
@@ -471,9 +474,10 @@
 			
 
 			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#presupuestoAbiertoMx')
+			var tweet = create_tweet.run()
 
-			
-			$("#msj-tw .container ").append( create_tweet.run() )
+			$("#msj-tw .container").append( tweet.el )
+			$(".tw-texto").text( tweet.text )
 
 			window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],
