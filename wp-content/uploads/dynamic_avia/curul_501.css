@@ -63,6 +63,50 @@ h1.titulo-m2{
     text-transform: uppercase;
    line-height:42px !important
 }
+#cabecera-negociacion {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #beb1c4;
+    padding-bottom: 5px;
+    padding-top: 30px;
+}
+#cabecera-art {
+    background: #fff none repeat scroll 0 0;
+      border-bottom: 1px solid #beb1c4;
+}
+#msj-tw {
+    background: #fff none repeat scroll 0 0;
+    padding: 34px;
+}
+h3.titulo-art-nego {
+    color:#502760
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 0.5em;
+}
+.post-img {
+    color: #fff;
+    display: block;
+    float: left;
+    height: 106px;
+    overflow: hidden;
+    width: auto;
+}
+#justificacion-negociacion{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#propuestas-negociacion{
+     padding-top: 40px;
+     padding-bottom: 40px;
+}
+.tit-hero {
+    color: #000;
+    font-size: 26px;
+    line-height: 28px;
+    margin: 0;
+    padding: 5px 20px 43px;
+    text-align: center;
+}
 .container {width:80%;} .container .av-content-small.units {width:75%; }
 			
 			  .responsive .boxed#top , .responsive.html_boxed.html_header_sticky #header{ width: 1030px; max-width:90%; }
