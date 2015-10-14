@@ -451,18 +451,20 @@
 				var twitters = [];
 				twitters.push(this.diputados.presidente.twitter);
 				twitters.push(this.diputado_aleatorio(this.diputados.comisiones).presidente.twitter);
-				twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
+				//twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
 
 				return twitters.join(" ");
 			}
 
 			CreateTweet.prototype.run = function(){
 				this.diputados.comisiones = this.tema.comisiones
-				this.text = [ this.tema.texto, this.hashtag ].join(' ')
-				this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
+				this.text = [ this.tema.texto, '#' + this.hashtag ].join(' ')
+				this.tweet = [ this.tema.texto, this.get_rep_twitters(), '#' + this.hashtag ].join(' ')
 
 				this.el = $('<a class="twitter-share-button"></a>')
 				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.tweet )
+				this.el.attr( "url", encodeURIComponent(window.location.href) )
+				this.el.attr( "hashtags", this.hashtag )
 
 				return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
 			}
@@ -474,7 +476,7 @@
 			/************************************************/
 			
 
-			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#mejorPEF16')
+			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], 'mejorPEF2016')
 			var tweet = create_tweet.run()
 
 			$("#msj-tw .container").append( tweet.el )
