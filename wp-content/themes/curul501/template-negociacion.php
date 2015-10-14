@@ -155,41 +155,8 @@
 			height: 236px;
 			
 		}
-		div .av_two_third {
-		    margin: 0;
-		    width: 70.667%;
-		    padding: 0 ;
-		}
-		div .av_dos_third {
-		    margin: 0;
-                    width: 63.7%;
-                 padding: 42px 10px 0 50px;
-		}
-		h3.recursos {
-                   font-family: oswald;
-		   color: #77607F;
-	           font-size:28px;
-		   text-shadow: 1px 1px 1px #fff;
-    
-                    }
-		a.plus {
-				color:#62496E;
-		}
-#trescol {
-    padding: 42px 10px 40px 50px;
-    background: #d6d3d6;
-    margin: 0 ;
-    height: 236px;
-}
-		
-li.adicionales {
-    list-style: disc;
-    color: #77607f !important;
-    padding: 0px 2px 0 4px;
-    font-family: 14px;
-    text-shadow: 1px 1px 1px solid;
-}
 
+</style>
 
 
 
