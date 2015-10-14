@@ -224,7 +224,7 @@
 			data.temas = [
 				{
 					'tema': 'Financiamientos de Organismos Financieros Internacionales',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Información detallada sobre el financiamiento externo de organismos internacionales', 
 					'comisiones': [
 						{
 							'nombre': 'Hacienda y Crédito Público',
@@ -234,7 +234,7 @@
 				},
 				{
 					'tema': 'Salud sexual y reproductiva en adolescentes',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Etiquetar recursos necesarios para salud sexual y reproductiva en adolescentes.', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -244,7 +244,7 @@
 				},
 				{
 					'tema': 'Salud materna',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Asegurar recursos para reducir la mortalidad materna.', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -254,7 +254,7 @@
 				},
 				{
 					'tema': 'Seguro Popular',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'No a los recortes en el Ramo 12: Salud.', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -264,7 +264,7 @@
 				},
 				{
 					'tema': 'Mujeres con VIH',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Transparentar y desglosar el presupuesto para VIH.', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -274,7 +274,7 @@
 				},
 				{
 					'tema': 'Planificación Familiar',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Transparencia en las compras consolidadas de anticonceptivos.', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -282,6 +282,7 @@
 						}
 					]
 				},
+				/*
 				{
 					'tema': 'Mecanismo transnacional e investigación de delitos contra migrantes',
 					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
@@ -292,9 +293,10 @@
 						}
 					]
 				},
+				*/
 				{
 					'tema': 'Niñez migrantes',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'No a la disminución de los recursos para atención a la infancia.', 
 					'comisiones': [
 						{
 							'nombre': 'Asuntos Migratorios',
@@ -304,7 +306,7 @@
 				},
 				{
 					'tema': 'Asilo y refugio ',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Ampliar el presupuesto para los refugios y asilos en México.', 
 					'comisiones': [
 						{
 							'nombre': 'Asuntos Migratorios',
@@ -314,7 +316,7 @@
 				},
 				{
 					'tema': 'Valor al campesino',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Exigimos un presupuesto más justo para el campo mexicano.', 
 					'comisiones': [
 						{
 							'nombre': 'Desarrollo Rural',
@@ -328,7 +330,7 @@
 				},
 				{
 					'tema': 'Gasto excesivo en publicidad oficial',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Regular #publicidadoficial y establecer límite de 10% al sobrejercicio del gasto', 
 					'comisiones': [
 						{
 							'nombre': 'Gobernación',
@@ -338,7 +340,7 @@
 				},
 				{
 					'tema': 'Radios comunitarias',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Cumplir con 1% para radios comunitarias e indígenas y definir responsable de asignación', 
 					'comisiones': [
 						{
 							'nombre': 'Comunicaciones',
@@ -352,7 +354,7 @@
 				},
 				{
 					'tema': 'Fideicomisos y fondos',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Mayor transparencia y claridad en los fideicomisos públicos.', 
 					'comisiones': [
 						{
 							'nombre': 'Hacienda y Crédito Público',
@@ -360,6 +362,7 @@
 						}
 					]
 				},
+				/*
 				{
 					'tema': 'Presupuesto para capacitación de operadores en derechos humanos y de mujeres',
 					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
@@ -370,9 +373,10 @@
 						}
 					]
 				},
+				*/
 				{
 					'tema': 'Implementación de reforma del Sistema de Justicia Penal',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'texto': 'Justificación del ejercicio de los recursos del nuevo sistema de justicia penal.', 
 					'comisiones': [
 						{
 							'nombre': 'Justicia',
