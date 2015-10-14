@@ -458,12 +458,13 @@
 
 			CreateTweet.prototype.run = function(){
 				this.diputados.comisiones = this.tema.comisiones
-				this.text = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
+				this.text = [ this.tema.texto, this.hashtag ].join(' ')
+				this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
 
 				this.el = $('<a class="twitter-share-button"></a>')
-				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.text )
+				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.tweet )
 
-				return { 'el': this.el, 'text': this.text } ;
+				return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
 			}
 
 			/* Aquí se selecciona las comisiones que serán incluidas en el tuit */
@@ -473,11 +474,12 @@
 			/************************************************/
 			
 
-			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#presupuestoAbiertoMx')
+			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#mejorPEF16')
 			var tweet = create_tweet.run()
 
 			$("#msj-tw .container").append( tweet.el )
-			$(".tw-texto").text( tweet.text )
+			$(".tit-hero").text( tweet.text )
+			$(".tw-texto").text( tweet.tweet )
 
 			window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],
