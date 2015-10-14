@@ -80,19 +80,9 @@
 		    text-shadow: 2px 2px 1px #fff;
 		    line-height:1.03em;
 		}
-
 		.sep{
 			border-bottom: 1px solid #999;
 			margin: 5px 0px 0px 0px;
-		}
-		.click_area .titulo, .click_area .titulo-ninja{
-			float: left;
-		}
-		.ilustracion{
-			display: none;
-			height: auto;
-			margin-bottom: 14px;
-			width: 100%;
 		}
 
 		/** footer **/
@@ -108,11 +98,6 @@
 		#socket {
 		display: none;
 		}
-		.morado_plus {
-		    background:url("/wp-content/themes/curul501/images/mas_recursos.png") no-repeat scroll right top  #77607f;
-		    height: 236px;
-		}
-
 		.logo-pie > a, .logo-pie-ct > a, 
 		.logo-pie-mi > a, .logo-pie-a19 > a{
 		    display: inline-block;
@@ -157,6 +142,17 @@
 		}
 
 </style>
+
+<section id="cabecera-negociacion">
+	<div class="container">
+		<div class="container_wrap container_wrap_first main_color">
+			<div class="content ten alpha units">
+			</div>
+			<div class="content two alpha units">
+			</div>			
+		</div>
+	</div>
+</section>
 
 
 
