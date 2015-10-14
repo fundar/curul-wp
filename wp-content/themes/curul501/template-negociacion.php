@@ -189,7 +189,7 @@ li.adicionales {
     font-family: 14px;
     text-shadow: 1px 1px 1px solid;
 }
-
+</style>
 
 
 
