@@ -213,3 +213,278 @@
             </div>
      </div>
 </div>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+
+
+<script>
+		$(document).ready(function(){
+			var data = {}
+			
+			data.temas = [
+				{
+					'tema': 'Financiamientos de Organismos Financieros Internacionales',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Hacienda y Crédito Público',
+							'presidente': { 'nombre': 'Gina Cruz Blackledge', 'twitter': '@diputadospan' }
+						}
+					]
+				},
+				{
+					'tema': 'Salud sexual y reproductiva en adolescentes',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Salud',
+							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
+						}
+					]
+				},
+				{
+					'tema': 'Salud materna',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Salud',
+							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
+						}
+					]
+				},
+				{
+					'tema': 'Seguro Popular',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Salud',
+							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
+						}
+					]
+				},
+				{
+					'tema': 'Mujeres con VIH',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Salud',
+							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
+						}
+					]
+				},
+				{
+					'tema': 'Planificación Familiar',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Salud',
+							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
+						}
+					]
+				},
+				{
+					'tema': 'Mecanismo transnacional e investigación de delitos contra migrantes',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Asuntos Migratorios',
+							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES'	 }
+						}
+					]
+				},
+				{
+					'tema': 'Niñez migrantes',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Asuntos Migratorios',
+							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES' }
+						}
+					]
+				},
+				{
+					'tema': 'Asilo y refugio ',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Asuntos Migratorios',
+							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES' }
+						}
+					]
+				},
+				{
+					'tema': 'Valor al campesino',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Desarrollo Rural',
+							'presidente': { 'nombre': 'José Erandi Bermúdez Méndez', 'twitter': '@erandibermudez' }
+						},
+						{
+							'nombre': 'Agricultura y Riego',
+							'presidente': { 'nombre': 'Germán Escobar Manjarrez', 'twitter': '@germanescobarmx' }
+						}
+					]
+				},
+				{
+					'tema': 'Gasto excesivo en publicidad oficial',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Gobernación',
+							'presidente': { 'nombre': 'Mercedes Del Carmen Guillén Vicente', 'twitter': '@PalomaGuillen' }
+						}
+					]
+				},
+				{
+					'tema': 'Radios comunitarias',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Comunicaciones',
+							'presidente': { 'nombre': 'Ivonne Aracely Ortega Pacheco', 'twitter': '@ivonneop' }
+						},
+						{
+							'nombre': 'Radio y Televisión',
+							'presidente': { 'nombre': 'Lía Limón García', 'twitter': '@lialimo' }
+						}
+					]
+				},
+				{
+					'tema': 'Fideicomisos y fondos',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Hacienda y Crédito Público',
+							'presidente': { 'nombre': 'Gina Cruz Blackledge', 'twitter': '@diputadospan' }
+						}
+					]
+				},
+				{
+					'tema': 'Presupuesto para capacitación de operadores en derechos humanos y de mujeres',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Igualdad de género',
+							'presidente': { 'nombre': 'Laura Nereida Plascencia Pacheco', 'twitter': '@LNPlascencia' }
+						}
+					]
+				},
+				{
+					'tema': 'Implementación de reforma del Sistema de Justicia Penal',
+					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
+					'comisiones': [
+						{
+							'nombre': 'Justicia',
+							'presidente': { 'nombre': 'Álvaro Ibarra Hinojosa', 'twitter': '@DiputadosPRI' }
+						}
+					]
+				}
+			];
+
+			data.diputados = {
+				'presidente':  {'nombre': 'Baltazar Hinojosa Ochoa', 'twitter': '@BaltazarxTam' },
+				'bancadas': [
+						{ 
+							'nombre': 'PRI',
+							'presidente': { 'nombre': 'César Octavio Camacho Quiroz',	'twitter': '@ccq_pri' }
+						},
+						{ 
+							'nombre': 'PAN',
+							'presidente': { 'nombre': 'Marko Antonio Cortés Mendoza',	'twitter': '@markocortes' }
+						},
+						{ 
+							'nombre': 'PRD',
+							'presidente': { 'nombre': 'Francisco Martinez Neri',	'twitter': '@fmartinezneri' }
+						},
+						{ 
+							'nombre': 'PVEM',
+							'presidente': { 'nombre': 'Jesús Sesma Suárez',	'twitter': '@chuchosesma' }
+						},
+						{ 
+							'nombre': 'MORENA',
+							'presidente': { 'nombre': 'Norma Rocío Nahle García',	'twitter': '@rocionahle' }
+						},
+						{ 
+							'nombre': 'MOVIMIENTO CIUDADANO',
+							'presidente': { 'nombre': 'José Clemente Castañeda Hoeflich',	'twitter': '@clementech' }
+						},
+						{ 
+							'nombre': 'NUEVA ALIANZA',
+							'presidente': { 'nombre': 'Luis Alfredo Valles Mendoza',	'twitter': '@alfredvalles' }
+						},
+						{ 
+							'nombre': 'ENCUENTRO SOCIAL',
+							'presidente': { 'nombre': 'Alejandro González Murillo',	'twitter': '@AlejandroGonMu' }
+						},
+						{ 
+							'nombre': 'ENCUENTRO SOCIAL',
+							'presidente': { 'nombre': 'Alejandro González Murillo',	'twitter': '@AlejandroGonMu' },
+						}
+				] 
+			};
+
+			var CreateTweet = function(diputados, tema, hashtag){
+				this.diputados = diputados;
+				this.tema = tema;
+				this.hashtag = hashtag;
+			}
+
+			CreateTweet.prototype.diputado_aleatorio = function(grupo){
+				var getRandom = function (min, max) {
+	    		return parseInt( Math.random() * (max - min) + min ); 
+				}
+				var max = grupo.length - 1;
+				return grupo[ getRandom(0, max) ] 
+			}
+
+			CreateTweet.prototype.get_rep_twitters = function(){
+				var twitters = [];
+				twitters.push(this.diputados.presidente.twitter);
+				twitters.push(this.diputado_aleatorio(this.diputados.comisiones).presidente.twitter);
+				twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
+
+				return twitters.join(" ");
+			}
+
+			CreateTweet.prototype.run = function(){
+				var tweet_el = $('<a class="twitter-share-button"></a>')
+
+				this.diputados.comisiones = this.tema.comisiones
+
+				tweet_el.attr( "href", "https://twitter.com/intent/tweet?text=" + 
+											[ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ') )
+
+				return tweet_el;
+			}
+
+			/* Aquí se selecciona las comisiones que serán incluidas en el tuit */
+			/* En cuanto se tengan todos los slugs de cada sección se podrán usar para seleccionar el tema correspondiente */
+				var tidx = 0
+			/************************************************/
+			/************************************************/
+			
+
+			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#presupuestoAbiertoMx')
+
+			
+			$("#msj-tw .container ").append( create_tweet.run() )
+
+			window.twttr = (function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0],
+			    t = window.twttr || {};
+			  if (d.getElementById(id)) return t;
+			  js = d.createElement(s);
+			  js.id = id;
+			  js.src = "https://platform.twitter.com/widgets.js";
+			  fjs.parentNode.insertBefore(js, fjs);
+			 
+			  t._e = [];
+			  t.ready = function(f) {
+			    t._e.push(f);
+			  };
+			 
+			  return t;
+			}(document, "script", "twitter-wjs"));
+		})
+	</script>
