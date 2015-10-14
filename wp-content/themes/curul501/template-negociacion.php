@@ -171,7 +171,8 @@
 		</div>
 
 		<div class="flex_column av_three_fifth el_after_av_two_fifth avia-builder-el-last">
-                        <p>tuit</p>
+                        <img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
+                        <p class="tw-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod volutpat aliquet. Curabitur vitae ultricies massa. Ut sit metus.</p>
 		</div>  
 	</div>
 </section>
