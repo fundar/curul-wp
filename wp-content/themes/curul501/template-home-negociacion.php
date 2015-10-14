@@ -114,6 +114,13 @@
 			border-bottom: 1px solid #999;
 			margin: 5px 0px 0px 0px;
 		}
+		.content, .sidebar {
+		box-sizing: content-box;
+		min-height: 1px;
+		padding-bottom: 15px;
+		padding-top: 50px;
+		z-index: 1;
+                }
 
 		/** footer **/
 		#av_section_morado{
