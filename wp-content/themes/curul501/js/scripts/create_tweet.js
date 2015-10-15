@@ -235,8 +235,11 @@
 		this.text = [ this.tema.texto, this.hashtag ].join(' ')
 		this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
 
-		this.el = $("<a class='twitter-share-button'></a>")
+		this.el = $("<a class='twitter-share-button' data-size='large' data-count='none'></a>")
 		this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + encodeURI(this.tweet) )
 
 		return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
 	}
+
+
+	

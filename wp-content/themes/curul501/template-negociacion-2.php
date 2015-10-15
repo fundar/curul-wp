@@ -144,18 +144,24 @@
 		/* ARROWS */
 	 	.arrowText {
 			position: relative;
-		  margin: -13px 25px;
-		  width: 200px;
-		  height: 48px;
-		  background: #BEB1C5;
+		  margin: -13px 0px;
+		  width: 141px;
+		  height: 33px;
+		  background: #432B4C;
 		  border: solid 3px #432B4D;
 		  float: right;
-		  padding: 10px;
-		  font-size: 20px;
-		  font-weight: bold;
-
+		  padding: 0;
 		}
-
+		.arrowText p{
+		  font-weight: bold;
+		  font-size: 17px;
+		  color: #fff;
+		  margin: 0;
+		  position: absolute;
+		  z-index: 0;
+		  padding-top: 3px;
+		}
+		/*
 	 .arrowText:before, .arrowText:after {
 		  content: " ";
   		position: absolute;
@@ -164,15 +170,14 @@
 			height: 0;
 		 }
 		 
-		 /* RIGHT ARROW */
 		.arrowRight:before, .arrowRight:after {
-			border-bottom: 25px solid transparent;
-			border-top: 25px solid transparent;
-			top:-1px;
+			border-bottom: 16px solid transparent;
+		  border-top: 17px solid transparent;
+		  top: -1px;
 		}
 
 		.arrowRight:after {
-			border-left: 15px solid #BEB1C5;
+			border-left: 15px solid #432B4C;
 		  right: -15px;
 		  top: -3px;
 		  z-index: 2;
@@ -183,6 +188,17 @@
 		  right: -18px;
 		  top: -3px;
 		  z-index: 1;
+		}
+		*/
+		#twitter-widget-0{
+			position: absolute;
+		  visibility: visible;
+		  width: 113px;
+		  height: 28px;
+		  z-index: 100;
+		  opacity: 0;
+		  left: 38px;
+		  top: 0x;
 		}
 
 		#detalle{
@@ -204,6 +220,17 @@
 		  border: solid 1px #432B4D;
 		}
 
+		.tit-hero {
+		  font-size: 20px;
+		  line-height: 28px;
+		  margin-bottom: 25px;
+		  padding: 20px 43px;
+		  text-align: left;
+		  border: 1px solid #BEB1C5;
+		  background: #FFF;
+		}
+		
+		
 </style>
 
 <section id="cabecera-negociacion">
@@ -325,8 +352,18 @@
 			$(".tit-hero").text( tweet.text )
 			$(".tw-texto").text( tweet.tweet )
 
-			var button = "<div id='llamado' class='arrowText arrowRight'> Mejora el #PEF16 </div>"
+			var button = "<div id='llamado' class='arrowText arrowRight'> <p> Mejora el #PEF16 </p> </div>"
 			$("#msj-tw .container").append(button)
+
+			$("#msj-tw .container #llamado").append(tweet.el)
+
+			//$("#twitter-widget-0").attr("style", "position: absolute; visibility: visible; width: 114px; height: 28px;")
+			
+			$("#twitter-widget-0").css({
+				position: 'absolute',
+				left: '25px',
+				top: '0px'
+			})
 
 			window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],
