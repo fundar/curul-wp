@@ -335,7 +335,7 @@
 				},
 				{
 					'tema': 'Gasto excesivo en publicidad oficial',
-					'texto': 'Regular #publicidadoficial y establecer límite de 10% al sobrejercicio del gasto', 
+					'texto': 'Regular #publicidadoficial y tope de 10% al sobrejercicio del gasto', 
 					'comisiones': [
 						{
 							'nombre': 'Gobernación',
@@ -345,7 +345,7 @@
 				},
 				{
 					'tema': 'Radios comunitarias',
-					'texto': 'Cumplir con 1% para radios comunitarias e indígenas y definir responsable de asignación', 
+					'texto': 'Cumplir con 1% para radios comunitarias y definir responsable de asignación', 
 					'comisiones': [
 						{
 							'nombre': 'Comunicaciones',
@@ -462,7 +462,7 @@
 				this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
 
 				this.el = $('<a class="twitter-share-button"></a>')
-				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.tweet )
+				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + encodeURI(this.tweet) )
 
 				return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
 			}
