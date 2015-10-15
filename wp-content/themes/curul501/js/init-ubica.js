@@ -110,11 +110,11 @@ function getPip(lat, lng) {
 									dip2 += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									dip2 += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									dip2 += "		<span class='zona'> Distrito: " + value.district + " </span>";
-									dip2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>  <br>";
-									dip2 += "	</div>";
-									dip2 += "	<div class='part-data'>";
-									dip2 += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
-									dip2 += "		<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
+									dip2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>";
+									dip2 += "		<div class='part-data'>";
+									dip2 += "			<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+									dip2 += "			<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
+									dip2 += "		</div>";
 									dip2 += "	</div>";
 									dip2 += "</div>";
 								} else {
@@ -123,12 +123,12 @@ function getPip(lat, lng) {
 									dip += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									dip += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									dip += "		<span class='zona'> Circunscripción: " + value.circum + "</span>";
-									dip += "		<span class'estado'> Estado: " + value.zone_state + "</span>  <br>";
+									dip += "		<span class'estado'> Estado: " + value.zone_state + "</span>";
+									dip += "		<div class='part-data'>";
+									dip += "			<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+									dip += "			<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
+									dip += "		</div'>";
 									dip += "	</div>";
-									dip += "	<div class='part-data'>";
-									dip += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
-									dip += "		<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
-									dip += "	</div'>";
 									dip += "</div>";
 								}
 							}
@@ -140,12 +140,12 @@ function getPip(lat, lng) {
 									sen += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									sen += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									sen += "		<span class='zona'> Circunscripción: " + value.circum + "</span>";
-									sen += "		<span class'estado'> Estado: " + value.zone_state + "</span>  <br>";
+									sen += "		<span class'estado'> Estado: " + value.zone_state + "</span>";
+									sen += "		<div class='part-data'>";
+									sen += "			<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+									sen += "			<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
+									sen += "		</div'>";
 									sen += "	</div>";
-									sen += "	<div class='part-data'>";
-									sen += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
-									sen += "		<span class='partido'> Partido politico: " + value.politicalParty.name + "<br/> </span>";
-									sen += "	</div'>";
 									sen += "</div>";
 								} else  if(value.election_type == "Mayoría Relativa") {
 									sen2 += "<div class='representante-mapa'>";
@@ -153,11 +153,11 @@ function getPip(lat, lng) {
 									sen2 += "		<img class='img-rep' src='" + value.avatar_url + "' alt='" + value.name + "'/>";
 									sen2 += "		<a class='name-rep' href='" + value.permalink + "' title='" + value.name + "'>" + value.name + "</a>";
 									sen2 += "		<span class='zona'> Distrito: " + value.district + " </span>";
-									sen2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>  <br>";
-									sen2 += "	</div>";
-									sen2 += "	<div class='part-data'>";
-									sen2 += "		<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
-									sen2 += "		<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
+									sen2 += "		<span class'estado'> Estado: " + value.zone_state + " </span>";
+									sen2 += "		<div class='part-data'>";
+									sen2 += "			<img class='img-partido' src='http://curul501.org/wp-content/themes/curul501/images/" + value.politicalParty.url_logo + "' alt='" + value.politicalParty.name + "'/>";
+									sen2 += "			<span class='partido'> Partido politico: " + value.politicalParty.name + " </span>";
+									sen2 += "		</div>";
 									sen2 += "	</div>";
 									sen2 += "</div>";
 								} 
