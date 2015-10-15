@@ -229,7 +229,7 @@
 			data.temas = [
 				{
 					'tema': 'Financiamientos de Organismos Financieros Internacionales',
-					'texto': 'Información detallada sobre el financiamiento externo de organismos internacionales', 
+					'texto': 'Transparentar préstamos recibidos de organismos financieros internacionales', 
 					'comisiones': [
 						{
 							'nombre': 'Hacienda y Crédito Público',
@@ -381,7 +381,7 @@
 				*/
 				{
 					'tema': 'Implementación de reforma del Sistema de Justicia Penal',
-					'texto': 'Justificación del ejercicio de los recursos del nuevo sistema de justicia penal.', 
+					'texto': 'Justificar el ejercicio de los recursos del nuevo sistema de justicia penal.', 
 					'comisiones': [
 						{
 							'nombre': 'Justicia',
