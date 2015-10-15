@@ -170,7 +170,7 @@
                 <p class="tit-hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus ultrices arcu, eget luctus purus molestie quis #NegociacionPresupuestaria.</p>
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-			   <img src="http://curul501.org/wp-content/uploads/2015/10/th-negacion1.png">
+			   <img src="http://curul501.org/wp-content/uploads/2015/10/12.png">
                         </div>
 		</div>
 
