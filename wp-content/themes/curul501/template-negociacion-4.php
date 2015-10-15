@@ -239,7 +239,7 @@
 				},
 				{
 					'tema': 'Salud sexual y reproductiva en adolescentes',
-					'texto': 'Etiquetar recursos necesarios para salud sexual y reproductiva en adolescentes.', 
+					'texto': 'Etiquetar recursos necesarios para salud sexual y reproductiva en adolescentes', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -249,7 +249,7 @@
 				},
 				{
 					'tema': 'Salud materna',
-					'texto': 'Asegurar recursos para reducir la mortalidad materna.', 
+					'texto': 'Asegurar recursos para reducir la mortalidad materna', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -259,7 +259,7 @@
 				},
 				{
 					'tema': 'Seguro Popular',
-					'texto': 'No a los recortes en el Ramo 12: Salud.', 
+					'texto': 'No a los recortes en el Ramo 12: Salud', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -269,7 +269,7 @@
 				},
 				{
 					'tema': 'Mujeres con VIH',
-					'texto': 'Transparentar y desglosar el presupuesto para VIH.', 
+					'texto': 'Transparentar y desglosar el presupuesto para VIH', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -279,7 +279,7 @@
 				},
 				{
 					'tema': 'Planificación Familiar',
-					'texto': 'Transparencia en las compras consolidadas de anticonceptivos.', 
+					'texto': 'Transparencia en las compras consolidadas de anticonceptivos', 
 					'comisiones': [
 						{
 							'nombre': 'Salud',
@@ -301,7 +301,7 @@
 				*/
 				{
 					'tema': 'Niñez migrantes',
-					'texto': 'No a la disminución de los recursos para atención a la infancia.', 
+					'texto': 'No a la disminución de los recursos para atención a la infancia', 
 					'comisiones': [
 						{
 							'nombre': 'Asuntos Migratorios',
@@ -311,7 +311,7 @@
 				},
 				{
 					'tema': 'Asilo y refugio ',
-					'texto': 'Ampliar el presupuesto para los refugios y asilos en México.', 
+					'texto': 'Ampliar el presupuesto para los refugios y asilos en México', 
 					'comisiones': [
 						{
 							'nombre': 'Asuntos Migratorios',
@@ -321,7 +321,7 @@
 				},
 				{
 					'tema': 'Valor al campesino',
-					'texto': 'Exigimos un presupuesto más justo para el campo mexicano.', 
+					'texto': 'Exigimos un presupuesto más justo para el campo mexicano', 
 					'comisiones': [
 						{
 							'nombre': 'Desarrollo Rural',
@@ -359,7 +359,7 @@
 				},
 				{
 					'tema': 'Fideicomisos y fondos',
-					'texto': 'Mayor transparencia y claridad en los fideicomisos públicos.', 
+					'texto': 'Mayor transparencia y claridad en los fideicomisos públicos', 
 					'comisiones': [
 						{
 							'nombre': 'Hacienda y Crédito Público',
@@ -381,7 +381,7 @@
 				*/
 				{
 					'tema': 'Implementación de reforma del Sistema de Justicia Penal',
-					'texto': 'Justificar el ejercicio de los recursos del nuevo sistema de justicia penal.', 
+					'texto': 'Justificar el ejercicio de los recursos del nuevo sistema de justicia penal', 
 					'comisiones': [
 						{
 							'nombre': 'Justicia',
@@ -474,7 +474,7 @@
 			/************************************************/
 			
 
-			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#mejorPEF16')
+			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#MejorPEF2016')
 			var tweet = create_tweet.run()
 
 			$("#msj-tw .container").append( tweet.el )

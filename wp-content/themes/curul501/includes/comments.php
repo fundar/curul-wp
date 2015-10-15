@@ -14,7 +14,7 @@
 
  if (comments_open() ) :
 	?>
-		<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'avia_framework' ); ?></p>
+		<p><?php _e( 'This post is password protected. Enter the password to view any comments', 'avia_framework' ); ?></p>
 	<?php
 endif;
 		/* Stop the rest of comments.php from being processed,
@@ -180,7 +180,7 @@ endif; // end have_comments()
 		 * let's leave a little note, shall we?
 		 */
 	 	
-	 	echo "<h3 class='$indent commentsclosed'>".__( 'Comments are closed.', 'avia_framework' )."</h3>";
+	 	echo "<h3 class='$indent commentsclosed'>".__( 'Comments are closed', 'avia_framework' )."</h3>";
 	 } 
 	  
 	  ?>
