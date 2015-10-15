@@ -451,7 +451,7 @@
 				var twitters = [];
 				twitters.push(this.diputados.presidente.twitter);
 				twitters.push(this.diputado_aleatorio(this.diputados.comisiones).presidente.twitter);
-				twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
+				//twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
 
 				return twitters.join(" ");
 			}
