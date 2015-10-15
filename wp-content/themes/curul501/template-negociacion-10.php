@@ -1,6 +1,6 @@
 <?php
 	/*
-	Template Name: negociacion
+	Template Name: negociacion-2
 	*/
 
 
@@ -159,7 +159,7 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
                         <div class="post-img">
-                           <img src="images/exige-num-1.png">
+                           <img src="images/exige-num-10.png">
                         </div>
 			<?php the_title( '<h3 class="titulo-art-nego">', '</h3>' ); ?>	
 		</div>
@@ -170,7 +170,7 @@
                 <p class="tit-hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus ultrices arcu, eget luctus purus molestie quis #NegociacionPresupuestaria.</p>
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-                           <img src="http://curul501.org/wp-content/uploads/2015/10/th-negacion1.png">
+			   <img src="http://curul501.org/wp-content/uploads/2015/10/th-negacion1.png">
                         </div>
 		</div>
 
@@ -451,20 +451,18 @@
 				var twitters = [];
 				twitters.push(this.diputados.presidente.twitter);
 				twitters.push(this.diputado_aleatorio(this.diputados.comisiones).presidente.twitter);
-				//twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
+				twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
 
 				return twitters.join(" ");
 			}
 
 			CreateTweet.prototype.run = function(){
 				this.diputados.comisiones = this.tema.comisiones
-				this.text = [ this.tema.texto, '#' + this.hashtag ].join(' ')
-				this.tweet = [ this.tema.texto, this.get_rep_twitters(), '#' + this.hashtag ].join(' ')
+				this.text = [ this.tema.texto, this.hashtag ].join(' ')
+				this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
 
 				this.el = $('<a class="twitter-share-button"></a>')
 				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + this.tweet )
-				this.el.attr( "url", encodeURIComponent(window.location.href) )
-				this.el.attr( "hashtags", this.hashtag )
 
 				return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
 			}
@@ -476,7 +474,7 @@
 			/************************************************/
 			
 
-			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], 'mejorPEF2016')
+			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#mejorPEF16')
 			var tweet = create_tweet.run()
 
 			$("#msj-tw .container").append( tweet.el )
