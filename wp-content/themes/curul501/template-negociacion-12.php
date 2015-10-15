@@ -159,7 +159,7 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
                         <div class="post-img">
-                           <img src="images/exige-num-12.png">
+                           <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-12.png">
                         </div>
 			<?php the_title( '<h3 class="titulo-art-nego">', '</h3>' ); ?>	
 		</div>
@@ -469,7 +469,7 @@
 
 			/* Aquí se selecciona las comisiones que serán incluidas en el tuit */
 			/* En cuanto se tengan todos los slugs de cada sección se podrán usar para seleccionar el tema correspondiente */
-				var tidx = 0
+				var tidx = 11
 			/************************************************/
 			/************************************************/
 			
