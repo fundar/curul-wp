@@ -147,8 +147,8 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
 			<div class="content ten alpha units">
-                              <h1 id="titulo-neg-1">Negociación</h1>
-                              <h1 id="titulo-neg-2">presupuestaria</h1>
+                              <h1 id="titulo-neg-1">Exige mejor</h1>
+                              <h1 id="titulo-neg-2">presupuesto</h1>
 			</div>
 			<div class="flex_column av_one_fourth">
 			</div>			
