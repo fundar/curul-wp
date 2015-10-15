@@ -159,7 +159,7 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
                         <div class="post-img">
-                           <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-1.png">
+                           <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-th-1.png">
                         </div>
 			<?php the_title( '<h3 class="titulo-art-nego">', '</h3>' ); ?>	
 		</div>
