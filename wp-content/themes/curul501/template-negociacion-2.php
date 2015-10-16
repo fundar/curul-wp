@@ -142,17 +142,18 @@
 		}
 
 		/* ARROWS */
-	 	.arrowText {
+	 	#llamado {
 			position: relative;
 		  margin: -13px 0px;
-		  width: 141px;
+		  width: 163px;
 		  height: 33px;
 		  background: #432B4C;
 		  border: solid 3px #432B4D;
 		  float: right;
-		  padding: 0;
+		  padding: 0px 13px;
 		}
-		.arrowText p{
+
+		#llamado p{
 		  font-weight: bold;
 		  font-size: 17px;
 		  color: #fff;
@@ -162,44 +163,43 @@
 		  padding-top: 3px;
 		}
 		/*
-	 .arrowText:before, .arrowText:after {
-		  content: " ";
-  		position: absolute;
- 		  display: block;
-			width: 0;
-			height: 0;
-		 }
-		 
-		.arrowRight:before, .arrowRight:after {
-			border-bottom: 16px solid transparent;
-		  border-top: 17px solid transparent;
-		  top: -1px;
-		}
+		 .llamado:before, .arrowText:after {
+			  content: " ";
+	  		position: absolute;
+	 		  display: block;
+				width: 0;
+				height: 0;
+			 }
+			 
+			.llamado:before, .arrowRight:after {
+				border-bottom: 16px solid transparent;
+			  border-top: 17px solid transparent;
+			  top: -1px;
+			}
 
-		.arrowRight:after {
-			border-left: 15px solid #432B4C;
-		  right: -15px;
-		  top: -3px;
-		  z-index: 2;
-		}
-		 
-		.arrowRight:before {
-		  border-left: 15px solid #432B4D;
-		  right: -18px;
-		  top: -3px;
-		  z-index: 1;
-		}
+			.llamado:after {
+				border-left: 15px solid #432B4C;
+			  right: -15px;
+			  top: -3px;
+			  z-index: 2;
+			}
+			 
+			.llamado:before {
+			  border-left: 15px solid #432B4D;
+			  right: -18px;
+			  top: -3px;
+			  z-index: 1;
+			}
 		*/
 		#twitter-widget-0{
-			position: absolute;
-		  visibility: visible;
-		  width: 113px;
-		  height: 28px;
-		  z-index: 100;
-		  opacity: 0;
-		  left: 38px;
-		  top: 0x;
+			position: absolute !important;
+		  z-index: 100 !important;
+		  opacity: 0 !important;
+		  left: 35px !important;
+		  top: 0px !important;
 		}
+
+
 
 		#detalle{
 			display: none;
@@ -214,15 +214,16 @@
 		}
 
 		#ir_detalle{
-			font-size: 1.5em;
+		  font-size: 1.2em;
 		  text-align: center;
-		  padding: 10px 50px;
-		  border: solid 1px #432B4D;
+		  padding: 5px 35px;
+		  border-bottom: solid 2px #432B4D;
 		}
 
 		.tit-hero {
-		  font-size: 20px;
+		  font-size: 24px;
 		  line-height: 28px;
+		  margin-top: 12%;
 		  margin-bottom: 25px;
 		  padding: 20px 43px;
 		  text-align: left;
@@ -265,7 +266,7 @@
 		</div>
 
 		<div class="flex_column av_three_fifth el_after_av_two_fifth avia-builder-el-last">
-    		<p class="tit-hero" style="margin-top: 12%;font-style: italic;  font-size: 33px;"></p>
+    		<p class="tit-hero"></p>
         <!--img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
         <p class="tw-texto"></p-->
 		</div>  
@@ -348,22 +349,12 @@
 			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#MejorPEF2016')
 			var tweet = create_tweet.run()
 
-			$("#msj-tw .container").append( tweet.el )
 			$(".tit-hero").text( tweet.text )
 			$(".tw-texto").text( tweet.tweet )
 
 			var button = "<div id='llamado' class='arrowText arrowRight'> <p> Mejora el #PEF16 </p> </div>"
 			$("#msj-tw .container").append(button)
-
 			$("#msj-tw .container #llamado").append(tweet.el)
-
-			//$("#twitter-widget-0").attr("style", "position: absolute; visibility: visible; width: 114px; height: 28px;")
-			
-			$("#twitter-widget-0").css({
-				position: 'absolute',
-				left: '25px',
-				top: '0px'
-			})
 
 			window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],

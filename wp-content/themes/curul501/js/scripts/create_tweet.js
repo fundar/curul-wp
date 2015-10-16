@@ -85,7 +85,7 @@
 		},
 		{
 			'tema': 'Asilo y refugio ',
-			'texto': 'Ampliar el presupuesto para los refugios y asilos en México', 
+			'texto': 'Ampliar el presupuesto para solicitantes de asilo y refugiados', 
 			'comisiones': [
 				{
 					'nombre': 'Asuntos Migratorios',

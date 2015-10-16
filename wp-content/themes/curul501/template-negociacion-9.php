@@ -141,6 +141,97 @@
 			float:right;
 		}
 
+		/* ARROWS */
+	 	#llamado {
+			position: relative;
+		  margin: -13px 0px;
+		  width: 163px;
+		  height: 33px;
+		  background: #432B4C;
+		  border: solid 3px #432B4D;
+		  float: right;
+		  padding: 0px 13px;
+		}
+
+		#llamado p{
+		  font-weight: bold;
+		  font-size: 17px;
+		  color: #fff;
+		  margin: 0;
+		  position: absolute;
+		  z-index: 0;
+		  padding-top: 3px;
+		}
+		/*
+		 .llamado:before, .arrowText:after {
+			  content: " ";
+	  		position: absolute;
+	 		  display: block;
+				width: 0;
+				height: 0;
+			 }
+			 
+			.llamado:before, .arrowRight:after {
+				border-bottom: 16px solid transparent;
+			  border-top: 17px solid transparent;
+			  top: -1px;
+			}
+
+			.llamado:after {
+				border-left: 15px solid #432B4C;
+			  right: -15px;
+			  top: -3px;
+			  z-index: 2;
+			}
+			 
+			.llamado:before {
+			  border-left: 15px solid #432B4D;
+			  right: -18px;
+			  top: -3px;
+			  z-index: 1;
+			}
+		*/
+		#twitter-widget-0{
+			position: absolute !important;
+		  z-index: 100 !important;
+		  opacity: 0 !important;
+		  left: 35px !important;
+		  top: 0px !important;
+		}
+
+
+
+		#detalle{
+			display: none;
+		}
+
+		#msj-tw{
+			text-align: center;
+		}
+
+		#msj-tw .container{
+			margin-bottom: 20px;
+		}
+
+		#ir_detalle{
+		  font-size: 1.2em;
+		  text-align: center;
+		  padding: 5px 35px;
+		  border-bottom: solid 2px #432B4D;
+		}
+
+		.tit-hero {
+		  font-size: 24px;
+		  line-height: 28px;
+		  margin-top: 12%;
+		  margin-bottom: 25px;
+		  padding: 20px 43px;
+		  text-align: left;
+		  border: 1px solid #BEB1C5;
+		  background: #FFF;
+		}
+		
+		
 </style>
 
 <section id="cabecera-negociacion">
@@ -159,28 +250,33 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
                         <div class="post-img">
-                           <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-9.png">
+                           <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-2.png">
                         </div>
 			<?php the_title( '<h3 class="titulo-art-nego">', '</h3>' ); ?>	
 		</div>
 	</div>
 </section>
+
 <section id="msj-tw">
 	<div class="container">
-                <p class="tit-hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus ultrices arcu, eget luctus purus molestie quis #NegociacionPresupuestaria.</p>
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-			   <img src="http://curul501.org/wp-content/uploads/2015/10/9.png">
+			   <img src="http://curul501.org/wp-content/uploads/2015/10/2.png">
                         </div>
 		</div>
 
 		<div class="flex_column av_three_fifth el_after_av_two_fifth avia-builder-el-last">
-                        <img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
-                        <p class="tw-texto"></p>
+    		<p class="tit-hero"></p>
+        <!--img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
+        <p class="tw-texto"></p-->
 		</div>  
 	</div>
+	<br> <br> <br> 
+	<a id="ir_detalle" href="#detalle"> Ver más </a>
 </section>
-<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'> 
+
+
+<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>' id='detalle'> 
 
 		<!--start container-->
 
@@ -203,7 +299,7 @@
 
 		   <!--end container-->
 
-		</div><!-- close default .container_wrap element -->
+</div><!-- close default .container_wrap element -->
 
 
 <div id="footer" class="container_wrap footer_color">
@@ -220,252 +316,28 @@
 </div>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/js/scripts/create_tweet.js" ></script>
 
 
 <script>
 		$(document).ready(function(){
-			var data = {}
-			
-			data.temas = [
-				{
-					'tema': 'Financiamientos de Organismos Financieros Internacionales',
-					'texto': 'Transparentar préstamos recibidos de organismos financieros internacionales', 
-					'comisiones': [
-						{
-							'nombre': 'Hacienda y Crédito Público',
-							'presidente': { 'nombre': 'Gina Cruz Blackledge', 'twitter': '@diputadospan' }
-						}
-					]
-				},
-				{
-					'tema': 'Salud sexual y reproductiva en adolescentes',
-					'texto': 'Etiquetar recursos necesarios para salud sexual y reproductiva en adolescentes', 
-					'comisiones': [
-						{
-							'nombre': 'Salud',
-							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
-						}
-					]
-				},
-				{
-					'tema': 'Salud materna',
-					'texto': 'Asegurar recursos para reducir la mortalidad materna', 
-					'comisiones': [
-						{
-							'nombre': 'Salud',
-							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
-						}
-					]
-				},
-				{
-					'tema': 'Seguro Popular',
-					'texto': 'No a los recortes en el Ramo 12: Salud', 
-					'comisiones': [
-						{
-							'nombre': 'Salud',
-							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
-						}
-					]
-				},
-				{
-					'tema': 'Mujeres con VIH',
-					'texto': 'Transparentar y desglosar el presupuesto para VIH', 
-					'comisiones': [
-						{
-							'nombre': 'Salud',
-							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
-						}
-					]
-				},
-				{
-					'tema': 'Planificación Familiar',
-					'texto': 'Transparencia en las compras consolidadas de anticonceptivos', 
-					'comisiones': [
-						{
-							'nombre': 'Salud',
-							'presidente': { 'nombre': 'Elias Iñiguez Mejía', 'twitter': '@DipEliass' }
-						}
-					]
-				},
-				/*
-				{
-					'tema': 'Mecanismo transnacional e investigación de delitos contra migrantes',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
-					'comisiones': [
-						{
-							'nombre': 'Asuntos Migratorios',
-							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES'	 }
-						}
-					]
-				},
-				*/
-				{
-					'tema': 'Niñez migrantes',
-					'texto': 'No a la disminución de los recursos para atención a la infancia', 
-					'comisiones': [
-						{
-							'nombre': 'Asuntos Migratorios',
-							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES' }
-						}
-					]
-				},
-				{
-					'tema': 'Asilo y refugio ',
-					'texto': 'Ampliar el presupuesto para los refugios y asilos en México', 
-					'comisiones': [
-						{
-							'nombre': 'Asuntos Migratorios',
-							'presidente': { 'nombre': 'Gonzalo Guizar Valladares', 'twitter': '@DiputadosPES' }
-						}
-					]
-				},
-				{
-					'tema': 'Valor al campesino',
-					'texto': 'Exigimos un presupuesto más justo para el campo mexicano', 
-					'comisiones': [
-						{
-							'nombre': 'Desarrollo Rural',
-							'presidente': { 'nombre': 'José Erandi Bermúdez Méndez', 'twitter': '@erandibermudez' }
-						},
-						{
-							'nombre': 'Agricultura y Riego',
-							'presidente': { 'nombre': 'Germán Escobar Manjarrez', 'twitter': '@germanescobarmx' }
-						}
-					]
-				},
-				{
-					'tema': 'Gasto excesivo en publicidad oficial',
-					'texto': 'Regular #publicidadoficial y tope de 10% al sobrejercicio del gasto', 
-					'comisiones': [
-						{
-							'nombre': 'Gobernación',
-							'presidente': { 'nombre': 'Mercedes Del Carmen Guillén Vicente', 'twitter': '@PalomaGuillen' }
-						}
-					]
-				},
-				{
-					'tema': 'Radios comunitarias',
-					'texto': 'Cumplir con 1% para radios comunitarias y definir responsable de asignación', 
-					'comisiones': [
-						{
-							'nombre': 'Comunicaciones',
-							'presidente': { 'nombre': 'Ivonne Aracely Ortega Pacheco', 'twitter': '@ivonneop' }
-						},
-						{
-							'nombre': 'Radio y Televisión',
-							'presidente': { 'nombre': 'Lía Limón García', 'twitter': '@lialimo' }
-						}
-					]
-				},
-				{
-					'tema': 'Fideicomisos y fondos',
-					'texto': 'Mayor transparencia y claridad en los fideicomisos públicos', 
-					'comisiones': [
-						{
-							'nombre': 'Hacienda y Crédito Público',
-							'presidente': { 'nombre': 'Gina Cruz Blackledge', 'twitter': '@diputadospan' }
-						}
-					]
-				},
-				/*
-				{
-					'tema': 'Presupuesto para capacitación de operadores en derechos humanos y de mujeres',
-					'texto': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei', 
-					'comisiones': [
-						{
-							'nombre': 'Igualdad de género',
-							'presidente': { 'nombre': 'Laura Nereida Plascencia Pacheco', 'twitter': '@LNPlascencia' }
-						}
-					]
-				},
-				*/
-				{
-					'tema': 'Implementación de reforma del Sistema de Justicia Penal',
-					'texto': 'Justificar el ejercicio de los recursos del nuevo sistema de justicia penal', 
-					'comisiones': [
-						{
-							'nombre': 'Justicia',
-							'presidente': { 'nombre': 'Álvaro Ibarra Hinojosa', 'twitter': '@DiputadosPRI' }
-						}
-					]
+			$("#ir_detalle").on("click", function(){
+				var t = $("#detalle")
+				if(t.css('display') == 'none'){
+					$("#detalle").slideDown("slow")
+					$('html, body').animate({
+	            scrollTop: $("#detalle").offset().top
+	        }, 2000);
+	        $(this).text("Ver menos")
+				}else{
+					
+					$('html, body').animate({
+	            scrollTop: $("body").offset().top
+	        }, 2000);
+					$("#detalle").slideUp("slow")
+	        $(this).text("Ver más")
 				}
-			];
-
-			data.diputados = {
-				'presidente':  {'nombre': 'Baltazar Hinojosa Ochoa', 'twitter': '@BaltazarxTam' },
-				'bancadas': [
-						{ 
-							'nombre': 'PRI',
-							'presidente': { 'nombre': 'César Octavio Camacho Quiroz',	'twitter': '@ccq_pri' }
-						},
-						{ 
-							'nombre': 'PAN',
-							'presidente': { 'nombre': 'Marko Antonio Cortés Mendoza',	'twitter': '@markocortes' }
-						},
-						{ 
-							'nombre': 'PRD',
-							'presidente': { 'nombre': 'Francisco Martinez Neri',	'twitter': '@fmartinezneri' }
-						},
-						{ 
-							'nombre': 'PVEM',
-							'presidente': { 'nombre': 'Jesús Sesma Suárez',	'twitter': '@chuchosesma' }
-						},
-						{ 
-							'nombre': 'MORENA',
-							'presidente': { 'nombre': 'Norma Rocío Nahle García',	'twitter': '@rocionahle' }
-						},
-						{ 
-							'nombre': 'MOVIMIENTO CIUDADANO',
-							'presidente': { 'nombre': 'José Clemente Castañeda Hoeflich',	'twitter': '@clementech' }
-						},
-						{ 
-							'nombre': 'NUEVA ALIANZA',
-							'presidente': { 'nombre': 'Luis Alfredo Valles Mendoza',	'twitter': '@alfredvalles' }
-						},
-						{ 
-							'nombre': 'ENCUENTRO SOCIAL',
-							'presidente': { 'nombre': 'Alejandro González Murillo',	'twitter': '@AlejandroGonMu' }
-						},
-						{ 
-							'nombre': 'ENCUENTRO SOCIAL',
-							'presidente': { 'nombre': 'Alejandro González Murillo',	'twitter': '@AlejandroGonMu' },
-						}
-				] 
-			};
-
-			var CreateTweet = function(diputados, tema, hashtag){
-				this.diputados = diputados;
-				this.tema = tema;
-				this.hashtag = hashtag;
-			}
-
-			CreateTweet.prototype.diputado_aleatorio = function(grupo){
-				var getRandom = function (min, max) {
-	    		return parseInt( Math.random() * (max - min) + min ); 
-				}
-				var max = grupo.length - 1;
-				return grupo[ getRandom(0, max) ] 
-			}
-
-			CreateTweet.prototype.get_rep_twitters = function(){
-				var twitters = [];
-				twitters.push(this.diputados.presidente.twitter);
-				twitters.push(this.diputado_aleatorio(this.diputados.comisiones).presidente.twitter);
-				//twitters.push(this.diputado_aleatorio(this.diputados.bancadas).presidente.twitter);
-
-				return twitters.join(" ");
-			}
-
-			CreateTweet.prototype.run = function(){
-				this.diputados.comisiones = this.tema.comisiones
-				this.text = [ this.tema.texto, this.hashtag ].join(' ')
-				this.tweet = [ this.tema.texto, this.get_rep_twitters(), this.hashtag ].join(' ')
-
-				this.el = $('<a class="twitter-share-button"></a>')
-				this.el.attr( "href", "https://twitter.com/intent/tweet?text=" + encodeURI(this.tweet) )
-
-				return { 'el': this.el, 'text': this.text, 'tweet': this.tweet } ;
-			}
+			});
 
 			/* Aquí se selecciona las comisiones que serán incluidas en el tuit */
 			/* En cuanto se tengan todos los slugs de cada sección se podrán usar para seleccionar el tema correspondiente */
@@ -477,9 +349,12 @@
 			var create_tweet = new CreateTweet(data.diputados, data.temas[tidx], '#MejorPEF2016')
 			var tweet = create_tweet.run()
 
-			$("#msj-tw .container").append( tweet.el )
 			$(".tit-hero").text( tweet.text )
 			$(".tw-texto").text( tweet.tweet )
+
+			var button = "<div id='llamado' class='arrowText arrowRight'> <p> Mejora el #PEF16 </p> </div>"
+			$("#msj-tw .container").append(button)
+			$("#msj-tw .container #llamado").append(tweet.el)
 
 			window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],
