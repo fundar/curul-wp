@@ -261,7 +261,7 @@
 	<div class="container">
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-			   <img src="http://curul501.org/wp-content/uploads/2015/10/1a.png">
+			   <img src="/wp-content/themes/curul501/images/1.png"">
                         </div>
 		</div>
 
