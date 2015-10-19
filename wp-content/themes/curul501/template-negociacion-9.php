@@ -116,7 +116,7 @@
 		    font-size: 27px;
 		    font-weight: bold;
 		    line-height: 1.1em;
-		    margin-top: 10px;
+		    margin-top: 23px;
 		    }		    
                 h3.sub-titulos-neg{
 		    color: #000;
