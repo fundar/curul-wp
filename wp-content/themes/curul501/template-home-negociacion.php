@@ -148,7 +148,7 @@
                               <h1 id="titulo-neg-2">presupuesto</h1>
 			</div>
 			<div class="flex_column av_one_fourth videoneg">
-				<a><img class="ver-video-neg" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/clic-video-neg.png"></a>
+				<a href=#><img class="ver-video-neg" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/clic-video-neg.png"></a>
 			</div>			
 		</div>
 	</div>
