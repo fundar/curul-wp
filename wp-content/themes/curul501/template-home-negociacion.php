@@ -159,8 +159,10 @@
 	<div class="container">
 		<div class="content ten alpha units">
 			<div class="flex_column av_three_fourth flex_column_div first main_color">
-                              <h1 id="titulo-neg-1">Exige mejor</h1>
-                              <h1 id="titulo-neg-2">presupuesto</h1>
+			<div class="content ten alpha units">
+                              <h1 id="titulo-neg-1"><a href="http://curul501.org/exige-mejor-presupuesto/">Exige mejor</a></h1>
+                              <h1 id="titulo-neg-2"><a href="http://curul501.org/exige-mejor-presupuesto/">presupuesto</a></h1>
+			</div>
 			</div>
 			<div class="flex_column av_one_fourth videoneg">
 				<a href=#video-micrositioNegociacion id="ver_video" ><img class="ver-video-neg" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/clic-video-neg.png"></a>
