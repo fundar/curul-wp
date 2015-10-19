@@ -142,8 +142,8 @@
 
 <section id="cabecera-negociacion">
 	<div class="container">
-		<div class="flex_column av_three_fourth flex_column_div first main_color">
-			<div class="content ten alpha units">
+		<div class="content ten alpha units">
+			<div class="flex_column av_three_fourth flex_column_div first main_color">
                               <h1 id="titulo-neg-1">Exige mejor</h1>
                               <h1 id="titulo-neg-2">presupuesto</h1>
 			</div>
