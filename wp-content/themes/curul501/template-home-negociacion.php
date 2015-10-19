@@ -137,6 +137,13 @@
 			height: 236px;
 			
 		}
+		
+		/** video home negociaciones**/
+		img.ver-video-neg {
+                        float: right;
+                        text-align: right;
+                        width: 35%;
+}
 
 </style>
 
