@@ -55,17 +55,18 @@
 		}
 
   		#map-info{
-			background: #F4F4F4;
+				background: #F4F4F4;
   			display: none;
   			height:498px;
   			min-height:498px;
   			min-width:30%;
   			overflow-y: scroll;
-			padding: 20px;
-			position: absolute;
-			right:0;
+				padding: 20px;
+				position: absolute;
+				right:0;
   			width:30%;
-			z-index: 100;
+				z-index: 100;
+				border-top: 2px solid #000;
   		}
   		
   		#map-info h2{
@@ -87,6 +88,13 @@
 			border: 0.3px solid #aaa;
 			font-family: oswald;
 			font-weight: lighter;
+  		}
+
+
+  		/* Mover el cursor del mapa a su ubicación correcta (el punto del click)*/
+  		.leaflet-marker-pane{
+  			margin-top: -41px;
+  			margin-left: -12.5px;
   		}
 
 

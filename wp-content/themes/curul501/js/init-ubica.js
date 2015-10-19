@@ -26,14 +26,16 @@ function setMap() {
 	
 	function onEachFeature(feature, layer) {
 		layer.setStyle({
-			fillOpacity: 0, opacity: 0.1, weight: 1.2, color: "#432B4D", fillColor: "#3E2F52"
+			//fillOpacity: 0.6, opacity: 0.8, weight: 1.2, color: "#432B4D", fillColor: "#3E2F52"
+			fillOpacity: 0.8, opacity: 0.6, weight: 1.5, color: "#aaa", fillColor: "#eee"
+			//fillOpacity: 0.6, opacity: 0.8, weight: 1.2, color: "#fff", fillColor: "#432B4D"
 		});
 		
 		layer.on('click', function(e) {
 			map.removeLayer(sMarker);
 			
 			sMarker = L.marker([e.latlng.lat, e.latlng.lng], { 
-				//icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
+				icon: L.icon({ 'iconUrl': '../wp-content/themes/curul501/images/marker-morado.png' }) ,
 				CVE_ENT : feature.properties.CVE_ENT, 
 				NOMBRE : feature.properties.NOMBRE
 			}).addTo(map);
