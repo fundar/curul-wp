@@ -111,6 +111,24 @@
 		    font-size: 38px;
 		    font-weight: bold;
 		}
+		h1#titulo-neg-1 > a{
+		    color: #624A6E;
+		    font-family: "chaparral-pro";
+		    font-size: 66px;
+		    font-weight: bold;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height: .5em;
+		}
+		h1#titulo-neg-2 > a {
+		    color: #000;
+		    font-family: "chaparral-pro";
+		    font-size: 66px;
+		    font-weight: bold;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height: .5em;
+		}		
 		.sep{
 			border-bottom: 1px solid #999;
 			margin: 5px 0px 0px 0px;
