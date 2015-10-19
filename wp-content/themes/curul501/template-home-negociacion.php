@@ -145,7 +145,7 @@
                         width: 35%;
 		}
 		.page-id-4978 > #wrap_all > #main > #cabecera-negociacion > .container > .content > .videoneg > a {display: none;}
-		#∫video-micrositioNegociacion {
+		#video-micrositioNegociacion {
                         border-bottom: 1px solid #beb1c4 !important;
                         padding: 40px 0 20px;
                 }
