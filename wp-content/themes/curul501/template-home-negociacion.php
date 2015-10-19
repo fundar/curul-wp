@@ -62,6 +62,7 @@
 }
 		#header_meta{
 		  display:none;
+
 		}
 		strong.logo {
                 margin-left: 10px;
@@ -146,9 +147,10 @@
 		}
 		.page-id-4978 > #wrap_all > #main > #cabecera-negociacion > .container > .content > .videoneg > a {display: none;}
 		#video-micrositioNegociacion {
-                        border-bottom: 1px solid #beb1c4 !important;
-                        padding: 40px 0 20px;
-                }
+				display: none;
+        border-bottom: 1px solid #beb1c4 !important;
+        padding: 40px 0 20px;
+    }
 
 
 </style>
@@ -161,7 +163,7 @@
                               <h1 id="titulo-neg-2">presupuesto</h1>
 			</div>
 			<div class="flex_column av_one_fourth videoneg">
-				<a href=#><img class="ver-video-neg" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/clic-video-neg.png"></a>
+				<a href=#video-micrositioNegociacion id="ver_video" ><img class="ver-video-neg" src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/clic-video-neg.png"></a>
 			</div>			
 		</div>
 	</div>
@@ -267,3 +269,23 @@
             </div>
      </div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#ver_video").on("click", function(){
+				var v = $("#video-micrositioNegociacion")
+				if(v.css('display') == 'none'){
+					v.slideDown("slow")
+					$('html, body').animate({  scrollTop: v.offset().top }, 2000);
+				}else{
+					$('html, body').animate({ scrollTop: $("body").offset().top }, 2000);
+					v.slideUp("slow")
+				}
+			});
+
+	})
+
+</script>
