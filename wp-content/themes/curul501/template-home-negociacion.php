@@ -162,6 +162,68 @@
 		</div>
 	</div>
 </section>
+<!-- video -->
+<section id="video-micrositioNegociacion">
+	<!-- social proof section -->				
+	<div class='container_wrap container_wrap_first main_color fullsize'>
+
+		<div class='container'> 
+			<main id="landing-complementary">
+	
+			<?php $service_query = new WP_Query('page_id=4978'); 
+			while ( $service_query->have_posts() ) : $service_query->the_post(); ?>
+	 
+	
+	
+			<article class='post-entry post-entry-type-page <?php echo $post_class; ?>' <?php avia_markup_helper(array('context' => 'entry')); ?>>
+	
+				<div class="entry-content-wrapper clearfix">
+			<?php
+			echo '<header class="entry-content-header">';
+			    $thumb = get_the_post_thumbnail(get_the_ID(), $avia_config['size']);
+	
+			    if($thumb) echo "<div class='page-thumb'>{$thumb}</div>";
+			echo '</header>';
+	
+			//display the actual post content
+			echo '<div class="entry-content" '.avia_markup_helper(array('context' => 'entry_content','echo'=>false)).'>';
+			    the_content(__('Read more','avia_framework').'<span class="more-link-arrow">  &rarr;</span>');
+			echo '</div>';
+	
+			echo '<footer class="entry-footer">';
+			wp_link_pages(array('before' =>'<div class="pagination_split_post">',
+						'after'  =>'</div>',
+						'pagelink' => '<span>%</span>'
+						));
+			echo '</footer>';
+			
+			do_action('ava_after_content', get_the_ID(), 'page');
+			?>
+				</div>
+	
+			</article><!--end post-entry-->
+	
+			 <?php endwhile; // end of the loop. ?>
+	
+			<!--end content-->
+			</main>
+	
+			<?php
+	
+			//get the sidebar
+			$avia_config['currently_viewing'] = 'page';
+			get_sidebar();
+	
+			?>
+
+		</div><!--end container-->
+
+	</div><!-- close default .container_wrap element -->
+
+</section>			
+			
+			
+			
 <section>
         <div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'> 
 
