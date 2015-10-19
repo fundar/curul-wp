@@ -284,8 +284,8 @@
 
 		<div class="flex_column av_three_fifth el_after_av_two_fifth avia-builder-el-last">
     		<p class="tit-hero"></p>
-        <!--img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
-        <p class="tw-texto"></p-->
+                  <img class="img-bird-cta" src="http://curul501.org/wp-content/uploads/2015/10/bird-tw.png">
+                   <!--<p class="tw-texto"></p-->
 		</div>  
 	</div>
 	<br> <br> <br> 
