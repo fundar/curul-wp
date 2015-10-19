@@ -144,7 +144,7 @@
                         text-align: right;
                         width: 35%;
 		}
-		#page-id-4978 > #wrap_all > #main > #cabecera-negociacion > .container > .content > .videoneg > a {display: none;}
+		.page-id-4978 > #wrap_all > #main > #cabecera-negociacion > .container > .content > .videoneg > a {display: none;}
 
 
 </style>
