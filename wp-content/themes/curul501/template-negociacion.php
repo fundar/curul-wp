@@ -92,7 +92,15 @@
 		    text-shadow: 2px 2px 1px #fff;
 		    line-height: .5em;
 		}
-
+		h1#titulo-neg-1 > a{
+		    color: #624A6E;
+		    font-family: "chaparral-pro";
+		    font-size: 66px;
+		    font-weight: bold;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height: .5em;
+		}
 		h1#titulo-neg-2  {
 		    color: #000;
 		    font-family: "chaparral-pro";
@@ -102,6 +110,15 @@
 		    text-shadow: 2px 2px 1px #fff;
 		    line-height: .5em;
 		}
+		h1#titulo-neg-2 > a {
+		    color: #000;
+		    font-family: "chaparral-pro";
+		    font-size: 66px;
+		    font-weight: bold;
+		    padding: 10px;
+		    text-shadow: 2px 2px 1px #fff;
+		    line-height: .5em;
+		}		
 		h3.titulo-art-nego {
 		    color: #502760;
 		    font-family: "chaparral-pro";
@@ -238,8 +255,8 @@
 	<div class="container">
 		<div class="flex_column av_three_fourth flex_column_div first main_color">
 			<div class="content ten alpha units">
-                              <h1 id="titulo-neg-1">Exige mejor</h1>
-                              <h1 id="titulo-neg-2">presupuesto</h1>
+                              <h1 id="titulo-neg-1"><a href="http://curul501.org/exige-mejor-presupuesto/">Exige mejor</a></h1>
+                              <h1 id="titulo-neg-2"><a href="http://curul501.org/exige-mejor-presupuesto/">presupuesto</a></h1>
 			</div>
 			<div class="flex_column av_one_fourth">
 			</div>			
@@ -248,7 +265,7 @@
 </section>
 <section id="cabecera-art">
 	<div class="container">
-		<div class="flex_column av_three_fourth flex_column_div first main_color">
+		<div class="flex_column flex_column_div first main_color">
                         <div class="post-img">
                            <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-1.png">
                         </div>
@@ -261,7 +278,7 @@
 	<div class="container">
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-			   <img src="http://curul501.org/wp-content/uploads/2015/10/1.png">
+			   <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/1.png"">
                         </div>
 		</div>
 

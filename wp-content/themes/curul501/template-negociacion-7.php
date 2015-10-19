@@ -248,7 +248,7 @@
 </section>
 <section id="cabecera-art">
 	<div class="container">
-		<div class="flex_column av_three_fourth flex_column_div first main_color">
+		<div class="flex_column flex_column_div first main_color">
                         <div class="post-img">
                            <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-7.png">
                         </div>
@@ -261,7 +261,7 @@
 	<div class="container">
 		<div class="flex_column av_two_fifth first el_after_av_section el_before_av_three_fifth avia-builder-el-first">
                         <div class="tw-img">
-			   <img src="http://curul501.org/wp-content/uploads/2015/10/7.png">
+			   <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/7.png">
                         </div>
 		</div>
 
