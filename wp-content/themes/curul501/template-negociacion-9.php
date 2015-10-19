@@ -110,6 +110,14 @@
 		    line-height: 1.1em;
 		    margin-top: 10px;
 		    }
+		h3.titulo-art-nego-largo {
+		    color: #502760;
+		    font-family: "chaparral-pro";
+		    font-size: 27px;
+		    font-weight: bold;
+		    line-height: 1.1em;
+		    margin-top: 10px;
+		    }		    
                 h3.sub-titulos-neg{
 		    color: #000;
 		    font-family: "chaparral-pro";
@@ -252,7 +260,7 @@
                         <div class="post-img">
                            <img src="<?php echo get_home_url(); ?>/wp-content/themes/curul501/images/exige-num-9.png">
                         </div>
-			<?php the_title( '<h3 class="titulo-art-nego">', '</h3>' ); ?>	
+			<?php the_title( '<h3 class="titulo-art-nego-largo">', '</h3>' ); ?>	
 		</div>
 	</div>
 </section>
