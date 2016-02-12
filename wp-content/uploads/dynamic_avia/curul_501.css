@@ -148,6 +148,31 @@ h3.subtitulos-art  {
 ol {
     font-size: 16px;
 }
+.page-id-4989 > #wrap_all > #main > #cabecera-negociacion > .container > .content > .videoneg > a {
+    display: none;
+}
+.page-id-4989 > #wrap_all > #main > #video-micrositioNegociacion {
+    display: none;
+}
+#titulo-video{
+    margin-top: -59px;
+    position: absolute;
+}
+h1#titulo-neg-1 > a:hover{
+		    color: rgba(80, 39, 96, 0.7);
+
+}
+h1#titulo-neg-2 > a:hover {
+		    color: rgb(79, 41, 95);
+}
+a.subtitulos-art {
+    color: #502760 !important;
+    display: block;
+    font: 26px/28px "chaparral pro" !important;
+    margin-bottom: 0;
+    margin-top: -16px;
+    text-rendering: optimizelegibility !important;
+}
 .container {width:80%;} .container .av-content-small.units {width:75%; }
 			
 			  .responsive .boxed#top , .responsive.html_boxed.html_header_sticky #header{ width: 1030px; max-width:90%; }
